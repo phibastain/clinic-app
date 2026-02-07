@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* สำคัญ: บรรทัดนี้สั่งให้ Tailwind ใช้ Class '.dark' ในการเปลี่ยนโหมด แทนการใช้ System Theme */
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #a82a2a;
+  --foreground: #171717;
+}
+
+/* เมื่อมี Class .dark ให้ใช้ค่าสีเหล่านี้ */
+.dark {
+  --background: #0b0f19;
+  /* ปรับให้เข้ากับธีมเว็บไซต์ */
+  --foreground: #ededed;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ทำให้การเลื่อนหน้าจอ smooth */
+html {
+  scroll-behavior: smooth;
+}
