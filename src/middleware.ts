@@ -1,0 +1,134 @@
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+
+/**
+ * In-memory rate limiter store
+ * Tracks request counts per IP within a sliding time window
+ */
+const rateLimitStore = new Map<string, { count: number; resetTime: number }>();
+
+const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute window
+const RATE_LIMIT_MAX_REQUESTS = 60; // Max requests per window
+
+// Known bot user-agents to block
+const BLOCKED_BOT_PATTERNS = [
+    /curl\//i,
+    /python-requests/i,
+    /scrapy/i,
+    /httpclient/i,
+    /java\//i,
+    /wget/i,
+    /go-http-client/i,
+    /libwww-perl/i,
+];
+
+function getClientIp(request: NextRequest): string {
+    const forwarded = request.headers.get('x-forwarded-for');
+    if (forwarded) {
+        return forwarded.split(',')[0].trim();
+    }
+    const realIp = request.headers.get('x-real-ip');
+    if (realIp) {
+        return realIp;
+    }
+    return '127.0.0.1';
+}
+
+function isRateLimited(ip: string): boolean {
+    const now = Date.now();
+    const entry = rateLimitStore.get(ip);
+
+    if (!entry || now > entry.resetTime) {
+        rateLimitStore.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW_MS });
+        return false;
+    }
+
+    entry.count++;
+    if (entry.count > RATE_LIMIT_MAX_REQUESTS) {
+        return true;
+    }
+
+    return false;
+}
+
+function isBlockedBot(userAgent: string | null): boolean {
+    if (!userAgent) return false;
+    return BLOCKED_BOT_PATTERNS.some(pattern => pattern.test(userAgent));
+}
+
+// Periodic cleanup of expired entries (every 5 minutes)
+setInterval(() => {
+    const now = Date.now();
+    for (const [ip, entry] of rateLimitStore.entries()) {
+        if (now > entry.resetTime) {
+            rateLimitStore.delete(ip);
+        }
+    }
+}, 5 * 60 * 1000);
+
+export function middleware(request: NextRequest) {
+    const userAgent = request.headers.get('user-agent');
+    const ip = getClientIp(request);
+
+    // 1. Block known malicious bots
+    if (isBlockedBot(userAgent)) {
+        return new NextResponse('Forbidden', { status: 403 });
+    }
+
+    // 2. Rate limiting
+    if (isRateLimited(ip)) {
+        return new NextResponse(
+            JSON.stringify({ error: 'Too many requests. Please try again later.' }),
+            {
+                status: 429,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Retry-After': '60',
+                },
+            }
+        );
+    }
+
+    // 3. CSRF Protection for API routes
+    if (request.nextUrl.pathname.startsWith('/api/')) {
+        const origin = request.headers.get('origin');
+        const referer = request.headers.get('referer');
+        const host = request.headers.get('host');
+
+        // Allow requests if origin matches host OR if referer starts with our host
+        // Note: Production check would be more strict with https://domain.com
+        const isInternalRequest = (origin && origin.includes(host || '')) ||
+            (referer && referer.includes(host || ''));
+
+        if (!isInternalRequest && request.method !== 'GET') {
+            return new NextResponse(
+                JSON.stringify({ error: 'Unauthorized: CSRF validation failed' }),
+                { status: 403, headers: { 'Content-Type': 'application/json' } }
+            );
+        }
+    }
+
+    // 4. Add security nonce for inline scripts (optional future use)
+    const response = NextResponse.next();
+
+    // Additional security: prevent caching of sensitive pages
+    if (request.nextUrl.pathname.startsWith('/api/')) {
+        response.headers.set('Cache-Control', 'no-store, max-age=0');
+    }
+
+    return response;
+}
+
+// Apply middleware to all routes except static assets
+export const config = {
+    matcher: [
+        /*
+         * Match all request paths except:
+         * - _next/static (static files)
+         * - _next/image (image optimization files)
+         * - favicon.ico (favicon file)
+         * - public folder assets
+         */
+        '/((?!_next/static|_next/image|favicon\\.ico|assets/).*)',
+    ],
+};

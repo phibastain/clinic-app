@@ -13,8 +13,58 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "M-Trust Urology Clinic",
-  description: "Center of Excellence in Urology & Men's Health",
+  metadataBase: new URL('https://www.menshealth-thailand.com'),
+  title: {
+    default: 'M-Trust Urology Clinic | Best Urologist in Thailand | Men\'s Health Specialist',
+    template: '%s | M-Trust Urology Clinic'
+  },
+  description: 'M-Trust Urology Clinic - Thailand\'s leading center for men\'s health. Expert treatment for erectile dysfunction, prostate conditions, penile prosthesis surgery by Dr. Niti Navanimitkul. Book consultation today.',
+  keywords: [
+    'Urologist Thailand', 'Men\'s Health Clinic Bangkok', 'Erectile Dysfunction Treatment',
+    'Penile Prosthesis Surgery', 'Dr. Niti Navanimitkul', 'UroLift Thailand',
+    'Rezum Treatment', 'BPH Treatment', 'Prostate Specialist', 'Sexual Dysfunction Specialist',
+    'Best Urologist Bangkok', 'M-Trust Clinic'
+  ],
+  authors: [{ name: 'Dr. Niti Navanimitkul' }],
+  creator: 'M-Trust Urology Clinic',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://www.menshealth-thailand.com',
+    siteName: 'M-Trust Urology Clinic',
+    title: 'M-Trust Urology Clinic | Best Urologist in Thailand',
+    description: 'Thailand\'s leading center for men\'s health. Expert treatment by Dr. Niti Navanimitkul.',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'M-Trust Urology Clinic - Men\'s Health Excellence'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'M-Trust Urology Clinic | Best Urologist in Thailand',
+    description: 'Thailand\'s leading center for men\'s health and urology.'
+  },
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    }
+  },
+  verification: {
+    google: 'google-site-verification-code',
+  }
 };
 
 export const viewport: Viewport = {
@@ -23,10 +73,19 @@ export const viewport: Viewport = {
   maximumScale: 1,
   // ตั้งค่าสีของ Browser Toolbar (เช่น บน Safari/Chrome มือถือ) ให้เปลี่ยนตามโหมด
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0b0f19" },
+    { media: "(prefers-color-scheme: light)", color: "#e2e8f0" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
   ],
 };
+
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { LanguageProvider } from "@/components/providers/LanguageProvider";
+
+// Shared components for the layout
+import Header from "@/components/shared/Header";
+import Footer from "@/components/shared/Footer";
+import LiveChatWidget from "@/components/shared/LiveChatWidget";
+import ModernBackground from "@/components/ui/ModernBackground";
 
 export default function RootLayout({
   children,
@@ -36,10 +95,44 @@ export default function RootLayout({
   return (
     /* suppressHydrationWarning ช่วยแก้ปัญหาแจ้งเตือนตอนสลับ Theme เพราะเราจัดการ class ที่ html เอง */
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+                  if (!theme && supportDarkMode) theme = 'dark';
+                  if (theme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
       >
-        {children}
+        <ThemeProvider>
+          <LanguageProvider>
+            <div className="selection:bg-amber-500 selection:text-white">
+              <div className="min-h-screen transition-colors duration-1000 font-sans relative overflow-x-hidden text-left text-slate-900 dark:text-slate-100">
+                <ModernBackground />
+                <Header />
+                <main className="relative z-10 pt-[100px] text-left">
+                  {children}
+                </main>
+                <Footer />
+                <LiveChatWidget />
+              </div>
+            </div>
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
