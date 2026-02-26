@@ -40,11 +40,11 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://embed.tawk.to",
       "font-src 'self' https://fonts.gstatic.com",
       "img-src 'self' data: blob: https://flagcdn.com https://images.unsplash.com https://cdn-icons-png.flaticon.com https://img.youtube.com https://embed.tawk.to https://*.tawk.to",
-      "connect-src 'self' https://embed.tawk.to wss://*.tawk.to https://*.tawk.to", // Added Tawk.to for WebSockets and API calls
+      "connect-src 'self' https://api.web3forms.com https://embed.tawk.to wss://*.tawk.to https://*.tawk.to", // Added Web3Forms and Tawk.to
       "frame-src 'self' https://www.google.com https://www.youtube.com https://embed.tawk.to",
       "object-src 'none'",
       "base-uri 'self'",
-      "form-action 'self'", // Form only submits to internal API now
+      "form-action 'self' https://api.web3forms.com", // Allow form submission to Web3Forms
       "frame-ancestors 'none'",
       "upgrade-insecure-requests",
     ].join('; '),
