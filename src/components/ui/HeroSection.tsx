@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { Award, ArrowRight } from 'lucide-react';
 import { HERO_SLIDES } from '@/data/mockData';
 import GradientButton from '@/components/ui/GradientButton';
-import SpinningBadge from '@/components/ui/SpinningBadge';
 
 
 const HeroSection = () => {
@@ -48,7 +47,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* 2. Photo Slider - Left Side on Desktop */}
-                <div className="relative w-full aspect-video md:h-[350px] lg:h-[320px] xl:h-[380px] z-20 overflow-hidden rounded-3xl shadow-2xl border-4 border-white/50 backdrop-blur-sm pointer-events-auto order-2 lg:order-1 mt-8 lg:mt-0 shadow-amber-500/10 transition-transform duration-500 hover:scale-[1.01]">
+                <div className="relative w-full lg:max-w-[calc(100%-30px)] aspect-video md:h-[350px] lg:h-[304px] xl:h-[361px] lg:translate-y-[100px] lg:translate-x-[70px] z-20 overflow-hidden rounded-3xl shadow-2xl border-4 border-white/50 backdrop-blur-sm pointer-events-auto order-2 lg:order-1 mt-8 lg:mt-0 shadow-amber-500/10 transition-transform duration-500 hover:scale-[1.01]">
                     {HERO_SLIDES.filter(slide => slide.slideImage).map((slide, index) => (
                         <div
                             key={slide.id}
@@ -85,7 +84,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* 3. Text Content - Right Side on Desktop */}
-                <div className="relative w-full text-center lg:text-right z-30 flex flex-col items-center lg:items-end pointer-events-auto order-1 mb-8 lg:mb-0 lg:pl-8">
+                <div className="relative w-full text-center lg:text-right z-30 flex flex-col items-center lg:items-end pointer-events-auto order-1 mb-8 lg:mb-0 lg:pl-8 lg:-translate-x-[80px] lg:translate-y-[120px] translate-y-[30px]">
                     {HERO_SLIDES.map((slide, index) => (
                         <div
                             key={slide.id}
@@ -94,27 +93,20 @@ const HeroSection = () => {
                                 : 'opacity-0 translate-y-8 absolute pointer-events-none'
                                 }`}
                         >
-                            {index === 0 ? (
-                                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-slate-800 lg:text-slate-900 mb-4 leading-tight tracking-tighter uppercase drop-shadow-sm text-center lg:text-right">
-                                    {slide.title.split('\n').map((line, i) => (
-                                        <React.Fragment key={i}>
-                                            {line}
-                                            {i < slide.title.split('\n').length - 1 && <span className="hidden lg:inline"><br /></span>}
-                                            {i < slide.title.split('\n').length - 1 && <span className="lg:hidden"> </span>}
-                                        </React.Fragment>
-                                    ))}
-                                </h1>
-                            ) : (
-                                <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-slate-800 lg:text-slate-900 mb-4 leading-tight tracking-tighter uppercase drop-shadow-sm text-center lg:text-right">
-                                    {slide.title.split('\n').map((line, i) => (
-                                        <React.Fragment key={i}>
-                                            {line}
-                                            {i < slide.title.split('\n').length - 1 && <span className="hidden lg:inline"><br /></span>}
-                                            {i < slide.title.split('\n').length - 1 && <span className="lg:hidden"> </span>}
-                                        </React.Fragment>
-                                    ))}
-                                </h2>
-                            )}
+                            {(() => {
+                                const Tag = index === 0 ? 'h1' : 'h2' as any;
+                                return (
+                                    <Tag className="text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-black text-slate-500 lg:text-slate-900 mb-4 leading-tight tracking-tighter uppercase drop-shadow-sm text-center lg:text-right">
+                                        {slide.title.split('\n').map((line, i) => (
+                                            <React.Fragment key={i}>
+                                                {line}
+                                                {i < slide.title.split('\n').length - 1 && <span className="hidden lg:inline"><br /></span>}
+                                                {i < slide.title.split('\n').length - 1 && <span className="lg:hidden"> </span>}
+                                            </React.Fragment>
+                                        ))}
+                                    </Tag>
+                                );
+                            })()}
 
                             <p className="text-slate-600 lg:text-slate-700 text-sm md:text-base lg:text-lg mb-8 font-medium leading-relaxed max-w-md text-center lg:text-right px-4 lg:px-0">
                                 {slide.desc}
@@ -131,10 +123,6 @@ const HeroSection = () => {
                     ))}
                 </div>
 
-                {/* 4. Spinning Badge - Centered specifically for simulated desktops */}
-                <div className="hidden xl:block absolute top-[20%] left-[55%] -translate-x-1/2 -translate-y-1/2 z-40 pointer-events-auto opacity-30">
-                    <SpinningBadge />
-                </div>
             </div>
         </section>
     );
