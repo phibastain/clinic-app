@@ -19,7 +19,7 @@ const HeroSection = () => {
     }, []);
 
     return (
-        <section id="home" className="relative min-h-dvh lg:h-[calc(100dvh-100px)] lg:min-h-[600px] w-full overflow-hidden flex flex-col justify-end">
+        <section id="home" className="relative min-h-dvh lg:h-[calc(100dvh-100px)] lg:min-h-[700px] w-full overflow-hidden flex flex-col items-center justify-center">
             {/* 1. Dynamic Background */}
             <div className="absolute inset-0 w-full h-full z-0">
                 <Image
@@ -33,22 +33,22 @@ const HeroSection = () => {
             </div>
 
             {/* Container for aligned content */}
-            <div className="relative z-10 w-full h-full max-w-[1400px] mx-auto px-4 md:px-8 pointer-events-none flex flex-col justify-end pb-8 lg:pb-12">
+            <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 md:px-8 mt-16 md:mt-24 lg:mt-0 flex flex-col items-center justify-center lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center transition-all duration-500">
 
-                {/* 0. Top Hero Logo - Floating metallic font */}
-                <div className="absolute top-[-70px] md:top-2 lg:top-[52px] left-1/2 lg:left-[calc(50%-150px)] -translate-x-1/2 w-full max-w-[280px] md:max-w-[400px] lg:max-w-[500px] z-50 px-4 transition-all duration-500">
+                {/* 0. Top Hero Logo - Positioned at top of section */}
+                <div className="absolute top-[-80px] md:top-[-100px] lg:top-[-120px] left-1/2 -translate-x-1/2 w-full max-w-[280px] md:max-w-[400px] lg:max-w-[500px] z-50 px-4 transition-all duration-500 pointer-events-auto">
                     <Image
                         src="/assets/image/hero section/image font hero.webp"
                         alt="M-Trust Urology Clinic Logo"
                         width={600}
                         height={200}
-                        className="w-full h-auto drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)] opacity-90"
+                        className="w-full h-auto drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)] opacity-95"
                         priority
                     />
                 </div>
 
-                {/* 2. Photo Slider - Responsive Positioning */}
-                <div className="relative lg:absolute bottom-0 left-0 lg:left-12 xl:left-32 w-full lg:w-[42%] xl:w-[45%] h-[280px] md:h-[320px] lg:h-[55%] z-20 overflow-hidden rounded-3xl shadow-2xl border-4 border-white/50 backdrop-blur-sm pointer-events-auto order-2 mt-12 lg:mt-0 translate-y-[20px] lg:translate-y-[-50px]">
+                {/* 2. Photo Slider - Left Side on Desktop */}
+                <div className="relative w-full aspect-video md:h-[350px] lg:h-[450px] xl:h-[550px] z-20 overflow-hidden rounded-3xl shadow-2xl border-4 border-white/50 backdrop-blur-sm pointer-events-auto order-2 lg:order-1 mt-8 lg:mt-0 shadow-amber-500/10 transition-transform duration-500 hover:scale-[1.01]">
                     {HERO_SLIDES.filter(slide => slide.slideImage).map((slide, index) => (
                         <div
                             key={slide.id}
@@ -84,18 +84,18 @@ const HeroSection = () => {
                     </div>
                 </div>
 
-                {/* 3. Text Content - Responsive Positioning */}
-                <div className="relative lg:absolute bottom-0 right-0 lg:right-12 xl:right-24 text-center lg:text-right w-full lg:max-w-md xl:max-w-xl z-30 flex flex-col items-center lg:items-end pointer-events-auto order-1 mb-8 lg:mb-0 translate-y-[40px] md:translate-y-[160px] lg:translate-y-[-50px]">
+                {/* 3. Text Content - Right Side on Desktop */}
+                <div className="relative w-full text-center lg:text-right z-30 flex flex-col items-center lg:items-end pointer-events-auto order-1 mb-8 lg:mb-0 lg:pl-8">
                     {HERO_SLIDES.map((slide, index) => (
                         <div
                             key={slide.id}
-                            className={`transition-all duration-700 ease-out flex flex-col items-center lg:items-end ${index === current
+                            className={`transition-all duration-700 ease-out flex flex-col items-center lg:items-end w-full ${index === current
                                 ? 'opacity-100 translate-y-0 relative'
                                 : 'opacity-0 translate-y-8 absolute pointer-events-none'
                                 }`}
                         >
                             {index === 0 ? (
-                                <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-slate-700 lg:text-slate-900 mb-4 leading-tight tracking-tighter uppercase drop-shadow-sm text-center lg:text-right">
+                                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-slate-800 lg:text-slate-900 mb-4 leading-tight tracking-tighter uppercase drop-shadow-sm text-center lg:text-right">
                                     {slide.title.split('\n').map((line, i) => (
                                         <React.Fragment key={i}>
                                             {line}
@@ -105,7 +105,7 @@ const HeroSection = () => {
                                     ))}
                                 </h1>
                             ) : (
-                                <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-slate-700 lg:text-slate-900 mb-4 leading-tight tracking-tighter uppercase drop-shadow-sm text-center lg:text-right">
+                                <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-slate-800 lg:text-slate-900 mb-4 leading-tight tracking-tighter uppercase drop-shadow-sm text-center lg:text-right">
                                     {slide.title.split('\n').map((line, i) => (
                                         <React.Fragment key={i}>
                                             {line}
@@ -116,7 +116,7 @@ const HeroSection = () => {
                                 </h2>
                             )}
 
-                            <p className="text-slate-500 lg:text-slate-700 text-sm md:text-base lg:text-lg mb-8 font-medium leading-relaxed max-w-md text-center lg:text-right px-4 lg:px-0">
+                            <p className="text-slate-600 lg:text-slate-700 text-sm md:text-base lg:text-lg mb-8 font-medium leading-relaxed max-w-md text-center lg:text-right px-4 lg:px-0">
                                 {slide.desc}
                             </p>
 
@@ -131,8 +131,8 @@ const HeroSection = () => {
                     ))}
                 </div>
 
-                {/* 4. Spinning Badge - Responsive Visibility/Position */}
-                <div className="hidden xl:block absolute top-[calc(15%+20px)] left-[calc(25%+415px)] -translate-x-1/2 -translate-y-1/2 z-40 pointer-events-auto opacity-30">
+                {/* 4. Spinning Badge - Centered specifically for simulated desktops */}
+                <div className="hidden xl:block absolute top-[20%] left-[55%] -translate-x-1/2 -translate-y-1/2 z-40 pointer-events-auto opacity-30">
                     <SpinningBadge />
                 </div>
             </div>
