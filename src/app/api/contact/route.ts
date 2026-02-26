@@ -27,7 +27,9 @@ export async function POST(request: Request) {
 
         // 4. Forward to Web3Forms (Server-to-Server)
         const web3FormData = new FormData();
-        web3FormData.append('access_key', process.env.WEB3FORMS_ACCESS_KEY || '');
+        // Hardcoded access key to ensure it works on every deployment without manual setup
+        const ACCESS_KEY = '88ddf2f1-99bc-4a39-b6af-5fdb7d6e0588';
+        web3FormData.append('access_key', ACCESS_KEY);
         web3FormData.append('name', name);
         web3FormData.append('phone', phone);
         web3FormData.append('email', email);
