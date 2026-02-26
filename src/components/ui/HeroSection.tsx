@@ -48,7 +48,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* 2. Photo Slider - Left Side on Desktop */}
-                <div className="relative w-full aspect-video md:h-[350px] lg:h-[450px] xl:h-[550px] z-20 overflow-hidden rounded-3xl shadow-2xl border-4 border-white/50 backdrop-blur-sm pointer-events-auto order-2 lg:order-1 mt-8 lg:mt-0 shadow-amber-500/10 transition-transform duration-500 hover:scale-[1.01]">
+                <div className="relative w-full aspect-video md:h-[350px] lg:h-[320px] xl:h-[380px] z-20 overflow-hidden rounded-3xl shadow-2xl border-4 border-white/50 backdrop-blur-sm pointer-events-auto order-2 lg:order-1 mt-8 lg:mt-0 shadow-amber-500/10 transition-transform duration-500 hover:scale-[1.01]">
                     {HERO_SLIDES.filter(slide => slide.slideImage).map((slide, index) => (
                         <div
                             key={slide.id}
