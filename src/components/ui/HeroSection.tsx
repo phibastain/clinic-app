@@ -19,7 +19,7 @@ const HeroSection = () => {
     }, []);
 
     return (
-        <section id="home" className="relative min-h-[90vh] lg:h-[calc(100vh-100px)] w-full overflow-hidden flex flex-col justify-end">
+        <section id="home" className="relative min-h-dvh lg:h-[calc(100dvh-100px)] lg:min-h-[600px] w-full overflow-hidden flex flex-col justify-end">
             {/* 1. Dynamic Background */}
             <div className="absolute inset-0 w-full h-full z-0">
                 <Image
