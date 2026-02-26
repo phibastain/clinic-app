@@ -18,36 +18,16 @@ const ContactSection = () => {
         setValidationError('');
         setErrorMessage('');
 
-        // Client-side rate limiting — prevent rapid re-submissions (30s cooldown)
-        const now = Date.now();
-        if (now - lastSubmitTime < 30000) {
-            setValidationError('Please wait a moment before submitting again.');
-            return;
-        }
-
-        // Honeypot check — if the hidden field is filled, it's a bot
         const form = event.currentTarget;
-        const honeypot = (form.elements.namedItem('botcheck') as HTMLInputElement)?.checked;
-        if (honeypot) return; // Silently reject bot submissions
+        const formData = new FormData(form);
 
-        // Sanitize and validate all inputs
-        const name = sanitizeText((form.elements.namedItem('Full Name') as HTMLInputElement)?.value || '', 100);
-        const phone = sanitizePhone((form.elements.namedItem('Phone') as HTMLInputElement)?.value || '');
-        const email = sanitizeEmail((form.elements.namedItem('Email') as HTMLInputElement)?.value || '');
+        // Add required access key directly for reliability
+        formData.append('access_key', '81baa874-ec86-43a0-96af-5286ac6b5d45');
 
-        if (!name || !phone || !email) {
-            setValidationError('Please fill in all required fields (Full Name, Phone Number, and Email)');
-            sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            return;
-        }
-
-        setLastSubmitTime(now);
         setFormStatus('sending');
 
-        const formData = new FormData(event.currentTarget);
-
         try {
-            const response = await fetch('/api/contact', {
+            const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 body: formData,
             });
@@ -56,16 +36,15 @@ const ContactSection = () => {
 
             if (data.success) {
                 setFormStatus('success');
-                (event.target as HTMLFormElement).reset();
-                // Reset success message after 5 seconds
+                form.reset();
                 setTimeout(() => setFormStatus('idle'), 5000);
             } else {
                 setFormStatus('error');
-                setErrorMessage(data.message || 'Something went wrong. Please try again.');
+                setErrorMessage(data.message || 'Submission failed. Please try again.');
             }
         } catch {
             setFormStatus('error');
-            setErrorMessage('Network error. Please check your connection and try again.');
+            setErrorMessage('Network error. Please check your connection.');
         }
     };
 
