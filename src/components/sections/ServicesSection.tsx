@@ -24,7 +24,7 @@ const ServicesSection = () => {
                     <div className="flex flex-wrap gap-2 text-left">
                         {tabs.map((tab) => (
                             <button key={tab} onClick={() => setActiveTab(tab)}
-                                className={`px-6 py-2.5 rounded-full text-[11px] font-black uppercase tracking-widest transition-all border ${activeTab === tab ? 'bg-slate-900 text-white border-slate-900 dark:bg-amber-600 dark:border-amber-600' : 'bg-white/50 backdrop-blur-sm text-slate-500 border-slate-200 hover:border-amber-600 dark:bg-white/5 dark:text-slate-300 dark:border-white/10 dark:hover:border-amber-500'}`}>{tab}</button>
+                                className={`px-4 md:px-6 py-2 md:py-2.5 rounded-full text-[9px] md:text-[11px] font-black uppercase tracking-widest transition-all border ${activeTab === tab ? 'bg-slate-900 text-white border-slate-900 dark:bg-amber-600 dark:border-amber-600' : 'bg-white/50 backdrop-blur-sm text-slate-500 border-slate-200 hover:border-amber-600 dark:bg-white/5 dark:text-slate-300 dark:border-white/10 dark:hover:border-amber-500'}`}>{tab}</button>
                         ))}
                     </div>
                 </div>
@@ -37,9 +37,9 @@ const ServicesSection = () => {
                         >
                             <div className="w-32 sm:w-40 shrink-0 overflow-hidden text-left"><img src={service.image} alt={service.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" /></div>
                             <div className="p-6 flex flex-col justify-center text-left">
-                                <div className="flex items-center space-x-2 mb-2 text-left"><service.Icon size={16} className="text-amber-600" /><h3 className="text-sm font-black text-slate-900 dark:text-white uppercase text-left">{service.name}</h3></div>
-                                <p className="text-slate-500 dark:text-slate-400 text-[15px] leading-relaxed font-medium text-left">{service.desc}</p>
-                                <span className="flex items-center space-x-1 text-xs font-black uppercase text-amber-600 group/btn mt-3 text-left"><span>Learn More</span><ChevronRight size={14} className="transition-transform group-hover/btn:translate-x-1 text-left" /></span>
+                                <div className="flex items-center space-x-2 mb-2 text-left"><service.Icon size={14} className="text-amber-600 md:w-4 md:h-4" /><h3 className="text-xs md:text-sm font-black text-slate-900 dark:text-white uppercase text-left">{service.name}</h3></div>
+                                <p className="text-slate-500 dark:text-slate-400 text-xs md:text-[15px] leading-relaxed font-medium text-left">{service.desc}</p>
+                                <span className="flex items-center space-x-1 text-[10px] md:text-xs font-black uppercase text-amber-600 group/btn mt-3 text-left"><span>Learn More</span><ChevronRight size={12} className="transition-transform group-hover/btn:translate-x-1 text-left md:w-[14px] md:h-[14px]" /></span>
                             </div>
                         </Link>
                     ))}

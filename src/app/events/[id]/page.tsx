@@ -43,7 +43,7 @@ export default async function EventDetailPage({ params }: Props) {
 
     return (
         <>
-            <JsonLdScript data={getEventJsonLd('https://www.menshealth-thailand.com', {
+            <JsonLdScript data={getEventJsonLd('https://www.mtrusturology.com', {
                 id: event.id,
                 title: event.title,
                 description: event.description,

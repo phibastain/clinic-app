@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.menshealth-thailand.com'),
+  metadataBase: new URL('https://www.mtrusturology.com'),
   title: {
     default: 'M-Trust Urology Clinic | Best Urologist in Thailand | Men\'s Health Specialist',
     template: '%s | M-Trust Urology Clinic'
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.menshealth-thailand.com',
+    url: 'https://www.mtrusturology.com',
     siteName: 'M-Trust Urology Clinic',
     title: 'M-Trust Urology Clinic | Best Urologist in Thailand',
     description: 'Thailand\'s leading center for men\'s health. Expert treatment by Dr. Niti Navanimitkul.',
@@ -84,7 +84,7 @@ import { LanguageProvider } from "@/components/providers/LanguageProvider";
 // Shared components for the layout
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
-import LiveChatWidget from "@/components/shared/LiveChatWidget";
+import TawkToWidget from "@/components/shared/TawkToWidget";
 import ModernBackground from "@/components/ui/ModernBackground";
 
 export default function RootLayout({
@@ -128,7 +128,7 @@ export default function RootLayout({
                   {children}
                 </main>
                 <Footer />
-                <LiveChatWidget />
+                <TawkToWidget />
               </div>
             </div>
           </LanguageProvider>

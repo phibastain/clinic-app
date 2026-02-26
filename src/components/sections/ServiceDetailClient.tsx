@@ -16,6 +16,7 @@ import Container from '@/components/ui/Container';
 import GradientButton from '@/components/ui/GradientButton';
 import { JsonLdScript, getServiceJsonLd } from '@/utils/jsonLd';
 import { sanitizeHtmlContent } from '@/utils/sanitize';
+import ExploreServices from './ExploreServices';
 
 const formatContent = (content: string) => {
     if (!content) return '';
@@ -48,23 +49,12 @@ interface ServiceDetailClientProps {
 export default function ServiceDetailClient({ serviceName, slug }: ServiceDetailClientProps) {
     const router = useRouter();
     const [service] = useState(SERVICE_DETAILS_DATA[serviceName]);
-    const [suggestedServices, setSuggestedServices] = useState<any[]>([]);
-
-    useEffect(() => {
-        if (service) {
-            const others = Object.values(SERVICE_CATEGORIES).flat()
-                .filter((s: any) => s.name !== serviceName)
-                .sort(() => Math.random() - 0.5)
-                .slice(0, 4);
-            setSuggestedServices(others);
-        }
-    }, [serviceName, service]);
 
     if (!service) return null;
 
     return (
         <>
-            <JsonLdScript data={getServiceJsonLd('https://www.menshealth-thailand.com', {
+            <JsonLdScript data={getServiceJsonLd('https://www.mtrusturology.com', {
                 name: serviceName,
                 description: service.description,
                 slug: slug,
@@ -143,29 +133,32 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
 
                             {/* Clinical Mechanism */}
                             <div className="mb-16 text-left">
-                                <h2 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white uppercase mb-8 flex items-center gap-3 text-left">
-                                    <Stethoscope className="text-amber-600" size={28} /> Clinical Mechanism
-                                </h2>
+                                {service.description && (
+                                    <>
+                                        <h2 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white uppercase mb-8 flex items-center gap-3 text-left">
+                                            <Stethoscope className="text-amber-600" size={28} /> Clinical Mechanism
+                                        </h2>
 
-                                <div className={`mb-10 ${service.descriptionImage ? 'grid grid-cols-1 lg:grid-cols-2 gap-12 items-start' : 'w-full'}`}>
-                                    <div className="space-y-6">
-                                        <div
-                                            className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed font-medium text-justify richness-content"
-                                            dangerouslySetInnerHTML={{ __html: formatContent(service.description) }}
-                                        />
-                                    </div>
+                                        <div className={`mb-10 ${service.descriptionImage ? 'grid grid-cols-1 lg:grid-cols-2 gap-12 items-start' : 'w-full'}`}>
+                                            <div className="space-y-6">
+                                                <div
+                                                    className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed font-medium text-justify richness-content"
+                                                    dangerouslySetInnerHTML={{ __html: formatContent(service.description) }}
+                                                />
+                                            </div>
 
-                                    {service.descriptionImage && (
-                                        <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-slate-100 dark:bg-slate-900/50 flex items-center justify-center">
-                                            <img
-                                                src={service.descriptionImage}
-                                                alt="Clinical Mechanism"
-                                                className="w-full h-auto block"
-                                            />
+                                            {service.descriptionImage && (
+                                                <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-slate-100 dark:bg-slate-900/50 flex items-center justify-center">
+                                                    <img
+                                                        src={service.descriptionImage}
+                                                        alt="Clinical Mechanism"
+                                                        className="w-full h-auto block"
+                                                    />
+                                                </div>
+                                            )}
                                         </div>
-                                    )}
-                                </div>
-
+                                    </>
+                                )}
                                 {service.testPanels && (
                                     <div className="grid md:grid-cols-2 gap-6 mb-16">
                                         {service.testPanels.map((panel, pIdx) => (
@@ -384,9 +377,6 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                                     </p>
                                     <div className="flex flex-col sm:flex-row justify-center gap-4 text-left">
                                         <GradientButton onClick={() => router.push('/#contact')} className="px-10 py-4 h-14">Book Appointment</GradientButton>
-                                        {!service?.hidePricing && (
-                                            <button className="px-10 py-4 h-14 rounded-full border border-white/10 text-white font-bold hover:bg-white/5 transition-colors">View Pricing</button>
-                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -394,37 +384,9 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                     </div>
 
                     {/* Explore Other Services */}
-                    <div className="py-20 bg-white dark:bg-[#050505] border-t border-slate-100 dark:border-white/5 text-left">
-                        <Container className="text-left">
-                            <h2 className="text-2xl font-black text-center text-slate-900 dark:text-white uppercase mb-12 tracking-wide">Explore Other Services</h2>
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
-                                {suggestedServices.length > 0 ? (
-                                    suggestedServices.map((s: any, idx: number) => (
-                                        <button
-                                            key={idx}
-                                            onClick={() => router.push(`/services/${serviceNameToSlug(s.name)}`)}
-                                            className="bg-slate-50 dark:bg-[#12141c] rounded-3xl p-6 border border-slate-100 dark:border-white/5 text-left group hover:translate-y-[-4px] transition-all hover:shadow-xl hover:border-amber-500/30"
-                                        >
-                                            <div className="relative h-32 w-full mb-6 overflow-hidden rounded-2xl">
-                                                <img src={s.image} alt={s.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 text-left" />
-                                                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
-                                            </div>
-                                            <h3 className="text-sm font-black text-slate-900 dark:text-white uppercase leading-tight group-hover:text-amber-500 transition-colors text-left">{s.name}</h3>
-                                            <div className="mt-4 flex items-center text-[10px] font-bold text-amber-600 uppercase tracking-widest gap-2">
-                                                Learn More <ChevronRight size={12} className="group-hover:translate-x-1 transition-transform" />
-                                            </div>
-                                        </button>
-                                    ))
-                                ) : (
-                                    <div className="col-span-full h-40 flex items-center justify-center">
-                                        <div className="w-8 h-8 border-2 border-amber-500 border-t-transparent rounded-full animate-spin" />
-                                    </div>
-                                )}
-                            </div>
-                        </Container>
-                    </div>
-                </div>
-            </main>
+                    <ExploreServices currentServiceName={serviceName} />
+                </div >
+            </main >
         </>
     );
 }

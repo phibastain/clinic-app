@@ -3,7 +3,7 @@ import { SERVICE_SLUGS } from '@/utils/serviceUtils';
 import { BLOG_POSTS, DOCTORS, EVENTS_DATA } from '@/data/mockData';
 import { blogTitleToSlug } from '@/utils/blogUtils';
 
-const BASE_URL = 'https://www.menshealth-thailand.com';
+const BASE_URL = 'https://www.mtrusturology.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const now = new Date();

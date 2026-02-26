@@ -5,10 +5,13 @@ import { DoctorData } from '@/data/mockData';
  * @see https://schema.org/Physician
  */
 export function buildPhysicianSchema(doctor: DoctorData) {
+    const baseUrl = 'https://www.mtrusturology.com';
+    const doctorPath = doctor.slug ? `/urologist/${doctor.slug}` : `/doctor/${doctor.id}`;
+
     return {
         "@context": "https://schema.org",
         "@type": "Physician",
-        "@id": `https://www.menshealth-thailand.com/doctor/${doctor.id}`,
+        "@id": `${baseUrl}${doctorPath}`,
         "name": doctor.name,
         "description": doctor.bio,
         "image": doctor.image,
@@ -113,12 +116,15 @@ export function buildBreadcrumbSchema(items: { name: string; url: string }[]) {
  * @see https://schema.org/MedicalWebPage
  */
 export function buildMedicalWebPageSchema(doctor: DoctorData) {
+    const baseUrl = 'https://www.mtrusturology.com';
+    const doctorPath = doctor.slug ? `/urologist/${doctor.slug}` : `/doctor/${doctor.id}`;
+
     return {
         "@context": "https://schema.org",
         "@type": "MedicalWebPage",
         "name": `${doctor.name} - ${doctor.role}`,
         "description": doctor.bio,
-        "url": `https://www.menshealth-thailand.com/doctor/${doctor.id}`,
+        "url": `${baseUrl}${doctorPath}`,
         "mainEntity": {
             "@type": "Physician",
             "name": doctor.name

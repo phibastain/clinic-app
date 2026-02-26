@@ -19,7 +19,7 @@ const FaqSection = () => {
                 <div className="grid lg:grid-cols-12 gap-12">
                     <div className="lg:col-span-4">
                         <SectionTitle tag="Common Questions" title="Frequently Asked Questions" />
-                        <p className="text-slate-500 dark:text-slate-400 text-base leading-relaxed mb-6 font-medium">
+                        <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base leading-relaxed mb-6 font-medium">
                             Find answers to the most common questions about our services, procedures, and patient care policies.
                         </p>
                         <div className="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20">
@@ -28,10 +28,10 @@ const FaqSection = () => {
                                     <MessageCircle size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-slate-900 dark:text-white text-sm uppercase tracking-wide">Still have questions?</h4>
+                                    <h4 className="font-bold text-slate-900 dark:text-white text-xs md:text-sm uppercase tracking-wide">Still have questions?</h4>
                                 </div>
                             </div>
-                            <p className="text-slate-500 dark:text-slate-400 text-xs mb-4">Can&apos;t find the answer you&apos;re looking for? Please chat to our friendly team.</p>
+                            <p className="text-slate-500 dark:text-slate-400 text-[10px] md:text-xs mb-4">Can&apos;t find the answer you&apos;re looking for? Please chat to our friendly team.</p>
                             <GradientButton variant="primary" className="w-full text-[9px] py-2.5">Chat with us</GradientButton>
                         </div>
                     </div>
@@ -45,7 +45,7 @@ const FaqSection = () => {
                                     onClick={() => toggleFaq(index)}
                                     className="w-full flex items-center justify-between p-6 text-left"
                                 >
-                                    <span className={`text-sm md:text-base font-bold uppercase tracking-wide transition-colors ${activeIndex === index ? 'text-amber-600' : 'text-slate-700 dark:text-slate-300'}`}>
+                                    <span className={`text-[13px] md:text-base font-bold uppercase tracking-wide transition-colors ${activeIndex === index ? 'text-amber-600' : 'text-slate-700 dark:text-slate-300'}`}>
                                         {item.question}
                                     </span>
                                     <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${activeIndex === index ? 'bg-amber-600 text-white rotate-180' : 'bg-slate-200 dark:bg-slate-800 text-slate-500'}`}>
@@ -55,7 +55,7 @@ const FaqSection = () => {
                                 <div
                                     className={`overflow-hidden transition-all duration-300 ease-in-out ${activeIndex === index ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
                                 >
-                                    <div className="p-6 pt-0 text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-medium border-t border-slate-100 dark:border-slate-800/50 mt-2">
+                                    <div className="p-6 pt-0 text-slate-500 dark:text-slate-400 text-xs md:text-sm leading-relaxed font-medium border-t border-slate-100 dark:border-slate-800/50 mt-2">
                                         {item.answer}
                                     </div>
                                 </div>

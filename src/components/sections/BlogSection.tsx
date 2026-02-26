@@ -16,7 +16,7 @@ const BlogSection = () => (
         <Container>
             <div className="flex justify-between items-end mb-8 text-left">
                 <SectionTitle tag="Articles & Knowledge" title="Men's Health Blog" className="mb-0" />
-                <GradientButton variant="outline" className="px-8 py-3.5 rounded-xl text-[10px]">Read More</GradientButton>
+                <GradientButton variant="outline" className="px-6 md:px-8 py-2 md:py-3.5 rounded-xl text-[9px] md:text-[10px]">Read More</GradientButton>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
                 {BLOG_POSTS.map(post => (
@@ -27,12 +27,12 @@ const BlogSection = () => (
                         </div>
                         <div className="text-left flex-1 flex flex-col justify-between py-1 text-left">
                             <div>
-                                <div className="flex items-center text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2"><Clock size={12} className="mr-1" /> {post.date}</div>
-                                <h3 className="text-sm font-black text-slate-900 dark:text-white uppercase leading-tight group-hover:text-amber-600 transition-colors mb-2 line-clamp-3 text-left">{post.title}</h3>
-                                <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed line-clamp-2 mb-3 font-medium text-left">{post.excerpt}</p>
+                                <div className="flex items-center text-[9px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2"><Clock size={12} className="mr-1" /> {post.date}</div>
+                                <h3 className="text-xs md:text-sm font-black text-slate-900 dark:text-white uppercase leading-tight group-hover:text-amber-600 transition-colors mb-2 line-clamp-3 text-left">{post.title}</h3>
+                                <p className="text-slate-500 dark:text-slate-400 text-xs md:text-sm leading-relaxed line-clamp-2 mb-3 font-medium text-left">{post.excerpt}</p>
                             </div>
                             <div className="flex items-center space-x-1 text-xs font-black uppercase text-amber-600 group/btn text-left">
-                                <span>Explore Article</span><ChevronRight size={14} className="transition-transform group-hover/btn:translate-x-1" />
+                                <span>Explore Article</span><ChevronRight size={12} className="transition-transform group-hover/btn:translate-x-1 md:w-[14px] md:h-[14px]" />
                             </div>
                         </div>
                     </a>

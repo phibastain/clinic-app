@@ -24,7 +24,7 @@ const Page: React.FC = () => {
 
   return (
     <div className="selection:bg-amber-500 selection:text-white">
-      <JsonLdScript data={getHomepageJsonLd('https://www.menshealth-thailand.com')} />
+      <JsonLdScript data={getHomepageJsonLd('https://www.mtrusturology.com')} />
       <div className="min-h-screen font-sans relative overflow-x-hidden text-left text-slate-900 dark:text-slate-100">
         <main className="relative z-10 text-left">
           <div id="home"><HeroSection /></div>

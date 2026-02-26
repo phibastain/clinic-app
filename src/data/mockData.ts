@@ -1257,8 +1257,7 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     description: "Vasectomy is a minor surgical procedure that provides permanent contraception by blocking the vas deferens, preventing sperm from entering semen. It is highly effective (>99%), minimally invasive, and does not affect sexual function or sensation.",
     whatIsIt: {
       title: 'What is a Vasectomy?',
-      description: "A vasectomy is a simple, safe, and permanent method of male contraception. It involves cutting or sealing the tubes (vas deferens) that carry sperm from the testicles to the semen. After a vasectomy, the semen no longer contains sperm, making it impossible to cause a pregnancy while preserving sexual sensation and performance.",
-      image: '/assets/image/services section/vasectomy menu.webp'
+      description: "A vasectomy is a simple, safe, and permanent method of male contraception. It involves cutting or sealing the tubes (vas deferens) that carry sperm from the testicles to the semen. After a vasectomy, the semen no longer contains sperm, making it impossible to cause a pregnancy while preserving sexual sensation and performance."
     },
     heroImage: '/assets/image/services section/vasectomy/vasectomy hero.webp',
     descriptionImage: '/assets/image/services section/vasectomy/vasectomy Clinical Mechanism.webp',
@@ -1312,8 +1311,7 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     heroImage: '/assets/image/services section/flexible cystoscopy menu.webp',
     whatIsIt: {
       title: 'What is Flexible Cystoscopy?',
-      description: "Flexible cystoscopy is a diagnostic procedure that allows a urologist to examine the lining of your bladder and the urethra (the tube that carries urine out of your body). Unlike older rigid cystoscopes, our flexible scope is soft and bends easily, following the body's natural curves for a significantly more comfortable patient experience.",
-      image: '/assets/image/services section/Flexible Cystoscopy/flexible cystoscopy clinical mechanism.webp'
+      description: "Flexible cystoscopy is a diagnostic procedure that allows a urologist to examine the lining of your bladder and the urethra (the tube that carries urine out of your body). Unlike older rigid cystoscopes, our flexible scope is soft and bends easily, following the body's natural curves for a significantly more comfortable patient experience."
     },
     description: "This advanced diagnostic tool is essential for identifying the root cause of urinary symptoms. By providing a clear, direct view of the urinary tract, it ensures accurate diagnosis and effective treatment planning.\n\n**The Clinical Mechanism & Diagnostic Power:**\n\n1. **High-Definition Visualization:** The flexible cystoscope is equipped with a high-resolution camera and light source. It is gently inserted through the urethra, allowing the doctor to inspect the **entire bladder lining**, **urethra**, and **prostate** (in men) with exceptional clarity.\n\n2. **What We Detect:**\n   *   **Hematuria:** Investigates the source of blood in the urine.\n   *   **Bladder Tumors:** Early detection of bladder cancer or polyps.\n   *   **Stones:** Identifies bladder stones causing pain or blockage.\n   *   **Strictures:** Detects narrowing of the urethra hindering flow.\n   *   **BPH:** Assesses the degree of prostate enlargement.\n\n3. **Why 'Flexible' Matters:** The soft, pliable design causes **minimal friction** and **significantly less discomfort** compared to rigid scopes. Performed under local anesthesia (topical gel), the procedure is quick (5-10 mins) and patients can return to normal activities immediately.",
     descriptionImage: '/assets/image/services section/Flexible Cystoscopy/flexible cystoscopy clinical mechanism.webp',
@@ -1364,14 +1362,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
   'Ultrasound': {
     title: 'Advanced Urological Ultrasound & Doppler',
     tagline: 'High-Definition Imaging for Precise Diagnosis & Vascular Health.',
-    description: "Our advanced ultrasound services go beyond basic imaging. We utilize high-resolution Doppler technology to assess vascular health, diagnose erectile dysfunction, and detect kidney stones with sub-millimeter precision. Non-invasive, radiation-free, and performed by specialist urologists.",
+    description: "",
     whatIsIt: {
       title: 'What is Urological Ultrasound?',
       description: "Urological ultrasound uses high-frequency sound waves to create real-time images of the kidneys, bladder, prostate, and reproductive organs. It is a non-invasive, radiation-free diagnostic tool that allows urologists to 'see' internal structures, detect stones, measure organ size, and evaluate blood flow using Doppler technology.",
       image: '/assets/image/services section/ultrasound/ultrasound-1.webp'
     },
     heroImage: '/assets/image/services section/ultrasound menu.webp',
-    descriptionImage: '/assets/image/services section/ultrasound/ultrasound-1.webp',
+    descriptionImage: '',
     video: null,
     testPanels: [
       {
@@ -1637,7 +1635,7 @@ export const DOCTORS: DoctorData[] = [
     expert: 'Penile Prosthesis | UroLift | Rezūm Specialist',
     hospital: 'Bangkok Hospital Pattaya',
     email: 'niti.menshealth@gmail.com',
-    website: 'https://www.menshealth-thailand.com',
+    website: 'https://www.mtrusturology.com',
     tagline: 'A Journey of Dedication, Expertise, and Compassion in Men\'s Health',
     bio: "Dr. Niti Navanimitkul is one of Thailand’s premier experts in urology and men’s health. He combines profound medical expertise with a patient-first, holistic approach.",
     bioContent: [

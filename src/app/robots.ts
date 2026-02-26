@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
                 disallow: ['/api/', '/_next/'],
             },
         ],
-        sitemap: 'https://www.menshealth-thailand.com/sitemap.xml',
+        sitemap: 'https://www.mtrusturology.com/sitemap.xml',
     };
 }

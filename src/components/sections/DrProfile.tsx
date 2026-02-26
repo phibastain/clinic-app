@@ -72,6 +72,14 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
     return (
         <section className="pt-8 pb-16 scroll-mt-24 text-left">
             <Container>
+                {/* Back Button */}
+                <button
+                    onClick={onBack}
+                    className="group flex items-center space-x-2 mb-8 px-4 py-2 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-full text-slate-600 dark:text-slate-300 hover:text-amber-600 hover:border-amber-500/30 transition-all shadow-sm active:scale-95"
+                >
+                    <ArrowLeft size={18} className="transition-transform group-hover:-translate-x-1" />
+                    <span className="text-sm font-bold uppercase tracking-widest">Back to Home</span>
+                </button>
 
                 {/* Hero Section */}
                 <div className="flex flex-col lg:flex-row gap-10 mb-12">
@@ -79,12 +87,14 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                     <div className="lg:w-1/4">
                         <div className="relative aspect-[3/4] overflow-hidden rounded-[2rem] border-2 border-white/50 dark:border-white/10 shadow-2xl">
                             <img src={doctor.image} alt={doctor.name} className="w-full h-full object-cover" />
-                            <div className="absolute -bottom-2 -right-2 w-14 h-14 bg-amber-500 rounded-full flex items-center justify-center text-white shadow-lg z-10 border-4 border-white dark:border-slate-900">
-                                <div className="text-center leading-none">
-                                    <span className="block text-base font-black">15+</span>
-                                    <span className="block text-[4px] uppercase font-bold tracking-widest">Years</span>
+                            {doctor.slug !== 'dr.phanpon' && (
+                                <div className="absolute bottom-4 right-4 w-14 h-14 bg-amber-500 rounded-full flex items-center justify-center text-white shadow-lg z-10 border-4 border-white dark:border-slate-900">
+                                    <div className="text-center leading-none">
+                                        <span className="block text-base font-black">15+</span>
+                                        <span className="block text-[4px] uppercase font-bold tracking-widest">Years</span>
+                                    </div>
                                 </div>
-                            </div>
+                            )}
                         </div>
                     </div>
 
@@ -302,7 +312,7 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
 
 
                 {/* Activity Photos Slider */}
-                {photos.length > 0 && (
+                {photos.length > 0 && doctor.slug !== 'dr.niti' && (
                     <div className="mb-12">
                         <h3 className="text-lg font-black text-slate-900 dark:text-white uppercase tracking-wider mb-4 flex items-center gap-2">
                             <Star size={18} className="text-amber-500" />

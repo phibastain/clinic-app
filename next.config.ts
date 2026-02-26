@@ -36,12 +36,12 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline'", // Evaluation of 'unsafe-eval' depends on HMR needs, usually safe to remove in prod
-      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      "script-src 'self' 'unsafe-inline' https://embed.tawk.to", // Added Tawk.to script domain
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://embed.tawk.to",
       "font-src 'self' https://fonts.gstatic.com",
-      "img-src 'self' data: blob: https://flagcdn.com https://images.unsplash.com https://cdn-icons-png.flaticon.com https://img.youtube.com",
-      "connect-src 'self'", // Removed direct web3forms (now proxied via internal /api/contact)
-      "frame-src 'self' https://www.google.com https://www.youtube.com",
+      "img-src 'self' data: blob: https://flagcdn.com https://images.unsplash.com https://cdn-icons-png.flaticon.com https://img.youtube.com https://embed.tawk.to https://*.tawk.to",
+      "connect-src 'self' https://embed.tawk.to wss://*.tawk.to https://*.tawk.to", // Added Tawk.to for WebSockets and API calls
+      "frame-src 'self' https://www.google.com https://www.youtube.com https://embed.tawk.to",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self'", // Form only submits to internal API now

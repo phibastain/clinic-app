@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { BLOG_POSTS } from '@/data/mockData';
 import { blogTitleToSlug } from '@/utils/blogUtils';
 
-const BASE_URL = 'https://www.menshealth-thailand.com';
+const BASE_URL = 'https://www.mtrusturology.com';
 
 export async function generateStaticParams() {
     return BLOG_POSTS.map((post) => ({

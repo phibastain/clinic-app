@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { EVENTS_DATA } from '@/data/mockData';
 
-const BASE_URL = 'https://www.menshealth-thailand.com';
+const BASE_URL = 'https://www.mtrusturology.com';
 
 export async function generateStaticParams() {
     return EVENTS_DATA.map((event) => ({

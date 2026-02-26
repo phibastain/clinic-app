@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { SERVICE_DETAILS_DATA } from '@/data/mockData';
 import { slugToServiceName, SERVICE_SLUGS } from '@/utils/serviceUtils';
 
-const BASE_URL = 'https://www.menshealth-thailand.com';
+const BASE_URL = 'https://www.mtrusturology.com';
 
 export async function generateStaticParams() {
     return SERVICE_SLUGS.map((slug) => ({ slug }));

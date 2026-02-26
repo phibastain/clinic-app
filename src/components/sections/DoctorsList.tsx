@@ -33,9 +33,9 @@ const DoctorsList = ({ onSelectDoctor }: DoctorsListProps) => (
                                     </div>
                                 )}
                             </div>
-                            <p className="text-[9px] font-black text-amber-600 uppercase tracking-widest mb-1 text-center">{doc.expert}</p>
-                            <h3 className="text-lg font-black text-slate-900 dark:text-white uppercase leading-tight text-center">{doc.name}</h3>
-                            <p className="text-slate-500 text-xs italic text-center">{doc.role}</p>
+                            <p className="text-[8px] md:text-[9px] font-black text-amber-600 uppercase tracking-widest mb-1 text-center">{doc.expert}</p>
+                            <h3 className="text-base md:text-lg font-black text-slate-900 dark:text-white uppercase leading-tight text-center">{doc.name}</h3>
+                            <p className="text-slate-500 text-[10px] md:text-xs italic text-center">{doc.role}</p>
                         </div>
                     );
                 })}

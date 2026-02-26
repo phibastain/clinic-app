@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { Home, Info, Stethoscope, Users, FileText, Calendar, HelpCircle, ChevronDown, Mail, Clock, User, Menu, X } from 'lucide-react';
+import { Home, Info, Stethoscope, Users, FileText, Calendar, HelpCircle, ChevronDown, Mail, Clock, User, Menu, X, Headset } from 'lucide-react';
 import { SERVICE_CATEGORIES } from '@/data/mockData';
 import Container from '@/components/ui/Container';
 import GradientButton from '@/components/ui/GradientButton';
@@ -171,18 +171,23 @@ const Header = ({ activeSection, scrollToSection, onBackToHome, onServiceClick }
                 </div>
 
                 <Container className="relative z-10 flex justify-between items-center h-10 text-[9px] font-bold text-slate-400 uppercase tracking-widest">
-                    <div className="hidden lg:flex flex-1 items-center justify-start space-x-4">
+                    {/* Left: Tele Consultation (Desktop Only) */}
+                    <div className="hidden lg:flex flex-1 items-center justify-start">
                         <div className="flex items-center space-x-2 px-3 py-1 bg-white/5 rounded-full border border-white/5 hover:border-amber-500/30 transition-colors group cursor-pointer backdrop-blur-sm">
-                            <Mail size={12} className="text-amber-500 group-hover:text-amber-400 transition-colors" />
+                            <Headset size={12} className="text-amber-500 group-hover:text-amber-400 transition-colors" />
                             <span className="tracking-wide font-medium normal-case text-slate-300 group-hover:text-white transition-colors">
-                                mtrust.urologyclinic@gmail.com (Free Tele Consultation)
+                                Free Tele Consultation with our Specialists
                             </span>
                         </div>
-                        <div className="h-3 w-px bg-white/10"></div>
-                        <span className="text-slate-500 truncate">Center of Excellence in Urology &amp; Men&apos;s Health</span>
                     </div>
-                    <div className="lg:hidden flex-1 text-center truncate sm:block text-slate-500">Center of Excellence in Urology &amp; Men&apos;s Health</div>
-                    <div className="flex-none flex justify-end items-center space-x-3 sm:space-x-6 text-left">
+
+                    {/* Center: Center of Excellence */}
+                    <div className="flex-1 text-center truncate text-slate-500 px-4">
+                        Center of Excellence in Urology &amp; Men&apos;s Health
+                    </div>
+
+                    {/* Right: Controls */}
+                    <div className="flex-1 flex justify-end items-center space-x-3 sm:space-x-6 text-left">
                         <div className="hidden sm:flex items-center space-x-1.5 cursor-pointer hover:text-amber-500 transition-colors text-slate-400">
                             <User size={14} />
                         </div>

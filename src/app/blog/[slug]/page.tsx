@@ -44,7 +44,7 @@ export default async function BlogDetailPage({ params }: Props) {
 
     return (
         <>
-            <JsonLdScript data={getBlogPostJsonLd('https://www.menshealth-thailand.com', {
+            <JsonLdScript data={getBlogPostJsonLd('https://www.mtrusturology.com', {
                 title: post.title,
                 excerpt: post.excerpt,
                 image: post.image,

@@ -12,7 +12,7 @@ export function getHomepageJsonLd(baseUrl: string) {
         name: 'M-Trust Urology Clinic',
         alternateName: 'M-Trust Clinic',
         url: baseUrl,
-        logo: `${baseUrl}/assets/image/logo/logo.webp`,
+        logo: `${baseUrl}/assets/image/header/M-Trust Urology Clinic.png`,
         description: 'Center of Excellence in Urology & Men\'s Health. Specialized clinic providing comprehensive men\'s health services with modern innovation and personalized care under international standards.',
         medicalSpecialty: ['Urology', 'Men\'s Health'],
         address: {
@@ -189,7 +189,7 @@ export function getBlogPostJsonLd(baseUrl: string, post: {
             name: 'M-Trust Urology Clinic',
             logo: {
                 '@type': 'ImageObject',
-                url: `${baseUrl}/assets/image/logo/logo.webp`,
+                url: `${baseUrl}/assets/image/header/M-Trust Urology Clinic.png`,
             },
         },
         mainEntityOfPage: {

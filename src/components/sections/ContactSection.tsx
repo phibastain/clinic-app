@@ -92,7 +92,7 @@ const ContactSection = () => {
                                 </div>
                             </div>
 
-                            <div className="flex items-start space-x-4">
+                            {/* <div className="flex items-start space-x-4">
                                 <div className="w-10 h-10 rounded-full bg-amber-50 dark:bg-amber-900/20 flex items-center justify-center shrink-0 text-amber-600">
                                     <Phone size={20} />
                                 </div>
@@ -101,9 +101,9 @@ const ContactSection = () => {
                                     <p className="text-amber-600 text-sm mt-1 leading-relaxed font-mono text-lg font-bold">+66 2 123 4567</p>
                                     <p className="text-slate-400 text-[10px]">Available 24/7 for urgent care</p>
                                 </div>
-                            </div>
+                            </div> */}
 
-                            <div className="flex items-start space-x-4">
+                            {/* <div className="flex items-start space-x-4">
                                 <div className="w-10 h-10 rounded-full bg-green-50 dark:bg-green-900/20 flex items-center justify-center shrink-0 text-green-600">
                                     <MessageCircle size={20} />
                                 </div>
@@ -111,7 +111,7 @@ const ContactSection = () => {
                                     <h4 className="font-bold text-slate-900 dark:text-white text-sm uppercase tracking-wide">Line Official</h4>
                                     <p className="text-slate-500 text-sm mt-1 leading-relaxed">@mtrustclinic</p>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
 
                         <div className="w-full aspect-[4/3] rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg relative bg-slate-100 dark:bg-slate-900">
