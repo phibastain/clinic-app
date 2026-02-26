@@ -35,7 +35,7 @@ const HeroSection = () => {
             <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 md:px-8 mt-16 md:mt-24 lg:mt-0 flex flex-col items-center justify-center lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center transition-all duration-500">
 
                 {/* 0. Top Hero Logo - Positioned at top of section */}
-                <div className="absolute top-[-80px] md:top-[-100px] lg:top-[-120px] left-1/2 -translate-x-1/2 w-full max-w-[280px] md:max-w-[400px] lg:max-w-[500px] z-50 px-4 transition-all duration-500 pointer-events-auto">
+                <div className="absolute top-[-50px] md:top-[-100px] lg:top-[-120px] left-1/2 -translate-x-1/2 w-full max-w-[280px] md:max-w-[400px] lg:max-w-[500px] z-50 px-4 transition-all duration-500 pointer-events-auto">
                     <Image
                         src="/assets/image/hero section/image font hero.webp"
                         alt="M-Trust Urology Clinic Logo"
@@ -84,7 +84,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* 3. Text Content - Right Side on Desktop */}
-                <div className="relative w-full text-center lg:text-right z-30 flex flex-col items-center lg:items-end pointer-events-auto order-1 mb-8 lg:mb-0 lg:pl-8 lg:-translate-x-[80px] lg:translate-y-[120px] translate-y-[30px]">
+                <div className="relative w-full text-center lg:text-right z-30 flex flex-col items-center lg:items-end pointer-events-auto order-1 mb-8 lg:mb-0 lg:pl-8 lg:-translate-x-[80px] lg:translate-y-[120px] translate-y-[50px]">
                     {HERO_SLIDES.map((slide, index) => (
                         <div
                             key={slide.id}
