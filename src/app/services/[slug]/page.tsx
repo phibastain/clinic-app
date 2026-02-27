@@ -21,11 +21,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     return {
         title: `${service.title} | M-Trust Urology Clinic`,
-        description: service.tagline,
+        description: `${service.tagline} M-Trust Urology Clinic offers expert urological care and specialize in ${service.title.replace('\n', ' ')} in Thailand.`,
         openGraph: {
             title: service.title,
             description: service.tagline,
             images: [{ url: service.heroImage }],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: service.title,
+            description: service.tagline,
+            images: [service.heroImage],
         },
         alternates: {
             canonical: `/services/${slug}`,

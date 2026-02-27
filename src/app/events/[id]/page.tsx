@@ -26,6 +26,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             description: event.description,
             images: [{ url: event.image }],
         },
+        twitter: {
+            card: 'summary_large_image',
+            title: event.title,
+            description: event.description,
+            images: [event.image],
+        },
         alternates: {
             canonical: `/events/${id}`,
         },

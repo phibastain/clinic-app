@@ -32,6 +32,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             description: doctor.bio.substring(0, 160),
             images: [{ url: doctor.image }],
         },
+        twitter: {
+            card: 'summary_large_image',
+            title: doctor.name,
+            description: doctor.bio.substring(0, 160),
+            images: [doctor.image],
+        },
+        alternates: {
+            canonical: `/urologist/${slug}`,
+        },
     };
 }
 
