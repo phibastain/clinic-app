@@ -28,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Doctor pages
     const doctorPages: MetadataRoute.Sitemap = DOCTORS
-        .filter((doctor) => doctor.slug)
+        .filter((doctor) => doctor.slug && doctor.slug !== 'dr.none')
         .map((doctor) => ({
             url: `${BASE_URL}/urologist/${doctor.slug}`,
             lastModified: now,

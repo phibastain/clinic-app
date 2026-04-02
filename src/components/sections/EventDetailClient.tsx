@@ -1,22 +1,24 @@
 'use client';
 
-import React from 'react';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import {
-    Calendar, Clock, MapPin, Share2, Facebook, Twitter,
-    MessageCircle, ChevronRight, Tag, Mail, Phone,
-    ArrowLeft, Video, Briefcase, User
-} from 'lucide-react';
+import { Calendar, Facebook, Twitter, MessageCircle, ArrowLeft } from 'lucide-react';
+import { useLanguage } from '@/components/providers/LanguageProvider';
+import { IEvent } from '@/types';
+import { useTranslation } from '@/hooks/useTranslation';
 import Container from '@/components/ui/Container';
 import GradientButton from '@/components/ui/GradientButton';
+import { sanitizeHtmlContent } from '@/utils/sanitize';
 
 interface EventDetailClientProps {
-    event: any;
-    relatedEvents: any[];
+    event: IEvent;
+    relatedEvents: IEvent[];
 }
 
 export default function EventDetailClient({ event, relatedEvents }: EventDetailClientProps) {
     const router = useRouter();
+    const { lang } = useLanguage();
+    const { t } = useTranslation();
 
     const getCategoryColor = (category: string) => {
         switch (category.toUpperCase()) {
@@ -46,50 +48,52 @@ export default function EventDetailClient({ event, relatedEvents }: EventDetailC
     return (
         <div className="min-h-screen relative overflow-x-hidden text-left bg-slate-900 selection:bg-amber-500 selection:text-white font-sans">
             {/* Hero Section */}
-            <div className="relative pb-20">
-                <div className="relative h-[500px] overflow-hidden rounded-b-3xl">
+            <div className="relative pb-8">
+                <div className="relative h-[380px] overflow-hidden rounded-b-3xl">
                     <div className="absolute inset-0 bg-cover bg-center transform scale-105" style={{ backgroundImage: `url(${event.image})` }} />
-                    <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/60 to-transparent" />
-                    <div className="absolute top-8 right-8 bg-linear-to-br from-white/20 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 text-center shadow-2xl">
-                        <div className="text-5xl font-bold text-white mb-1">{event.day}</div>
-                        <div className="text-sm font-semibold text-cyan-300 tracking-wider uppercase">{event.month}</div>
-                        <div className="text-xs text-slate-300 mt-1">{event.year}</div>
-                    </div>
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/70 to-slate-950/20" />
 
-                    <Container className="relative h-full flex items-end pb-12">
-                        <div className="max-w-3xl">
-                            <span className={`inline-block px-4 py-2 rounded-full text-xs font-semibold bg-linear-to-r ${getCategoryColor(event.category)} text-white mb-4`}>
-                                {event.category}
-                            </span>
-                            <h1 className="text-5xl md:text-6xl font-black text-white mb-4 leading-tight uppercase tracking-tight">{event.title}</h1>
-                            <p className="text-xl text-cyan-200 mb-6 font-medium">{event.subtitle}</p>
-                            <div className="flex flex-wrap items-center gap-6 text-slate-300">
-                                <div className="flex items-center space-x-2">
-                                    <MapPin size={20} className="text-cyan-400" />
-                                    <span className="font-medium text-sm">{event.location}</span>
-                                </div>
-                                <div className="flex items-center space-x-2">
-                                    <Clock size={20} className="text-cyan-400" />
-                                    <span className="font-medium text-sm">{event.time}</span>
-                                </div>
-                            </div>
+                    <Container className="relative h-full flex items-center">
+                        <div className="max-w-3xl pt-8">
+                            <button 
+                                onClick={() => router.push('/')} 
+                                className="group flex items-center space-x-2 text-white/90 hover:text-white transition-all text-sm font-bold bg-black/30 hover:bg-black/50 px-5 py-2.5 rounded-full backdrop-blur-md border border-white/20 shadow-lg hover:shadow-cyan-500/20 mb-8 w-fit"
+                            >
+                                <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
+                                <span>{lang === 'TH' ? 'กลับสู่หน้าหลัก' : 'Back to Home'}</span>
+                            </button>
+                            <h1 className="text-4xl md:text-5xl font-black text-white mb-4 leading-[1.15] uppercase tracking-tight drop-shadow-lg">
+                                {lang === 'TH' ? (event.titleTH || t(event.title)) : event.title}
+                            </h1>
+                            <p className="text-base md:text-lg text-cyan-100/90 font-medium leading-relaxed max-w-2xl drop-shadow-md">
+                                {lang === 'TH' ? (event.subtitleTH || t(event.subtitle || '')) : event.subtitle}
+                            </p>
                         </div>
                     </Container>
                 </div>
             </div>
 
             {/* Main Content */}
-            <div className="py-12">
+            <div className="pt-4 pb-12">
                 <Container>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         <div className="lg:col-span-2 space-y-8">
                             <div className="bg-linear-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-2xl">
-                                <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">About This Event</h2>
-                                <p className="text-slate-100 leading-relaxed text-lg font-medium whitespace-pre-line">{event.description}</p>
+                                <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">{t('About This Event')}</h2>
+                                {event.content || (lang === 'TH' && event.contentTH) ? (
+                                    <div 
+                                        className="prose prose-lg prose-invert max-w-none text-slate-100 font-medium" 
+                                        dangerouslySetInnerHTML={{ __html: sanitizeHtmlContent(lang === 'TH' ? (event.contentTH || t(`BLOG_POST_${event.id}_CONTENT`) || '') : (event.content || event.contentTH || '')) }} 
+                                    />
+                                ) : (
+                                    <p className="text-slate-100 leading-relaxed text-lg font-medium whitespace-pre-line">
+                                        {lang === 'TH' ? (event.descriptionTH || t(event.description || '')) : event.description}
+                                    </p>
+                                )}
                             </div>
 
                             <div className="bg-linear-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-3xl p-6 border border-white/10">
-                                <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-wider">Share This Event</h3>
+                                <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-wider">{t('Share This Event')}</h3>
                                 <div className="flex flex-wrap gap-4">
                                     <button onClick={() => shareEvent('facebook')} className="flex items-center space-x-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl text-white transition-all font-bold text-sm shadow-lg">
                                         <Facebook size={20} /><span>Facebook</span>
@@ -104,35 +108,43 @@ export default function EventDetailClient({ event, relatedEvents }: EventDetailC
                             </div>
                         </div>
 
-                        <div className="lg:col-span-1">
-                            <div className="sticky top-24 bg-linear-to-br from-cyan-500/10 to-purple-500/10 backdrop-blur-xl rounded-3xl p-6 border border-cyan-400/20 space-y-6 shadow-2xl">
-                                <h3 className="text-2xl font-black text-white uppercase tracking-tight">Event Details</h3>
-                                <div className="space-y-4">
-                                    <div className="flex items-start space-x-3">
-                                        <Calendar size={20} className="text-cyan-400 mt-1" />
-                                        <div>
-                                            <p className="text-xs text-slate-400 uppercase tracking-widest font-black mb-1">Date</p>
-                                            <p className="text-white font-bold">{event.day} {event.month} {event.year}</p>
+                        <div className="lg:col-span-1 space-y-8">
+                            <div className="sticky top-24 space-y-8">
+
+                                {relatedEvents.length > 0 && (
+                                    <div className="bg-linear-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-3xl p-6 border border-white/10 shadow-2xl">
+                                        <h3 className="text-xl font-black text-white mb-6 flex items-center">
+                                            <span className="w-1 h-6 bg-cyan-400 rounded-full mr-3 shadow-lg shadow-cyan-400/50"></span>
+                                            {t('More Expertise')}
+                                        </h3>
+                                        <div className="space-y-4 max-h-[500px] overflow-y-auto pr-2">
+                                            {relatedEvents.map((relatedEvent) => (
+                                                <button
+                                                    key={relatedEvent.id}
+                                                    onClick={() => router.push(`/events/${relatedEvent.id}`)}
+                                                    className="group w-full text-left block p-3 rounded-xl hover:bg-white/5 transition-all"
+                                                >
+                                                    <div className="flex space-x-3">
+                                                        <div className="relative w-16 h-16 rounded-lg overflow-hidden shrink-0">
+                                                            <Image src={relatedEvent.image} alt={relatedEvent.title} fill className="object-cover group-hover:scale-110 transition-transform duration-300" sizes="64px" />
+                                                        </div>
+                                                        <div className="flex-1 min-w-0">
+                                                            <span className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-bold bg-linear-to-r ${getCategoryColor(relatedEvent.category)} text-white mb-1`}>
+                                                                {relatedEvent.category}
+                                                            </span>
+                                                            <h4 className="text-sm font-bold text-white line-clamp-2 group-hover:text-cyan-400 transition-colors">
+                                                                {lang === 'TH' ? (relatedEvent.titleTH || t(relatedEvent.title)) : relatedEvent.title}
+                                                            </h4>
+                                                            <span className="text-xs text-slate-400 flex items-center mt-1">
+                                                                <Calendar size={10} className="mr-1" />{relatedEvent.day} {relatedEvent.month}
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                            ))}
                                         </div>
                                     </div>
-                                    <div className="flex items-start space-x-3">
-                                        <Clock size={20} className="text-cyan-400 mt-1" />
-                                        <div>
-                                            <p className="text-xs text-slate-400 uppercase tracking-widest font-black mb-1">Time</p>
-                                            <p className="text-white font-bold">{event.time}</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-start space-x-3">
-                                        <MapPin size={20} className="text-cyan-400 mt-1" />
-                                        <div>
-                                            <p className="text-xs text-slate-400 uppercase tracking-widest font-black mb-1">Location</p>
-                                            <p className="text-white font-bold">{event.location}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="pt-6 border-t border-white/10">
-                                    <GradientButton onClick={() => router.push('/#contact')} className="w-full justify-center py-4">Register Now</GradientButton>
-                                </div>
+                                )}
                             </div>
                         </div>
                     </div>

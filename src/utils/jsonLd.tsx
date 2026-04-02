@@ -1,4 +1,5 @@
 import { FAQ_DATA } from '@/data/mockData';
+import { blogTitleToSlug } from '@/utils/blogUtils';
 
 // ==============================
 // Homepage JSON-LD
@@ -17,7 +18,7 @@ export function getHomepageJsonLd(baseUrl: string) {
         medicalSpecialty: ['Urology', 'Men\'s Health'],
         address: {
             '@type': 'PostalAddress',
-            streetAddress: 'Pattaya City, Bang Lamung District',
+            streetAddress: '392/65 moo.9 Sukhumvit Rd, Pattaya City, Amphoe Bang Lamung',
             addressLocality: 'Chon Buri',
             postalCode: '20150',
             addressCountry: 'TH',
@@ -27,8 +28,8 @@ export function getHomepageJsonLd(baseUrl: string) {
             latitude: 12.9262826,
             longitude: 100.8986137,
         },
-        telephone: '+66-2-123-4567',
-        email: 'mtrust.urologyclinic@gmail.com',
+        telephone: '+66-93-696-4519',
+        email: 'niti.menshealth@gmail.com',
         openingHoursSpecification: {
             '@type': 'OpeningHoursSpecification',
             dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -59,11 +60,6 @@ export function getHomepageJsonLd(baseUrl: string) {
         '@type': 'WebSite',
         name: 'M-Trust Urology Clinic',
         url: baseUrl,
-        potentialAction: {
-            '@type': 'SearchAction',
-            target: `${baseUrl}/search?q={search_term_string}`,
-            'query-input': 'required name=search_term_string',
-        },
     };
 
     const faqPage = {
@@ -148,10 +144,7 @@ export function getServiceJsonLd(baseUrl: string, service: {
 // Blog Page JSON-LD
 // ==============================
 
-const blogTitleToSlug = (title: string): string => {
-    if (!title) return '';
-    return title.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '');
-};
+
 
 export function getBlogPostJsonLd(baseUrl: string, post: {
     title: string;
@@ -180,6 +173,7 @@ export function getBlogPostJsonLd(baseUrl: string, post: {
         description: post.excerpt,
         image: post.image.startsWith('/') ? `${baseUrl}${post.image}` : post.image,
         datePublished: post.date,
+        articleSection: post.category,
         author: {
             '@type': 'Organization',
             name: post.author || 'M-Trust Urology Clinic',
@@ -195,6 +189,10 @@ export function getBlogPostJsonLd(baseUrl: string, post: {
         mainEntityOfPage: {
             '@type': 'WebPage',
             '@id': `${baseUrl}/blog/${slug}`,
+        },
+        speakable: {
+            '@type': 'SpeakableSpecification',
+            cssSelector: ['h1', '.article-content p:first-of-type'],
         },
     };
 
@@ -253,6 +251,63 @@ export function getEventJsonLd(baseUrl: string, event: {
 
     return [breadcrumb, eventSchema];
 }
+
+// ==============================
+// Doctor Profile JSON-LD
+// ==============================
+
+export function getDoctorJsonLd(baseUrl: string, doctor: {
+    name: string;
+    slug: string;
+    role: string;
+    bio: string;
+    image: string;
+    hospital?: string;
+    email?: string;
+    specialties: string[];
+    qualifications: Array<{ year: string; title: string; place: string }>;
+}) {
+    const breadcrumb = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: baseUrl },
+            { '@type': 'ListItem', position: 2, name: 'Urologists', item: `${baseUrl}/urologist` },
+            { '@type': 'ListItem', position: 3, name: doctor.name, item: `${baseUrl}/urologist/${doctor.slug}` },
+        ],
+    };
+
+    const physician = {
+        '@context': 'https://schema.org',
+        '@type': 'Physician',
+        name: doctor.name,
+        description: doctor.bio,
+        image: doctor.image.startsWith('/') ? `${baseUrl}${doctor.image}` : doctor.image,
+        url: `${baseUrl}/urologist/${doctor.slug}`,
+        jobTitle: doctor.role,
+        medicalSpecialty: 'Urology',
+        ...(doctor.email && { email: `mailto:${doctor.email}` }),
+        knowsAbout: doctor.specialties,
+        alumniOf: doctor.qualifications.map(q => ({
+            '@type': 'EducationalOrganization',
+            name: q.place,
+        })),
+        worksFor: {
+            '@type': 'MedicalClinic',
+            name: 'M-Trust Urology Clinic',
+            url: baseUrl,
+        },
+        ...(doctor.hospital && {
+            hospitalAffiliation: {
+                '@type': 'Hospital',
+                name: doctor.hospital,
+            },
+        }),
+    };
+
+    return [breadcrumb, physician];
+}
+
 
 // ==============================
 // JSON-LD Script Component

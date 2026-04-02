@@ -1,10 +1,13 @@
 'use client';
 
-import { MapPin, Mail } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import Container from '@/components/ui/Container';
 import Logo from '@/components/ui/Logo';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const Footer = () => {
+    const { t } = useTranslation();
+
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
@@ -16,32 +19,34 @@ const Footer = () => {
                     <div className="space-y-6 text-left">
                         <Logo onClick={scrollToTop} />
                         <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-medium italic opacity-80 text-left">
-                            M-Trust Urology Clinic delivers specialized care focusing on men&apos;s health and precision surgery.
+                            {t("M-Trust Urology Clinic delivers specialized care focusing on men's health and precision surgery.")}
                         </p>
                     </div>
                     <div className="text-left">
-                        <h4 className="font-black text-slate-900 dark:text-white mb-6 uppercase text-[10px] tracking-[0.4em] border-l-4 border-amber-600 pl-4 leading-none text-left">Services</h4>
+                        <h4 className="font-black text-slate-900 dark:text-white mb-6 uppercase text-[10px] tracking-[0.4em] border-l-4 border-amber-600 pl-4 leading-none text-left">{t("Services")}</h4>
                         <ul className="space-y-3 text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest text-left">
-                            <li>Men&apos;s Performance</li>
-                            <li>Urology</li>
-                            <li>Aesthetic Surgery</li>
-                            <li>Diagnostics Center</li>
+                            <li>{t("Men's Performance")}</li>
+                            <li>{t("Urology")}</li>
+                            <li>{t("Aesthetic Surgery")}</li>
+                            <li>{t("Diagnostics Center")}</li>
                         </ul>
                     </div>
                     <div className="text-left">
-                        <h4 className="font-black text-slate-900 dark:text-white mb-6 uppercase text-[10px] tracking-[0.4em] border-l-4 border-amber-600 pl-4 leading-none text-left">Info</h4>
+                        <h4 className="font-black text-slate-900 dark:text-white mb-6 uppercase text-[10px] tracking-[0.4em] border-l-4 border-amber-600 pl-4 leading-none text-left">{t("Info")}</h4>
                         <ul className="space-y-3 text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest text-left">
-                            <li>Appointments</li>
-                            <li>Our Doctors</li>
-                            <li>Packages</li>
-                            <li>Privacy Policy</li>
+                            <li>{t("Appointments")}</li>
+                            <li>{t("Our Doctors")}</li>
+                            <li>{t("Packages")}</li>
+                            <li>{t("Privacy Policy")}</li>
                         </ul>
                     </div>
                     <div className="text-left">
-                        <h4 className="font-black text-slate-900 dark:text-white mb-6 uppercase text-[10px] tracking-[0.4em] border-l-4 border-amber-600 pl-4 leading-none text-left">Contact</h4>
+                        <h4 className="font-black text-slate-900 dark:text-white mb-6 uppercase text-[10px] tracking-[0.4em] border-l-4 border-amber-600 pl-4 leading-none text-left">{t("Contact")}</h4>
                         <div className="space-y-4 text-xs text-slate-600 dark:text-slate-400 font-semibold tracking-tight text-left">
-                            <div className="flex items-center space-x-3 text-left"><MapPin size={14} className="text-amber-600" /> <span>Medical Center, BKK</span></div>
-                            <div className="flex items-center space-x-3 text-left"><Mail size={14} className="text-amber-600" /> <span>info@m-trustclinic.com</span></div>
+                            <div className="flex items-start space-x-3 text-left">
+                                <MapPin size={14} className="text-amber-600 shrink-0 mt-0.5" /> 
+                                <span className="leading-relaxed">392/65 moo.9 Sukhumvit Rd, Pattaya City, Amphoe Bang Lamung, Chon Buri 20150</span>
+                            </div>
                         </div>
                     </div>
                 </div>

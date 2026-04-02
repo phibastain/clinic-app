@@ -152,15 +152,21 @@ export interface HandwrittenTestimonial {
 export interface DoctorData {
   id: number;
   name: string;
+  nameTH?: string;
   role: string;
+  roleTH?: string;
   image: string;
   expert: string;
+  expertTH?: string;
   hospital?: string;
   email?: string;
   website?: string;
   tagline?: string;
+  taglineTH?: string;
   bio: string;
+  bioTH?: string;
   specialties: string[];
+  specialtiesTH?: string[];
   qualifications: Qualification[];
   awards: AwardData[];
   videos?: DoctorVideo[];
@@ -171,10 +177,13 @@ export interface DoctorData {
   bioContent?: {
     type: 'header' | 'paragraph' | 'image' | 'list' | 'slider';
     content?: string;
+    contentTH?: string;
     items?: string[];
+    itemsTH?: string[];
     image?: string;
     images?: string[];
     caption?: string;
+    captionTH?: string;
   }[];
   specializedFocus?: string;
   surgicalExcellence?: string;
@@ -193,17 +202,24 @@ export interface BlogPost {
 }
 
 export interface EventData {
-  id: number;
+  id: string | number;
   day: string;
   month: string;
   year: string;
   title: string;
+  titleTH?: string;
   subtitle: string;
+  subtitleTH?: string;
   location: string;
+  locationTH?: string;
   time: string;
   description: string;
+  descriptionTH?: string;
+  content?: string;
+  contentTH?: string;
   image: string;
   category: string;
+  slug?: string;
 }
 
 export interface LanguageOption {
@@ -277,9 +293,9 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     video: { id: 'JmU9Wz5UARA', title: 'Mechanism of Action: Li-ESWT' },
     stats: [
       { label: "Clinical Success", value: "85%+", icon: Trophy },
-      { label: "Treatment Time", value: "20-30 Mins", icon: Timer },
+      { label: "Treatment Time", value: "30-40 Mins", icon: Timer },
       { label: "Downtime", value: "0 Days", icon: Activity },
-      { label: "Result Duration", value: "2 Years", icon: Calendar }
+      { label: "Result Duration", value: "1-2 Years", icon: Calendar }
     ],
     benefits: [
       { title: 'Curative Approach', desc: 'Treats the root cause (blood flow), not just symptoms.', icon: Activity },
@@ -320,12 +336,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     procedure: [
       { step: '01', title: 'Mapping', desc: 'Doctor identifies target areas along the penile shaft and crura.' },
       { step: '02', title: 'Application', desc: 'Gel is applied. The focus head delivers 10,000 shocks precisely.' },
-      { step: '03', title: 'Complete', desc: 'Session ends in 20-30 mins. Resume normal activity immediately.' },
-      { step: '04', title: 'Repeat', desc: 'Standard protocol: 3 sessions (1 time per week).' }
+      { step: '03', title: 'Complete', desc: 'Session ends in 30-40 mins. Resume normal activity immediately.' },
+      { step: '04', title: 'Repeat', desc: 'Standard protocol: 3-6 sessions (1 time per week).' }
     ],
     faq: [
       { q: "How is Focus Shockwave better than Radial?", a: "Focus waves travel deeper and deliver energy exactly to the cavernous tissue to grow blood vessels. Radial waves only hit the skin surface and are meant for muscle pain, not ED cure." },
-      { q: "When will I see results?", a: "Many patients report improvement after the 3rd session (Week 2-3), with full benefits appearing 1-3 months after completing the course." },
+      { q: "When will I see results?", a: "Most patients begin to feel improvement starting from the very first session, with progressive results as they continue the treatment." },
       { q: "Is it painful?", a: "Not at all. It feels like a light tapping or vibration. No anesthesia is needed." }
     ],
     hidePricing: true
@@ -465,13 +481,13 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
   },
   'Penile Implant': {
     title: 'Penile Prosthesis (Implant) Surgery',
-    tagline: 'The Definitive Solution for Severe ED: On-Demand, Reliable Erections.',
+    tagline: 'The Definitive Surgical Solution for Severe Erectile Dysfunction Reliable, On-Demand Erections.',
     whatIsIt: {
       title: 'What is a Penile Implant?',
-      description: "A Penile Implant (or Penile Prosthesis) is a medical device surgically implanted into the penis to allow men with severe Erectile Dysfunction (ED) to achieve a rigid erection suitable for sexual intercourse. It is considered the gold standard treatment for men who do not respond to oral medications or injection therapies, offering a permanent, reliable solution that restores spontaneity and sexual confidence.",
+      description: "A Penile Implant (or Penile Prosthesis) is a medical device surgically placed inside the penis to help men with severe Erectile Dysfunction (ED) achieve a firm erection for sexual intercourse. Widely regarded as the gold standard treatment when oral medications, injections, or other therapies are no longer effective, a penile implant offers a permanent and dependable solution that restores both spontaneity and sexual confidence.",
       image: '/assets/image/services section/penile implant/What is a Penile Implant.webp'
     },
-    description: "The Penile Implant works by replacing the damaged erectile tissue with cylinders that simulate a natural erection. There are two main types, each with a distinct mechanism:\n\n**The Clinical Mechanism of Action:**\n\n1. **Inflatable Penile Implant (3-Piece):** This mimics a natural erection most closely. It consists of fluid-filled cylinders in the penis, a pump in the scrotum, and a reservoir in the abdomen. Squeezing the pump transfers saline fluid into the cylinders, creating a rigid erection. Pressing a release valve drains the fluid back, returning the penis to a flaccid state.\n\n2. **Malleable (Semi-Rigid) Implant:** This device consists of two bendable rods implanted in the penile shaft. The penis remains semi-rigid at all times but can be manually positioned downwards for concealment or upwards for sexual activity. It is simpler to use and has fewer mechanical parts.\n\n**Why It Works:** Unlike pills that rely on blood flow, implants provide **mechanical rigidity**, guaranteeing an erection 100% of the time, regardless of vascular or nerve health.",
+    description: "A penile implant works by replacing damaged erectile tissue with medical-grade cylinders that replicate the natural erection process. There are two main types, each designed for different patient needs:\n\n**The Clinical Mechanism of Action:**\n\n1. **Inflatable Penile Implant (3-Piece):** This is the most popular option and closely mimics a natural erection. It consists of fluid-filled cylinders in the penis, a small pump in the scrotum, and a reservoir in the lower abdomen. Squeezing the pump transfers saline into the cylinders, producing a firm erection. A release valve allows the fluid to drain back, returning the penis to a soft, natural state.\n\n2. **Malleable (Semi-Rigid) Implant:** This device uses two flexible rods placed inside the penile shaft. The penis stays in a semi-rigid state and can be manually positioned — angled downward for daily comfort or upward for sexual activity. It's simpler and involves fewer mechanical components.\n\n**Why It Works:** Unlike medications that depend on blood flow, penile implants provide **mechanical support**, enabling a reliable erection virtually every time — regardless of underlying vascular or nerve conditions.",
     heroImage: '/assets/image/services section/penile implant menu.webp',
     descriptionImage: '/assets/image/services section/penile implant/penile implant Clinical Mechanism.webp',
     video: { id: 'hfEGF_yT5sM', title: 'Penile Implant: How It Works' },
@@ -482,10 +498,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: "Longevity", value: "15-20 Yrs", icon: Calendar }
     ],
     benefits: [
-      { title: 'Permanent Solution', desc: 'One-time surgery provides lifelong solution to ED.', icon: Infinity as any },
-      { title: 'Natural Feel', desc: 'Modern 3-piece implants simulate natural rigidity and girth.', icon: CheckCircle2 },
-      { title: 'On-Demand', desc: 'Achieve erection anytime, anywhere with discreet pump activation.', icon: Zap },
-      { title: 'High Satisfaction', desc: '95%+ patient and partner satisfaction rates.', icon: Trophy }
+      { title: 'Permanent Solution', desc: 'A single procedure that provides a lasting solution to erectile dysfunction.', icon: Infinity as any },
+      { title: 'Natural Feel', desc: 'Modern 3-piece implants closely replicate natural firmness and appearance.', icon: CheckCircle2 },
+      { title: 'On-Demand', desc: 'Discreet pump activation allows erections whenever you need them.', icon: Zap },
+      { title: 'High Satisfaction', desc: 'Over 95% patient and partner satisfaction in clinical studies.', icon: Trophy }
     ],
     comparison: {
       title: "Types of Penile Implants",
@@ -499,14 +515,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       ]
     },
     candidates: [
-      "Men with severe ED who have failed all medical therapies.",
-      "Post-prostatectomy patients with irreversible nerve damage.",
-      "Those prioritizing reliability and on-demand performance.",
-      "Men seeking a permanent, one-time solution."
+      "Men with severe ED who have not responded to medications, injections, or shockwave therapy.",
+      "Patients with nerve damage after prostate surgery or other pelvic procedures.",
+      "Those who want a reliable, on-demand solution without daily medication.",
+      "Men looking for a long-term, one-time surgical solution to erectile dysfunction."
     ],
     safety: {
       title: "Safety & Complications",
-      content: "Modern implants have low complication rates (<5%). Risks include infection (1-3%), mechanical failure (rare with current devices), and erosion (very rare). Surgeons with high case volumes have the best outcomes.",
+      content: "Modern penile implants have complication rates below 5%. Potential risks include infection (1-3%), mechanical issues (uncommon with current-generation devices), and erosion (very rare). Choosing an experienced urological surgeon with a high case volume significantly improves outcomes and reduces risk.",
       icon: ShieldCheck
     },
     timeline: {
@@ -524,21 +540,21 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '04', title: 'Recovery', desc: 'Overnight stay. Activate device after 4-6 weeks of healing.' }
     ],
     faq: [
-      { q: "Will it look natural?", a: "Yes. When deflated, 3-piece implants are virtually undetectable. Partners often can't tell." },
-      { q: "Can I still orgasm and ejaculate?", a: "Absolutely. Implants restore rigidity only—sensation, orgasm, and ejaculation are unaffected." },
-      { q: "How long does it last?", a: "Modern implants typically last 15-20 years. Replacements are possible if needed." }
+      { q: "Will it look and feel natural?", a: "Yes. When deflated, a 3-piece inflatable implant is virtually undetectable — most partners cannot tell the difference from a natural erection." },
+      { q: "Will I still be able to orgasm and ejaculate normally?", a: "Yes. The implant only restores firmness. Sensation, orgasm, and ejaculation remain completely unaffected." },
+      { q: "How long does a penile implant last?", a: "Current-generation implants are designed to last 15 to 20 years. If needed, the device can be replaced with a straightforward revision surgery." }
     ]
   },
   'Dorsal Neurectomy': {
     title: 'Dorsal Neurectomy for Premature Ejaculation',
-    tagline: 'Surgical Precision to Extend Performance and Restore Control.',
+    tagline: 'A Permanent Surgical Solution for Premature Ejaculation Regain Control and Extend Intimacy Naturally.',
     whatIsIt: {
       title: 'What is Dorsal Neurectomy?',
-      description: "Dorsal Neurectomy (DN) is a specialized procedure widely recognized as the most effective permanent treatment for Primary Premature Ejaculation (PPE). It addresses the root cause of PE—penile hypersensitivity—by recalibrating the sensory nerves, allowing men to significantly extend their intravaginal ejaculatory latency time (IELT) and regain control over their sexual performance.",
+      description: "Dorsal Neurectomy (DN) is a specialized surgical procedure recognized as one of the most effective permanent treatments for Primary Premature Ejaculation (PPE). It works by addressing the root cause of PE  penile hypersensitivity  through selective recalibration of the sensory nerves. This allows men to significantly extend their intravaginal ejaculatory latency time (IELT) and regain natural control during sexual activity.",
       image: '/assets/image/services section/dorsal neurectomy/What is Dorsal Neurectomy.webp'
     },
     // mechanismImageAspectRatio: 'aspect-[9/16]',
-    description: "This procedure operates on a neurological level to modulate the ejaculatory reflex. It is not about reducing pleasure, but about regulating intensity.\n\n**The Clinical Mechanism of Action:**\n\n1. **Targeted Nerve Identification and Selective Desensitization**: The surgeon isolates the dorsal nerve bundle to precisely identify the specific branches causing hypersensitivity. Using precision instruments, a calculated percentage of these peripheral nerve fibers is then selectively divided, which effectively reduces the overwhelming sensory input responsible for triggering the rapid ejaculatory reflex.\n\n2. **Reflex Threshold Elevation:** By moderating the sensory signals, the biological 'trigger point' for ejaculation is raised. This means it takes more stimulation and time to reach the point of no return.\n\n3. **Preservation of Function:** Crucially, the main nerve trunks are left intact. This ensures that tactile sensation, erection quality, and the ability to feel pleasure and orgasm are fully preserved—only the *hypersensitivity* is eliminated.",
+    description: "This procedure works at a neurological level to modulate the ejaculatory reflex. The goal is not to reduce pleasure, but to regulate the intensity of sensation so that ejaculation can be better controlled.\n\n**The Clinical Mechanism of Action:**\n\n1. **Targeted Nerve Identification and Selective Desensitization**: The surgeon carefully isolates the dorsal nerve bundle to identify the specific branches responsible for hypersensitivity. Using precision microsurgical instruments, a calculated portion of these peripheral nerve fibers is selectively divided. This reduces the excessive sensory input that triggers the rapid ejaculatory reflex.\n\n2. **Reflex Threshold Elevation:** By moderating the sensory signals, the biological 'trigger point' for ejaculation is raised. This means more stimulation and time are needed to reach the point of no return — giving you greater control.\n\n3. **Preservation of Function:** Importantly, the main nerve trunks remain intact. This ensures that normal tactile sensation, erection quality, and the ability to experience pleasure and orgasm are fully preserved. Only the *excess sensitivity* is addressed.",
     heroImage: '/assets/image/services section/dorsal neurectomy/dorsal neurectomy hero.webp',
     descriptionImage: '/assets/image/services section/dorsal neurectomy/dosal neurectomy clinical mechanism.webp',
     video: null,
@@ -549,20 +565,20 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: "Effect", value: "Permanent", icon: Infinity as any }
     ],
     benefits: [
-      { title: 'Permanent Fix', desc: 'One-time procedure eliminates the need for lifelong medication.', icon: Infinity as any },
-      { title: 'Improves IELT', desc: 'Intravaginal Ejaculatory Latency Time increases 3-5x.', icon: Timer },
-      { title: 'Preserves Sensation', desc: 'Selective nerve cutting maintains pleasurable sensation.', icon: HeartPulse },
-      { title: 'High Satisfaction', desc: 'Over 80% of men report significant improvement.', icon: Trophy }
+      { title: 'Permanent Fix', desc: 'A single procedure — no need for lifelong medication or numbing sprays.', icon: Infinity as any },
+      { title: 'Improves IELT', desc: 'Intravaginal Ejaculatory Latency Time typically increases 3-5x.', icon: Timer },
+      { title: 'Preserves Sensation', desc: 'Only excess sensitivity is reduced — pleasurable sensation remains.', icon: HeartPulse },
+      { title: 'High Satisfaction', desc: 'Over 80% of patients report significant improvement in control.', icon: Trophy }
     ],
     candidates: [
-      "Men with lifelong (primary) premature ejaculation.",
-      "Those who have tried and failed behavioral/medication therapy.",
-      "Patients seeking a permanent solution.",
-      "Men with IELT (Intravaginal Ejaculatory Latency Time) under 1 minute."
+      "Men with lifelong (primary) premature ejaculation that has not responded to behavioral or medication therapy.",
+      "Those experiencing penile hypersensitivity that causes loss of ejaculatory control.",
+      "Men looking for a permanent surgical solution without ongoing medication.",
+      "Patients with IELT (Intravaginal Ejaculatory Latency Time) consistently under 1 minute."
     ],
     safety: {
       title: "Safety & Side Effects",
-      content: "When performed by experienced surgeons, complications are rare. Potential risks include temporary numbness (usually resolves), infection (<2%), and in rare cases, erectile function changes. Most men retain normal sensation and function.",
+      content: "When performed by an experienced urological surgeon, complications are uncommon. Potential risks include temporary numbness at the glans (which typically resolves within weeks), infection (less than 2%), and in rare cases, mild changes in erectile sensation. The vast majority of patients retain normal sensation and full erectile function.",
       icon: ShieldCheck
     },
     timeline: {
@@ -580,17 +596,17 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '04', title: 'Follow-Up', desc: 'Healing monitored. Sexual activity resumes after 3-4 weeks.' }
     ],
     faq: [
-      { q: "Will I lose sensation completely?", a: "No. Selective neurectomy targets only specific branches, preserving enough sensation for pleasure while reducing hypersensitivity." },
-      { q: "Is the effect really permanent?", a: "Yes. Once nerves are cut, they don't regenerate in the same way. Results are long-lasting." },
-      { q: "Can it affect my erections?", a: "Rarely. The dorsal nerves primarily control sensation, not erection. Experienced surgeons have very low rates of erectile issues." }
+      { q: "Will I lose sensation completely?", a: "No. The procedure selectively targets only the specific nerve branches causing hypersensitivity. Enough sensation is preserved for full sexual pleasure — only the excess is reduced." },
+      { q: "Is the result really permanent?", a: "Yes. Once the selected nerve fibers are divided, they do not regenerate in the same pattern. The results are long-lasting and do not require ongoing treatment." },
+      { q: "Can dorsal neurectomy affect my erections?", a: "This is very rare. The dorsal sensory nerves primarily control sensation, not erection. An experienced surgeon ensures the motor and erectile nerve pathways are fully preserved." }
     ]
   },
   'Testosterone Replacement Therapy': {
     title: 'Testosterone Replacement Therapy (TRT)',
-    tagline: 'Optimize Vitality: Medically Supervised Hormone Restoration.',
+    tagline: 'Restore Your Energy, Libido, and Confidence — Medically Supervised Testosterone Optimization for Men.',
     whatIsIt: {
       title: 'What is Testosterone Replacement Therapy (TRT)?',
-      description: "Testosterone Replacement Therapy (TRT) is a medically supervised treatment designed to restore testosterone levels in men suffering from hypogonadism (low testosterone). By replenishing this vital hormone to physiological levels, TRT reverses the symptoms of low T—such as fatigue, low libido, and muscle loss—helping men regain their vitality, mental clarity, and overall quality of life.",
+      description: "Testosterone Replacement Therapy (TRT) is a medically supervised treatment designed to restore testosterone levels in men with hypogonadism (clinically low testosterone). By bringing this essential hormone back to healthy physiological levels, TRT helps reverse symptoms like chronic fatigue, low libido, muscle loss, and mood changes — helping men regain their energy, mental clarity, and overall quality of life.",
       image: '/assets/image/services section/trt/what is testosterone replacement therapy.webp'
     },
     description: "TRT works by introducing bioidentical testosterone into the body to bypass the body's failing production mechanisms. The most common and effective method is via intramuscular injection.\n\n**The Clinical Mechanism of Action:**\n\n1. **Depot Formulation & Sustained Release:** Testosterone is typically administered as an esterified compound (e.g., Testosterone Cypionate or Enanthate) injected into the muscle. This creates a 'depot' or reservoir in the muscle tissue, from which testosterone is slowly hydrolyzed and released into the bloodstream over several days, ensuring stable hormone levels.\n\n2. **Receptor Binding & Activation:** Once in the bloodstream, free testosterone binds to Androgen Receptors (AR) located in various tissues throughout the body, including muscle cells, bone marrow, and the brain.\n\n3. **Genomic Action (Protein Synthesis):** The testosterone-receptor complex moves into the cell nucleus and binds to specific DNA sequences. This triggers the transcription of genes responsible for anabolic processes—stimulating protein synthesis for muscle growth, increasing red blood cell production (erythropoiesis) for better oxygenation, and enhancing neurotransmitter activity for improved mood and libido.\n\n4. **Systemic Optimization:** This cascade of biological events leads to increased lean muscle mass, reduced adipose tissue (fat), improved bone density, and a profound restoration of sexual function and energy.",
@@ -617,7 +633,7 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     ],
     safety: {
       title: "Safety & Monitoring",
-      content: "TRT is safe when properly monitored. Regular blood tests track testosterone, estradiol, hematocrit, and PSA. Risks include polycythemia (elevated red blood cells), acne, and potential cardiovascular considerations. Expert management minimizes risks.",
+      content: "TRT is safe when properly supervised by a specialist. Regular blood tests monitor testosterone, estradiol, hematocrit, and PSA levels. Possible side effects include polycythemia (elevated red blood cell count), acne, and potential cardiovascular considerations — all of which are manageable with proper medical oversight and dosage adjustment.",
       icon: ShieldCheck
     },
     timeline: {
@@ -635,17 +651,17 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '04', title: 'Monitoring', desc: 'Regular follow-ups every 3-6 months to optimize dosage and monitor safety.' }
     ],
     faq: [
-      { q: "Do I have to do TRT forever?", a: "TRT is typically lifelong. Stopping can return testosterone to low levels. However, some men use it cyclically under medical guidance." },
-      { q: "Will TRT cause prostate cancer?", a: "No. Current evidence shows TRT does not cause prostate cancer, but it's monitored via PSA testing as a precaution." },
-      { q: "What's the best delivery method?", a: "Injections (weekly/biweekly) are most reliable and affordable. Gels (daily) offer steady levels but cost more. Pellets (every 3-6 months) are convenient but invasive." }
+      { q: "Is TRT a lifelong treatment?", a: "For most men, TRT is an ongoing therapy. Stopping treatment typically causes testosterone levels to return to baseline. However, some patients may use it cyclically under careful medical supervision." },
+      { q: "Does TRT increase the risk of prostate cancer?", a: "Current medical evidence does not show that TRT causes prostate cancer. However, PSA levels are regularly monitored as a standard safety precaution." },
+      { q: "What is the best way to take testosterone?", a: "Injections (weekly or biweekly) are the most reliable and cost-effective option. Topical gels provide steady daily absorption but cost more. Pellets (implanted every 3-6 months) offer convenience but require a minor in-office procedure." }
     ]
   },
   'ReZum': {
     title: 'ReZŪM Water Vapor Therapy for BPH',
-    tagline: 'Minimally Invasive BPH Treatment Using the Power of Steam.',
+    tagline: 'Minimally Invasive BPH Treatment Relieve Enlarged Prostate Symptoms Without Surgery Using Steam Therapy.',
     whatIsIt: {
       title: 'What is ReZŪM Water Vapor Therapy?',
-      description: "ReZŪM Water Vapor Therapy is a minimally invasive procedure that uses the natural thermal energy of sterile water vapor (steam) to treat Benign Prostatic Hyperplasia (BPH). It targets and removes the obstructive prostate tissue that causes urinary symptoms, providing a safe and effective alternative to daily medications or more invasive surgeries.",
+      description: "ReZŪM Water Vapor Therapy is a minimally invasive, FDA-cleared procedure that uses the natural thermal energy of sterile water vapor (steam) to treat Benign Prostatic Hyperplasia (BPH). By targeting and shrinking the obstructive prostate tissue that causes urinary symptoms, ReZŪM provides lasting relief without the risks and long recovery associated with traditional prostate surgery.",
       image: '/assets/image/services section/rezum/What is ReZŪM Water Vapor Therapy.webp'
     },
     description: "ReZŪM treats the enlarged prostate tissue using a precise delivery of thermal energy. The process is quick, effective, and preserves surrounding healthy tissue.\n\n**The Clinical Mechanism of Action:**\n\n1. **Quick Steam Delivery:** Sterile water vapor is injected directly into the prostate for just 9 seconds per treatment.\n\n2. **Targeted Tissue Removal:** The steam releases heat that instantly destroys the excess prostate tissue blocking the urethra, while safely preserving sexual function.\n\n3. **Natural Healing:** Over the next few weeks, your body naturally absorbs and clears away the treated tissue.\n\n4. **Fast BPH Relief:** As the prostate shrinks, the urethra opens up, significantly improving urinary flow and relieving bothersome urinary symptoms.",
@@ -672,7 +688,7 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     ],
     safety: {
       title: "Safety & Side Effects",
-      content: "ReZŪM is very safe. Temporary side effects include dysuria (painful urination), blood in urine, or urgency for 1-2 weeks. These resolve quickly. No permanent sexual side effects.",
+      content: "ReZŪM has an excellent safety profile and is FDA-cleared. Temporary side effects may include dysuria (discomfort during urination), traces of blood in the urine, or increased urgency for 1–2 weeks after the procedure. These typically resolve on their own. Importantly, ReZŪM preserves both erectile and ejaculatory function in the vast majority of patients.",
       icon: ShieldCheck
     },
     timeline: {
@@ -690,14 +706,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '04', title: 'Discharge', desc: 'Procedure ends. Catheter may be placed temporarily. Home same day.' }
     ],
     faq: [
-      { q: "Is it painful?", a: "Not at all. Since the procedure is performed under general anesthesia or deep sedation, you will be asleep and feel no pain." },
-      { q: "Will it affect my sex life?", a: "No. ReZŪM preserves erectile and ejaculatory function in the vast majority of men." },
-      { q: "How long do results last?", a: "Clinical studies show durable benefits for at least 5 years." }
+      { q: "Is the ReZŪM procedure painful?", a: "No. The procedure is performed under general anesthesia or deep sedation, so you will be asleep throughout and feel no discomfort at all." },
+      { q: "Will ReZŪM affect my sexual function?", a: "ReZŪM preserves both erectile function and normal ejaculation in the vast majority of patients — a key advantage over traditional prostate surgery (TURP)." },
+      { q: "How long do the results of ReZŪM last?", a: "Clinical studies demonstrate sustained symptom relief for at least 5 years, with many patients experiencing benefits well beyond that timeframe." }
     ]
   },
   'UroLift': {
     title: 'UroLift® System for BPH',
-    tagline: 'Lift Away Obstruction. Restore Flow. Preserve Function.',
+    tagline: 'Treat Enlarged Prostate Without Cutting or Heating Immediate Relief with Zero Sexual Side Effects.',
     whatIsIt: {
       title: 'What is UroLift®?',
       description: "The UroLift® System is a minimally invasive treatment for Benign Prostatic Hyperplasia (BPH) that offers rapid symptom relief without cutting, heating, or removing prostate tissue. It uses tiny, permanent implants to lift and hold the enlarged prostate tissue so it no longer blocks the urethra, effectively 'opening the curtains' to restore normal urine flow.",
@@ -711,12 +727,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: "Symptom Relief", value: "95%+", icon: Trophy },
       { label: "Time", value: "10-15 Mins", icon: Timer },
       { label: "Recovery", value: "2-4 Days", icon: Activity },
-      { label: "Sexual Function", value: "100% Preserved", icon: HeartPulse }
+      { label: "Sexual Function", value: "Preserved", icon: HeartPulse }
     ],
     benefits: [
       { title: 'No Cutting/Heating', desc: 'Tissue is mechanically lifted, not destroyed. Minimally invasive.', icon: CheckCircle2 },
       { title: 'Immediate Relief', desc: 'Symptom improvement within days, not weeks.', icon: Timer },
-      { title: 'Zero Sexual Side Effects', desc: 'Proven to have NO impact on erectile or ejaculatory function.', icon: HeartPulse },
+      { title: 'Zero Sexual Side Effects', desc: 'Clinical trials show no impact on erectile or ejaculatory function.', icon: HeartPulse },
       { title: 'Reversible', desc: 'Implants can be removed or adjusted if needed.', icon: Loop as any }
     ],
     comparison: {
@@ -738,7 +754,7 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     ],
     safety: {
       title: "Safety Profile",
-      content: "UroLift has an excellent safety profile. Mild, temporary side effects include urgency, dysuria, or hematuria for a few days. NO reports of permanent erectile or ejaculatory dysfunction in clinical trials.",
+      content: "UroLift has an excellent safety profile. Mild, temporary side effects may include urgency, minor discomfort during urination, or traces of blood in the urine for a few days. In clinical trials, no cases of new-onset permanent erectile dysfunction or ejaculatory dysfunction were reported.",
       icon: ShieldCheck
     },
     timeline: {
@@ -756,9 +772,9 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '04', title: 'Discharge', desc: 'Procedure complete in 10-15 minutes. Home same day.' }
     ],
     faq: [
-      { q: "How many implants do I need?", a: "Typically 4-6 implants, depending on prostate size and anatomy." },
-      { q: "Can implants be felt?", a: "No. Patients cannot feel the implants once placed. They remain permanently in the prostate." },
-      { q: "What if my prostate grows more later?", a: "Additional implants can be added, or the procedure can be combined with other treatments." }
+      { q: "How many UroLift implants are needed?", a: "Typically 4-6 implants, depending on the size and anatomy of the prostate. Your urologist will determine the optimal number during assessment." },
+      { q: "Can UroLift implants be felt inside the body?", a: "No. The implants are very small and remain permanently embedded within the prostate tissue. Patients cannot feel them at all." },
+      { q: "What if my prostate grows larger in the future?", a: "Additional UroLift implants can be placed, or the procedure can be combined with other BPH treatments. Since UroLift does not destroy tissue, all future treatment options remain available." }
     ]
   },
   'Sexually Transmitted Infection': {
@@ -873,12 +889,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
   },
   'Stone Disease': {
     title: 'Kidney & Bladder Stone Treatment (Laser Lithotripsy)',
-    tagline: 'Precision Laser Technology for Pain-Free Stone Removal.',
+    tagline: 'Advanced Holmium Laser Lithotripsy Minimally Invasive Kidney and Bladder Stone Removal Without Open Surgery.',
     description: "Modern laser lithotripsy uses advanced Holmium lasers to fragment kidney and bladder stones into fine dust, which is then extracted or passed naturally. This minimally invasive approach eliminates the need for open surgery, offering rapid recovery and excellent success rates.",
     heroImage: '/assets/image/services section/stone disease menu.webp',
     whatIsIt: {
       title: 'What is Laser Lithotripsy for Stone Disease?',
-      description: "Laser lithotripsy is a highly advanced, minimally invasive surgical procedure used to treat stones in the kidney, ureter, or bladder. Using a thin, flexible scope (ureteroscope) passed through the body's natural openings, urologists use a 'power laser' to break up stones into tiny pieces or dust without making a single incision.",
+      description: "Laser lithotripsy is a minimally invasive surgical procedure used to treat stones in the kidney, ureter, or bladder. Using a thin, flexible scope (ureteroscope) passed through the body's natural openings, the urologist uses a Holmium laser to break stones into tiny fragments or fine dust all without making a single incision.",
       image: '/assets/image/services section/stone disease menu.webp'
     },
     video: null,
@@ -902,7 +918,7 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     ],
     safety: {
       title: "Safety & Complications",
-      content: "Laser lithotripsy is very safe. Minor risks include temporary hematuria (blood in urine), urinary urgency, or mild flank discomfort. Serious complications (perforation, stricture) are rare (<2%).",
+      content: "Laser lithotripsy has an excellent safety profile when performed by an experienced urologist. Minor risks include temporary hematuria (blood in urine), urinary urgency, or mild flank discomfort for a few days. Serious complications such as perforation or stricture are rare, occurring in fewer than 2% of cases.",
       icon: ShieldCheck
     },
     procedure: [
@@ -916,19 +932,19 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       steps: [
         { time: "Week 1", title: "Passing Dust", desc: "Initial recovery. Fine stone dust may pass in urine. Mild discomfort." },
         { time: "Week 2", title: "Stent Removal", desc: "Temporary stent is removed in an office visit. Immediate relief." },
-        { time: "Month 1", title: "Clearance Confirmation", desc: "Follow-up imaging to ensure 100% stone-free status." }
+        { time: "Month 1", title: "Clearance Confirmation", desc: "Follow-up imaging to confirm stone-free status and ensure complete clearance." }
       ]
     },
     faq: [
-      { q: "Is there any cutting?", a: "No. The procedure is performed entirely through the urethra. No external incisions." },
-      { q: "Will I need a stent?", a: "Often, yes. A stent helps drainage and prevents swelling. It's removed in an office visit after 1-2 weeks." },
-      { q: "Can all stones be treated with laser?", a: "Most stones yes. Very large stones (>3cm) may require PCNL (percutaneous nephrolithotomy)." }
+      { q: "Does laser lithotripsy require any incisions?", a: "No. The entire procedure is performed through the urethra using a thin scope. There are no external cuts or incisions." },
+      { q: "Will I need a ureteral stent after the procedure?", a: "In many cases, yes. A temporary stent helps drainage and prevents swelling. It is removed during a brief office visit after 1–2 weeks." },
+      { q: "Can all kidney stones be treated with laser lithotripsy?", a: "Most kidney and ureteral stones can be effectively treated with laser. Very large stones (over 3cm) may require a different approach such as PCNL (percutaneous nephrolithotomy)." }
     ]
   },
   'Urinary Symptoms': {
     title: 'Comprehensive Urinary Symptom Diagnosis & Management',
-    tagline: 'Precision Diagnosis for Frequency, Urgency, Incontinence, and Pain.',
-    description: "Urological diseases encompass a wide range of conditions affecting the urinary tract—including the kidneys, ureters, bladder, and urethra—in both men and women. In men, urology also covers the reproductive organs and prostate health. Early detection and consulting a urologist are critical for effective treatment and preventing long-term complications.",
+    tagline: 'Expert Diagnosis for Frequent Urination, Weak Stream, Urgency, Incontinence, and Painful Urination.',
+    description: "Urological conditions encompass a wide range of disorders affecting the urinary tract including the kidneys, ureters, bladder, and urethra in both men and women. In men, urology also covers reproductive organ and prostate health. Early detection and consulting a urologist are critical for effective treatment and preventing long-term complications.",
     heroImage: '/assets/image/services section/Urinary Symptoms menu.webp',
     whatIsIt: {
       title: 'What are Common Urinary Symptoms?',
@@ -1032,20 +1048,20 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '04', title: 'Treatment Plan', desc: 'Address root cause with medications, lifestyle changes, or procedures.' }
     ],
     faq: [
-      { q: "What causes frequent urination?", a: "Common causes include BPH, overactive bladder, UTI, diabetes, or excessive fluid intake." },
-      { q: "Is incontinence normal with aging?", a: "No. While more common in older men, it's not inevitable and is often treatable." },
-      { q: "What is uroflowmetry?", a: "A non-invasive test measuring urine flow rate and volume to assess bladder and prostate function." }
+      { q: "What causes frequent urination in men?", a: "Common causes include BPH (enlarged prostate), overactive bladder (OAB), urinary tract infection (UTI), diabetes, or excessive fluid intake. A proper evaluation is needed to identify the specific cause." },
+      { q: "Is urinary incontinence a normal part of aging?", a: "No. While urinary incontinence becomes more common with age, it is not inevitable and is often treatable with medication, behavioral therapy, or minimally invasive procedures." },
+      { q: "What is uroflowmetry and how does it work?", a: "Uroflowmetry is a simple, non-invasive test that measures your urine flow rate and volume. You urinate into a special device that records the data, helping your urologist assess bladder and prostate function." }
     ]
   },
   'Circumcision': {
     title: 'Child & Adult Circumcision',
-    tagline: 'Modern Stapler Technology for Precision, Speed, and Superior Aesthetics and Standard Circumcision.',
+    tagline: 'Stapler and Standard Circumcision for Adults and Children Minimal Bleeding, Fast Recovery, and Clean Cosmetic Results.',
     whatIsIt: {
       title: 'Types of Medical Circumcision: Stapler vs. Standard',
       description: "We offer two primary methods for circumcision, tailored to patient needs and age:\n\n1. **Stapler Circumcision (ZSR):** A modern, innovative technique using a disposable device that cuts and staples simultaneously. It offers a faster procedure (10-15 mins), minimal bleeding, and a superior cosmetic result with a smooth, even scar line.\n\n2. **Standard Circumcision (Conventional):** The traditional surgical method using manual excision and absorbable sutures. This technique allows for precise customization of foreskin removal and is suitable for all complex cases.",
       image: '/assets/image/services section/circumcision/Types of Medical Circumcision.webp'
     },
-    description: "Circumcision is a common procedure performed for both medical and personal reasons. Understanding 'Why' and 'How' can help in making an informed decision.\n\n**Indications: Why is Circumcision Necessary?**\n\n*   **Phimosis:** Inability to retract the foreskin, causing pain and hygiene issues.\n*   **Paraphimosis:** A urologic emergency where retracted foreskin becomes trapped behind the glans.\n*   **Recurrent Balanitis/Balanoposthitis:** Frequent infection and inflammation of the glans and foreskin.\n*   **Lichen Sclerosus:** A skin condition causing scarring and tightening of the foreskin.\n\n**Medical Benefits of Circumcision:**\n\n*   **Improved Hygiene:** Removes the area where smegma and bacteria accumulate, making cleaning easier.\n*   **Reduced Infection Risk:** Significantly lowers the risk of Urinary Tract Infections (UTIs) and Sexually Transmitted Infections (STIs), including HIV and HPV.\n*   **Cancer Prevention:** low risk of penile cancer and reduces cervical cancer risk in female partners.\n*   **Aesthetic Preference:** Many men prefer the cleaner look and feel.",
+    description: "Circumcision is a common procedure performed for both medical and personal reasons. Understanding the indications and benefits can help you make an informed decision.\n\n**Indications: Why is Circumcision Necessary?**\n\n*   **Phimosis:** Inability to retract the foreskin, causing pain and hygiene issues.\n*   **Paraphimosis:** A urologic emergency where retracted foreskin becomes trapped behind the glans.\n*   **Recurrent Balanitis/Balanoposthitis:** Frequent infection and inflammation of the glans and foreskin.\n*   **Lichen Sclerosus:** A skin condition causing scarring and tightening of the foreskin.\n\n**Medical Benefits of Circumcision:**\n\n*   **Improved Hygiene:** Removes the area where smegma and bacteria accumulate, making cleaning easier.\n*   **Reduced Infection Risk:** Significantly lowers the risk of Urinary Tract Infections (UTIs) and Sexually Transmitted Infections (STIs), including HIV and HPV.\n*   **Cancer Prevention:** Lower risk of penile cancer and reduced cervical cancer risk in female partners.\n*   **Aesthetic Preference:** Many men prefer the cleaner look and feel.",
     heroImage: '/assets/image/services section/circumcision/circumcision hero.webp',
     descriptionImage: '/assets/image/services section/circumcision/circumcision clinical mechanism.webp',
     video: null,
@@ -1087,20 +1103,20 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '04', title: 'Discharge', desc: 'Patient goes home same day with care instructions.' }
     ],
     faq: [
-      { q: "Is it painful?", a: "Minimal pain during and after. Local anesthesia ensures comfort. Most men use only OTC pain relievers for a few days." },
-      { q: "When can I have sex again?", a: "Typically after 4 weeks, once fully healed. Follow your doctor's guidance." },
-      { q: "Will the staples need to be removed?", a: "No. They dissolve or fall off naturally within 2-3 weeks." }
+      { q: "Is circumcision painful?", a: "Minimal pain during and after. Local anesthesia ensures comfort throughout the procedure. Most men only need over-the-counter pain relievers for a few days afterward." },
+      { q: "When can I resume sexual activity after circumcision?", a: "Typically after 4 weeks, once the area is fully healed. Your doctor will confirm during a follow-up visit." },
+      { q: "Do the staples need to be removed after stapler circumcision?", a: "No. The titanium staples dissolve or fall off naturally within 2–3 weeks as the wound heals." }
     ]
   },
   'Penile Enlargement': {
     title: 'Penile Girth Enhancement',
-    tagline: 'Safe, Medical-Grade Augmentation for Confidence and Satisfaction.',
+    tagline: 'Non-Surgical Penile Girth Enhancement with HA Filler. Natural Feel, Fully Reversible.',
     whatIsIt: {
-      title: 'What is Penile Enlargement with Filler?',
-      description: "Penile enlargement with filler is a non-surgical procedure designed to increase the girth (circumference) of the penis using high-quality Hyaluronic Acid (HA) fillers. This method provides immediate, visible results without the need for invasive surgery, general anesthesia, or lengthy recovery times, making it a popular choice for men seeking aesthetic enhancement.",
+      title: 'What is Penile Girth Enhancement with Filler?',
+      description: "Penile girth enhancement with dermal filler is a non-surgical medical procedure designed to increase the circumference (thickness) of the penis using Hyaluronic Acid (HA) fillers. Performed by a board-certified urologist, this method provides visible results without invasive surgery, general anesthesia, or lengthy recovery. It is a well-established option for men seeking to improve penile girth safely and with minimal downtime.",
       image: '/assets/image/services section/penile enlargement/What is Penile Enlargement with Filler.webp'
     },
-    description: "### Non-Surgical Penile Girth Enhancement with Fillers\nPenile Girth Enhancement with Fillers is a highly sought-after medical procedure today. It offers a safe, non-surgical alternative to traditional enlargement surgery, providing results that look and feel entirely natural.\n\n#### 1. What is Penile Filler Enlargement?\nPenile girth enhancement involves injecting Hyaluronic Acid (HA) fillers—a highly safe, biocompatible substance naturally found in the human body—into the subcutaneous layer of the penis (typically between the Dartos and Buck's fascia).\n\n*   **Primary Goal:** To significantly increase penile girth (thickness and circumference).\n*   **Impact on Length:** While dermal fillers do not directly increase erect length, the added weight of the filler can create a slightly elongated appearance when the penis is flaccid.\n\n#### 2. Benefits of Non-Surgical Penile Girth Enhancement\nChoosing HA fillers over surgical implants or fat grafting offers several distinct advantages:\n\n*   **Non-Surgical Procedure:** There are no incisions or scarring. The procedure uses a blunt micro-cannula to administer the filler, which minimizes the risk of infection and tissue damage.\n*   **Minimal Pain & Zero Downtime:** The treatment takes only 30-45 minutes. Patients can return to their daily activities immediately. (Note: Abstaining from sexual intercourse and masturbation for 2-4 weeks is required to allow the filler to settle properly.)\n*   **Natural Look and Feel:** The HA filler closely mimics the softness of natural tissue, avoiding the hard, unnatural lumps sometimes associated with other enhancement methods.\n*   **Customizable Results:** Patients have the flexibility to add more filler in the future to achieve their desired thickness.\n*   **Fully Reversible & Safe:** If a patient is unsatisfied or experiences rare complications, HA fillers can be 100% dissolved using an enzyme called Hyaluronidase, leaving no permanent residue behind.\n\n#### 3. How to Choose the Right Penis Filler?\nWhen it comes to intimate areas, safety and the molecular structure of the dermal filler must be the top priorities.\n\n*   **100% Pure Hyaluronic Acid (HA) Only:** Never use unapproved or permanent substances like liquid silicone, olive oil, or paraffin. The human body cannot absorb these materials, leading to severe inflammation, infection, necrosis (tissue death), and severe deformity that requires invasive surgical removal.\n*   **Appropriate Molecular Size (Cohesivity & Elasticity):** It is crucial to use specific body fillers or HA fillers with a large molecular structure, high structural stability (High G Prime), and excellent elasticity. The selected filler must be able to withstand the pressure and expansion of an erection without shifting, rippling, or losing its shape.\n*   **FDA-Approved Products:** Ensure the clinic uses authentic, FDA-approved fillers. The product should be unboxed in front of you, and you should be able to verify its authenticity via a manufacturer QR code.\n*   **Tailored for Male Anatomy:** Certain specialized filler brands are designed specifically for male girth enhancement. A qualified urologist will evaluate your existing tissue to recommend the most effective option for your body.",
+    description: "Hyaluronic Acid (HA) Filler\n\n1. **Non-Surgical Procedure**\nThe procedure involves injecting Hyaluronic Acid (HA) dermal filler into the subcutaneous layer of the penile shaft without any surgical incision.\n* **Key Advantage:** No incisions are made, so there is no visible scarring.\n* **Technique:** A blunt-tipped micro-cannula is used to distribute filler beneath the skin, which significantly reduces tissue trauma and minimizes the risk of infection.\n\n2. **Minimal Pain and Zero Downtime**\nDesigned for men who want effective results without disrupting their daily routine.\n* **Procedure Time:** The treatment takes approximately 30-45 minutes.\n* **Daily Life:** Patients can return to work and normal daily activities immediately after the procedure.\n* **Precaution:** Sexual activity should be avoided for approximately 4-7 days to allow the filler to settle properly.\n\n3. **Natural Look and Feel**\nHA filler provides a smooth, natural texture that blends seamlessly with existing tissue.\n* **Texture:** The filler material is soft and elastic, closely mimicking the feel of natural penile tissue.\n* **Appearance:** Even distribution ensures there are no hard lumps or unnatural irregularities.\n\n4. **Customizable Results**\nOne of the key advantages of filler-based enhancement is the flexibility to tailor results to individual preferences.\n* **Patient Control:** Patients can choose the volume of filler to achieve their desired level of girth enhancement.\n* **Future Touch-Ups:** Additional filler sessions can be scheduled in the future for those who want further enhancement.\n\n5. **Fully Reversible and Safe**\nHA fillers offer long-term peace of mind with a built-in safety mechanism.\n* **Reversibility:** If the patient is unsatisfied with the result or wishes to make adjustments, the filler can be completely dissolved using an enzyme called Hyaluronidase.\n* **Safety Standard:** The filler leaves no permanent residue or harmful substances in the body.",
     heroImage: '/assets/image/services section/penile enlargement/penile enlargement hero.webp',
     descriptionImage: '/assets/image/services section/penile enlargement/penile enlargement clinical mechanism.webp',
     video: null,
@@ -1112,7 +1128,7 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     ],
     benefits: [
       { title: 'Immediate Results', desc: 'Visible increase in girth immediately after procedure.', icon: Zap },
-      { title: 'Natural Feel', desc: 'Premium fillers (HA) or your own fat feel soft and natural.', icon: CheckCircle2 },
+      { title: 'Natural Feel', desc: 'Premium HA fillers feel soft and natural to the touch.', icon: CheckCircle2 },
       { title: 'Minimally Invasive', desc: 'Quick injections with local anesthesia. No surgery required.', icon: ShieldCheck },
       { title: 'Reversible (HA)', desc: 'Hyaluronic acid fillers can be dissolved if needed.', icon: Loop as any }
     ],
@@ -1125,37 +1141,37 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       ]
     },
     candidates: [
-      "Men seeking enhanced girth for aesthetic or psychological reasons.",
+      "Men seeking enhanced girth for aesthetic or confidence reasons.",
       "Those with realistic expectations and good overall health.",
       "Patients wanting a non-surgical, reversible option (HA fillers).",
       "Individuals desiring more confidence in intimate situations."
     ],
     safety: {
       title: "Safety & Risks",
-      content: "When performed by experienced specialists using medical-grade products, girth enhancement is safe. Risks include temporary swelling, bruising, asymmetry (rare), or nodules (very rare). Fat transfer has higher permanence but slight reabsorption risk.",
+      content: "When performed by experienced specialists using medical-grade products, girth enhancement is safe. Risks include temporary swelling, bruising, asymmetry (rare), or nodules (very rare). HA fillers can be dissolved with Hyaluronidase if any issues arise.",
       icon: ShieldCheck
     },
     procedure: [
-      { step: '01', title: 'Consultation', desc: 'Discuss goals, examine anatomy, and select filler type (HA or fat).' },
+      { step: '01', title: 'Consultation', desc: 'Discuss goals, examine anatomy, and select the appropriate filler.' },
       { step: '02', title: 'Anesthesia', desc: 'Local anesthetic cream and nerve blocks applied for comfort.' },
-      { step: '03', title: 'Injection', desc: 'Filler injected evenly along penile shaft using fine cannulas.' },
-      { step: '04', title: 'Recovery', desc: 'Mild swelling for 3-5 days. Sexual activity resumes after 2 weeks.' }
+      { step: '03', title: 'Injection', desc: 'Filler injected evenly along penile shaft using blunt micro-cannulas.' },
+      { step: '04', title: 'Shaping', desc: 'Final contouring for smooth, even results. Post-care instructions provided.' }
     ],
     faq: [
-      { q: "Is it permanent?", a: "HA fillers last 12-24 months. Fat transfer can be more permanent but subject to partial reabsorption (~30%)." },
-      { q: "Will it look natural?", a: "Yes, when done correctly. Results are proportionate and feel soft to touch." },
-      { q: "Does it affect erection quality?", a: "No. Girth enhancement does not interfere with erectile function." }
+      { q: "How long does penile filler last?", a: "HA fillers typically last 12-24 months depending on the product used and individual factors. The filler gradually dissolves naturally through the body's own metabolic processes, and the tissue returns to its pre-treatment state safely with no lasting residue." },
+      { q: "Can I resume sexual activity after the procedure?", a: "Light, gentle activity may be possible after approximately 4-7 days. However, sexual intercourse and strenuous activities should be avoided for approximately 2-4 weeks to allow the filler to fully settle and the tissue to heal completely." },
+      { q: "Will it look natural? Can others tell?", a: "When performed with proper technique by a qualified urologist, the results feel very close to natural tissue. There are no visible scars or obvious signs of the procedure." }
     ]
   },
   'Penile Lengthening': {
-    title: 'Penile Lengthening Procedures',
-    tagline: 'Real and Permanent Penis Enlargement Solutions.',
+    title: 'Penile Lengthening Surgery',
+    tagline: 'Permanent Penile Lengthening via Suspensory Ligament Release Performed by Board-Certified Urologists. Proven Technique with Lasting Results.',
     whatIsIt: {
       title: 'What is Penile Lengthening Surgery?',
-      description: "Penile lengthening surgery is a procedure designed to increase the visible length of the penis, primarily in its flaccid state. The most common and effective technique involves releasing the suspensory ligament, which attaches the penis to the pubic bone. This allows the hidden internal portion of the penis to advance forward, resulting in a permanent increase in length.",
+      description: "Penile lengthening surgery is a urological procedure designed to increase the visible length of the penis, primarily in its flaccid state. The most well-established technique involves releasing the suspensory ligament, which anchors the penis to the pubic bone. By releasing this ligament, the internal portion of the penile shaft is allowed to advance forward, resulting in a measurable and permanent increase in visible length. This procedure is performed by board-certified urologists and is suitable for men seeking a structural, long-term solution.",
       image: '/assets/image/services section/penile lengthenning/what is penile lengthening surgery.webp'
     },
-    description: "Surgery is the most reliable method for achieving permanent length gains. By addressing the anatomical attachments of the penis, we can reveal length that is naturally present but concealed.\n\n**The Clinical Mechanism (Suspensory Ligament Release):**\n\n1. **Anatomical Insight:** A significant portion (approx. 30-50%) of the penile shaft is internal, anchored to the pubic bone by the **suspensory ligament**. This ligament holds the penis in an upright position during erection but also keeps a large segment hidden inside the body.\n\n2. **Ligamentolysis (The Release):** Through a small, discreet incision (usually in the pubic area), the surgeon carefully cuts or 'releases' this ligament. This detaches the penis from the pubic bone, allowing the internal shaft to drop forward and extend outward.\n\n3. **Visible Results:** This release typically results in a **2-4 cm gain** in flaccid length. The erection angle may lower slightly, but stability and sensation remain unaffected.\n\n4. **Critical Post-Op Care:** To prevent the ligament from healing back in its original position (reattachment), **post-operative traction therapy** is essential for 3-6 months. This ensures the newly released length is maintained and optimized.",
+    description: "Suspensory ligament release is the most clinically established surgical method for achieving permanent penile lengthening. By addressing the anatomical attachment that keeps a portion of the penile shaft hidden internally, the surgeon can safely reveal length that is naturally present but concealed.\n\n**The Clinical Mechanism (Suspensory Ligament Release):**\n\n1. **Anatomical Basis:** Approximately 30–50% of the penile shaft is located internally, anchored to the pubic bone by the **suspensory ligament**. This ligament supports the upward angle during erection but also prevents the full length of the shaft from being visible externally.\n\n2. **Ligamentolysis (The Procedure):** Through a small, discreet incision in the pubic area, the surgeon carefully releases the suspensory ligament. This allows the internal shaft to extend forward, increasing the externally visible length of the penis.\n\n3. **Expected Results:** This technique typically yields a **2–4 cm gain** in flaccid length. The erection angle may shift slightly downward, but erectile function and penile sensation remain fully intact.\n\n4. **Post-Operative Care:** Regular massage and stretching are required for 3–6 months to prevent the ligament from reattaching or retracting to its original position, ensuring the full length gained from surgery is maintained.",
     heroImage: '/assets/image/services section/penile lengthenning/penile lengthenning hero.webp',
     descriptionImage: '/assets/image/services section/penile lengthenning/penile lengthenning clinical mechanism.webp',
     video: null,
@@ -1166,206 +1182,212 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: "Full Results", value: "6-12 Mo", icon: Calendar }
     ],
     benefits: [
-      { title: 'Proven Technique', desc: 'Suspensory ligament release is a well-established procedure.', icon: Scissors },
-      { title: 'Visible Gain', desc: 'Typically 2-4cm increase in flaccid length.', icon: Ruler },
-      { title: 'Combination Option', desc: 'Can be paired with girth enhancement for comprehensive augmentation.', icon: Layers },
-      { title: 'Non-Surgical Alternative', desc: 'Traction devices (extenders) offer gains over 6-12 months without surgery.', icon: Target }
+      { title: 'Clinically Proven', desc: 'Suspensory ligament release is a well-established urological procedure with documented outcomes.', icon: Scissors },
+      { title: 'Permanent Results', desc: 'Typically 2-4 cm increase in visible flaccid length, with results that are structurally permanent.', icon: Ruler },
+      { title: 'Combination Option', desc: 'Can be performed alongside girth enhancement for a more comprehensive result.', icon: Layers },
+      { title: 'Non-Surgical Alternative Available', desc: 'Penile traction devices (extenders) offer gradual gains over 6-12 months for those who prefer a non-surgical approach.', icon: Target }
     ],
     candidates: [
-      "Men with realistic expectations seeking modest length increase.",
-      "Those committed to post-operative traction therapy (essential for best results).",
-      "Patients in good health without active infections or bleeding disorders.",
-      "Individuals wanting permanent surgical solution (vs. temporary devices)."
+      "Men with realistic expectations seeking a modest but permanent increase in visible length.",
+      "Those who are committed to the post-operative massage and stretching routine, which is essential for optimal results.",
+      "Patients in good general health with no active infections or bleeding disorders.",
+      "Individuals who prefer a permanent surgical solution over temporary non-surgical devices."
     ],
     safety: {
       title: "Safety & Considerations",
-      content: "Surgical lengthening is safe when performed by experienced surgeons. Risks include scarring, loss of erection angle (slightly lower angle), temporary numbness, or dissatisfaction with modest gains. Non-surgical traction is very safe but requires discipline and consistency.",
+      content: "When performed by an experienced urological surgeon, penile lengthening surgery is considered safe. Potential risks include mild scarring at the incision site, a slightly lower erection angle, temporary numbness, or modest gains that may not meet all expectations. Non-surgical traction therapy carries very low risk but requires discipline and consistent use over several months.",
       icon: ShieldCheck
     },
     timeline: {
-      title: "Post-Op Timeline",
+      title: "Post-Op Recovery Timeline",
       steps: [
-        { time: "Week 1-2", title: "Initial Healing", desc: "Swelling and bruising subside. Traction therapy begins." },
-        { time: "Month 1-3", title: "Active Traction", desc: "Daily traction (4-6 hours) to maintain and maximize length gains." },
-        { time: "Month 6-12", title: "Final Results", desc: "Traction tapering. Final length stabilizes. Full cosmetic healing." }
+        { time: "Week 1-2", title: "Initial Healing", desc: "Post-operative swelling and bruising gradually subside. A regular massage and stretching routine typically begins under doctor's guidance." },
+        { time: "Month 1-3", title: "Active Recovery", desc: "Daily massage and stretching is essential to maintain and maximize the length gained from surgery." },
+        { time: "Month 6-12", title: "Final Results", desc: "The recovery routine is gradually tapered. The final length stabilizes and full cosmetic healing is achieved." }
       ]
     },
     procedure: [
-      { step: '01', title: 'Anesthesia', desc: 'Local or general anesthesia. Small pubic incision made.' },
-      { step: '02', title: 'Ligament Release', desc: 'Suspensory ligament partially released to reveal hidden penile length.' },
-      { step: '03', title: 'Closure', desc: 'Incision closed. No tissue removed, just ligament adjustment.' },
-      { step: '04', title: 'Traction Therapy', desc: 'Post-op traction essential for 3-6 months to achieve and maintain gains.' }
+      { step: '01', title: 'Consultation & Planning', desc: 'Discuss your goals, review your anatomy, and determine the most appropriate surgical approach.' },
+      { step: '02', title: 'Anesthesia & Incision', desc: 'Local or general anesthesia is administered. A small, discreet incision is made in the pubic area.' },
+      { step: '03', title: 'Ligament Release', desc: 'The suspensory ligament is carefully released to allow the internal penile shaft to advance forward.' },
+      { step: '04', title: 'Post-Op Care Plan', desc: 'A personalized massage and stretching plan is provided. Consistent daily practice for 3-6 months is critical for maintaining results.' }
     ],
     faq: [
-      { q: "How much length will I gain?", a: "Typical gains are 2-4cm in flaccid length. Erect length gains are modest (~0.5-1.5cm). Results depend on anatomy and post-op traction compliance." },
-      { q: "Will my erection angle change?", a: "Slightly. The erection may point more forward/downward vs. upward. Function is unaffected." },
-      { q: "Is traction therapy mandatory?", a: "Highly recommended. Without traction, gains may be minimal or lost due to scar contraction." }
+      { q: "How much length can I expect to gain?", a: "Most patients achieve a 2-4 cm increase in visible flaccid length. Erect length gains are typically more modest (approximately 0.5-1.5 cm). Individual results depend on anatomy and adherence to the post-operative recovery routine." },
+      { q: "Will the surgery affect my erection angle?", a: "The erection angle may shift slightly more forward or downward compared to before surgery. However, erectile function, rigidity, and sensation are not affected by the procedure." },
+      { q: "Is post-operative massage and stretching necessary?", a: "Yes, regular massage and stretching are strongly recommended. Without consistent practice during the healing phase, scar tissue contraction may reduce or negate the length gained from surgery." }
     ]
   },
   'Excision of penile Paraffinoma': {
     title: 'Excision of Penile Paraffinoma (Foreign Body Removal)',
-    tagline: 'Expert Removal and Reconstruction for Post-Injection Complications.',
+    tagline: 'Surgical Removal of Injected Foreign Substances and Penile Reconstruction Performed by Experienced Reconstructive Urologists.',
     whatIsIt: {
       title: 'What is Penile Paraffinoma?',
-      description: "Penile paraffinoma is a condition caused by the injection of non-medical grade foreign substances like paraffin, olive oil, or silicone into the penis in an attempt to increase size. The body cannot absorb these materials, leading to chronic inflammation, hard lumps (granulomas), and severe tissue damage that requires surgical intervention by specialist urologists.",
+      description: "Penile paraffinoma is a serious medical condition caused by the injection of non-medical grade foreign substances such as paraffin, liquid silicone, or olive oil into the penis in an attempt to increase size. The human body cannot absorb or break down these materials, which triggers a chronic foreign body reaction leading to hard lumps (granulomas), tissue deformity, chronic inflammation, and severe damage that requires surgical intervention by an experienced reconstructive urologist.",
       image: '/assets/image/services section/excision of penile paraffinoma menu.webp'
     },
-    description: "### The Severe Dangers of Penile Foreign Body Injections: Symptoms and Risks\nInjecting unapproved foreign substances into the penis—such as olive oil, paraffin, or liquid silicone—is a critical medical emergency and a highly prevalent issue in reconstructive urology. The human body cannot absorb or break down these materials, which inevitably triggers a severe and destructive foreign body reaction.\n\n#### 1. Symptoms of Penile Foreign Body Injections (Penile Paraffinoma)\nSymptoms rarely appear immediately after the injection. It can take months or even years for the body's immune system to initiate a foreign body reaction. The symptoms range from early inflammatory signs to severe tissue destruction:\n\n**Early Stage (Onset of Inflammation):**\n\n*   **Penile Deformity:** The penis develops an irregular, asymmetrical, and distorted shape.\n*   **Hard Lumps (Granulomas):** Palpable, hard, and bumpy nodules form under the skin, feeling highly unnatural to the touch.\n*   **Skin Discoloration:** The skin around the injection site becomes abnormally dark, red, or bruised.\n\n**Severe Stage (Advanced Tissue Destruction):**\n\n*   **Intense Pain and Inflammation:** Severe pain, swelling, redness, and localized heat. Pain becomes excruciating, especially during an erection.\n*   **Skin Rupture and Ulcers:** The penile skin thins out until it tears, leading to chronic, non-healing open wounds.\n*   **Infection and Discharge:** Foul-smelling pus or lymphatic fluid continuously oozes from the ruptured skin.\n*   **Substance Migration:** The injected material travels (migrates) down into the scrotum or pubic area, causing massive, abnormal swelling.\n\n#### 2. Severe Complications: The Risks of Avoiding Surgical Removal\nIf left untreated, failing to undergo a proper foreign body excision (surgical removal of the injected material) will lead to catastrophic complications, potentially resulting in the loss of the organ itself:\n\n*   **Penile Necrosis (Tissue Death):** The foreign substance constricts local blood vessels, cutting off the vital blood supply to the penis. The tissue will turn black and die, which may ultimately require partial or complete penile amputation.\n*   **Sepsis (Bloodstream Infection):** Open ulcers and necrotic tissue act as a breeding ground for dangerous bacteria. If the infection spreads into the bloodstream, it becomes a life-threatening emergency.\n*   **Permanent Erectile Dysfunction (ED):** The severe inflammation creates dense scar tissue (fibrosis) that tightens around the penile shaft and damages crucial nerves. This makes achieving an erection physically impossible, or makes erections so painful that sexual intercourse is no longer an option.\n*   **Urinary Retention and Urethral Stricture:** If the migrating substance compresses the urethra, it causes extreme difficulty urinating or constant dribbling. This urinary blockage can cause severe backward pressure, ultimately damaging the bladder and kidneys.\n*   **Increased Risk of Skin Cancer:** Enduring chronic, severe inflammation over many years significantly increases the risk of cellular mutation, potentially leading to skin cancer in the affected genital area.",
+    description: "### The Severe Dangers of Penile Foreign Body Injections: Symptoms and Risks\nInjecting unapproved foreign substances into the penis such as olive oil, paraffin, or liquid silicone is a critical medical emergency and one of the most common cases seen in reconstructive urology. The human body cannot absorb or break down these materials, which inevitably triggers a severe and destructive foreign body reaction.\n\n#### 1. Symptoms of Penile Paraffinoma (Foreign Body Reaction)\nSymptoms rarely appear immediately after injection. It can take months or even years for the body's immune system to initiate a foreign body reaction. Symptoms progress from early inflammatory signs to severe tissue destruction:\n\n**Early Stage (Onset of Inflammation):**\n\n*   **Penile Deformity:** The penis develops an irregular, asymmetrical, and distorted shape.\n*   **Hard Lumps (Granulomas):** Firm, bumpy nodules form under the skin, feeling highly unnatural to the touch.\n*   **Skin Discoloration:** The skin around the injection site becomes abnormally dark, red, or bruised.\n\n**Severe Stage (Advanced Tissue Destruction):**\n\n*   **Intense Pain and Inflammation:** Severe pain, swelling, redness, and localized heat — especially during erection.\n*   **Skin Rupture and Chronic Ulcers:** The penile skin progressively thins until it tears open, leading to non-healing wounds.\n*   **Infection and Discharge:** Foul-smelling pus or lymphatic fluid continuously oozes from the ruptured skin.\n*   **Substance Migration:** The injected material can migrate into the scrotum or pubic area, causing massive abnormal swelling.\n\n#### 2. Complications of Delayed Treatment\nIf left untreated, the consequences of penile paraffinoma can be catastrophic and may result in the loss of the organ:\n\n*   **Penile Necrosis (Tissue Death):** The foreign substance compresses blood vessels, cutting off blood supply. The tissue turns black and dies, potentially requiring partial or complete penile amputation.\n*   **Sepsis (Bloodstream Infection):** Open ulcers and necrotic tissue serve as a breeding ground for dangerous bacteria. If infection enters the bloodstream, it becomes a life-threatening emergency.\n*   **Permanent Erectile Dysfunction:** Severe inflammation creates dense scar tissue (fibrosis) that constricts the penile shaft and damages nerves, making erections physically impossible or extremely painful.\n*   **Urethral Stricture and Urinary Retention:** If the migrated substance compresses the urethra, it causes difficulty urinating, which can lead to backward pressure that damages the bladder and kidneys.\n*   **Increased Cancer Risk:** Prolonged chronic inflammation over many years significantly increases the risk of cellular mutation, potentially leading to skin cancer in the affected area.",
     heroImage: '/assets/image/services section/excision of penile paraffinoma/excision of penile paraffinoma hero.webp',
     descriptionImage: '/assets/image/services section/excision of penile paraffinoma/excision of penile paraffinoma clinical mechanism.webp',
     video: null,
+    stats: [
+      { label: "Complexity", value: "High", icon: AlertCircle },
+      { label: "Specialist", value: "Urologist", icon: Users },
+      { label: "Surgery Time", value: "2-4 Hrs", icon: Timer },
+      { label: "Recovery", value: "6-12 Wks", icon: Calendar }
+    ],
     timeline: {
-      title: "Reconstruction Timeline",
+      title: "Reconstruction Recovery Timeline",
       steps: [
-        { time: "Week 1-2", title: "Wound Care", desc: "Acute healing phase. Managing swelling with specialized compression dressings." },
-        { time: "Week 4-6", title: "Remodeling", desc: "Tissue begins to soften and heal. Resumption of light activities." },
-        { time: "Month 3+", title: "Stabilization", desc: "Final surgical outcome achieved. Assessment for staged reconstruction if needed." }
+        { time: "Week 1-2", title: "Wound Care Phase", desc: "Acute healing period. Swelling is managed with specialized compression dressings. Close monitoring of skin graft viability." },
+        { time: "Week 4-6", title: "Tissue Remodeling", desc: "Tissue begins to soften and heal. Light daily activities can be resumed gradually." },
+        { time: "Month 3+", title: "Final Stabilization", desc: "Surgical outcome stabilizes. Assessment for staged reconstruction if further correction is needed." }
       ]
     },
     benefits: [
-      { title: 'Specialist Expertise', desc: 'Performed by urologists experienced in complex penile reconstruction.', icon: Users },
-      { title: 'Complete Removal', desc: 'Thorough excision of all granulomas and foreign material.', icon: Scissors },
-      { title: 'Functional Preservation', desc: 'Priority on preserving erectile function and sensation.', icon: HeartPulse },
-      { title: 'Aesthetic Restoration', desc: 'Reconstruction to restore natural appearance as much as possible.', icon: CheckCircle2 }
+      { title: 'Specialist Expertise', desc: 'Performed by urologists experienced in complex penile reconstruction cases.', icon: Users },
+      { title: 'Complete Foreign Body Removal', desc: 'Thorough excision of all granulomas, scar tissue, and foreign material.', icon: Scissors },
+      { title: 'Functional Preservation', desc: 'Priority on preserving erectile function, sensation, and urinary function.', icon: HeartPulse },
+      { title: 'Aesthetic Restoration', desc: 'Reconstruction using skin grafts or flaps to restore natural appearance as much as possible.', icon: CheckCircle2 }
     ],
     candidates: [
-      "Men with history of non-medical penile injections (paraffin, silicone, oils).",
-      "Those experiencing deformity, lumps, pain, or erectile dysfunction from granulomas.",
-      "Patients with infection, inflammation, or ulceration at injection sites.",
-      "Individuals seeking removal before further complications arise."
+      "Men with a history of non-medical penile injections (paraffin, silicone, olive oil, or other substances) who are experiencing symptoms.",
+      "Those with penile deformity, hard lumps (granulomas), pain, or erectile dysfunction caused by foreign body reaction.",
+      "Patients with chronic wounds, infection, inflammation, or discharge at the injection site.",
+      "Individuals seeking surgical removal before further complications develop."
     ],
     safety: {
-      title: "Risks & Expectations",
-      content: "Paraffinoma excision is complex. Risks include scarring, contour irregularities, loss of sensation, and in severe cases, compromised erectile function. Extent of restoration depends on severity of existing damage. Multiple procedures may be required.",
+      title: "Risks & Realistic Expectations",
+      content: "Paraffinoma excision is a complex reconstructive procedure. The outcome depends on the severity of existing tissue damage and the volume of foreign material present. Potential risks include scarring, contour irregularities, changes in sensation, and in severe cases, some degree of compromised erectile function. Multiple staged procedures may be required for optimal reconstruction. Our team uses advanced surgical techniques and specialized equipment to achieve the best possible outcome.",
       icon: ShieldCheck
     },
     procedure: [
-      { step: '01', title: 'Imaging', desc: 'MRI or ultrasound to map extent of foreign material and tissue damage.' },
-      { step: '02', title: 'Surgical Excision', desc: 'Under general anesthesia, granulomas and foreign material are meticulously removed.' },
-      { step: '03', title: 'Reconstruction', desc: 'Tissue reconstruction using grafts or flaps if needed to restore shape.' },
-      { step: '04', title: 'Recovery', desc: 'Extended healing (6-12 weeks). Follow-up for monitoring and potential revision surgery.' }
+      { step: '01', title: 'Diagnostic Assessment', desc: 'Thorough physical examination and imaging (MRI or ultrasound) to map the extent of foreign material and tissue damage.' },
+      { step: '02', title: 'Surgical Excision', desc: 'Under general anesthesia, all granulomas, scar tissue, and foreign material are meticulously removed while preserving viable tissue.' },
+      { step: '03', title: 'Reconstruction', desc: 'Skin grafts or tissue flaps are used to reconstruct the penile skin and restore both appearance and function.' },
+      { step: '04', title: 'Post-Op Recovery', desc: 'Extended healing period (6-12 weeks). Close follow-up monitoring with potential revision surgery if needed.' }
     ],
     faq: [
-      { q: "Can my penis look normal again?", a: "Outcome depends on damage severity. Surgeons aim for maximal restoration, but complete normalcy may not be achievable in severe cases." },
-      { q: "Will this affect my erections?", a: "Function depends on extent of nerve and tissue damage. Surgeons work to preserve function, but some impairment may persist." },
-      { q: "How many surgeries are needed?", a: "Often 1-2 procedures. Severe cases may require staged surgeries for optimal reconstruction." }
+      { q: "Can my penis look normal again after surgery?", a: "The outcome depends on the severity of existing damage. Our surgeons aim for maximum restoration of both appearance and function, but in severe cases with extensive tissue destruction, complete normalcy may not be fully achievable. Early treatment generally leads to better results." },
+      { q: "Will this affect my erections or sexual function?", a: "Function recovery depends on the extent of nerve and tissue damage caused by the foreign substance. Our surgeons prioritize preserving erectile function during excision, but some degree of impairment may persist in cases with severe pre-existing damage." },
+      { q: "Is there a cancer risk if I don't get treatment?", a: "Prolonged chronic inflammation from foreign body reaction can increase the risk of cellular mutation over time. This is one of the reasons why early surgical removal is strongly recommended — to prevent both the progressive tissue destruction and the long-term cancer risk." }
     ]
   },
   'Vasectomy': {
     title: 'Vasectomy (Permanent Male Contraception)',
-    tagline: 'Safe, Effective, Permanent Birth Control. Quick Procedure, Lifelong Peace of Mind.',
-    description: "Vasectomy is a minor surgical procedure that provides permanent contraception by blocking the vas deferens, preventing sperm from entering semen. It is highly effective (>99%), minimally invasive, and does not affect sexual function or sensation.",
+    tagline: 'No-Scalpel Vasectomy The Safest and Most Effective Permanent Birth Control for Men. Quick Procedure, No Effect on Sexual Performance.',
+    description: "A vasectomy is a minor outpatient procedure that provides permanent contraception by blocking the vas deferens the tubes that carry sperm from the testicles into the semen. It is recognized worldwide as the most effective form of birth control (over 99.9%), requires only local anesthesia, and most importantly, has absolutely no effect on testosterone levels, sexual desire, erections, or ejaculation. The semen volume remains unchanged it simply no longer contains sperm.",
     whatIsIt: {
-      title: 'What is a Vasectomy?',
-      description: "A vasectomy is a simple, safe, and permanent method of male contraception. It involves cutting or sealing the tubes (vas deferens) that carry sperm from the testicles to the semen. After a vasectomy, the semen no longer contains sperm, making it impossible to cause a pregnancy while preserving sexual sensation and performance."
+      title: 'What is a No-Scalpel Vasectomy?',
+      description: "A no-scalpel vasectomy is a modern, minimally invasive technique for permanent male contraception. Instead of a traditional incision, the urologist uses a specialized instrument to make a tiny puncture (3-5mm) in the scrotal skin to access the vas deferens. The tubes are then cut, sealed, or cauterized to permanently prevent sperm from reaching the semen. The procedure takes only 15-20 minutes under local anesthesia, and patients can go home the same day. Sexual function, hormone levels, and ejaculation remain completely unchanged."
     },
     heroImage: '/assets/image/services section/vasectomy/vasectomy hero.webp',
     descriptionImage: '/assets/image/services section/vasectomy/vasectomy Clinical Mechanism.webp',
     video: null,
     stats: [
       { label: "Effectiveness", value: "99.9%+", icon: Trophy },
-      { label: "Procedure Time", value: "20-30 Mins", icon: Timer },
-      { label: "Recovery", value: "3-5 Days", icon: Activity },
+      { label: "Procedure Time", value: "15-20 Min", icon: Timer },
+      { label: "Recovery", value: "1-2 Days", icon: Activity },
       { label: "Effect", value: "Permanent", icon: Infinity as any }
     ],
     benefits: [
-      { title: 'Highly Effective', desc: 'Over 99% effective. Most reliable long-term contraception.', icon: Trophy },
-      { title: 'No Sexual Impact', desc: 'Normal erections, ejaculation, and sensation. Semen volume unchanged.', icon: HeartPulse },
-      { title: 'Permanent Solution', desc: 'One-time procedure provides lifelong contraception.', icon: Infinity as any },
-      { title: 'Minimal Downtime', desc: 'Quick recovery. Resume normal activities within 3-5 days.', icon: Timer }
+      { title: 'Highest Effectiveness', desc: 'Over 99.9% effective — the most reliable form of contraception available.', icon: Trophy },
+      { title: 'No Effect on Sexual Function', desc: 'Erections, ejaculation, sensation, and semen volume remain completely normal.', icon: HeartPulse },
+      { title: 'One-Time Permanent Solution', desc: 'A single procedure provides lifelong contraception. No pills, no devices, no repeat visits.', icon: Infinity as any },
+      { title: 'Minimal Recovery Time', desc: 'Quick outpatient procedure. Most men return to normal activities within 1-2 days.', icon: Timer }
     ],
     candidates: [
-      "Men who have completed their families and seek permanent contraception.",
-      "Those who do not want to rely on partner contraception.",
-      "Couples seeking the most effective birth control method.",
-      "Men who understand the procedure is intended to be permanent."
+      "Men who have completed their families and want a permanent, worry-free contraception method.",
+      "Husbands who want to take on the responsibility of birth control to spare their partner from hormonal side effects.",
+      "Couples seeking the most effective and safest long-term birth control option.",
+      "Men who fully understand and accept that vasectomy is intended to be a permanent decision."
     ],
     safety: {
       title: "Safety & Reversibility",
-      content: "Vasectomy is very safe with low complication rates. Risks include minor bleeding, infection (<1%), or chronic pain (rare, <1%). Reversal is possible but not guaranteed and is expensive. Vasectomy should be considered permanent.",
+      content: "No-scalpel vasectomy is one of the safest urological procedures. The risk of infection is extremely low (<1%), and serious complications are very rare. Testosterone production, sexual desire, and erectile function are completely unaffected. Vasectomy reversal (vasovasostomy) is technically possible but success rates decrease over time (50-90%), the procedure is expensive, and fertility restoration is not guaranteed. For this reason, vasectomy should be considered a permanent decision.",
       icon: ShieldCheck
     },
     timeline: {
-      title: "Post-Procedure Timeline",
+      title: "Post-Vasectomy Recovery Timeline",
       steps: [
-        { time: "Week 1", title: "Healing", desc: "Mild discomfort and swelling. Ice and rest recommended." },
-        { time: "Month 1-3", title: "Clearing Phase", desc: "Sperm still present. Use backup contraception until semen analysis confirms zero sperm." },
-        { time: "Month 3+", title: "Sterility Confirmed", desc: "Semen analysis shows zero sperm. Contraception achieved." }
+        { time: "Day 1-3", title: "Initial Recovery", desc: "Mild discomfort and swelling. Ice packs and rest recommended. Avoid heavy lifting." },
+        { time: "Month 1-3", title: "Sperm Clearance Phase", desc: "Residual sperm may still be present in the downstream tubes. Continue using backup contraception until a semen analysis confirms zero sperm count." },
+        { time: "Month 3+", title: "Sterility Confirmed", desc: "A semen analysis confirms zero sperm. Full contraception is now achieved." }
       ]
     },
     procedure: [
-      { step: '01', title: 'Anesthesia', desc: 'Local anesthesia to scrotal area. Patient awake throughout.' },
-      { step: '02', title: 'Vas Access', desc: 'Small incision or no-scalpel technique to access vas deferens tubes.' },
-      { step: '03', title: 'Sealing', desc: 'Vas deferens cut, tied, or cauterized to block sperm passage.' },
-      { step: '04', title: 'Closure', desc: 'Incision closed (if made). Dressing applied. Discharge same day.' }
+      { step: '01', title: 'Local Anesthesia', desc: 'Local anesthetic is applied to the scrotal area. The patient remains awake and comfortable throughout.' },
+      { step: '02', title: 'No-Scalpel Access', desc: 'A tiny puncture (3-5mm) is made using a specialized instrument to access the vas deferens — no scalpel required.' },
+      { step: '03', title: 'Ligation & Sealing', desc: 'The vas deferens is cut, tied, and/or cauterized on both sides to permanently block sperm passage.' },
+      { step: '04', title: 'Closure & Discharge', desc: 'The puncture is closed with a small dressing. No stitches needed. Patients go home the same day.' }
     ],
     faq: [
-      { q: "Will it affect my sex drive or performance?", a: "No. Vasectomy has no impact on testosterone, libido, erections, orgasm, or ejaculation." },
-      { q: "When can I have unprotected sex?", a: "Not until a semen analysis (done ~3 months post-op) confirms zero sperm. Use backup until then." },
-      { q: "Can it be reversed?", a: "Reversal is possible but success is not guaranteed (50-90% depending on time elapsed). It is expensive and not covered by insurance. Consider vasectomy permanent." }
+      { q: "Is the vasectomy effective immediately?", a: "No. Residual sperm remain in the downstream portion of the vas deferens for several weeks after the procedure. You must continue using backup contraception until a semen analysis (performed approximately 3 months post-procedure) confirms a zero sperm count." },
+      { q: "Will it affect my sex drive, weight, or hormones?", a: "No. The testicles continue to produce testosterone normally. Your sex drive, erections, orgasm intensity, and ejaculation volume are completely unaffected. Vasectomy has no hormonal side effects." },
+      { q: "Can a vasectomy be reversed?", a: "Vasectomy reversal (vasovasostomy) is technically possible using microsurgery. However, success rates decrease over time (50-90% depending on years elapsed), the procedure is costly, and fertility restoration is not guaranteed. Vasectomy should be viewed as a permanent decision." }
     ]
   },
   'Flexible Cystoscopy': {
-    title: 'Flexible Cystoscopy',
-    tagline: 'High-Resolution Bladder Examination with Minimal Discomfort.',
+    title: 'Flexible Cystoscopy (Bladder Examination)',
+    tagline: 'High-Definition Bladder and Urethral Examination Quick, Comfortable, and Performed Under Local Anesthesia with No Downtime.',
     heroImage: '/assets/image/services section/flexible cystoscopy menu.webp',
     whatIsIt: {
       title: 'What is Flexible Cystoscopy?',
-      description: "Flexible cystoscopy is a diagnostic procedure that allows a urologist to examine the lining of your bladder and the urethra (the tube that carries urine out of your body). Unlike older rigid cystoscopes, our flexible scope is soft and bends easily, following the body's natural curves for a significantly more comfortable patient experience."
+      description: "Flexible cystoscopy is a minimally invasive diagnostic procedure that allows a urologist to directly examine the lining of the bladder and the urethra using a thin, soft, bendable scope. Unlike older rigid cystoscopes, the flexible design follows the body's natural curves, resulting in significantly less discomfort. The procedure is performed under local anesthesia (topical gel), takes only 5-10 minutes, and patients can return to normal activities immediately afterward."
     },
-    description: "This advanced diagnostic tool is essential for identifying the root cause of urinary symptoms. By providing a clear, direct view of the urinary tract, it ensures accurate diagnosis and effective treatment planning.\n\n**The Clinical Mechanism & Diagnostic Power:**\n\n1. **High-Definition Visualization:** The flexible cystoscope is equipped with a high-resolution camera and light source. It is gently inserted through the urethra, allowing the doctor to inspect the **entire bladder lining**, **urethra**, and **prostate** (in men) with exceptional clarity.\n\n2. **What We Detect:**\n   *   **Hematuria:** Investigates the source of blood in the urine.\n   *   **Bladder Tumors:** Early detection of bladder cancer or polyps.\n   *   **Stones:** Identifies bladder stones causing pain or blockage.\n   *   **Strictures:** Detects narrowing of the urethra hindering flow.\n   *   **BPH:** Assesses the degree of prostate enlargement.\n\n3. **Why 'Flexible' Matters:** The soft, pliable design causes **minimal friction** and **significantly less discomfort** compared to rigid scopes. Performed under local anesthesia (topical gel), the procedure is quick (5-10 mins) and patients can return to normal activities immediately.",
+    description: "This advanced diagnostic tool is essential for identifying the root cause of urinary symptoms. By providing a clear, direct view of the urinary tract, it ensures accurate diagnosis and effective treatment planning.\n\n**The Clinical Mechanism & Diagnostic Power:**\n\n1. **High-Definition Visualization:** The flexible cystoscope is equipped with a high-resolution camera and light source. It is gently inserted through the urethra, allowing the doctor to inspect the **entire bladder lining**, **urethra**, and **prostate** (in men) with exceptional clarity.\n\n2. **What We Detect:**\n   *   **Hematuria:** Investigates the source of blood in the urine.\n   *   **Bladder Tumors:** Early detection of bladder cancer or polyps.\n   *   **Stones:** Identifies bladder stones causing pain or blockage.\n   *   **Strictures:** Detects narrowing of the urethra hindering urine flow.\n   *   **BPH:** Assesses the degree of prostate enlargement blocking the urethra.\n\n3. **Why 'Flexible' Matters:** The soft, pliable design causes **minimal friction** and **significantly less discomfort** compared to rigid scopes. Performed under local anesthesia (topical gel), the procedure is quick (5-10 mins) and patients can return to normal activities immediately.",
     descriptionImage: '/assets/image/services section/Flexible Cystoscopy/flexible cystoscopy clinical mechanism.webp',
     video: null,
     timeline: {
-      title: "Procedure & Recovery",
+      title: "Procedure & Recovery Timeline",
       steps: [
-        { time: "Day 1", title: "Diagnostic Exam", desc: "Procedure takes 5-10 mins. Mild burning during first 1-2 urinations is normal." },
-        { time: "Day 2", title: "Activity", desc: "Any minor irritation typically resolves within 24 hours. Full activity resumption." },
-        { time: "Follow-up", title: "Results Discussion", desc: "Doctor discusses findings immediately or schedules follow-up based on results." }
+        { time: "Day 1", title: "Diagnostic Examination", desc: "Procedure takes 5-10 minutes. Mild burning sensation during the first 1-2 urinations is normal and temporary." },
+        { time: "Day 2", title: "Full Recovery", desc: "Any minor irritation typically resolves within 24 hours. Normal activities can be fully resumed." },
+        { time: "Follow-up", title: "Results & Treatment Plan", desc: "Doctor discusses findings with you immediately after the procedure, or schedules a follow-up consultation if further tests are needed." }
       ]
     },
     stats: [
       { label: "Diagnostic Accuracy", value: "95%+", icon: Trophy },
-      { label: "Procedure Time", value: "5-10 Mins", icon: Timer },
-      { label: "Downtime", value: "None", icon: Activity },
+      { label: "Procedure Time", value: "5-10 Min", icon: Timer },
+      { label: "Recovery", value: "None", icon: Activity },
       { label: "Anesthesia", value: "Topical Gel", icon: ShieldCheck }
     ],
     benefits: [
-      { title: 'Painless', desc: 'Topical anesthetic gel ensures minimal discomfort during procedure.', icon: Smile as any },
-      { title: 'Immediate Results', desc: 'Real-time visualization. Doctor can see findings instantly.', icon: Timer },
-      { title: 'Office-Based', desc: 'Done in-office. No hospitalization required. Resume normal activity same day.', icon: Activity },
-      { title: 'High Accuracy', desc: 'Detects stones, tumors, inflammation, and structural issues directly.', icon: Microscope }
+      { title: 'Minimal Discomfort', desc: 'Topical anesthetic gel and flexible scope design ensure a comfortable experience with minimal pain.', icon: Smile as any },
+      { title: 'Immediate Results', desc: 'Real-time high-definition visualization. Doctor can identify findings instantly during the procedure.', icon: Timer },
+      { title: 'No Hospitalization', desc: 'Performed in-office under local anesthesia. No admission required. Resume normal activities the same day.', icon: Activity },
+      { title: 'Direct Visualization', desc: 'Directly detects bladder stones, tumors, urethral strictures, and inflammation with over 95% accuracy.', icon: Microscope }
     ],
     candidates: [
-      "Patients with hematuria (blood in urine) of unknown cause.",
-      "Those with recurrent urinary tract infections.",
-      "Men experiencing lower urinary tract symptoms (LUTS).",
-      "Surveillance for bladder cancer (post-treatment monitoring)."
+      "Patients with hematuria (blood in urine) requiring investigation of the cause.",
+      "Those with recurrent or chronic urinary tract infections (UTIs).",
+      "Men experiencing lower urinary tract symptoms (LUTS) such as weak stream, frequent urination, or incomplete emptying.",
+      "Patients requiring bladder cancer surveillance after previous treatment."
     ],
     safety: {
       title: "Safety & Comfort",
-      content: "Flexible cystoscopy is extremely safe. Mild burning during urination for 24 hours post-procedure is common. Serious complications (bleeding, infection) are rare (<1%).",
+      content: "Flexible cystoscopy is an extremely safe procedure. The most common after-effect is a mild burning sensation during the first 1-2 urinations, which resolves within 24 hours. Drinking plenty of water after the procedure helps. Serious complications such as infection or significant bleeding are very rare (<1%).",
       icon: ShieldCheck
     },
     procedure: [
-      { step: '01', title: 'Preparation', desc: 'Topical anesthetic gel applied to urethra. Patient lies on exam table.' },
-      { step: '02', title: 'Scope Insertion', desc: 'Thin, flexible scope gently inserted through urethra into bladder.' },
-      { step: '03', title: 'Examination', desc: 'Bladder filled with sterile water. Doctor examines urethra and bladder lining.' },
-      { step: '04', title: 'Completion', desc: 'Scope removed. Procedure complete. Patient can leave immediately.' }
+      { step: '01', title: 'Preparation', desc: 'Topical anesthetic gel is applied to the urethra for numbing and lubrication. Patient lies comfortably on the exam table.' },
+      { step: '02', title: 'Scope Insertion', desc: 'The thin, flexible scope is gently inserted through the urethra into the bladder. Most patients feel only mild pressure.' },
+      { step: '03', title: 'Examination', desc: 'Sterile water gently fills the bladder for optimal visualization. The doctor examines the urethra and entire bladder lining on a monitor.' },
+      { step: '04', title: 'Completion', desc: 'Scope is removed. Results are discussed immediately. Patient can get dressed and leave right away.' }
     ],
     faq: [
-      { q: "Is it painful?", a: "Mild discomfort, not pain. Topical anesthetic makes insertion tolerable. Most report only slight pressure." },
-      { q: "When can I get results?", a: "Usually immediately. Doctor discusses findings right after the procedure." },
-      { q: "Are there risks?", a: "Minimal. Some burning during urination for 24 hours is normal. Infection or bleeding is rare." }
+      { q: "Is the procedure painful?", a: "Most patients describe it as mild pressure or a brief stinging sensation rather than pain. The flexible scope bends to follow the body's natural curves, and the topical anesthetic gel significantly reduces discomfort." },
+      { q: "How should I prepare for the procedure?", a: "No fasting is required. You can eat and drink normally before your appointment. It is recommended to empty your bladder before the procedure begins." },
+      { q: "Will I experience discomfort when urinating afterward?", a: "A mild burning sensation during the first 1-2 urinations is normal and temporary. Drinking plenty of water helps flush the urinary tract. Symptoms typically resolve completely within 24 hours." }
     ]
   },
   'Ultrasound': {
     title: 'Advanced Urological Ultrasound & Doppler',
-    tagline: 'High-Definition Imaging for Precise Diagnosis & Vascular Health.',
+    tagline: 'Non-Invasive, Radiation-Free Imaging for Kidney Stones, Prostate Evaluation, ED Diagnosis, and Male Reproductive Health.',
     description: "",
     whatIsIt: {
       title: 'What is Urological Ultrasound?',
-      description: "Urological ultrasound uses high-frequency sound waves to create real-time images of the kidneys, bladder, prostate, and reproductive organs. It is a non-invasive, radiation-free diagnostic tool that allows urologists to 'see' internal structures, detect stones, measure organ size, and evaluate blood flow using Doppler technology.",
+      description: "Urological ultrasound uses high-frequency sound waves to create real-time images of the kidneys, bladder, prostate, and reproductive organs. It is a non-invasive, radiation-free diagnostic tool that allows urologists to visualize internal structures, detect kidney and bladder stones, measure organ size, and evaluate blood flow using Doppler technology. The procedure is completely painless, requires no anesthesia, and results are available immediately.",
       image: '/assets/image/services section/ultrasound/ultrasound-1.webp'
     },
     heroImage: '/assets/image/services section/ultrasound menu.webp',
@@ -1384,23 +1406,23 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         icon: Search
       },
       {
-        title: "Penile Doppler Ultrasound (ED)",
+        title: "Penile Doppler Ultrasound (ED Diagnosis)",
         items: [
-          "Gold Standard for ED Diagnosis",
-          "Measure Arterial Inflow (Peak Systolic)",
-          "Detect Venous Leak (End Diastolic)",
-          "Peyronie's Plaque Evaluation",
-          "Fibrosis & Tissue Assessment"
+          "Gold Standard for Erectile Dysfunction Diagnosis",
+          "Measures Arterial Inflow (Peak Systolic Velocity)",
+          "Detects Venous Leak (End Diastolic Velocity)",
+          "Peyronie's Disease Plaque Evaluation",
+          "Penile Fibrosis & Tissue Assessment"
         ],
         icon: Activity
       },
       {
-        title: "Transrectal Ultrasound (TRUS)",
+        title: "Transrectal Ultrasound (TRUS) — Prostate",
         items: [
           "Prostate Volume Measurement",
           "BPH Severity Assessment",
           "Prostate Cancer Screening",
-          "Guide for Biopsy (if needed)",
+          "Biopsy Guidance (if indicated)",
           "Seminal Vesicle Evaluation"
         ],
         icon: Target
@@ -1408,56 +1430,61 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       {
         title: "Scrotal & Testicular Ultrasound",
         items: [
-          "Varicocele Diagnosis (Infertility)",
+          "Varicocele Diagnosis (Male Infertility)",
           "Testicular Masses or Tumors",
           "Hydrocele (Fluid Collection)",
           "Epididymitis (Inflammation)",
-          "Torsion (Emergency Blood Flow)"
+          "Testicular Torsion (Emergency Blood Flow Assessment)"
         ],
         icon: Layers
       }
     ],
     benefits: [
-      { title: 'Non-Invasive', desc: 'No needles, no radiation. Completely painless and safe.', icon: ShieldCheck },
-      { title: 'Vascular Precision', desc: 'Doppler technology visualizes blood flow for accurate ED diagnosis.', icon: Activity },
-      { title: 'Comprehensive', desc: 'Evaluates kidneys, bladder, prostate, and reproductive organs.', icon: Search },
-      { title: 'Instant Analysis', desc: 'Radiologist provides preliminary findings immediately.', icon: Timer }
+      { title: 'Non-Invasive & Painless', desc: 'No needles, no radiation, no anesthesia. Completely painless and safe for repeated examinations.', icon: ShieldCheck },
+      { title: 'Doppler Blood Flow Analysis', desc: 'Advanced Doppler technology visualizes arterial and venous blood flow for accurate ED and varicocele diagnosis.', icon: Activity },
+      { title: 'Comprehensive Evaluation', desc: 'Evaluates kidneys, bladder, prostate, testicles, and reproductive organs in a single session.', icon: Search },
+      { title: 'Immediate Results', desc: 'Doctor reviews key findings with you immediately after the scan. Full report within 24 hours.', icon: Timer }
     ],
     candidates: [
-      "Patients with suspected kidney stones or masses.",
-      "Men with BPH symptoms (enlarged prostate evaluation).",
-      "Those evaluating vascular causes of Erectile Dysfunction.",
-      "Couples investigating male factor infertility (Varicocele).",
-      "Monitoring of cysts or structural abnormalities."
+      "Patients with suspected kidney or bladder stones requiring confirmation.",
+      "Men with lower urinary tract symptoms (LUTS) for prostate size evaluation.",
+      "Those investigating vascular causes of erectile dysfunction (ED).",
+      "Couples investigating male factor infertility (varicocele screening).",
+      "Patients requiring monitoring of cysts, masses, or structural abnormalities."
     ],
+    safety: {
+      title: "Safety & Information",
+      content: "Ultrasound is completely safe, painless, and uses no ionizing radiation. There are no known side effects or risks. The procedure can be repeated as often as medically necessary without any harm to the body.",
+      icon: ShieldCheck
+    },
     timeline: {
-      title: "Imaging Process",
+      title: "Imaging Process & Results",
       steps: [
-        { time: "Visit", title: "Scanning", desc: "Non-invasive scan takes 15-30 mins depending on complexity." },
-        { time: "Same Day", title: "Preliminary Review", desc: "Doctor reviews key findings with you immediately after the scan." },
-        { time: "24 Hours", title: "Full Report", desc: "Comprehensive documented report provided for your medical records." }
+        { time: "Visit", title: "Ultrasound Scanning", desc: "Non-invasive scan takes 15-30 minutes depending on the areas being examined." },
+        { time: "Same Day", title: "Preliminary Review", desc: "Doctor reviews and discusses key findings with you immediately after the scan." },
+        { time: "24 Hours", title: "Full Report", desc: "Comprehensive documented report with images provided for your medical records and follow-up consultation." }
       ]
     },
     procedure: [
-      { step: '01', title: 'Preparation', desc: 'For bladder scan, drink water 1hr prior. No fasting needed for other scans.' },
-      { step: '02', title: 'Gel Application', desc: 'Warm ultrasound gel applied to improve image quality.' },
-      { step: '03', title: 'Start Scanning', desc: 'Specialist moves probe over the area. Real-time images appear on screen.' },
-      { step: '04', title: 'Report', desc: 'Detailed report with images provided for your consultation.' }
+      { step: '01', title: 'Preparation', desc: 'For bladder scan, drink 500ml of water 1 hour prior. No fasting is needed for other scans.' },
+      { step: '02', title: 'Gel Application', desc: 'Warm ultrasound gel is applied to the skin to improve sound wave transmission and image quality.' },
+      { step: '03', title: 'Scanning', desc: 'The specialist gently moves the ultrasound probe over the area. Real-time images appear on the monitor.' },
+      { step: '04', title: 'Results', desc: 'The doctor discusses preliminary findings immediately. A detailed report with images is provided within 24 hours.' }
     ],
     faq: [
-      { q: "Is Penile Doppler painful?", a: "It is minimally uncomfortable. A medication may be injected to induce an erection for blood flow measurement." },
-      { q: "How do I prepare for KUB Ultrasound?", a: "A full bladder helps visualize the bladder walls. Drink 500ml of water 1 hour before your appointment." },
-      { q: "Can ultrasound detect cancer?", a: "It can detect suspicious masses or tumors, which may require further testing (MRI/Biopsy) for confirmation." }
+      { q: "Is Penile Doppler ultrasound painful?", a: "The ultrasound itself is painless. A small injection of medication may be administered to induce an erection for accurate blood flow measurement. Most patients describe only mild discomfort from the injection." },
+      { q: "How should I prepare for a KUB ultrasound?", a: "A full bladder helps visualize the bladder walls clearly. We recommend drinking 500ml of water approximately 1 hour before your appointment. No fasting is required." },
+      { q: "Can ultrasound detect cancer?", a: "Ultrasound can detect suspicious masses, tumors, or structural abnormalities. If a suspicious finding is identified, further testing such as MRI or biopsy may be recommended for definitive diagnosis." }
     ]
   },
   'Lab Testing': {
     title: 'Comprehensive Men\'s Health Lab Testing',
-    tagline: 'Precision Diagnostics for Sexual Health, Vitality, and Fertility.',
-    description: "Our laboratory offers specialized panels designed specifically for men's health. From detecting early signs of erectile dysfunction and hormonal imbalances to comprehensive STD screening and fertility analysis, we provide fast, accurate, and confidential results to guide your treatment.",
+    tagline: 'Precision Blood Tests, Hormone Panels, STD Screening, and Fertility Analysis Confidential Results in 24-48 Hours.',
+    description: "Our laboratory offers specialized panels designed specifically for men's health. From detecting early signs of erectile dysfunction and hormonal imbalances to comprehensive STD screening and fertility analysis, we provide fast, accurate, and confidential results to guide your treatment plan.",
     heroImage: '/assets/image/services section/lab testing menu.webp',
     whatIsIt: {
       title: 'What is Comprehensive Lab Testing?',
-      description: "Our comprehensive lab testing services provide a deep dive into your biological health. We use state-of-the-art diagnostic technology to analyze hormones, screen for infections, and monitor metabolic function. This data-driven approach allows our specialists to create highly personalized treatment plans tailored to your specific physiological needs.",
+      description: "Our comprehensive lab testing services provide a thorough analysis of your biological health. We use state-of-the-art diagnostic technology to analyze hormone levels, screen for sexually transmitted infections, evaluate fertility, and monitor metabolic function. This data-driven approach allows our specialist urologists to create highly personalized treatment plans tailored to your specific needs.",
       image: '/assets/image/services section/lab testing menu.webp'
     },
     video: null,
@@ -1534,10 +1561,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       }
     ],
     benefits: [
-      { title: 'Comprehensive Panels', desc: 'Full range of tests tailored for men\'s sexual and general health.', icon: Microscope },
-      { title: 'Fast & Private', desc: 'Results in 24-48 hours. Strictly confidential handling.', icon: Timer },
-      { title: 'Doctor Interpretation', desc: 'All results reviewed by specialist urologists, not just automated reports.', icon: FileText },
-      { title: 'One-Stop Service', desc: 'Consultation, testing, and treatment planning in a single visit.', icon: Target }
+      { title: 'Specialized Men\'s Health Panels', desc: 'Full range of tests specifically designed for men\'s sexual health, hormones, fertility, and cancer screening.', icon: Microscope },
+      { title: 'Fast & Confidential', desc: 'Most results available within 24-48 hours. All information is handled with strict patient confidentiality.', icon: Timer },
+      { title: 'Specialist Interpretation', desc: 'All results are personally reviewed and explained by specialist urologists, not just automated lab reports.', icon: FileText },
+      { title: 'One-Stop Service', desc: 'Consultation, sample collection, laboratory analysis, and treatment planning — all in a single visit.', icon: Target }
     ],
     candidates: [
       "Men over 40 requiring annual prostate and health screening.",
@@ -1547,23 +1574,23 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       "Men monitoring testosterone therapy levels."
     ],
     timeline: {
-      title: "Testing Workflow",
+      title: "Testing Process & Results",
       steps: [
-        { time: "Hour 1", title: "Sample Collection", desc: "Quick blood draw or collection in a private room." },
-        { time: "24 Hours", title: "Result Delivery", desc: "Most results delivered via secure channel or email." },
-        { time: "Review", title: "Expert Consultation", desc: "Meet with a urologist to interpret results and plan next steps." }
+        { time: "Hour 1", title: "Sample Collection", desc: "Quick blood draw or sample collection in a private, comfortable room." },
+        { time: "24-48 Hrs", title: "Result Delivery", desc: "Most results are available within 24 hours. Specialized cultures may take 48-72 hours." },
+        { time: "Review", title: "Expert Consultation", desc: "Meet with a specialist urologist to review your results and discuss treatment options." }
       ]
     },
     procedure: [
-      { step: '01', title: 'Consultation', desc: 'Doctor recommends specific panels based on your history and symptoms.' },
-      { step: '02', title: 'Collection', desc: 'Blood draw, urine sample, or semen collection in a private room.' },
-      { step: '03', title: 'Analysis', desc: 'Samples processed in our certified high-complexity laboratory.' },
-      { step: '04', title: 'Review', desc: 'Doctor explains results in detail and discusses valid treatment options.' }
+      { step: '01', title: 'Consultation', desc: 'Doctor recommends specific test panels based on your medical history, symptoms, and health goals.' },
+      { step: '02', title: 'Sample Collection', desc: 'Blood draw, urine sample, or semen collection performed in a private room with full confidentiality.' },
+      { step: '03', title: 'Laboratory Analysis', desc: 'Samples are processed using certified, high-accuracy diagnostic equipment meeting international standards.' },
+      { step: '04', title: 'Results Review', desc: 'Doctor personally explains your results in detail and discusses appropriate treatment options if needed.' }
     ],
     faq: [
-      { q: "Do I need to fast?", a: "For hormonal (Testosterone) and metabolic (Sugar/Lipid) panels, fasting for 8-12 hours is recommended. Water is allowed." },
-      { q: "how long for results?", a: "Most blood and urine test results are ready within 24 hours. Specialized cultures may take 48-72 hours." },
-      { q: "Is semen analysis private?", a: "Yes. We provide a private, comfortable room for sample collection to ensure accuracy and privacy." }
+      { q: "Do I need to fast before testing?", a: "For hormonal panels (Testosterone) and metabolic panels (Blood Sugar, Lipid Profile), fasting for 8-12 hours is recommended. Drinking plain water is allowed." },
+      { q: "How long does it take to get results?", a: "Most blood and urine test results are available within 24 hours. Specialized cultures or PCR tests may take 48-72 hours." },
+      { q: "Is the testing process private and confidential?", a: "Yes. We provide a private, comfortable room for all sample collection. All patient data and results are handled with the highest level of confidentiality." }
     ]
   }
 };
@@ -1631,84 +1658,114 @@ export const DOCTORS: DoctorData[] = [
     slug: 'dr.niti',
     name: 'Dr. Niti Navanimitkul, M.D.',
     role: 'Urologist & Men\'s Health Specialist',
+    roleTH: 'ศัลยแพทย์ระบบทางเดินปัสสาวะและผู้เชี่ยวชาญสุขภาพชาย',
     image: '/assets/image/urologist section/dr.niti.webp',
     expert: 'Penile Prosthesis | UroLift | Rezūm Specialist',
     hospital: 'Bangkok Hospital Pattaya',
     email: 'niti.menshealth@gmail.com',
     website: 'https://www.mtrusturology.com',
     tagline: 'A Journey of Dedication, Expertise, and Compassion in Men\'s Health',
+    taglineTH: 'เส้นทางแห่งความมุ่งมั่น ความเชี่ยวชาญ และความเอาใจใส่ในสุขภาพชาย',
     bio: "Dr. Niti Navanimitkul is one of Thailand’s premier experts in urology and men’s health. He combines profound medical expertise with a patient-first, holistic approach.",
+    bioTH: 'นพ. นิธิ นาวานิมิตกุล เป็นหนึ่งในผู้เชี่ยวชาญชั้นนำของไทยด้านระบบทางเดินปัสสาวะและสุขภาพชาย ผสานความเชี่ยวชาญทางการแพทย์เข้ากับแนวทางการดูแลแบบองค์รวมที่ยึดผู้ป่วยเป็นศูนย์กลาง',
     bioContent: [
       {
         type: 'header',
-        content: "Elevating Men’s Health Care in Thailand: Dr. Niti Navanimitkul"
+        content: "Elevating Men’s Health Care in Thailand: Dr. Niti Navanimitkul",
+        contentTH: 'ยกระดับการดูแลสุขภาพชายในประเทศไทย: นพ. นิธิ นาวานิมิตกุล'
       },
       {
         type: 'paragraph',
-        content: "Dr. Niti Navanimitkul is one of Thailand’s premier experts in urology and men’s health. He combines profound medical expertise with a patient-first, holistic approach. Driven by a passion for continuous learning and innovation, Dr. Niti is dedicated to empowering men to take control of their physical, emotional, and psychological well-being."
+        content: "Dr. Niti Navanimitkul is one of Thailand’s premier experts in urology and men’s health. He combines profound medical expertise with a patient-first, holistic approach. Driven by a passion for continuous learning and innovation, Dr. Niti is dedicated to empowering men to take control of his physical, emotional, and psychological well-being.",
+        contentTH: 'นพ. นิธิ นาวานิมิตกุล มุ่งมั่นในการรักษาและเรียนรู้นวัตกรรมอย่างต่อเนื่องเพื่อนำมาพัฒนาวิธีการรักษาให้ได้ผลลัพธ์ที่ดียิ่งขึ้น นพ. นิธิ อุทิศตนเพื่อช่วยให้ผู้ป่วยสามารถดูแลสุขภาพกาย อารมณ์ และจิตใจ ให้กลับมามีความมั่นใจ กลับมาใช้ชีวิตได้อย่างเป็นปกติอีกครั้ง'
       },
       {
         type: 'image',
         image: "/assets/image/urologist section/biography/Professional Profile-1.webp",
-        caption: "Dr. Niti Navanimitkul: Thailand’s leading men’s health expert, dedicated to transforming patient lives."
+        caption: "Dr. Niti Navanimitkul: Thailand's leading men's health specialist.",
+        captionTH: 'นพ. นิธิ นาวานิมิตกุล: ผู้เชี่ยวชาญด้านสุขภาพชายชั้นนำของประเทศไทย'
       },
       {
         type: 'header',
-        content: "World-Class Urology Expertise & High Success Rates"
+        content: "World-Class Urology Expertise & High Success Rates",
+        contentTH: 'ความเชี่ยวชาญด้านระบบทางเดินปัสสาวะระดับโลก และอัตราความสำเร็จสูง'
       },
       {
         type: 'paragraph',
-        content: "Dr. Niti specializes in cutting-edge, minimally invasive procedures designed to restore function and improve the quality of life for his patients. He is at the forefront of treating complex urological conditions, offering highly effective solutions:"
+        content: "Dr. Niti specializes in cutting-edge, minimally invasive procedures designed to restore function and improve the quality of life for his patients. He is at the forefront of treating complex urological conditions, offering highly effective solutions:",
+        contentTH: 'นพ. นิธิ เชี่ยวชาญในการทำหัตถการที่ล้ำสมัยและส่งผลกระทบน้อย เพื่อฟื้นฟูการทำงานและยกระดับคุณภาพชีวิตผู้ป่วย อีกทั้งยังเป็นแพทย์แถวหน้า ในการรักษาโรคระบบทางเดินปัสสาวะที่มีความซับซ้อนสูง ด้วยวิธีที่มีประสิทธิภาพสูง'
       },
       {
         type: 'list',
         items: [
-          "Penile Prosthesis Surgery (ED Treatment): Offering a permanent solution for erectile dysfunction to restore sexual function. Dr. Niti has performed over 100 successful cases with a reported 99.99% success rate.",
-          "UroLift® Treatment for BPH: A state-of-the-art, minimally invasive procedure to alleviate urinary symptoms caused by an enlarged prostate (Benign Prostatic Hyperplasia), ensuring quicker recovery times. Between August 2024 and April 2025 alone, he performed over 55 cases with a 99.99% success rate.",
+          "Penile Prosthesis Surgery (ED Treatment): Offering a permanent solution for erectile dysfunction to restore sexual function. Dr. Niti has performed over 150 successful cases with a reported 99.99% success rate.",
+          "UroLift® Treatment for BPH: A state-of-the-art, minimally invasive procedure to alleviate urinary symptoms caused by an enlarged prostate (Benign Prostatic Hyperplasia), ensuring quicker recovery times. Between August 2024 and April 2025 alone, he performed over 100 cases with a 99.99% success rate.",
           "Advanced Erectile Dysfunction Solutions: Comprehensive care utilizing the latest medical advancements, including Stem Cell Injections, Shockwave Therapy (Li-ESWT), and customized medication plans.",
           "Male Infertility Treatments: Advanced diagnostic testing and personalized procedures designed to enhance male fertility.",
           "Comprehensive Prostate Health: Proactive preventive care, prostate cancer screening, and expert management of BPH."
+        ],
+        itemsTH: [
+          'การผ่าตัดใส่อุปกรณ์ช่วยแข็งตัว (รักษา ED): นวัตกรรมการรักษาภาวะหย่อนสมรรถภาพแบบถาวร นพ. นิธิผ่าตัดสำเร็จมากกว่า 150 เคส อัตราความสำเร็จ 99.99%',
+          'การรักษา UroLift® สำหรับ BPH: หัตถการรุกรานน้อยระดับแนวหน้า บรรเทาอาการปัสสาวะจากต่อมลูกหมากโต ระหว่างสิงหาคม 2567 – เมษายน 2568 ทำสำเร็จกว่า 100 เคส อัตราความสำเร็จ 99.99%',
+          'การรักษาภาวะหย่อนสมรรถภาพขั้นสูง: ดูแลครบวงจรด้วยนวัตกรรมทางการแพทย์ล่าสุด ทั้งการฉีดเซลล์ต้นกำเนิด, การรักษาด้วยคลื่นเสียง (Li-ESWT) และแผนยาเฉพาะราย',
+          'การรักษาภาวะมีบุตรยากในชาย: การตรวจวินิจฉัยขั้นสูงและหัตถการเฉพาะราย เพื่อเพิ่มความสามารถในการมีบุตร',
+          'สุขภาพต่อมลูกหมากครบวงจร: การดูแลเชิงป้องกัน การคัดกรองมะเร็งต่อมลูกหมาก และการจัดการ BPH โดยผู้เชี่ยวชาญ'
         ]
       },
       {
         type: 'image',
         image: "/assets/image/urologist section/biography/Professional Profile-2.webp",
-        caption: "Highly certified in urology, Dr. Niti provides the most advanced men's healthcare."
+        caption: "Highly certified in urology, Dr. Niti provides the most advanced men's healthcare.",
+        captionTH: 'นพ. นิธิ ผู้ได้รับการรับรองสูงสุดด้านระบบทางเดินปัสสาวะ มอบการดูแลสุขภาพชายที่ล้ำสมัยที่สุด'
       },
       {
         type: 'header',
-        content: "Extensive Training & Board Certifications"
+        content: "Extensive Training & Board Certifications",
+        contentTH: 'การฝึกอบรมเข้มข้นและใบรับรองความเชี่ยวชาญ'
       },
       {
         type: 'paragraph',
-        content: "A graduate of one of Thailand’s most prestigious medical schools, Dr. Niti discovered his passion for men's health early in his career. He has since honed his skills through specialized fellowships and training at leading medical institutions.\n\nAs a lifelong learner, he holds numerous certifications in urology and consistently participates in international medical conferences. This dedication ensures his patients always have access to the most advanced, evidence-based treatments available globally."
+        content: "A graduate of one of Thailand's most prestigious medical schools, Dr. Niti discovered his passion for men's health early in his career. He has since honed his skills through specialized fellowships and training at leading medical institutions.\n\nAs a lifelong learner, he holds numerous certifications in urology and consistently participates in international medical conferences. This dedication ensures his patients always have access to the most advanced, evidence-based treatments available globally.",
+        contentTH: 'นพ. นิธิ สำเร็จการศึกษาจากคณะแพทยศาสตร์ชั้นนำที่มีชื่อเสียงที่สุดแห่งหนึ่งของประเทศไทย และได้ค้นพบความมุ่งมั่นทุ่มเทในการดูแลสุขภาพบุรุษมาตั้งแต่ช่วงเริ่มแรกของเส้นทางวิชาชีพ ท่านได้สั่งสมประสบการณ์และทักษะความเชี่ยวชาญผ่านการฝึกอบรมเฉพาะทางจากสถาบันการแพทย์ระดับแนวหน้า\n\nในฐานะผู้ที่ใฝ่เรียนรู้อยู่เสมอ นพ. นิธิ ได้รับวุฒิบัตรรับรองในสาขาศัลยศาสตร์ยูโรวิทยา (ระบบทางเดินปัสสาวะ) มากมาย และเข้าร่วมการประชุมวิชาการทางการแพทย์ระดับนานาชาติอย่างสม่ำเสมอ ความมุ่งมั่นนี้เองที่ทำให้คนไข้ของท่านมั่นใจได้ว่าจะสามารถเข้าถึงการรักษาที่ทันสมัยที่สุดและอ้างอิงตามหลักฐานทางวิชาการล่าสุดที่เป็นมาตรฐานสากลจากทั่วโลก'
       },
       {
         type: 'image',
         image: "/assets/image/urologist section/biography/Professional Profile-3.webp",
-        caption: "World-class trained urologist mastering advanced clinical techniques."
+        caption: "World-class trained urologist mastering advanced clinical techniques.",
+        captionTH: 'ศัลยแพทย์ระบบทางเดินปัสสาวะผู้ผ่านการฝึกอบรมระดับโลก เชี่ยวชาญเทคนิคคลินิกขั้นสูง'
       },
       {
         type: 'header',
-        content: "A Holistic, Patient-Centric Philosophy"
+        content: "A Holistic, Patient-Centric Philosophy",
+        contentTH: 'ปรัชญาการดูแลแบบองค์รวม ยึดผู้ป่วยเป็นศูนย์กลาง'
       },
       {
         type: 'paragraph',
-        content: "What truly sets Dr. Niti apart is his compassionate, holistic approach. He understands that urological conditions impact not just the physical body, but also emotional well-being. By taking the time to listen and understand each patient’s unique concerns, he crafts tailored, comprehensive treatment plans. His dedication to excellence in patient care, diagnosis, and education has earned him numerous accolades and the deep trust of both colleagues and patients."
+        content: "What truly sets Dr. Niti apart is his compassionate, holistic approach. He understands that urological conditions impact not just the physical body, but also emotional well-being. By taking the time to listen and understand each patient's unique concerns, he crafts tailored, comprehensive treatment plans. His dedication to excellence in patient care, diagnosis, and education has earned him numerous accolades and the deep trust of both colleagues and patients.",
+        contentTH: 'สิ่งที่ทำให้ นพ. นิธิ โดดเด่นอย่างแท้จริงคือแนวทางการรักษาด้วยความใส่ใจและมองอย่างรอบด้าน (Holistic Approach) ท่านตระหนักดีว่าอาการเจ็บป่วยทางระบบทางเดินปัสสาวะไม่ได้ส่งผลกระทบเพียงแค่ร่างกายเท่านั้น แต่ยังส่งผลต่อสภาวะจิตใจและความเป็นอยู่ที่ดีอีกด้วย\n\nด้วยการให้ความสำคัญกับการรับฟังและทำความเข้าใจความกังวลเฉพาะตัวของผู้ป่วยแต่ละราย นพ. นิธิ จึงสามารถออกแบบแผนการรักษาที่เหมาะสมและครอบคลุมความต้องการของคนไข้ได้อย่างตรงจุด ความทุ่มเทเพื่อความเป็นเลิศทั้งในด้านการดูแลผู้ป่วย การวินิจฉัย และการให้ความรู้ทางการแพทย์ ส่งผลให้ท่านได้รับรางวัลเชิดชูเกียรติมากมาย ตลอดจนได้รับความไว้วางใจอย่างลึกซึ้งจากทั้งเพื่อนร่วมวิชาชีพและผู้รับบริการเสมอมา'
       },
       {
         type: 'image',
         image: "/assets/image/urologist section/biography/Professional Profile-4.webp",
-        caption: "Patient-Centric Care Environment"
+        caption: "Patient-Centric Care Environment",
+        captionTH: 'สภาพแวดล้อมการดูแลที่ยึดผู้ป่วยเป็นศูนย์กลาง'
       }
     ],
     specialties: [
-      "Penile Prosthesis Surgery (100+ cases, 99.99% success rate)",
-      "UroLift Treatment for BPH (55+ cases, 99.99% success rate)",
+      "Penile Prosthesis Surgery (150+ cases, 99.99% success rate)",
+      "UroLift Treatment for BPH (100+ cases, 99.99% success rate)",
       "Water Vapor Therapy (Rezūm) - Center of Excellence",
       "Erectile Dysfunction Treatments (Stemcell, Shockwave)",
       "Male Infertility Diagnosis & Treatment",
       "Prostate Health & Cancer Screening"
+    ],
+    specialtiesTH: [
+      'Penile Prosthesis Surgery (150+ cases, 99.99% success rate)',
+      'UroLift Treatment for BPH (100+ cases, 99.99% success rate)',
+      'Water Vapor Therapy (Rezūm) - Center of Excellence',
+      'Erectile Dysfunction Treatments (Stemcell, Shockwave)',
+      'Male Infertility Diagnosis & Treatment',
+      'Prostate Health & Cancer Screening'
     ],
     qualifications: [
       { year: "2018", title: "Intensive Penile Prosthesis Workshop", place: "Ramathibodi Hospital, Bangkok" },
@@ -1814,28 +1871,35 @@ export const DOCTORS: DoctorData[] = [
     role: 'Consultant Urologist',
     image: '/assets/image/urologist section/dr.phanpon.webp',
     expert: 'Minimal Invasive & Innovation',
-    hospital: 'Bangkok Hospital Pattaya', // Keeping existing hospital pattern if applicable, or remove if not in image but image lists multiple
-    email: '', // Not in image
-    website: '', // Not in image
+    expertTH: 'Minimal Invasive & Innovation',
+    hospital: 'Bangkok Hospital Pattaya',
+    email: '',
+    website: '',
     tagline: 'Expert in Minimal Invasive & Innovation Treatment',
+    taglineTH: 'ผู้เชี่ยวชาญการรักษาแบบรุกรานน้อยและนวัตกรรม',
     bio: "Dr. Phanpon Leelahawong is a board-certified urologist with extensive experience in high-volume endoscopic surgery for benign prostatic enlargement and complex urinary stone disease. His clinical focus centers on advanced transurethral and enucleation-based techniques, offering definitive surgical solutions for patients with moderate to large prostate glands.",
+    bioTH: 'นพ. ภาณพ ลีลาวงศ์ เป็นแพทย์ศัลยกรรมระบบทางเดินปัสสาวะที่ได้รับการรับรองจากคณะกรรมการแพทย์ มีประสบการณ์กว้างขวางด้านการผ่าตัดส่องกล้องปริมาณสูงสำหรับต่อมลูกหมากโตชนิดไม่ร้ายแรงและนิ่วในทางเดินปัสสาวะที่ซับซ้อน ความเชี่ยวชาญทางคลินิกของเขาครอบคลุมเทคนิคผ่านทางท่อปัสสาวะและการตัดต่อมขั้นสูง เพื่อมอบแนวทางการผ่าตัดที่เด็ดขาดสำหรับผู้ป่วยที่มีต่อมลูกหมากขนาดกลางถึงขนาดใหญ่',
     bioContent: [
       {
         type: 'header',
-        content: "Expertise in Advanced Enucleation & Endourology"
+        content: "Expertise in Advanced Enucleation & Endourology",
+        contentTH: 'ความเชี่ยวชาญด้านการตัดต่อมขั้นสูงและการส่องกล้องระบบทางเดินปัสสาวะ'
       },
       {
         type: 'paragraph',
-        content: "Dr. Phanpon has substantial experience in transurethral resection (TURP), bipolar enucleation (TUERP/BipoLEP), and modern laser-based enucleation techniques (HoLEP). His practice emphasizes complete adenoma removal using anatomical enucleation principles for durable long-term outcomes."
+        content: "Dr. Phanpon has substantial experience in transurethral resection (TURP), bipolar enucleation (TUERP/BipoLEP), and modern laser-based enucleation techniques (HoLEP). His practice emphasizes complete adenoma removal using anatomical enucleation principles for durable long-term outcomes.",
+        contentTH: 'นพ. ภาณพ มีประสบการณ์มากด้านการตัดชิ้นเนื้อผ่านท่อปัสสาวะ (TURP) การตัดต่อมแบบไบโพลาร์ (TUERP/BipoLEP) และเทคนิคการตัดต่อมด้วยเลเซอร์สมัยใหม่ (HoLEP) โดยเน้นการนำต่อมออกอย่างสมบูรณ์ตามหลักกายวิภาคศาสตร์ เพื่อผลลัพธ์ระยะยาวที่ยั่งยืน'
       },
       {
         type: 'image',
         image: "/assets/image/urologist section/dr.phanpon-biography/Professional Profile-1.webp",
-        caption: "Dr. Phanpon performing advanced laser enucleation for large prostate cases."
+        caption: "Dr. Phanpon performing advanced laser enucleation for large prostate cases.",
+        captionTH: 'นพ. ภาณพ กำลังทำการตัดต่อมด้วยเลเซอร์ขั้นสูงสำหรับผู้ป่วยต่อมลูกหมากขนาดใหญ่'
       },
       {
         type: 'header',
-        content: "Surgical Volume & Clinical Experience"
+        content: "Surgical Volume & Clinical Experience",
+        contentTH: 'ปริมาณการผ่าตัดและประสบการณ์ทางคลินิก'
       },
       {
         type: 'list',
@@ -1843,20 +1907,28 @@ export const DOCTORS: DoctorData[] = [
           "Over 900 urological procedures performed",
           "Over 500 endoscopic stone surgeries",
           "Over 400 endoscopic prostate procedures"
+        ],
+        itemsTH: [
+          'ผ่าตัดระบบทางเดินปัสสาวะมากกว่า 900 ครั้ง',
+          'ผ่าตัดนิ่วด้วยการส่องกล้องมากกว่า 500 ครั้ง',
+          'ผ่าตัดต่อมลูกหมากด้วยการส่องกล้องมากกว่า 400 ครั้ง'
         ]
       },
       {
         type: 'image',
         image: "/assets/image/urologist section/dr.phanpon-biography/Professional Profile-2.webp",
-        caption: "Extensive surgical experience with over 900 urological procedures."
+        caption: "Extensive surgical experience with over 900 urological procedures.",
+        captionTH: 'ประสบการณ์ผ่าตัดกว้างขวาง ด้วยหัตถการระบบทางเดินปัสสาวะมากกว่า 900 ครั้ง'
       },
       {
         type: 'header',
-        content: "Prostate & Endourology Center"
+        content: "Prostate & Endourology Center",
+        contentTH: 'ศูนย์ต่อมลูกหมากและการส่องกล้องระบบทางเดินปัสสาวะ'
       },
       {
         type: 'paragraph',
-        content: "The Prostate & Endourology Center provides comprehensive evaluation and management of benign prostatic enlargement (BPH), large prostate glands requiring enucleation surgery, and complex renal/ureteric stones. Each patient undergoes structured assessment including symptom evaluation, imaging, and individualized treatment planning."
+        content: "The Prostate & Endourology Center provides comprehensive evaluation and management of benign prostatic enlargement (BPH), large prostate glands requiring enucleation surgery, and complex renal/ureteric stones. Each patient undergoes structured assessment including symptom evaluation, imaging, and individualized treatment planning.",
+        contentTH: 'ศูนย์ต่อมลูกหมากและการส่องกล้องฯ ให้บริการประเมินและดูแลต่อมลูกหมากโตชนิดไม่ร้ายแรง (BPH) ต่อมขนาดใหญ่ที่ต้องผ่าตัดตัดออก รวมถึงนิ่วในไตและท่อไตที่ซับซ้อน ผู้ป่วยทุกรายได้รับการประเมินอย่างเป็นระบบ ครอบคลุมการประเมินอาการ การถ่ายภาพ และการวางแผนรักษาเฉพาะบุคคล'
       },
       {
         type: 'list',
@@ -1865,16 +1937,24 @@ export const DOCTORS: DoctorData[] = [
           "Precision-based endoscopic surgery with modern equipment",
           "Tailored surgical recommendations based on prostate size and patient expectations",
           "Standardized perioperative care for optimal recovery"
+        ],
+        itemsTH: [
+          'หัตถการแบบรุกรานน้อยสำหรับทางเดินปัสสาวะส่วนบน',
+          'การผ่าตัดส่องกล้องที่มีความแม่นยำสูงด้วยอุปกรณ์ทันสมัย',
+          'คำแนะนำการผ่าตัดเฉพาะราย ตามขนาดต่อมและความคาดหวังของผู้ป่วย',
+          'การดูแลรอบการผ่าตัดที่เป็นมาตรฐาน เพื่อการฟื้นฟูที่ดีที่สุด'
         ]
       },
       {
         type: 'image',
         image: "/assets/image/urologist section/dr.phanpon-biography/Professional Profile-3.webp",
-        caption: "A leading center for prostate enucleation and complex stone disease."
+        caption: "A leading center for prostate enucleation and complex stone disease.",
+        captionTH: 'ศูนย์ชั้นนำด้านการตัดต่อมลูกหมากและโรคนิ่วที่ซับซ้อน'
       },
       {
         type: 'header',
-        content: "Clinical Philosophy"
+        content: "Clinical Philosophy",
+        contentTH: 'ปรัชญาทางคลินิก'
       },
       {
         type: 'list',
@@ -1883,16 +1963,24 @@ export const DOCTORS: DoctorData[] = [
           "Evidence-based decision making",
           "Structured perioperative care",
           "Functional recovery and long-term durability"
+        ],
+        itemsTH: [
+          'เทคนิคการตัดต่อมตามหลักกายวิภาคเพื่อนำเนื้อเยื่อออกอย่างสมบูรณ์',
+          'การตัดสินใจบนหลักฐานเชิงประจักษ์',
+          'การดูแลรอบการผ่าตัดอย่างเป็นระบบ',
+          'การฟื้นฟูการทำงานและความทนทานระยะยาว'
         ]
       },
       {
         type: 'image',
         image: "/assets/image/urologist section/dr.phanpon-biography/Professional Profile-4.webp",
-        caption: "Committed to evidence-based care and anatomical precision."
+        caption: "Committed to evidence-based care and anatomical precision.",
+        captionTH: 'มุ่งมั่นต่อการดูแลบนหลักฐานเชิงประจักษ์และความแม่นยำทางกายวิภาค'
       },
       {
         type: 'header',
-        content: "Professional Experience"
+        content: "Professional Experience",
+        contentTH: 'ประสบการณ์วิชาชีพ'
       },
       {
         type: 'list',
@@ -1901,15 +1989,23 @@ export const DOCTORS: DoctorData[] = [
           "2019 - Present: Full-time urologist, Rayong Hospital, Rayong",
           "2017 - 2019: Full-time urologist, Chao Phraya Abhaibhubejhr Center Hospital",
           "Consulting Urologist: Dr. Phanpon Urology Clinic Rayong, Eternity Clinic, Sri Rayong Hospital, Bangkok Rayong Hospital"
+        ],
+        itemsTH: [
+          '2562 - ปัจจุบัน: แพทย์ที่ปรึกษาระบบทางเดินปัสสาวะ ที่ M-Trust Urology Clinic',
+          '2562 - ปัจจุบัน: แพทย์ประจำโรงพยาบาลระยอง จ.ระยอง',
+          '2560 - 2562: แพทย์ประจำโรงพยาบาลเจ้าพระยาอภัยภูเบศร',
+          'แพทย์ที่ปรึกษา: Dr. Phanpon Urology Clinic ระยอง, Eternity Clinic, ศรีระยองโรงพยาบาล, กรุงเทพระยองโรงพยาบาล'
         ]
       },
       {
         type: 'image',
         image: "/assets/image/urologist section/dr.phanpon-biography/Professional Profile-5.webp",
-        caption: "Providing comprehensive urological consulting and specialized surgical services."
+        caption: "Providing comprehensive urological consulting and specialized surgical services.",
+        captionTH: 'ให้บริการปรึกษาระบบทางเดินปัสสาวะครบวงจรและบริการผ่าตัดเฉพาะทาง'
       }
     ],
     specialties: ["Andrology & Sexual Dysfunction", "Prostate Disease", "Urinary Tract Stones", "Dorsal Neurectomy", "Penile Enhancement", "Minimal Invasive & Innovation Treatment"],
+    specialtiesTH: ['Andrology & Sexual Dysfunction', 'Prostate Disease', 'Urinary Tract Stones', 'Dorsal Neurectomy', 'Penile Enhancement', 'Minimal Invasive & Innovation Treatment'],
     qualifications: [
       { year: "2025", title: "Certificate of Attendance, Master the Transurethral Anatomical Enucleation of Prostate (TUAEP)", place: "TUAEP Masterclass" },
       { year: "2025", title: "Certificate of Completion, UROLIFT™ SYSTEM PROFICIENCY PATHWAY MODULE", place: "Teleflex Interventional Urology" },
@@ -1958,7 +2054,7 @@ export const DOCTORS: DoctorData[] = [
 export const ABOUT_SPECIALTIES = [
   { title: 'Performance Restoration', desc: 'Treat ED and restore vitality with innovative Li-ESWT technology.', Icon: Zap, image: '/assets/image/about section/Performance Restoration.webp' },
   { title: 'General & Surgical Urology', desc: 'Diagnosis and minimally invasive surgery for all urological conditions.', Icon: Stethoscope, image: '/assets/image/about section/General & Surgical Urology.webp' },
-  { title: 'Prostate Center', desc: 'Advanced laser care for enlarged prostate and urinary symptoms.', Icon: Target, image: '/assets/image/about section/Prostate Center.webp' },
+  { title: 'Prostate Center', desc: 'Comprehensive Advanced care for enlarged prostate and urinary symptoms.', Icon: Target, image: '/assets/image/about section/Prostate Center.webp' },
   { title: 'Cosmetic Urology', desc: 'Professional male aesthetic surgery and safe augmentation procedures.', Icon: Scissors, image: '/assets/image/about section/Cosmetic Urology.webp' }
 ];
 
@@ -1966,7 +2062,7 @@ export const FAQ_DATA: FaqItem[] = [
   { question: "Do I need a referral to make an appointment?", answer: "No, you can book an appointment directly with our specialists without a referral letter. We welcome both local and international patients." },
   { question: "Is the Shockwave therapy for ED painful?", answer: "Not at all. Focus Shockwave is a non-invasive, painless procedure requiring no anesthesia. Most patients describe a light tapping sensation." },
   { question: "What is the recovery time for a Vasectomy?", answer: "Our minimally invasive 'No-Scalpel' vasectomy allows for a very quick recovery. Most patients return to light work within 1-2 days and full activity within a week." },
-  { question: "Do you accept health insurance?", answer: "We partner with major international insurance providers. Please bring your policy details, and our staff will assist with the pre-authorization process." },
+  { question: "Do you accept health insurance?", answer: "We currently do not accept health insurance directly. However, we can provide all necessary documentation so you can submit a claim and reimburse through your insurance provider on your own." },
   { question: "Is my consultation confidential?", answer: "Absolutely. We adhere to strict medical privacy standards. Your records and consultation details are kept 100% confidential." },
   { question: "Do you offer tele-consultation services?", answer: "Yes, we offer secure video consultations for initial screenings and follow-ups. You can book this service through our Line Official or website." }
 ];
@@ -2309,16 +2405,83 @@ export const BLOG_POSTS: BlogPost[] = [
         "Fat transfer offers a 'two-in-one' benefit: liposuction for specific body contouring and natural penile girth enhancement that can last for years."
       </blockquote>
 
-      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
-        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Key Differences Summary:</h4>
+      <div class="bg-red-50 dark:bg-red-900/10 p-6 rounded-2xl border border-red-100 dark:border-red-900/20 my-8">
+        <h4 class="font-bold text-red-600 dark:text-red-500 mb-2">Disadvantages of Autologous Fat Transfer:</h4>
         <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>Longevity:</strong> Fat is permanent (dependent on survival), HA fills are temporary.</li>
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>Texture:</strong> Fat feels softer; HA fillers are firmer.</li>
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>Procedure:</strong> HA is < 30 mins (clinic); Fat transfer is minor surgery (sterility required).</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span> <strong>Unpredictable Fat Absorption:</strong> 30-50% of transferred fat may be reabsorbed by the body, causing uneven or asymmetrical results over time.</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span> <strong>Risk of Lumps &amp; Nodules:</strong> Fat can clump or form fibrous nodules, creating an irregular texture that may require corrective procedures.</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span> <strong>Requires Surgery:</strong> The fat harvesting (liposuction) step requires anesthesia, incisions, and a longer recovery period (2-4 weeks).</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span> <strong>Not Reversible:</strong> Unlike HA fillers, fat cannot be dissolved with an enzyme if complications arise.</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span> <strong>Potential Donor Site Complications:</strong> Bruising, swelling, or contour irregularities at the liposuction site.</li>
         </ul>
       </div>
 
-      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Safety Warning: Avoid Paraffin & Silicone</h3>
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Comparison: HA Fillers vs. Fat Transfer</h3>
+      <div class="overflow-x-auto my-8">
+        <table class="w-full text-sm border-collapse rounded-2xl overflow-hidden shadow-lg">
+          <thead>
+            <tr class="bg-slate-800 dark:bg-slate-700 text-white">
+              <th class="px-4 py-3 text-left font-bold">Feature</th>
+              <th class="px-4 py-3 text-center font-bold">HA Fillers</th>
+              <th class="px-4 py-3 text-center font-bold">Fat Transfer</th>
+            </tr>
+          </thead>
+          <tbody class="text-slate-700 dark:text-slate-300">
+            <tr class="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">Procedure Type</td>
+              <td class="px-4 py-3 text-center">Non-surgical (injection)</td>
+              <td class="px-4 py-3 text-center">Minor surgery (liposuction + injection)</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">Procedure Time</td>
+              <td class="px-4 py-3 text-center">30-45 minutes</td>
+              <td class="px-4 py-3 text-center">1-2 hours</td>
+            </tr>
+            <tr class="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">Anesthesia</td>
+              <td class="px-4 py-3 text-center">Local anesthesia (topical)</td>
+              <td class="px-4 py-3 text-center">Local or general anesthesia</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">Results Duration</td>
+              <td class="px-4 py-3 text-center">12-18 months</td>
+              <td class="px-4 py-3 text-center">Longer-lasting (varies by absorption rate)</td>
+            </tr>
+            <tr class="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">Downtime</td>
+              <td class="px-4 py-3 text-center">None - resume daily activities immediately</td>
+              <td class="px-4 py-3 text-center">2-4 weeks recovery</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">Result Predictability</td>
+              <td class="px-4 py-3 text-center">High - precise volume control</td>
+              <td class="px-4 py-3 text-center">Moderate - 30-50% fat may be reabsorbed</td>
+            </tr>
+            <tr class="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">Symmetry</td>
+              <td class="px-4 py-3 text-center">Excellent - even distribution</td>
+              <td class="px-4 py-3 text-center">Risk of lumps/asymmetry</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">Reversibility</td>
+              <td class="px-4 py-3 text-center">Yes - dissolvable with Hyaluronidase</td>
+              <td class="px-4 py-3 text-center">No - requires surgical correction</td>
+            </tr>
+            <tr class="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">Natural Texture</td>
+              <td class="px-4 py-3 text-center">Good - slightly firmer</td>
+              <td class="px-4 py-3 text-center">Excellent - very soft and natural</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-800/50">
+              <td class="px-4 py-3 font-semibold">Best For</td>
+              <td class="px-4 py-3 text-center">First-timers, subtle enhancement, low risk</td>
+              <td class="px-4 py-3 text-center">Patients seeking longer-lasting results with body contouring</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Safety Warning: Avoid Paraffin &amp; Silicone</h3>
       <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
         <strong>NEVER</strong> inject liquid silicone, paraffin, or oils. These unauthorized substances cause severe granulomas, infection, and permanent deformity requiring complex reconstructive surgery to fix. Always choose FDA/Thai FDA approved medical methods performed by a specialist urologist.
       </p>
@@ -2439,14 +2602,1148 @@ export const BLOG_POSTS: BlogPost[] = [
       </div>
     `
   },
+  {
+    id: 9,
+    title: 'Circumcision Near Me: How to Choose the Best Clinic?',
+    excerpt: 'Finding a reliable clinic for circumcision is crucial. Compare the latest stapler technology versus traditional methods and what to look for in a professional urology clinic.',
+    date: 'Jan 10, 2026',
+    category: 'Surgery',
+    image: '/assets/image/blog section/Circumcision Near Me.webp',
+    content: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Choosing the right clinic for circumcision is one of the most important decisions you'll make for this procedure. Whether for medical, hygiene, or aesthetic reasons, <strong>who performs it and how</strong> determines your comfort level, recovery speed, and the final aesthetic result.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Stapler vs Traditional Circumcision</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            Traditional circumcision uses a scalpel and manual suturing, taking 30-45 minutes. Modern <strong>Stapler Circumcision (ZSR)</strong> completes the same procedure in just 15 minutes with superior results.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>15-minute procedure</strong> — dramatically faster than traditional</li>
+            <li><strong>Minimal bleeding</strong> — instant hemostasis via stapling</li>
+            <li><strong>Superior aesthetics</strong> — clean, even circumferential result</li>
+            <li><strong>Less pain</strong> — reduced tissue trauma and no manual stitching</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Circumcision Near Me 2.webp" alt="Circumcision clinic" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">State-of-the-art circumcision at M-Trust Urology Clinic</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">What to Look For in a Circumcision Clinic</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        Not all clinics offer the same level of care. A board-certified <strong>urologist</strong> (not a general practitioner) should perform the procedure using sterile, hospital-grade equipment. The clinic should offer absolute privacy and post-operative follow-up.
+      </p>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Clinic Checklist:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Procedure performed by a specialist urologist</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Latest ZSR/Stapler technology available</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Hospital-grade sterilization standards</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Private, discreet environment</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Post-operative care and follow-up included</li>
+        </ul>
+      </div>
+    `
+  },
+  {
+    id: 10,
+    title: 'Erectile Dysfunction: What to Do When Your "Little Brother" Won\'t Wake Up?',
+    excerpt: 'Troubleshooting erectile dysfunction? From lifestyle changes to advanced Shockwave therapy, discover the medical solutions to regain your confidence.',
+    date: 'Jan 08, 2026',
+    category: 'Performance',
+    image: '/assets/image/blog section/Erectile Dysfunction.webp',
+    content: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Erectile Dysfunction (ED) is far more common than most men dare to admit—affecting <strong>1 in 3 men over age 40</strong>. The good news: modern urology has advanced treatments that go far beyond the blue pill, targeting the root cause for lasting recovery.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Why Does ED Happen?</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            ED is most often vascular in origin — meaning the blood vessels supplying the penis are damaged or restricted. Other causes include nerve damage, hormonal imbalance (Low T), and psychological factors.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li>Poor pelvic blood circulation (most common)</li>
+            <li>Diabetes or hypertension damaging vessel walls</li>
+            <li>Low testosterone levels</li>
+            <li>Stress, anxiety, and relationship issues</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Erectile Dysfunction 2.webp" alt="ED Solutions" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Modern solutions for erectile dysfunction</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Treatment Ladder: From Simple to Advanced</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        Treatment begins with lifestyle changes (exercise, diet, stopping smoking) and oral medications (PDE5 inhibitors like Sildenafil). When these fail, <strong>Li-ESWT Shockwave Therapy</strong> regenerates blood vessels naturally. For severe cases, penile implants offer a permanent solution.
+      </p>
+
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "The most important step is breaking the silence. ED is a medical condition—not a character flaw—and one of the most treatable in men's health."
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Treatment Options by Severity:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>Mild:</strong> Lifestyle changes + PDE5 inhibitors</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>Moderate:</strong> Li-ESWT Shockwave Therapy (regenerative)</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>Severe:</strong> Vacuum devices, injections, or penile implant</li>
+        </ul>
+      </div>
+    `
+  },
+  {
+    id: 11,
+    title: 'Straining to Urinate? Understanding the Causes and Treatments for Urinary Obstruction.',
+    excerpt: 'If you find yourself straining to urinate, it could be a sign of BPH or other urinary conditions. Learn about the modern, non-surgical treatments available.',
+    date: 'Jan 05, 2026',
+    category: 'Treatment',
+    image: '/assets/image/blog section/Straining to Urinate.webp',
+    content: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Straining to urinate, a weak stream, or feeling like you can never fully empty your bladder—these are classic warning signs of <strong>urinary obstruction</strong>. In men over 50, the most common culprit is an enlarged prostate (BPH), but several other conditions can also cause blockage.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Common Causes of Urinary Obstruction</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Benign Prostatic Hyperplasia (BPH)</strong> — most common in men over 50</li>
+            <li><strong>Urethral stricture</strong> — scarring narrowing the urethra</li>
+            <li><strong>Bladder stones</strong> — blocking the bladder outlet</li>
+            <li><strong>Prostate cancer</strong> — advanced stage involvement</li>
+            <li><strong>Neurogenic bladder</strong> — nerve dysfunction affecting bladder control</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Straining to Urinate 2.webp" alt="Urinary Issues" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Modern non-surgical treatment for urinary issues</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Non-Surgical Solutions for BPH</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        For BPH-related obstruction, two minimally invasive therapies have transformed care: <strong>ReZUM Water Vapor Therapy</strong> and <strong>UroLift</strong>. Both can be performed under local anesthesia, preserve sexual function, and allow patients to return home the same day.
+      </p>
+
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "Don't wait until you can't urinate at all. Early treatment of urinary obstruction prevents permanent bladder damage and kidney complications."
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">When to See a Urologist Immediately:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Complete inability to urinate (urinary retention)</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Blood in urine combined with difficulty urinating</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Painful urination with fever (possible infection)</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Symptoms worsening over weeks</li>
+        </ul>
+      </div>
+    `
+  },
+  {
+    id: 12,
+    title: 'STI Testing Near Me: Why Discretion and Technology Matter.',
+    excerpt: 'Concerned about STIs? Discover why confidential DNA PCR testing is the gold standard for accuracy and how to find a private clinic near you.',
+    date: 'Jan 02, 2026',
+    category: 'Prevention',
+    image: '/assets/image/blog section/STI Testing Near Me.webp',
+    content: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Sexually Transmitted Infections (STIs) are more prevalent than ever, yet stigma and fear of embarrassment prevent many from getting tested. Modern <strong>DNA PCR testing</strong> at dedicated private clinics offers absolute accuracy and complete discretion—often with results in 24-48 hours.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Why PCR Testing is the Gold Standard</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            Traditional STI testing relies on culture methods that can take days and miss early infections. PCR (Polymerase Chain Reaction) detects the pathogen's DNA directly, offering superior sensitivity even in the earliest stages.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>99%+ accuracy</strong> — detects even minute quantities of pathogen DNA</li>
+            <li><strong>Detects early infection</strong> — before antibody tests show positive</li>
+            <li><strong>Multiple pathogens</strong> — one sample tests for many STIs simultaneously</li>
+            <li><strong>Fast results</strong> — typically 24-48 hours</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/STI Testing Near Me 2.webp" alt="STI Testing" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Confidential DNA PCR STI testing</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Common STIs We Test For</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        Our comprehensive STI panel covers chlamydia, gonorrhea, syphilis, HIV, hepatitis B & C, HPV, herpes (HSV-1 & HSV-2), and mycoplasma. All testing is performed confidentially—results are never shared without your consent.
+      </p>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Our Privacy Guarantee:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Separate private consultation room</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Results delivered securely via Line or encrypted email</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> No information shared without your written consent</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Discreet billing — no medical description on receipts</li>
+        </ul>
+      </div>
+    `
+  },
+  {
+    id: 13,
+    title: 'Frequent Urination, Discomfort, or Waking Up at Night? Uncovering the Causes.',
+    excerpt: 'Experiencing incomplete emptying or frequent nighttime trips to the bathroom? Discover the underlying causes like enlarged prostate (BPH) and how modern treatments can help.',
+    date: 'Dec 28, 2025',
+    category: 'Wellness',
+    image: '/assets/image/blog section/Frequent Urination.webp',
+    content: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Waking up 2, 3, or 4 times every night to urinate—a condition called <strong>nocturia</strong>—is not a normal part of aging. Nor is the constant urge to go during the day, sensations of incomplete emptying, or pelvic discomfort. These are measurable medical symptoms with treatable causes.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">What's Behind Frequent Urination?</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">These symptoms often overlap and can stem from multiple causes:</p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Enlarged Prostate (BPH)</strong> — squeezes the urethra, forcing frequent voids</li>
+            <li><strong>Overactive Bladder (OAB)</strong> — bladder muscle contracts when it shouldn't</li>
+            <li><strong>Prostatitis</strong> — prostate inflammation causing urgency and discomfort</li>
+            <li><strong>UTI</strong> — burning and urgency, especially with fever</li>
+            <li><strong>Diabetes</strong> — high blood sugar increases urine output</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Frequent Urination 2.webp" alt="Frequent Urination" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Identify and treat the root cause</p>
+          </div>
+        </div>
+      </div>
+
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "One simple uroflow test and ultrasound can pinpoint the cause in most cases. There's no need to suffer in silence—effective treatment is available."
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Diagnostic Steps at Our Clinic:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Uroflowmetry — measures urine flow rate</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Post-void residual ultrasound — checks bladder emptying</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> PSA blood test — screens for prostate issues</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Urinalysis — rules out infection or blood</li>
+        </ul>
+      </div>
+    `
+  },
+  {
+    id: 14,
+    title: '"My Little Brother Used to be Bigger." Understanding Penile Shrinkage.',
+    excerpt: 'Have you noticed a loss of girth or length? Learn about the physiological reasons behind penile shrinkage and how advanced medical treatments can reverse it.',
+    date: 'Dec 25, 2025',
+    category: 'Wellness',
+    image: '/assets/image/blog section/My Little Brother.webp',
+    content: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        A noticeable reduction in penile size is more common than discussed. Whether due to aging, vascular changes, or hormonal shifts, <strong>penile shrinkage is a real, physiological phenomenon</strong>—and in many cases, it is reversible with the right medical approach.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Why Does It Happen?</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            Penile tissue contains smooth muscle that requires regular oxygenation through erections. When erections decline (due to ED or hormonal issues), that tissue gradually fibroses (scars), reducing size.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Reduced erection frequency</strong> — leads to tissue fibrosis</li>
+            <li><strong>Low testosterone</strong> — reduces smooth muscle volume</li>
+            <li><strong>Peyronie's disease</strong> — scar tissue causes curvature and shortening</li>
+            <li><strong>Significant weight gain</strong> — suprapubic fat pad buries the shaft</li>
+            <li><strong>Post-surgery changes</strong> — prostate surgery can affect length</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/My Little Brother 2.webp" alt="Penile Shrinkage" class="w-full h-full object-cover" />
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Reversal & Enhancement Options</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        Treating the underlying cause (TRT for Low T, Shockwave for ED, weight loss) often partially restores size. For aesthetic enhancement of girth, <strong>Hyaluronic Acid (HA) fillers</strong> or <strong>Autologous Fat Transfer</strong> offer medically safe, immediate results.
+      </p>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Treatment Roadmap:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Treat ED with Shockwave → restores regular erections → prevents further shrinkage</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> TRT if Low T confirmed → rebuilds smooth muscle mass</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> HA Filler injection → immediate girth increase (same day)</li>
+        </ul>
+      </div>
+    `
+  },
+  {
+    id: 15,
+    title: 'Why You Must Remove Injected Foreign Substances: The Hidden Dangers of Paraffinoma.',
+    excerpt: 'Injected olive oil, paraffin, or silicone into your penis? Understand why delayed removal can lead to severe complications and how reconstructive surgery saves functionality.',
+    date: 'Dec 22, 2025',
+    category: 'Surgery',
+    image: '/assets/image/blog section/Why You Must Remove.webp',
+    content: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Injecting foreign substances—paraffin, olive oil, silicone, or petroleum gel—into the penis in an attempt to enhance size is a dangerous practice that leads to <strong>Paraffinoma</strong>: a severe, progressive granulomatous reaction. Early removal is critical to preserving function.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">What is Paraffinoma?</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            When non-medical substances are injected under the penile skin, the body's immune system attacks them continuously, creating a chronic inflammatory reaction. Over time, this leads to dense scar tissue formation and tissue death.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Disfigurement</strong> — hardened, irregular lumps under the skin</li>
+            <li><strong>Chronic pain</strong> — ongoing inflammation and nerve irritation</li>
+            <li><strong>Erectile dysfunction</strong> — vascular damage from granulomas</li>
+            <li><strong>Skin necrosis</strong> — tissue death and ulceration in severe cases</li>
+            <li><strong>Infection risk</strong> — abscesses forming around foreign material</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Why You Must Remove 2.webp" alt="Foreign Body Removal" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Expert reconstructive surgery restores form and function</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">The Reconstruction Process</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        Surgical removal involves complete excision of the affected skin and foreign material, followed by reconstruction using skin grafts (from the scrotum, thigh, or abdomen). Early surgery before extensive scarring gives the best functional and cosmetic outcomes.
+      </p>
+
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "Every month of delay makes the surgery more complex. If you have had foreign substances injected, seek a specialist urologist immediately—do not wait for symptoms to worsen."
+      </blockquote>
+    `
+  },
+  {
+    id: 16,
+    title: 'Struggling with Premature Ejaculation? Modern Solutions That Actually Work.',
+    excerpt: 'Is premature ejaculation affecting your relationship? Discover the difference between psychological and physical causes, and explore the advanced treatments available.',
+    date: 'Dec 19, 2025',
+    category: 'Performance',
+    image: '/assets/image/blog section/Struggling with Premature.webp',
+    content: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Premature Ejaculation (PE) is the most common male sexual dysfunction, yet it remains one of the least discussed. With today's advanced medical options—from targeted medications to microsurgery—there is a solution for every type and severity of PE.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Psychological vs. Physical PE</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            Correctly identifying your PE type is essential for effective treatment. Most men have a combination of both factors.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Psychological:</strong> Anxiety, performance pressure, relationship stress</li>
+            <li><strong>Neurobiological:</strong> Hypersensitivity of penile nerve endings</li>
+            <li><strong>Hormonal:</strong> Low serotonin or thyroid dysfunction</li>
+            <li><strong>Combined:</strong> The most common presentation</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Struggling with Premature 2.webp" alt="PE Treatment" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Tailored treatment for lasting performance improvement</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Modern Treatments That Work</h3>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Treatment Options & Success Rates:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>Dapoxetine (SSRI):</strong> Delays ejaculation 3-4x — 75% success</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>Topical Anesthetics:</strong> Lidocaine spray — reduces sensitivity 40-60%</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>Behavioral Therapy:</strong> Stop-start & squeeze techniques</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>Dorsal Neurectomy:</strong> Surgical option for hypersensitivity — permanent solution</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>Combined approach:</strong> 85-90% long-term satisfaction</li>
+        </ul>
+      </div>
+    `
+  },
+  {
+    id: 17,
+    title: 'Urology Clinic Near Me: What to Look For in a Top-Tier Specialist Clinic.',
+    excerpt: 'Searching for a urology clinic? Discover the key factors that distinguish a premier men\'s health center, from advanced technology to Absolute privacy and expert care.',
+    date: 'Dec 16, 2025',
+    category: 'Wellness',
+    image: '/assets/image/blog section/Urology Clinic Near Me.webp',
+    content: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Selecting the right urology clinic is a decision that directly impacts your health outcomes, comfort, and privacy. Not all clinics offer the same level of expertise, technology, or discretion. Here's what separates a premier men's health center from a generic clinic.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">The 5 Pillars of a Top Urology Clinic</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <ul class="list-disc pl-6 space-y-3 text-slate-600 dark:text-slate-300">
+            <li><strong>Board-Certified Urologist</strong> — not a GP or general surgeon</li>
+            <li><strong>Advanced Technology</strong> — Li-ESWT, UroLift, ReZUM, HoLEP laser on-site</li>
+            <li><strong>Complete Privacy</strong> — private rooms, discreet entrance, encrypted records</li>
+            <li><strong>Comprehensive Services</strong> — from diagnosis to treatment in one location</li>
+            <li><strong>Post-Treatment Follow-Up</strong> — structured monitoring for best outcomes</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Urology Clinic Near Me 2.webp" alt="Urology Clinic" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Premium men's health care at M-Trust Urology Clinic</p>
+          </div>
+        </div>
+      </div>
+
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "The quality of your urologist's experience matters more than proximity. A 30-minute drive to an expert is worth far more than walking distance to an inexperienced provider."
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Questions to Ask Any Clinic:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Is the procedure performed by the urologist or a technician?</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> How many of these procedures has the doctor performed?</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> What are the complication rates and how are they handled?</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Is there a structured follow-up protocol after treatment?</li>
+        </ul>
+      </div>
+    `
+  },
+  {
+    id: 18,
+    title: 'Trouble Maintaining an Erection? Losing Firmness Midway Explained.',
+    excerpt: 'Experiencing a loss of erection during intimacy? Learn about the physiological and psychological factors that cause you to lose firmness midway, and how to fix it.',
+    date: 'Dec 13, 2025',
+    category: 'Performance',
+    image: '/assets/image/blog section/Trouble Maintaining.webp',
+    content: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Achieving an erection is one challenge—maintaining it throughout intercourse is another. <strong>Losing firmness midway</strong> is a specific form of ED called "erectile maintenance disorder" and is extremely common. The cause is usually a combination of vascular and psychological factors.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Why Erections Fade Midway</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            Maintaining an erection requires a continuous inflow of blood while the outflow veins are compressed. If either fails, firmness is lost:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Venous leak</strong> — blood exits the penis too quickly (most common cause)</li>
+            <li><strong>Performance anxiety</strong> — adrenaline constricts blood vessels</li>
+            <li><strong>Insufficient arousal</strong> — distraction or reduced stimulation</li>
+            <li><strong>PDE5 inhibitor wearing off</strong> — medication timing issue</li>
+            <li><strong>Low testosterone</strong> — reduces sexual drive mid-act</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Trouble Maintaining 2.webp" alt="Maintain Erection" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Advanced assessment and treatment for erectile maintenance</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Solutions for Venous Leak ED</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        Venous leak is diagnosed via dynamic penile Doppler ultrasound. Treatment with <strong>Li-ESWT Shockwave Therapy</strong> strengthens vascular tone and reduces venous leakage over a 6-12 session course. Penile injections (alprostadil) provide immediate relief for severe cases.
+      </p>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Treatment by Cause:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Venous leak → Shockwave therapy + PDE5 medication</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Performance anxiety → Counseling + low-dose daily PDE5i</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Low T → TRT restores baseline arousal</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Severe vascular ED → Penile implant (permanent solution)</li>
+        </ul>
+      </div>
+    `
+  },
+  {
+    id: 19,
+    title: 'Where to Get a Vasectomy: Choosing the Right Clinic for a No-Scalpel Procedure.',
+    excerpt: 'Decided on permanent birth control? Find out why the No-Scalpel Vasectomy is the gold standard and how to select the best urology center for a painless experience.',
+    date: 'Dec 10, 2025',
+    category: 'Surgery',
+    image: '/assets/image/blog section/Where to Get a Vasectomy.webp',
+    content: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        A vasectomy is the most effective form of permanent birth control for men—with a <strong>99.9% success rate</strong>. Modern <strong>No-Scalpel Vasectomy (NSV)</strong> has transformed this procedure: no stitches, minimal discomfort, and most men return to light activity within 48 hours.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Why No-Scalpel is the Gold Standard</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            Traditional vasectomy requires two small skin incisions, manual suturing, and longer recovery. NSV uses a specialized sharp clamp to create a tiny puncture—no cutting, no stitches, dramatically less bruising.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>No scalpel, no stitches</strong> — tiny puncture seals itself</li>
+            <li><strong>20-30 minute procedure</strong> — done under local anesthesia</li>
+            <li><strong>Return to work in 1-2 days</strong> — light activity only</li>
+            <li><strong>Lower complication rate</strong> — reduced bleeding and infection risk vs. traditional</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Where to Get a Vasectomy 2.webp" alt="Vasectomy Clinic" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">No-Scalpel Vasectomy at M-Trust Urology Clinic</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Choosing the Right Vasectomy Clinic</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        Ensure the procedure is performed by a <strong>board-certified urologist</strong> with substantial NSV experience. The clinic should offer a comprehensive pre-procedure consultation, clear post-op instructions, and a semen analysis at 8-12 weeks to confirm sterility.
+      </p>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">What a Quality Vasectomy Includes:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Pre-procedure counseling and Q&A session</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> No-Scalpel technique by experienced urologist</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Post-op care kit and instructions</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Semen analysis at 8-12 weeks to confirm success</li>
+        </ul>
+      </div>
+    `
+  },
+  {
+    id: 20,
+    title: 'Why Treating Enlarged Prostate (BPH) with ReZUM is the Superior Choice.',
+    excerpt: 'Comparing BPH treatments? Learn why ReZUM Water Vapor Therapy is quickly becoming the preferred alternative to daily medication and invasive surgery.',
+    date: 'Dec 07, 2025',
+    category: 'Treatment',
+    image: '/assets/image/blog section/Why You Must Remove.webp',
+    content: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        For decades, men with Benign Prostatic Hyperplasia (BPH) faced a frustrating choice: take daily medications with side effects, or undergo major surgery (TURP) with risks of incontinence and sexual dysfunction. <strong>ReZUM Water Vapor Therapy</strong> changes everything.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">How ReZUM Works</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            ReZUM delivers precisely targeted water vapor (steam) into the obstructing prostate tissue. The thermal energy stored in the steam destroys the excess cells on contact. The body then naturally absorbs the treated tissue over 4-6 weeks, opening the urinary channel.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>10-minute procedure</strong> — performed under local anesthesia</li>
+            <li><strong>No surgery, no incisions</strong> — minimally invasive</li>
+            <li><strong>Preserves sexual function</strong> — no risk of retrograde ejaculation</li>
+            <li><strong>Durable results</strong> — sustained improvement for 5+ years</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Why You Must Remove 2.webp" alt="ReZUM BPH Treatment" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">ReZUM: Water vapor therapy for prostate relief</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">ReZUM vs. Medication vs. TURP Surgery</h3>
+
+      <div class="overflow-x-auto my-8 rounded-2xl border border-slate-200 dark:border-white/10">
+        <table class="w-full text-left border-collapse text-sm">
+          <thead>
+            <tr class="bg-slate-100 dark:bg-white/5">
+              <th class="p-4 font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-white/10">Factor</th>
+              <th class="p-4 font-bold text-amber-600 border-b border-slate-200 dark:border-white/10">ReZUM</th>
+              <th class="p-4 font-bold text-slate-500 border-b border-slate-200 dark:border-white/10">Daily Medication</th>
+              <th class="p-4 font-bold text-slate-500 border-b border-slate-200 dark:border-white/10">TURP Surgery</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 dark:divide-white/5">
+            <tr>
+              <td class="p-4 font-medium text-slate-700 dark:text-slate-300">Sexual Function</td>
+              <td class="p-4 text-green-600 dark:text-green-400 font-bold">Fully preserved</td>
+              <td class="p-4 text-orange-500">Side effects common</td>
+              <td class="p-4 text-red-500">High risk of retrograde ejaculation</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-medium text-slate-700 dark:text-slate-300">Duration</td>
+              <td class="p-4 text-green-600 dark:text-green-400 font-bold">5+ years</td>
+              <td class="p-4 text-orange-500">Only while taking</td>
+              <td class="p-4 text-green-600 dark:text-green-400">Permanent</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-medium text-slate-700 dark:text-slate-300">Recovery</td>
+              <td class="p-4 text-green-600 dark:text-green-400 font-bold">Same day</td>
+              <td class="p-4 text-green-600 dark:text-green-400">Immediate</td>
+              <td class="p-4 text-red-500">3-5 days hospital stay</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "ReZUM is now our first-line recommendation for men who want to stop daily medication without accepting the risks of traditional surgery."
+      </blockquote>
+    `
+  },
 ];
 
 export const EVENTS_DATA: EventData[] = [
-  { id: 1, day: '14', month: 'MAR', year: '2026', title: "Men's Health Talk 2026", subtitle: 'Sexual Health & Wellness Seminar', location: 'Bangkok Hospital Pattaya, Meeting Room 1', time: '13:00 - 16:30', description: 'An in-depth seminar on men\'s health issues and erectile dysfunction. Meet special guest speakers who will demystify prostate health and ED, followed by a friendly Q&A session.', image: '/assets/image/urologist section/dr.niti.webp', category: 'SEMINAR' },
-  { id: 2, day: '28', month: 'MAR', year: '2026', title: 'UroLift Success Stories', subtitle: 'Innovation for BPH Treatment', location: 'M-Trust Clinic Main Hall', time: '10:00 - 12:00', description: 'Listen to real experiences from patients treated with UroLift. A new innovation requiring no surgery, fast recovery, and preservation of sexual function. Free initial consultation included.', image: '/assets/image/services section/urolift menu.webp', category: 'WORKSHOP' },
-  { id: 3, day: '05', month: 'APR', year: '2026', title: 'Future of Men Health 2026', subtitle: 'Trends & Personalised Care', location: 'Online Webinar (Zoom)', time: '19:00 - 20:30', description: 'Update on 6 men\'s health trends for 2026, ranging from Hyper-personalised care to Mental Fitness building strategies.', image: '/assets/image/about section/clinic inside.webp', category: 'WEBINAR' },
-  { id: 4, day: '20', month: 'APR', year: '2026', title: 'Fit & Firm: Men Health', subtitle: 'Motorsport & Physical Peak', location: 'Bangsaen Circuit & Activity Area', time: '08:00 - 15:00', description: 'Health promotion activity in collaboration with Motorsport teams. Learn how to keep your body fit for any situation and self-care for high-performance lifestyles.', image: '/assets/image/services section/testosterone replacement therapy menu.webp', category: 'ACTIVITY' }
+  {
+    id: 1,
+    day: '14',
+    month: 'MAR',
+    year: '2026',
+    title: "Rezum Academic Exchange",
+    titleTH: "การแลกเปลี่ยนวิชาการ Rezum",
+    subtitle: "Advancing BPH Treatment: ReZum Water Vapor Therapy Academic Exchange at Siriraj Hospital",
+    subtitleTH: "ก้าวหน้าในการรักษา BPH: การแลกเปลี่ยนวิชาการ ReZum Water Vapor Therapy ณ โรงพยาบาลศิริราช",
+    description: "Today, we were honored to participate in the prestigious ‘ReZum Exchange Event’ at Siriraj Hospital. This high-level academic exchange brought together distinguished urologists from Singapore and Thailand...",
+    descriptionTH: "วันนี้ พวกเราได้รับเกียรติเข้าร่วมงาน ‘ReZum Exchange Event’ ณ โรงพยาบาลศิริราช เพื่อร่วมแลกเปลี่ยนความรู้ทางวิชาการและประสบการณ์ทางคลินิกกับทีม ศัลยแพทย์ทางเดินปัสสาวะ (Urologists) ชั้นนำจากประเทศสิงคโปร์ทั้ง 7 ท่าน นำโดย:\n\nAssist. Prof. Varat Woranisarakul\nDr. Chua Wei Jin\n\nการประชุมในครั้งนี้มุ่งเน้นไปที่การพัฒนาทักษะและความเชี่ยวชาญด้านการศัลยกรรมด้วยเทคโนโลยี Water Vapor Therapy (Rezūm) หรือ การรักษาโรคต่อมลูกหมากโตด้วยไอน้ำ ซึ่งเป็นนวัตกรรมการรักษาแบบ Minimally Invasive (แผลเล็ก/ไม่ต้องผ่าตัดใหญ่) เพื่อผลลัพธ์การรักษาที่มีประสิทธิภาพและปลอดภัยยิ่งขึ้นสำหรับคนไข้\n\nนอกจากนี้ เราขอขอบพระคุณ Boston Scientific เป็นอย่างสูงที่เป็นหัวเรี่ยวหัวแรงสำคัญในการจัดฟอรัมการศึกษาที่มีคุณค่าในครั้งนี้ เพื่อผลักดันนวัตกรรมการแพทย์และการดูแลรักษาผู้ป่วยในระดับสากล",
+    location: "Bangkok Hospital Pattaya, Meeting Room 1",
+    locationTH: "โรงพยาบาลกรุงเทพพัทยา ห้องประชุม 1",
+    time: "13:00 - 16:30",
+    image: "/assets/image/expertise/Rezum Academic Exchange.webp",
+    category: "SEMINAR",
+    content: `
+      <div class="space-y-8">
+        <div class="flex flex-col gap-6 my-8">
+          <div class="rounded-2xl overflow-hidden shadow-2xl border border-white/10 w-full">
+            <img src="/assets/image/expertise/Rezum Academic Exchange.webp" alt="Rezum Academic Exchange" class="w-full h-auto object-cover" />
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-2xl border border-white/10 w-full">
+            <img src="/assets/image/expertise/Rezum Academic Exchange 2.webp" alt="Rezum Academic Exchange 2" class="w-full h-auto object-cover" />
+          </div>
+        </div>
+
+        <p class="text-lg leading-relaxed text-slate-300">
+          Today, we were honored to participate in the prestigious ‘ReZum Exchange Event’ at Siriraj Hospital. This high-level academic exchange brought together distinguished urologists from Singapore and Thailand to discuss the latest advancements in Water Vapor Therapy (Rezūm) for treating enlarged prostate.
+        </p>
+
+        <p class="text-lg leading-relaxed text-slate-300">
+          We were privileged to engage in a highly productive clinical dialogue with seven leading experts, including:
+        </p>
+        
+        <div class="font-bold text-white text-xl space-y-2">
+          <p>Assist. Prof. Varat Woranisarakul</p>
+          <p>Dr. Chua Wei Jin</p>
+        </div>
+
+        <p class="text-lg leading-relaxed text-slate-300">
+          The session focused on enhancing surgical expertise and sharing innovative minimally invasive treatment approaches to improve patient outcomes. Collaborative forums like these are essential for pushing the boundaries of urological care and medical innovation.
+        </p>
+
+        <div class="rounded-3xl overflow-hidden my-10 shadow-2xl border border-white/10">
+          <img src="/assets/image/expertise/Rezum Academic Exchange 3.webp" alt="Rezum Academic Exchange 3" class="w-full h-full object-cover" />
+        </div>
+
+        <p class="text-lg leading-relaxed text-slate-300">
+          Our deepest appreciation goes to Boston Scientific for their outstanding initiative in orchestrating this valuable educational forum and fostering international medical excellence.
+        </p>
+      </div>
+    `,
+    contentTH: `
+      <div class="space-y-8">
+        <div class="flex flex-col gap-6 my-8">
+          <div class="rounded-2xl overflow-hidden shadow-2xl border border-white/10 w-full">
+            <img src="/assets/image/expertise/Rezum Academic Exchange.webp" alt="Rezum Academic Exchange" class="w-full h-auto object-cover" />
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-2xl border border-white/10 w-full">
+            <img src="/assets/image/expertise/Rezum Academic Exchange 2.webp" alt="Rezum Academic Exchange 2" class="w-full h-auto object-cover" />
+          </div>
+        </div>
+
+        <p class="text-lg leading-relaxed text-slate-300">
+          วันนี้ พวกเราได้รับเกียรติเข้าร่วมงาน ‘ReZum Exchange Event’ ณ โรงพยาบาลศิริราช เพื่อร่วมแลกเปลี่ยนความรู้ทางวิชาการและประสบการณ์ทางคลินิกกับทีม ศัลยแพทย์ทางเดินปัสสาวะ (Urologists) ชั้นนำจากประเทศสิงคโปร์ทั้ง 7 ท่าน นำโดย:
+        </p>
+
+        <div class="font-bold text-white text-xl space-y-1">
+          <p>Assist. Prof. Varat Woranisarakul</p>
+          <p>Dr. Chua Wei Jin</p>
+        </div>
+
+        <p class="text-lg leading-relaxed text-slate-300">
+          การประชุมในครั้งนี้มุ่งเน้นไปที่การพัฒนาทักษะและความเชี่ยวชาญด้านการศัลยกรรมด้วยเทคโนโลยี Water Vapor Therapy (Rezūm) หรือ การรักษาโรคต่อมลูกหมากโตด้วยไอน้ำ ซึ่งเป็นนวัตกรรมการรักษาแบบ Minimally Invasive (แผลเล็ก/ไม่ต้องผ่าตัดใหญ่) เพื่อผลลัพธ์การรักษาที่มีประสิทธิภาพและปลอดภัยยิ่งขึ้นสำหรับคนไข้
+        </p>
+
+        <div class="rounded-3xl overflow-hidden my-10 shadow-2xl border border-white/10">
+          <img src="/assets/image/expertise/Rezum Academic Exchange 3.webp" alt="Rezum Academic Exchange 3" class="w-full h-full object-cover" />
+        </div>
+
+        <p class="text-lg leading-relaxed text-slate-300">
+          นอกจากนี้ เราขอขอบพระคุณ Boston Scientific เป็นอย่างสูงที่เป็นหัวเรี่ยวหัวแรงสำคัญในการจัดฟอรัมการศึกษาที่มีคุณค่าในครั้งนี้ เพื่อผลักดันนวัตกรรมการแพทย์และการดูแลรักษาผู้ป่วยในระดับสากล
+        </p>
+      </div>
+    `,
+  },
+  {
+    id: 2,
+    day: '28',
+    month: 'MAR',
+    year: '2026',
+    title: "Pioneering Excellence: Thailand’s First Certified UroLift Success Story",
+    titleTH: "ผู้บุกเบิกความเป็นเลิศ: เรื่องราวความสำเร็จของ UroLift รายแรกที่ได้รับการรับรองในประเทศไทย",
+    subtitle: "Dr. Niti Navanimitkul: Thailand’s First Teleflex-Certified Urologist for 50 Successful UroLift Procedures",
+    subtitleTH: "นพ.นิธิ นาวานิมิตกุล: ศัลยแพทย์ทางเดินปัสสาวะรายแรกของไทยที่ได้รับการรับรองจาก Teleflex สำหรับหัตถการ UroLift 50 รายที่ประสบความสำเร็จ",
+    description: "Pattaya, Thailand – April 30, 2025 – Bangkok Hospital Pattaya proudly announces a major milestone in men’s health and urological excellence. Dr. Niti Navanimitkul, a Board-Certified Urologist and leading specialist in Benign Prostatic Hyperplasia (BPH), has become the first physician in Thailand to receive official certification from The Teleflex Academy.",
+    descriptionTH: "พัทยา, ประเทศไทย – 30 เมษายน 2568 – โรงพยาบาลกรุงเทพพัทยา ตอกย้ำความเป็นผู้นำด้านศูนย์ทางเดินปัสสาวะและสุขภาพบุรุษ โดย นพ. นิธิ นาวานิมิตกุล ศัลยแพทย์ทางเดินปัสสาวะและผู้เชี่ยวชาญด้านสุขภาพบุรุษ ได้สร้างประวัติศาสตร์เป็น แพทย์คนแรกในประเทศไทย ที่ได้รับประกาศนียบัตรรับรองอย่างเป็นทางการจาก The Teleflex Academy\n\nรางวัลอันทรงเกียรตินี้มอบโดย Mr. KuoHau Wei (Senior Commercial Manager, SEA IU • APAC) เพื่อเชิดชูความสำเร็จของ นพ. นิธิ ในการทำหัตถการ UroLift (ยูโรลิฟต์) สำเร็จครบ 50 ราย (ข้อมูล ณ เดือนกุมภาพันธ์ 2568) โดยที่ ไม่มีคนไข้รายใดต้องกลับมาผ่าตัดซ้ำ สะท้อนถึงความเชี่ยวชาญขั้นสูงและผลลัพธ์การรักษาโรค ต่อมลูกหมากโต (BPH) ที่ยอดเยี่ยมระดับสากล\n\nUroLift คืออะไร? นวัตกรรมรักษาต่อมลูกหมากโตที่ฟื้นตัวไวที่สุด\nUroLift (ยูโรลิฟต์) คือนวัตกรรมการรักษาโรค ต่อมลูกหมากโต (BPH) รูปแบบใหม่ที่ได้รับความนิยมสูงในต่างประเทศ เป็นการรักษาแบบ Minimally Invasive (แผลเล็ก/ไม่ต้องผ่าตัดใหญ่) ที่ตอบโจทย์ไลฟ์สไตล์ผู้ชายยุคใหม่:\n\nไม่ต้องผ่าตัด ไม่ต้องคว้านเนื้อเยื่อ: ใช้เพียงอุปกรณ์ขนาดเล็กเพื่อยกและขยายท่อปัสสาวะ\n\nไม่กระทบสมรรถภาพทางเพศ: รักษาฟังก์ชันสำคัญของเพศชายไว้ได้อย่างครบถ้วน\n\nฟื้นตัวเร็วทันใจ: คนไข้สามารถกลับบ้านได้ภายในวันเดียว และกลับไปใช้ชีวิตปกติได้ภายใน 7 วัน\n\nมาตรฐานสากล: ผ่านการรับรองจาก U.S. FDA (อย. สหรัฐอเมริกา) ตั้งแต่ปี 2013 และเป็นทางเลือกแรกในการรักษา BPH ในหลายประเทศทั่วโลก\n\nผู้นำการรักษา UroLift ในภาคตะวันออกและประเทศไทย\nนับตั้งแต่มีการนำ UroLift เข้ามาในไทยเมื่อเดือนพฤษภาคม 2567 โรงพยาบาลกรุงเทพพัทยา ได้ก้าวขึ้นเป็นโรงพยาบาลแห่งที่สองของประเทศ และเป็น แห่งแรกในภาคตะวันออก ที่เปิดให้บริการรักษานี้อย่างเป็นทางการในเดือนสิงหาคม 2567\n\nด้วยความมุ่งมั่นของ นพ. นิธิ นาวานิมิตกุล ที่สามารถดูแลคนไข้สำเร็จถึง 50 รายในระยะเวลาเพียงไม่กี่เดือน ทำให้การรักษานี้กลายเป็นทางเลือกอันดับ 1 สำหรับผู้ที่มีปัญหา ปัสสาวะขัด ปัสสาวะบ่อยตอนกลางคืน หรือปัสสาวะไม่พุ่ง โดยไม่ต้องกังวลเรื่องผลข้างเคียงจากการผ่าตัดแบบเดิมๆ\n\nทำไมต้องรักษาต่อมลูกหมากโตกับ นพ. นิธิ ?\nผลลัพธ์การรักษาที่พิสูจน์ได้: อัตราความสำเร็จสูง โดยไม่มีคนไข้ต้องกลับมาทำซ้ำ\n\nมาตรฐานระดับโลก: การันตีด้วยประกาศนียบัตรจาก Teleflex Academy รายแรกของไทย\n\nความพึงพอใจสูงสุด: คืนคุณภาพชีวิตที่ดีให้กับคนไข้ ให้กลับมาทำกิจกรรมที่รักได้อย่างมั่นใจ",
+    location: "M-Trust Clinic Main Hall",
+    locationTH: "ห้องโถงหลัก เอ็มทรัสต์ คลินิก",
+    time: "10:00 - 12:00",
+    image: "/assets/image/expertise/UroLift Success Stories.webp",
+    category: "WORKSHOP",
+    content: `
+      <div class="space-y-6 text-slate-300">
+        <div class="relative w-full rounded-3xl overflow-hidden my-12 border border-white/10 shadow-2xl">
+          <img src="/assets/image/expertise/UroLift Success Stories.webp" alt="UroLift Success Stories" class="w-full h-full object-cover" />
+        </div>
+
+        <p class="text-lg leading-relaxed">
+          <strong>Pattaya, Thailand – April 30, 2025</strong> – Bangkok Hospital Pattaya proudly announces a major milestone in men’s health and urological excellence. Dr. Niti Navanimitkul, a Board-Certified Urologist and leading specialist in Benign Prostatic Hyperplasia (BPH), has become the first physician in Thailand to receive official certification from The Teleflex Academy.
+        </p>
+        <p class="text-lg leading-relaxed">
+          This prestigious recognition was presented by Mr. KuoHau Wei, Senior Commercial Manager (SEA IU • APAC), honoring Dr. Niti’s completion of 50 successful UroLift procedures (as of February 2025). Most notably, Dr. Niti achieved a 0% re-operation rate, demonstrating unmatched clinical expertise and superior patient outcomes in treating enlarged prostate symptoms.
+        </p>
+
+        <div class="aspect-video w-full rounded-3xl overflow-hidden my-12 border border-white/10 shadow-2xl">
+          <iframe 
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/KoPtIZcZCHY?start=108" 
+            title="UroLift Success Story" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <h3 class="text-xl font-black text-white uppercase mt-12 mb-4">What is UroLift? The Leading Non-Surgical BPH Treatment</h3>
+        <p>UroLift is a revolutionary, minimally invasive procedure designed for men seeking a fast-recovery solution for Benign Prostatic Hyperplasia (BPH). Unlike traditional surgery, the UroLift System:</p>
+        <ul class="space-y-3 list-none pl-0">
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+            <span><strong>Preserves Sexual Function:</strong> No cutting, heating, or removal of prostate tissue.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+            <span><strong>Rapid Relief:</strong> Uses small, permanent implants to lift and hold prostate tissue, immediately opening the urethra.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+            <span><strong>Minimal Downtime:</strong> Patients typically return home the same day and resume normal activities within 7 days.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+            <span><strong>FDA Approved:</strong> This gold-standard treatment has been U.S. FDA approved since 2013 for its safety and long-term efficacy.</span>
+          </li>
+        </ul>
+
+        <h3 class="text-xl font-black text-white uppercase mt-12 mb-4">Pioneering UroLift in Eastern Thailand</h3>
+        <p>
+          Since its introduction to Thailand in May 2024, Bangkok Hospital Pattaya has established itself as a center of excellence. It is the second hospital in Thailand and the very first in the Eastern region to offer this advanced technology.
+        </p>
+        <p>
+          Under the leadership of Dr. Niti Navanimitkul, the hospital has rapidly become a primary destination for patients seeking innovative BPH treatments that alleviate symptoms like urinary urgency, weak stream, and frequent nighttime urination (nocturia) without the risks of major surgery.
+        </p>
+
+        <h3 class="text-xl font-black text-white uppercase mt-12 mb-4">Why Choose Dr. Niti Navanimitkul ?</h3>
+        <ul class="space-y-3 list-none pl-0">
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+            <span><strong>Proven Success:</strong> 50+ procedures with zero repeat surgeries required.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+            <span><strong>International Standards:</strong> Certified by Teleflex Academy, ensuring global-tier surgical precision.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+            <span><strong>Patient-Centric Care:</strong> High satisfaction rates focusing on quality of life and long-term urinary health.</span>
+          </li>
+        </ul>
+      </div>
+    `,
+    contentTH: `
+      <div class="space-y-6 text-slate-300">
+        <div class="relative w-full rounded-3xl overflow-hidden my-12 border border-white/10 shadow-2xl">
+          <img src="/assets/image/expertise/UroLift Success Stories.webp" alt="UroLift Success Stories" class="w-full h-full object-cover" />
+        </div>
+
+        <p class="text-lg leading-relaxed">
+          <strong>พัทยา, ประเทศไทย – 30 เมษายน 2568</strong> – โรงพยาบาลกรุงเทพพัทยา ตอกย้ำความเป็นผู้นำด้านศูนย์ทางเดินปัสสาวะและสุขภาพบุรุษ โดย นพ. นิธิ นาวานิมิตกุล ศัลยแพทย์ทางเดินปัสสาวะและผู้เชี่ยวชาญด้านสุขภาพบุรุษ ได้สร้างประวัติศาสตร์เป็น แพทย์คนแรกในประเทศไทย ที่ได้รับประกาศนียบัตรรับรองอย่างเป็นทางการจาก The Teleflex Academy
+        </p>
+        <p class="text-lg leading-relaxed">
+          รางวัลอันทรงเกียรตินี้มอบโดย Mr. KuoHau Wei (Senior Commercial Manager, SEA IU • APAC) เพื่อเชิดชูความสำเร็จของ นพ. นิธิ ในการทำหัตถการ UroLift (ยูโรลิฟต์) สำเร็จครบ 50 ราย (ข้อมูล ณ เดือนกุมภาพันธ์ 2568) โดยที่ ไม่มีคนไข้รายใดต้องกลับมาผ่าตัดซ้ำ สะท้อนถึงความเชี่ยวชาญขั้นสูงและผลลัพธ์การรักษาโรค ต่อมลูกหมากโต (BPH) ที่ยอดเยี่ยมระดับสากล
+        </p>
+
+        <div class="aspect-video w-full rounded-3xl overflow-hidden my-12 border border-white/10 shadow-2xl">
+          <iframe 
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/KoPtIZcZCHY?start=108" 
+            title="UroLift Success Story" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <h3 class="text-xl font-black text-white uppercase mt-12 mb-4">UroLift คืออะไร? นวัตกรรมรักษาต่อมลูกหมากโตที่ฟื้นตัวไวที่สุด</h3>
+        <p>UroLift (ยูโรลิฟต์) คือนวัตกรรมการรักษาโรค ต่อมลูกหมากโต (BPH) รูปแบบใหม่ที่ได้รับความนิยมสูงในต่างประเทศ เป็นการรักษาแบบ Minimally Invasive (แผลเล็ก/ไม่ต้องผ่าตัดใหญ่) ที่ตอบโจทย์ไลฟ์สไตล์ผู้ชายยุคใหม่:</p>
+        <ul class="space-y-3 list-none pl-0">
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+            <span><strong>ไม่ต้องผ่าตัด ไม่ต้องคว้านเนื้อเยื่อ:</strong> ใช้เพียงอุปกรณ์ขนาดเล็กเพื่อยกและขยายท่อปัสสาวะ</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+            <span><strong>ไม่กระทบสมรรถภาพทางเพศ:</strong> รักษาฟังก์ชันสำคัญของเพศชายไว้ได้อย่างครบถ้วน</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+            <span><strong>ฟื้นตัวเร็วทันใจ:</strong> คนไข้สามารถกลับบ้านได้ภายในวันเดียว และกลับไปใช้ชีวิตปกติได้ภายใน 7 วัน</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+            <span><strong>มาตรฐานสากล:</strong> ผ่านการรับรองจาก U.S. FDA (อย. สหรัฐอเมริกา) ตั้งแต่ปี 2013 และเป็นทางเลือกแรกในการรักษา BPH ในหลายประเทศทั่วโลก</span>
+          </li>
+        </ul>
+
+        <h3 class="text-xl font-black text-white uppercase mt-12 mb-4">ผู้นำการรักษา UroLift ในภาคตะวันออกและประเทศไทย</h3>
+        <p>
+          นับตั้งแต่มีการนำ UroLift เข้ามาในไทยเมื่อเดือนพฤษภาคม 2567 โรงพยาบาลกรุงเทพพัทยา ได้ก้าวขึ้นเป็นโรงพยาบาลแห่งที่สองของประเทศ และเป็น แห่งแรกในภาคตะวันออก ที่เปิดให้บริการรักษานี้อย่างเป็นทางการในเดือนสิงหาคม 2567
+        </p>
+        <p>
+          ด้วยความมุ่งมั่นของ นพ. นิธิ นาวานิมิตกุล ที่สามารถดูแลคนไข้สำเร็จถึง 50 รายในระยะเวลาเพียงไม่กี่เดือน ทำให้การรักษานี้กลายเป็นทางเลือกอันดับ 1 สำหรับผู้ที่มีปัญหา ปัสสาวะขัด ปัสสาวะบ่อยตอนกลางคืน หรือปัสสาวะไม่พุ่ง โดยไม่ต้องกังวลเรื่องผลข้างเคียงจากการผ่าตัดแบบเดิมๆ
+        </p>
+
+        <h3 class="text-xl font-black text-white uppercase mt-12 mb-4">ทำไมต้องรักษาต่อมลูกหมากโตกับ นพ. นิธิ ?</h3>
+        <ul class="space-y-3 list-none pl-0">
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+            <span><strong>ผลลัพธ์การรักษาที่พิสูจน์ได้:</strong> อัตราความสำเร็จสูง โดยไม่มีคนไข้ต้องกลับมาทำซ้ำ</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+            <span><strong>มาตรฐานระดับโลก:</strong> การันตีด้วยประกาศนียบัตรจาก Teleflex Academy รายแรกของไทย</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+            <span><strong>ความพึงพอใจสูงสุด:</strong> คืนคุณภาพชีวิตที่ดีให้กับคนไข้ ให้กลับมาทำกิจกรรมที่รักได้อย่างมั่นใจ</span>
+          </li>
+        </ul>
+      </div>
+    `,
+  },
+  {
+    id: 3,
+    day: '05',
+    month: 'APR',
+    year: '2026',
+    title: "Advanced HoLEP Laser Surgery for BPH",
+    titleTH: "การผ่าตัดส่องกล้องเลเซอร์ HoLEP สำหรับต่อมลูกหมากโต",
+    subtitle: "Dr. Niti Navanimitkul introduces Advanced HoLEP laser surgery in PattayaΓÇöthe global gold standard for permanent, minimally invasive enlarged prostate (BPH) relief.",
+    subtitleTH: "นพ.นิธิ นาวานิมิตกุล นำเสนอนวัตกรรมการผ่าตัดส่องกล้องเลเซอร์ HoLEP ในพัทยา ซึ่งเป็นมาตรฐานระดับโลกสำหรับการรักษาโรคต่อมลูกหมากโต (BPH) แบบถาวรและแผลเล็ก",
+    description: "Dr. Niti Navanimitkul introduces Advanced HoLEP laser surgery in PattayaΓÇöthe global gold standard for permanent, minimally invasive enlarged prostate (BPH) relief.",
+    descriptionTH: "นพ.นิธิ นาวานิมิตกุล นำเสนอนวัตกรรมการผ่าตัดส่องกล้องเลเซอร์ HoLEP ในพัทยา ซึ่งเป็นมาตรฐานระดับโลกสำหรับการรักษาโรคต่อมลูกหมากโต (BPH) แบบถาวรและแผลเล็ก",
+    location: "M-Trust Urology Clinic, Pattaya",
+    locationTH: "เอ็มทรัสต์ คลินิก พัทยา",
+    time: "09:00 - 17:00",
+    image: "/assets/image/expertise/Advanced HoLEP.webp",
+    category: "SURGERY",
+    content: `
+      <div class="space-y-6 text-slate-300">
+        <p class="text-lg leading-relaxed">
+          If you are a man over 50 experiencing a weak urine stream or frequent nighttime trips to the bathroom, you are likely dealing with <strong>Benign Prostatic Hyperplasia (BPH)</strong>. While common, these symptoms can significantly impact your quality of life. Fortunately, residents and visitors in Chonburi now have access to <strong>Advanced HoLEP laser surgery for enlarged prostate (BPH) in Pattaya by Dr. Niti Navanimitkul</strong>, offering a permanent and minimally invasive solution.
+        </p>
+
+        <h3 class="text-2xl font-black text-white uppercase mt-12 mb-4">Expert Collaboration for Better Prostate Health</h3>
+        <p>
+          Health and confidence are restored through personalized care. Dr. Tev Aho, M.D., Consultant Urological Surgeon at Cambridge University Hospitals and an international pioneer in HoLEP surgery, has closely collaborated with <strong>Dr. Niti Navanimitkul</strong>. This ensures that patients in Pattaya receive treatment that meets the highest global standards of precision and safety.
+        </p>
+
+        <div class="relative w-full h-[400px] rounded-3xl overflow-hidden my-12 border border-white/10 shadow-2xl">
+          <img src="/assets/image/expertise/Advanced HoLEP.webp" alt="Advanced HoLEP Surgery Illustration" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-linear-to-t from-slate-900/60 to-transparent"></div>
+          <div class="absolute bottom-6 left-6">
+            <p class="text-white text-sm font-bold uppercase tracking-widest">Global Gold Standard: HoLEP Technology</p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-black text-white uppercase mt-12 mb-4">What is HoLEP? The Gold Standard for BPH</h3>
+        <p>
+          <strong>HoLEP (Holmium Laser Enucleation of the Prostate)</strong> is a state-of-the-art procedure that uses laser energy to precisely remove the entire obstructive portion of the prostate. Unlike traditional methods, HoLEP is effective for prostates of all sizes and offers a <strong>"once-in-a-lifetime"</strong> permanent fix.
+        </p>
+
+        <h3 class="text-2xl font-black text-white uppercase mt-12 mb-4">Why Choose HoLEP Over Traditional Surgery?</h3>
+        <div class="overflow-x-auto my-8 rounded-2xl border border-white/10">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-white/5">
+                <th class="p-4 font-bold text-white border-b border-white/10 text-sm uppercase">Feature</th>
+                <th class="p-4 font-bold text-cyan-400 border-b border-white/10 text-sm uppercase">HoLEP Laser Surgery</th>
+                <th class="p-4 font-bold text-slate-400 border-b border-white/10 text-sm uppercase">Traditional TURP</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/5">
+              <tr>
+                <td class="p-4 text-white font-medium text-sm">Target Prostate Size</td>
+                <td class="p-4 text-slate-300 text-sm italic">All sizes (even very large)</td>
+                <td class="p-4 text-slate-400 text-sm italic">Small to medium only</td>
+              </tr>
+              <tr>
+                <td class="p-4 text-white font-medium text-sm">Blood Loss</td>
+                <td class="p-4 text-slate-300 text-sm italic">Minimal (Laser seals vessels)</td>
+                <td class="p-4 text-slate-400 text-sm italic">Higher risk of bleeding</td>
+              </tr>
+              <tr>
+                <td class="p-4 text-white font-medium text-sm">Hospital Stay</td>
+                <td class="p-4 text-slate-300 text-sm italic">Short (usually 1 night)</td>
+                <td class="p-4 text-slate-400 text-sm italic">Longer (3-4 days)</td>
+              </tr>
+              <tr>
+                <td class="p-4 text-white font-medium text-sm">Catheter Time</td>
+                <td class="p-4 text-slate-300 text-sm italic">12-24 hours</td>
+                <td class="p-4 text-slate-400 text-sm italic">72+ hours</td>
+              </tr>
+              <tr>
+                <td class="p-4 text-white font-medium text-sm">Re-treatment Rate</td>
+                <td class="p-4 text-slate-300 text-sm italic">Nearly 0% (Permanent)</td>
+                <td class="p-4 text-slate-400 text-sm italic">Up to 15% within 10 years</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-2xl font-black text-white uppercase mt-12 mb-4">Key Clinical Benefits:</h3>
+        <ul class="space-y-3 list-none pl-0">
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+            <span><strong>Faster Recovery:</strong> Most patients return to normal activities within days.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+            <span><strong>Preservation of Sexual Function:</strong> No higher risk of ED compared to other methods.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+            <span><strong>Immediate Symptom Relief:</strong> Significant improvement in urine flow from day one.</span>
+          </li>
+        </ul>
+      </div>
+    `,
+    contentTH: `
+<div class="space-y-6 text-slate-300 text-left">
+  <p class="text-lg leading-relaxed">
+    หากคุณเป็นผู้ชายวัย 50 ปีขึ้นไปที่มีอาการปัสสาวะไม่พุ่ง หรือต้องลุกมาเข้าห้องน้ำบ่อยครั้งในช่วงกลางคืน คุณอาจกำลังเผชิญกับ <strong>ภาวะต่อมลูกหมากโต (BPH)</strong> แม้จะเป็นอาการที่พบได้บ่อย แต่ก็ส่งผลกระทบต่อคุณภาพชีวิตอย่างมาก แต่โชคดีที่ปัจจุบันชาวชลบุรีและผู้มาเยือนพัทยา สามารถเข้ารับการรักษาด้วย <strong>นวัตกรรมการผ่าตัดส่องกล้องเลเซอร์ HoLEP โดย นพ.นิธิ นาวานิมิตกุล</strong> ซึ่งเป็นทางเลือกที่ให้ผลลัพธ์ถาวรและเจ็บตัวน้อย
+  </p>
+
+  <h3 class="text-2xl font-black text-white uppercase mt-12 mb-4">ความร่วมมือจากผู้เชี่ยวชาญเพื่อสุขภาพต่อมลูกหมากที่ดีขึ้น</h3>
+  <p>
+    การดูแลสุขภาพและความมั่นใจจะกลับคืนมาด้วยการดูแลแบบเฉพาะบุคคล Dr. Tev Aho, M.D. ศัลยแพทย์ทางเดินปัสสาวะที่ปรึกษาจาก Cambridge University Hospitals และผู้บุกเบิกเทคนิค HoLEP ระดับโลก ได้ร่วมมืออย่างใกล้ชิดกับ <strong>นพ.นิธิ นาวานิมิตกุล</strong> เพื่อให้มั่นใจว่าคนไข้ในพัทยาจะได้รับการรักษาที่เป็นไปตามมาตรฐานสากล ทั้งในด้านความแม่นยำและความปลอดภัยสูงสุด
+  </p>
+
+  <div class="relative w-full h-[400px] rounded-3xl overflow-hidden my-12 border border-white/10 shadow-2xl">
+    <img src="/assets/image/expertise/Advanced HoLEP.webp" alt="การผ่าตัด HoLEP ขั้นสูง" class="w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-linear-to-t from-slate-900/60 to-transparent"></div>
+    <div class="absolute bottom-6 left-6">
+      <p class="text-white text-sm font-bold uppercase tracking-widest">มาตรฐานระดับโลก: เทคโนโลยี HoLEP</p>
+    </div>
+  </div>
+
+  <h3 class="text-2xl font-black text-white uppercase mt-12 mb-4">HoLEP คืออะไร? มาตรฐานสูงสุดในการรักษา BPH</h3>
+  <p>
+    <strong>HoLEP (Holmium Laser Enucleation of the Prostate)</strong> เป็นนวัตกรรมการรักษาโดยใช้พลังงานเลเซอร์คว้านเนื้อเยื่อต่อมลูกหมากส่วนที่อุดกั้นออกทั้งหมดอย่างแม่นยำ ซึ่งแตกต่างจากวิธีการแบบเดิม HoLEP สามารถรักษาต่อมลูกหมากได้ทุกขนาด และเป็นการรักษาแบบ <strong>"ครั้งเดียวจบ"</strong> ที่ให้ผลถาวร
+  </p>
+
+  <h3 class="text-2xl font-black text-white uppercase mt-12 mb-4">ทำไมต้องเลือก HoLEP แทนการผ่าตัดแบบเดิม?</h3>
+  <div class="overflow-x-auto my-8 rounded-2xl border border-white/10">
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="bg-white/5">
+          <th class="p-4 font-bold text-white border-b border-white/10 text-sm uppercase">คุณสมบัติ</th>
+          <th class="p-4 font-bold text-cyan-400 border-b border-white/10 text-sm uppercase">การผ่าตัดเลเซอร์ HoLEP</th>
+          <th class="p-4 font-bold text-slate-400 border-b border-white/10 text-sm uppercase">การผ่าตัด TURP แบบเดิม</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-white/5">
+        <tr>
+          <td class="p-4 text-white font-medium text-sm">ขนาดต่อมลูกหมากที่รองรับ</td>
+          <td class="p-4 text-slate-300 text-sm italic">ได้ทุกขนาด (แม้ขนาดใหญ่มาก)</td>
+          <td class="p-4 text-slate-400 text-sm italic">ขนาดเล็กถึงปานกลางเท่านั้น</td>
+        </tr>
+        <tr>
+          <td class="p-4 text-white font-medium text-sm">การเสียเลือด</td>
+          <td class="p-4 text-slate-300 text-sm italic">น้อยมาก (เลเซอร์ช่วยห้ามเลือด)</td>
+          <td class="p-4 text-slate-400 text-sm italic">มีความเสี่ยงเสียเลือดสูงกว่า</td>
+        </tr>
+        <tr>
+          <td class="p-4 text-white font-medium text-sm">ระยะเวลาพักรักษาตัว</td>
+          <td class="p-4 text-slate-300 text-sm italic">สั้น (ปกติเพียง 1 คืน)</td>
+          <td class="p-4 text-slate-400 text-sm italic">นานกว่า (3-4 วัน)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+    `,
+  },
+  {
+    id: 4,
+    day: '20',
+    month: 'APR',
+    year: '2026',
+    title: "Shares Urology Insights at National Summit",
+    titleTH: "สุดยอดการประชุมระดับชาติเพื่อแบ่งปันข้อมูลเชิงลึกด้านระบบทางเดินปัสสาวะ",
+    subtitle: "Dr. Niti Navanimitkul Highlights Innovative Patient Outcomes at National Urology Summit",
+    subtitleTH: "นพ.นิธิ นาวานิมิตกุล ชูแนวคิดยกระดับผลลัพธ์การรักษาผู้ป่วย ในงานประชุมศัลยแพทย์ทางเดินปัสสาวะระดับชาติ",
+    description: "Dr. Niti Navanimitkul Highlights Innovative Patient Outcomes at National Urology Summit",
+    descriptionTH: "นพ.นิธิ นาวานิมิตกุล ชูแนวคิดยกระดับผลลัพธ์การรักษาผู้ป่วย ในงานประชุมศัลยแพทย์ทางเดินปัสสาวะระดับชาติ",
+    location: "Bangsaen Circuit & Activity Area",
+    locationTH: "บางแสน เซอร์กิต และพื้นที่กิจกรรม",
+    time: "08:00 - 15:00",
+    image: "/assets/image/expertise/Shares Urology Insights.webp",
+    category: "ACTIVITY",
+    content: `
+      <div class="space-y-6 text-slate-300 text-left">
+        <div class="relative w-full h-[400px] rounded-3xl overflow-hidden my-12 border border-white/10 shadow-2xl">
+          <img src="/assets/image/expertise/Shares Urology Insights.webp" alt="Key Insights" class="w-full h-full object-cover" />
+        </div>
+
+        <p class="text-lg leading-relaxed">
+          At the recent national urology summit, Dr. Niti Navanimitkul, a distinguished urologist, took center stage during a high-profile panel discussion titled ΓÇ£Beyond the Manual: Pearls, Pitfalls & Patient Outcomes.” As a leading voice in modern urology, Dr. Niti Navanimitkul shared critical insights derived from years of clinical excellence, contributing to the global dialogue on how to move beyond standard protocols to achieve superior medical results.
+        </p>
+
+        <div class="flex justify-center my-12">
+          <div class="relative max-w-xl w-full rounded-4xl overflow-hidden border border-white/10 shadow-2xl">
+            <img src="/assets/image/expertise/Shares Urology Insights 2.webp" alt="Urology Insights" class="w-full h-auto object-contain" />
+          </div>
+        </div>
+
+        <h3 class="text-xl font-black text-white uppercase mt-12 mb-4">Key Insights Shared by Dr. Niti Navanimitkul</h3>
+        <p>
+          During the session, the discussion focused on the nuances of surgical precision and long-term recovery. Dr. Niti Navanimitkul emphasized several pillars of modern urological care:
+        </p>
+        <ul class="space-y-3 list-none pl-0">
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+            <span><strong>Optimizing Patient Outcomes:</strong> Moving beyond technical success to ensure functional recovery and long-term health.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+            <span><strong>Post-Treatment Management:</strong> Implementing advanced recovery protocols to minimize complications and enhance the quality of life.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+            <span><strong>Addressing Pitfalls:</strong> Identifying common clinical challenges and sharing "pearls" of wisdom to help peers navigate complex cases.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+            <span><strong>Patient Satisfaction:</strong> Prioritizing clear communication and personalized care plans to meet individual patient needs.</span>
+          </li>
+        </ul>
+
+        <div class="relative w-full h-[400px] rounded-3xl overflow-hidden my-12 border border-white/10 shadow-2xl">
+          <img src="/assets/image/expertise/Shares Urology Insights 3.webp" alt="Commitment to Excellence" class="w-full h-full object-cover" />
+        </div>
+
+        <h3 class="text-xl font-black text-white uppercase mt-12 mb-4">A Commitment to Excellence </h3>
+        <p>
+          The participation of Dr. Niti Navanimitkul in such a prestigious forum reinforces his position as a thought leader in the field. His expertise in post-treatment management and his dedication to patient-centric care continue to elevate the standards of urological practices, throughout the medical community in Thailand. 
+        </p>
+        <p>
+          By integrating innovative techniques with a deep understanding of patient needs, Dr. Niti Navanimitkul remains at the forefront of advancing urological health and ensuring the best possible outcomes for every patient he treats.
+        </p>
+      </div>
+    `,
+    contentTH: `
+<div class="space-y-6 text-slate-300 text-left">
+  <div class="relative w-full h-[400px] rounded-3xl overflow-hidden my-12 border border-white/10 shadow-2xl">
+    <img src="/assets/image/expertise/Shares Urology Insights.webp" alt="Key Insights" class="w-full h-full object-cover" />
+  </div>
+
+  <p class="text-lg leading-relaxed">
+    ในการประชุมสัมมนาด้านศัลยศาสตร์ทางเดินปัสสาวะระดับชาติที่ผ่านมา นพ.นิธิ นาวานิมิตกุล (Dr. Niti Navanimitkul) ผู้เชี่ยวชาญระดับแนวหน้า ได้รับเกียรติเข้าร่วมการอภิปรายในหัวข้อพิเศษ “Beyond the Manual: Pearls, Pitfalls & Patient Outcomes” (เหนือกว่าตำรา: เคล็ดลับ ข้อควรระวัง และผลลัพธ์การรักษาผู้ป่วย)
+  </p>
+  <p>
+    ในฐานะแพทย์ผู้เชี่ยวชาญด้านทางเดินปัสสาวะ นพ.นิธิ นาวานิมิตกุล ได้ร่วมแบ่งปันประสบการณ์และข้อมูลเชิงลึกจากการรักษาจริง เพื่อยกระดับมาตรฐานการดูแลผู้ป่วยและผลักดันนวัตกรรมการรักษาให้ก้าวล้ำไปอีกขั้น
+  </p>
+
+  <div class="flex justify-center my-12">
+    <div class="relative max-w-xl w-full rounded-4xl overflow-hidden border border-white/10 shadow-2xl">
+      <img src="/assets/image/expertise/Shares Urology Insights 2.webp" alt="Urology Insights" class="w-full h-auto object-contain" />
+    </div>
+  </div>
+
+  <h3 class="text-xl font-black text-white uppercase mt-12 mb-4">เจาะลึกมุมมองจาก นพ.นิธิ นาวานิมิตกุล เพื่อการรักษาที่มีประสิทธิภาพ</h3>
+  <p>
+    ในการเสวนาครั้งนี้ นพ.นิธิ นาวานิมิตกุล ได้ให้ความสำคัญกับหัวใจหลักของการรักษาทางเดินปัสสาวะในยุคใหม่ ดังนี้:
+  </p>
+  <ul class="space-y-3 list-none pl-0">
+    <li class="flex items-start gap-3">
+      <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+      <span><strong>การเพิ่มประสิทธิภาพผลลัพธ์การรักษา (Optimizing Patient Outcomes):</strong> มุ่งเน้นการรักษาที่ไม่ได้ดูแค่ความสำเร็จทางเทคนิค แต่ต้องส่งผลดีต่อสุขภาพในระยะยาวของผู้ป่วย</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+      <span><strong>การดูแลหลังการรักษา (Post-treatment Management):</strong> การวางแผนฟื้นฟูร่างกายอย่างเป็นระบบ เพื่อลดภาวะแทรกซ้อนและช่วยให้ผู้ป่วยกลับไปใช้ชีวิตปกติได้เร็วขึ้น</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+      <span><strong>การจัดการปัญหาทางคลินิก (Addressing Pitfalls):</strong> การแชร์เทคนิคและประสบการณ์ "นอกตำรา" เพื่อช่วยให้ทีมแพทย์รับมือกับเคสที่ซับซ้อนได้อย่างแม่นยำ</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+      <span><strong>ความพึงพอใจของผู้ป่วย (Patient Satisfaction):</strong> การสื่อสารที่ชัดเจนและการออกแบบการรักษาแบบเฉพาะบุคคล (Personalized Care) เพื่อตอบโจทย์ความต้องการของผู้ป่วยอย่างแท้จริง</span>
+    </li>
+  </ul>
+
+  <div class="relative w-full h-[400px] rounded-3xl overflow-hidden my-12 border border-white/10 shadow-2xl">
+    <img src="/assets/image/expertise/Shares Urology Insights 3.webp" alt="Commitment to Excellence" class="w-full h-full object-cover" />
+  </div>
+
+  <h3 class="text-xl font-black text-white uppercase mt-12 mb-4">ตอกย้ำความเป็นผู้นำด้านทางเดินปัสสาวะ </h3>
+  <p>
+    การเข้าร่วมงานระดับชาติของ นพ.นิธิ นาวานิมิตกุล ในครั้งนี้ เป็นเครื่องยืนยันถึงความมุ่งมั่นและความเป็นเลิศทางวิชาการ ที่ไม่หยุดนิ่งในการพัฒนาทักษะเพื่อมอบการรักษาที่ดีที่สุด 
+  </p>
+  <p>
+    ด้วยความเชี่ยวชาญในการผสมผสานเทคโนโลยีทางการแพทย์เข้ากับความเข้าใจในตัวผู้ป่วย นพ.นิธิ นาวานิมิตกุล ยังคงเป็นกำลังสำคัญในการขับเคลื่อนวงการศัลยศาสตร์ทางเดินปัสสาวะในประเทศไทย เพื่อให้มั่นใจว่าผู้ป่วยทุกคนจะได้รับผลลัพธ์การรักษาที่ยอดเยี่ยมและปลอดภัยที่สุด
+  </p>
+</div>
+    `,
+  },
 ];
+
 
 export const languages: LanguageOption[] = [
   { code: 'EN', flag: 'https://flagcdn.com/w40/gb.png', label: 'English' },

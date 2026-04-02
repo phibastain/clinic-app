@@ -47,8 +47,11 @@ export function sanitizeHtmlContent(html: string): string {
     safe = safe.replace(/(?:href|src)\s*=\s*(?:"javascript:[^"]*"|'javascript:[^']*')/gi, '');
     // Remove data: protocol in src (can be used for XSS)
     safe = safe.replace(/src\s*=\s*(?:"data:[^"]*"|'data:[^']*')/gi, '');
-    // Remove iframe tags
-    safe = safe.replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, '');
+    // Remove iframe tags EXCEPT trusted video embeds (YouTube, Vimeo)
+    safe = safe.replace(/<iframe\b([^<]*)(?:(?!<\/iframe>)<[^<])*<\/iframe>/gi, (match) => {
+        const isTrusted = /src\s*=\s*["']https?:\/\/(www\.)?(youtube\.com|youtu\.be|vimeo\.com)/.test(match);
+        return isTrusted ? match : '';
+    });
     // Remove object/embed tags
     safe = safe.replace(/<(?:object|embed)\b[^<]*(?:(?!<\/(?:object|embed)>)<[^<]*)*<\/(?:object|embed)>/gi, '');
     // Remove style attributes that could contain expressions

@@ -36,15 +36,15 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' https://embed.tawk.to", // Added Tawk.to script domain
+      `script-src 'self' 'unsafe-inline' ${process.env.NODE_ENV === 'development' ? "'unsafe-eval'" : ""} https://embed.tawk.to https://cdn.jsdelivr.net`, // Tawk.to + emoji CDN
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://embed.tawk.to",
-      "font-src 'self' https://fonts.gstatic.com",
-      "img-src 'self' data: blob: https://flagcdn.com https://images.unsplash.com https://cdn-icons-png.flaticon.com https://img.youtube.com https://embed.tawk.to https://*.tawk.to",
+      "font-src 'self' https://fonts.gstatic.com https://embed.tawk.to https://*.tawk.to",
+      "img-src 'self' data: blob: https://flagcdn.com https://images.unsplash.com https://cdn-icons-png.flaticon.com https://img.youtube.com https://embed.tawk.to https://*.tawk.to https://cdn.jsdelivr.net",
       "connect-src 'self' https://api.web3forms.com https://embed.tawk.to wss://*.tawk.to https://*.tawk.to", // Added Web3Forms and Tawk.to
       "frame-src 'self' https://www.google.com https://www.youtube.com https://embed.tawk.to",
       "object-src 'none'",
       "base-uri 'self'",
-      "form-action 'self' https://api.web3forms.com", // Allow form submission to Web3Forms
+      "form-action 'self'", // Forms route through /api/contact server-side
       "frame-ancestors 'none'",
       "upgrade-insecure-requests",
     ].join('; '),

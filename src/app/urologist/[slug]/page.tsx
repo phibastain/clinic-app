@@ -6,6 +6,7 @@ import DoctorProfileClient from '@/components/sections/DoctorProfileClient';
 
 interface PageProps {
     params: Promise<{ slug: string }>;
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
 export async function generateStaticParams() {
@@ -14,7 +15,7 @@ export async function generateStaticParams() {
     }));
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: PageProps): Promise<Metadata> {
     const { slug } = await params;
     const doctor = getDoctorBySlug(slug);
 
@@ -23,6 +24,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             title: 'Doctor Not Found | M-Trust Clinic',
         };
     }
+
+    const awaitedParams = await searchParams;
+    const isThai = awaitedParams?.lang === 'th';
+    const basePath = `/urologist/${slug}`;
+    const url = isThai ? `${basePath}?lang=th` : basePath;
 
     return {
         title: `${doctor.name} | ${doctor.role} | M-Trust Urology Clinic`,
@@ -39,7 +45,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             images: [doctor.image],
         },
         alternates: {
-            canonical: `/urologist/${slug}`,
+            canonical: url,
+            languages: {
+                'en': basePath,
+                'th': `${basePath}?lang=th`,
+            },
         },
     };
 }

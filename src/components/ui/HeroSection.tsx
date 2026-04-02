@@ -2,13 +2,14 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { Award, ArrowRight } from 'lucide-react';
 import { HERO_SLIDES } from '@/data/mockData';
+import { TH_TRANSLATIONS } from '@/data/translations';
 import GradientButton from '@/components/ui/GradientButton';
-
+import { useLanguage } from '@/components/providers/LanguageProvider';
 
 const HeroSection = () => {
     const [current, setCurrent] = useState(0);
+    const { lang } = useLanguage();
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -28,6 +29,7 @@ const HeroSection = () => {
                     sizes="100vw"
                     className="object-cover brightness-[0.95] saturate-[0.9]"
                     priority
+                    fetchPriority="high"
                 />
             </div>
 
@@ -41,6 +43,7 @@ const HeroSection = () => {
                         alt="M-Trust Urology Clinic Logo"
                         width={600}
                         height={200}
+                        sizes="(max-width: 768px) 280px, (max-width: 1024px) 400px, 500px"
                         className="w-full h-auto drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)] opacity-95"
                         priority
                     />
@@ -62,6 +65,8 @@ const HeroSection = () => {
                                 fill
                                 sizes="(max-width: 1024px) 100vw, 45vw"
                                 className="object-cover"
+                                priority={index === 0}
+                                fetchPriority={index === 0 ? "high" : "auto"}
                             />
                             <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent" />
                         </div>
@@ -74,53 +79,63 @@ const HeroSection = () => {
                                 key={index}
                                 onClick={() => setCurrent(index)}
                                 aria-label={`Go to slide ${index + 1}`}
-                                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${index === current
-                                    ? 'w-8 bg-white shadow-lg shadow-white/30'
-                                    : 'w-2.5 bg-white/50 hover:bg-white/80'
-                                    }`}
-                            />
+                                className={`flex items-center justify-center w-6 h-6 cursor-pointer`}
+                            >
+                                <span className={`block rounded-full transition-all duration-300 ${index === current
+                                    ? 'w-8 h-2.5 bg-white shadow-lg shadow-white/30'
+                                    : 'w-2.5 h-2.5 bg-white/50 hover:bg-white/80'
+                                    }`} />
+                            </button>
                         ))}
                     </div>
                 </div>
 
                 {/* 3. Text Content - Right Side on Desktop */}
                 <div className="relative w-full text-center lg:text-right z-30 flex flex-col items-center lg:items-end pointer-events-auto order-1 mb-8 lg:mb-0 lg:pl-8 lg:-translate-x-[80px] lg:translate-y-[120px] translate-y-[50px]">
-                    {HERO_SLIDES.map((slide, index) => (
-                        <div
-                            key={slide.id}
-                            className={`transition-all duration-700 ease-out flex flex-col items-center lg:items-end w-full ${index === current
-                                ? 'opacity-100 translate-y-0 relative'
-                                : 'opacity-0 translate-y-8 absolute pointer-events-none'
-                                }`}
-                        >
-                            {(() => {
-                                const Tag = index === 0 ? 'h1' : 'h2' as any;
-                                return (
-                                    <Tag className="text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-black text-slate-500 lg:text-slate-900 mb-4 leading-tight tracking-tighter uppercase drop-shadow-sm text-center lg:text-right">
-                                        {slide.title.split('\n').map((line, i) => (
-                                            <React.Fragment key={i}>
-                                                {line}
-                                                {i < slide.title.split('\n').length - 1 && <span className="hidden lg:inline"><br /></span>}
-                                                {i < slide.title.split('\n').length - 1 && <span className="lg:hidden"> </span>}
-                                            </React.Fragment>
-                                        ))}
-                                    </Tag>
-                                );
-                            })()}
+                    {HERO_SLIDES.map((slide, index) => {
+                        // Get Thai translation if available
+                        const thData = lang === 'TH' ? (TH_TRANSLATIONS[slide.title] as any) : null;
+                        const displayTitle = thData?.title || slide.title;
+                        const displayDesc = thData?.desc || slide.desc;
+                        const displayBtn = thData?.btn || slide.btnText;
 
-                            <p className="text-slate-600 lg:text-slate-700 text-sm md:text-base lg:text-lg mb-8 font-medium leading-relaxed max-w-md text-center lg:text-right px-4 lg:px-0">
-                                {slide.desc}
-                            </p>
+                        return (
+                            <div
+                                key={slide.id}
+                                className={`transition-all duration-700 ease-out flex flex-col items-center lg:items-end w-full ${index === current
+                                    ? 'opacity-100 translate-y-0 relative'
+                                    : 'opacity-0 translate-y-8 absolute pointer-events-none'
+                                    }`}
+                            >
+                                {(() => {
+                                    const Tag = index === 0 ? 'h1' : 'h2' as any;
+                                    return (
+                                        <Tag className="text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-black text-slate-500 lg:text-slate-900 mb-4 leading-tight tracking-tighter uppercase drop-shadow-sm text-center lg:text-right">
+                                            {displayTitle.split('\n').map((line: string, i: number) => (
+                                                <React.Fragment key={i}>
+                                                    {line}
+                                                    {i < displayTitle.split('\n').length - 1 && <span className="hidden lg:inline"><br /></span>}
+                                                    {i < displayTitle.split('\n').length - 1 && <span className="lg:hidden"> </span>}
+                                                </React.Fragment>
+                                            ))}
+                                        </Tag>
+                                    );
+                                })()}
 
-                            <div className="flex items-center justify-center lg:justify-end gap-4 w-full px-4 lg:px-0 mt-4 md:mt-0">
-                                <a href="#contact" className="w-auto">
-                                    <GradientButton className="px-8 py-3.5 md:py-4 text-xs md:text-sm font-bold shadow-xl shadow-amber-500/20 hover:shadow-amber-400/40 transition-all hover:scale-105">
-                                        {slide.btnText}
-                                    </GradientButton>
-                                </a>
+                                <p className="text-slate-600 lg:text-slate-700 text-sm md:text-base lg:text-lg mb-8 font-medium leading-relaxed max-w-md text-center lg:text-right px-4 lg:px-0">
+                                    {displayDesc}
+                                </p>
+
+                                <div className="flex items-center justify-center lg:justify-end gap-4 w-full px-4 lg:px-0 mt-4 md:mt-0">
+                                    <a href="#contact" className="w-auto">
+                                        <GradientButton className="px-8 py-3.5 md:py-4 text-xs md:text-sm font-bold shadow-xl shadow-amber-500/20 hover:shadow-amber-400/40 transition-all hover:scale-105">
+                                            {displayBtn}
+                                        </GradientButton>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
 
             </div>

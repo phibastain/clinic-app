@@ -2,6 +2,7 @@
 
 import React, { useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 import { SERVICE_CATEGORIES } from '@/data/mockData';
 import { serviceNameToSlug } from '@/utils/serviceUtils';
@@ -56,7 +57,7 @@ export default function ExploreServices({ currentServiceName }: ExploreServicesP
 
                 <div
                     ref={scrollContainerRef}
-                    className="flex overflow-x-auto gap-6 snap-x snap-mandatory hide-scrollbar pb-8 -mx-4 px-4 md:mx-0 md:px-0"
+                    className="flex overflow-x-auto gap-6 snap-x snap-mandatory no-scrollbar pb-8 -mx-4 px-4 md:mx-0 md:px-0"
                     style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                 >
                     {allServices.map((s: any, idx: number) => (
@@ -67,7 +68,7 @@ export default function ExploreServices({ currentServiceName }: ExploreServicesP
                             aria-label={`Explore service: ${s.name}`}
                         >
                             <div className="relative h-40 w-full mb-6 overflow-hidden rounded-2xl">
-                                <img src={s.image} alt="" aria-hidden="true" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                                <Image src={s.image || ''} alt="" aria-hidden fill sizes="300px" className="object-cover group-hover:scale-110 transition-transform duration-500" />
                                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
                             </div>
                             <h3 className="text-base font-black text-slate-900 dark:text-white uppercase leading-tight group-hover:text-amber-500 transition-colors mb-4 grow">{s.name}</h3>
@@ -77,13 +78,6 @@ export default function ExploreServices({ currentServiceName }: ExploreServicesP
                         </Link>
                     ))}
                 </div>
-
-                <style dangerouslySetInnerHTML={{
-                    __html: `
-                    .hide-scrollbar::-webkit-scrollbar {
-                        display: none;
-                    }
-                `}} />
             </Container>
         </div>
     );

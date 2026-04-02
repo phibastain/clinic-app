@@ -20,16 +20,18 @@ export const metadata: Metadata = {
   },
   description: 'M-Trust Urology Clinic - Thailand\'s leading center for men\'s health. Expert treatment for erectile dysfunction, prostate conditions, penile prosthesis surgery by Dr. Niti Navanimitkul. Book consultation today.',
   keywords: [
-    'Urologist Thailand', 'Men\'s Health Clinic Bangkok', 'Erectile Dysfunction Treatment',
-    'Penile Prosthesis Surgery', 'Dr. Niti Navanimitkul', 'UroLift Thailand',
-    'Rezum Treatment', 'BPH Treatment', 'Prostate Specialist', 'Sexual Dysfunction Specialist',
-    'Best Urologist Bangkok', 'M-Trust Clinic'
+    'Urologist Thailand', 'Urologist Pattaya', 'Men\'s Health Clinic Pattaya',
+    'Erectile Dysfunction Treatment', 'Penile Prosthesis Surgery', 'Dr. Niti Navanimitkul',
+    'UroLift Thailand', 'Rezum Treatment', 'BPH Treatment', 'Prostate Specialist',
+    'Sexual Dysfunction Specialist', 'Best Urologist Chon Buri', 'M-Trust Clinic',
+    'Men\'s Health Clinic Bangkok'
   ],
   authors: [{ name: 'Dr. Niti Navanimitkul' }],
   creator: 'M-Trust Urology Clinic',
   openGraph: {
     type: 'website',
     locale: 'en_US',
+    alternateLocale: ['th_TH'],
     url: 'https://www.mtrusturology.com',
     siteName: 'M-Trust Urology Clinic',
     title: 'M-Trust Urology Clinic | Best Urologist in Thailand',
@@ -48,9 +50,7 @@ export const metadata: Metadata = {
     title: 'M-Trust Urology Clinic | Best Urologist in Thailand',
     description: 'Thailand\'s leading center for men\'s health and urology.'
   },
-  alternates: {
-    canonical: '/',
-  },
+  // Generates alternates dynamically per page
   robots: {
     index: true,
     follow: true,
@@ -62,15 +62,15 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     }
   },
-  verification: {
-    google: 'google-site-verification-code',
-  }
+  // Google Search Console verification — ใส่ code จริงเมื่อพร้อม
+  // verification: {
+  //   google: 'YOUR_REAL_VERIFICATION_CODE',
+  // }
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
   // ตั้งค่าสีของ Browser Toolbar (เช่น บน Safari/Chrome มือถือ) ให้เปลี่ยนตามโหมด
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#e2e8f0" },
@@ -87,14 +87,20 @@ import Footer from "@/components/shared/Footer";
 import TawkToWidget from "@/components/shared/TawkToWidget";
 import ModernBackground from "@/components/ui/ModernBackground";
 
-export default function RootLayout({
+import { cookies } from "next/headers";
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const langCookie = cookieStore.get('lang')?.value;
+  const htmlLang = langCookie === 'th' ? 'th' : 'en';
+
   return (
     /* suppressHydrationWarning ช่วยแก้ปัญหาแจ้งเตือนตอนสลับ Theme เพราะเราจัดการ class ที่ html เอง */
-    <html lang="en" suppressHydrationWarning>
+    <html lang={htmlLang} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{

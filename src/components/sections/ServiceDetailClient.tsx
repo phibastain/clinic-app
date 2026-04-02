@@ -1,22 +1,19 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import {
-    Calendar, Clock, ChevronRight, MessageCircle, ChevronLeft, PlayCircle,
-    Activity, Target, Users2, CheckSquare, Microscope, Zap, Stethoscope,
-    BarChart3, TrendingUp, Trophy, Timer, ShieldCheck, Smile, Infinity,
-    HeartPulse, Users, Droplets, Layers, Scissors, Search, FileText,
-    CheckCircle2, Ruler, Award, AlertCircle, Box, Hexagon, Flame,
-    ScanLine, FlaskConical, HelpCircle, GraduationCap, Medal
+    Calendar, ChevronLeft, Users2, CheckSquare, Zap, Stethoscope,
+    BarChart3, TrendingUp, Timer, ShieldCheck, CheckCircle2, HelpCircle
 } from 'lucide-react';
 import { SERVICE_CATEGORIES, SERVICE_DETAILS_DATA } from '@/data/mockData';
 import { serviceNameToSlug } from '@/utils/serviceUtils';
 import Container from '@/components/ui/Container';
 import GradientButton from '@/components/ui/GradientButton';
-import { JsonLdScript, getServiceJsonLd } from '@/utils/jsonLd';
 import { sanitizeHtmlContent } from '@/utils/sanitize';
 import ExploreServices from './ExploreServices';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const formatContent = (content: string) => {
     if (!content) return '';
@@ -49,20 +46,26 @@ interface ServiceDetailClientProps {
 export default function ServiceDetailClient({ serviceName, slug }: ServiceDetailClientProps) {
     const router = useRouter();
     const [service] = useState(SERVICE_DETAILS_DATA[serviceName]);
+    const { t, lang } = useTranslation();
 
     if (!service) return null;
 
+    // Helper: translate a field using pattern "ServiceName.field"
+    const ts = (field: string): string => {
+        const key = `${serviceName}.${field}`;
+        const result = t(key);
+        return result !== key ? result : '';
+    };
+
+    // Get translated or original value
+    const sTitle = ts('title') || service.title;
+    const sTagline = ts('tagline') || service.tagline;
+    const sDescription = ts('description') || service.description;
+    const sWhatIsItTitle = ts('whatIsIt.title') || service.whatIsIt?.title;
+    const sWhatIsItDesc = ts('whatIsIt.description') || service.whatIsIt?.description;
+
     return (
         <>
-            <JsonLdScript data={getServiceJsonLd('https://www.mtrusturology.com', {
-                name: serviceName,
-                description: service.description,
-                slug: slug,
-                image: service.heroImage,
-                faqs: service.faq
-                    .filter((f: any) => (f.question || f.q) && (f.answer || f.a))
-                    .map((f: any) => ({ question: (f.question || f.q)!, answer: (f.answer || f.a)! })),
-            })} />
 
             {/* Main Content */}
             <main className="relative z-10 text-left">
@@ -70,7 +73,7 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                     {/* Hero Section */}
                     <div className="relative min-h-[70vh] h-auto flex items-center overflow-hidden border-b border-white/5 py-24 md:py-0 text-left">
                         <div className="absolute inset-0 z-0 bg-slate-900 text-left">
-                            <img src={service.heroImage} alt={service.title} className="w-full h-full object-cover opacity-50 filter blur-[2px]" />
+                            <Image src={service.heroImage || ''} alt={service.title} fill sizes="100vw" className="object-cover opacity-50 blur-[2px]" priority />
                             <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.2)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.2)_1px,transparent_1px)] bg-size-[40px_40px] opacity-20 dark:opacity-40" />
                             <div className="absolute inset-0 bg-linear-to-r from-slate-950 via-slate-900/80 to-slate-900/40 dark:from-[#050505] dark:via-[#050505]/90 dark:to-transparent" />
                         </div>
@@ -78,31 +81,35 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                         <Container className="relative z-10 text-white w-full text-left">
                             <button onClick={() => router.push('/#services')} className="flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-amber-500 mb-8 transition-colors group backdrop-blur-sm bg-black/20 px-4 py-2 rounded-full w-fit border border-white/10 hover:border-amber-500/50">
                                 <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-                                <span>Back to Services</span>
+                                <span>{t('Back to Services')}</span>
                             </button>
 
                             <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center text-left">
                                 <div className="md:col-span-8 text-left">
                                     <h1 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 leading-[0.9] uppercase tracking-tighter text-transparent bg-clip-text bg-linear-to-b from-white to-slate-400 drop-shadow-2xl whitespace-pre-line text-left">
-                                        {service.title}
+                                        {sTitle}
                                     </h1>
                                     <p className="text-lg md:text-2xl text-slate-300 font-light leading-relaxed max-w-2xl border-l-2 border-amber-500 pl-6 mb-8 text-left">
-                                        {service.tagline}
+                                        {sTagline}
                                     </p>
                                     <div className="flex gap-4 mt-10 text-left">
-                                        <GradientButton icon={Calendar} onClick={() => router.push('/#contact')} className="px-8 border border-white/10">Book Session</GradientButton>
+                                        <GradientButton icon={Calendar} onClick={() => router.push('/#contact')} className="px-8 border border-white/10">{t('Book Session')}</GradientButton>
                                     </div>
                                 </div>
 
                                 {service.stats && (
                                     <div className="md:col-span-4 grid grid-cols-2 gap-3 mt-8 md:mt-0 text-left">
-                                        {service.stats.map((stat: any, idx: number) => (
-                                            <div key={idx} className="bg-black/30 backdrop-blur-md border border-white/10 p-4 rounded-xl text-left">
-                                                <stat.icon className="text-amber-500 mb-2" size={20} />
-                                                <div className="text-2xl font-black text-white leading-none mb-1">{stat.value}</div>
-                                                <div className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">{stat.label}</div>
-                                            </div>
-                                        ))}
+                                        {service.stats.map((stat: any, idx: number) => {
+                                            const tVal = ts(`stats.${idx}.value`);
+                                            const tLbl = ts(`stats.${idx}.label`);
+                                            return (
+                                                <div key={idx} className="bg-black/30 backdrop-blur-md border border-white/10 p-4 rounded-xl text-left">
+                                                    <stat.icon className="text-amber-500 mb-2" size={20} />
+                                                    <div className="text-2xl font-black text-white leading-none mb-1">{tVal || stat.value}</div>
+                                                    <div className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">{tLbl || stat.label}</div>
+                                                </div>
+                                            );
+                                        })}
                                     </div>
                                 )}
                             </div>
@@ -117,15 +124,15 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                                 <div className={`mb-20 ${service.whatIsIt.image ? 'grid grid-cols-1 lg:grid-cols-2 gap-12 items-center' : 'w-full text-left'}`}>
                                     {service.whatIsIt.image && (
                                         <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/20 group h-auto order-2 lg:order-1 text-left">
-                                            <img src={service.whatIsIt.image} alt={service.whatIsIt.title} className="w-full h-auto object-contain" />
+                                            <Image src={service.whatIsIt.image || ''} alt={service.whatIsIt.title || 'Service Image'} width={800} height={600} className="w-full h-auto object-contain" />
                                         </div>
                                     )}
                                     <div className={service.whatIsIt.image ? 'order-1 lg:order-2' : ''}>
                                         <h2 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white uppercase mb-8 flex items-center gap-3 text-left">
-                                            <Zap className="text-amber-600" size={32} /> {service.whatIsIt.title}
+                                            <Zap className="text-amber-600" size={32} /> {sWhatIsItTitle}
                                         </h2>
                                         <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg leading-loose font-medium whitespace-pre-line text-justify">
-                                            {service.whatIsIt.description}
+                                            {sWhatIsItDesc}
                                         </p>
                                     </div>
                                 </div>
@@ -136,22 +143,24 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                                 {service.description && (
                                     <>
                                         <h2 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white uppercase mb-8 flex items-center gap-3 text-left">
-                                            <Stethoscope className="text-amber-600" size={28} /> Clinical Mechanism
+                                            <Stethoscope className="text-amber-600" size={28} /> {t('Clinical Mechanism')}
                                         </h2>
 
                                         <div className={`mb-10 ${service.descriptionImage ? 'grid grid-cols-1 lg:grid-cols-2 gap-12 items-start' : 'w-full'}`}>
                                             <div className="space-y-6">
                                                 <div
                                                     className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed font-medium text-justify richness-content"
-                                                    dangerouslySetInnerHTML={{ __html: formatContent(service.description) }}
+                                                    dangerouslySetInnerHTML={{ __html: formatContent(sDescription) }}
                                                 />
                                             </div>
 
                                             {service.descriptionImage && (
                                                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-slate-100 dark:bg-slate-900/50 flex items-center justify-center">
-                                                    <img
-                                                        src={service.descriptionImage}
+                                                    <Image
+                                                        src={service.descriptionImage || ''}
                                                         alt="Clinical Mechanism"
+                                                        width={800}
+                                                        height={600}
                                                         className="w-full h-auto block"
                                                     />
                                                 </div>
@@ -167,13 +176,13 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                                                     <div className="p-3 bg-amber-500/10 rounded-2xl">
                                                         <panel.icon className="text-amber-600" size={24} />
                                                     </div>
-                                                    <h3 className="font-bold text-slate-900 dark:text-white text-lg">{panel.title}</h3>
+                                                    <h3 className="font-bold text-slate-900 dark:text-white text-lg">{t(panel.title)}</h3>
                                                 </div>
                                                 <ul className="space-y-3">
                                                     {panel.items.map((item, iIdx) => (
                                                         <li key={iIdx} className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400">
                                                             <CheckSquare className="text-amber-500 shrink-0 mt-0.5" size={16} />
-                                                            <span>{item}</span>
+                                                            <span>{t(item)}</span>
                                                         </li>
                                                     ))}
                                                 </ul>
@@ -187,10 +196,10 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                                         {service.diseaseTable.categories.map((cat: any, idx: number) => (
                                             <div key={idx} className="bg-white dark:bg-[#12141c] rounded-3xl border border-slate-200 dark:border-white/5 overflow-hidden shadow-lg text-left">
                                                 <div className="bg-slate-900 dark:bg-slate-800 p-4 text-white font-bold uppercase text-sm text-left flex items-center justify-between">
-                                                    <span>{cat.category}</span>
+                                                    <span>{t(cat.category)}</span>
                                                     {cat.curable !== undefined && (
                                                         <span className={`text-[10px] px-2 py-1 rounded-full ${cat.curable ? 'bg-emerald-500/20 text-emerald-400' : 'bg-rose-500/20 text-rose-400'}`}>
-                                                            {cat.curable ? 'Curable' : 'Manageable'}
+                                                            {cat.curable ? t('Curable') : t('Manageable')}
                                                         </span>
                                                     )}
                                                 </div>
@@ -198,8 +207,8 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                                                     <table className="w-full text-left">
                                                         <thead>
                                                             <tr className="border-b border-slate-100 dark:border-white/5 text-left">
-                                                                <th className="py-2 text-xs uppercase tracking-widest text-slate-400 text-left w-1/3">Condition</th>
-                                                                <th className="py-2 text-xs uppercase tracking-widest text-slate-400 text-left">Symptoms & Signs</th>
+                                                                <th className="py-2 text-xs uppercase tracking-widest text-slate-400 text-left w-1/3">{t('Condition')}</th>
+                                                                <th className="py-2 text-xs uppercase tracking-widest text-slate-400 text-left">{t('Symptoms & Signs')}</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody className="divide-y divide-slate-50 dark:divide-white/5 text-left">
@@ -208,10 +217,10 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                                                                     <td className="py-4 pr-4 transition-colors group-hover:text-amber-500 text-left">
                                                                         <div className="flex items-center gap-3">
                                                                             {disease.icon && <disease.icon size={18} className="text-amber-600/50" />}
-                                                                            <span className="font-bold text-slate-900 dark:text-white text-sm">{disease.name}</span>
+                                                                            <span className="font-bold text-slate-900 dark:text-white text-sm">{t(disease.name)}</span>
                                                                         </div>
                                                                     </td>
-                                                                    <td className="py-4 text-sm text-slate-600 dark:text-slate-400 text-left leading-relaxed">{disease.symptoms}</td>
+                                                                    <td className="py-4 text-sm text-slate-600 dark:text-slate-400 text-left leading-relaxed">{t(disease.symptoms)}</td>
                                                                 </tr>
                                                             ))}
                                                         </tbody>
@@ -228,20 +237,24 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                                 {service.procedure && service.procedure.length > 0 && (
                                     <div className="bg-slate-900 dark:bg-black rounded-3xl border border-white/10 overflow-hidden text-left flex flex-col p-8">
                                         <h3 className="text-xl font-black text-white uppercase mb-8 flex items-center gap-3">
-                                            <Timer className="text-amber-500" /> Treatment Procedure
+                                            <Timer className="text-amber-500" /> {t('Treatment Procedure')}
                                         </h3>
                                         <div className="space-y-8">
-                                            {service.procedure.map((p, idx) => (
-                                                <div key={idx} className="flex gap-4 group">
-                                                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/20 border border-amber-500/50 flex items-center justify-center text-amber-500 font-bold text-xs group-hover:bg-amber-500 group-hover:text-black transition-colors">
-                                                        {p.step}
+                                            {service.procedure.map((p: any, idx: number) => {
+                                                const tTitle = ts(`procedure.${idx}.title`);
+                                                const tDesc = ts(`procedure.${idx}.desc`);
+                                                return (
+                                                    <div key={idx} className="flex gap-4 group">
+                                                        <div className="shrink-0 w-8 h-8 rounded-full bg-amber-500/20 border border-amber-500/50 flex items-center justify-center text-amber-500 font-bold text-xs group-hover:bg-amber-500 group-hover:text-black transition-colors">
+                                                            {p.step}
+                                                        </div>
+                                                        <div>
+                                                            <h4 className="text-white font-bold mb-1">{tTitle || p.title}</h4>
+                                                            <p className="text-slate-400 text-sm leading-relaxed">{tDesc || p.desc}</p>
+                                                        </div>
                                                     </div>
-                                                    <div>
-                                                        <h4 className="text-white font-bold mb-1">{p.title}</h4>
-                                                        <p className="text-slate-400 text-sm leading-relaxed">{p.desc}</p>
-                                                    </div>
-                                                </div>
-                                            ))}
+                                                );
+                                            })}
                                         </div>
                                     </div>
                                 )}
@@ -250,14 +263,14 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                                     {service.safety && (
                                         <div className="bg-white dark:bg-[#12141c] p-8 rounded-3xl border border-slate-200 dark:border-white/5 text-left">
                                             <h3 className="text-xl font-black text-slate-900 dark:text-white uppercase mb-6 flex items-center gap-3">
-                                                <ShieldCheck className="text-emerald-500" /> {service.safety.title}
+                                                <ShieldCheck className="text-emerald-500" /> {ts('safety.title') || t(service.safety.title)}
                                             </h3>
                                             <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                                                {service.safety.content}
+                                                {ts('safety.content') || service.safety.content}
                                             </p>
                                             <div className="flex items-center gap-2 text-xs font-bold text-emerald-500 uppercase tracking-widest">
                                                 <CheckCircle2 size={16} />
-                                                <span>Medical Standard Guaranteed</span>
+                                                <span>{t('Medical Standard Guaranteed')}</span>
                                             </div>
                                         </div>
                                     )}
@@ -265,15 +278,18 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                                     {service.candidates && (
                                         <div className="bg-white dark:bg-[#12141c] p-8 rounded-3xl border border-slate-200 dark:border-white/5 text-left">
                                             <h3 className="text-xl font-black text-slate-900 dark:text-white uppercase mb-6 flex items-center gap-3">
-                                                <Users2 className="text-amber-600" /> Suitable Candidates
+                                                <Users2 className="text-amber-600" /> {t('Suitable Candidates')}
                                             </h3>
                                             <ul className="space-y-4">
-                                                {service.candidates.map((c, idx) => (
-                                                    <li key={idx} className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400">
-                                                        <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0" />
-                                                        <span>{c}</span>
-                                                    </li>
-                                                ))}
+                                                {service.candidates.map((c: string, idx: number) => {
+                                                    const tC = ts(`candidates.${idx}`);
+                                                    return (
+                                                        <li key={idx} className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400">
+                                                            <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0" />
+                                                            <span>{tC || c}</span>
+                                                        </li>
+                                                    );
+                                                })}
                                             </ul>
                                         </div>
                                     )}
@@ -286,17 +302,17 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                                     <div className="bg-slate-900 dark:bg-black rounded-3xl border border-white/10 overflow-hidden text-left h-full flex flex-col">
                                         <div className="p-6 border-b border-white/10 bg-white/5 flex flex-col gap-2 text-left">
                                             <h3 className="text-white font-black uppercase text-sm flex items-center gap-2 text-left">
-                                                <BarChart3 className="text-amber-500" /> {service.comparison.title}
+                                                <BarChart3 className="text-amber-500" /> {t(service.comparison.title)}
                                             </h3>
-                                            <p className="text-xs text-slate-400 uppercase tracking-widest">{service.comparison.subtitle}</p>
+                                            <p className="text-xs text-slate-400 uppercase tracking-widest">{t(service.comparison.subtitle)}</p>
                                         </div>
                                         <div className="p-0 flex-1 text-left">
                                             <table className="w-full text-left border-collapse">
                                                 <thead>
                                                     <tr className="border-b border-white/5 bg-white/5">
-                                                        <th className="p-4 text-[10px] uppercase font-bold text-slate-500">Feature</th>
-                                                        <th className="p-4 text-[10px] uppercase font-bold text-amber-500 text-center">{service.comparison.headers[0]}</th>
-                                                        <th className="p-4 text-[10px] uppercase font-bold text-slate-500 text-center">{service.comparison.headers[1]}</th>
+                                                        <th className="p-4 text-[10px] uppercase font-bold text-slate-500">{t('Feature')}</th>
+                                                        <th className="p-4 text-[10px] uppercase font-bold text-amber-500 text-center">{t(service.comparison.headers[0])}</th>
+                                                        <th className="p-4 text-[10px] uppercase font-bold text-slate-500 text-center">{t(service.comparison.headers[1])}</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody className="divide-y divide-white/5">
@@ -305,14 +321,14 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                                                             <td className="p-4">
                                                                 <div className="flex items-center gap-2">
                                                                     {item.icon && <item.icon size={14} className="text-slate-600" />}
-                                                                    <span className="text-slate-400 text-[11px] font-bold uppercase">{item.feature}</span>
+                                                                    <span className="text-slate-400 text-[11px] font-bold uppercase">{t(item.feature)}</span>
                                                                 </div>
                                                             </td>
                                                             <td className="p-4 text-center">
-                                                                <span className="text-amber-500 font-black text-xs">{item.focus}</span>
+                                                                <span className="text-amber-500 font-black text-xs">{t(item.focus)}</span>
                                                             </td>
                                                             <td className="p-4 text-center">
-                                                                <span className="text-slate-500 font-medium text-xs">{item.radial}</span>
+                                                                <span className="text-slate-500 font-medium text-xs">{t(item.radial)}</span>
                                                             </td>
                                                         </tr>
                                                     ))}
@@ -325,7 +341,7 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                                 {service.timeline && (
                                     <div className="bg-white dark:bg-[#12141c] p-8 rounded-3xl border border-slate-200 dark:border-white/5 text-left h-full flex flex-col">
                                         <h3 className="text-xl font-black text-slate-900 dark:text-white uppercase mb-8 flex items-center gap-2 text-left">
-                                            <TrendingUp className="text-amber-600" /> {service.timeline.title}
+                                            <TrendingUp className="text-amber-600" /> {t(service.timeline.title)}
                                         </h3>
                                         <div className="relative pl-8 border-l-2 border-slate-100 dark:border-slate-800 space-y-10 text-left">
                                             {service.timeline.steps.map((step: any, idx: number) => (
@@ -333,9 +349,9 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                                                     <div className="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-slate-900 dark:bg-white border-4 border-white dark:border-slate-900 shadow-xl flex items-center justify-center text-[10px] font-bold z-10 text-left">
                                                         {idx + 1}
                                                     </div>
-                                                    <div className="text-[10px] uppercase font-black text-amber-600 mb-1">{step.time}</div>
-                                                    <h4 className="text-lg font-bold text-slate-900 dark:text-white text-left mb-1">{step.title}</h4>
-                                                    <p className="text-sm text-slate-500 dark:text-slate-400 text-left leading-relaxed">{step.desc}</p>
+                                                    <div className="text-[10px] uppercase font-black text-amber-600 mb-1">{t(step.time)}</div>
+                                                    <h4 className="text-lg font-bold text-slate-900 dark:text-white text-left mb-1">{t(step.title)}</h4>
+                                                    <p className="text-sm text-slate-500 dark:text-slate-400 text-left leading-relaxed">{t(step.desc)}</p>
                                                 </div>
                                             ))}
                                         </div>
@@ -347,20 +363,24 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                             {service.faq && service.faq.length > 0 && (
                                 <div className="mb-16 text-left">
                                     <h2 className="text-2xl font-black text-slate-900 dark:text-white uppercase mb-8 text-left flex items-center gap-3">
-                                        <HelpCircle className="text-amber-600" /> Frequently Asked Questions
+                                        <HelpCircle className="text-amber-600" /> {t('Frequently Asked Questions')}
                                     </h2>
                                     <div className="grid gap-4 text-left">
-                                        {service.faq.map((item: any, idx: number) => (
-                                            <div key={idx} className="bg-white dark:bg-[#12141c] p-6 rounded-2xl border border-slate-200 dark:border-white/5 text-left group hover:border-amber-500/30 transition-all shadow-sm hover:shadow-md">
-                                                <h3 className="font-bold text-slate-900 dark:text-white mb-2 text-left flex items-start gap-4">
-                                                    <span className="shrink-0 w-6 h-6 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-600 text-xs">Q</span>
-                                                    {item.q || item.question}
-                                                </h3>
-                                                <div className="pl-10">
-                                                    <p className="text-sm text-slate-600 dark:text-slate-400 text-left leading-relaxed">{item.a || item.answer}</p>
+                                        {service.faq.map((item: any, idx: number) => {
+                                            const tQ = ts(`faq.${idx}.q`);
+                                            const tA = ts(`faq.${idx}.a`);
+                                            return (
+                                                <div key={idx} className="bg-white dark:bg-[#12141c] p-6 rounded-2xl border border-slate-200 dark:border-white/5 text-left group hover:border-amber-500/30 transition-all shadow-sm hover:shadow-md">
+                                                    <h3 className="font-bold text-slate-900 dark:text-white mb-2 text-left flex items-start gap-4">
+                                                        <span className="shrink-0 w-6 h-6 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-600 text-xs">Q</span>
+                                                        {tQ || item.q || item.question}
+                                                    </h3>
+                                                    <div className="pl-10">
+                                                        <p className="text-sm text-slate-600 dark:text-slate-400 text-left leading-relaxed">{tA || item.a || item.answer}</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        ))}
+                                            );
+                                        })}
                                     </div>
                                 </div>
                             )}
@@ -371,12 +391,12 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -ml-32 -mb-32" />
 
                                 <div className="relative z-10">
-                                    <h2 className="text-3xl md:text-4xl font-black text-white uppercase mb-4 text-center tracking-tight">Ready to Start?</h2>
-                                    <p className="text-slate-400 mb- aggregation-8 max-w-xl mx-auto text-base md:text-lg mb-10 leading-relaxed font-medium">
-                                        Consult with our Board-certified specialists at M-Trust Urology for <span className="text-amber-500">{serviceName}</span>.
+                                    <h2 className="text-3xl md:text-4xl font-black text-white uppercase mb-4 text-center tracking-tight">{t('Ready to Start?')}</h2>
+                                    <p className="text-slate-400 mb-aggregation-8 max-w-xl mx-auto text-base md:text-lg mb-10 leading-relaxed font-medium">
+                                        {t('Consult with our Board-certified specialists at M-Trust Urology for')} <span className="text-amber-500">{serviceName}</span>.
                                     </p>
                                     <div className="flex flex-col sm:flex-row justify-center gap-4 text-left">
-                                        <GradientButton onClick={() => router.push('/#contact')} className="px-10 py-4 h-14">Book Appointment</GradientButton>
+                                        <GradientButton onClick={() => router.push('/#contact')} className="px-10 py-4 h-14">{t('BOOK APPOINTMENT')}</GradientButton>
                                     </div>
                                 </div>
                             </div>

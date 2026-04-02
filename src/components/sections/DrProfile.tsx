@@ -1,11 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { ArrowLeft, Award, GraduationCap, Star, CheckCircle2, Trophy, Sparkles, ChevronLeft, ChevronRight, X, Quote, MapPin, ZoomIn, Play, Youtube } from 'lucide-react';
 import { DoctorData, GOOGLE_REVIEWS, GOOGLE_AVERAGE_RATING, GOOGLE_REVIEW_COUNT } from '@/data/mockData';
 import Container from '@/components/ui/Container';
 import CertificateMarquee from '@/components/sections/CertificateMarquee';
 import VideoPlayer from '@/components/client/VideoPlayer';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const AutoSlider = ({ images, caption }: { images: string[], caption?: string }) => {
     const [currentIndex, setCurrentIndex] = React.useState(0);
@@ -24,7 +26,7 @@ const AutoSlider = ({ images, caption }: { images: string[], caption?: string })
                     key={i}
                     className={`absolute inset-0 transition-opacity duration-1000 ${i === currentIndex ? 'opacity-100' : 'opacity-0'}`}
                 >
-                    <img src={img} alt={`Slide ${i}`} className="w-full h-full object-cover" />
+                    <Image src={img || ''} alt={`Slide ${i}`} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
                 </div>
             ))}
 
@@ -45,12 +47,14 @@ const AutoSlider = ({ images, caption }: { images: string[], caption?: string })
             {/* Manual arrows */}
             <button
                 onClick={() => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)}
+                aria-label="Previous testimonial"
                 className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/30 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/50"
             >
                 <ChevronLeft size={20} />
             </button>
             <button
                 onClick={() => setCurrentIndex((prev) => (prev + 1) % images.length)}
+                aria-label="Next testimonial"
                 className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/30 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/50"
             >
                 <ChevronRight size={20} />
@@ -68,6 +72,8 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
     const [activePhotoIndex, setActivePhotoIndex] = useState(0);
     const [selectedTestimonial, setSelectedTestimonial] = useState<string | null>(null);
     const photos = doctor.activities || [];
+    const { t, lang } = useTranslation();
+    const isTH = lang === 'TH';
 
     return (
         <section className="pt-8 pb-16 scroll-mt-24 text-left">
@@ -78,7 +84,7 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                     className="group flex items-center space-x-2 mb-8 px-4 py-2 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-full text-slate-600 dark:text-slate-300 hover:text-amber-600 hover:border-amber-500/30 transition-all shadow-sm active:scale-95"
                 >
                     <ArrowLeft size={18} className="transition-transform group-hover:-translate-x-1" />
-                    <span className="text-sm font-bold uppercase tracking-widest">Back to Home</span>
+                    <span className="text-sm font-bold uppercase tracking-widest">{t('Back to Home')}</span>
                 </button>
 
                 {/* Hero Section */}
@@ -86,7 +92,7 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                     {/* Doctor Image */}
                     <div className="lg:w-1/4">
                         <div className="relative aspect-[3/4] overflow-hidden rounded-[2rem] border-2 border-white/50 dark:border-white/10 shadow-2xl">
-                            <img src={doctor.image} alt={doctor.name} className="w-full h-full object-cover" />
+                            <Image src={doctor.image || ''} alt={doctor.name} fill sizes="(max-width: 1024px) 100vw, 33vw" priority className="object-cover" />
                             {doctor.slug !== 'dr.phanpon' && (
                                 <div className="absolute bottom-4 right-4 w-14 h-14 bg-amber-500 rounded-full flex items-center justify-center text-white shadow-lg z-10 border-4 border-white dark:border-slate-900">
                                     <div className="text-center leading-none">
@@ -102,24 +108,24 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                     <div className="flex-1">
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-500/20 text-amber-600 dark:text-amber-400 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
                             <Sparkles size={14} />
-                            {doctor.expert}
+                            {(isTH && doctor.expertTH) || doctor.expert}
                         </div>
                         <h2 className="text-3xl lg:text-4xl font-black text-slate-900 dark:text-white uppercase mb-2">
-                            {doctor.name}
+                            {(isTH && doctor.nameTH) || doctor.name}
                         </h2>
-                        <p className="text-slate-500 dark:text-slate-400 text-sm italic mb-6">{doctor.role}</p>
+                        <p className="text-slate-500 dark:text-slate-400 text-sm italic mb-6">{(isTH && doctor.roleTH) || doctor.role}</p>
 
                         {/* Bio */}
-                        <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-8">{doctor.bio}</p>
+                        <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-8">{(isTH && doctor.bioTH) || doctor.bio}</p>
 
                         {/* Specialties */}
                         <div className="mb-6">
                             <h3 className="text-sm font-black text-slate-900 dark:text-white uppercase tracking-wider mb-3 flex items-center gap-2">
                                 <Star size={14} className="text-amber-500" />
-                                Specialties
+                                {t('Specialties')}
                             </h3>
                             <div className="flex flex-wrap gap-2">
-                                {doctor.specialties.map((s, i) => (
+                                {(isTH && doctor.specialtiesTH ? doctor.specialtiesTH : doctor.specialties).map((s, i) => (
                                     <span key={i} className="px-3 py-1.5 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-full text-xs text-slate-700 dark:text-slate-300 font-medium">
                                         <CheckCircle2 size={12} className="inline mr-1 text-green-500" />{s}
                                     </span>
@@ -134,7 +140,7 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                     <div className="mb-12">
                         <h3 className="text-lg font-black text-slate-900 dark:text-white uppercase tracking-wider mb-4 flex items-center gap-2">
                             <Award size={18} className="text-amber-500" />
-                            Certificates & Credentials
+                            {t('Certificates & Credentials')}
                         </h3>
                         <CertificateMarquee certificates={doctor.certificates} />
                     </div>
@@ -155,7 +161,7 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                         doctor.bioContent.forEach(block => {
                                             if (block.type === 'header') {
                                                 if (currentGroup) groups.push(currentGroup);
-                                                currentGroup = { title: block.content || '', blocks: [] };
+                                                currentGroup = { title: (isTH && block.contentTH) || block.content || '', blocks: [] };
                                             } else {
                                                 if (!currentGroup) {
                                                     currentGroup = { title: '', blocks: [] };
@@ -177,19 +183,19 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                                 {group.blocks.map((block: any, i: number) => {
                                                     if (block.type === 'paragraph') return (
                                                         <p key={i} className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg italic font-medium">
-                                                            {block.content}
+                                                            {(isTH && block.contentTH) || block.content}
                                                         </p>
                                                     );
-                                                    if (block.type === 'list' && block.items) return (
+                                                    if (block.type === 'list' && block.items) { const listItems = (isTH && block.itemsTH) || block.items; return (
                                                         <ul key={i} className="space-y-3">
-                                                            {block.items.map((item: string, j: number) => (
+                                                            {listItems.map((item: string, j: number) => (
                                                                 <li key={j} className="text-slate-600 dark:text-slate-300 flex items-start gap-3 p-4 bg-white dark:bg-white/5 border border-slate-100 dark:border-white/5 rounded-2xl shadow-sm transition-all hover:border-amber-500/30">
                                                                     <CheckCircle2 size={18} className="text-amber-500 mt-1 shrink-0" />
                                                                     <span className="text-base font-medium">{item}</span>
                                                                 </li>
                                                             ))}
                                                         </ul>
-                                                    );
+                                                    );}
                                                     return null;
                                                 })}
                                             </div>
@@ -205,11 +211,11 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                             <figure key={i} className="relative group">
                                                 <div className="absolute -inset-4 bg-linear-to-br from-amber-500/10 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                                 <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-white dark:border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
-                                                    <img src={block.image} alt={block.caption || `Professional Profile ${i + 1}`} className="w-full h-auto object-cover" />
-                                                    {block.caption && (
+                                                    <Image src={block.image || ''} alt={((isTH && block.captionTH) || block.caption) || `Professional Profile ${i + 1}`} width={800} height={600} className="w-full h-auto object-cover" />
+                                                    {(block.caption || block.captionTH) && (
                                                         <div className="absolute bottom-0 inset-x-0 p-6 bg-linear-to-t from-black/80 via-black/40 to-transparent">
                                                             <p className="text-white text-xs font-medium italic">
-                                                                {block.caption}
+                                                                {(isTH && block.captionTH) || block.caption}
                                                             </p>
                                                         </div>
                                                     )}
@@ -259,7 +265,7 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                                     {group.blocks.filter(b => b.type !== 'image').map((block: any, i: number) => {
                                                         if (block.type === 'paragraph') return (
                                                             <p key={i} className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
-                                                                {block.content}
+                                                                {(isTH && block.contentTH) || block.content}
                                                             </p>
                                                         );
                                                         if (block.type === 'slider' && block.images) return (
@@ -267,16 +273,16 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                                                 <AutoSlider images={block.images} caption={block.caption} />
                                                             </div>
                                                         );
-                                                        if (block.type === 'list' && block.items) return (
+                                                        if (block.type === 'list' && block.items) { const listItems2 = (isTH && block.itemsTH) || block.items; return (
                                                             <ul key={i} className="grid sm:grid-cols-1 gap-3">
-                                                                {block.items.map((item: string, j: number) => (
+                                                                {listItems2.map((item: string, j: number) => (
                                                                     <li key={j} className="text-slate-600 dark:text-slate-300 flex items-start gap-3 p-3 bg-white dark:bg-white/5 border border-slate-100 dark:border-white/5 rounded-xl shadow-sm">
                                                                         <CheckCircle2 size={18} className="text-amber-500 mt-1 shrink-0" />
                                                                         <span className="text-sm font-medium">{item}</span>
                                                                     </li>
                                                                 ))}
                                                             </ul>
-                                                        );
+                                                        );}
                                                         return null;
                                                     })}
                                                 </div>
@@ -288,11 +294,11 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                                             <figure key={i} className="relative group">
                                                                 <div className="absolute -inset-4 bg-linear-to-br from-amber-500/10 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                                                 <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-white dark:border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
-                                                                    <img src={block.image} alt={block.caption || ''} className="w-full h-auto object-cover" />
-                                                                    {block.caption && (
+                                                                    <Image src={block.image || ''} alt={((isTH && block.captionTH) || block.caption) || ''} width={800} height={600} className="w-full h-auto object-cover" />
+                                                                    {(block.caption || block.captionTH) && (
                                                                         <div className="absolute bottom-0 inset-x-0 p-6 bg-linear-to-t from-black/80 via-black/40 to-transparent">
                                                                             <p className="text-white text-xs font-medium italic translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                                                                                {block.caption}
+                                                                                {(isTH && block.captionTH) || block.caption}
                                                                             </p>
                                                                         </div>
                                                                     )}
@@ -316,14 +322,16 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                     <div className="mb-12">
                         <h3 className="text-lg font-black text-slate-900 dark:text-white uppercase tracking-wider mb-4 flex items-center gap-2">
                             <Star size={18} className="text-amber-500" />
-                            Activities & Gallery
+                            {t('Activities & Gallery')}
                         </h3>
                         <div className="relative">
-                            <div className="overflow-hidden rounded-2xl border border-white/30 dark:border-white/10 shadow-xl">
-                                <img
-                                    src={photos[activePhotoIndex]}
+                            <div className="relative overflow-hidden aspect-video rounded-2xl border border-white/30 dark:border-white/10 shadow-xl">
+                                <Image
+                                    src={photos[activePhotoIndex] || ''}
                                     alt={`${doctor.name} activity ${activePhotoIndex + 1}`}
-                                    className="w-full aspect-video object-cover transition-opacity duration-500"
+                                    fill
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
+                                    className="object-cover transition-opacity duration-500"
                                 />
                             </div>
                             {photos.length > 1 && (
@@ -364,7 +372,7 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                     <div>
                         <h3 className="text-lg font-black text-slate-900 dark:text-white uppercase tracking-wider mb-4 flex items-center gap-2">
                             <GraduationCap size={18} className="text-purple-500" />
-                            Education & Training
+                            {t('Education & Training')}
                         </h3>
                         <div className="space-y-3">
                             {doctor.qualifications.map((qual, i) => (
@@ -385,7 +393,7 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                     <div>
                         <h3 className="text-lg font-black text-slate-900 dark:text-white uppercase tracking-wider mb-4 flex items-center gap-2">
                             <Trophy size={18} className="text-yellow-500" />
-                            Awards & Recognition
+                            {t('Awards & Recognition')}
                         </h3>
                         <div className="space-y-3">
                             {doctor.awards.map((award, i) => (
@@ -408,14 +416,14 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                     <div className="mb-12">
                         <h3 className="text-lg font-black text-slate-900 dark:text-white uppercase tracking-wider mb-2 flex items-center gap-2">
                             <Quote size={18} className="text-amber-500" />
-                            Patient Testimonials
+                            {t('Patient Testimonials')}
                         </h3>
 
                         {doctor.handwrittenTestimonials && doctor.handwrittenTestimonials.length > 0 ? (
                             <>
                                 <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 flex items-center gap-2">
                                     <Sparkles size={14} className="text-amber-500" />
-                                    Real Patient Success Stories & Handwritten Feedback
+                                    {t('Real Patient Success Stories & Handwritten Feedback')}
                                 </p>
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                     {doctor.handwrittenTestimonials.map((testimonial) => (
@@ -431,10 +439,12 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                             </div>
 
                                             <div className="relative aspect-[3/4] overflow-hidden bg-slate-100 dark:bg-slate-800">
-                                                <img
-                                                    src={testimonial.image}
+                                                <Image
+                                                    src={testimonial.image || ''}
                                                     alt={`Handwritten testimonial from ${testimonial.name}`}
-                                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                                    fill
+                                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                                                     loading="lazy"
                                                 />
                                                 <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/40 transition-all duration-500 flex items-center justify-center">
@@ -443,7 +453,7 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                                         className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 bg-white/90 dark:bg-amber-500 text-slate-900 dark:text-white px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 shadow-2xl hover:scale-105 active:scale-95"
                                                     >
                                                         <ZoomIn size={18} />
-                                                        View Original Note
+                                                        {t('View Original Note')}
                                                     </button>
                                                 </div>
                                                 {testimonial.language && (
@@ -460,7 +470,7 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                                             <Star key={i} size={14} className="text-amber-400 fill-amber-400" />
                                                         ))}
                                                     </div>
-                                                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Verified Patient</span>
+                                                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{t('Verified Patient')}</span>
                                                 </div>
 
                                                 <blockquote className="flex-1">
@@ -492,7 +502,7 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                     {GOOGLE_REVIEWS.map(review => (
                                         <div key={review.id} className="p-5 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
                                             <div className="flex items-center gap-3 mb-3">
-                                                <img src={review.avatar} alt={review.name} className="w-10 h-10 rounded-full object-cover border-2 border-amber-400" />
+                                                <Image src={review.avatar || ''} alt={review.name} width={40} height={40} className="rounded-full object-cover border-2 border-amber-400" />
                                                 <div>
                                                     <p className="font-bold text-slate-900 dark:text-white text-sm">{review.name}</p>
                                                     <p className="text-[10px] text-slate-400">{review.date}</p>
@@ -522,10 +532,10 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                             <div>
                                 <h3 className="text-lg font-black text-slate-900 dark:text-white uppercase tracking-wider flex items-center gap-2">
                                     <Play size={18} className="text-amber-500 fill-amber-500/20" />
-                                    Video Testimonials
+                                    {t('Video Testimonials')}
                                 </h3>
                                 <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-                                    Watch our patients share their successful recovery journeys
+                                    {t('Watch our patients share their successful recovery journeys')}
                                 </p>
                             </div>
                             <div className="hidden md:block h-px flex-1 bg-linear-to-r from-slate-200 to-transparent dark:from-white/10 mx-6" />
@@ -574,7 +584,7 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                     <div className="mb-12">
                         <h3 className="text-lg font-black text-slate-900 dark:text-white uppercase tracking-wider mb-4 flex items-center gap-2">
                             <Youtube size={18} className="text-red-500" />
-                            Featured Video
+                            {t('Featured Video')}
                         </h3>
                         <div className="rounded-2xl overflow-hidden border border-white/30 dark:border-white/10 shadow-xl">
                             <VideoPlayer

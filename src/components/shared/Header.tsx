@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { Home, Info, Stethoscope, Users, FileText, Calendar, HelpCircle, ChevronDown, Mail, Clock, User, Menu, X, Headset } from 'lucide-react';
+import { Home, Info, Stethoscope, Users, FileText, Calendar, HelpCircle, ChevronDown, Mail, Clock, User, Menu, X, Headset, Award } from 'lucide-react';
 import { SERVICE_CATEGORIES } from '@/data/mockData';
 import Container from '@/components/ui/Container';
 import GradientButton from '@/components/ui/GradientButton';
@@ -56,7 +56,7 @@ const Header = ({ activeSection, scrollToSection, onBackToHome, onServiceClick }
         { title: 'Services', icon: Stethoscope, mega: true, submenu: SERVICE_CATEGORIES },
         { title: 'Doctors', icon: Users },
         { title: 'Blog', icon: FileText },
-        { title: 'Events', icon: Calendar, disabled: true },
+        { title: 'Expertise', icon: Award, disabled: false },
         { title: 'FAQ', icon: HelpCircle },
     ];
 

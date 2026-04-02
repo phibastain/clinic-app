@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { ZoomIn, X } from 'lucide-react';
 
 const CertificateMarquee = ({ certificates }: { certificates: string[] }) => {
@@ -19,7 +20,7 @@ const CertificateMarquee = ({ certificates }: { certificates: string[] }) => {
                             onClick={() => setSelectedImage(cert)}
                             className="w-[180px] h-[120px] bg-white p-2 rounded-lg shadow-sm border border-slate-200 flex items-center justify-center shrink-0 cursor-zoom-in hover:scale-105 transition-transform group relative"
                         >
-                            <img src={cert} alt="certificate" className="max-w-full max-h-full object-contain pointer-events-none" />
+                            <Image src={cert} alt="certificate" fill sizes="180px" className="object-contain pointer-events-none p-2" />
                             <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center">
                                 <ZoomIn className="text-slate-600 opacity-60" size={24} />
                             </div>

@@ -9,6 +9,8 @@ const rateLimitStore = new Map<string, { count: number; resetTime: number }>();
 
 const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute window
 const RATE_LIMIT_MAX_REQUESTS = 60; // Max requests per window
+const CLEANUP_INTERVAL_MS = 5 * 60 * 1000; // 5 minutes
+let lastCleanup = Date.now();
 
 // Known bot user-agents to block
 const BLOCKED_BOT_PATTERNS = [
@@ -34,7 +36,25 @@ function getClientIp(request: NextRequest): string {
     return '127.0.0.1';
 }
 
+/**
+ * Passively clean up expired rate-limit entries during normal request flow.
+ * This avoids setInterval which keeps the process alive and blocks build/dev exit.
+ */
+function cleanupExpiredEntries() {
+    const now = Date.now();
+    if (now - lastCleanup < CLEANUP_INTERVAL_MS) return;
+    lastCleanup = now;
+    for (const [ip, entry] of rateLimitStore.entries()) {
+        if (now > entry.resetTime) {
+            rateLimitStore.delete(ip);
+        }
+    }
+}
+
 function isRateLimited(ip: string): boolean {
+    // Passive cleanup on each request (runs actual cleanup only every 5 min)
+    cleanupExpiredEntries();
+
     const now = Date.now();
     const entry = rateLimitStore.get(ip);
 
@@ -55,16 +75,6 @@ function isBlockedBot(userAgent: string | null): boolean {
     if (!userAgent) return false;
     return BLOCKED_BOT_PATTERNS.some(pattern => pattern.test(userAgent));
 }
-
-// Periodic cleanup of expired entries (every 5 minutes)
-setInterval(() => {
-    const now = Date.now();
-    for (const [ip, entry] of rateLimitStore.entries()) {
-        if (now > entry.resetTime) {
-            rateLimitStore.delete(ip);
-        }
-    }
-}, 5 * 60 * 1000);
 
 export function middleware(request: NextRequest) {
     const userAgent = request.headers.get('user-agent');
@@ -108,8 +118,15 @@ export function middleware(request: NextRequest) {
         }
     }
 
-    // 4. Add security nonce for inline scripts (optional future use)
+    // 4. Detect language from URL param and set cookie for SSR html lang
     const response = NextResponse.next();
+    const langParam = request.nextUrl.searchParams.get('lang');
+    if (langParam === 'th') {
+        response.cookies.set('lang', 'th', { path: '/', sameSite: 'lax' });
+    } else if (langParam !== null) {
+        // Explicit non-th lang param — set to 'en'
+        response.cookies.set('lang', 'en', { path: '/', sameSite: 'lax' });
+    }
 
     // Additional security: prevent caching of sensitive pages
     if (request.nextUrl.pathname.startsWith('/api/')) {

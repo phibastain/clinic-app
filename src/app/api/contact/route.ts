@@ -1,14 +1,56 @@
 import { NextResponse } from 'next/server';
+import { headers } from 'next/headers';
 import { sanitizeText, sanitizeEmail, sanitizePhone } from '@/utils/sanitize';
+
+/**
+ * Server-side rate limiter for API route
+ * Limits form submissions per IP to prevent spam
+ */
+const submitRateLimit = new Map<string, { count: number; resetTime: number }>();
+const SUBMIT_WINDOW_MS = 60 * 1000; // 1 minute
+const SUBMIT_MAX_REQUESTS = 3; // Max 3 submissions per minute per IP
+
+function isSubmitRateLimited(ip: string): boolean {
+    const now = Date.now();
+    const entry = submitRateLimit.get(ip);
+
+    if (!entry || now > entry.resetTime) {
+        submitRateLimit.set(ip, { count: 1, resetTime: now + SUBMIT_WINDOW_MS });
+        return false;
+    }
+
+    entry.count++;
+    return entry.count > SUBMIT_MAX_REQUESTS;
+}
+
+function getClientIp(headersList: Headers): string {
+    const forwarded = headersList.get('x-forwarded-for');
+    if (forwarded) return forwarded.split(',')[0].trim();
+    const realIp = headersList.get('x-real-ip');
+    if (realIp) return realIp;
+    return '127.0.0.1';
+}
 
 export async function POST(request: Request) {
     try {
+        const headersList = await headers();
+
+        // 0. Rate limiting per IP (stricter than global middleware)
+        const ip = getClientIp(headersList);
+        if (isSubmitRateLimited(ip)) {
+            return NextResponse.json(
+                { success: false, message: 'Too many submissions. Please wait a moment.' },
+                { status: 429, headers: { 'Retry-After': '60' } }
+            );
+        }
+
         const formData = await request.formData();
 
         // 1. Honeypot check (Double check on server)
         const botcheck = formData.get('botcheck');
         if (botcheck === 'on' || botcheck === 'true') {
-            return NextResponse.json({ success: false, message: 'Bot detected' }, { status: 400 });
+            // Return success to avoid revealing bot detection to attackers
+            return NextResponse.json({ success: true });
         }
 
         // 2. Extract and Sanitize data
@@ -25,10 +67,14 @@ export async function POST(request: Request) {
             return NextResponse.json({ success: false, message: 'Missing required fields' }, { status: 400 });
         }
 
-        // 4. Forward to Web3Forms (Server-to-Server)
+        // 4. Forward to Web3Forms (Server-to-Server) — API key stays on server only
+        const ACCESS_KEY = process.env.WEB3FORMS_ACCESS_KEY;
+        if (!ACCESS_KEY) {
+            console.error('WEB3FORMS_ACCESS_KEY environment variable is not set');
+            return NextResponse.json({ success: false, message: 'Server configuration error' }, { status: 500 });
+        }
+
         const web3FormData = new FormData();
-        // Hardcoded access key to ensure it works on every deployment without manual setup
-        const ACCESS_KEY = '88ddf2f1-99bc-4a39-b6af-5fdb7d6e0588';
         web3FormData.append('access_key', ACCESS_KEY);
         web3FormData.append('name', name);
         web3FormData.append('phone', phone);

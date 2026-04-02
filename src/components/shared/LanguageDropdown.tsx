@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { ChevronDown } from 'lucide-react';
 import { languages } from '@/data/mockData';
 
@@ -31,10 +32,12 @@ const LanguageDropdown = ({ lang, setLang }: LanguageDropdownProps) => {
                 onClick={() => setIsOpen(!isOpen)}
                 className="flex items-center space-x-2 bg-white/5 hover:bg-white/10 px-2 py-1 rounded-full transition-all border border-white/10 group min-w-[70px]"
             >
-                <img
+                <Image
                     src={currentLang.flag}
                     alt={currentLang.label}
-                    className="w-5 h-3.5 object-cover rounded-[2px] shadow-sm"
+                    width={20}
+                    height={14}
+                    className="object-cover rounded-[2px] shadow-sm"
                 />
                 <span className="text-[10px] font-bold text-slate-200">{currentLang.code}</span>
                 <ChevronDown size={12} className={`text-slate-300 group-hover:text-amber-500 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
@@ -49,10 +52,12 @@ const LanguageDropdown = ({ lang, setLang }: LanguageDropdownProps) => {
                                 onClick={() => { setLang(l.code as 'EN' | 'TH'); setIsOpen(false); }}
                                 className={`w-full flex items-center space-x-3 px-4 py-2.5 text-left hover:bg-white/5 transition-colors ${lang === l.code ? 'bg-amber-900/10' : ''}`}
                             >
-                                <img
+                                <Image
                                     src={l.flag}
                                     alt={l.label}
-                                    className="w-6 h-4 object-cover rounded-[2px] shadow-sm"
+                                    width={24}
+                                    height={16}
+                                    className="object-cover rounded-[2px] shadow-sm"
                                 />
                                 <span className={`text-[10px] font-bold uppercase tracking-wide ${lang === l.code ? 'text-amber-500' : 'text-slate-400'}`}>
                                     {l.label}

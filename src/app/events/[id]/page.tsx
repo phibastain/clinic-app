@@ -6,9 +6,10 @@ import { getEventJsonLd, JsonLdScript } from '@/utils/jsonLd';
 
 interface Props {
     params: Promise<{ id: string }>;
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
     const { id } = await params;
     const event = EVENTS_DATA.find(e => e.id.toString() === id);
 
@@ -17,6 +18,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             title: 'Event Not Found | M-Trust Clinic',
         };
     }
+
+    const awaitedParams = await searchParams;
+    const isThai = awaitedParams?.lang === 'th';
+    const basePath = `/events/${id}`;
+    const url = isThai ? `${basePath}?lang=th` : basePath;
 
     return {
         title: `${event.title} | M-Trust Urology Clinic`,
@@ -33,7 +39,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             images: [event.image],
         },
         alternates: {
-            canonical: `/events/${id}`,
+            canonical: url,
+            languages: {
+                'en': basePath,
+                'th': `${basePath}?lang=th`,
+            },
         },
     };
 }
@@ -50,7 +60,7 @@ export default async function EventDetailPage({ params }: Props) {
     return (
         <>
             <JsonLdScript data={getEventJsonLd('https://www.mtrusturology.com', {
-                id: event.id,
+                id: Number(event.id),
                 title: event.title,
                 description: event.description,
                 image: event.image,

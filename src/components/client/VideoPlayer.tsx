@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import Image from 'next/image';
 import { Play, Pause, Volume2, VolumeX, Maximize } from 'lucide-react';
 
 interface VideoPlayerProps {
@@ -26,10 +27,12 @@ export default function VideoPlayer({ videoId, title, thumbnail }: VideoPlayerPr
                 aria-label={`Play video: ${title}`}
             >
                 {/* Thumbnail */}
-                <img
+                <Image
                     src={thumbnailUrl}
                     alt={title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
 
                 {/* Overlay */}

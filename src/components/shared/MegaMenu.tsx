@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { SERVICE_CATEGORIES } from '@/data/mockData';
 import { serviceNameToSlug } from '@/utils/serviceUtils';
 import GradientButton from '@/components/ui/GradientButton';
@@ -84,11 +85,13 @@ const MegaMenu = ({ submenu, onServiceClick }: MegaMenuProps) => {
                 <div className="w-[320px] relative overflow-hidden flex-shrink-0 bg-slate-900 group/img">
                     <div className="absolute inset-0 w-full h-full">
                         {activeImg && (
-                            <img
+                            <Image
                                 key={activeImg}
                                 src={activeImg}
                                 alt={activeName || 'Service preview'}
-                                className="w-full h-full object-cover animate-in fade-in zoom-in duration-700"
+                                fill
+                                sizes="320px"
+                                className="object-cover animate-in fade-in zoom-in duration-700"
                             />
                         )}
                     </div>
