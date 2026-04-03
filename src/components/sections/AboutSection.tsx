@@ -1,15 +1,14 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import SectionTitle from '@/components/ui/SectionTitle';
 import GradientButton from '@/components/ui/GradientButton';
 import { ABOUT_SPECIALTIES } from '@/data/mockData';
-import { useRouter } from 'next/navigation';
 import { useTranslation } from '@/hooks/useTranslation';
 
 const AboutSection = () => {
-    const router = useRouter();
     const { t } = useTranslation();
 
     return (
@@ -25,13 +24,14 @@ const AboutSection = () => {
                             <p>{t("M-Trust Urology Clinic is a leading specialized clinic providing a full spectrum of urology and men’s health services. We focus on diagnosing and treating urological diseases and restoring sexual performance through innovative medical solutions. Our clinic is powered by a team of expert urologists from top-tier medical institutions, ensuring every procedure meets international healthcare standards.")}</p>
                             <p>{t("We prioritize the utmost patient privacy and a confidential environment for all our clients. We combine clinical expertise with advanced technology to offer effective medical and surgical solutions. Whether it's diagnosis or complex surgery, our goal is to help you return to your daily life with total confidence.")}</p>
                         </div>
-                        <GradientButton
-                            variant="outline"
-                            className="px-8 py-3.5 rounded-xl text-[10px] text-left"
-                            onClick={() => router.push('/urologist/dr.niti')}
-                        >
-                            {t("Credential Experts")}
-                        </GradientButton>
+                        <Link href="/urologist/dr.niti">
+                            <GradientButton
+                                variant="outline"
+                                className="px-8 py-3.5 rounded-xl text-[10px] text-left"
+                            >
+                                {t("Credential Experts")}
+                            </GradientButton>
+                        </Link>
                     </div>
                     <div className="relative aspect-video rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/50 dark:border-white/10">
                         <Image src="/assets/image/about section/clinic inside.webp" alt="M-Trust Urology Clinic facility" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />

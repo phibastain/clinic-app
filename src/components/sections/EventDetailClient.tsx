@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { Calendar, Facebook, Twitter, MessageCircle, ArrowLeft } from 'lucide-react';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { IEvent } from '@/types';
@@ -16,7 +16,6 @@ interface EventDetailClientProps {
 }
 
 export default function EventDetailClient({ event, relatedEvents }: EventDetailClientProps) {
-    const router = useRouter();
     const { lang } = useLanguage();
     const { t } = useTranslation();
 
@@ -55,13 +54,13 @@ export default function EventDetailClient({ event, relatedEvents }: EventDetailC
 
                     <Container className="relative h-full flex items-center">
                         <div className="max-w-3xl pt-8">
-                            <button 
-                                onClick={() => router.push('/')} 
+                            <Link 
+                                href="/" 
                                 className="group flex items-center space-x-2 text-white/90 hover:text-white transition-all text-sm font-bold bg-black/30 hover:bg-black/50 px-5 py-2.5 rounded-full backdrop-blur-md border border-white/20 shadow-lg hover:shadow-cyan-500/20 mb-8 w-fit"
                             >
                                 <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
                                 <span>{lang === 'TH' ? 'กลับสู่หน้าหลัก' : 'Back to Home'}</span>
-                            </button>
+                            </Link>
                             <h1 className="text-4xl md:text-5xl font-black text-white mb-4 leading-[1.15] uppercase tracking-tight drop-shadow-lg">
                                 {lang === 'TH' ? (event.titleTH || t(event.title)) : event.title}
                             </h1>
@@ -119,9 +118,9 @@ export default function EventDetailClient({ event, relatedEvents }: EventDetailC
                                         </h3>
                                         <div className="space-y-4 max-h-[500px] overflow-y-auto pr-2">
                                             {relatedEvents.map((relatedEvent) => (
-                                                <button
+                                                <Link
                                                     key={relatedEvent.id}
-                                                    onClick={() => router.push(`/events/${relatedEvent.id}`)}
+                                                    href={`/events/${relatedEvent.id}`}
                                                     className="group w-full text-left block p-3 rounded-xl hover:bg-white/5 transition-all"
                                                 >
                                                     <div className="flex space-x-3">
@@ -140,7 +139,7 @@ export default function EventDetailClient({ event, relatedEvents }: EventDetailC
                                                             </span>
                                                         </div>
                                                     </div>
-                                                </button>
+                                                </Link>
                                             ))}
                                         </div>
                                     </div>

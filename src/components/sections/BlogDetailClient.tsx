@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { Calendar, Clock } from 'lucide-react';
 import { IPost } from '@/types';
 import { sanitizeHtmlContent } from '@/utils/sanitize';
@@ -18,7 +18,6 @@ interface BlogDetailClientProps {
 }
 
 export default function BlogDetailClient({ post, relatedPosts }: BlogDetailClientProps) {
-    const router = useRouter();
     const { lang } = useLanguage();
     const { t } = useTranslation();
 
@@ -79,9 +78,9 @@ export default function BlogDetailClient({ post, relatedPosts }: BlogDetailClien
                                 </h3>
                                 <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2">
                                     {relatedPosts.map((relatedPost) => (
-                                        <button
+                                        <Link
                                             key={relatedPost.id}
-                                            onClick={() => router.push(`/blog/${blogTitleToSlug(relatedPost.title)}`)}
+                                            href={`/blog/${blogTitleToSlug(relatedPost.title)}`}
                                             className="group w-full text-left block p-4 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-all"
                                         >
                                             <div className="flex space-x-4">
@@ -98,15 +97,17 @@ export default function BlogDetailClient({ post, relatedPosts }: BlogDetailClien
                                                     </span>
                                                 </div>
                                             </div>
-                                        </button>
+                                        </Link>
                                     ))}
                                 </div>
                             </div>
                             <div className="bg-linear-to-br from-amber-500 to-amber-600 backdrop-blur-md rounded-3xl p-8 shadow-2xl text-white border border-amber-400/20 text-center">
                                 <h3 className="text-xl font-black mb-3 text-white">{t('Ready to Start?')}</h3>
-                                <GradientButton variant="dark" onClick={() => router.push('/#contact')} className="w-full justify-center">
-                                    {t('Book Appointment')}
-                                </GradientButton>
+                                <Link href="/#contact" className="w-full">
+                                    <GradientButton variant="dark" className="w-full justify-center">
+                                        {t('Book Appointment')}
+                                    </GradientButton>
+                                </Link>
                             </div>
                         </div>
                     </div>
