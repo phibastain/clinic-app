@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.mtrusturology.com'),
   title: {
-    default: 'M-Trust Urology Clinic | Best Urologist in Thailand | Men\'s Health Specialist',
+    default: 'M-Trust Urology Clinic | Urologist & Men\'s Health Specialist, Pattaya',
     template: '%s | M-Trust Urology Clinic'
   },
   description: 'M-Trust Urology Clinic - Thailand\'s leading center for men\'s health. Expert treatment for erectile dysfunction, prostate conditions, penile prosthesis surgery by Dr. Niti Navanimitkul. Book consultation today.',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     alternateLocale: ['th_TH'],
     url: 'https://www.mtrusturology.com',
     siteName: 'M-Trust Urology Clinic',
-    title: 'M-Trust Urology Clinic | Best Urologist in Thailand',
+    title: 'M-Trust Urology Clinic | Urologist & Men\'s Health Specialist, Pattaya',
     description: 'Thailand\'s leading center for men\'s health. Expert treatment by Dr. Niti Navanimitkul.',
     images: [
       {
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'M-Trust Urology Clinic | Best Urologist in Thailand',
+    title: 'M-Trust Urology Clinic | Urologist & Men\'s Health Specialist, Pattaya',
     description: 'Thailand\'s leading center for men\'s health and urology.'
   },
   // Generates alternates dynamically per page

@@ -28,7 +28,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   
   const pageTitle = isThai
     ? 'M-Trust Urology Clinic | คลินิกระบบทางเดินปัสสาวะชั้นนำ | ผู้เชี่ยวชาญสุขภาพเพศชาย'
-    : 'M-Trust Urology Clinic | Best Urologist in Thailand | Men\'s Health Specialist';
+    : 'M-Trust Urology Clinic | Urologist & Men\'s Health Specialist, Pattaya';
   const pageDesc = isThai
     ? 'M-Trust Urology Clinic - ศูนย์ชั้นนำด้านสุขภาพเพศชายของประเทศไทย รักษาโรคหย่อนสมรรถภาพทางเพศ ต่อมลูกหมากโต ผ่าตัดใส่แกนองคชาตเทียม โดย นพ.นิติ นวนิมิตกุล นัดหมายวันนี้'
     : 'M-Trust Urology Clinic - Thailand\'s leading center for men\'s health. Expert treatment for erectile dysfunction, prostate conditions, penile prosthesis surgery by Dr. Niti Navanimitkul. Book consultation today.';
