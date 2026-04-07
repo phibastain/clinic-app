@@ -6,6 +6,7 @@ import Container from '@/components/ui/Container';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { sanitizeText, sanitizeEmail, sanitizePhone } from '@/utils/sanitize';
 import { useTranslation } from '@/hooks/useTranslation';
+import { getWeb3FormsKey } from '@/app/actions';
 
 const ContactSection = () => {
     const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
@@ -34,8 +35,13 @@ const ContactSection = () => {
         setLastSubmitTime(now);
 
         try {
+            // Fetch the access key from the server action to ensure we get the Vercel production key
+            // This prevents "Invalid Form ID" errors if the NEXT_PUBLIC_ key is missing.
+            const serverKey = await getWeb3FormsKey();
+            const accessKey = String(serverKey || '88ddf2f1-99bc-4a39-b6af-5fdb7d6e0588').trim();
+            
             // Send directly to Web3Forms to avoid server-side Cloudflare blocks
-            formData.append('access_key', process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || '88ddf2f1-99bc-4a39-b6af-5fdb7d6e0588');
+            formData.append('access_key', accessKey);
             
             const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
