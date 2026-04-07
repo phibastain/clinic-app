@@ -34,8 +34,10 @@ const ContactSection = () => {
         setLastSubmitTime(now);
 
         try {
-            // Send through server-side API route (handles sanitization, keys, & security)
-            const response = await fetch('/api/contact', {
+            // Send directly to Web3Forms to avoid server-side Cloudflare blocks
+            formData.append('access_key', process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || '88ddf2f1-99bc-4a39-b6af-5fdb7d6e0588');
+            
+            const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 body: formData,
             });
