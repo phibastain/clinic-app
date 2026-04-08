@@ -38,7 +38,13 @@ const ContactSection = () => {
             // Fetch the access key from the server action to ensure we get the Vercel production key
             // This prevents "Invalid Form ID" errors if the NEXT_PUBLIC_ key is missing.
             const serverKey = await getWeb3FormsKey();
-            const accessKey = String(serverKey || '88ddf2f1-99bc-4a39-b6af-5fdb7d6e0588').trim();
+            const accessKey = String(serverKey || '').trim();
+
+            if (!accessKey || accessKey === 'undefined') {
+                setFormStatus('error');
+                setErrorMessage('System configuration error: Missing Access Key.');
+                return;
+            }
             
             // Send directly to Web3Forms to avoid server-side Cloudflare blocks
             formData.append('access_key', accessKey);
