@@ -76,7 +76,7 @@ function isBlockedBot(userAgent: string | null): boolean {
     return BLOCKED_BOT_PATTERNS.some(pattern => pattern.test(userAgent));
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
     const userAgent = request.headers.get('user-agent');
     const ip = getClientIp(request);
 
@@ -136,7 +136,7 @@ export function middleware(request: NextRequest) {
     return response;
 }
 
-// Apply middleware to all routes except static assets
+// Apply proxy to all routes except static assets
 export const config = {
     matcher: [
         /*
