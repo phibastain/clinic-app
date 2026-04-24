@@ -5083,7 +5083,9 @@ export const BLOG_POSTS: BlogPost[] = [
       </div>
     `,
       titleAR: "نقص هرمون التستوستيرون (Low T): الأعراض والحلول",
+      titleRU: "Низкий уровень тестостерона (Низкий Т): симптомы и решения ТЗТ",
       excerptAR: "كيف تستعيد نشاطك وحيويتك بالعلاج الهرموني.",
+      excerptRU: "Усталость, перепады настроения, низкое либидо? Узнайте о заместительной гормональной терапии тестостероном от наших специалистов.",
       contentAR: `
       <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
         تنخفض مستويات هرمون التستوستيرون بشكل طبيعي مع تقدم العمر، ولكن النقص الحاد يمكن أن يسبب أعراضاً منهكة. يؤثر <strong>نقص هرمون التستوستيرون (Low T)</strong> على الطاقة والمزاج وكتلة العضلات والوظيفة الجنسية. يمكن لـ <strong>العلاج التعويضي بالتستوستيرون (TRT)</strong> استعادة الحيوية ونوعية الحياة عند إدارته بشكل صحيح.
@@ -5131,6 +5133,56 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> زيادة كتلة العضلات وقوتها</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> تحسن المزاج والصفاء الذهني</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> طاقة أفضل وتقليل التعب</li>
+        </ul>
+      </div>
+      `,
+      contentRU: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Уровень тестостерона естественным образом снижается с возрастом, но серьезный дефицит может вызвать изнурительные симптомы. <strong>Низкий уровень тестостерона (Низкий Т)</strong> влияет на энергию, настроение, мышечную массу и сексуальную функцию. <strong>Заместительная терапия тестостероном (ТЗТ)</strong> может восстановить жизненные силы и качество жизни при правильном подходе.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Распознавание симптомов низкого Т</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            Низкий уровень тестостерона проявляется в нескольких системах организма. Многие мужчины страдают молча, приписывая симптомы «старению», не понимая, что лечение доступно.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Сексуальные:</strong> Низкое либидо, эректильная дисфункция</li>
+            <li><strong>Физические:</strong> Усталость, потеря мышечной массы, увеличение веса</li>
+            <li><strong>Психические:</strong> Депрессия, затуманенность сознания, раздражительность</li>
+            <li><strong>Метаболические:</strong> Увеличение жировых отложений, снижение плотности костей</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img 
+            src="/assets/image/blog section/Low Testosterone 2.webp" 
+            alt="Терапия тестостероном" 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Восстановите жизненные силы с помощью медицинской ТЗТ</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Варианты лечения ТЗТ</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        Современная ТЗТ выпускается в нескольких формах: инъекции (еженедельно/раз в две недели), гели (ежедневное применение) или пеллеты (каждые 3-6 месяцев). Ваш врач подберет подход с учетом вашего образа жизни и предпочтений.
+      </p>
+      
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        «Большинство мужчин, получающих правильно подобранную ТЗТ, сообщают о резком улучшении энергии, настроения и сексуальной функции в течение 4-6 недель. Это меняет жизнь».
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Преимущества ТЗТ:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Восстановление либидо и сексуальной активности</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Увеличение мышечной массы и силы</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Улучшение настроения и ясности ума</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Больше энергии и снижение утомляемости</li>
         </ul>
       </div>
       `
