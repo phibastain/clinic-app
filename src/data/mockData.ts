@@ -3106,8 +3106,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
   'Flexible Cystoscopy': {
     title: 'Flexible Cystoscopy (Bladder Examination)',
     titleAR: 'تنظير المثانة المرن (فحص المثانة المنظاري)',
+    titleRU: 'Гибкая цистоскопия (Обследование мочевого пузыря)',
     tagline: 'High-Definition Bladder and Urethral Examination Quick, Comfortable, and Performed Under Local Anesthesia with No Downtime.',
     taglineAR: 'فحص دقيق ومريح للمثانة والإحليل، يُجرى تحت التخدير الموضعي (جِل) وبدون فترة انقطاع.',
+    taglineRU: 'Высокоточное обследование мочевого пузыря и уретры. Быстро, комфортно и под местной анестезией без периода реабилитации.',
     heroImage: '/assets/image/services section/flexible cystoscopy menu.webp',
     whatIsIt: {
       title: 'What is Flexible Cystoscopy?',
@@ -3117,8 +3119,13 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       title: 'ما هو تنظير المثانة المرن؟',
       description: 'تنظير المثانة المرن هو إجراء تشخيصي بأقل تدخل جراحي يسمح لطبيب المسالك البولية بالفحص المباشر لبطانة المثانة والإحليل باستخدام منظار رفيع، ناعم، ومرن. على عكس المناظير الصلبة القديمة، يتكيف التصميم المرن مع الانحناءات الطبيعية للجسم، مما يقلل بشكل كبير من أي ألم أو انزعاج. يُجرى الإجراء في العيادة باستخدام تخدير موضعي (جِل)، ويستغرق 5-10 دقائق، ويمكن بعدها العودة للحياة الطبيعية فوراً.'
     },
+    whatIsItRU: {
+      title: 'Что такое гибкая цистоскопия?',
+      description: 'Гибкая цистоскопия — это малоинвазивная диагностическая процедура, которая позволяет урологу непосредственно осмотреть слизистую оболочку мочевого пузыря и уретры с помощью тонкого, мягкого, гибкого эндоскопа. В отличие от старых жестких цистоскопов, гибкая конструкция повторяет естественные изгибы тела, что приводит к значительно меньшему дискомфорту. Процедура проводится под местной анестезией (гель местного действия), занимает всего 5-10 минут, и пациенты могут вернуться к нормальной активности сразу после ее завершения.'
+    },
     description: "This advanced diagnostic tool is essential for identifying the root cause of urinary symptoms. By providing a clear, direct view of the urinary tract, it ensures accurate diagnosis and effective treatment planning.\n\n**The Clinical Mechanism & Diagnostic Power:**\n\n1. **High-Definition Visualization:** The flexible cystoscope is equipped with a high-resolution camera and light source. It is gently inserted through the urethra, allowing the doctor to inspect the **entire bladder lining**, **urethra**, and **prostate** (in men) with exceptional clarity.\n\n2. **What We Detect:**\n   *   **Hematuria:** Investigates the source of blood in the urine.\n   *   **Bladder Tumors:** Early detection of bladder cancer or polyps.\n   *   **Stones:** Identifies bladder stones causing pain or blockage.\n   *   **Strictures:** Detects narrowing of the urethra hindering urine flow.\n   *   **BPH:** Assesses the degree of prostate enlargement blocking the urethra.\n\n3. **Why 'Flexible' Matters:** The soft, pliable design causes **minimal friction** and **significantly less discomfort** compared to rigid scopes. Performed under local anesthesia (topical gel), the procedure is quick (5-10 mins) and patients can return to normal activities immediately.",
     descriptionAR: 'هذه الأداة التشخيصية المتقدمة ضرورية لتحديد السبب الجذري لأعراض المسالك البولية. توفر رؤية واضحة ومباشرة للمسالك البولية مما يضمن التشخيص الدقيق والتخطيط الفعال للعلاج.\n\n**الآلية السريرية والقوة التشخيصية:**\n\n1. **تصوير عالي الدقة:** المنظار مزود بكاميرا عالية الدقة ومصدر إضاءة. يتم إدخاله بلطف عبر الإحليل لفحص **كامل جدار المثانة**، و**الإحليل**، و**البروستاتا** (عند الرجال) بوضوح فائق.\n\n2. **ماذا نكتشف؟**\n   * **البيلة الدموية (الدم):** التقصي عن سبب وجود دم في البول.\n   * **أورام المثانة:** الكشف المبكر عن أي سلائل أو أورام.\n   * **الحصوات:** تحديد حصوات المثانة التي تسبب الألم أو الانسداد.\n   * **التضيقات:** اكتشاف تضيق الإحليل الذي يعيق تدفق البول.\n   * **تضخم البروستاتا:** تقييم درجة تضخم البروستاتا وآثارها.\n\n3. **لماذا يهم أن يكون مرناً؟** التصميم الناعم يسبب **أقل قدر من الاحتكاك** و**راحة أعلى بكثير** مقارنة بالمناظير الصلبة.',
+    descriptionRU: 'Этот передовой диагностический инструмент необходим для выявления первопричины мочевых симптомов. Обеспечивая четкий прямой обзор мочевыводящих путей, он гарантирует точную диагностику и эффективное планирование лечения.\n\n**Клинический механизм и диагностические возможности:**\n\n1. **Визуализация высокой четкости:** Гибкий цистоскоп оснащен камерой высокого разрешения и источником света. Он аккуратно вводится через уретру, позволяя врачу с исключительной ясностью осмотреть **всю слизистую оболочку мочевого пузыря**, **уретру** и **простату** (у мужчин).\n\n2. **Что мы обнаруживаем:**\n   * **Гематурия:** Исследование источника крови в моче.\n   * **Опухоли мочевого пузыря:** Раннее выявление рака или полипов мочевого пузыря.\n   * **Камни:** Выявление камней мочевого пузыря, вызывающих боль или закупорку.\n   * **Стриктуры:** Выявление сужения уретры, препятствующего оттоку мочи.\n   * **ДГПЖ:** Оценка степени увеличения простаты, блокирующей уретру.\n\n3. **Почему важна «гибкость»:** Мягкая, податливая конструкция вызывает **минимальное трение** и **значительно меньше дискомфорта** по сравнению с жесткими эндоскопами. Выполняемая под местной анестезией (гель местного действия), процедура проходит быстро (5-10 минут), и пациенты могут немедленно вернуться к нормальной активности.',
     descriptionImage: '/assets/image/services section/Flexible Cystoscopy/flexible cystoscopy clinical mechanism.webp',
     video: null,
     timeline: {
@@ -3137,6 +3144,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: 'المتابعة', title: 'النتائج والخطة', desc: 'يناقش الطبيب النتائج معك مباشرة، أو يجدول زيارة للمتابعة إذا تطلب الأمر تحاليل إضافية.' }
       ]
     },
+    timelineRU: {
+      title: 'Процедура и сроки восстановления',
+      steps: [
+        { time: 'День 1', title: 'Диагностическое обследование', desc: 'Процедура занимает 5-10 минут. Легкое чувство жжения во время первых 1-2 мочеиспусканий является нормальным и временным.' },
+        { time: 'День 2', title: 'Полное восстановление', desc: 'Любое незначительное раздражение обычно проходит в течение 24 часов. Можно полностью возобновить обычную деятельность.' },
+        { time: 'Наблюдение', title: 'Результаты и план лечения', desc: 'Врач обсуждает с вами результаты сразу после процедуры или назначает повторную консультацию, если необходимы дополнительные анализы.' }
+      ]
+    },
     stats: [
       { label: "Diagnostic Accuracy", value: "95%+", icon: Trophy },
       { label: "Procedure Time", value: "5-10 Min", icon: Timer },
@@ -3149,11 +3164,23 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: 'التعافي' },
       { label: 'التخدير' }
     ],
+    statsRU: [
+      { label: 'Точность диагностики' },
+      { label: 'Время процедуры' },
+      { label: 'Восстановление' },
+      { label: 'Анестезия' }
+    ],
     benefits: [
       { title: 'Minimal Discomfort', desc: 'Topical anesthetic gel and flexible scope design ensure a comfortable experience with minimal pain.', icon: Smile as any },
       { title: 'Immediate Results', desc: 'Real-time high-definition visualization. Doctor can identify findings instantly during the procedure.', icon: Timer },
       { title: 'No Hospitalization', desc: 'Performed in-office under local anesthesia. No admission required. Resume normal activities the same day.', icon: Activity },
       { title: 'Direct Visualization', desc: 'Directly detects bladder stones, tumors, urethral strictures, and inflammation with over 95% accuracy.', icon: Microscope }
+    ],
+    benefitsRU: [
+      { title: 'Минимальный дискомфорт', desc: 'Местный анестезирующий гель и гибкая конструкция эндоскопа обеспечивают комфорт с минимальными болевыми ощущениями.' },
+      { title: 'Немедленные результаты', desc: 'Визуализация высокого разрешения в реальном времени. Врач может мгновенно определить результаты во время процедуры.' },
+      { title: 'Без госпитализации', desc: 'Проводится в кабинете врача под местной анестезией. Госпитализация не требуется. Возвращение к нормальной жизни в тот же день.' },
+      { title: 'Прямая визуализация', desc: 'Прямое обнаружение камней мочевого пузыря, опухолей, стриктур уретры и воспалений с точностью более 95%.' }
     ],
     candidates: [
       "Patients with hematuria (blood in urine) requiring investigation of the cause.",
@@ -3167,6 +3194,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       'الرجال الذين يواجهون ضعفاً في تدفق البول، أو صعوبة في التفريغ الكامل والتكرار.',
       'المرضى الذين يحتاجون إلى متابعة دورية بعد علاج سابق لأورام المثانة.'
     ],
+    candidatesRU: [
+      'Пациенты с гематурией (кровь в моче), требующие выяснения причины.',
+      'Лица с рецидивирующими или хроническими инфекциями мочевыводящих путей (ИМП).',
+      'Мужчины, испытывающие симптомы нижних мочевыводящих путей (СНМП), такие как слабая струя, частое мочеиспускание или неполное опорожнение.',
+      'Пациенты, нуждающиеся в наблюдении за раком мочевого пузыря после предыдущего лечения.'
+    ],
     safety: {
       title: "Safety & Comfort",
       content: "Flexible cystoscopy is an extremely safe procedure. The most common after-effect is a mild burning sensation during the first 1-2 urinations, which resolves within 24 hours. Drinking plenty of water after the procedure helps. Serious complications such as infection or significant bleeding are very rare (<1%).",
@@ -3175,6 +3208,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     safetyAR: {
       title: 'الأمان والراحة',
       content: 'يعد أحد أكثر الإجراءات أماناً ودقة. العَرَض الأبرز هو شعور مؤقت بالحرقة يزول بشرب الماء خلال 24 ساعة. المضاعفات الخطيرة شبه معدومة.',
+    },
+    safetyRU: {
+      title: 'Безопасность и комфорт',
+      content: 'Гибкая цистоскопия — чрезвычайно безопасная процедура. Наиболее частым последствием является легкое чувство жжения во время первых 1-2 мочеиспусканий, которое проходит в течение 24 часов. Обильное питье воды после процедуры помогает. Серьезные осложнения, такие как инфекция или сильное кровотечение, встречаются очень редко (<1%).'
     },
     procedure: [
       { step: '01', title: 'Preparation', desc: 'Topical anesthetic gel is applied to the urethra for numbing and lubrication. Patient lies comfortably on the exam table.' },
@@ -3188,6 +3225,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '03', title: 'الفحص', desc: 'يتم ملء المثانة بماء معقم لرؤية مثالية ومباشرة لجدار المثانة.' },
       { step: '04', title: 'الانتهاء', desc: 'سحب المنظار، ومناقشة النتائج فوراً قبل المغادرة.' }
     ],
+    procedureRU: [
+      { step: '01', title: 'Подготовка', desc: 'Местный анестезирующий гель наносится на уретру для обезболивания и смазки. Пациент удобно лежит на смотровом столе.' },
+      { step: '02', title: 'Введение эндоскопа', desc: 'Тонкий, гибкий эндоскоп осторожно вводится через уретру в мочевой пузырь. Большинство пациентов чувствуют лишь легкое давление.' },
+      { step: '03', title: 'Обследование', desc: 'Стерильная вода осторожно заполняет мочевой пузырь для оптимальной визуализации. Врач осматривает уретру и всю слизистую мочевого пузыря на мониторе.' },
+      { step: '04', title: 'Завершение', desc: 'Эндоскоп извлекается. Результаты обсуждаются немедленно. Пациент может одеться и сразу уйти.' }
+    ],
     faq: [
       { q: "Is the procedure painful?", a: "Most patients describe it as mild pressure or a brief stinging sensation rather than pain. The flexible scope bends to follow the body's natural curves, and the topical anesthetic gel significantly reduces discomfort." },
       { q: "How should I prepare for the procedure?", a: "No fasting is required. You can eat and drink normally before your appointment. It is recommended to empty your bladder before the procedure begins." },
@@ -3197,6 +3240,11 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { q: 'هل الإجراء مؤلم؟', a: 'معظم المرضى يصفونه بأنه مجرد شعور بضغط أو لسعة خفيفة. مرونة المنظار، وتخدير الجِل الموضعي يخففان الانزعاج بدرجة كبيرة.' },
       { q: 'كيف أستعد للمنظار؟', a: 'لا حاجة للصيام. يمكنك الأكل والشرب بشكل طبيعي، وقد يُطلب منك تفريغ المثانة قبل البدء.' },
       { q: 'هل سأشعر بالحرقة عند التبول لاحقاً؟', a: 'نعم، إحساس بسيط بالحرقة لمرة أو مرتين طبيعي وسيزول سريعاً بشرب كميات وفيرة من المياه لطرد أي تهيج.' }
+    ],
+    faqRU: [
+      { q: 'Процедура болезненная?', a: 'Большинство пациентов описывают ее как легкое давление или кратковременное жжение, а не как боль. Гибкий эндоскоп изгибается, повторяя естественные изгибы тела, а местный анестезирующий гель значительно уменьшает дискомфорт.' },
+      { q: 'Как мне подготовиться к процедуре?', a: 'Голодать не нужно. Вы можете нормально есть и пить перед приемом. Рекомендуется опорожнить мочевой пузырь до начала процедуры.' },
+      { q: 'Буду ли я испытывать дискомфорт при мочеиспускании после этого?', a: 'Легкое чувство жжения во время первых 1-2 мочеиспусканий является нормальным и временным. Обильное питье воды помогает промыть мочевыводящие пути. Симптомы обычно полностью исчезают в течение 24 часов.' }
     ]
   },
   'Ultrasound': {
