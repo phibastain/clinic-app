@@ -2666,8 +2666,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
   'Penile Lengthening': {
     title: 'Penile Lengthening Surgery',
     titleAR: 'جراحة إطالة القضيب',
+    titleRU: 'Хирургическое удлинение полового члена',
     tagline: 'Permanent Penile Lengthening via Suspensory Ligament Release Performed by Board-Certified Urologists. Proven Technique with Lasting Results.',
     taglineAR: 'إطالة دائمة للقضيب عبر تحرير الرباط المعلق. إجراء موثوق من أطباء مسالك بولية معتمدين بنقاهة مستدامة.',
+    taglineRU: 'Перманентное удлинение полового члена путем рассечения пращевидной связки. Выполняется сертифицированными урологами. Проверенная методика с длительным результатом.',
     whatIsIt: {
       title: 'What is Penile Lengthening Surgery?',
       description: "Penile lengthening surgery is a urological procedure designed to increase the visible length of the penis, primarily in its flaccid state. The most well-established technique involves releasing the suspensory ligament, which anchors the penis to the pubic bone. By releasing this ligament, the internal portion of the penile shaft is allowed to advance forward, resulting in a measurable and permanent increase in visible length. This procedure is performed by board-certified urologists and is suitable for men seeking a structural, long-term solution.",
@@ -2677,8 +2679,13 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       title: 'ما هي جراحة إطالة القضيب؟',
       description: 'جراحة إطالة القضيب هي إجراء في المسالك البولية يهدف إلى زيادة الطول المرئي للقضيب، وبشكل أساسي في حالة الارتخاء. تعتمد التقنية الأكثر رسوخاً على تحرير الرباط المعلق الذي يربط القضيب بعظم العانة. يتيح تحرير هذا الرباط تقدم الجزء الداخلي من القضيب للأمام، مما يؤدي إلى زيادة قابلة للقياس ودائمة في الطول المرئي. يُجرى هذا الإجراء بواسطة أطباء مسالك بولية معتمدين وهو مناسب للرجال الذين يسعون لحل هيكلي دائم.'
     },
+    whatIsItRU: {
+      title: 'Что такое хирургическое удлинение полового члена?',
+      description: 'Хирургическое удлинение полового члена — это урологическая процедура, предназначенная для увеличения видимой длины полового члена, в первую очередь в состоянии покоя. Наиболее устоявшаяся методика включает рассечение пращевидной (поддерживающей) связки, которая крепит половой член к лобковой кости. За счет рассечения этой связки внутренняя часть ствола полового члена может продвинуться вперед, что приводит к измеримому и постоянному увеличению видимой длины. Эта процедура выполняется сертифицированными урологами и подходит для мужчин, ищущих структурное, долгосрочное решение.'
+    },
     description: "Suspensory ligament release is the most clinically established surgical method for achieving permanent penile lengthening. By addressing the anatomical attachment that keeps a portion of the penile shaft hidden internally, the surgeon can safely reveal length that is naturally present but concealed.\n\n**The Clinical Mechanism (Suspensory Ligament Release):**\n\n1. **Anatomical Basis:** Approximately 30–50% of the penile shaft is located internally, anchored to the pubic bone by the **suspensory ligament**. This ligament supports the upward angle during erection but also prevents the full length of the shaft from being visible externally.\n\n2. **Ligamentolysis (The Procedure):** Through a small, discreet incision in the pubic area, the surgeon carefully releases the suspensory ligament. This allows the internal shaft to extend forward, increasing the externally visible length of the penis.\n\n3. **Expected Results:** This technique typically yields a **2–4 cm gain** in flaccid length. The erection angle may shift slightly downward, but erectile function and penile sensation remain fully intact.\n\n4. **Post-Operative Care:** Regular massage and stretching are required for 3–6 months to prevent the ligament from reattaching or retracting to its original position, ensuring the full length gained from surgery is maintained.",
     descriptionAR: 'يعتبر تحرير الرباط المعلق الطريقة الجراحية الأكثر رسوخاً سريرياً لتحقيق إطالة دائمة للقضيب. من خلال معالجة الارتباط التشريحي الذي يبقي جزءاً من القضيب مخفياً داخلياً، يمكن للجراح بأمان الكشف عن الطول الموجود طبيعياً ولكنه مخفي.\n\n**الآلية السريرية (تحرير الرباط المعلق):**\n\n1. **الأساس التشريحي:** يوجد حوالي 30-50% من القضيب داخلياً، متصلاً بعظم العانة بواسطة **الرباط المعلق**. يدعم هذا الرباط زاوية الانتصاب المتجهة لأعلى ولكنه في نفس الوقت يمنع ظهور كامل طول القضيب خارجياً.\n\n2. **تحلل الرباط (الإجراء الجراحي):** عبر شق صغير ومخفي في منطقة العانة، يقوم الجراح بتحرير الرباط المعلق بحذر. هذا يسمح للجزء الداخلي من القضيب بالامتداد للأمام، مما يزيد من الطول المرئي الخارجي للقضيب.\n\n3. **النتائج المتوقعة:** توفر هذه التقنية عادةً زيادة تتراوح بين **2-4 سم** في طول القضيب أثناء الارتخاء. قد تتجه زاوية الانتصاب للأسفل قليلاً، لكن وظيفة الانتصاب والإحساس يبقيان سليمين تماماً.\n\n4. **رعاية ما بعد الجراحة:** يتطلب الأمر تدليكاً وتمطيتاً منتظماً لمدة 3-6 أشهر لمنع الرباط من الالتصاق مجدداً، مما يضمن الحفاظ على الطول المكتسب.',
+    descriptionRU: 'Рассечение пращевидной связки является наиболее клинически обоснованным хирургическим методом достижения постоянного удлинения полового члена. Работая с анатомическим креплением, которое удерживает часть ствола полового члена скрытой внутри, хирург может безопасно раскрыть длину, которая присутствует от природы, но скрыта.\n\n**Клинический механизм (рассечение пращевидной связки):**\n\n1. **Анатомическое обоснование:** Примерно 30–50% ствола полового члена расположено внутри, прикреплено к лобковой кости **пращевидной связкой**. Эта связка поддерживает угол наклона вверх во время эрекции, но также не позволяет всей длине ствола быть видимой снаружи.\n\n2. **Лигаментотомия (процедура):** Через небольшой, незаметный разрез в лобковой области хирург осторожно рассекает пращевидную связку. Это позволяет внутреннему стволу выдвинуться вперед, увеличивая внешне видимую длину полового члена.\n\n3. **Ожидаемые результаты:** Эта методика обычно дает **прибавку 2–4 см** длины в состоянии покоя. Угол эрекции может немного сместиться вниз, но эректильная функция и чувствительность полового члена остаются полностью нетронутыми.\n\n4. **Послеоперационный уход:** Регулярный массаж и растяжка необходимы в течение 3–6 месяцев, чтобы предотвратить повторное прикрепление связки или ее втягивание в исходное положение, гарантируя сохранение всей длины, полученной в результате операции.',
     heroImage: '/assets/image/services section/penile lengthenning/penile lengthenning hero.webp',
     descriptionImage: '/assets/image/services section/penile lengthenning/penile lengthenning clinical mechanism.webp',
     video: null,
@@ -2694,11 +2701,23 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: 'التعافي' },
       { label: 'النتائج النهائية' }
     ],
+    statsRU: [
+      { label: 'Увеличение длины' },
+      { label: 'Время операции' },
+      { label: 'Восстановление' },
+      { label: 'Полные результаты' }
+    ],
     benefits: [
       { title: 'Clinically Proven', desc: 'Suspensory ligament release is a well-established urological procedure with documented outcomes.', icon: Scissors },
       { title: 'Permanent Results', desc: 'Typically 2-4 cm increase in visible flaccid length, with results that are structurally permanent.', icon: Ruler },
       { title: 'Combination Option', desc: 'Can be performed alongside girth enhancement for a more comprehensive result.', icon: Layers },
       { title: 'Non-Surgical Alternative Available', desc: 'Penile traction devices (extenders) offer gradual gains over 6-12 months for those who prefer a non-surgical approach.', icon: Target }
+    ],
+    benefitsRU: [
+      { title: 'Клинически доказано', desc: 'Рассечение пращевидной связки — это хорошо зарекомендовавшая себя урологическая процедура с задокументированными результатами.' },
+      { title: 'Постоянные результаты', desc: 'Как правило, увеличение видимой длины в состоянии покоя на 2-4 см с результатами, которые структурно постоянны.' },
+      { title: 'Возможность комбинации', desc: 'Может выполняться одновременно с утолщением для более комплексного результата.' },
+      { title: 'Доступна нехирургическая альтернатива', desc: 'Устройства для вытяжения полового члена (экстендеры) предлагают постепенное увеличение в течение 6-12 месяцев для тех, кто предпочитает нехирургический подход.' }
     ],
     candidates: [
       "Men with realistic expectations seeking a modest but permanent increase in visible length.",
@@ -2712,6 +2731,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       'المرضى الذين يتمتعون بصحة عامة جيدة ولا يعانون من التهابات أو اضطرابات نزيف.',
       'الأفراد الذين يفضلون حلاً جراحياً دائماً بدلاً من الأجهزة غير الجراحية المؤقتة.'
     ],
+    candidatesRU: [
+      'Мужчины с реалистичными ожиданиями, ищущие скромное, но постоянное увеличение видимой длины.',
+      'Те, кто привержен режиму послеоперационного массажа и растяжки, что необходимо для оптимальных результатов.',
+      'Пациенты с хорошим общим состоянием здоровья без активных инфекций или нарушений свертываемости крови.',
+      'Лица, предпочитающие постоянное хирургическое решение временным нехирургическим устройствам.'
+    ],
     safety: {
       title: "Safety & Considerations",
       content: "When performed by an experienced urological surgeon, penile lengthening surgery is considered safe. Potential risks include mild scarring at the incision site, a slightly lower erection angle, temporary numbness, or modest gains that may not meet all expectations. Non-surgical traction therapy carries very low risk but requires discipline and consistent use over several months.",
@@ -2720,6 +2745,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     safetyAR: {
       title: 'السلامة والمضاعفات',
       content: 'يعد تحرير الرباط المعلق إجراءً آمناً عند تنفيذه من قبل طبيب مسالك بولية خبير. تظل وظيفة الانتصاب والإحساس طبيعية (حيث لا يتأثر تدفق الدم أو الأعصاب). قد تشمل المضاعفات المحتملة: ألم مؤقت وتورم، احتمال التصاق الرباط إذا لم يتم الالتزام ببرنامج التمطيط، وتغيير طفيف في زاوية الانتصاب (أكثر انخفاضاً).',
+    },
+    safetyRU: {
+      title: 'Безопасность и соображения',
+      content: 'При выполнении опытным хирургом-урологом операция по удлинению полового члена считается безопасной. Возможные риски включают легкое рубцевание в месте разреза, немного более низкий угол эрекции, временное онемение или скромные результаты, которые могут не оправдать всех ожиданий. Нехирургическая тракционная терапия несет очень низкий риск, но требует дисциплины и постоянного использования в течение нескольких месяцев.'
     },
     timeline: {
       title: "Post-Op Recovery Timeline",
@@ -2737,6 +2766,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: 'الشهر 6', title: 'النتائج المستدامة', desc: 'استقرار الأنسجة بشكل نهائي مع تحقيق الطول المكتسب بالكامل واستئناف كل النشاطات.' }
       ]
     },
+    timelineRU: {
+      title: 'Сроки послеоперационного восстановления',
+      steps: [
+        { time: 'Неделя 1-2', title: 'Начальное заживление', desc: 'Послеоперационный отек и синяки постепенно спадают. Регулярный массаж и растяжка обычно начинаются под руководством врача.' },
+        { time: 'Месяц 1-3', title: 'Активное восстановление', desc: 'Ежедневный массаж и растяжка необходимы для поддержания и максимизации длины, полученной в результате операции.' },
+        { time: 'Месяц 6-12', title: 'Окончательные результаты', desc: 'Режим восстановления постепенно сокращается. Окончательная длина стабилизируется и достигается полное косметическое заживление.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Consultation & Planning', desc: 'Discuss your goals, review your anatomy, and determine the most appropriate surgical approach.' },
       { step: '02', title: 'Anesthesia & Incision', desc: 'Local or general anesthesia is administered. A small, discreet incision is made in the pubic area.' },
@@ -2749,6 +2786,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '03', title: 'تحرير الرباط', desc: 'فصل الرباط المعلق بعناية مع الحفاظ التام على الأعصاب والأوعية الدموية بالأسفل.' },
       { step: '04', title: 'الإغلاق والخروج', desc: 'إغلاق الشق بتقنية الخياطة التجميلية لمنع الانكماش. يمكن خروج المريض في نفس اليوم.' }
     ],
+    procedureRU: [
+      { step: '01', title: 'Консультация и планирование', desc: 'Обсудите свои цели, изучите анатомию и определите наиболее подходящий хирургический подход.' },
+      { step: '02', title: 'Анестезия и разрез', desc: 'Вводится местная или общая анестезия. В лобковой области делается небольшой незаметный разрез.' },
+      { step: '03', title: 'Рассечение связки', desc: 'Пращевидная связка осторожно рассекается, чтобы позволить внутреннему стволу полового члена продвинуться вперед.' },
+      { step: '04', title: 'План послеоперационного ухода', desc: 'Предоставляется индивидуальный план массажа и растяжки. Последовательная ежедневная практика в течение 3-6 месяцев имеет решающее значение для поддержания результатов.' }
+    ],
     faq: [
       { q: "How much length can I expect to gain?", a: "Most patients achieve a 2-4 cm increase in visible flaccid length. Erect length gains are typically more modest (approximately 0.5-1.5 cm). Individual results depend on anatomy and adherence to the post-operative recovery routine." },
       { q: "Will the surgery affect my erection angle?", a: "The erection angle may shift slightly more forward or downward compared to before surgery. However, erectile function, rigidity, and sensation are not affected by the procedure." },
@@ -2758,6 +2801,11 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { q: 'هل ستؤثر جراحة إطالة القضيب على الانتصاب أو الإحساس؟', a: 'لا، الإجراء يتضمن فقط تحرير الرباط المعلق. لا يتم المساس بالأعصاب، ولا بالأوعية الدموية، لذلك تبقى وظيفة الانتصاب كالمعتاد.' },
       { q: 'هل سيزيد الطول أثناء الانتصاب أيضاً؟', a: 'تزيد الجراحة بشكل أساسي من الطول المرئي عندما يكون القضيب في حالة ارتخاء. الزيادة في طول الانتصاب تكون أقل وضوحاً، ولكن زاوية الانتصاب قد تصبح أقل ارتفاعاً.' },
       { q: 'ما مدى أهمية رعاية ما بعد الجراحة (التمطيط)؟', a: 'حاسمة للغاية. إذا لم يلتزم المريض بنظام التمطيط المنتظم كما يوجه الطبيب، فقد تلتئم الأنسجة متراجعة إلى الخلف، مما يلغي الزيادة المكتسبة.' }
+    ],
+    faqRU: [
+      { q: 'На какую прибавку длины я могу рассчитывать?', a: 'Большинство пациентов достигают увеличения видимой длины в состоянии покоя на 2-4 см. Прибавка в состоянии эрекции обычно более скромная (примерно 0,5-1,5 см). Индивидуальные результаты зависят от анатомии и соблюдения режима послеоперационного восстановления.' },
+      { q: 'Повлияет ли операция на мой угол эрекции?', a: 'Угол эрекции может немного сместиться вперед или вниз по сравнению с тем, что было до операции. Однако процедура не влияет на эректильную функцию, жесткость и чувствительность.' },
+      { q: 'Обязателен ли послеоперационный массаж и растяжка?', a: 'Да, настоятельно рекомендуется регулярный массаж и растяжка. Без постоянной практики на этапе заживления сокращение рубцовой ткани может уменьшить или свести на нет длину, полученную в результате операции.' }
     ]
   },
   'Excision of penile Paraffinoma': {
