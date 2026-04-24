@@ -571,8 +571,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
   'PRP for ED': {
     title: 'Platelet-Rich Plasma (PRP) Therapy for ED',
     titleAR: 'العلاج بالبلازما الغنية بالصفائح الدموية (PRP) لضعف الانتصاب',
+    titleRU: 'PRP-терапия (обогащенная тромбоцитами плазма) при ЭД',
     tagline: 'Advanced Urological PRP: Treat Erectile Dysfunction & Restore Sexual Performance.',
     taglineAR: 'علاج PRP المتقدم: علاج ضعف الانتصاب واستعادة الأداء الجنسي الطبيعي.',
+    taglineRU: 'Передовая урологическая PRP: лечение эректильной дисфункции и восстановление сексуальной функции.',
     whatIsIt: {
       title: 'What is PRP for ED?',
       description: "Platelet-Rich Plasma (PRP) Therapy is a cutting-edge regenerative treatment that harnesses the natural healing power of your own blood. By concentrating platelets—rich in bioactive proteins and growth factors—PRP therapy stimulates the body's repair mechanisms to rejuvenate penile tissue, enhance blood vessel formation, and restore sexual function naturally, without the need for synthetic drugs or surgery.",
@@ -582,9 +584,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       title: 'ما هو علاج PRP لضعف الانتصاب؟',
       description: 'العلاج بالبلازما الغنية بالصفائح الدموية (PRP) هو علاج تجديدي متطور يستغل القدرة الطبيعية للشفاء من دمك الخاص. من خلال تركيز الصفائح الدموية—الغنية بالبروتينات الحيوية وعوامل النمو—يُحفّز علاج PRP آليات الإصلاح الذاتي في الجسم لتجديد أنسجة القضيب، وتعزيز تكوين الأوعية الدموية، واستعادة الوظيفة الجنسية بشكل طبيعي دون أدوية اصطناعية أو جراحة.',
     },
+    whatIsItRU: {
+      title: 'Что такое PRP-терапия при ЭД?',
+      description: 'PRP-терапия (плазма, обогащенная тромбоцитами) — это передовой метод регенеративного лечения, использующий естественную целительную силу вашей собственной крови. Концентрируя тромбоциты, богатые биоактивными белками и факторами роста, PRP-терапия стимулирует механизмы восстановления организма для омоложения тканей полового члена, усиления образования кровеносных сосудов и естественного восстановления сексуальной функции без необходимости применения синтетических препаратов или хирургического вмешательства.',
+    },
     mechanismImageAspectRatio: 'aspect-[9/16]',
     description: "PRP therapy functions by delivering a concentrated surge of specific growth factors directly into the penile tissue, triggering a cascade of biological regeneration.\n\n**The Clinical Mechanism of Action:**\n\n1. **Growth Factor Release:** Upon injection, platelets release alpha granules containing potent growth factors such as **VEGF** (Vascular Endothelial Growth Factor), **PDGF** (Platelet-Derived Growth Factor), and **TGF-β**. These proteins act as signaling molecules to initiate tissue repair.\n\n2. **Angiogenesis & Neovascularization:** The released growth factors stimulate the formation of new blood vessels and repair existing ones. This improved vascularity ensures sustained blood flow to the erectile tissue, which is essential for maintaining strong erections.\n\n3. **Cellular Regeneration & Collagen Synthesis:** PRP activates fibroblasts to produce new collagen and elastin, strengthening the penile structural integrity. It also recruits mesenchymal stem cells to the area, further accelerating tissue regeneration and rejuvenation.\n\n4. **Neurogenesis (Nerve Repair):** Research indicates PRP can aid in the repair of damaged nerve tissues, potentially enhancing penile sensitivity and neural response.",
     descriptionAR: 'يعمل علاج PRP عن طريق إيصال جرعة مركزة من عوامل النمو المحددة مباشرةً إلى أنسجة القضيب، مما يُطلق سلسلة من التجديد البيولوجي.\n\n**آلية العمل السريرية:**\n\n1. **إطلاق عوامل النمو:** عند الحقن، تُطلق الصفائح الدموية حبيباتها الألفا التي تحتوي على عوامل نمو فعّالة مثل **VEGF** (عامل نمو البطانة الوعائية)، و**PDGF** (عامل نمو مشتق الصفائح)، و**TGF-β**. تعمل هذه البروتينات كإشارات لبدء إصلاح الأنسجة.\n\n2. **تكوين الأوعية الجديدة (Angiogenesis):** تُحفّز عوامل النمو المُطلقة تكوين أوعية دموية جديدة وإصلاح القائمة. يضمن هذا التحسن في الأوعية تدفقاً مستداماً للدم إلى الأنسجة الانتصابية.\n\n3. **تجديد الخلايا وتوليف الكولاجين:** ينشّط PRP الخلايا الليفية لإنتاج الكولاجين والإيلاستين، مما يُعزز البنية الداخلية للقضيب. كما يستقطب خلايا جذعية مسنشيمية لتسريع التجديد.\n\n4. **إعادة تكوين الأعصاب (Neurogenesis):** تُشير الأبحاث إلى أن PRP يُسهم في إصلاح الأنسجة العصبية التالفة، مما قد يُحسّن حساسية القضيب والاستجابة العصبية.',
+    descriptionRU: 'PRP-терапия работает путем доставки концентрированного всплеска специфических факторов роста непосредственно в ткани полового члена, запуская каскад биологической регенерации.\n\n**Клинический механизм действия:**\n\n1. **Высвобождение факторов роста:** После инъекции тромбоциты высвобождают альфа-гранулы, содержащие мощные факторы роста, такие как **VEGF** (сосудистый эндотелиальный фактор роста), **PDGF** (тромбоцитарный фактор роста) и **TGF-β**. Эти белки действуют как сигнальные молекулы для начала восстановления тканей.\n\n2. **Ангиогенез и неоваскуляризация:** Высвободившиеся факторы роста стимулируют образование новых кровеносных сосудов и восстанавливают существующие. Улучшенная васкуляризация обеспечивает постоянный приток крови к эректильной ткани.\n\n3. **Клеточная регенерация и синтез коллагена:** PRP активирует фибробласты для выработки нового коллагена и эластина, укрепляя структурную целостность полового члена. Также привлекаются мезенхимальные стволовые клетки.\n\n4. **Нейрогенез (восстановление нервов):** Исследования показывают, что PRP может способствовать восстановлению поврежденных нервных тканей, потенциально повышая чувствительность полового члена и нервную реакцию.',
     heroImage: '/assets/image/services section/prp for ed/prp for ed hero.webp',
     descriptionImage: '/assets/image/services section/prp for ed/prp for ed clinical mechanism.webp',
     video: null,
@@ -604,6 +611,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: 'الشهر 3+', title: 'أفضل النتائج', desc: 'يكتمل تجديد أنسجة القضيب. الحد الأقصى من التحسن في الأداء الجنسي.' },
       ],
     },
+    timelineRU: {
+      title: 'Путь регенерации',
+      steps: [
+        { time: 'Неделя 1', title: 'Активация', desc: 'Факторы роста начинают сигнализировать о восстановлении тканей. Требуется минимальное восстановление.' },
+        { time: 'Неделя 4-8', title: 'Расширение сосудов', desc: 'Пик образования новых капилляров (ангиогенеза). Отмечается улучшение кровотока.' },
+        { time: 'Месяц 3+', title: 'Оптимальные результаты', desc: 'Омоложение тканей полового члена завершается. Максимальное улучшение функции.' },
+      ],
+    },
     stats: [
       { label: "Success Rate", value: "70%+", icon: Trophy },
       { label: "Session Time", value: "30 Mins", icon: Timer },
@@ -616,11 +631,23 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: 'فترة التعافي' },
       { label: 'مدة التأثير' },
     ],
+    statsRU: [
+      { label: 'Процент успеха' },
+      { label: 'Время сеанса' },
+      { label: 'Период восстановления' },
+      { label: 'Продолжительность эффекта' },
+    ],
     benefits: [
       { title: '100% Natural', desc: 'Uses your own platelets—no foreign substances or chemicals.', icon: Droplets },
       { title: 'Tissue Regeneration', desc: 'Stimulates growth factors to repair and rebuild erectile tissue.', icon: Activity },
       { title: 'Minimal Downtime', desc: 'Quick procedure with same-day return to normal activities.', icon: Timer },
       { title: 'Synergistic', desc: 'Can be combined with Shockwave therapy for enhanced results.', icon: Zap }
+    ],
+    benefitsRU: [
+      { title: '100% Натурально', desc: 'Используются ваши собственные тромбоциты — никаких чужеродных веществ или химикатов.' },
+      { title: 'Регенерация тканей', desc: 'Стимулирует факторы роста для восстановления эректильной ткани.' },
+      { title: 'Минимальное время простоя', desc: 'Быстрая процедура с возвращением к нормальной деятельности в тот же день.' },
+      { title: 'Синергия', desc: 'Может сочетаться с ударно-волновой терапией для улучшения результатов.' }
     ],
     candidates: [
       "Men with mild to moderate vasculogenic ED.",
@@ -634,6 +661,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       'من يرغب في تعزيز نتائج علاج موجات الصدمة.',
       'الرجال المصابون بمرض بيروني الباحثون عن شفاء الأنسجة.',
     ],
+    candidatesRU: [
+      'Мужчины с легкой или умеренной сосудистой ЭД.',
+      'Пациенты, ищущие натуральный, безлекарственный вариант регенерации.',
+      'Те, кто хочет улучшить результаты ударно-волновой терапии.',
+      'Мужчины с болезнью Пейрони, нуждающиеся в заживлении тканей.',
+    ],
     safety: {
       title: "Safety & Side Effects",
       content: "PRP is extremely safe as it uses your own blood. Side effects are minimal—mild soreness or bruising at injection sites, which resolves within 24-48 hours. No risk of allergic reactions or rejection.",
@@ -642,6 +675,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     safetyAR: {
       title: 'السلامة والآثار الجانبية',
       content: 'يُعدّ PRP آمناً للغاية لأنه يستخدم دمك الخاص. الآثار الجانبية ضئيلة—ألم خفيف أو كدمة في مواضع الحقن، تزول خلال 24-48 ساعة. لا يوجد خطر من ردود الفعل التحسسية أو الرفض.',
+    },
+    safetyRU: {
+      title: 'Безопасность и побочные эффекты',
+      content: 'PRP-терапия чрезвычайно безопасна, так как используется ваша собственная кровь. Побочные эффекты минимальны — легкая болезненность или синяки в местах инъекций, которые проходят в течение 24-48 часов. Риск аллергических реакций или отторжения отсутствует.'
     },
     procedure: [
       { step: '01', title: 'Blood Draw', desc: 'Small blood sample collected from your arm (similar to routine lab work).' },
@@ -655,6 +692,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '03', title: 'الحقن', desc: 'يُحقن PRP في مناطق محددة من القضيب باستخدام إبر دقيقة.' },
       { step: '04', title: 'التعافي', desc: 'يمكن استئناف الأنشطة فوراً. تتطور التأثيرات الكاملة خلال 4-8 أسابيع.' },
     ],
+    procedureRU: [
+      { step: '01', title: 'Забор крови', desc: 'Берется небольшой образец крови из вашей вены (подобно обычному анализу крови).' },
+      { step: '02', title: 'Центрифугирование', desc: 'Кровь центрифугируется для концентрации тромбоцитов с факторами роста.' },
+      { step: '03', title: 'Инъекция', desc: 'PRP вводится в определенные участки полового члена с помощью тонких игл.' },
+      { step: '04', title: 'Восстановление', desc: 'Немедленное возобновление активности. Полный эффект развивается через 4-8 недель.' },
+    ],
     faq: [
       { q: "Is PRP painful?", a: "Local anesthetic cream is applied, so discomfort is minimal. Most men report only slight pressure during injection." },
       { q: "How many sessions do I need?", a: "Typically 1-3 sessions spaced 4-6 weeks apart for optimal results." },
@@ -664,6 +707,11 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { q: 'هل علاج PRP مؤلم؟', a: 'يُطبّق كريم مخدر موضعي، لذا يكون الانزعاج ضئيلاً. يُفيد معظم الرجال بالشعور بضغط طفيف فقط أثناء الحقن.' },
       { q: 'كم عدد الجلسات التي أحتاجها؟', a: 'عادةً 1-3 جلسات بفاصل 4-6 أسابيع للحصول على أفضل النتائج.' },
       { q: 'هل يمكن دمج PRP مع موجات الصدمة؟', a: 'بالتأكيد. كثير من العيادات تقدم بروتوكولات مدمجة لنتائج تجديدية متكاملة.' },
+    ],
+    faqRU: [
+      { q: 'Болезненна ли PRP-терапия?', a: 'Применяется местный обезболивающий крем, поэтому дискомфорт минимален. Большинство мужчин сообщают лишь о легком давлении во время инъекции.' },
+      { q: 'Сколько сеансов мне нужно?', a: 'Обычно 1-3 сеанса с интервалом 4-6 недель для достижения оптимальных результатов.' },
+      { q: 'Можно ли комбинировать PRP с ударно-волновой терапией?', a: 'Безусловно. Многие клиники предлагают комбинированные протоколы для синергетического регенеративного эффекта.' },
     ],
     hidePricing: true
   },
