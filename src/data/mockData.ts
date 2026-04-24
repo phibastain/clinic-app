@@ -4813,7 +4813,9 @@ export const BLOG_POSTS: BlogPost[] = [
       </div>
     `,
       titleAR: "الختان بالدباسة مقابل التقليدي: أيهما أفضل؟",
+      titleRU: "Степлерное обрезание против традиционного: что лучше?",
       excerptAR: "مقارنة شاملة بين طرق الختان لمساعدتك في اتخاذ القرار.",
+      excerptRU: "Сравнение традиционных методов с новейшей технологией степлера. Меньше боли, эстетичные результаты и процедура за 15 минут.",
       contentAR: `
       <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
         يعد الختان أحد أكثر العمليات الجراحية شيوعاً في جميع أنحاء العالم. في حين تم استخدام الطرق التقليدية لقرون، تقدم <strong>تقنية الختان بالدباسة (Stapler Circumcision)</strong> الحديثة ثورة في الراحة، والنتائج التجميلية، ووقت التعافي - حيث تكتمل في 15 دقيقة فقط مع الحد الأدنى من النزيف.
@@ -4861,6 +4863,56 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> الحد الأدنى من ألم ما بعد الجراحة</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> مظهر تجميلي فائق</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> شفاء أسرع (7-10 أيام)</li>
+        </ul>
+      </div>
+      `,
+      contentRU: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Обрезание — одно из самых распространенных хирургических вмешательств во всем мире. В то время как традиционные методы использовались на протяжении веков, современная <strong>технология степлерного обрезания</strong> предлагает революцию в комфорте, эстетике и времени восстановления — процедура завершается всего за 15 минут с минимальным кровотечением.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Как работает степлерное обрезание?</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            Используя специализированное одноразовое устройство, метод степлера одновременно отсекает и сшивает крайнюю плоть с помощью медицинских скоб. Результатом является чистый, ровный круговой разрез.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>15-минутная процедура</strong> — значительно быстрее, чем традиционная</li>
+            <li><strong>Минимальное кровотечение</strong> — мгновенный гемостаз</li>
+            <li><strong>Превосходная эстетика</strong> — стабильные, аккуратные результаты</li>
+            <li><strong>Меньше боли</strong> — снижение травматизации тканей</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img 
+            src="/assets/image/blog section/Stapler Circumcision vs Traditional 2.webp" 
+            alt="Степлерное обрезание" 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Современная технология степлера для точных результатов</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Традиционный метод против степлера</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        При традиционном обрезании используется скальпель и требуется ручное наложение швов, что может занять 30-45 минут. Метод степлера сокращает время процедуры на 70% и обеспечивает более стабильные косметические результаты.
+      </p>
+      
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        «Уровень удовлетворенности пациентов степлерным обрезанием превышает 95%, при этом большинство мужчин отмечают минимальный дискомфорт и отличные эстетические результаты. Время восстановления обычно составляет 7-10 дней».
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Основные преимущества:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Быстрая 15-минутная амбулаторная процедура</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Минимальная послеоперационная боль</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Превосходный косметический вид</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Более быстрое заживление (7-10 дней)</li>
         </ul>
       </div>
       `
