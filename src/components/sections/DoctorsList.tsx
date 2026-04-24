@@ -19,10 +19,12 @@ const DoctorsList = () => {
                 <SectionTitle tag={t("Doctors Section")} title={t("Our Specialists")} className="items-center" />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-3xl mx-auto text-left">
                     {DOCTORS.filter(doc => doc.slug !== 'dr.none').map(doc => {
+                        const baseUrl = `/urologist/${doc.slug}`;
+                        const url = lang === 'EN' ? baseUrl : `${baseUrl}?lang=${lang.toLowerCase()}`;
                         return (
                             <Link
                                 key={doc.id}
-                                href={`/urologist/${doc.slug}`}
+                                href={url}
                                 className="group text-center cursor-pointer block"
                             >
                                 <div className="relative aspect-4/5 overflow-hidden rounded-[2.5rem] border-2 border-white/50 dark:border-white/10 shadow-xl dark:shadow-[0_0_20px_rgba(255,255,255,0.02)] mb-4 text-left">

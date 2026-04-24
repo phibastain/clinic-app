@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { SERVICE_CATEGORIES } from '@/data/mockData';
 import { serviceNameToSlug } from '@/utils/serviceUtils';
 import GradientButton from '@/components/ui/GradientButton';
+import { useLanguage } from '@/components/providers/LanguageProvider';
 
 interface MegaMenuProps {
     submenu: Record<string, any[]> | undefined;
@@ -13,6 +14,7 @@ interface MegaMenuProps {
 }
 
 const MegaMenu = ({ submenu, onServiceClick }: MegaMenuProps) => {
+    const { lang } = useLanguage();
     const getFirstImage = () => {
         if (!submenu) return null;
         const firstKey = Object.keys(submenu)[0];
@@ -64,9 +66,12 @@ const MegaMenu = ({ submenu, onServiceClick }: MegaMenuProps) => {
                     <div className={`grid ${gridCols} gap-x-0 gap-y-10`}>
                         {Object.entries(submenu).map(([, links], i) => (
                             <ul key={i} className="space-y-3 pr-5">
-                                {links.map((link: any, j: number) => (
+                                {links.map((link: any, j: number) => {
+                                    const baseUrl = `/services/${serviceNameToSlug(link.name)}`;
+                                    const url = lang === 'EN' ? baseUrl : `${baseUrl}?lang=${lang.toLowerCase()}`;
+                                    return (
                                     <li key={j}>
-                                        <Link href={`/services/${serviceNameToSlug(link.name)}`} onMouseEnter={() => {
+                                        <Link href={url} onMouseEnter={() => {
                                             if (link.image) setActiveImg(link.image);
                                             setActiveName(link.name || link);
                                         }}
@@ -75,7 +80,7 @@ const MegaMenu = ({ submenu, onServiceClick }: MegaMenuProps) => {
                                             <span className="leading-snug transition-transform duration-300 group-hover/link:translate-x-5 block">{link.name || link}</span>
                                         </Link>
                                     </li>
-                                ))}
+                                )})}
                             </ul>
                         ))}
                     </div>
@@ -102,7 +107,7 @@ const MegaMenu = ({ submenu, onServiceClick }: MegaMenuProps) => {
                                 {activeName}
                             </h5>
                         </div>
-                        <Link href={activeName ? `/services/${serviceNameToSlug(activeName)}` : '#'} className="w-full">
+                        <Link href={activeName ? (lang === 'EN' ? `/services/${serviceNameToSlug(activeName)}` : `/services/${serviceNameToSlug(activeName)}?lang=${lang.toLowerCase()}`) : '#'} className="w-full">
                             <GradientButton variant="primary" className="px-5 py-2.5 text-[8px] w-full">View Details</GradientButton>
                         </Link>
                     </div>

@@ -29,7 +29,7 @@ const EventsSection = () => {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <Link
-                        href={`/events/${getEventSlug(featured)}`}
+                        href={lang === 'EN' ? `/events/${getEventSlug(featured)}` : `/events/${getEventSlug(featured)}?lang=${lang.toLowerCase()}`}
                         className="relative group overflow-hidden rounded-[2.5rem] shadow-xl aspect-4/3 lg:aspect-auto lg:h-full border border-white/20 dark:border-white/10 dark:bg-none dark:bg-slate-900 cursor-pointer block"
                     >
                         <Image src={featured.image || ''} alt={featured.title || 'Event'} fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="(max-width: 1024px) 100vw, 50vw" />
@@ -51,10 +51,13 @@ const EventsSection = () => {
                     </Link>
 
                     <div className="flex flex-col gap-5">
-                        {others.map((event) => (
+                        {others.map((event) => {
+                            const baseUrl = `/events/${getEventSlug(event)}`;
+                            const url = lang === 'EN' ? baseUrl : `${baseUrl}?lang=${lang.toLowerCase()}`;
+                            return (
                             <Link
                                 key={event.id}
-                                href={`/events/${getEventSlug(event)}`}
+                                href={url}
                                 className="flex flex-col sm:flex-row bg-linear-to-br from-white/80 via-white/50 to-indigo-50/20 dark:bg-none dark:bg-slate-900 border border-slate-200/50 dark:border-white/10 rounded-4xl p-4 gap-6 group hover:border-amber-500/30 dark:hover:border-amber-500/40 transition-all duration-300 cursor-pointer"
                             >
                                 <div className="relative w-full sm:w-40 aspect-4/3 sm:aspect-square rounded-2xl overflow-hidden shrink-0">
@@ -78,7 +81,7 @@ const EventsSection = () => {
                                     </span>
                                 </div>
                             </Link>
-                        ))}
+                        )})}
                     </div>
                 </div>
             </Container>

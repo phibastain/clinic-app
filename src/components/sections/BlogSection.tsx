@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState, useEffect, useMemo } from 'react';
 import { Clock, ChevronRight, ChevronLeft } from 'lucide-react';
 import { useLanguage } from '@/components/providers/LanguageProvider';
@@ -78,8 +79,11 @@ const BlogSection = () => {
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                        {paginated.map(post => (
-                            <a href={`/blog/${post.slug}`} key={post.id} className="group flex flex-col sm:flex-row gap-6 items-center bg-linear-to-br from-white/80 via-white/50 to-indigo-50/20 dark:bg-none dark:bg-slate-900 p-4 rounded-4xl border border-slate-200/50 dark:border-white/10 transition-all duration-300 text-left cursor-pointer hover:border-amber-500/40 hover:shadow-lg">
+                        {paginated.map(post => {
+                            const baseUrl = `/blog/${post.slug}`;
+                            const url = lang === 'EN' ? baseUrl : `${baseUrl}?lang=${lang.toLowerCase()}`;
+                            return (
+                            <Link href={url} key={post.id} className="group flex flex-col sm:flex-row gap-6 items-center bg-linear-to-br from-white/80 via-white/50 to-indigo-50/20 dark:bg-none dark:bg-slate-900 p-4 rounded-4xl border border-slate-200/50 dark:border-white/10 transition-all duration-300 text-left cursor-pointer hover:border-amber-500/40 hover:shadow-lg">
                                 <div className="w-full sm:w-44 lg:w-48 aspect-square overflow-hidden rounded-3xl shadow-md relative shrink-0">
                                     <Image src={post.image || ''} alt={post.title || 'Blog Art'} fill className="object-cover transition-transform duration-1000 group-hover:scale-110" sizes="(max-width: 640px) 100vw, 192px" />
                                     <div className="absolute top-3 left-3 bg-amber-600 text-white px-2 py-1 rounded-md text-[8px] font-black uppercase shadow-lg">{t(post.category)}</div>
@@ -98,8 +102,8 @@ const BlogSection = () => {
                                         <span>{t("Explore Article")}</span><ChevronRight size={12} className="transition-transform group-hover/btn:translate-x-1 md:w-[14px] md:h-[14px]" />
                                     </div>
                                 </div>
-                            </a>
-                        ))}
+                            </Link>
+                        )})}
                     </div>
                 )}
 

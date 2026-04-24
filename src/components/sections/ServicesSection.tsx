@@ -9,9 +9,11 @@ import { serviceNameToSlug } from '@/utils/serviceUtils';
 import Container from '@/components/ui/Container';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useLanguage } from '@/components/providers/LanguageProvider';
 
 const ServicesSection = () => {
     const { t } = useTranslation();
+    const { lang } = useLanguage();
     const [activeTab, setActiveTab] = useState('All');
     const tabs = ['All', ...Object.keys(SERVICE_CATEGORIES)];
     const displayServices = useMemo(() => {
@@ -34,12 +36,15 @@ const ServicesSection = () => {
                     </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in text-left">
-                    {displayServices.map((service, index) => (
-                        <Link
-                            key={index}
-                            href={`/services/${serviceNameToSlug(service.name)}`}
-                            className="group flex bg-linear-to-br from-white/80 via-white/50 to-indigo-50/20 dark:bg-none dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200/50 dark:border-white/10 transition-all duration-300 hover:border-amber-600/30 dark:hover:border-amber-500/40 text-left cursor-pointer"
-                        >
+                    {displayServices.map((service, index) => {
+                        const baseUrl = `/services/${serviceNameToSlug(service.name)}`;
+                        const url = lang === 'EN' ? baseUrl : `${baseUrl}?lang=${lang.toLowerCase()}`;
+                        return (
+                            <Link
+                                key={index}
+                                href={url}
+                                className="group flex bg-linear-to-br from-white/80 via-white/50 to-indigo-50/20 dark:bg-none dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200/50 dark:border-white/10 transition-all duration-300 hover:border-amber-600/30 dark:hover:border-amber-500/40 text-left cursor-pointer"
+                            >
                             <div className="relative w-32 sm:w-40 shrink-0 overflow-hidden text-left"><Image src={service.image} alt={service.name} fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="(max-width: 640px) 128px, 160px" /></div>
                             <div className="p-6 flex flex-col justify-center text-left">
                                 <div className="flex items-center space-x-2 mb-2 text-left"><service.Icon size={14} className="text-amber-600 md:w-4 md:h-4" /><h3 className="text-xs md:text-sm font-black text-slate-900 dark:text-white uppercase text-left">{t(service.name)}</h3></div>
@@ -47,7 +52,7 @@ const ServicesSection = () => {
                                 <span className="flex items-center space-x-1 text-[10px] md:text-xs font-black uppercase text-amber-600 group/btn mt-3 text-left"><span>{t("Learn More")}</span><ChevronRight size={12} className="transition-transform group-hover/btn:translate-x-1 text-left md:w-[14px] md:h-[14px]" /></span>
                             </div>
                         </Link>
-                    ))}
+                    )})}
                 </div>
             </Container>
         </section>
