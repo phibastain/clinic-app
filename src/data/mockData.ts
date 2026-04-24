@@ -2811,8 +2811,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
   'Excision of penile Paraffinoma': {
     title: 'Excision of Penile Paraffinoma (Foreign Body Removal)',
     titleAR: 'استئصال البارافينوما (إزالة المواد الغريبة المحقونة)',
+    titleRU: 'Удаление олеогранулемы (парафиномы) полового члена (Удаление инородного тела)',
     tagline: 'Surgical Removal of Injected Foreign Substances and Penile Reconstruction Performed by Experienced Reconstructive Urologists.',
     taglineAR: 'إزالة جراحية للمواد الغريبة المحقونة وإعادة بناء القضيب، يتم إجراؤها بواسطة جراحي مسالك بولية وترميمية بخبرة عالية.',
+    taglineRU: 'Хирургическое удаление введенных инородных веществ и реконструкция полового члена, выполняемая опытными хирургами-реконструктивными урологами.',
     whatIsIt: {
       title: 'What is Penile Paraffinoma?',
       description: "Penile paraffinoma is a serious medical condition caused by the injection of non-medical grade foreign substances such as paraffin, liquid silicone, or olive oil into the penis in an attempt to increase size. The human body cannot absorb or break down these materials, which triggers a chronic foreign body reaction leading to hard lumps (granulomas), tissue deformity, chronic inflammation, and severe damage that requires surgical intervention by an experienced reconstructive urologist.",
@@ -2822,8 +2824,13 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       title: 'ما هي البارافينوما في القضيب؟',
       description: 'البارافينوما في القضيب هي حالة طبية خطيرة تنتج عن حقن مواد غريبة غير طبية مثل البارافين، السيليكون السائل، أو زيت الزيتون في القضيب في محاولة لزيادة حجمه. لا يستطيع جسم الإنسان امتصاص هذه المواد أو تكسيرها، مما يؤدي إلى رد فعل مزمن تجاه الجسم الغريب (التهاب متكرر)، وتكون كتل صلبة (أورام حبيبية)، وتشوه الأنسجة، وتلف شديد يتطلب تدخلاً جراحياً من قبل طبيب مسالك بولية وترميم خبير.'
     },
+    whatIsItRU: {
+      title: 'Что такое парафинома полового члена?',
+      description: 'Парафинома полового члена — это серьезное заболевание, вызванное введением немедицинских инородных веществ, таких как парафин, жидкий силикон или оливковое масло, в половой член с целью увеличения его размера. Человеческий организм не может ни усвоить, ни расщепить эти материалы, что вызывает хроническую реакцию на инородное тело, приводящую к образованию твердых комков (гранулем), деформации тканей, хроническому воспалению и серьезным повреждениям, требующим хирургического вмешательства опытного реконструктивного уролога.'
+    },
     description: "### The Severe Dangers of Penile Foreign Body Injections: Symptoms and Risks\nInjecting unapproved foreign substances into the penis such as olive oil, paraffin, or liquid silicone is a critical medical emergency and one of the most common cases seen in reconstructive urology. The human body cannot absorb or break down these materials, which inevitably triggers a severe and destructive foreign body reaction.\n\n#### 1. Symptoms of Penile Paraffinoma (Foreign Body Reaction)\nSymptoms rarely appear immediately after injection. It can take months or even years for the body's immune system to initiate a foreign body reaction. Symptoms progress from early inflammatory signs to severe tissue destruction:\n\n**Early Stage (Onset of Inflammation):**\n\n*   **Penile Deformity:** The penis develops an irregular, asymmetrical, and distorted shape.\n*   **Hard Lumps (Granulomas):** Firm, bumpy nodules form under the skin, feeling highly unnatural to the touch.\n*   **Skin Discoloration:** The skin around the injection site becomes abnormally dark, red, or bruised.\n\n**Severe Stage (Advanced Tissue Destruction):**\n\n*   **Intense Pain and Inflammation:** Severe pain, swelling, redness, and localized heat — especially during erection.\n*   **Skin Rupture and Chronic Ulcers:** The penile skin progressively thins until it tears open, leading to non-healing wounds.\n*   **Infection and Discharge:** Foul-smelling pus or lymphatic fluid continuously oozes from the ruptured skin.\n*   **Substance Migration:** The injected material can migrate into the scrotum or pubic area, causing massive abnormal swelling.\n\n#### 2. Complications of Delayed Treatment\nIf left untreated, the consequences of penile paraffinoma can be catastrophic and may result in the loss of the organ:\n\n*   **Penile Necrosis (Tissue Death):** The foreign substance compresses blood vessels, cutting off blood supply. The tissue turns black and dies, potentially requiring partial or complete penile amputation.\n*   **Sepsis (Bloodstream Infection):** Open ulcers and necrotic tissue serve as a breeding ground for dangerous bacteria. If infection enters the bloodstream, it becomes a life-threatening emergency.\n*   **Permanent Erectile Dysfunction:** Severe inflammation creates dense scar tissue (fibrosis) that constricts the penile shaft and damages nerves, making erections physically impossible or extremely painful.\n*   **Urethral Stricture and Urinary Retention:** If the migrated substance compresses the urethra, it causes difficulty urinating, which can lead to backward pressure that damages the bladder and kidneys.\n*   **Increased Cancer Risk:** Prolonged chronic inflammation over many years significantly increases the risk of cellular mutation, potentially leading to skin cancer in the affected area.",
     descriptionAR: 'يتطلب استئصال البارافينوما في القضيب تقييمًا دقيقًا وتقنيات ترميمية متقدمة لاستعادة كل من الوظيفة والمظهر. يمكن أن يكون الإجراء معقّدًا بشكل كبير بناءً على كمية المادة المحقونة ومدى تلف الأنسجة.\n\n**النهج الجراحي:**\n\n1. **التقييم والتخطيط:** يُجري الجراح فحصًا دقيقًا، باستخدام الموجات فوق الصوتية غالبًا، لتحديد مدى انتشار المادة الغريبة وتقييم حيوية الأنسجة.\n2. **الاستئصال المتأني:** تحت التخدير العام أو الموضعي (البنج النصفي)، يتم عمل شقوق لإزالة الأنسجة المتضررة وكشط المادة الغريبة بعناية، مع الحفاظ على الهياكل الأساسية السليمة مثل الأعصاب، والأوعية الدموية، وأجزاء القضيب المسؤولة عن الانتصاب.\n3. **إعادة البناء (إن لزم الأمر):** في الحالات الشديدة حيث يجب إزالة مساحات كبيرة من جلد القضيب بسبب النخر أو التندب الشديد، يتم استخدام طعوم جلدية (تُؤخذ غالبًا من الفخذ أو كيس الصفن) أو سدائل موضعية لإعادة بناء عمود القضيب وتغطيته بالجلد وتجميله.',
+    descriptionRU: '### Серьезные опасности инъекций инородных тел в половой член: симптомы и риски\nВведение в половой член несанкционированных инородных веществ, таких как оливковое масло, парафин или жидкий силикон, является критической неотложной медицинской ситуацией и одним из наиболее частых случаев в реконструктивной урологии. Человеческий организм не может ни усвоить, ни расщепить эти материалы, что неизбежно вызывает тяжелую и разрушительную реакцию на инородное тело.\n\n#### 1. Симптомы парафиномы полового члена (реакция на инородное тело)\nСимптомы редко появляются сразу после инъекции. Могут пройти месяцы или даже годы, прежде чем иммунная система организма запустит реакцию на инородное тело. Симптомы прогрессируют от ранних признаков воспаления до тяжелого разрушения тканей:\n\n**Ранняя стадия (начало воспаления):**\n\n* **Деформация полового члена:** Половой член приобретает неправильную, асимметричную и искаженную форму.\n* **Твердые уплотнения (гранулемы):** Под кожей образуются плотные бугристые узелки, на ощупь кажущиеся крайне неестественными.\n* **Изменение цвета кожи:** Кожа вокруг места инъекции становится аномально темной, красной или синюшной.\n\n**Тяжелая стадия (прогрессирующее разрушение тканей):**\n\n* **Сильная боль и воспаление:** Сильная боль, отек, покраснение и местное повышение температуры — особенно во время эрекции.\n* **Разрыв кожи и хронические язвы:** Кожа полового члена постепенно истончается, пока не порвется, что приводит к появлению незаживающих ран.\n* **Инфекция и выделения:** Зловонный гной или лимфатическая жидкость постоянно сочится из разорванной кожи.\n* **Миграция вещества:** Введенный материал может мигрировать в мошонку или лобковую область, вызывая массивный аномальный отек.\n\n#### 2. Осложнения отсроченного лечения\nЕсли парафиному полового члена не лечить, последствия могут быть катастрофическими и привести к потере органа:\n\n* **Некроз полового члена (гибель тканей):** Инородное вещество сдавливает кровеносные сосуды, перекрывая кровоснабжение. Ткань чернеет и отмирает, что может потребовать частичной или полной ампутации полового члена.\n* **Сепсис (инфекция кровотока):** Открытые язвы и некротизированные ткани служат питательной средой для опасных бактерий. Если инфекция попадает в кровоток, это становится опасным для жизни состоянием.\n* **Постоянная эректильная дисфункция:** Сильное воспаление создает плотную рубцовую ткань (фиброз), которая сжимает ствол полового члена и повреждает нервы, делая эрекцию физически невозможной или чрезвычайно болезненной.\n* **Стриктура уретры и задержка мочи:** Если мигрировавшее вещество сдавливает уретру, это вызывает трудности с мочеиспусканием, что может привести к обратному давлению, повреждающему мочевой пузырь и почки.\n* **Повышенный риск рака:** Длительное хроническое воспаление в течение многих лет значительно увеличивает риск клеточной мутации, потенциально приводя к раку кожи в пораженной области.',
     heroImage: '/assets/image/services section/excision of penile paraffinoma/excision of penile paraffinoma hero.webp',
     descriptionImage: '/assets/image/services section/excision of penile paraffinoma/excision of penile paraffinoma clinical mechanism.webp',
     video: null,
@@ -2838,6 +2845,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: 'التخصص' },
       { label: 'وقت الجراحة' },
       { label: 'التعافي' }
+    ],
+    statsRU: [
+      { label: 'Сложность' },
+      { label: 'Специалист' },
+      { label: 'Время операции' },
+      { label: 'Восстановление' }
     ],
     timeline: {
       title: "Reconstruction Recovery Timeline",
@@ -2855,11 +2868,25 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: 'الشهر 3+', title: 'الاستقرار النهائي', desc: 'استقرار النتيجة الجراحية. يُجرى تقييم للعملية للتحقق إذا كانت هناك حاجة لأي تعديلات تجميلية إضافية.' }
       ]
     },
+    timelineRU: {
+      title: 'Сроки восстановления после реконструкции',
+      steps: [
+        { time: 'Неделя 1-2', title: 'Фаза ухода за раной', desc: 'Острый период заживления. Отек контролируется с помощью специальных компрессионных повязок. Тщательный мониторинг жизнеспособности кожного лоскута.' },
+        { time: 'Неделя 4-6', title: 'Ремоделирование тканей', desc: 'Ткани начинают размягчаться и заживать. Можно постепенно возобновлять легкую повседневную деятельность.' },
+        { time: 'Месяц 3+', title: 'Окончательная стабилизация', desc: 'Результат операции стабилизируется. Оценка необходимости поэтапной реконструкции, если требуется дальнейшая коррекция.' }
+      ]
+    },
     benefits: [
       { title: 'Specialist Expertise', desc: 'Performed by urologists experienced in complex penile reconstruction cases.', icon: Users },
       { title: 'Complete Foreign Body Removal', desc: 'Thorough excision of all granulomas, scar tissue, and foreign material.', icon: Scissors },
       { title: 'Functional Preservation', desc: 'Priority on preserving erectile function, sensation, and urinary function.', icon: HeartPulse },
       { title: 'Aesthetic Restoration', desc: 'Reconstruction using skin grafts or flaps to restore natural appearance as much as possible.', icon: CheckCircle2 }
+    ],
+    benefitsRU: [
+      { title: 'Опыт специалистов', desc: 'Выполняется урологами, имеющими опыт сложных случаев реконструкции полового члена.' },
+      { title: 'Полное удаление инородного тела', desc: 'Тщательное иссечение всех гранулем, рубцовой ткани и инородного материала.' },
+      { title: 'Функциональная сохранность', desc: 'Приоритет сохранения эректильной функции, чувствительности и функции мочеиспускания.' },
+      { title: 'Эстетическое восстановление', desc: 'Реконструкция с использованием кожных лоскутов для максимально возможного восстановления естественного внешнего вида.' }
     ],
     candidates: [
       "Men with a history of non-medical penile injections (paraffin, silicone, olive oil, or other substances) who are experiencing symptoms.",
@@ -2873,6 +2900,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       'مرضى يعانون من تقرحات مزمنة أو إفرازات في موقع الحقن.',
       'الأفراد الذين يسعون للإزالة الجراحية قبل تطور مضاعفات خطيرة.'
     ],
+    candidatesRU: [
+      'Мужчины с историей немедицинских инъекций в половой член (парафин, силикон, оливковое масло или другие вещества), у которых наблюдаются симптомы.',
+      'Лица с деформацией полового члена, твердыми уплотнениями (гранулемами), болью или эректильной дисфункцией, вызванными реакцией на инородное тело.',
+      'Пациенты с хроническими ранами, инфекцией, воспалением или выделениями в месте инъекции.',
+      'Лица, нуждающиеся в хирургическом удалении до развития дальнейших осложнений.'
+    ],
     safety: {
       title: "Risks & Realistic Expectations",
       content: "Paraffinoma excision is a complex reconstructive procedure. The outcome depends on the severity of existing tissue damage and the volume of foreign material present. Potential risks include scarring, contour irregularities, changes in sensation, and in severe cases, some degree of compromised erectile function. Multiple staged procedures may be required for optimal reconstruction. Our team uses advanced surgical techniques and specialized equipment to achieve the best possible outcome.",
@@ -2881,6 +2914,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     safetyAR: {
       title: 'المخاطر والتوقعات الواقعية',
       content: 'تعتبر إزالة البارافينوما عملية ترميمية معقدة. تعتمد النتيجة على حجم التلف الموجود وكمية المادة المحقونة. المخاطر المحتملة تشمل حدوث ندبات، وتغيرات في الإحساس، وفي الحالات المتقدمة قد يحدث تأثير على وظيفة الانتصاب. قد تستلزم الحالة الشديدة إجراء عمليات على مراحل متعددة للوصول لأفضل نتيجة تجميلية ووظيفية.',
+    },
+    safetyRU: {
+      title: 'Риски и реалистичные ожидания',
+      content: 'Иссечение парафиномы — сложная реконструктивная процедура. Результат зависит от тяжести существующего повреждения тканей и объема присутствующего инородного материала. Возможные риски включают рубцевание, неровности контура, изменения чувствительности, а в тяжелых случаях — некоторую степень нарушения эректильной функции. Для оптимальной реконструкции может потребоваться несколько поэтапных процедур. Наша команда использует передовые хирургические методы и специализированное оборудование для достижения наилучшего возможного результата.'
     },
     procedure: [
       { step: '01', title: 'Diagnostic Assessment', desc: 'Thorough physical examination and imaging (MRI or ultrasound) to map the extent of foreign material and tissue damage.' },
@@ -2894,6 +2931,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '03', title: 'إعادة البناء', desc: 'استخدام طعوم جلدية أو سدائل لترميم جلد وساق القضيب للحصول على مظهر ووظيفة أقرب ما يكون للطبيعي.' },
       { step: '04', title: 'رعاية ما بعد الإجراء', desc: 'فترة تعافي قد تمتد (6-12 أسبوعاً) مع متابعة مركزة وتقديم إرشادات هامة للعناية بالطعوم.' }
     ],
+    procedureRU: [
+      { step: '01', title: 'Диагностическая оценка', desc: 'Тщательный физический осмотр и визуализация (МРТ или УЗИ) для определения объема инородного материала и повреждения тканей.' },
+      { step: '02', title: 'Хирургическое иссечение', desc: 'Под общей анестезией все гранулемы, рубцовая ткань и инородный материал тщательно удаляются с сохранением жизнеспособных тканей.' },
+      { step: '03', title: 'Реконструкция', desc: 'Для реконструкции кожи полового члена и восстановления как внешнего вида, так и функции используются кожные трансплантаты или тканевые лоскуты.' },
+      { step: '04', title: 'Послеоперационное восстановление', desc: 'Длительный период заживления (6-12 недель). Тщательное последующее наблюдение с возможным повторным хирургическим вмешательством при необходимости.' }
+    ],
     faq: [
       { q: "Can my penis look normal again after surgery?", a: "The outcome depends on the severity of existing damage. Our surgeons aim for maximum restoration of both appearance and function, but in severe cases with extensive tissue destruction, complete normalcy may not be fully achievable. Early treatment generally leads to better results." },
       { q: "Will this affect my erections or sexual function?", a: "Function recovery depends on the extent of nerve and tissue damage caused by the foreign substance. Our surgeons prioritize preserving erectile function during excision, but some degree of impairment may persist in cases with severe pre-existing damage." },
@@ -2903,6 +2946,11 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { q: 'هل يمكن أن يبدو القضيب طبيعياً مرة أخرى بعد الجراحة؟', a: 'تعتمد النتيجة على شدة الضرر المسبق. يهدف جراحونا إلى تحقيق أقصى قدر من استعادة المظهر والوظيفة، لكن في الحالات الشديدة، قد لا يمكن الوصول لحالة طبيعية بنسبة 100%. العلاج المبكر يضمن دائماً نتائج أفضل.' },
       { q: 'هل ستؤثر الجراحة على الانتصاب أو الوظيفة الجنسية؟', a: 'يعتمد الأداء الوظيفي على مدى تلف الأعصاب والأنسجة بسبب المادة الغريبة. تُعطى الأولوية للحفاظ على وظيفة الانتصاب أثناء الاستئصال، ولكن قد تستمر بعض المشاكل إذا كان الضرر الأساسي عميقاً.' },
       { q: 'هل هناك خطر الإصابة بالسرطان إذا تجاهلت العلاج؟', a: 'الالتهاب المزمن طويل الأمد قد يزيد خطر حدوث طفرات خلوية وسرطان بمرور الوقت. هذا سبب رئيسي يجعل الإزالة الجراحية المبكرة ضرورة ملحة لمنع تدمير الأنسجة المستمر وخطر السرطان.' }
+    ],
+    faqRU: [
+      { q: 'Сможет ли мой половой член снова выглядеть нормально после операции?', a: 'Результат зависит от тяжести существующих повреждений. Наши хирурги стремятся к максимальному восстановлению как внешнего вида, так и функции, но в тяжелых случаях с обширным разрушением тканей полное возвращение к норме может быть недостижимо. Раннее лечение обычно приводит к лучшим результатам.' },
+      { q: 'Повлияет ли это на мою эрекцию или половую функцию?', a: 'Восстановление функции зависит от степени повреждения нервов и тканей, вызванного инородным веществом. Наши хирурги уделяют приоритетное внимание сохранению эректильной функции во время удаления, но некоторая степень нарушения может сохраниться в случаях с серьезными предшествующими повреждениями.' },
+      { q: 'Существует ли риск развития рака, если я не буду лечиться?', a: 'Продолжительное хроническое воспаление, вызванное реакцией на инородное тело, со временем может увеличить риск клеточной мутации. Это одна из причин, по которой настоятельно рекомендуется раннее хирургическое удаление — чтобы предотвратить как прогрессирующее разрушение тканей, так и долгосрочный риск развития рака.' }
     ]
   },
   'Vasectomy': {
