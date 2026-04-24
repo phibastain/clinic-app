@@ -3250,10 +3250,13 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
   'Ultrasound': {
     title: 'Advanced Urological Ultrasound & Doppler',
     titleAR: 'تخطيط الصدى للمسالك البولية والدوبلر (Ultrasound)',
+    titleRU: 'Передовое урологическое УЗИ и допплерография',
     tagline: 'Non-Invasive, Radiation-Free Imaging for Kidney Stones, Prostate Evaluation, ED Diagnosis, and Male Reproductive Health.',
     taglineAR: 'تصوير دقيق، غير جراحي وبدون إشعاع لتشخيص حصوات الكلى، وتقييم البروستاتا، وضعف الانتصاب، والصحة الإنجابية للرجال.',
+    taglineRU: 'Неинвазивная визуализация без облучения для диагностики камней в почках, оценки простаты, диагностики ЭД и мужского репродуктивного здоровья.',
     description: "",
     descriptionAR: "",
+    descriptionRU: "",
     whatIsIt: {
       title: 'What is Urological Ultrasound?',
       description: "Urological ultrasound uses high-frequency sound waves to create real-time images of the kidneys, bladder, prostate, and reproductive organs. It is a non-invasive, radiation-free diagnostic tool that allows urologists to visualize internal structures, detect kidney and bladder stones, measure organ size, and evaluate blood flow using Doppler technology. The procedure is completely painless, requires no anesthesia, and results are available immediately.",
@@ -3262,6 +3265,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     whatIsItAR: {
       title: 'ما هو الفحص بالموجات فوق الصوتية (Ultrasound)؟',
       description: 'الموجات فوق الصوتية للمسالك البولية هي أداة تشخيصية لا تعتمد على الإشعاع، تستخدم موجات صوتية عالية التردد لإنشاء صور حية للكلى والمثانة والبروستاتا والأعضاء التناسلية. تتيح لأطباء المسالك البولية اكتشاف الحصوات، وقياس حجم الأعضاء، وتقييم تدفق الدم باستخدام تقنية הדופלר (Doppler). الفحص غير مؤلم نهائياً، لا يحتاج لأي تخدير، وتظهر نتائجه فوراً.'
+    },
+    whatIsItRU: {
+      title: 'Что такое урологическое УЗИ?',
+      description: 'Урологическое УЗИ использует высокочастотные звуковые волны для создания изображений почек, мочевого пузыря, простаты и репродуктивных органов в реальном времени. Это неинвазивный диагностический инструмент без излучения, который позволяет урологам визуализировать внутренние структуры, обнаруживать камни в почках и мочевом пузыре, измерять размер органов и оценивать кровоток с помощью допплеровской технологии. Процедура совершенно безболезненна, не требует анестезии, а результаты доступны немедленно.'
     },
     heroImage: '/assets/image/services section/ultrasound menu.webp',
     descriptionImage: '',
@@ -3354,11 +3361,59 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         ]
       }
     ],
+    testPanelsRU: [
+      {
+        title: 'УЗИ почек, мочеточников, мочевого пузыря',
+        items: [
+          'Обнаружение камней в почках и мочевом пузыре (>2 мм)',
+          'Гидронефроз (отек почки)',
+          'Опухоли и образования мочевого пузыря',
+          'Объем остаточной мочи',
+          'Кисты и структурные аномалии'
+        ]
+      },
+      {
+        title: 'Допплерография сосудов полового члена (Диагностика ЭД)',
+        items: [
+          'Золотой стандарт диагностики эректильной дисфункции',
+          'Измерение артериального притока (пиковая систолическая скорость)',
+          'Выявление венозной утечки (конечная диастолическая скорость)',
+          'Оценка бляшек при болезни Пейрони',
+          'Оценка фиброза и тканей полового члена'
+        ]
+      },
+      {
+        title: 'Трансректальное УЗИ (ТРУЗИ) — Простата',
+        items: [
+          'Измерение объема простаты',
+          'Оценка тяжести ДГПЖ',
+          'Скрининг на рак простаты',
+          'Наведение при биопсии (при наличии показаний)',
+          'Оценка семенных пузырьков'
+        ]
+      },
+      {
+        title: 'УЗИ мошонки и яичек',
+        items: [
+          'Диагностика варикоцеле (мужское бесплодие)',
+          'Образования или опухоли яичек',
+          'Гидроцеле (скопление жидкости)',
+          'Эпидидимит (воспаление)',
+          'Перекрут яичка (экстренная оценка кровотока)'
+        ]
+      }
+    ],
     benefits: [
       { title: 'Non-Invasive & Painless', desc: 'No needles, no radiation, no anesthesia. Completely painless and safe for repeated examinations.', icon: ShieldCheck },
       { title: 'Doppler Blood Flow Analysis', desc: 'Advanced Doppler technology visualizes arterial and venous blood flow for accurate ED and varicocele diagnosis.', icon: Activity },
       { title: 'Comprehensive Evaluation', desc: 'Evaluates kidneys, bladder, prostate, testicles, and reproductive organs in a single session.', icon: Search },
       { title: 'Immediate Results', desc: 'Doctor reviews key findings with you immediately after the scan. Full report within 24 hours.', icon: Timer }
+    ],
+    benefitsRU: [
+      { title: 'Неинвазивно и безболезненно', desc: 'Никаких игл, никакого облучения, никакой анестезии. Совершенно безболезненно и безопасно для повторных обследований.' },
+      { title: 'Анализ кровотока с помощью допплера', desc: 'Передовая допплеровская технология визуализирует артериальный и венозный кровоток для точной диагностики ЭД и варикоцеле.' },
+      { title: 'Комплексная оценка', desc: 'Оценка почек, мочевого пузыря, простаты, яичек и репродуктивных органов за один сеанс.' },
+      { title: 'Немедленные результаты', desc: 'Врач обсуждает с вами основные результаты сразу после сканирования. Полный отчет в течение 24 часов.' }
     ],
     candidates: [
       "Patients with suspected kidney or bladder stones requiring confirmation.",
@@ -3374,6 +3429,13 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       'الأزواج الذين يشتكون من تأخر الإنجاب (فحص دوالي الخصية).',
       'المرضى الذين يحتاجون لمتابعة دورية لتكيسات أو تضخمات.'
     ],
+    candidatesRU: [
+      'Пациенты с подозрением на камни в почках или мочевом пузыре, требующие подтверждения.',
+      'Мужчины с симптомами нижних мочевыводящих путей (СНМП) для оценки размера простаты.',
+      'Лица, исследующие сосудистые причины эректильной дисфункции (ЭД).',
+      'Пары, исследующие мужской фактор бесплодия (скрининг на варикоцеле).',
+      'Пациенты, нуждающиеся в наблюдении за кистами, образованиями или структурными аномалиями.'
+    ],
     safety: {
       title: "Safety & Information",
       content: "Ultrasound is completely safe, painless, and uses no ionizing radiation. There are no known side effects or risks. The procedure can be repeated as often as medically necessary without any harm to the body.",
@@ -3382,6 +3444,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     safetyAR: {
       title: 'الأمان والمعلومات',
       content: 'يعد جهاز الموجات فوق الصوتية آمناً تماماً وبلا إشعاع. الإجراء غير مؤلم بتاتاً ويمكن تكراره متى استدعت الحاجة دون أي أضرار على الجسم.',
+    },
+    safetyRU: {
+      title: 'Безопасность и информация',
+      content: 'УЗИ абсолютно безопасно, безболезненно и не использует ионизирующее излучение. Известных побочных эффектов или рисков нет. Процедуру можно повторять так часто, как это необходимо по медицинским показаниям, без какого-либо вреда для организма.'
     },
     timeline: {
       title: "Imaging Process & Results",
@@ -3399,6 +3465,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: '24 ساعة', title: 'التقرير النهائي', desc: 'اصدار تقرير شامل موثق بالصور لملفك الطبي.' }
       ]
     },
+    timelineRU: {
+      title: 'Процесс визуализации и результаты',
+      steps: [
+        { time: 'Визит', title: 'Ультразвуковое сканирование', desc: 'Неинвазивное сканирование занимает 15-30 минут в зависимости от исследуемых областей.' },
+        { time: 'В тот же день', title: 'Предварительное рассмотрение', desc: 'Врач обсуждает с вами основные результаты сразу после сканирования.' },
+        { time: '24 часа', title: 'Полный отчет', desc: 'Подробный документированный отчет с изображениями предоставляется для вашей медицинской карты и последующей консультации.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Preparation', desc: 'For bladder scan, drink 500ml of water 1 hour prior. No fasting is needed for other scans.' },
       { step: '02', title: 'Gel Application', desc: 'Warm ultrasound gel is applied to the skin to improve sound wave transmission and image quality.' },
@@ -3411,6 +3485,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '03', title: 'الفحص', desc: 'يُمرر الطبيب الجهاز الخارجي بلطف على المنطقة وتظهر الصور مباشرة على الشاشة.' },
       { step: '04', title: 'النتائج', desc: 'مناقشة سريعة وأولية مع المريض لتوضيح ماهية الفحوصات.' }
     ],
+    procedureRU: [
+      { step: '01', title: 'Подготовка', desc: 'Для сканирования мочевого пузыря выпейте 500 мл воды за 1 час до начала. Для других сканирований голодание не требуется.' },
+      { step: '02', title: 'Нанесение геля', desc: 'Теплый ультразвуковой гель наносится на кожу для улучшения передачи звуковых волн и качества изображения.' },
+      { step: '03', title: 'Сканирование', desc: 'Специалист аккуратно перемещает ультразвуковой датчик по области. Изображения в реальном времени появляются на мониторе.' },
+      { step: '04', title: 'Результаты', desc: 'Врач немедленно обсуждает предварительные результаты. Подробный отчет с изображениями предоставляется в течение 24 часов.' }
+    ],
     faq: [
       { q: "Is Penile Doppler ultrasound painful?", a: "The ultrasound itself is painless. A small injection of medication may be administered to induce an erection for accurate blood flow measurement. Most patients describe only mild discomfort from the injection." },
       { q: "How should I prepare for a KUB ultrasound?", a: "A full bladder helps visualize the bladder walls clearly. We recommend drinking 500ml of water approximately 1 hour before your appointment. No fasting is required." },
@@ -3420,6 +3500,11 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { q: 'هل الدوبلر لضعف الانتصاب مؤلم؟', a: 'الفحص نفسه غير مؤلم. قد يُعطى حقنة بسيطة لتحفيز الانتصاب لقياس تدفق الدم، ومعظم المرضى يصفونها بأنها وخزة محتملة جداً.' },
       { q: 'كيف أستعد لفحص الكلى والمثانة بالسونار؟', a: 'المثانة الممتلئة تساعد الشاشة على الرؤية الفائقة. نوصي بشرب نصف لتر من الماء قبل الموعد. لا يشترط الصيام.' },
       { q: 'هل يمكن للسونار كشف السرطان؟', a: 'نعم، في حالات الأورام أو الكتل المشبوهة، ويمكنه توجيه مسار الاستقصاء عبر الرنين المغناطيسي أو أخذ الخزعة.' }
+    ],
+    faqRU: [
+      { q: 'Болезненна ли допплерография полового члена?', a: 'Само УЗИ безболезненно. Может быть введена небольшая инъекция лекарства, чтобы вызвать эрекцию для точного измерения кровотока. Большинство пациентов описывают лишь легкий дискомфорт от инъекции.' },
+      { q: 'Как подготовиться к УЗИ почек и мочевого пузыря?', a: 'Полный мочевой пузырь помогает четко визуализировать стенки мочевого пузыря. Мы рекомендуем выпить 500 мл воды примерно за 1 час до приема. Голодать не нужно.' },
+      { q: 'Может ли УЗИ выявить рак?', a: 'УЗИ может выявить подозрительные образования, опухоли или структурные аномалии. В случае обнаружения подозрительной находки могут быть рекомендованы дополнительные исследования, такие как МРТ или биопсия, для постановки окончательного диагноза.' }
     ]
   },
   'Lab Testing': {
