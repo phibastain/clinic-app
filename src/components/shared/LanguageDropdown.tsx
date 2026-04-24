@@ -60,32 +60,30 @@ const LanguageDropdown = ({ lang, setLang }: LanguageDropdownProps) => {
                 <ChevronDown size={12} className={`text-slate-300 group-hover:text-amber-500 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
             </button>
 
-            {isOpen && (
-                <div className="absolute top-full right-0 mt-2 w-40 bg-[#1a1a2e]/95 backdrop-blur-xl rounded-xl shadow-xl border border-white/10 overflow-hidden z-[200] animate-in fade-in zoom-in-95 duration-200 origin-top-right">
-                    <div className="py-1">
-                        {languages.map((l) => (
-                            <Link
-                                key={l.code}
-                                href={getLangUrl(l.code)}
-                                onClick={() => { setLang(l.code as 'EN' | 'TH' | 'AR'); setIsOpen(false); }}
-                                className={`w-full flex items-center space-x-3 px-4 py-2.5 text-left hover:bg-white/5 transition-colors ${lang === l.code ? 'bg-amber-900/10' : ''}`}
-                            >
-                                <Image
-                                    src={l.flag}
-                                    alt={l.label}
-                                    width={24}
-                                    height={16}
-                                    className="object-cover rounded-[2px] shadow-sm"
-                                />
-                                <span className={`text-[10px] font-bold uppercase tracking-wide ${lang === l.code ? 'text-amber-500' : 'text-slate-400'}`}>
-                                    {l.label}
-                                </span>
-                                {lang === l.code && <div className="ml-auto w-1.5 h-1.5 rounded-full bg-amber-500"></div>}
-                            </Link>
-                        ))}
-                    </div>
+            <div className={`absolute top-full right-0 mt-2 w-40 bg-[#1a1a2e]/95 backdrop-blur-xl rounded-xl shadow-xl border border-white/10 overflow-hidden z-[200] origin-top-right transition-all duration-200 ${isOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}`}>
+                <div className="py-1">
+                    {languages.map((l) => (
+                        <Link
+                            key={l.code}
+                            href={getLangUrl(l.code)}
+                            onClick={() => { setLang(l.code as 'EN' | 'TH' | 'AR'); setIsOpen(false); }}
+                            className={`w-full flex items-center space-x-3 px-4 py-2.5 text-left hover:bg-white/5 transition-colors ${lang === l.code ? 'bg-amber-900/10' : ''}`}
+                        >
+                            <Image
+                                src={l.flag}
+                                alt={l.label}
+                                width={24}
+                                height={16}
+                                className="object-cover rounded-[2px] shadow-sm"
+                            />
+                            <span className={`text-[10px] font-bold uppercase tracking-wide ${lang === l.code ? 'text-amber-500' : 'text-slate-400'}`}>
+                                {l.label}
+                            </span>
+                            {lang === l.code && <div className="ml-auto w-1.5 h-1.5 rounded-full bg-amber-500"></div>}
+                        </Link>
+                    ))}
                 </div>
-            )}
+            </div>
         </div>
     );
 };
