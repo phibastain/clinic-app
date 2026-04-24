@@ -24,12 +24,13 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
     const awaitedParams = await searchParams;
     const isThai = awaitedParams?.lang === 'th';
     const isAr = awaitedParams?.lang === 'ar';
+    const isRu = awaitedParams?.lang === 'ru';
     const basePath = `/urologist/${slug}`;
-    const url = isAr ? `${basePath}?lang=ar` : isThai ? `${basePath}?lang=th` : basePath;
+    const url = isRu ? `${basePath}?lang=ru` : isAr ? `${basePath}?lang=ar` : isThai ? `${basePath}?lang=th` : basePath;
 
-    const name = isAr && doctor.nameAR ? doctor.nameAR : doctor.name;
-    const role = isAr && doctor.roleAR ? doctor.roleAR : doctor.role;
-    const bio = isAr && doctor.bioAR ? doctor.bioAR : doctor.bio;
+    const name = isRu && doctor.nameRU ? doctor.nameRU : isAr && doctor.nameAR ? doctor.nameAR : doctor.name;
+    const role = isRu && doctor.roleRU ? doctor.roleRU : isAr && doctor.roleAR ? doctor.roleAR : doctor.role;
+    const bio = isRu && doctor.bioRU ? doctor.bioRU : isAr && doctor.bioAR ? doctor.bioAR : doctor.bio;
 
     return {
         title: `${name} | ${role} | M-Trust Urology Clinic`,
@@ -38,7 +39,7 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
             title: name,
             description: bio.substring(0, 160),
             images: [{ url: doctor.image }],
-            locale: isAr ? 'ar_SA' : isThai ? 'th_TH' : 'en_US',
+            locale: isRu ? 'ru_RU' : isAr ? 'ar_SA' : isThai ? 'th_TH' : 'en_US',
         },
         twitter: {
             card: 'summary_large_image',
@@ -52,6 +53,7 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
                 'en': basePath,
                 'th': `${basePath}?lang=th`,
                 'ar': `${basePath}?lang=ar`,
+                'ru': `${basePath}?lang=ru`,
             },
         },
     };
@@ -64,22 +66,23 @@ export default async function DoctorSlugPage({ params, searchParams }: PageProps
 
     const awaitedParams = await searchParams;
     const isAr = awaitedParams?.lang === 'ar';
+    const isRu = awaitedParams?.lang === 'ru';
 
     return (
         <>
             <JsonLdScript data={getDoctorJsonLd('https://www.mtrusturology.com', {
-                name: isAr && doctor.nameAR ? doctor.nameAR : doctor.name,
+                name: isRu && doctor.nameRU ? doctor.nameRU : isAr && doctor.nameAR ? doctor.nameAR : doctor.name,
                 slug: doctor.slug || slug,
-                role: isAr && doctor.roleAR ? doctor.roleAR : doctor.role,
-                bio: isAr && doctor.bioAR ? doctor.bioAR : doctor.bio,
+                role: isRu && doctor.roleRU ? doctor.roleRU : isAr && doctor.roleAR ? doctor.roleAR : doctor.role,
+                bio: isRu && doctor.bioRU ? doctor.bioRU : isAr && doctor.bioAR ? doctor.bioAR : doctor.bio,
                 image: doctor.image,
                 hospital: doctor.hospital,
                 email: doctor.email,
-                specialties: isAr && doctor.specialtiesAR ? doctor.specialtiesAR : doctor.specialties,
+                specialties: isRu && doctor.specialtiesRU ? doctor.specialtiesRU : isAr && doctor.specialtiesAR ? doctor.specialtiesAR : doctor.specialties,
                 qualifications: doctor.qualifications.map(q => ({
                     year: q.year,
-                    title: isAr && q.titleAR ? q.titleAR : q.title,
-                    place: isAr && q.placeAR ? q.placeAR : q.place,
+                    title: isRu && q.titleRU ? q.titleRU : isAr && q.titleAR ? q.titleAR : q.title,
+                    place: isRu && q.placeRU ? q.placeRU : isAr && q.placeAR ? q.placeAR : q.place,
                 })),
             })} />
             <DoctorProfileClient doctor={doctor} />

@@ -75,19 +75,23 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
     const { t, lang } = useTranslation();
     const isTH = lang === 'TH';
     const isAR = lang === 'AR';
+    const isRU = lang === 'RU';
 
     // Helper to pick localized content from bioContent blocks
     const localizedContent = (block: any) => {
+        if (isRU && block.contentRU) return block.contentRU;
         if (isAR && block.contentAR) return block.contentAR;
         if (isTH && block.contentTH) return block.contentTH;
         return block.content;
     };
     const localizedCaption = (block: any) => {
+        if (isRU && block.captionRU) return block.captionRU;
         if (isAR && block.captionAR) return block.captionAR;
         if (isTH && block.captionTH) return block.captionTH;
         return block.caption;
     };
     const localizedItems = (block: any) => {
+        if (isRU && block.itemsRU) return block.itemsRU;
         if (isAR && block.itemsAR) return block.itemsAR;
         if (isTH && block.itemsTH) return block.itemsTH;
         return block.items;
@@ -126,15 +130,15 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                     <div className="flex-1">
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-500/20 text-amber-600 dark:text-amber-400 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
                             <Sparkles size={14} />
-                            {(isAR && doctor.expertAR) || (isTH && doctor.expertTH) || doctor.expert}
+                            {(isRU && doctor.expertRU) || (isAR && doctor.expertAR) || (isTH && doctor.expertTH) || doctor.expert}
                         </div>
                         <h2 className="text-3xl lg:text-4xl font-black text-slate-900 dark:text-white uppercase mb-2">
-                            {(isAR && doctor.nameAR) || (isTH && doctor.nameTH) || doctor.name}
+                            {(isRU && doctor.nameRU) || (isAR && doctor.nameAR) || (isTH && doctor.nameTH) || doctor.name}
                         </h2>
-                        <p className="text-slate-500 dark:text-slate-400 text-sm italic mb-6">{(isAR && doctor.roleAR) || (isTH && doctor.roleTH) || doctor.role}</p>
+                        <p className="text-slate-500 dark:text-slate-400 text-sm italic mb-6">{(isRU && doctor.roleRU) || (isAR && doctor.roleAR) || (isTH && doctor.roleTH) || doctor.role}</p>
 
                         {/* Bio */}
-                        <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-8">{(isAR && doctor.bioAR) || (isTH && doctor.bioTH) || doctor.bio}</p>
+                        <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-8">{(isRU && doctor.bioRU) || (isAR && doctor.bioAR) || (isTH && doctor.bioTH) || doctor.bio}</p>
 
                         {/* Specialties */}
                         <div className="mb-6">
@@ -143,7 +147,7 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                 {t('Specialties')}
                             </h3>
                             <div className="flex flex-wrap gap-2">
-                                {(isAR && doctor.specialtiesAR ? doctor.specialtiesAR : isTH && doctor.specialtiesTH ? doctor.specialtiesTH : doctor.specialties).map((s, i) => (
+                                {(isRU && doctor.specialtiesRU ? doctor.specialtiesRU : isAR && doctor.specialtiesAR ? doctor.specialtiesAR : isTH && doctor.specialtiesTH ? doctor.specialtiesTH : doctor.specialties).map((s, i) => (
                                     <span key={i} className="px-3 py-1.5 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-full text-xs text-slate-700 dark:text-slate-300 font-medium">
                                         <CheckCircle2 size={12} className="inline mr-1 text-green-500" />{s}
                                     </span>
@@ -399,8 +403,8 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                         <span className="text-purple-600 font-bold text-xs">{qual.year}</span>
                                     </div>
                                     <div>
-                                        <p className="font-semibold text-slate-900 dark:text-white text-sm">{(isAR && qual.titleAR) || (isTH && qual.titleTH) || qual.title}</p>
-                                        <p className="text-xs text-slate-500 dark:text-slate-400">{(isAR && qual.placeAR) || (isTH && qual.placeTH) || qual.place}</p>
+                                        <p className="font-semibold text-slate-900 dark:text-white text-sm">{(isRU && qual.titleRU) || (isAR && qual.titleAR) || (isTH && qual.titleTH) || qual.title}</p>
+                                        <p className="text-xs text-slate-500 dark:text-slate-400">{(isRU && qual.placeRU) || (isAR && qual.placeAR) || (isTH && qual.placeTH) || qual.place}</p>
                                     </div>
                                 </div>
                             ))}
@@ -419,8 +423,8 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                     <div className="flex items-start gap-3">
                                         <Award className="text-amber-600 shrink-0" size={18} />
                                         <div>
-                                            <p className="font-semibold text-slate-900 dark:text-white text-sm">{(isAR && award.titleAR) || (isTH && award.titleTH) || award.title}</p>
-                                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{(isAR && award.issuerAR) || (isTH && award.issuerTH) || award.issuer} • {award.year}</p>
+                                            <p className="font-semibold text-slate-900 dark:text-white text-sm">{(isRU && award.titleRU) || (isAR && award.titleAR) || (isTH && award.titleTH) || award.title}</p>
+                                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{(isRU && award.issuerRU) || (isAR && award.issuerAR) || (isTH && award.issuerTH) || award.issuer} • {award.year}</p>
                                         </div>
                                     </div>
                                 </div>
