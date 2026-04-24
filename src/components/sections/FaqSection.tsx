@@ -8,9 +8,14 @@ import SectionTitle from '@/components/ui/SectionTitle';
 import GradientButton from '@/components/ui/GradientButton';
 import { useTranslation } from '@/hooks/useTranslation';
 import { TH_TRANSLATIONS } from '@/data/translations';
+import { AR_TRANSLATIONS } from '@/data/arTranslations';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 
-const FaqSection = () => {
+interface FaqSectionProps {
+    faqs?: Array<{ question?: string; q?: string; answer?: string; a?: string; title?: string }>;
+}
+
+const FaqSection = ({ faqs }: FaqSectionProps = {}) => {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
     const { t } = useTranslation();
     const { lang } = useLanguage();
@@ -18,6 +23,8 @@ const FaqSection = () => {
     const toggleFaq = (index: number) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
+
+    const displayData = faqs?.length ? faqs : FAQ_DATA;
 
     return (
         <section id="faq" className="pt-12 pb-20 border-b border-slate-200/50 dark:border-white/5 scroll-mt-24 text-left">
@@ -42,11 +49,15 @@ const FaqSection = () => {
                         </div>
                     </div>
                     <div className="lg:col-span-8 space-y-4">
-                        {FAQ_DATA.map((item, index) => {
-                            // Try Thai translation for question/answer
-                            const thEntry = lang === 'TH' ? (TH_TRANSLATIONS[item.question as keyof typeof TH_TRANSLATIONS] as any) : null;
-                            const displayQ: string = thEntry?.title ?? t(item.question ?? '') ?? item.question ?? '';
-                            const displayA: string = thEntry?.answer ?? t(item.answer ?? '') ?? item.answer ?? '';
+                        {displayData.map((item: any, index) => {
+                            // Try translation for question/answer based on language
+                            const qStr = item.question || item.q || '';
+                            const aStr = item.answer || item.a || '';
+                            const thEntry = lang === 'TH' ? (TH_TRANSLATIONS[qStr as keyof typeof TH_TRANSLATIONS] as any) : null;
+                            const arEntry = lang === 'AR' ? (AR_TRANSLATIONS[qStr as keyof typeof AR_TRANSLATIONS] as any) : null;
+                            const langEntry = arEntry || thEntry;
+                            const displayQ: string = langEntry?.title ?? item.title ?? t(qStr) ?? qStr;
+                            const displayA: string = langEntry?.answer ?? t(aStr) ?? aStr;
                             return (
                                 <div
                                     key={index}

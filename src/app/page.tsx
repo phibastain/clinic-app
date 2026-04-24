@@ -24,12 +24,17 @@ type Props = {
 export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
   const awaitedParams = await searchParams;
   const isThai = awaitedParams.lang === 'th';
-  const url = isThai ? '/?lang=th' : '/';
+  const isAr = awaitedParams.lang === 'ar';
+  const url = isAr ? '/?lang=ar' : isThai ? '/?lang=th' : '/';
   
-  const pageTitle = isThai
+  const pageTitle = isAr
+    ? 'عيادة إم-ترست لجراحة المسالك البولية | أخصائي المسالك البولية وصحة الرجل، باتايا'
+    : isThai
     ? 'M-Trust Urology Clinic | คลินิกระบบทางเดินปัสสาวะชั้นนำ | ผู้เชี่ยวชาญสุขภาพเพศชาย'
     : 'M-Trust Urology Clinic | Urologist & Men\'s Health Specialist, Pattaya';
-  const pageDesc = isThai
+  const pageDesc = isAr
+    ? 'عيادة إم-ترست - المركز الرائد في تايلاند لصحة الرجل. علاج متخصص لضعف الانتصاب وأمراض البروستاتا وزراعة دعامة القضيب بواسطة د. نيثي نافانيميتكول. احجز استشارتك اليوم.'
+    : isThai
     ? 'M-Trust Urology Clinic - ศูนย์ชั้นนำด้านสุขภาพเพศชายของประเทศไทย รักษาโรคหย่อนสมรรถภาพทางเพศ ต่อมลูกหมากโต ผ่าตัดใส่แกนองคชาตเทียม โดย นพ.นิติ นวนิมิตกุล นัดหมายวันนี้'
     : 'M-Trust Urology Clinic - Thailand\'s leading center for men\'s health. Expert treatment for erectile dysfunction, prostate conditions, penile prosthesis surgery by Dr. Niti Navanimitkul. Book consultation today.';
 
@@ -39,7 +44,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     openGraph: {
       title: pageTitle,
       description: pageDesc,
-      locale: isThai ? 'th_TH' : 'en_US',
+      locale: isAr ? 'ar_SA' : isThai ? 'th_TH' : 'en_US',
     },
     twitter: {
       title: pageTitle,
@@ -50,17 +55,21 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
       languages: {
         'en': '/',
         'th': '/?lang=th',
+        'ar': '/?lang=ar',
       },
     },
   };
 }
 
-export default function Page() {
+export default async function Page({ searchParams }: Props) {
+  const awaitedParams = await searchParams;
+  const lang = awaitedParams?.lang === 'ar' ? 'ar' : awaitedParams?.lang === 'th' ? 'th' : 'en';
+
   return (
     <div className="selection:bg-amber-500 selection:text-white">
-      <JsonLdScript data={getHomepageJsonLd('https://www.mtrusturology.com')} />
-      <div className="min-h-screen font-sans relative overflow-x-hidden text-left text-slate-900 dark:text-slate-100">
-        <main className="relative z-10 text-left">
+      <JsonLdScript data={getHomepageJsonLd('https://www.mtrusturology.com', lang)} />
+      <div className="min-h-screen font-sans relative overflow-x-hidden text-start text-slate-900 dark:text-slate-100">
+        <main className="relative z-10 text-start">
           <div id="home"><HeroSection /></div>
           <div id="about"><AboutSection /></div>
           <div id="services"><ServicesSection /></div>

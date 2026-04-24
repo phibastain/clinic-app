@@ -68,7 +68,7 @@ export const TH_TRANSLATIONS: Record<string, any> = {
   "Center of Excellence in Urology & Men's Health": {
     "title": "ศูนย์ความเป็นเลิศด้านศัลยกรรมระบบทางเดินปัสสาวะและสุขภาพชาย"
   },
-  "M-Trust Urology Clinic is a leading specialized clinic providing a full spectrum of urology and men’s health services. We focus on diagnosing and treating urological diseases and restoring sexual performance through innovative medical solutions. Our clinic is powered by a team of expert urologists from top-tier medical institutions, ensuring every procedure meets international healthcare standards.": {
+  "M-Trust Urology Clinic is a leading specialized clinic providing a full spectrum of urology and men's health services. We focus on diagnosing and treating urological diseases and restoring sexual performance through innovative medical solutions. Our clinic is powered by a team of expert urologists from top-tier medical institutions, ensuring every procedure meets international healthcare standards.": {
     "title": "M-Trust Urology Clinic เป็นคลินิกเฉพาะทางชั้นนำที่ให้บริการดูแลรักษาด้านระบบทางเดินปัสสาวะและสุขภาพชายอย่างครบวงจร เรามุ่งเน้นการตรวจวินิจฉัยและรักษาโรคเฉพาะทาง รวมถึงการฟื้นฟูสมรรถภาพทางเพศด้วยนวัตกรรมทางการแพทย์ที่ทันสมัย คลินิกของเรามีทีมศัลยแพทย์ทางเดินปัสสาวะผู้เชี่ยวชาญจากสถาบันการแพทย์ชั้นนำ เพื่อให้มั่นใจว่าทุกขั้นตอนการรักษาเป็นไปตามมาตรฐานสากล"
   },
   "We prioritize the utmost patient privacy and a confidential environment for all our clients. We combine clinical expertise with advanced technology to offer effective medical and surgical solutions. Whether it's diagnosis or complex surgery, our goal is to help you return to your daily life with total confidence.": {

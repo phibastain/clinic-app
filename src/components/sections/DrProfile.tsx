@@ -74,6 +74,24 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
     const photos = doctor.activities || [];
     const { t, lang } = useTranslation();
     const isTH = lang === 'TH';
+    const isAR = lang === 'AR';
+
+    // Helper to pick localized content from bioContent blocks
+    const localizedContent = (block: any) => {
+        if (isAR && block.contentAR) return block.contentAR;
+        if (isTH && block.contentTH) return block.contentTH;
+        return block.content;
+    };
+    const localizedCaption = (block: any) => {
+        if (isAR && block.captionAR) return block.captionAR;
+        if (isTH && block.captionTH) return block.captionTH;
+        return block.caption;
+    };
+    const localizedItems = (block: any) => {
+        if (isAR && block.itemsAR) return block.itemsAR;
+        if (isTH && block.itemsTH) return block.itemsTH;
+        return block.items;
+    };
 
     return (
         <section className="pt-8 pb-16 scroll-mt-24 text-left">
@@ -108,15 +126,15 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                     <div className="flex-1">
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-500/20 text-amber-600 dark:text-amber-400 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
                             <Sparkles size={14} />
-                            {(isTH && doctor.expertTH) || doctor.expert}
+                            {(isAR && doctor.expertAR) || (isTH && doctor.expertTH) || doctor.expert}
                         </div>
                         <h2 className="text-3xl lg:text-4xl font-black text-slate-900 dark:text-white uppercase mb-2">
-                            {(isTH && doctor.nameTH) || doctor.name}
+                            {(isAR && doctor.nameAR) || (isTH && doctor.nameTH) || doctor.name}
                         </h2>
-                        <p className="text-slate-500 dark:text-slate-400 text-sm italic mb-6">{(isTH && doctor.roleTH) || doctor.role}</p>
+                        <p className="text-slate-500 dark:text-slate-400 text-sm italic mb-6">{(isAR && doctor.roleAR) || (isTH && doctor.roleTH) || doctor.role}</p>
 
                         {/* Bio */}
-                        <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-8">{(isTH && doctor.bioTH) || doctor.bio}</p>
+                        <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-8">{(isAR && doctor.bioAR) || (isTH && doctor.bioTH) || doctor.bio}</p>
 
                         {/* Specialties */}
                         <div className="mb-6">
@@ -125,7 +143,7 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                 {t('Specialties')}
                             </h3>
                             <div className="flex flex-wrap gap-2">
-                                {(isTH && doctor.specialtiesTH ? doctor.specialtiesTH : doctor.specialties).map((s, i) => (
+                                {(isAR && doctor.specialtiesAR ? doctor.specialtiesAR : isTH && doctor.specialtiesTH ? doctor.specialtiesTH : doctor.specialties).map((s, i) => (
                                     <span key={i} className="px-3 py-1.5 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-full text-xs text-slate-700 dark:text-slate-300 font-medium">
                                         <CheckCircle2 size={12} className="inline mr-1 text-green-500" />{s}
                                     </span>
@@ -161,7 +179,7 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                         doctor.bioContent.forEach(block => {
                                             if (block.type === 'header') {
                                                 if (currentGroup) groups.push(currentGroup);
-                                                currentGroup = { title: (isTH && block.contentTH) || block.content || '', blocks: [] };
+                                                currentGroup = { title: localizedContent(block) || '', blocks: [] };
                                             } else {
                                                 if (!currentGroup) {
                                                     currentGroup = { title: '', blocks: [] };
@@ -183,10 +201,10 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                                 {group.blocks.map((block: any, i: number) => {
                                                     if (block.type === 'paragraph') return (
                                                         <p key={i} className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg italic font-medium">
-                                                            {(isTH && block.contentTH) || block.content}
+                                                            {localizedContent(block)}
                                                         </p>
                                                     );
-                                                    if (block.type === 'list' && block.items) { const listItems = (isTH && block.itemsTH) || block.items; return (
+                                                    if (block.type === 'list' && block.items) { const listItems = localizedItems(block); return (
                                                         <ul key={i} className="space-y-3">
                                                             {listItems.map((item: string, j: number) => (
                                                                 <li key={j} className="text-slate-600 dark:text-slate-300 flex items-start gap-3 p-4 bg-white dark:bg-white/5 border border-slate-100 dark:border-white/5 rounded-2xl shadow-sm transition-all hover:border-amber-500/30">
@@ -211,11 +229,11 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                             <figure key={i} className="relative group">
                                                 <div className="absolute -inset-4 bg-linear-to-br from-amber-500/10 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                                 <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-white dark:border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
-                                                    <Image src={block.image || ''} alt={((isTH && block.captionTH) || block.caption) || `Professional Profile ${i + 1}`} width={800} height={600} className="w-full h-auto object-cover" />
+                                                    <Image src={block.image || ''} alt={localizedCaption(block) || `Professional Profile ${i + 1}`} width={800} height={600} className="w-full h-auto object-cover" />
                                                     {(block.caption || block.captionTH) && (
                                                         <div className="absolute bottom-0 inset-x-0 p-6 bg-linear-to-t from-black/80 via-black/40 to-transparent">
                                                             <p className="text-white text-xs font-medium italic">
-                                                                {(isTH && block.captionTH) || block.caption}
+                                                                {localizedCaption(block)}
                                                             </p>
                                                         </div>
                                                     )}
@@ -265,7 +283,7 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                                     {group.blocks.filter(b => b.type !== 'image').map((block: any, i: number) => {
                                                         if (block.type === 'paragraph') return (
                                                             <p key={i} className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
-                                                                {(isTH && block.contentTH) || block.content}
+                                                                {localizedContent(block)}
                                                             </p>
                                                         );
                                                         if (block.type === 'slider' && block.images) return (
@@ -273,7 +291,7 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                                                 <AutoSlider images={block.images} caption={block.caption} />
                                                             </div>
                                                         );
-                                                        if (block.type === 'list' && block.items) { const listItems2 = (isTH && block.itemsTH) || block.items; return (
+                                                        if (block.type === 'list' && block.items) { const listItems2 = localizedItems(block); return (
                                                             <ul key={i} className="grid sm:grid-cols-1 gap-3">
                                                                 {listItems2.map((item: string, j: number) => (
                                                                     <li key={j} className="text-slate-600 dark:text-slate-300 flex items-start gap-3 p-3 bg-white dark:bg-white/5 border border-slate-100 dark:border-white/5 rounded-xl shadow-sm">
@@ -294,11 +312,11 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                                             <figure key={i} className="relative group">
                                                                 <div className="absolute -inset-4 bg-linear-to-br from-amber-500/10 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                                                 <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-white dark:border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
-                                                                    <Image src={block.image || ''} alt={((isTH && block.captionTH) || block.caption) || ''} width={800} height={600} className="w-full h-auto object-cover" />
+                                                                    <Image src={block.image || ''} alt={localizedCaption(block) || ''} width={800} height={600} className="w-full h-auto object-cover" />
                                                                     {(block.caption || block.captionTH) && (
                                                                         <div className="absolute bottom-0 inset-x-0 p-6 bg-linear-to-t from-black/80 via-black/40 to-transparent">
                                                                             <p className="text-white text-xs font-medium italic translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                                                                                {(isTH && block.captionTH) || block.caption}
+                                                                                {localizedCaption(block)}
                                                                             </p>
                                                                         </div>
                                                                     )}
@@ -381,8 +399,8 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                         <span className="text-purple-600 font-bold text-xs">{qual.year}</span>
                                     </div>
                                     <div>
-                                        <p className="font-semibold text-slate-900 dark:text-white text-sm">{qual.title}</p>
-                                        <p className="text-xs text-slate-500 dark:text-slate-400">{qual.place}</p>
+                                        <p className="font-semibold text-slate-900 dark:text-white text-sm">{(isAR && qual.titleAR) || (isTH && qual.titleTH) || qual.title}</p>
+                                        <p className="text-xs text-slate-500 dark:text-slate-400">{(isAR && qual.placeAR) || (isTH && qual.placeTH) || qual.place}</p>
                                     </div>
                                 </div>
                             ))}
@@ -401,8 +419,8 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                     <div className="flex items-start gap-3">
                                         <Award className="text-amber-600 shrink-0" size={18} />
                                         <div>
-                                            <p className="font-semibold text-slate-900 dark:text-white text-sm">{award.title}</p>
-                                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{award.issuer} • {award.year}</p>
+                                            <p className="font-semibold text-slate-900 dark:text-white text-sm">{(isAR && award.titleAR) || (isTH && award.titleTH) || award.title}</p>
+                                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{(isAR && award.issuerAR) || (isTH && award.issuerTH) || award.issuer} • {award.year}</p>
                                         </div>
                                     </div>
                                 </div>

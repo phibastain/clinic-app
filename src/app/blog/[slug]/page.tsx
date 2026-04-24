@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+export const dynamic = 'force-dynamic';
 import { BLOG_POSTS } from '@/data/mockData';
 import BlogDetailClient from '@/components/sections/BlogDetailClient';
 import { getBlogPostJsonLd, JsonLdScript } from '@/utils/jsonLd';
@@ -19,11 +20,14 @@ function mapPost(p: typeof BLOG_POSTS[0]) {
         id: String(p.id),
         title: p.title,
         titleTH: '',
+        titleAR: p.titleAR || '',
         slug: blogTitleToSlug(p.title),
         excerpt: p.excerpt,
         excerptTH: '',
+        excerptAR: p.excerptAR || '',
         content: p.content || '',
         contentTH: '',
+        contentAR: p.contentAR || '',
         category: p.category,
         image: p.image,
         date: p.date,
@@ -37,21 +41,26 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
 
     const awaitedParams = await searchParams;
     const isThai = awaitedParams?.lang === 'th';
+    const isAr = awaitedParams?.lang === 'ar';
     const basePath = `/blog/${slug}`;
-    const url = isThai ? `${basePath}?lang=th` : basePath;
+    const url = isAr ? `${basePath}?lang=ar` : isThai ? `${basePath}?lang=th` : basePath;
+
+    const title = isAr && post.titleAR ? post.titleAR : post.title;
+    const description = isAr && post.excerptAR ? post.excerptAR : post.excerpt;
 
     return {
-        title: `${post.title} | M-Trust Urology Clinic`,
-        description: post.excerpt,
+        title: `${title} | M-Trust Urology Clinic`,
+        description,
         openGraph: {
-            title: post.title,
-            description: post.excerpt,
+            title,
+            description,
             images: [{ url: post.image }],
+            locale: isAr ? 'ar_SA' : isThai ? 'th_TH' : 'en_US',
         },
         twitter: {
             card: 'summary_large_image',
-            title: post.title,
-            description: post.excerpt,
+            title,
+            description,
             images: [post.image],
         },
         alternates: {
@@ -59,26 +68,33 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
             languages: {
                 'en': basePath,
                 'th': `${basePath}?lang=th`,
+                'ar': `${basePath}?lang=ar`,
             },
         },
     };
 }
 
-export default async function BlogDetailPage({ params }: Props) {
+export default async function BlogDetailPage({ params, searchParams }: Props) {
     const { slug } = await params;
     const rawPost = findPostBySlug(slug);
     if (!rawPost) notFound();
+
+    const awaitedParams = await searchParams;
+    const isAr = awaitedParams?.lang === 'ar';
 
     const post = mapPost(rawPost);
     const relatedPosts = BLOG_POSTS
         .filter(p => blogTitleToSlug(p.title) !== slug)
         .map(mapPost);
 
+    const jsonLdTitle = isAr && rawPost.titleAR ? rawPost.titleAR : rawPost.title;
+    const jsonLdExcerpt = isAr && rawPost.excerptAR ? rawPost.excerptAR : rawPost.excerpt;
+
     return (
         <>
             <JsonLdScript data={getBlogPostJsonLd('https://www.mtrusturology.com', {
-                title: post.title,
-                excerpt: post.excerpt,
+                title: jsonLdTitle,
+                excerpt: jsonLdExcerpt,
                 image: post.image,
                 date: post.date,
                 author: 'Dr. Niti Navanimitkul',

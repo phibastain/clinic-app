@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { HERO_SLIDES } from '@/data/mockData';
 import { TH_TRANSLATIONS } from '@/data/translations';
+import { AR_TRANSLATIONS } from '@/data/arTranslations';
 import GradientButton from '@/components/ui/GradientButton';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 
@@ -19,7 +20,7 @@ const HeroSection = () => {
     }, []);
 
     return (
-        <section id="home" className="relative min-h-dvh lg:h-[calc(100dvh-100px)] lg:min-h-[700px] w-full overflow-hidden flex flex-col items-center justify-center">
+        <section id="home" dir="ltr" className="relative min-h-dvh lg:h-[calc(100dvh-100px)] lg:min-h-[700px] w-full overflow-hidden flex flex-col items-center justify-center">
             {/* 1. Dynamic Background */}
             <div className="absolute inset-0 w-full h-full z-0">
                 <Image
@@ -93,11 +94,13 @@ const HeroSection = () => {
                 {/* 3. Text Content - Right Side on Desktop */}
                 <div className="relative w-full text-center lg:text-right z-30 flex flex-col items-center lg:items-end pointer-events-auto order-1 mb-8 lg:mb-0 lg:pl-8 lg:-translate-x-[80px] lg:translate-y-[120px] translate-y-[50px]">
                     {HERO_SLIDES.map((slide, index) => {
-                        // Get Thai translation if available
+                        // Get translation based on language
                         const thData = lang === 'TH' ? (TH_TRANSLATIONS[slide.title] as any) : null;
-                        const displayTitle = thData?.title || slide.title;
-                        const displayDesc = thData?.desc || slide.desc;
-                        const displayBtn = thData?.btn || slide.btnText;
+                        const arData = lang === 'AR' ? (AR_TRANSLATIONS[slide.title] as any) : null;
+                        const langData = arData || thData;
+                        const displayTitle = langData?.title || slide.title;
+                        const displayDesc = langData?.desc || slide.desc;
+                        const displayBtn = langData?.btn || slide.btnText;
 
                         return (
                             <div
@@ -110,7 +113,7 @@ const HeroSection = () => {
                                 {(() => {
                                     const Tag = index === 0 ? 'h1' : 'h2' as any;
                                     return (
-                                        <Tag className="text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-black text-slate-500 lg:text-slate-900 mb-4 leading-tight tracking-tighter uppercase drop-shadow-sm text-center lg:text-right">
+                                        <Tag dir={lang === 'AR' ? 'rtl' : 'ltr'} className="text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-black text-slate-500 lg:text-slate-900 mb-4 leading-tight tracking-tighter uppercase drop-shadow-sm text-center lg:text-right">
                                             {displayTitle.split('\n').map((line: string, i: number) => (
                                                 <React.Fragment key={i}>
                                                     {line}
@@ -122,7 +125,7 @@ const HeroSection = () => {
                                     );
                                 })()}
 
-                                <p className="text-slate-600 lg:text-slate-700 text-sm md:text-base lg:text-lg mb-8 font-medium leading-relaxed max-w-md text-center lg:text-right px-4 lg:px-0">
+                                <p dir={lang === 'AR' ? 'rtl' : 'ltr'} className="text-slate-600 lg:text-slate-700 text-sm md:text-base lg:text-lg mb-8 font-medium leading-relaxed max-w-md text-center lg:text-right px-4 lg:px-0">
                                     {displayDesc}
                                 </p>
 

@@ -50,23 +50,46 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
 
     if (!service) return null;
 
-    // Helper: translate a field using pattern "ServiceName.field"
-    const ts = (field: string): string => {
-        const key = `${serviceName}.${field}`;
-        const result = t(key);
-        return result !== key ? result : '';
-    };
+    const isAR = lang === 'AR';
 
-    // Get translated or original value
-    const sTitle = ts('title') || service.title;
-    const sTagline = ts('tagline') || service.tagline;
-    const sDescription = ts('description') || service.description;
-    const sWhatIsItTitle = ts('whatIsIt.title') || service.whatIsIt?.title;
-    const sWhatIsItDesc = ts('whatIsIt.description') || service.whatIsIt?.description;
+    // Helper: pick AR field if available, else fall back to EN
+    const ar = <T,>(en: T, arField: T | undefined): T =>
+        (isAR && arField !== undefined && arField !== null) ? arField : en;
+
+    // Core display fields
+    const sTitle       = ar(service.title,      service.titleAR);
+    const sTagline     = ar(service.tagline,     service.taglineAR);
+    const sDescription = ar(service.description, service.descriptionAR);
+    const sWhatIsItTitle = ar(service.whatIsIt?.title,       service.whatIsItAR?.title);
+    const sWhatIsItDesc  = ar(service.whatIsIt?.description, service.whatIsItAR?.description);
+
+    // Array fields
+    const sProcedure   = ar(service.procedure,  service.procedureAR)  ?? [];
+    const sFaq         = ar(service.faq,         service.faqAR)        ?? [];
+    const sCandidates  = ar(service.candidates,  service.candidatesAR) ?? [];
+
+    // Safety
+    const sSafetyTitle   = ar(service.safety?.title,   service.safetyAR?.title);
+    const sSafetyContent = ar(service.safety?.content, service.safetyAR?.content);
+
+    // Stats: values stay as numbers; only labels translate
+    const getStatLabel = (idx: number) =>
+        (isAR && service.statsAR?.[idx]?.label) ? service.statsAR[idx].label : (service.stats?.[idx]?.label ?? '');
+
+    // Comparison
+    const comp    = (isAR && service.comparisonAR) ? service.comparisonAR : service.comparison;
+    const compHeader0 = comp?.headers?.[0] ?? '';
+    const compHeader1 = comp?.headers?.[1] ?? '';
+
+    // Timeline
+    const tl = (isAR && service.timelineAR) ? service.timelineAR : service.timeline;
+
+    // STD / Lab Testing
+    const sTestPanels = ar(service.testPanels, service.testPanelsAR);
+    const sDiseaseTable = ar(service.diseaseTable, service.diseaseTableAR);
 
     return (
         <>
-
             {/* Main Content */}
             <main className="relative z-10 text-left">
                 <div className="animate-slide-in-up">
@@ -99,17 +122,13 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
 
                                 {service.stats && (
                                     <div className="md:col-span-4 grid grid-cols-2 gap-3 mt-8 md:mt-0 text-left">
-                                        {service.stats.map((stat: any, idx: number) => {
-                                            const tVal = ts(`stats.${idx}.value`);
-                                            const tLbl = ts(`stats.${idx}.label`);
-                                            return (
-                                                <div key={idx} className="bg-black/30 backdrop-blur-md border border-white/10 p-4 rounded-xl text-left">
-                                                    <stat.icon className="text-amber-500 mb-2" size={20} />
-                                                    <div className="text-2xl font-black text-white leading-none mb-1">{tVal || stat.value}</div>
-                                                    <div className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">{tLbl || stat.label}</div>
-                                                </div>
-                                            );
-                                        })}
+                                        {service.stats.map((stat: any, idx: number) => (
+                                            <div key={idx} className="bg-black/30 backdrop-blur-md border border-white/10 p-4 rounded-xl text-left">
+                                                <stat.icon className="text-amber-500 mb-2" size={20} />
+                                                <div className="text-2xl font-black text-white leading-none mb-1">{stat.value}</div>
+                                                <div className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">{getStatLabel(idx)}</div>
+                                            </div>
+                                        ))}
                                     </div>
                                 )}
                             </div>
@@ -168,18 +187,18 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                                         </div>
                                     </>
                                 )}
-                                {service.testPanels && (
+                                {sTestPanels && (
                                     <div className="grid md:grid-cols-2 gap-6 mb-16">
-                                        {service.testPanels.map((panel, pIdx) => (
+                                        {sTestPanels.map((panel: any, pIdx: number) => (
                                             <div key={pIdx} className="bg-white dark:bg-[#12141c] p-6 rounded-3xl border border-slate-200 dark:border-white/5 shadow-sm">
                                                 <div className="flex items-center gap-3 mb-6">
                                                     <div className="p-3 bg-amber-500/10 rounded-2xl">
-                                                        <panel.icon className="text-amber-600" size={24} />
+                                                        {panel.icon ? <panel.icon className="text-amber-600" size={24} /> : <div className="w-6 h-6 bg-amber-500/20 rounded-full" />}
                                                     </div>
                                                     <h3 className="font-bold text-slate-900 dark:text-white text-lg">{t(panel.title)}</h3>
                                                 </div>
                                                 <ul className="space-y-3">
-                                                    {panel.items.map((item, iIdx) => (
+                                                    {panel.items.map((item: string, iIdx: number) => (
                                                         <li key={iIdx} className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400">
                                                             <CheckSquare className="text-amber-500 shrink-0 mt-0.5" size={16} />
                                                             <span>{t(item)}</span>
@@ -191,9 +210,9 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                                     </div>
                                 )}
 
-                                {service.diseaseTable && (
+                                {sDiseaseTable && (
                                     <div className="space-y-8 text-left mb-16">
-                                        {service.diseaseTable.categories.map((cat: any, idx: number) => (
+                                        {sDiseaseTable.categories.map((cat: any, idx: number) => (
                                             <div key={idx} className="bg-white dark:bg-[#12141c] rounded-3xl border border-slate-200 dark:border-white/5 overflow-hidden shadow-lg text-left">
                                                 <div className="bg-slate-900 dark:bg-slate-800 p-4 text-white font-bold uppercase text-sm text-left flex items-center justify-between">
                                                     <span>{t(cat.category)}</span>
@@ -234,27 +253,23 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
 
                             {/* Procedure & Safety */}
                             <div className="grid lg:grid-cols-2 gap-8 mb-16">
-                                {service.procedure && service.procedure.length > 0 && (
+                                {sProcedure.length > 0 && (
                                     <div className="bg-slate-900 dark:bg-black rounded-3xl border border-white/10 overflow-hidden text-left flex flex-col p-8">
                                         <h3 className="text-xl font-black text-white uppercase mb-8 flex items-center gap-3">
                                             <Timer className="text-amber-500" /> {t('Treatment Procedure')}
                                         </h3>
                                         <div className="space-y-8">
-                                            {service.procedure.map((p: any, idx: number) => {
-                                                const tTitle = ts(`procedure.${idx}.title`);
-                                                const tDesc = ts(`procedure.${idx}.desc`);
-                                                return (
-                                                    <div key={idx} className="flex gap-4 group">
-                                                        <div className="shrink-0 w-8 h-8 rounded-full bg-amber-500/20 border border-amber-500/50 flex items-center justify-center text-amber-500 font-bold text-xs group-hover:bg-amber-500 group-hover:text-black transition-colors">
-                                                            {p.step}
-                                                        </div>
-                                                        <div>
-                                                            <h4 className="text-white font-bold mb-1">{tTitle || p.title}</h4>
-                                                            <p className="text-slate-400 text-sm leading-relaxed">{tDesc || p.desc}</p>
-                                                        </div>
+                                            {sProcedure.map((p: any, idx: number) => (
+                                                <div key={idx} className="flex gap-4 group">
+                                                    <div className="shrink-0 w-8 h-8 rounded-full bg-amber-500/20 border border-amber-500/50 flex items-center justify-center text-amber-500 font-bold text-xs group-hover:bg-amber-500 group-hover:text-black transition-colors">
+                                                        {p.step}
                                                     </div>
-                                                );
-                                            })}
+                                                    <div>
+                                                        <h4 className="text-white font-bold mb-1">{p.title}</h4>
+                                                        <p className="text-slate-400 text-sm leading-relaxed">{p.desc}</p>
+                                                    </div>
+                                                </div>
+                                            ))}
                                         </div>
                                     </div>
                                 )}
@@ -263,10 +278,10 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                                     {service.safety && (
                                         <div className="bg-white dark:bg-[#12141c] p-8 rounded-3xl border border-slate-200 dark:border-white/5 text-left">
                                             <h3 className="text-xl font-black text-slate-900 dark:text-white uppercase mb-6 flex items-center gap-3">
-                                                <ShieldCheck className="text-emerald-500" /> {ts('safety.title') || t(service.safety.title)}
+                                                <ShieldCheck className="text-emerald-500" /> {sSafetyTitle}
                                             </h3>
                                             <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                                                {ts('safety.content') || service.safety.content}
+                                                {sSafetyContent}
                                             </p>
                                             <div className="flex items-center gap-2 text-xs font-bold text-emerald-500 uppercase tracking-widest">
                                                 <CheckCircle2 size={16} />
@@ -275,21 +290,18 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                                         </div>
                                     )}
 
-                                    {service.candidates && (
+                                    {sCandidates.length > 0 && (
                                         <div className="bg-white dark:bg-[#12141c] p-8 rounded-3xl border border-slate-200 dark:border-white/5 text-left">
                                             <h3 className="text-xl font-black text-slate-900 dark:text-white uppercase mb-6 flex items-center gap-3">
                                                 <Users2 className="text-amber-600" /> {t('Suitable Candidates')}
                                             </h3>
                                             <ul className="space-y-4">
-                                                {service.candidates.map((c: string, idx: number) => {
-                                                    const tC = ts(`candidates.${idx}`);
-                                                    return (
-                                                        <li key={idx} className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400">
-                                                            <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0" />
-                                                            <span>{tC || c}</span>
-                                                        </li>
-                                                    );
-                                                })}
+                                                {sCandidates.map((c: string, idx: number) => (
+                                                    <li key={idx} className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400">
+                                                        <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0" />
+                                                        <span>{c}</span>
+                                                    </li>
+                                                ))}
                                             </ul>
                                         </div>
                                     )}
@@ -298,37 +310,37 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
 
                             {/* Comparison & Timeline */}
                             <div className="grid lg:grid-cols-2 gap-8 mb-16 text-left">
-                                {service.comparison && (
+                                {comp && (
                                     <div className="bg-slate-900 dark:bg-black rounded-3xl border border-white/10 overflow-hidden text-left h-full flex flex-col">
                                         <div className="p-6 border-b border-white/10 bg-white/5 flex flex-col gap-2 text-left">
                                             <h3 className="text-white font-black uppercase text-sm flex items-center gap-2 text-left">
-                                                <BarChart3 className="text-amber-500" /> {t(service.comparison.title)}
+                                                <BarChart3 className="text-amber-500" /> {comp.title}
                                             </h3>
-                                            <p className="text-xs text-slate-400 uppercase tracking-widest">{t(service.comparison.subtitle)}</p>
+                                            <p className="text-xs text-slate-400 uppercase tracking-widest">{comp.subtitle}</p>
                                         </div>
                                         <div className="p-0 flex-1 text-left">
                                             <table className="w-full text-left border-collapse">
                                                 <thead>
                                                     <tr className="border-b border-white/5 bg-white/5">
                                                         <th className="p-4 text-[10px] uppercase font-bold text-slate-500">{t('Feature')}</th>
-                                                        <th className="p-4 text-[10px] uppercase font-bold text-amber-500 text-center">{t(service.comparison.headers[0])}</th>
-                                                        <th className="p-4 text-[10px] uppercase font-bold text-slate-500 text-center">{t(service.comparison.headers[1])}</th>
+                                                        <th className="p-4 text-[10px] uppercase font-bold text-amber-500 text-center">{compHeader0}</th>
+                                                        <th className="p-4 text-[10px] uppercase font-bold text-slate-500 text-center">{compHeader1}</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody className="divide-y divide-white/5">
-                                                    {service.comparison.items.map((item: any, idx: number) => (
+                                                    {comp.items.map((item: any, idx: number) => (
                                                         <tr key={idx} className="group hover:bg-white/5 transition-colors">
                                                             <td className="p-4">
                                                                 <div className="flex items-center gap-2">
                                                                     {item.icon && <item.icon size={14} className="text-slate-600" />}
-                                                                    <span className="text-slate-400 text-[11px] font-bold uppercase">{t(item.feature)}</span>
+                                                                    <span className="text-slate-400 text-[11px] font-bold uppercase">{item.feature}</span>
                                                                 </div>
                                                             </td>
                                                             <td className="p-4 text-center">
-                                                                <span className="text-amber-500 font-black text-xs">{t(item.focus)}</span>
+                                                                <span className="text-amber-500 font-black text-xs">{item.focus}</span>
                                                             </td>
                                                             <td className="p-4 text-center">
-                                                                <span className="text-slate-500 font-medium text-xs">{t(item.radial)}</span>
+                                                                <span className="text-slate-500 font-medium text-xs">{item.radial}</span>
                                                             </td>
                                                         </tr>
                                                     ))}
@@ -338,20 +350,20 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                                     </div>
                                 )}
 
-                                {service.timeline && (
+                                {tl && (
                                     <div className="bg-white dark:bg-[#12141c] p-8 rounded-3xl border border-slate-200 dark:border-white/5 text-left h-full flex flex-col">
                                         <h3 className="text-xl font-black text-slate-900 dark:text-white uppercase mb-8 flex items-center gap-2 text-left">
-                                            <TrendingUp className="text-amber-600" /> {t(service.timeline.title)}
+                                            <TrendingUp className="text-amber-600" /> {tl.title}
                                         </h3>
                                         <div className="relative pl-8 border-l-2 border-slate-100 dark:border-slate-800 space-y-10 text-left">
-                                            {service.timeline.steps.map((step: any, idx: number) => (
+                                            {tl.steps.map((step: any, idx: number) => (
                                                 <div key={idx} className="relative text-left">
                                                     <div className="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-slate-900 dark:bg-white border-4 border-white dark:border-slate-900 shadow-xl flex items-center justify-center text-[10px] font-bold z-10 text-left">
                                                         {idx + 1}
                                                     </div>
-                                                    <div className="text-[10px] uppercase font-black text-amber-600 mb-1">{t(step.time)}</div>
-                                                    <h4 className="text-lg font-bold text-slate-900 dark:text-white text-left mb-1">{t(step.title)}</h4>
-                                                    <p className="text-sm text-slate-500 dark:text-slate-400 text-left leading-relaxed">{t(step.desc)}</p>
+                                                    <div className="text-[10px] uppercase font-black text-amber-600 mb-1">{step.time}</div>
+                                                    <h4 className="text-lg font-bold text-slate-900 dark:text-white text-left mb-1">{step.title}</h4>
+                                                    <p className="text-sm text-slate-500 dark:text-slate-400 text-left leading-relaxed">{step.desc}</p>
                                                 </div>
                                             ))}
                                         </div>
@@ -360,27 +372,23 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                             </div>
 
                             {/* FAQ */}
-                            {service.faq && service.faq.length > 0 && (
+                            {sFaq.length > 0 && (
                                 <div className="mb-16 text-left">
                                     <h2 className="text-2xl font-black text-slate-900 dark:text-white uppercase mb-8 text-left flex items-center gap-3">
                                         <HelpCircle className="text-amber-600" /> {t('Frequently Asked Questions')}
                                     </h2>
                                     <div className="grid gap-4 text-left">
-                                        {service.faq.map((item: any, idx: number) => {
-                                            const tQ = ts(`faq.${idx}.q`);
-                                            const tA = ts(`faq.${idx}.a`);
-                                            return (
-                                                <div key={idx} className="bg-white dark:bg-[#12141c] p-6 rounded-2xl border border-slate-200 dark:border-white/5 text-left group hover:border-amber-500/30 transition-all shadow-sm hover:shadow-md">
-                                                    <h3 className="font-bold text-slate-900 dark:text-white mb-2 text-left flex items-start gap-4">
-                                                        <span className="shrink-0 w-6 h-6 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-600 text-xs">Q</span>
-                                                        {tQ || item.q || item.question}
-                                                    </h3>
-                                                    <div className="pl-10">
-                                                        <p className="text-sm text-slate-600 dark:text-slate-400 text-left leading-relaxed">{tA || item.a || item.answer}</p>
-                                                    </div>
+                                        {sFaq.map((item: any, idx: number) => (
+                                            <div key={idx} className="bg-white dark:bg-[#12141c] p-6 rounded-2xl border border-slate-200 dark:border-white/5 text-left group hover:border-amber-500/30 transition-all shadow-sm hover:shadow-md">
+                                                <h3 className="font-bold text-slate-900 dark:text-white mb-2 text-left flex items-start gap-4">
+                                                    <span className="shrink-0 w-6 h-6 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-600 text-xs">Q</span>
+                                                    {item.q || item.question}
+                                                </h3>
+                                                <div className="pl-10">
+                                                    <p className="text-sm text-slate-600 dark:text-slate-400 text-left leading-relaxed">{item.a || item.answer}</p>
                                                 </div>
-                                            );
-                                        })}
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             )}
@@ -392,8 +400,8 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
 
                                 <div className="relative z-10">
                                     <h2 className="text-3xl md:text-4xl font-black text-white uppercase mb-4 text-center tracking-tight">{t('Ready to Start?')}</h2>
-                                    <p className="text-slate-400 mb-aggregation-8 max-w-xl mx-auto text-base md:text-lg mb-10 leading-relaxed font-medium">
-                                        {t('Consult with our Board-certified specialists at M-Trust Urology for')} <span className="text-amber-500">{serviceName}</span>.
+                                    <p className="text-slate-400 max-w-xl mx-auto text-base md:text-lg mb-10 leading-relaxed font-medium">
+                                        {t('Consult with our Board-certified specialists at M-Trust Urology for')} <span className="text-amber-500">{sTitle}</span>.
                                     </p>
                                     <div className="flex flex-col sm:flex-row justify-center gap-4 text-left">
                                         <GradientButton onClick={() => router.push('/#contact')} className="px-10 py-4 h-14">{t('BOOK APPOINTMENT')}</GradientButton>

@@ -21,7 +21,7 @@ const AboutSection = () => {
                             {t("Center of Excellence in Urology & Men's Health")}
                         </p>
                         <div className="space-y-4 text-slate-500 dark:text-slate-400 text-base leading-relaxed font-medium text-left">
-                            <p>{t("M-Trust Urology Clinic is a leading specialized clinic providing a full spectrum of urology and men’s health services. We focus on diagnosing and treating urological diseases and restoring sexual performance through innovative medical solutions. Our clinic is powered by a team of expert urologists from top-tier medical institutions, ensuring every procedure meets international healthcare standards.")}</p>
+                            <p>{t("M-Trust Urology Clinic is a leading specialized clinic providing a full spectrum of urology and men's health services. We focus on diagnosing and treating urological diseases and restoring sexual performance through innovative medical solutions. Our clinic is powered by a team of expert urologists from top-tier medical institutions, ensuring every procedure meets international healthcare standards.")}</p>
                             <p>{t("We prioritize the utmost patient privacy and a confidential environment for all our clients. We combine clinical expertise with advanced technology to offer effective medical and surgical solutions. Whether it's diagnosis or complex surgery, our goal is to help you return to your daily life with total confidence.")}</p>
                         </div>
                         <Link href="/urologist/dr.niti">

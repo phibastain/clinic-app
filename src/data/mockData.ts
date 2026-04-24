@@ -1,3 +1,4 @@
+// Updated AR translations
 import {
   Zap, Activity, Trophy, Timer, Calendar, ShieldCheck, Smile, Infinity, Target, HeartPulse,
   Users, Droplets, Layers, Scissors, Search, Microscope, MonitorPlay, FileText, CheckCircle2,
@@ -71,20 +72,36 @@ export interface FaqItem {
 
 export interface ServiceDetailData {
   title: string;
+  titleAR?: string;
   tagline: string;
+  taglineAR?: string;
   description: string;
+  descriptionAR?: string;
   heroImage: string;
   whatIsIt?: { title: string; description: string; image?: string };
+  whatIsItAR?: { title: string; description: string };
   mechanismImageAspectRatio?: string;
   descriptionImage?: string;
   video?: { id: string; title: string } | null;
   stats?: ServiceStat[];
+  statsAR?: { label: string; value?: string }[];
   benefits: ServiceBenefit[];
+  benefitsAR?: { title: string; desc: string }[];
   comparison?: ComparisonData;
+  comparisonAR?: {
+    title: string;
+    subtitle: string;
+    headers: [string, string];
+    items: { feature: string; focus: string; radial: string }[];
+  };
   candidates?: string[];
+  candidatesAR?: string[];
   safety?: { title: string; content: string; icon: LucideIcon };
+  safetyAR?: { title: string; content: string };
   timeline?: TimelineData;
+  timelineAR?: { title: string; steps: { time: string; title: string; desc: string }[] };
   testPanels?: { title: string; items: string[]; icon: LucideIcon }[];
+  testPanelsAR?: { title: string; items: string[] }[];
   diseaseTable?: {
     title: string;
     subtitle: string;
@@ -99,8 +116,21 @@ export interface ServiceDetailData {
       }[];
     }[];
   };
+  diseaseTableAR?: {
+    title: string;
+    subtitle: string;
+    categories: {
+      category: string;
+      diseases: {
+        name: string;
+        symptoms: string;
+      }[];
+    }[];
+  };
   procedure: ProcedureStep[];
+  procedureAR?: { step: string; title: string; desc: string }[];
   faq: FaqItem[];
+  faqAR?: { q: string; a: string }[];
   hidePricing?: boolean;
 }
 
@@ -123,13 +153,21 @@ export interface ServiceItem {
 export interface Qualification {
   year: string;
   title: string;
+  titleTH?: string;
+  titleAR?: string;
   place: string;
+  placeTH?: string;
+  placeAR?: string;
 }
 
 export interface AwardData {
   year: string;
   title: string;
+  titleTH?: string;
+  titleAR?: string;
   issuer: string;
+  issuerTH?: string;
+  issuerAR?: string;
 }
 
 export interface DoctorVideo {
@@ -153,20 +191,26 @@ export interface DoctorData {
   id: number;
   name: string;
   nameTH?: string;
+  nameAR?: string;
   role: string;
   roleTH?: string;
+  roleAR?: string;
   image: string;
   expert: string;
   expertTH?: string;
+  expertAR?: string;
   hospital?: string;
   email?: string;
   website?: string;
   tagline?: string;
   taglineTH?: string;
+  taglineAR?: string;
   bio: string;
   bioTH?: string;
+  bioAR?: string;
   specialties: string[];
   specialtiesTH?: string[];
+  specialtiesAR?: string[];
   qualifications: Qualification[];
   awards: AwardData[];
   videos?: DoctorVideo[];
@@ -178,15 +222,22 @@ export interface DoctorData {
     type: 'header' | 'paragraph' | 'image' | 'list' | 'slider';
     content?: string;
     contentTH?: string;
+    contentAR?: string;
     items?: string[];
     itemsTH?: string[];
+    itemsAR?: string[];
     image?: string;
     images?: string[];
     caption?: string;
     captionTH?: string;
+    captionAR?: string;
   }[];
   specializedFocus?: string;
+  specializedFocusTH?: string;
+  specializedFocusAR?: string;
   surgicalExcellence?: string;
+  surgicalExcellenceTH?: string;
+  surgicalExcellenceAR?: string;
   hideTestimonials?: boolean;
   slug?: string;
 }
@@ -194,11 +245,14 @@ export interface DoctorData {
 export interface BlogPost {
   id: number;
   title: string;
+  titleAR?: string;
   excerpt: string;
+  excerptAR?: string;
   date: string;
   category: string;
   image: string;
   content?: string; // HTML string for rich content
+  contentAR?: string;
 }
 
 export interface EventData {
@@ -208,15 +262,22 @@ export interface EventData {
   year: string;
   title: string;
   titleTH?: string;
+  titleAR?: string;
   subtitle: string;
   subtitleTH?: string;
+  subtitleAR?: string;
   location: string;
   locationTH?: string;
+  locationAR?: string;
   time: string;
   description: string;
   descriptionTH?: string;
+  descriptionAR?: string;
   content?: string;
   contentTH?: string;
+  contentAR?: string;
+  excerpt?: string;
+  excerptAR?: string;
   image: string;
   category: string;
   slug?: string;
@@ -281,13 +342,20 @@ const Loop: React.FC<IconProps> = ({ className, size }) => React.createElement('
 export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
   'Focus Shockwave': {
     title: 'Focus Shockwave\n(Li-ESWT)',
+    titleAR: 'موجات الصدمة المركزة\n(Li-ESWT)',
     tagline: 'The Future of ED Treatment: Regenerate, Restore, Perform.',
+    taglineAR: 'مستقبل علاج ضعف الانتصاب: تجديد، استعادة، أداء.',
     whatIsIt: {
       title: 'What is Focus Shockwave (Li-ESWT)?',
       description: "Linear Focus Shockwave Therapy (Li-ESWT) is a revolutionary, non-invasive treatment for Erectile Dysfunction (ED). Unlike radial shockwaves that only reach the surface, **Linear Focus Shockwave** delivers high-frequency low-intensity acoustic waves deep into the penile tissue. This precise energy triggers a biological healing response, stimulating the growth of new blood vessels and rejuvenating existing ones without needles, surgery, or medication.",
       image: '/assets/image/services section/focus shockwave-p1/What is Focus Shockwave (Li-ESWT).webp'
     },
+    whatIsItAR: {
+      title: 'ما هي موجات الصدمة المركزة (Li-ESWT)؟',
+      description: 'العلاج بالموجات الصوتية المركزة الخطية (Li-ESWT) هو علاج ثوري غير جراحي لضعف الانتصاب. خلافاً للموجات الشعاعية التي تصل فقط إلى السطح، تخترق موجات الصدمة المركزة الخطية الأنسجة العميقة للقضيب بموجات صوتية منخفضة الشدة وعالية التركيز. تُحفّز هذه الطاقة الدقيقة استجابةً شفائية بيولوجية تُحفّز نمو أوعية دموية جديدة وتجدد القائم منها، دون إبر أو جراحة أو دواء.',
+    },
     description: "Our FDA-cleared technology utilizes **Low-Intensity Extracorporeal Shockwave Therapy (Li-ESWT)** to target the root cause of ED: poor blood flow. \n\n**The Clinical Mechanism of Action:**\n\n1. **Angiogenesis (New Vessel Formation):** The acoustic waves create micro-trauma at the cellular level, stimulating the release of angiogenic growth factors (e.g., VEGF, eNOS, PCNA). This process leads to the formation of new, healthy blood vessels, significantly increasing blood supply to the erectile tissue.\n\n2. **Breakdown of Micro-Plaque:** The focused energy helps dissolve micro-calcifications in existing blood vessels, clearing blockages that restrict blood flow.\n\n3. **Tissue Regeneration:** Li-ESWT promotes the recruitment of endogenous stem cells and rejuvenates nerve tissue, enhancing penile sensitivity and overall function.\n\nThe result is a long-term restoration of natural erectile function, allowing for spontaneous erections and improved sexual performance.",
+    descriptionAR: 'تستخدم تقنيتنا المعتمدة من FDA **العلاج بالموجات الصدمية خارج الجسم منخفضة الشدة (Li-ESWT)** لمعالجة السبب الجذري لضعف الانتصاب: ضعف تدفق الدم.\n\n**آلية العمل السريرية:**\n\n1. **تكوين أوعية دموية جديدة (Angiogenesis):** تُنشئ الموجات الصوتية صدمات دقيقة على المستوى الخلوي تُحفّز إفراز عوامل النمو الوعائية (VEGF، eNOS، PCNA). تُفضي هذه العملية إلى تكوين أوعية دموية جديدة وصحية، مما يزيد إمداد الدم للأنسجة الانتصابية بشكل ملحوظ.\n\n2. **تفتيت الرواسب الدقيقة:** تُساعد الطاقة المركزة في إذابة التكلسات الدقيقة داخل الأوعية الدموية، مما يزيل الانسدادات التي تُعيق تدفق الدم.\n\n3. **تجديد الأنسجة:** يُعزز Li-ESWT استقطاب الخلايا الجذعية الطبيعية ويجدد الأنسجة العصبية، مما يُحسّن حساسية القضيب والوظيفة الجنسية.\n\nالنتيجة: استعادة طويلة الأمد للوظيفة الانتصابية الطبيعية مع انتصابات تلقائية وأداء جنسي أفضل.',
     heroImage: '/assets/image/services section/focus shockwave-p1/focus shockwave hero.webp',
     descriptionImage: '/assets/image/services section/focus shockwave-p1/focus shockwave clinical mechanism.webp',
     video: { id: 'JmU9Wz5UARA', title: 'Mechanism of Action: Li-ESWT' },
@@ -297,10 +365,16 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: "Downtime", value: "0 Days", icon: Activity },
       { label: "Result Duration", value: "1-2 Years", icon: Calendar }
     ],
+    statsAR: [
+      { label: 'نجاح سريري' },
+      { label: 'وقت الجلسة' },
+      { label: 'فترة التعافي' },
+      { label: 'مدة النتائج' },
+    ],
     benefits: [
       { title: 'Curative Approach', desc: 'Treats the root cause (blood flow), not just symptoms.', icon: Activity },
       { title: '100% Non-Invasive', desc: 'No needles, no surgery, no medication required.', icon: ShieldCheck },
-      { title: 'Painless', desc: 'Pain-free treatment with no downtime. Lunch-break procedure.', icon: SmileIcon as any }, // Cast to any to avoid type mismatch with LucideIcon
+      { title: 'Painless', desc: 'Pain-free treatment with no downtime. Lunch-break procedure.', icon: SmileIcon as any },
       { title: 'Long-Term Results', desc: 'Effects can last 2+ years with maintenance.', icon: InfinityIcon as any }
     ],
     comparison: {
@@ -314,16 +388,37 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { feature: "Efficacy for ED", focus: "Gold Standard (Curative)", radial: "Limited / Supportive only", icon: Trophy }
       ]
     },
+    comparisonAR: {
+      title: 'لماذا موجات الصدمة المركزة أفضل؟',
+      subtitle: 'الموجات المركزة الخطية مقابل الموجات الشعاعية التقليدية',
+      headers: ['Li-ESWT (مركزة)', 'الموجة الشعاعية'],
+      items: [
+        { feature: 'انتشار الموجة', focus: 'اختراق عميق وموجه', radial: 'سطحي ومنتشر' },
+        { feature: 'كثافة الطاقة', focus: 'عالية وثابتة عند الهدف', radial: 'تتلاشى بسرعة' },
+        { feature: 'الهدف العلاجي', focus: 'تنشيط الأوعية (أوعية جديدة)', radial: 'استرخاء العضلات / الألم' },
+        { feature: 'الفعالية لضعف الانتصاب', focus: 'المعيار الذهبي (علاجي)', radial: 'محدود / داعم فقط' },
+      ],
+    },
     candidates: [
       "Men with mild to severe vasculogenic Erectile Dysfunction.",
       "Patients who do not respond well to oral medications (PDE5i).",
       "Men seeking a drug-free, surgery-free solution.",
-      "Patients with Peyronie’s Disease (Curvature) or Chronic Pelvic Pain."
+      "Patients with Peyronie's Disease (Curvature) or Chronic Pelvic Pain."
+    ],
+    candidatesAR: [
+      'الرجال الذين يعانون من ضعف انتصاب وعائي خفيف إلى شديد.',
+      'المرضى الذين لا يستجيبون جيداً للأدوية الفموية (PDE5i).',
+      'الرجال الراغبون في حل خالٍ من الأدوية والجراحة.',
+      'المرضى الذين يعانون من مرض بيروني (انحناء القضيب) أو آلام الحوض المزمنة.',
     ],
     safety: {
       title: "Safety & Side Effects",
       content: "Li-ESWT is FDA-cleared and one of the safest procedures in urology. There are virtually no significant side effects. Some patients may experience mild, temporary redness or tingling at the treatment site, which resolves within minutes.",
       icon: ShieldCheck
+    },
+    safetyAR: {
+      title: 'السلامة والآثار الجانبية',
+      content: 'العلاج بالموجات الصدمية المركزة (Li-ESWT) معتمد من FDA وهو من أكثر إجراءات المسالك البولية أماناً. الآثار الجانبية تكاد تكون معدومة. قد يلاحظ بعض المرضى احمراراً خفيفاً أو وخزاً في منطقة العلاج لدقائق قبل أن تختفي تلقائياً.',
     },
     timeline: {
       title: "Treatment Protocol & Results",
@@ -333,16 +428,35 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: "Month 3+", title: "Restoration", desc: "Peak clinical results. Spontaneous erections return. Effects sustain for 1-2 years." }
       ]
     },
+    timelineAR: {
+      title: 'بروتوكول العلاج والنتائج',
+      steps: [
+        { time: 'الأسبوع 1-3', title: 'التحفيز', desc: 'التحفيز الخلوي الأولي. تستيقظ الأوعية الدموية الخاملة.' },
+        { time: 'الأسبوع 4-6', title: 'التجديد', desc: 'ذروة تكوين الأوعية. تتشكل أوعية دموية جديدة. يتحسن تدفق الدم.' },
+        { time: 'الشهر 3+', title: 'الاستعادة', desc: 'أفضل نتيجة سريرية. عودة الانتصاب التلقائي. تستمر التأثيرات 1-2 سنة.' },
+      ],
+    },
     procedure: [
       { step: '01', title: 'Mapping', desc: 'Doctor identifies target areas along the penile shaft and crura.' },
       { step: '02', title: 'Application', desc: 'Gel is applied. The focus head delivers 10,000 shocks precisely.' },
       { step: '03', title: 'Complete', desc: 'Session ends in 30-40 mins. Resume normal activity immediately.' },
       { step: '04', title: 'Repeat', desc: 'Standard protocol: 3-6 sessions (1 time per week).' }
     ],
+    procedureAR: [
+      { step: '01', title: 'تحديد مناطق الهدف', desc: 'يُحدد الطبيب مناطق الهدف على طول جسم القضيب وجذوره.' },
+      { step: '02', title: 'تطبيق العلاج', desc: 'يُوضع جل التوصيل، ثم يُطبّق رأس التركيز 10,000 موجة بدقة.' },
+      { step: '03', title: 'اكتمال الجلسة', desc: 'تنتهي الجلسة في 30-40 دقيقة. يمكن استئناف الأنشطة العادية فوراً.' },
+      { step: '04', title: 'الجلسات المتكررة', desc: 'البروتوكول المعياري: 3-6 جلسات (مرة واحدة أسبوعياً).' },
+    ],
     faq: [
       { q: "How is Focus Shockwave better than Radial?", a: "Focus waves travel deeper and deliver energy exactly to the cavernous tissue to grow blood vessels. Radial waves only hit the skin surface and are meant for muscle pain, not ED cure." },
       { q: "When will I see results?", a: "Most patients begin to feel improvement starting from the very first session, with progressive results as they continue the treatment." },
       { q: "Is it painful?", a: "Not at all. It feels like a light tapping or vibration. No anesthesia is needed." }
+    ],
+    faqAR: [
+      { q: 'كيف تتفوق موجات الصدمة المركزة على الموجات الشعاعية؟', a: 'تخترق الموجات المركزة بعمق أكبر وتوصّل الطاقة مباشرةً إلى الأنسجة الكهفية لتنمية أوعية دموية جديدة. أما الموجات الشعاعية فتصل فقط إلى السطح وهي مخصصة لآلام العضلات، وليست علاجاً حقيقياً لضعف الانتصاب.' },
+      { q: 'متى سأشعر بالنتائج؟', a: 'يبدأ معظم المرضى بملاحظة تحسن منذ الجلسة الأولى، مع تقدم تدريجي في النتائج مع استمرار العلاج.' },
+      { q: 'هل العلاج مؤلم؟', a: 'لا إطلاقاً. يشعر المريض فقط بنقر خفيف أو اهتزاز دون الحاجة إلى أي تخدير.' },
     ],
     hidePricing: true
   },
@@ -368,14 +482,21 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
   },
   'PRP for ED': {
     title: 'Platelet-Rich Plasma (PRP) Therapy for ED',
+    titleAR: 'العلاج بالبلازما الغنية بالصفائح الدموية (PRP) لضعف الانتصاب',
     tagline: 'Advanced Urological PRP: Treat Erectile Dysfunction & Restore Sexual Performance.',
+    taglineAR: 'علاج PRP المتقدم: علاج ضعف الانتصاب واستعادة الأداء الجنسي الطبيعي.',
     whatIsIt: {
       title: 'What is PRP for ED?',
       description: "Platelet-Rich Plasma (PRP) Therapy is a cutting-edge regenerative treatment that harnesses the natural healing power of your own blood. By concentrating platelets—rich in bioactive proteins and growth factors—PRP therapy stimulates the body's repair mechanisms to rejuvenate penile tissue, enhance blood vessel formation, and restore sexual function naturally, without the need for synthetic drugs or surgery.",
       image: '/assets/image/services section/prp for ed/what is prp for ed.webp'
     },
+    whatIsItAR: {
+      title: 'ما هو علاج PRP لضعف الانتصاب؟',
+      description: 'العلاج بالبلازما الغنية بالصفائح الدموية (PRP) هو علاج تجديدي متطور يستغل القدرة الطبيعية للشفاء من دمك الخاص. من خلال تركيز الصفائح الدموية—الغنية بالبروتينات الحيوية وعوامل النمو—يُحفّز علاج PRP آليات الإصلاح الذاتي في الجسم لتجديد أنسجة القضيب، وتعزيز تكوين الأوعية الدموية، واستعادة الوظيفة الجنسية بشكل طبيعي دون أدوية اصطناعية أو جراحة.',
+    },
     mechanismImageAspectRatio: 'aspect-[9/16]',
     description: "PRP therapy functions by delivering a concentrated surge of specific growth factors directly into the penile tissue, triggering a cascade of biological regeneration.\n\n**The Clinical Mechanism of Action:**\n\n1. **Growth Factor Release:** Upon injection, platelets release alpha granules containing potent growth factors such as **VEGF** (Vascular Endothelial Growth Factor), **PDGF** (Platelet-Derived Growth Factor), and **TGF-β**. These proteins act as signaling molecules to initiate tissue repair.\n\n2. **Angiogenesis & Neovascularization:** The released growth factors stimulate the formation of new blood vessels and repair existing ones. This improved vascularity ensures sustained blood flow to the erectile tissue, which is essential for maintaining strong erections.\n\n3. **Cellular Regeneration & Collagen Synthesis:** PRP activates fibroblasts to produce new collagen and elastin, strengthening the penile structural integrity. It also recruits mesenchymal stem cells to the area, further accelerating tissue regeneration and rejuvenation.\n\n4. **Neurogenesis (Nerve Repair):** Research indicates PRP can aid in the repair of damaged nerve tissues, potentially enhancing penile sensitivity and neural response.",
+    descriptionAR: 'يعمل علاج PRP عن طريق إيصال جرعة مركزة من عوامل النمو المحددة مباشرةً إلى أنسجة القضيب، مما يُطلق سلسلة من التجديد البيولوجي.\n\n**آلية العمل السريرية:**\n\n1. **إطلاق عوامل النمو:** عند الحقن، تُطلق الصفائح الدموية حبيباتها الألفا التي تحتوي على عوامل نمو فعّالة مثل **VEGF** (عامل نمو البطانة الوعائية)، و**PDGF** (عامل نمو مشتق الصفائح)، و**TGF-β**. تعمل هذه البروتينات كإشارات لبدء إصلاح الأنسجة.\n\n2. **تكوين الأوعية الجديدة (Angiogenesis):** تُحفّز عوامل النمو المُطلقة تكوين أوعية دموية جديدة وإصلاح القائمة. يضمن هذا التحسن في الأوعية تدفقاً مستداماً للدم إلى الأنسجة الانتصابية.\n\n3. **تجديد الخلايا وتوليف الكولاجين:** ينشّط PRP الخلايا الليفية لإنتاج الكولاجين والإيلاستين، مما يُعزز البنية الداخلية للقضيب. كما يستقطب خلايا جذعية مسنشيمية لتسريع التجديد.\n\n4. **إعادة تكوين الأعصاب (Neurogenesis):** تُشير الأبحاث إلى أن PRP يُسهم في إصلاح الأنسجة العصبية التالفة، مما قد يُحسّن حساسية القضيب والاستجابة العصبية.',
     heroImage: '/assets/image/services section/prp for ed/prp for ed hero.webp',
     descriptionImage: '/assets/image/services section/prp for ed/prp for ed clinical mechanism.webp',
     video: null,
@@ -387,11 +508,25 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: "Month 3+", title: "Optimal Results", desc: "Penile tissue rejuvenation completes. Maximum enhancement in performance." }
       ]
     },
+    timelineAR: {
+      title: 'رحلة التجديد',
+      steps: [
+        { time: 'الأسبوع 1', title: 'التحفيز', desc: 'تبدأ عوامل النمو في إشارة إصلاح الأنسجة. يحتاج التعافي إلى الحد الأدنى.' },
+        { time: 'الأسبوع 4-8', title: 'توسع الأوعية', desc: 'يبلغ تكوين الشعيرات الدموية الجديدة ذروته. يُلاحظ تحسن في تدفق الدم.' },
+        { time: 'الشهر 3+', title: 'أفضل النتائج', desc: 'يكتمل تجديد أنسجة القضيب. الحد الأقصى من التحسن في الأداء الجنسي.' },
+      ],
+    },
     stats: [
       { label: "Success Rate", value: "70%+", icon: Trophy },
       { label: "Session Time", value: "30 Mins", icon: Timer },
       { label: "Recovery", value: "1 Day", icon: Activity },
       { label: "Duration", value: "12-18 Mo", icon: Calendar }
+    ],
+    statsAR: [
+      { label: 'معدل النجاح' },
+      { label: 'وقت الجلسة' },
+      { label: 'فترة التعافي' },
+      { label: 'مدة التأثير' },
     ],
     benefits: [
       { title: '100% Natural', desc: 'Uses your own platelets—no foreign substances or chemicals.', icon: Droplets },
@@ -405,10 +540,20 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       "Those who want to enhance results from Shockwave therapy.",
       "Men with Peyronie's Disease seeking tissue healing."
     ],
+    candidatesAR: [
+      'الرجال الذين يعانون من ضعف انتصاب وعائي خفيف إلى متوسط.',
+      'المرضى الباحثون عن خيار تجديدي طبيعي خالٍ من الأدوية.',
+      'من يرغب في تعزيز نتائج علاج موجات الصدمة.',
+      'الرجال المصابون بمرض بيروني الباحثون عن شفاء الأنسجة.',
+    ],
     safety: {
       title: "Safety & Side Effects",
       content: "PRP is extremely safe as it uses your own blood. Side effects are minimal—mild soreness or bruising at injection sites, which resolves within 24-48 hours. No risk of allergic reactions or rejection.",
       icon: ShieldCheck
+    },
+    safetyAR: {
+      title: 'السلامة والآثار الجانبية',
+      content: 'يُعدّ PRP آمناً للغاية لأنه يستخدم دمك الخاص. الآثار الجانبية ضئيلة—ألم خفيف أو كدمة في مواضع الحقن، تزول خلال 24-48 ساعة. لا يوجد خطر من ردود الفعل التحسسية أو الرفض.',
     },
     procedure: [
       { step: '01', title: 'Blood Draw', desc: 'Small blood sample collected from your arm (similar to routine lab work).' },
@@ -416,23 +561,41 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '03', title: 'Injection', desc: 'PRP injected into specific areas of the penis using fine needles.' },
       { step: '04', title: 'Recovery', desc: 'Resume activities immediately. Full effects develop over 4-8 weeks.' }
     ],
+    procedureAR: [
+      { step: '01', title: 'سحب الدم', desc: 'تُؤخذ عينة دم صغيرة من ذراعك (مشابهة لفحص الدم الروتيني).' },
+      { step: '02', title: 'الطرد المركزي', desc: 'يُدار الدم بالطرد المركزي لتركيز الصفائح مع عوامل النمو.' },
+      { step: '03', title: 'الحقن', desc: 'يُحقن PRP في مناطق محددة من القضيب باستخدام إبر دقيقة.' },
+      { step: '04', title: 'التعافي', desc: 'يمكن استئناف الأنشطة فوراً. تتطور التأثيرات الكاملة خلال 4-8 أسابيع.' },
+    ],
     faq: [
       { q: "Is PRP painful?", a: "Local anesthetic cream is applied, so discomfort is minimal. Most men report only slight pressure during injection." },
       { q: "How many sessions do I need?", a: "Typically 1-3 sessions spaced 4-6 weeks apart for optimal results." },
       { q: "Can I combine PRP with Shockwave?", a: "Absolutely. Many clinics offer combined protocols for synergistic regenerative effects." }
     ],
+    faqAR: [
+      { q: 'هل علاج PRP مؤلم؟', a: 'يُطبّق كريم مخدر موضعي، لذا يكون الانزعاج ضئيلاً. يُفيد معظم الرجال بالشعور بضغط طفيف فقط أثناء الحقن.' },
+      { q: 'كم عدد الجلسات التي أحتاجها؟', a: 'عادةً 1-3 جلسات بفاصل 4-6 أسابيع للحصول على أفضل النتائج.' },
+      { q: 'هل يمكن دمج PRP مع موجات الصدمة؟', a: 'بالتأكيد. كثير من العيادات تقدم بروتوكولات مدمجة لنتائج تجديدية متكاملة.' },
+    ],
     hidePricing: true
   },
   'Stem Cell for ED': {
     title: 'Stem Cell Therapy for Erectile Dysfunction',
+    titleAR: 'العلاج بالخلايا الجذعية لضعف الانتصاب',
     tagline: 'Advanced Regenerative Medicine: Restore Function at the Cellular Level.',
+    taglineAR: 'الطب التجديدي المتقدم: استعادة الوظيفة على المستوى الخلوي.',
     whatIsIt: {
       title: 'What is Stem Cell Therapy for ED?',
       description: "Stem Cell Therapy for Erectile Dysfunction is the pinnacle of regenerative medicine. It utilizes Mesenchymal Stem Cells (MSCs)—potent biological shapeshifters—obtained from your own body (autologous) or ethically sourced umbilical cord tissue. These cells have the unique ability to differentiate into various cell types, directly repairing damaged tissues, blood vessels, and nerves to reverse the root causes of ED.",
       image: '/assets/image/services section/stem cell for ed/what is stem cell therapy for ed.webp'
     },
+    whatIsItAR: {
+      title: 'ما هو العلاج بالخلايا الجذعية لضعف الانتصاب؟',
+      description: 'العلاج بالخلايا الجذعية لضعف الانتصاب يعتبر قمة الطب التجديدي. يستخدم الخلايا الجذعية الوسيطة (MSCs) — وهي خلايا بيولوجية قوية قادرة على التكيف — يتم الحصول عليها من جسمك (ذاتي) أو من أنسجة الحبل السري المستخرجة أخلاقياً. تتمتع هذه الخلايا بقدرة فريدة على التمايز إلى أنواع مختلفة من الخلايا، مما يؤدي إلى إصلاح مباشر للأنسجة التالفة والأوعية الدموية والأعصاب لعكس الأسباب الجذرية لضعف الانتصاب.',
+    },
     mechanismImageAspectRatio: 'aspect-[9/16]',
     description: "Stem Cell Therapy goes beyond symptom management to structurally repair the penile tissue. The regenerative process involves sophisticated biological mechanisms:\n\n**The Clinical Mechanism of Action:**\n\n1. **Differentiation & Tissue Replacement:** Mesenchymal Stem Cells (MSCs) are multipotent, meaning they can transform into specific cell types needed for repair. In the penis, they differentiate into endothelial cells (lining blood vessels), smooth muscle cells, and cavernous tissue cells, physically replacing damaged structures.\n\n2. **Potent Paracrine Signaling:** The injected stem cells release a powerful cocktail of trophic factors and cytokines. This 'paracrine effect' signals the body's own dormant repair cells to wake up and start healing the surrounding tissue.\n\n3. **Angiogenesis (New Vessel Formation):** Stem cells secrete high levels of VEGF (Vascular Endothelial Growth Factor), driving the creation of extensive new capillary networks. This restores healthy blood flow, which is critical for achieving and maintaining rigid erections.\n\n4. **Neuroregeneration (Nerve Repair):** Unlike other treatments, stem cells have neurotrophic properties that can regenerate damaged nerves (e.g., from prostate surgery or diabetes), restoring penile sensitivity and the neural pathways required for erection.",
+    descriptionAR: 'يتجاوز العلاج بالخلايا الجذعية إدارة الأعراض ليقوم بإصلاح أنسجة القضيب هيكلياً. تتضمن العملية التجديدية آليات بيولوجية دقيقة:\n\n**آلية العمل السريرية:**\n\n1. **التمايز واستبدال الأنسجة:** الخلايا الجذعية الوسيطة (MSCs) متعددة القدرات، مما يعني قدرتها على التحول إلى أنواع محددة من الخلايا اللازمة للإصلاح. في القضيب، تتمايز إلى خلايا بطانية (مبطنة للأوعية الدموية)، وخلايا عضلية ملساء، وخلايا أنسجة كهفية، مما يستبدل الهياكل التالفة فعلياً.\n\n2. **تأثير الإشارات نظير الصماوي (Paracrine):** تفرز الخلايا الجذعية المحقونة مزيجاً قوياً من عوامل النمو والسيتوكينات. يرسل "التأثير نظير الصماوي" إشارات لخلايا الإصلاح الكامنة في الجسم للاستيقاظ وبدء شفاء الأنسجة المحيطة.\n\n3. **تكوين الأوعية الدموية (Angiogenesis):** تفرز الخلايا الجذعية مستويات عالية من عامل نمو بطانة الأوعية الدموية (VEGF)، مما يدفع نحو تكوين شبكات واسعة من الشعيرات الدموية الجديدة. ويستعيد هذا التدفق الدموي الصحي، وهو أمر بالغ الأهمية لتحقيق والحفاظ على انتصاب قوي.\n\n4. **تجديد الأعصاب (Neuroregeneration):** على عكس العلاجات الأخرى، تمتلك الخلايا الجذعية خصائص عصبية يمكنها تجديد الأعصاب التالفة (على سبيل المثال، من جراحة البروستاتا أو مرض السكري)، واستعادة حساسية القضيب والمسارات العصبية اللازمة للانتصاب.',
     heroImage: '/assets/image/services section/stem cell for ed/stem cell hero.webp',
     descriptionImage: '/assets/image/services section/stem cell for ed/stem cell clinical mechanism.webp',
     video: null,
@@ -441,6 +604,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: "Procedure", value: "45 Mins", icon: Timer },
       { label: "Downtime", value: "1-2 Days", icon: Activity },
       { label: "Effect Duration", value: "18-24 Mo", icon: Calendar }
+    ],
+    statsAR: [
+      { label: 'الفعالية' },
+      { label: 'وقت الإجراء' },
+      { label: 'فترة التعافي' },
+      { label: 'مدة التأثير' }
     ],
     benefits: [
       { title: 'Neuroregeneration', desc: 'Repairs nerve damage often underlying severe ED.', icon: Zap },
@@ -454,10 +623,20 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       "Diabetic patients with vascular and nerve impairment.",
       "Those seeking the most advanced regenerative option available."
     ],
+    candidatesAR: [
+      'الرجال الذين يعانون من ضعف انتصاب متوسط إلى شديد ولا يستجيبون للعلاج التقليدي.',
+      'المرضى بعد استئصال البروستاتا الذين يعانون من تلف الأعصاب.',
+      'مرضى السكري الذين يعانون من ضعف في الأوعية الدموية والأعصاب.',
+      'أولئك الذين يبحثون عن أحدث خيار تجديدي متاح.'
+    ],
     safety: {
       title: "Safety & Side Effects",
       content: "Stem cell therapy using autologous (your own) or ethically sourced mesenchymal stem cells is very safe. Minimal risk of immune reaction. Minor swelling or soreness may occur but resolves quickly.",
       icon: ShieldCheck
+    },
+    safetyAR: {
+      title: 'السلامة والآثار الجانبية',
+      content: 'يعتبر العلاج بالخلايا الجذعية باستخدام الخلايا الجذعية الوسيطة الذاتية (من جسمك) أو المستخرجة من مصادر أخلاقية آمناً للغاية. يوجد خطر ضئيل لرد فعل مناعي. قد يحدث تورم خفيف أو ألم بسيط ولكنه يزول بسرعة.',
     },
     timeline: {
       title: "Treatment Timeline",
@@ -467,27 +646,53 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: "Month 4+", title: "Peak Results", desc: "Maximum benefit achieved. Erectile function significantly restored." }
       ]
     },
+    timelineAR: {
+      title: 'الجدول الزمني للعلاج',
+      steps: [
+        { time: 'الأسبوع 1-4', title: 'اندماج الخلايا', desc: 'تبدأ الخلايا الجذعية في الاندماج في الأنسجة وإفراز عوامل النمو.' },
+        { time: 'الشهر 2-3', title: 'إعادة بناء الأنسجة', desc: 'تتكون أوعية دموية وأعصاب جديدة. تحسن تدريجي في الوظيفة.' },
+        { time: 'الشهر 4+', title: 'أفضل النتائج', desc: 'تحقيق أقصى فائدة. استعادة وظيفة الانتصاب بشكل ملحوظ.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Procurement & Quality Control', desc: 'Certified Mesenchymal Stem Cells (MSCs) are sourced from leading biotech labs to ensure the highest potency, sterility, and therapeutic grade.' },
       { step: '02', title: 'Safety & Sensitivity Testing', desc: 'Prior to the main procedure, we perform a mandatory allergy/sensitivity test to ensure zero adverse reactions and complete patient safety.' },
       { step: '03', title: 'Precision Penile Injection', desc: 'Under local anesthesia, the activated stem cells are precisely injected into the penile tissue to trigger vascular and nerve regeneration.' },
       { step: '04', title: 'Rapid Recovery', desc: 'A quick recovery phase (24-48 hours) follows, with the biological repair process continuing to enhance function over 3-6 months.' }
     ],
+    procedureAR: [
+      { step: '01', title: 'التوريد ومراقبة الجودة', desc: 'يتم توريد الخلايا الجذعية الوسيطة (MSCs) المعتمدة من مختبرات التكنولوجيا الحيوية الرائدة لضمان أعلى مستوى من الفعالية والتعقيم والدرجة العلاجية.' },
+      { step: '02', title: 'اختبار السلامة والحساسية', desc: 'قبل الإجراء الرئيسي، نقوم بإجراء اختبار إلزامي للحساسية لضمان عدم وجود أي تفاعلات غير مرغوب فيها وتأمين سلامة المريض بالكامل.' },
+      { step: '03', title: 'حقن القضيب بدقة', desc: 'تحت تأثير مخدر موضعي، يتم حقن الخلايا الجذعية النشطة بدقة في أنسجة القضيب لتحفيز تجديد الأوعية الدموية والأعصاب.' },
+      { step: '04', title: 'التعافي السريع', desc: 'تتبع ذلك مرحلة تعافي سريعة (24-48 ساعة)، مع استمرار عملية الإصلاح البيولوجي في تعزيز الوظيفة خلال 3-6 أشهر.' }
+    ],
     faq: [
       { q: "How is this different from PRP?", a: "Stem cells can differentiate into multiple cell types (nerves, blood vessels, muscle), while PRP primarily provides growth factors. Stem cell therapy is more comprehensive for severe ED." },
       { q: "Is it FDA-approved?", a: "Autologous stem cell therapies (using your own cells) are legal and widely practiced. Efficacy continues to be studied in clinical trials." },
       { q: "How long until I see results?", a: "Initial improvements may appear at 4-8 weeks, with peak benefits at 3-6 months." }
+    ],
+    faqAR: [
+      { q: 'كيف يختلف هذا عن علاج PRP؟', a: 'يمكن للخلايا الجذعية التمايز إلى أنواع متعددة من الخلايا (أعصاب، أوعية دموية، عضلات)، بينما يوفر PRP بشكل أساسي عوامل النمو. العلاج بالخلايا الجذعية أكثر شمولية لضعف الانتصاب الشديد.' },
+      { q: 'هل هو معتمد من إدارة الغذاء والدواء (FDA)؟', a: 'العلاجات باستخدام الخلايا الجذعية الذاتية (من خلاياك الخاصة) قانونية وتمارس على نطاق واسع. ولا تزال الفعالية قيد الدراسة في التجارب السريرية.' },
+      { q: 'كم من الوقت حتى تظهر النتائج؟', a: 'قد تظهر التحسينات الأولية في الفترة من 4-8 أسابيع، مع وصول الفوائد إلى ذروتها في 3-6 أشهر.' }
     ]
   },
   'Penile Implant': {
     title: 'Penile Prosthesis (Implant) Surgery',
+    titleAR: 'جراحة زراعة دعامة القضيب',
     tagline: 'The Definitive Surgical Solution for Severe Erectile Dysfunction Reliable, On-Demand Erections.',
+    taglineAR: 'الحل الجراحي النهائي لضعف الانتصاب الشديد: انتصاب موثوق عند الطلب.',
     whatIsIt: {
       title: 'What is a Penile Implant?',
       description: "A Penile Implant (or Penile Prosthesis) is a medical device surgically placed inside the penis to help men with severe Erectile Dysfunction (ED) achieve a firm erection for sexual intercourse. Widely regarded as the gold standard treatment when oral medications, injections, or other therapies are no longer effective, a penile implant offers a permanent and dependable solution that restores both spontaneity and sexual confidence.",
       image: '/assets/image/services section/penile implant/What is a Penile Implant.webp'
     },
+    whatIsItAR: {
+      title: 'ما هي دعامة القضيب؟',
+      description: 'دعامة القضيب هي جهاز طبي يُزرع جراحياً داخل القضيب لمساعدة الرجال الذين يعانون من ضعف انتصاب شديد على تحقيق انتصاب صلب للاستمتاع بحياة جنسية طبيعية. تُعتبر المعيار الذهبي عندما تفشل الأدوية أو الحقن، حيث توفر حلاً دائماً وموثوقاً يعيد الثقة والعفوية.',
+    },
     description: "A penile implant works by replacing damaged erectile tissue with medical-grade cylinders that replicate the natural erection process. There are two main types, each designed for different patient needs:\n\n**The Clinical Mechanism of Action:**\n\n1. **Inflatable Penile Implant (3-Piece):** This is the most popular option and closely mimics a natural erection. It consists of fluid-filled cylinders in the penis, a small pump in the scrotum, and a reservoir in the lower abdomen. Squeezing the pump transfers saline into the cylinders, producing a firm erection. A release valve allows the fluid to drain back, returning the penis to a soft, natural state.\n\n2. **Malleable (Semi-Rigid) Implant:** This device uses two flexible rods placed inside the penile shaft. The penis stays in a semi-rigid state and can be manually positioned — angled downward for daily comfort or upward for sexual activity. It's simpler and involves fewer mechanical components.\n\n**Why It Works:** Unlike medications that depend on blood flow, penile implants provide **mechanical support**, enabling a reliable erection virtually every time — regardless of underlying vascular or nerve conditions.",
+    descriptionAR: 'تعمل الدعامة عن طريق استبدال الأنسجة التالفة بأسطوانات طبية تحاكي عملية الانتصاب الطبيعية. هناك نوعان رئيسيان، مصممان لتلبية احتياجات المرضى المختلفة:\n\n**الآلية السريرية:**\n\n1. **الدعامة القابلة للنفخ (3 قطع):** الخيار الأكثر شيوعاً ويحاكي الانتصاب الطبيعي بشكل وثيق. تتكون من أسطوانات مليئة بالسائل في القضيب، ومضخة صغيرة في كيس الصفن، وخزان في أسفل البطن. يتيح الضغط على المضخة نقل السائل لإنتاج انتصاب صلب. ويسمح صمام التحرير بعودة القضيب لحالته الرخوة الطبيعية.\n\n2. **الدعامة المرنة (شبه الصلبة):** تستخدم قضيبين مرنين داخل القضيب. يبقى القضيب في حالة شبه صلبة ويمكن توجيهه يدوياً لأسفل للراحة أو لأعلى للنشاط الجنسي. مكوناتها أبسط ميكانيكياً.\n\n**لماذا تنجح:** على عكس الأدوية التي تعتمد على تدفق الدم، توفر الدعامات **دعماً ميكانيكياً** يُمكنك من الانتصاب الموثوق في كل مرة — بغض النظر عن الحالات الوعائية أو العصبية الكامنة.',
     heroImage: '/assets/image/services section/penile implant menu.webp',
     descriptionImage: '/assets/image/services section/penile implant/penile implant Clinical Mechanism.webp',
     video: { id: 'hfEGF_yT5sM', title: 'Penile Implant: How It Works' },
@@ -496,6 +701,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: "Surgery Time", value: "60-90 Min", icon: Timer },
       { label: "Hospital Stay", value: "1 Day", icon: Activity },
       { label: "Longevity", value: "15-20 Yrs", icon: Calendar }
+    ],
+    statsAR: [
+      { label: 'نسبة الرضا' },
+      { label: 'وقت الجراحة' },
+      { label: 'الإقامة بالمستشفى' },
+      { label: 'العمر الافتراضي' }
     ],
     benefits: [
       { title: 'Permanent Solution', desc: 'A single procedure that provides a lasting solution to erectile dysfunction.', icon: Infinity as any },
@@ -514,16 +725,37 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { feature: "Complexity", focus: "More components (pump, reservoir)", radial: "Simpler (2 rods only)", icon: Layers }
       ]
     },
+    comparisonAR: {
+      title: 'أنواع دعامات القضيب',
+      subtitle: 'الدعامات القابلة للنفخ مقابل المرنة',
+      headers: ['قابلة للنفخ (3 قطع)', 'مرنة (شبه صلبة)'],
+      items: [
+        { feature: 'المظهر الطبيعي', focus: 'رخوة تماماً عند التفريغ', radial: 'دائماً شبه صلبة' },
+        { feature: 'التحكم بالصلابة', focus: 'نفخ/تفريغ بالمضخة عند الطلب', radial: 'تُوجَّه لأعلى/لأسفل يدوياً' },
+        { feature: 'رضا الشريكة', focus: 'الأعلى (ملمس أكثر طبيعية)', radial: 'جيد (ملمس أقل طبيعية)' },
+        { feature: 'التعقيد', focus: 'مكونات أكثر (مضخة، خزان)', radial: 'أبسط (قضيبين فقط)' }
+      ]
+    },
     candidates: [
       "Men with severe ED who have not responded to medications, injections, or shockwave therapy.",
       "Patients with nerve damage after prostate surgery or other pelvic procedures.",
       "Those who want a reliable, on-demand solution without daily medication.",
       "Men looking for a long-term, one-time surgical solution to erectile dysfunction."
     ],
+    candidatesAR: [
+      'الرجال الذين يعانون من ضعف انتصاب شديد ولم يستجيبوا للأدوية، أو الحقن، أو موجات الصدمة.',
+      'المرضى الذين يعانون من تلف الأعصاب بعد جراحة البروستاتا.',
+      'من يرغب في حل موثوق عند الطلب بدون أدوية يومية.',
+      'الرجال الباحثون عن حل جراحي دائم لمرة واحدة لضعف الانتصاب.'
+    ],
     safety: {
       title: "Safety & Complications",
       content: "Modern penile implants have complication rates below 5%. Potential risks include infection (1-3%), mechanical issues (uncommon with current-generation devices), and erosion (very rare). Choosing an experienced urological surgeon with a high case volume significantly improves outcomes and reduces risk.",
       icon: ShieldCheck
+    },
+    safetyAR: {
+      title: 'السلامة والمضاعفات',
+      content: 'معدلات المضاعفات للدعامات الحديثة أقل من 5%. تشمل المخاطر المحتملة العدوى (1-3%)، والمشكلات الميكانيكية (نادرة في الأجهزة الحالية). يقلل اختيار جراح مسالك بولية خبير ذي كفاءة عالية بشكل كبير من المخاطر ويحسن النتائج.',
     },
     timeline: {
       title: "Recovery & Activation",
@@ -533,28 +765,54 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: "Month 3+", title: "Full Confidence", desc: "Complete comfort using the device. Spontaneity restored." }
       ]
     },
+    timelineAR: {
+      title: 'التعافي والتفعيل',
+      steps: [
+        { time: 'الأسبوع 1-2', title: 'الشفاء الوّلي', desc: 'شفاء الشقوق الجراحية الأولية. انزعاج يمكن التحكم فيه بالأدوية.' },
+        { time: 'الأسبوع 4-6', title: 'التفعيل', desc: 'أول جلسة تدريبية في العيادة لتعلم كيفية تشغيل الجهاز.' },
+        { time: 'الشهر 3+', title: 'الثقة الكاملة', desc: 'راحة تامة في استخدام الجهاز واستعادة العفوية.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Anesthesia', desc: 'General or spinal anesthesia. Small incision made (scrotal or infrapubic).' },
       { step: '02', title: 'Implantation', desc: 'Cylinders placed in penile shaft, pump in scrotum, reservoir in abdomen.' },
       { step: '03', title: 'Testing', desc: 'Device tested intraoperatively to ensure proper function.' },
       { step: '04', title: 'Recovery', desc: 'Overnight stay. Activate device after 4-6 weeks of healing.' }
     ],
+    procedureAR: [
+      { step: '01', title: 'التخدير', desc: 'تخدير عام أو نصفي. يتم عمل شق صغير (في كيس الصفن أو أسفل العانة).' },
+      { step: '02', title: 'الزراعة', desc: 'توضع الأسطوانات في القضيب، والمضخة في كيس الصفن، والخزان في البطن.' },
+      { step: '03', title: 'الاختبار', desc: 'يتم اختبار الجهاز أثناء العملية لضمان عمله بشكل سليم.' },
+      { step: '04', title: 'التعافي', desc: 'إقامة ليلة واحدة. تفعيل الجهاز بعد 4-6 أسابيع من الشفاء.' }
+    ],
     faq: [
       { q: "Will it look and feel natural?", a: "Yes. When deflated, a 3-piece inflatable implant is virtually undetectable — most partners cannot tell the difference from a natural erection." },
       { q: "Will I still be able to orgasm and ejaculate normally?", a: "Yes. The implant only restores firmness. Sensation, orgasm, and ejaculation remain completely unaffected." },
       { q: "How long does a penile implant last?", a: "Current-generation implants are designed to last 15 to 20 years. If needed, the device can be replaced with a straightforward revision surgery." }
+    ],
+    faqAR: [
+      { q: 'هل سيبدو مظهرها وملمسها طبيعياً؟', a: 'نعم. عند تفريغ الدعامة القابلة للنفخ، تكون غير قابلة للاكتشاف تقريباً — ولا تلاحظ معظم الشريكات فرقاً عن الانتصاب الطبيعي.' },
+      { q: 'هل سأظل قادراً على بلوغ النشوة والقذف بشكل طبيعي؟', a: 'نعم. الدعامة تستعيد الصلابة فقط. الإحساس، والنشوة، والقذف تظل طبيعية تماماً ودون تأثر.' },
+      { q: 'كم تدوم الدعامة؟', a: 'أجهزة الجيل الحالي مصممة لتستمر من 15 إلى 20 عاماً. وإذا لزم الأمر، يمكن استبدالها بجراحة بسيطة.' }
     ]
   },
   'Dorsal Neurectomy': {
     title: 'Dorsal Neurectomy for Premature Ejaculation',
+    titleAR: 'استئصال العصب الظهري لسرعة القذف',
     tagline: 'A Permanent Surgical Solution for Premature Ejaculation Regain Control and Extend Intimacy Naturally.',
+    taglineAR: 'حل جراحي دائم لسرعة القذف: استعد السيطرة وأطل فترة العلاقة الحميمية بشكل طبيعي.',
     whatIsIt: {
       title: 'What is Dorsal Neurectomy?',
       description: "Dorsal Neurectomy (DN) is a specialized surgical procedure recognized as one of the most effective permanent treatments for Primary Premature Ejaculation (PPE). It works by addressing the root cause of PE  penile hypersensitivity  through selective recalibration of the sensory nerves. This allows men to significantly extend their intravaginal ejaculatory latency time (IELT) and regain natural control during sexual activity.",
       image: '/assets/image/services section/dorsal neurectomy/What is Dorsal Neurectomy.webp'
     },
+    whatIsItAR: {
+      title: 'ما هو استئصال العصب الظهري؟',
+      description: 'استئصال العصب الظهري (DN) هو إجراء جراحي متخصص يُعد من أكثر العلاجات الدائمة فعالية لسرعة القذف الأولية (PPE). يعمل على معالجة السبب الجذري — فرط حساسية القضيب — من خلال إعادة معايرة انتقائية للأعصاب الحسية. يتيح ذلك للرجال زيادة وقت القذف المهبلي الكامن (IELT) بشكل كبير واستعادة السيطرة الطبيعية أثناء النشاط الجنسي.',
+    },
     // mechanismImageAspectRatio: 'aspect-[9/16]',
     description: "This procedure works at a neurological level to modulate the ejaculatory reflex. The goal is not to reduce pleasure, but to regulate the intensity of sensation so that ejaculation can be better controlled.\n\n**The Clinical Mechanism of Action:**\n\n1. **Targeted Nerve Identification and Selective Desensitization**: The surgeon carefully isolates the dorsal nerve bundle to identify the specific branches responsible for hypersensitivity. Using precision microsurgical instruments, a calculated portion of these peripheral nerve fibers is selectively divided. This reduces the excessive sensory input that triggers the rapid ejaculatory reflex.\n\n2. **Reflex Threshold Elevation:** By moderating the sensory signals, the biological 'trigger point' for ejaculation is raised. This means more stimulation and time are needed to reach the point of no return — giving you greater control.\n\n3. **Preservation of Function:** Importantly, the main nerve trunks remain intact. This ensures that normal tactile sensation, erection quality, and the ability to experience pleasure and orgasm are fully preserved. Only the *excess sensitivity* is addressed.",
+    descriptionAR: 'يعمل هذا الإجراء على المستوى العصبي لتعديل منعكس القذف. الهدف ليس تقليل المتعة، بل تنظيم شدة الإحساس بحيث يمكن التحكم في القذف بشكل أفضل.\n\n**الآلية السريرية:**\n\n1. **تحديد العصب المستهدف وتقليل الحساسية الانتقائي:** يعزل الجراح حزمة العصب الظهري بعناية لتحديد الفروع المحددة المسؤولة عن فرط الحساسية. باستخدام أدوات جراحية دقيقة، يتم قطع جزء محسوب من هذه الألياف العصبية المحيطية بشكل انتقائي. يقلل هذا من المدخلات الحسية المفرطة التي تحفز منعكس القذف السريع.\n\n2. **رفع عتبة المنعكس:** من خلال تعديل الإشارات الحسية، يتم رفع "نقطة التحفيز" البيولوجية للقذف. هذا يعني الحاجة إلى مزيد من التحفيز والوقت للوصول إلى نقطة اللاعودة — مما يمنحك سيطرة أكبر.\n\n3. **الحفاظ على الوظيفة:** الأهم من ذلك، تظل الجذوع العصبية الرئيسية سليمة. وهذا يضمن الحفاظ بالكامل على الإحساس اللمسي الطبيعي، وجودة الانتصاب، والقدرة على تجربة المتعة والنشوة. تتم معالجة *الحساسية الزائدة* فقط.',
     heroImage: '/assets/image/services section/dorsal neurectomy/dorsal neurectomy hero.webp',
     descriptionImage: '/assets/image/services section/dorsal neurectomy/dosal neurectomy clinical mechanism.webp',
     video: null,
@@ -563,6 +821,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: "Surgery Time", value: "45-60 Min", icon: Timer },
       { label: "Recovery", value: "2-3 Weeks", icon: Activity },
       { label: "Effect", value: "Permanent", icon: Infinity as any }
+    ],
+    statsAR: [
+      { label: 'معدل النجاح' },
+      { label: 'وقت الجراحة' },
+      { label: 'فترة التعافي' },
+      { label: 'التأثير' }
     ],
     benefits: [
       { title: 'Permanent Fix', desc: 'A single procedure — no need for lifelong medication or numbing sprays.', icon: Infinity as any },
@@ -576,10 +840,20 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       "Men looking for a permanent surgical solution without ongoing medication.",
       "Patients with IELT (Intravaginal Ejaculatory Latency Time) consistently under 1 minute."
     ],
+    candidatesAR: [
+      'الرجال الذين يعانون من سرعة قذف مدى الحياة (أولية) لم تستجب للعلاج السلوكي أو الدوائي.',
+      'الذين يعانون من فرط حساسية في القضيب مما يسبب فقدان السيطرة على القذف.',
+      'من يبحث عن حل جراحي دائم بدون أدوية مستمرة.',
+      'المرضى الذين يكون وقت القذف لديهم (IELT) باستمرار أقل من دقيقة واحدة.'
+    ],
     safety: {
       title: "Safety & Side Effects",
       content: "When performed by an experienced urological surgeon, complications are uncommon. Potential risks include temporary numbness at the glans (which typically resolves within weeks), infection (less than 2%), and in rare cases, mild changes in erectile sensation. The vast majority of patients retain normal sensation and full erectile function.",
       icon: ShieldCheck
+    },
+    safetyAR: {
+      title: 'السلامة والآثار الجانبية',
+      content: 'عندما يُجريها جراح مسالك بولية خبير، تكون المضاعفات غير شائعة. تشمل المخاطر المحتملة خدراً مؤقتاً في الحشفة (والذي يزول عادة في غضون أسابيع)، والعدوى (أقل من 2%)، وفي حالات نادرة، تغيرات خفيفة في الإحساس بالانتصاب. تحتفظ الغالبية العظمى من المرضى بإحساس طبيعي ووظيفة انتصاب كاملة.',
     },
     timeline: {
       title: "Recovery & Results",
@@ -589,27 +863,53 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: "Month 2-3", title: "Full Effect", desc: "Peak results achieved. IELT increases 3-5x baseline." }
       ]
     },
+    timelineAR: {
+      title: 'التعافي والنتائج',
+      steps: [
+        { time: 'الأسبوع 1-2', title: 'الشفاء الأولي', desc: 'يخف التورم. يُمنع النشاط الجنسي أثناء الشفاء.' },
+        { time: 'الأسبوع 3-4', title: 'الاستئناف التدريجي', desc: 'يمكن استئناف النشاط الجنسي. تنخفض الحساسية بشكل ملحوظ.' },
+        { time: 'الشهر 2-3', title: 'التأثير الكامل', desc: 'تحقيق أقصى النتائج. يزيد وقت القذف (IELT) بمقدار 3-5 أضعاف خط الأساس.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Anesthesia & Incision', desc: 'Local anesthesia is administered. A small surgical incision is made at the base of the penis near the pubic area.' },
       { step: '02', title: 'Nerve Identification', desc: 'The surgeon identifies and selectively cuts specific dorsal nerve branches to recalibrate sensitivity.' },
       { step: '03', title: 'Closure', desc: 'Incision closed with dissolvable sutures. Bandage applied.' },
       { step: '04', title: 'Follow-Up', desc: 'Healing monitored. Sexual activity resumes after 3-4 weeks.' }
     ],
+    procedureAR: [
+      { step: '01', title: 'التخدير والشق', desc: 'يُعطى التخدير الموضعي. يُصنع شق جراحي صغير في قاعدة القضيب بالقرب من منطقة العانة.' },
+      { step: '02', title: 'تحديد العصب', desc: 'يحدد الجراح ويقطع فروعاً منتقاة من العصب الظهري لإعادة ضبط الحساسية.' },
+      { step: '03', title: 'الإغلاق', desc: 'يُغلق الشق بخيوط قابلة للذوبان. تُوضع ضمادة.' },
+      { step: '04', title: 'المتابعة', desc: 'تتم متابعة الشفاء. يُستأنف النشاط الجنسي بعد 3-4 أسابيع.' }
+    ],
     faq: [
       { q: "Will I lose sensation completely?", a: "No. The procedure selectively targets only the specific nerve branches causing hypersensitivity. Enough sensation is preserved for full sexual pleasure — only the excess is reduced." },
       { q: "Is the result really permanent?", a: "Yes. Once the selected nerve fibers are divided, they do not regenerate in the same pattern. The results are long-lasting and do not require ongoing treatment." },
       { q: "Can dorsal neurectomy affect my erections?", a: "This is very rare. The dorsal sensory nerves primarily control sensation, not erection. An experienced surgeon ensures the motor and erectile nerve pathways are fully preserved." }
+    ],
+    faqAR: [
+      { q: 'هل سأفقد الإحساس تماماً؟', a: 'لا. يستهدف الإجراء بشكل انتقائي فروع العصب المحددة المسببة لفرط الحساسية. يُحفظ قدر كافٍ من الإحساس للمتعة الجنسية الكاملة — يتم التخلص فقط من الحساسية الزائدة.' },
+      { q: 'هل النتيجة دائمة حقاً؟', a: 'نعم. بمجرد قطع الألياف العصبية المحددة، فإنها لا تتجدد بنفس النمط. النتائج طويلة الأمد ولا تتطلب علاجاً مستمراً.' },
+      { q: 'هل يمكن أن يؤثر استئصال العصب الظهري على الانتصاب؟', a: 'هذا نادر جداً. الأعصاب الحسية الظهرية تتحكم بالأساس في الإحساس، وليس الانتصاب. يضمن الجراح الخبير الحفاظ الكامل على المسارات العصبية المسؤولة عن الانتصاب.' }
     ]
   },
   'Testosterone Replacement Therapy': {
     title: 'Testosterone Replacement Therapy (TRT)',
+    titleAR: 'العلاج ببدائل التستوستيرون (TRT)',
     tagline: 'Restore Your Energy, Libido, and Confidence — Medically Supervised Testosterone Optimization for Men.',
+    taglineAR: 'استعد طاقتك ورغبتك الجنسية وثقتك بنفسك — تحسين هرمون التستوستيرون للرجال تحت إشراف طبي.',
     whatIsIt: {
       title: 'What is Testosterone Replacement Therapy (TRT)?',
       description: "Testosterone Replacement Therapy (TRT) is a medically supervised treatment designed to restore testosterone levels in men with hypogonadism (clinically low testosterone). By bringing this essential hormone back to healthy physiological levels, TRT helps reverse symptoms like chronic fatigue, low libido, muscle loss, and mood changes — helping men regain their energy, mental clarity, and overall quality of life.",
       image: '/assets/image/services section/trt/what is testosterone replacement therapy.webp'
     },
+    whatIsItAR: {
+      title: 'ما هو العلاج ببدائل التستوستيرون (TRT)؟',
+      description: 'العلاج ببدائل التستوستيرون (TRT) هو علاج طبي مصمم لاستعادة مستويات التستوستيرون لدى الرجال الذين يعانون من قصور الغدد التناسلية (انخفاض التستوستيرون سريرياً). عبر إعادة هذا الهرمون الأساسي إلى المستويات الفسيولوجية الصحية، يساعد TRT في عكس أعراض مثل التعب المزمن، وانخفاض الرغبة الجنسية، وفقدان العضلات، وتقلبات المزاج — مما يساعد الرجال على استعادة طاقتهم ووضوحهم الذهني وجودة حياتهم بشكل عام.',
+    },
     description: "TRT works by introducing bioidentical testosterone into the body to bypass the body's failing production mechanisms. The most common and effective method is via intramuscular injection.\n\n**The Clinical Mechanism of Action:**\n\n1. **Depot Formulation & Sustained Release:** Testosterone is typically administered as an esterified compound (e.g., Testosterone Cypionate or Enanthate) injected into the muscle. This creates a 'depot' or reservoir in the muscle tissue, from which testosterone is slowly hydrolyzed and released into the bloodstream over several days, ensuring stable hormone levels.\n\n2. **Receptor Binding & Activation:** Once in the bloodstream, free testosterone binds to Androgen Receptors (AR) located in various tissues throughout the body, including muscle cells, bone marrow, and the brain.\n\n3. **Genomic Action (Protein Synthesis):** The testosterone-receptor complex moves into the cell nucleus and binds to specific DNA sequences. This triggers the transcription of genes responsible for anabolic processes—stimulating protein synthesis for muscle growth, increasing red blood cell production (erythropoiesis) for better oxygenation, and enhancing neurotransmitter activity for improved mood and libido.\n\n4. **Systemic Optimization:** This cascade of biological events leads to increased lean muscle mass, reduced adipose tissue (fat), improved bone density, and a profound restoration of sexual function and energy.",
+    descriptionAR: 'يعمل TRT عن طريق إدخال تستوستيرون مطابق حيوياً إلى الجسم لتجاوز آليات الإنتاج المتراجعة. الطريقة الأكثر شيوعاً وفعالية هي الحقن العضلي.\n\n**الآلية السريرية للعمل:**\n\n1. **تحضير المستودع والإصدار المستدام:** يُعطى التستوستيرون عادة كمركب مؤستر (أسترة) يُحقن في العضلة. يخلق هذا "مستودعاً" في النسيج العضلي، حيث يُحلل ويُطلق ببطء في مجرى الدم على مدى عدة أيام، مما يضمن مستويات هرمونية مستقرة.\n\n2. **الارتباط بالمستقبلات وتنشيطها:** بمجرد وصوله إلى مجرى الدم، يرتبط التستوستيرون الحر بمستقبلات الأندروجين (AR) الموجودة في أنسجة مختلفة، بما في ذلك خلايا العضلات ونخاع العظام والدماغ.\n\n3. **العمل الجيني (تخليق البروتين):** ينتقل مركب التستوستيرون والمستقبلات إلى نواة الخلية ويرتبط بتسلسلات محددة من الحمض النووي (DNA). يُحفز هذا العمليات الابتنائية — ويشجع تخليق البروتين لنمو العضلات، ويزيد من إنتاج خلايا الدم الحمراء لتحسين توصيل الأكسجين، ويعزز نشاط الناقلات العصبية لتحسين المزاج والرغبة.\n\n4. **التحسين الشامل للجسم:** تؤدي هذه السلسلة من الأحداث البيولوجية إلى زيادة كتلة العضلات، وانخفاض الأنسجة الدهنية (الدهون)، وتحسين كثافة العظام، واستعادة عميقة للوظيفة الجنسية والطاقة.',
     heroImage: '/assets/image/services section/trt/trt hero.webp',
     descriptionImage: '/assets/image/services section/trt/trt clinical mechanism.webp',
     video: null,
@@ -618,6 +918,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: "Time to Effect", value: "4-6 Weeks", icon: Timer },
       { label: "Treatment", value: "Ongoing", icon: Loop as any },
       { label: "Monitoring", value: "Every 3 Mo", icon: Calendar }
+    ],
+    statsAR: [
+      { label: 'تخفيف الأعراض' },
+      { label: 'وقت التأثير' },
+      { label: 'مدة العلاج' },
+      { label: 'المتابعة الطبية' }
     ],
     benefits: [
       { title: 'Restored Libido', desc: 'Significant improvement in sexual desire and performance.', icon: HeartPulse },
@@ -631,10 +937,20 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       "Age 30+ with unexplained decline in vitality.",
       "Those seeking medically supervised hormone optimization."
     ],
+    candidatesAR: [
+      'الرجال الذين ثبت لديهم انخفاض التستوستيرون بالتحاليل (أقل من 300 نانوغرام/ديسيلتر).',
+      'الأعراض: ضعف الرغبة الجنسية، التعب، فقدان العضلات، الاكتئاب، ضبابية الدماغ.',
+      'العمر 30+ مع تراجع غير مبرر في الحيوية والنشاط.',
+      'الذين يبحثون عن تحسين مستويات الهرمونات تحت إشراف طبي مدقق.'
+    ],
     safety: {
       title: "Safety & Monitoring",
       content: "TRT is safe when properly supervised by a specialist. Regular blood tests monitor testosterone, estradiol, hematocrit, and PSA levels. Possible side effects include polycythemia (elevated red blood cell count), acne, and potential cardiovascular considerations — all of which are manageable with proper medical oversight and dosage adjustment.",
       icon: ShieldCheck
+    },
+    safetyAR: {
+      title: 'السلامة والمتابعة الطبية',
+      content: 'العلاج TRT آمن عندما يتم تحت إشراف طبيب متخصص. تراقب اختبارات الدم الدورية مستويات التستوستيرون، والاستراديول، والهيماتوكريت، و PSA. قد تشمل الآثار الجانبية زيادة إنتاج خلايا الدم الحمراء، وحب الشباب — وكلها يمكن التحكم فيها من خلال الإشراف الطبي المناسب وتعديل الجرعات.',
     },
     timeline: {
       title: "TRT Response Timeline",
@@ -644,27 +960,53 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: "Month 3+", title: "Sustained Benefits", desc: "Full hormonal optimization. Quality of life significantly improved." }
       ]
     },
+    timelineAR: {
+      title: 'الجدول الزمني لنتائج TRT',
+      steps: [
+        { time: 'الأسبوع 2-4', title: 'التغيرات الأولية', desc: 'تحسن في الطاقة والمزاج. تبدأ الرغبة الجنسية في العودة.' },
+        { time: 'الأسبوع 6-12', title: 'التغيرات الجسدية', desc: 'تزداد كتلة العضلات، وتقل دهون الجسم. تبلغ الرغبة الجنسية ذروتها.' },
+        { time: 'الشهر 3+', title: 'الفوائد المستدامة', desc: 'تحسين هرموني كامل. تحسن ملحوظ في جودة الحياة بشكل عام.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Blood Testing', desc: 'Comprehensive panel: testosterone, LH, FSH, estradiol, PSA, CBC.' },
       { step: '02', title: 'Diagnosis', desc: 'Review results, symptoms, and medical history with specialist.' },
       { step: '03', title: 'Treatment Start', desc: 'Choose delivery method: injections, gels, or pellets. Begin protocol.' },
       { step: '04', title: 'Monitoring', desc: 'Regular follow-ups every 3-6 months to optimize dosage and monitor safety.' }
     ],
+    procedureAR: [
+      { step: '01', title: 'تحاليل الدم', desc: 'لوحة تحاليل شاملة تشمل التستوستيرون، LH، FSH، الاستراديول، PSA، وصورة الدم الكاملة.' },
+      { step: '02', title: 'التشخيص', desc: 'مراجعة النتائج والأعراض والتاريخ الطبي مع الأخصائي.' },
+      { step: '03', title: 'بدء العلاج', desc: 'اختيار طريقة توصيل الدواء (الحقن أو الجل أو الكبسولات) والبدء في بروتوكول العلاج.' },
+      { step: '04', title: 'المتابعة', desc: 'متابعة دورية كل 3-6 أشهر لضبط الجرعات المثالية وضمان السلامة.' }
+    ],
     faq: [
       { q: "Is TRT a lifelong treatment?", a: "For most men, TRT is an ongoing therapy. Stopping treatment typically causes testosterone levels to return to baseline. However, some patients may use it cyclically under careful medical supervision." },
       { q: "Does TRT increase the risk of prostate cancer?", a: "Current medical evidence does not show that TRT causes prostate cancer. However, PSA levels are regularly monitored as a standard safety precaution." },
       { q: "What is the best way to take testosterone?", a: "Injections (weekly or biweekly) are the most reliable and cost-effective option. Topical gels provide steady daily absorption but cost more. Pellets (implanted every 3-6 months) offer convenience but require a minor in-office procedure." }
+    ],
+    faqAR: [
+      { q: 'هل TRT علاجي مدى الحياة؟', a: 'للعديد من الرجال، يُعد TRT علاجاً مستمراً. التوقف عن العلاج يؤدي عادة إلى عودة مستويات التستوستيرون إلى خط الأساس. ومع ذلك، قد يستخدم بعض المرضى دورات علاجية تحت إشراف طبي دقيق.' },
+      { q: 'هل يزيد TRT من خطر الإصابة بسرطان البروستاتا؟', a: 'لا يظهر الدليل الطبي الحالي أن TRT يسبب سرطان البروستاتا. ومع ذلك، تتم مراقبة مستويات PSA بانتظام كإجراء احترازي قياسي لضمان السلامة.' },
+      { q: 'ما هي أفضل طريقة لأخذ التستوستيرون؟', a: 'تعتبر الحقن (أسبوعياً أو كل أسبوعين) هي الخيار الأكثر موثوقية وفعالية من حيث التكلفة. توفر الجل الموضعية امتصاصاً يومياً ثابتاً ولكن بتكلفة أعلى.' }
     ]
   },
   'ReZum': {
     title: 'ReZŪM Water Vapor Therapy for BPH',
+    titleAR: 'علاج تضخم البروستاتا بتقنية بخار الماء (ReZŪM)',
     tagline: 'Minimally Invasive BPH Treatment Relieve Enlarged Prostate Symptoms Without Surgery Using Steam Therapy.',
+    taglineAR: 'علاج طفيف التوغل لتضخم البروستاتا: تخفيف الأعراض دون جراحة باستخدام العلاج بالبخار.',
     whatIsIt: {
       title: 'What is ReZŪM Water Vapor Therapy?',
       description: "ReZŪM Water Vapor Therapy is a minimally invasive, FDA-cleared procedure that uses the natural thermal energy of sterile water vapor (steam) to treat Benign Prostatic Hyperplasia (BPH). By targeting and shrinking the obstructive prostate tissue that causes urinary symptoms, ReZŪM provides lasting relief without the risks and long recovery associated with traditional prostate surgery.",
       image: '/assets/image/services section/rezum/What is ReZŪM Water Vapor Therapy.webp'
     },
+    whatIsItAR: {
+      title: 'ما هو العلاج بتقنية بخار الماء ReZŪM؟',
+      description: 'علاج ReZŪM هو إجراء طفيف التوغل معتمد من إدارة الغذاء والدواء الأمريكية (FDA)، يستخدم الطاقة الحرارية الطبيعية لبخار الماء المعقم لعلاج تضخم البروستاتا الحميد (BPH). من خلال استهداف وتقليص أنسجة البروستاتا المسدودة التي تسبب أعراضاً بولية، يوفر ReZŪM راحة دائمة دون المخاطر وفترة التعافي الطويلة المرتبطة بجراحة البروستاتا التقليدية.',
+    },
     description: "ReZŪM treats the enlarged prostate tissue using a precise delivery of thermal energy. The process is quick, effective, and preserves surrounding healthy tissue.\n\n**The Clinical Mechanism of Action:**\n\n1. **Quick Steam Delivery:** Sterile water vapor is injected directly into the prostate for just 9 seconds per treatment.\n\n2. **Targeted Tissue Removal:** The steam releases heat that instantly destroys the excess prostate tissue blocking the urethra, while safely preserving sexual function.\n\n3. **Natural Healing:** Over the next few weeks, your body naturally absorbs and clears away the treated tissue.\n\n4. **Fast BPH Relief:** As the prostate shrinks, the urethra opens up, significantly improving urinary flow and relieving bothersome urinary symptoms.",
+    descriptionAR: 'يعالج ReZŪM أنسجة البروستاتا المتضخمة باستخدام توصيل دقيق للطاقة الحرارية. العملية سريعة وفعالة وتحافظ على الأنسجة السليمة المحيطة.\n\n**الآلية السريرية للعمل:**\n\n1. **توصيل البخار السريع:** يُحقن بخار الماء المعقم مباشرة في البروستاتا لمدة 9 ثوانٍ فقط لكل جرعة.\n\n2. **إزالة الأنسجة المستهدفة:** يُطلق البخار حرارة تقضي فوراً على أنسجة البروستاتا الزائدة التي تسد مجرى البول، مع الحفاظ الآمن على الوظيفة الجنسية.\n\n3. **الشفاء الطبيعي:** على مدى الأسابيع القليلة التالية، يمتص جسمك ويتخلص من الأنسجة الميتة بشكل طبيعي.\n\n4. **تخفيف سريع للأعراض:** مع تقلص حجم البروستاتا، ينفتح مجرى البول، مما يحسن تدفق البول بشكل كبير ويخفف الأعراض البولية المزعجة.',
     heroImage: '/assets/image/services section/rezum/rezum hero.webp',
     descriptionImage: '/assets/image/services section/rezum/rezum clinical mechanism.webp',
     video: { id: 'w3lctJx4D2w', title: 'ReZŪM Water Vapor Therapy Explained' },
@@ -673,6 +1015,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: "Procedure Time", value: "15 Mins", icon: Timer },
       { label: "Recovery", value: "3-7 Days", icon: Activity },
       { label: "Result Duration", value: "5+ Years", icon: Calendar }
+    ],
+    statsAR: [
+      { label: 'معدل النجاح' },
+      { label: 'وقت الإجراء' },
+      { label: 'التعافي' },
+      { label: 'مدة النتائج' }
     ],
     benefits: [
       { title: 'Preserves Function', desc: 'No risk of erectile dysfunction or retrograde ejaculation.', icon: HeartPulse },
@@ -686,10 +1034,20 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       "Those unwilling to take daily BPH medications.",
       "Men prioritizing sexual function preservation."
     ],
+    candidatesAR: [
+      'الرجال الذين يعانون من أعراض BPH متوسطة إلى شديدة (كثرة التبول، ضعف تدفق البول).',
+      'حجم البروستاتا 30-80 سم مكعب.',
+      'المرضى الذين لا يرغبون في تناول أدوية البروستاتا اليومية.',
+      'الرجال الذين يضعون الحفاظ على الوظيفة الجنسية كأولوية.'
+    ],
     safety: {
       title: "Safety & Side Effects",
       content: "ReZŪM has an excellent safety profile and is FDA-cleared. Temporary side effects may include dysuria (discomfort during urination), traces of blood in the urine, or increased urgency for 1–2 weeks after the procedure. These typically resolve on their own. Importantly, ReZŪM preserves both erectile and ejaculatory function in the vast majority of patients.",
       icon: ShieldCheck
+    },
+    safetyAR: {
+      title: 'السلامة والآثار الجانبية',
+      content: 'يتمتع علاج ReZŪM بسجل أمان ممتاز ومصرح به من قبل الـ FDA. قد تشمل الآثار الجانبية المؤقتة عسر التبول (انزعاج أثناء التبول)، آثار دم في البول، أو زيادة الإلحاح لمدة 1-2 أسبوع بعد الإجراء. وتختفي هذه الأعراض عادةً من تلقاء نفسها. والأهم من ذلك، يحافظ ReZŪM على وظيفة الانتصاب والقذف في الغالبية العظمى من المرضى.',
     },
     timeline: {
       title: "Recovery Timeline",
@@ -699,27 +1057,53 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: "Month 3+", title: "Peak Results", desc: "Maximum benefit achieved. Sustained relief for years." }
       ]
     },
+    timelineAR: {
+      title: 'الجدول الزمني للتعافي',
+      steps: [
+        { time: 'اليوم 1-14', title: 'امتصاص الأنسجة', desc: 'يتم امتصاص الأنسجة الميتة. قد تحدث أعراض بولية مؤقتة.' },
+        { time: 'الأسبوع 2-4', title: 'تحسن الأعراض', desc: 'يبدأ تدفق البول في التحسن وتقل وتيرة التردد على الحمام.' },
+        { time: 'الشهر 3+', title: 'أفضل النتائج', desc: 'يتم الوصول إلى أقصى فائدة. راحة مستمرة تدوم لسنوات.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Anesthesia', desc: 'General anesthesia or deep sedation is administered to ensure complete patient comfort. The patient remains asleep throughout the procedure.' },
       { step: '02', title: 'Vapor Delivery', desc: 'Thin device inserted through urethra. Sterile steam injected into prostate.' },
       { step: '03', title: 'Cell Disruption', desc: 'Steam energy disrupts cells, which are naturally absorbed over weeks.' },
       { step: '04', title: 'Discharge', desc: 'Procedure ends. Catheter may be placed temporarily. Home same day.' }
     ],
+    procedureAR: [
+      { step: '01', title: 'التخدير', desc: 'يتم التخدير العام أو التسكين العميق لضمان راحة المريض تماماً بحيث يكون نائماً طوال العملية.' },
+      { step: '02', title: 'توصيل البخار', desc: 'إدخال أداة رفيعة عبر الإحليل ويتم حقن البخار المعقم إلى البروستاتا.' },
+      { step: '03', title: 'إتلاف الخلايا', desc: 'تعمل طاقة البخار على تفكيك الخلايا التي يمتصها الجسم بشكل طبيعي.' },
+      { step: '04', title: 'الخروج', desc: 'انتهاء الإجراء. قد يُركب قسطرة مؤقتة ويمكن العودة للمنزل في نفس اليوم.' }
+    ],
     faq: [
       { q: "Is the ReZŪM procedure painful?", a: "No. The procedure is performed under general anesthesia or deep sedation, so you will be asleep throughout and feel no discomfort at all." },
       { q: "Will ReZŪM affect my sexual function?", a: "ReZŪM preserves both erectile function and normal ejaculation in the vast majority of patients — a key advantage over traditional prostate surgery (TURP)." },
       { q: "How long do the results of ReZŪM last?", a: "Clinical studies demonstrate sustained symptom relief for at least 5 years, with many patients experiencing benefits well beyond that timeframe." }
+    ],
+    faqAR: [
+      { q: 'هل إجراء ReZŪM مؤلم؟', a: 'لا. يتم الإجراء تحت التخدير العام أو التسكين العميق، لذلك ستكون نائماً طوال الوقت ولن تشعر بأي ألم.' },
+      { q: 'هل سيؤثر ReZŪM على وظيفتي الجنسية؟', a: 'يحافظ ReZŪM على وظيفة الانتصاب والقذف الطبيعي لدى الغالبية العظمى من المرضى — وهي ميزة رئيسية مقارنة بجراحات البروستاتا التقليدية.' },
+      { q: 'كم تدوم نتائج إجراء ReZŪM؟', a: 'تُظهر الدراسات السريرية تحسناً مستمراً في الأعراض لمدة تصل إلى 5 سنوات على الأقل، ويشعر العديد من المرضى بالتحسن الجيد لفترة أطول.' }
     ]
   },
   'UroLift': {
     title: 'UroLift® System for BPH',
+    titleAR: 'نظام UroLift® لتضخم البروستاتا',
     tagline: 'Treat Enlarged Prostate Without Cutting or Heating Immediate Relief with Zero Sexual Side Effects.',
+    taglineAR: 'عالج تضخم البروستاتا بدون جراحة أو حرارة: راحة فورية بلا آثار جانبية جنسية.',
     whatIsIt: {
       title: 'What is UroLift®?',
       description: "The UroLift® System is a minimally invasive treatment for Benign Prostatic Hyperplasia (BPH) that offers rapid symptom relief without cutting, heating, or removing prostate tissue. It uses tiny, permanent implants to lift and hold the enlarged prostate tissue so it no longer blocks the urethra, effectively 'opening the curtains' to restore normal urine flow.",
       image: '/assets/image/services section/urolift/What is UroLift.webp'
     },
+    whatIsItAR: {
+      title: 'ما هو نظام UroLift®؟',
+      description: 'نظام UroLift® هو علاج طفيف التوغل لتضخم البروستاتا (BPH) يوفر راحة سريعة من الأعراض دون قطع أو تسخين أو إزالة أنسجة البروستاتا. يستخدم غرسات صغيرة دائمة لرفع وشد أنسجة البروستاتا المتضخمة حتى لا تسد مجرى البول، كأنه "يفتح الستائر" لاستعادة التدفق الطبيعي للبول.',
+    },
     description: "UroLift is unique because it is the only BPH treatment that directly opens the urethra without ablating tissue. This mechanical approach ensures immediate results and zero risk to sexual function.\n\n**The Clinical Mechanism of Action:**\n\n1. **Transurethral Access:** The UroLift delivery device is inserted through the obstructed urethra to reach the enlarged prostate lobes. No incisions are made.\n\n2. **Mechanical Compression (Lifting):** The device compresses the lateral lobe of the prostate, pushing it away from the urethral channel. This creates an immediate opening.\n\n3. **Permanent Implantation:** A small, permanent UroLift implant is deployed. This implant acts like a suture or a 'curtain tie-back,' holding the prostate tissue in its compressed position.\n\n4. **Unobstructed Flow:** This process is repeated on each side (typically 4-6 implants total). The result is a visibly open continuous channel from the bladder neck to the verumontanum, allowing urine to flow freely again immediately after the procedure.",
+    descriptionAR: 'يُعد UroLift فريداً من نوعه لأنه العلاج الوحيد لـ BPH الذي يفتح مجرى البول مباشرة دون إتلاف الأنسجة. تضمن هذه الطريقة الميكانيكية نتائج فورية وبدون أي خطر على الوظيفة الجنسية.\n\n**الآلية السريرية للعمل:**\n\n1. **الوصول عبر الإحليل:** يتم إدخال أداة التوصيل عبر الإحليل المسدود للوصول إلى فصوص البروستاتا المتضخمة. بدون إجراء أي شقوق جراحية.\n\n2. **الضغط الميكانيكي (الرفع):** تضغط الأداة على الفص الجانبي للبروستاتا، وتدفعه بعيداً عن قناة مجرى البول. مما يخلق فتحة فورية.\n\n3. **الزرع الدائم:** يتم وضع غرسة UroLift صغيرة ودائمة. تعمل هذه الغرسة كـ "مشبك" أو "مثبت ستارة"، لتثبيت أنسجة البروستاتا في وضعها المضغوط بعيداً عن المجرى.\n\n4. **تدفق حر للبول:** تتكرر هذه العملية على كل جانب (عادةً 4-6 غرسات إجمالاً). النتيجة هي قناة مفتوحة بشكل مستمر وملحوظ، مما يسمح بتدفق البول بحرية مرة أخرى فوراً بعد الإجراء.',
     heroImage: '/assets/image/services section/urolift/urolift hero.webp',
     descriptionImage: '/assets/image/services section/urolift/urolift Clinical Mechanism.webp',
     video: { id: 'L-DXkEQaV1M', title: 'UroLift Procedure Animation' },
@@ -728,6 +1112,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: "Time", value: "10-15 Mins", icon: Timer },
       { label: "Recovery", value: "2-4 Days", icon: Activity },
       { label: "Sexual Function", value: "Preserved", icon: HeartPulse }
+    ],
+    statsAR: [
+      { label: 'تخفيف الأعراض' },
+      { label: 'الوقت' },
+      { label: 'التعافي' },
+      { label: 'الوظيفة الجنسية' }
     ],
     benefits: [
       { title: 'No Cutting/Heating', desc: 'Tissue is mechanically lifted, not destroyed. Minimally invasive.', icon: CheckCircle2 },
@@ -746,16 +1136,37 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { feature: "Anesthesia", focus: "General anesthesia", radial: "General/Spinal", icon: ShieldCheck }
       ]
     },
+    comparisonAR: {
+      title: 'نظام UroLift مقارنة بجراحة TURP التقليدية',
+      subtitle: 'تدخل طفيف مقابل استئصال مفتوح',
+      headers: ['UroLift', 'جراحة TURP'],
+      items: [
+        { feature: 'إزالة الأنسجة', focus: 'لا يوجد (يتم رفع الأنسجة فقط)', radial: 'يتم قطع وإزالة الأنسجة' },
+        { feature: 'خطر على الوظيفة الجنسية', focus: '0% (محفوظة بالكامل)', radial: '30-65% قذف مرتجع' },
+        { feature: 'فترة التعافي', focus: '2-4 أيام', radial: '2-6 أسابيع' },
+        { feature: 'التخدير', focus: 'تخدير عام', radial: 'تخدير عام / نصفي' }
+      ]
+    },
     candidates: [
       "Men with moderate BPH symptoms and prostate <80cc.",
       "Sexually active men prioritizing preservation of ejaculatory function.",
       "Those seeking rapid recovery and return to activity.",
       "Patients wanting a reversible, non-destructive option."
     ],
+    candidatesAR: [
+      'الرجال الذين يعانون من أعراض BPH متوسطة وحجم بروستاتا أقل من 80 مل/غرام.',
+      'الرجال النشطون جنسياً والذين يمنحون الأولوية للحفاظ على وظيفة القذف.',
+      'الذين يسعون لتعافي سريع والعودة للنشاط بسرعة.',
+      'المرضى الذين يريدون خياراً يمكن التراجع عنه ولا يتلف الأنسجة.'
+    ],
     safety: {
       title: "Safety Profile",
       content: "UroLift has an excellent safety profile. Mild, temporary side effects may include urgency, minor discomfort during urination, or traces of blood in the urine for a few days. In clinical trials, no cases of new-onset permanent erectile dysfunction or ejaculatory dysfunction were reported.",
       icon: ShieldCheck
+    },
+    safetyAR: {
+      title: 'مستوى السلامة',
+      content: 'يتمتع UroLift بسجل أمان ممتاز. قد تشمل الآثار الجانبية الخفيفة والمؤقتة الإلحاح، انزعاجاً بسيطاً أثناء التبول، أو آثار دم في البول لبضعة أيام. في التجارب السريرية، لم يُسجل أي حالات جديدة للإصابة بضعف الانتصاب الدائم أو خلل في القذف.',
     },
     timeline: {
       title: "UroLift Recovery Timeline",
@@ -765,27 +1176,53 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: "Month 1+", title: "Full Relief", desc: "Peak symptom relief achieved. Return to all activities including sexual function." }
       ]
     },
+    timelineAR: {
+      title: 'الجدول الزمني للتعافي من UroLift',
+      steps: [
+        { time: 'اليوم 1', title: 'الإجراء', desc: 'إجراء يستغرق 15 دقيقة. العودة للمنزل في نفس اليوم بدون قسطرة في معظم الحالات.' },
+        { time: 'اليوم 3-7', title: 'التحسن السريع', desc: 'تبدأ الأعراض البولية في التحسن بسرعة مع شفاء القناة.' },
+        { time: 'الشهر 1+', title: 'الراحة الكاملة', desc: 'تخفيف الأعراض لأقصى حد. العودة لجميع الأنشطة بما فيها الوظيفة الجنسية.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Cystoscopy', desc: 'Thin scope inserted through urethra under general anesthesia.' },
       { step: '02', title: 'Implant Placement', desc: 'Small UroLift implants placed to lift and compress obstructive tissue.' },
       { step: '03', title: 'Channel Opened', desc: 'Urinary channel widened immediately. Flow improved.' },
       { step: '04', title: 'Discharge', desc: 'Procedure complete in 10-15 minutes. Home same day.' }
     ],
+    procedureAR: [
+      { step: '01', title: 'تنظير المثانة', desc: 'يتم إدخال منظار رفيع عبر مجرى البول تحت التخدير العام.' },
+      { step: '02', title: 'وضع الغرسة', desc: 'يُوضع مشابك UroLift الدقيقة لرفع وضغط الأنسجة المسدودة.' },
+      { step: '03', title: 'فتح القناة', desc: 'يتسع مجرى البول على الفور. ويتحسن التدفق.' },
+      { step: '04', title: 'الخروج', desc: 'ينتهي الإجراء في غضون 10-15 دقيقة. العودة للمنزل في نفس اليوم.' }
+    ],
     faq: [
       { q: "How many UroLift implants are needed?", a: "Typically 4-6 implants, depending on the size and anatomy of the prostate. Your urologist will determine the optimal number during assessment." },
       { q: "Can UroLift implants be felt inside the body?", a: "No. The implants are very small and remain permanently embedded within the prostate tissue. Patients cannot feel them at all." },
       { q: "What if my prostate grows larger in the future?", a: "Additional UroLift implants can be placed, or the procedure can be combined with other BPH treatments. Since UroLift does not destroy tissue, all future treatment options remain available." }
+    ],
+    faqAR: [
+      { q: 'كم عدد غرسات UroLift المطلوبة؟', a: 'عادة من 4-6 غرسات، اعتماداً على حجم وتشريح البروستاتا. سيحدد طبيب المسالك البولية العدد الأمثل أثناء التقييم.' },
+      { q: 'هل يمكن الشعور بغرسات UroLift داخل الجسم؟', a: 'لا، الغرسات صغيرة جداً وتبقى مزروعة بشكل دائم داخل أنسجة البروستاتا. لا يمكن للمرضى الشعور بها على الإطلاق.' },
+      { q: 'ماذا لو زاد حجم البروستاتا في المستقبل؟', a: 'يمكن وضع غرسات UroLift إضافية، أو دمج الإجراء مع علاجات BPH الأخرى. نظراً لأن UroLift لا يتلف الأنسجة، تظل جميع خيارات العلاج المستقبلية متاحة.' }
     ]
   },
   'Sexually Transmitted Infection': {
     title: 'Confidential STI Screening & Treatment',
+    titleAR: 'فحص وعلاج الأمراض المنقولة جنسياً بسرية تامة',
     tagline: 'Comprehensive, Discreet Care for Sexual Health.',
+    taglineAR: 'رعاية شاملة وسرية لصحتك الجنسية.',
     whatIsIt: {
       title: 'What are Sexually Transmitted Infections (STIs)?',
       description: "Sexually Transmitted Infections (STIs) are infections passed from one person to another through sexual contact. They can be caused by bacteria, viruses, or parasites. Many STIs have no immediate symptoms, making regular screening essential for early detection, effective treatment, and the prevention of long-term health complications.",
       image: '/assets/image/services section/sexually transmitted infection menu.webp'
     },
+    whatIsItAR: {
+      title: 'ما هي الأمراض المنقولة جنسياً (STIs)؟',
+      description: 'الأمراض المنقولة جنسياً (STIs) هي عدوى تنتقل من شخص لآخر عبر الاتصال الجنسي. يمكن أن تسببها البكتيريا أو الفيروسات أو الطفيليات. العديد من هذه الأمراض لا تظهر لها أعراض فورية، مما يجعل الفحص الدوري أمراً بالغ الأهمية للاكتشاف المبكر، والعلاج الفعال، والوقاية من المضاعفات الصحية طويلة الأمد.'
+    },
     description: "Sexually Transmitted Diseases (STDs), also known as Sexually Transmitted Infections (STIs), are caused by bacterial, viral, or parasitic infections. A crucial fact to remember is that many STDs are asymptomatic in their early stages. This means an infected person can unknowingly transmit the infection to sexual partners.",
+    descriptionAR: 'الأمراض المنقولة جنسياً (STDs)، أو ما يُعرف بعدوى الأمراض المنقولة جنسياً (STIs)، تسببها البكتيريا أو الفيروسات أو الطفيليات. حقيقة حاسمة يجب تذكرها هي أن العديد من الأمراض المنقولة جنسياً تكون بدون أعراض في مراحلها المبكرة. هذا يعني أن الشخص المصاب قد ينقل العدوى للشركاء الجنسيين دون علمه.',
     heroImage: '/assets/image/services section/sexually transmitted infection menu.webp',
     video: null,
     timeline: {
@@ -794,6 +1231,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: "Day 1", title: "Consultation", desc: "Confidential interview and sample collection (blood/urine/swab)." },
         { time: "Day 2-3", title: "Lab Analysis", desc: "Samples processed in certified labs. Professional review of results." },
         { time: "Day 4+", title: "Follow-up", desc: "Results delivered. Immediate treatment and counseling provided if needed." }
+      ]
+    },
+    timelineAR: {
+      title: 'عملية الفحص والعلاج',
+      steps: [
+        { time: 'اليوم 1', title: 'الاستشارة', desc: 'مقابلة سرية وجمع العينات (دم / بول / مسحة).' },
+        { time: 'اليوم 2-3', title: 'تحليل المختبر', desc: 'معالجة العينات في مختبرات معتمدة. مراجعة احترافية للنتائج.' },
+        { time: 'اليوم 4+', title: 'المتابعة', desc: 'تسليم النتائج. توفير العلاج الفوري والاستشارة إذا لزم الأمر.' }
       ]
     },
     diseaseTable: {
@@ -858,6 +1303,55 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         }
       ]
     },
+    diseaseTableAR: {
+      title: 'دليل شامل للأمراض المنقولة جنسياً',
+      subtitle: 'الأنواع الشائعة والأعراض المبكرة',
+      categories: [
+        {
+          category: '1. أمراض جنسية بكتيرية (قابلة للشفاء)',
+          diseases: [
+            {
+              name: 'السيلان والكلاميديا',
+              symptoms: 'ألم عند التبول، إفرازات غير عادية من القضيب أو المهبل (غالباً ما تكون عكرة، صفراء، أو خضراء). قد تعاني النساء أيضاً من نزيف مهبلي غير طبيعي، ألم في الحوض، أو رائحة مهبلية قوية.'
+            },
+            {
+              name: 'الزهري',
+              symptoms: 'المرحلة الأولى: قرحة واحدة غير مؤلمة في مكان الإصابة. المرحلة الثانية: طفح جلدي (على باطن اليدين والقدمين)، حمى، وتضخم الغدد الليمفاوية. إذا ترك دون علاج، يمكن أن يسبب أضراراً لا رجعة فيها للجهاز العصبي والأعضاء الداخلية.'
+            }
+          ]
+        },
+        {
+          category: '2. أمراض جنسية فيروسية (قابلة للسيطرة)',
+          diseases: [
+            {
+              name: 'هربس الأعضاء التناسلية (HSV)',
+              symptoms: 'ظهور بثور أو تقرحات تسبب الحكة والألم في المنطقة التناسلية أو الشرج. عندما تنفجر البثور، تترك قروحاً سطحية. يمكن أن تتكرر النوبات، غالباً بسبب الإجهاد.'
+            },
+            {
+              name: 'الثآليل التناسلية (HPV)',
+              symptoms: 'نتوءات صغيرة بلون الجلد أو وردية في منطقة الأعضاء التناسلية أو الفخذين أو الشرج، قد تتخذ شكل القرنبيط. عادة غير مؤلمة ولكن يمكن أن تسبب حكة أو انزعاجاً.'
+            },
+            {
+              name: 'فيروس نقص المناعة البشرية (HIV)',
+              symptoms: 'خلال 2-4 أسابيع من التعرض: أعراض تشبه الأنفلونزا تشمل الحمى، التهاب الحلق، التعب، وتضخم الغدد الليمفاوية. غالباً ما تتبعها مرحلة كمون. بدون علاج (ART)، يدمر الفيروس جهاز المناعة تدريجياً.'
+            },
+            {
+              name: 'التهاب الكبد ب (HBV)',
+              symptoms: 'تعب مزمن، فقدان الشهية، غثيان، ألم في البطن (الربع العلوي الأيمن)، بول داكن، ويرقان (اصفرار الجلد وبياض العينين).'
+            }
+          ]
+        },
+        {
+          category: '3. أمراض طفيلية (قابلة للشفاء)',
+          diseases: [
+            {
+              name: 'داء المشعرات (Trichomoniasis)',
+              symptoms: 'النساء: إفرازات مهبلية رغوية صفراء وخضراء ذات رائحة قوية وكريهة، حكة مهبلية شديدة، وألم عند التبول. الرجال: لا تظهر أعراض غالباً ولكن قد يشعر بتهيج في الإحليل أو إفرازات خفيفة.'
+            }
+          ]
+        }
+      ]
+    },
     benefits: [
       { title: '100% Confidential', desc: 'Complete privacy. Results shared only with you.', icon: ShieldCheck },
       { title: 'Comprehensive Testing', desc: 'Screens for HIV, syphilis, gonorrhea, chlamydia, HPV, and more.', icon: Microscope },
@@ -870,10 +1364,20 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       "Those seeking routine sexual health screening.",
       "Partners of individuals diagnosed with an STI."
     ],
+    candidatesAR: [
+      'أي شخص لديه شركاء جنسيون جدد أو متعددون.',
+      'الأفراد الذين يعانون من أعراض (إفرازات، ألم، تقرحات، طفح جلدي).',
+      'أولئك الذين يسعون لفحص روتيني للصحة الجنسية.',
+      'شركاء الأشخاص الذين تم تشخيص إصابتهم بمرض منقول جنسياً.'
+    ],
     safety: {
       title: "Privacy & Confidentiality",
       content: "We adhere to the strictest confidentiality standards. All test results and treatments are private. We offer anonymous testing options if preferred.",
       icon: ShieldCheck
+    },
+    safetyAR: {
+      title: 'الخصوصية والسرية',
+      content: 'نحن نلتزم بأشد معايير السرية المطلقة. جميع نتائج الفحوصات والعلاجات خاصة جداً. كما نوفر خيارات الفحص المجهول (بدون اسم) إذا كنت تفضل ذلك.',
     },
     procedure: [
       { step: '01', title: 'Consultation', desc: 'Discuss symptoms, sexual history, and risk factors confidentially.' },
@@ -881,21 +1385,39 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '03', title: 'Diagnosis', desc: 'Results typically available within 24-72 hours (some rapid tests same-day).' },
       { step: '04', title: 'Treatment', desc: 'Antibiotics or antivirals prescribed. Partner notification and follow-up arranged.' }
     ],
+    procedureAR: [
+      { step: '01', title: 'الاستشارة', desc: 'مناقشة الأعراض، التاريخ الجنسي، وعوامل الخطر بسرية تامة.' },
+      { step: '02', title: 'إجراء الفحوصات', desc: 'يتم أخذ عينات دم أو بول أو مسحات بناءً على تقييم مستوى الخطر.' },
+      { step: '03', title: 'التشخيص', desc: 'النتائج تتوفر عادة خلال 24-72 ساعة (بعض الاختبارات السريعة تظهر في نفس اليوم).' },
+      { step: '04', title: 'العلاج', desc: 'صرف المضادات الحيوية أو مضادات الفيروسات. يتم ترتيب إبلاغ الشريك والمتابعة اللازمة.' }
+    ],
     faq: [
       { q: "Is testing painful?", a: "No. Most tests involve a simple blood draw or urine sample. Some may require a swab, which causes minimal discomfort." },
       { q: "How soon can I get results?", a: "Rapid HIV tests give results in 20 minutes. Other tests typically return within 24-72 hours." },
       { q: "Can STIs be cured?", a: "Many bacterial STIs (chlamydia, gonorrhea, syphilis) are curable with antibiotics. Viral STIs (HIV, herpes, HPV) are manageable but not curable." }
+    ],
+    faqAR: [
+      { q: 'هل الفحص مؤلم؟', a: 'لا، فمعظم الاختبارات تتضمن سحب دم بسيط أو عينة بول. القليل منها قد يتطلب مسحة بسيطة تسبب انزعاجاً خفيفاً جداً وكما يجب.' },
+      { q: 'متى سأحصل على النتائج؟', a: 'تظهر نتائج الاختبارات السريعة لفيروس نقص المناعة البشرية خلال 20 دقيقة. وتستغرق باقي الاختبارات عادة 24-72 ساعة.' },
+      { q: 'هل يمكن الشفاء من الأمراض المنقولة جنسياً؟', a: 'يمكن علاج العديد من الأمراض البكتيرية (مثل الكلاميديا، السيلان، والزهري) بالمضادات الحيوية. أما الأمراض الفيروسية (مثل فيروس نقص المناعة البشرية، الهربس، وفيروس الورم الحليمي) فيمكن السيطرة عليها وإدارتها طبياً لكنها لا تشفى تماماً.' }
     ]
   },
   'Stone Disease': {
     title: 'Kidney & Bladder Stone Treatment (Laser Lithotripsy)',
+    titleAR: 'علاج حصوات الكلى والمثانة (تفتيت الحصى بالليزر)',
     tagline: 'Advanced Holmium Laser Lithotripsy Minimally Invasive Kidney and Bladder Stone Removal Without Open Surgery.',
+    taglineAR: 'تفتيت حصى الكلى والمثانة بالليزر هولميوم المتقدم والتدخل الجراحي الطفيف بدون جراحة مفتوحة.',
     description: "Modern laser lithotripsy uses advanced Holmium lasers to fragment kidney and bladder stones into fine dust, which is then extracted or passed naturally. This minimally invasive approach eliminates the need for open surgery, offering rapid recovery and excellent success rates.",
+    descriptionAR: 'يستخدم تفتيت الحصى بالليزر الحديث أشعة ليزر هولميوم المتقدمة لتفتيت حصوات الكلى والمثانة إلى غبار ناعم، يتم استخراجه أو خروجه بشكل طبيعي. تقضي هذه الطريقة طفيفة التوغل على الحاجة إلى الجراحة المفتوحة، مما يوفر تعافياً سريعاً ومعدلات نجاح ممتازة.',
     heroImage: '/assets/image/services section/stone disease menu.webp',
     whatIsIt: {
       title: 'What is Laser Lithotripsy for Stone Disease?',
       description: "Laser lithotripsy is a minimally invasive surgical procedure used to treat stones in the kidney, ureter, or bladder. Using a thin, flexible scope (ureteroscope) passed through the body's natural openings, the urologist uses a Holmium laser to break stones into tiny fragments or fine dust all without making a single incision.",
       image: '/assets/image/services section/stone disease menu.webp'
+    },
+    whatIsItAR: {
+      title: 'ما هو تفتيت الحصى بالليزر؟',
+      description: 'تفتيت الحصى بالليزر هو إجراء جراحي طفيف التوغل يستخدم لعلاج حصوات الكلى أو الحالب أو المثانة. باستخدام منظار رفيع ومرن (منظار الحالب) يتم إمراره عبر الفتحات الطبيعية للجسم، يستخدم طبيب المسالك البولية ليزر هولميوم لتكسير الحصوات إلى شظايا صغيرة أو غبار ناعم، كل ذلك دون إجراء شق واحد.'
     },
     video: null,
     stats: [
@@ -903,6 +1425,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: "Surgery Time", value: "30-90 Mins", icon: Timer },
       { label: "Hospital Stay", value: "Same Day", icon: Activity },
       { label: "Recovery", value: "3-5 Days", icon: Calendar }
+    ],
+    statsAR: [
+      { label: 'معدل النجاح' },
+      { label: 'وقت الجراحة' },
+      { label: 'البقاء في المستشفى' },
+      { label: 'التعافي' }
     ],
     benefits: [
       { title: 'Minimally Invasive', desc: 'No incisions. Performed through natural urinary passages.', icon: Target },
@@ -916,16 +1444,32 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       "Individuals with stones that won't pass naturally.",
       "Patients seeking minimally invasive treatment over open surgery."
     ],
+    candidatesAR: [
+      'المرضى الذين يعانون من حصوات الكلى أو الحالب أكبر من 5 ملم.',
+      'أولئك الذين يعانون من ألم شديد، التهاب، أو انسداد.',
+      'الأفراد المصابون بحصوات لا تنزل بشكل طبيعي.',
+      'المرضى الذين يفضلون العلاج طفيف التوغل بدلاً من الجراحة المفتوحة.'
+    ],
     safety: {
       title: "Safety & Complications",
       content: "Laser lithotripsy has an excellent safety profile when performed by an experienced urologist. Minor risks include temporary hematuria (blood in urine), urinary urgency, or mild flank discomfort for a few days. Serious complications such as perforation or stricture are rare, occurring in fewer than 2% of cases.",
       icon: ShieldCheck
+    },
+    safetyAR: {
+      title: 'السلامة والمضاعفات المحتملة',
+      content: 'يتمتع تفتيت الحصى بالليزر بسجل أمان ممتاز عند إجرائه بواسطة طبيب مسالك بولية متمرس. قد تشمل المخاطر البسيطة بول دموي مؤقت (دم في البول)، إلحاح بولي، أو انزعاج خفيف في الجانب لبضعة أيام. المضاعفات الخطيرة مثل الثقب أو التضيق نادرة جداً.',
     },
     procedure: [
       { step: '01', title: 'Anesthesia', desc: 'General or spinal anesthesia. Patient asleep or numb from waist down.' },
       { step: '02', title: 'Ureteroscopy', desc: 'Flexible scope inserted through urethra, bladder, and up ureter to stone.' },
       { step: '03', title: 'Laser Fragmentation', desc: 'Holmium laser breaks stone into fine fragments. Pieces extracted or left to pass.' },
       { step: '04', title: 'Stent Placement', desc: 'Temporary ureteral stent may be placed to aid healing. Removed in 1-2 weeks.' }
+    ],
+    procedureAR: [
+      { step: '01', title: 'التخدير', desc: 'تخدير عام أو نصفي. المريض نائم أو خدران من الخصر إلى الأسفل.' },
+      { step: '02', title: 'تنظير الحالب', desc: 'إدخال منظار مرن عبر مجرى البول والمثانة وصولاً إلى مكان الحصوة.' },
+      { step: '03', title: 'تفتيت الحصى', desc: 'يقوم ليزر هولميوم بتكسير الحصوة إلى فتات ناعم يتم استخراجه أو يُترك لينزل مع البول.' },
+      { step: '04', title: 'تركيب الدعامة', desc: 'قد يتم وضع دعامة حالبية مؤقتة للمساعدة في الشفاء، وتُزال خلال أسبوع إلى أسبوعين.' }
     ],
     timeline: {
       title: "Recovery & Follow-up",
@@ -935,21 +1479,41 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: "Month 1", title: "Clearance Confirmation", desc: "Follow-up imaging to confirm stone-free status and ensure complete clearance." }
       ]
     },
+    timelineAR: {
+      title: 'مرحلة التعافي والمتابعة',
+      steps: [
+        { time: 'الأسبوع 1', title: 'خروج الفتات', desc: 'مرحلة التعافي الأولى. قد يخرج فتات الحصى مع البول. انزعاج خفيف.' },
+        { time: 'الأسبوع 2', title: 'إزالة الدعامة', desc: 'تتم إزالة الدعامة المؤقتة في زيارة للعيادة، لشعور سريع بالراحة.' },
+        { time: 'الشهر 1', title: 'تأكيد النظافة', desc: 'تصوير للمتابعة لتأكيد خلو المسالك من الحصوات تماماً.' }
+      ]
+    },
     faq: [
       { q: "Does laser lithotripsy require any incisions?", a: "No. The entire procedure is performed through the urethra using a thin scope. There are no external cuts or incisions." },
       { q: "Will I need a ureteral stent after the procedure?", a: "In many cases, yes. A temporary stent helps drainage and prevents swelling. It is removed during a brief office visit after 1–2 weeks." },
       { q: "Can all kidney stones be treated with laser lithotripsy?", a: "Most kidney and ureteral stones can be effectively treated with laser. Very large stones (over 3cm) may require a different approach such as PCNL (percutaneous nephrolithotomy)." }
+    ],
+    faqAR: [
+      { q: 'هل يتطلب إجراء تفتيت الحصى بالليزر أي شقوق؟', a: 'لا، الإجراء يتم بالكامل عبر مجرى البول باستخدام منظار رفيع، ولا توجد أي شقوق أو جروح خارجية.' },
+      { q: 'هل سأحتاج إلى دعامة حالبية بعد العملية؟', a: 'في كثير من الحالات، نعم. تساعد الدعامة المؤقتة في التصريف وتمنع التورم. وتتم إزالتها في زيارة سريعة للعيادة بعد 1-2 أسبوع.' },
+      { q: 'هل يمكن علاج جميع حصوات الكلى بالليزر؟', a: 'يمكن علاج معظم حصوات الكلى والحالب بفعالية بالليزر. الحصوات الكبيرة جداً (أكثر من 3 سم) قد تتطلب نهجاً مختلفاً.' }
     ]
   },
   'Urinary Symptoms': {
     title: 'Comprehensive Urinary Symptom Diagnosis & Management',
+    titleAR: 'التشخيص الشامل وعلاج أعراض المسالك البولية',
     tagline: 'Expert Diagnosis for Frequent Urination, Weak Stream, Urgency, Incontinence, and Painful Urination.',
+    taglineAR: 'تشخيص الخبراء للتبول المتكرر، ضعف التدفق، الإلحاح، سلس البول، والألم عند التبول.',
     description: "Urological conditions encompass a wide range of disorders affecting the urinary tract including the kidneys, ureters, bladder, and urethra in both men and women. In men, urology also covers reproductive organ and prostate health. Early detection and consulting a urologist are critical for effective treatment and preventing long-term complications.",
+    descriptionAR: 'تشمل حالات المسالك البولية مجموعة واسعة من الاضطرابات التي تؤثر على الكلى والحالبين والمثانة والإحليل لدى كل من الرجال والنساء. بالنسبة للرجال، يغطي طب المسالك البولية أيضًا صحة الأعضاء التناسلية والبروستاتا. يعتبر الاكتشاف المبكر واستشارة أخصائي أمراض المسالك البولية أمرًا بالغ الأهمية للعلاج الفعال وتجنب المضاعفات طويلة الأمد.',
     heroImage: '/assets/image/services section/Urinary Symptoms menu.webp',
     whatIsIt: {
       title: 'What are Common Urinary Symptoms?',
       description: "Urinary symptoms, also known as Lower Urinary Tract Symptoms (LUTS), include a range of issues such as frequent urination, urgency, weak stream, and nocturia. These symptoms can be caused by various conditions, including BPH, infections, or bladder issues. Understanding the root cause is the first step toward effective management and relief.",
       image: '/assets/image/services section/Urinary Symptoms menu.webp'
+    },
+    whatIsItAR: {
+      title: 'ما هي الأعراض البولية الشائعة؟',
+      description: 'تشمل الأعراض البولية أو ما يُعرف بأعراض المسالك البولية السفلية (LUTS) مجموعة من المشكلات مثل كثرة التبول، الإلحاح، ضعف التدفق، التبول الليلي وغيرها. يمكن أن تحدث بسبب تضخم البروستاتا أو الالتهابات أو مشاكل المثانة. فهم السبب الجذري هو الخطوة الأولى نحو الإدارة الفعالة.'
     },
     video: null,
     diseaseTable: {
@@ -1021,6 +1585,60 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         }
       ]
     },
+    diseaseTableAR: {
+      title: 'دليل شامل لأمراض المسالك البولية الشائعة',
+      subtitle: 'الأعراض المبكرة وعلامات التحذير',
+      categories: [
+        {
+          category: '1. التهابات المسالك البولية (UTIs)',
+          diseases: [
+            {
+              name: 'التهاب المثانة (Cystitis)',
+              symptoms: 'حاجة متكررة أو ملحة للتبول، ألم وحرقة أثناء التبول، انزعاج في الحوض، شعور بعدم إفراغ المثانة بشكل كامل، أو بول غائم أو به دم.'
+            },
+            {
+              name: 'التهاب الحويضة والكلية (Kidney Infection)',
+              symptoms: 'حمى عالية، قشعريرة شديدة، ألم حاد في الجانب أو الجزء العلوي من الظهر، غثيان وقيء، وغالبًا ما يرافق ذلك ألم أثناء التبول.'
+            }
+          ]
+        },
+        {
+          category: '2. حصوات المسالك البولية (Urolithiasis)',
+          diseases: [
+            {
+              name: 'حصوات الكلى والحالب',
+              symptoms: 'ألم شديد وحاد متقلب في الظهر أو الجانب (ألم الخاصرة) وقد يمتد إلى أسفل البطن أو الفخذين. من العلامات الأخرى: بول وردي أو أحمر أو بني، وخروج قطع حصى صغيرة أحياناً.'
+            },
+            {
+              name: 'حصوات المثانة',
+              symptoms: 'صعوبة في التبول، تقطع تدفق البول، ألم خفيف أسفل البطن، وتبول متكرر بكميات صغيرة.'
+            }
+          ]
+        },
+        {
+          category: '3. أمراض البروستاتا (صحة الرجال)',
+          diseases: [
+            {
+              name: 'تضخم البروستاتا الحميد (BPH)',
+              symptoms: 'ضعف تدفق البول، صعوبة في البدء بالتبول، الشعور بعدم إفراغ المثانة، كثرة التبول (خاصة في الليل)، وقطرات في نهاية التبول.'
+            },
+            {
+              name: 'سرطان البروستاتا',
+              symptoms: 'غالباً بدون أعراض في مراحله المبكرة. مع نمو الورم يمكن أن يسبب أعراضاً مشابهة لتضخم البروستاتا. المراحل المتقدمة قد تسبب ألماً عميقاً في الظهر أو الفخذين.'
+            }
+          ]
+        },
+        {
+          category: '4. حالات التحكم في المثانة',
+          diseases: [
+            {
+              name: 'فرط نشاط المثانة (OAB)',
+              symptoms: 'رغب مفاجئة لا يمكن السيطرة عليها للتبول قد تؤدي إلى تسرب البول اللاإرادي. غالباً ما يحتاج المريض للتبول أكثر من ثماني مرات خلال اليوم والاستيقاظ عدة مرات ليلاً، دون أي التهاب.'
+            }
+          ]
+        }
+      ]
+    },
     benefits: [
       { title: 'Comprehensive Evaluation', desc: 'Detailed history, physical exam, uroflowmetry, and imaging.', icon: Search },
       { title: 'Root Cause Diagnosis', desc: 'Identify underlying issues: BPH, infection, overactive bladder, neurogenic, etc.', icon: Microscope },
@@ -1033,6 +1651,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       "Patients suffering from urinary incontinence (leakage).",
       "Individuals with painful urination or pelvic discomfort."
     ],
+    candidatesAR: [
+      'الرجال الذين يعانون من كثرة التبول (أكثر من 8 مرات في اليوم).',
+      'الذين يعانون من الإلحاح البولي، زيادة التبول الليلي (أكثر من مرتين)، أو التدفق الضعيف.',
+      'المرضى الذين يعانون من سلس البول (التسرب).',
+      'الأشخاص الذين يعانون من ألم أثناء التبول أو انزعاج في منطقة الحوض.'
+    ],
     timeline: {
       title: "Diagnostic & Care Pathway",
       steps: [
@@ -1041,27 +1665,53 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: "Month 1+", title: "Management", desc: "Follow-up to assess symptom relief and adjust therapy for long-term control." }
       ]
     },
+    timelineAR: {
+      title: 'مسار التشخيص والرعاية',
+      steps: [
+        { time: 'اليوم 1', title: 'التقييم الأولي', desc: 'قياس تدفق البول، الموجات فوق الصوتية، وتقييم شامل للأعراض.' },
+        { time: 'أسبوع 1-2', title: 'العلاج المستهدف', desc: 'بدء خطة دوائية أو سلوكية بناءً على المسبب الرئيسي.' },
+        { time: 'شهر 1+', title: 'الإدارة', desc: 'متابعة لتقييم تحسن الأعراض وتعديل العلاج للسيطرة طويلة الأمد.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Detailed History', desc: 'Discuss symptom onset, severity, triggers, and impact on daily life.' },
       { step: '02', title: 'Physical Exam', desc: 'Abdominal and digital rectal exam to assess prostate and bladder.' },
       { step: '03', title: 'Diagnostics', desc: 'Uroflowmetry, post-void residual, urinalysis, and imaging as needed.' },
       { step: '04', title: 'Treatment Plan', desc: 'Address root cause with medications, lifestyle changes, or procedures.' }
     ],
+    procedureAR: [
+      { step: '01', title: 'تاريخ طبي مفصل', desc: 'مناقشة بداية الأعراض، شدتها، محفزاتها وتأثيرها على الحياة اليومية.' },
+      { step: '02', title: 'الفحص البدني', desc: 'فحص للبطن والمستقيم لتقييم البروستاتا والمثانة.' },
+      { step: '03', title: 'التشخيص', desc: 'قياس تدفق البول، فحص بول، تصوير، وتحديد كمية البول المتبقية في المثانة.' },
+      { step: '04', title: 'خطة العلاج', desc: 'معالجة السبب الجذري بالأدوية، تغيير نمط الحياة، أو الإجراءات الطبية.' }
+    ],
     faq: [
       { q: "What causes frequent urination in men?", a: "Common causes include BPH (enlarged prostate), overactive bladder (OAB), urinary tract infection (UTI), diabetes, or excessive fluid intake. A proper evaluation is needed to identify the specific cause." },
       { q: "Is urinary incontinence a normal part of aging?", a: "No. While urinary incontinence becomes more common with age, it is not inevitable and is often treatable with medication, behavioral therapy, or minimally invasive procedures." },
       { q: "What is uroflowmetry and how does it work?", a: "Uroflowmetry is a simple, non-invasive test that measures your urine flow rate and volume. You urinate into a special device that records the data, helping your urologist assess bladder and prostate function." }
+    ],
+    faqAR: [
+      { q: 'ما الذي يسبب كثرة التبول عند الرجال؟', a: 'الأسباب الشائعة تشمل تضخم البروستاتا (BPH)، فرط نشاط المثانة (OAB)، التهاب المسالك البولية (UTI)، السكري، أو الإفراط في شرب السوائل. التقييم السليم ضروري لتحديد السبب.' },
+      { q: 'هل سلس البول جزء طبيعي من الشيخوخة؟', a: 'لا، على الرغم من أن سلس البول يصبح أكثر شيوعاً مع تقدم العمر، إلا أنه ليس حتمياً وغالباً ما يكون قابلاً للعلاج بالأدوية، العلاج السلوكي، أو بإجراءات طفيفة التوغل.' },
+      { q: 'ما هو قياس تدفق البول (Uroflowmetry) وكيف يعمل؟', a: 'هو اختبار بسيط وغير جراحي يقيس معدل وحجم تدفق البول. تتبول ببساطة في جهاز خاص يسجل البيانات، مما يساعد الطبيب على تقييم وظيفة المثانة والبروستاتا.' }
     ]
   },
   'Circumcision': {
     title: 'Child & Adult Circumcision',
+    titleAR: 'ختان الأطفال والبالغين',
     tagline: 'Stapler and Standard Circumcision for Adults and Children Minimal Bleeding, Fast Recovery, and Clean Cosmetic Results.',
+    taglineAR: 'الختان بالدباسة (Stapler) والختان بالليزر للبالغين والأطفال مع نزيف أقل، تعافي سريع، ونتائج تجميلية نظيفة.',
     whatIsIt: {
       title: 'Types of Medical Circumcision: Stapler vs. Standard',
       description: "We offer two primary methods for circumcision, tailored to patient needs and age:\n\n1. **Stapler Circumcision (ZSR):** A modern, innovative technique using a disposable device that cuts and staples simultaneously. It offers a faster procedure (10-15 mins), minimal bleeding, and a superior cosmetic result with a smooth, even scar line.\n\n2. **Standard Circumcision (Conventional):** The traditional surgical method using manual excision and absorbable sutures. This technique allows for precise customization of foreskin removal and is suitable for all complex cases.",
       image: '/assets/image/services section/circumcision/Types of Medical Circumcision.webp'
     },
+    whatIsItAR: {
+      title: 'أنواع الختان الطبي: الدباسة مقابل الطريقة القياسية',
+      description: 'نقدم طريقتين أساسيتين للختان، مصممة خصيصاً لاحتياجات المريض وعمره:\n\n1. **الختان بالدباسة (ZSR):** تقنية حديثة ومبتكرة تستخدم جهازاً يقطع ويدبس في نفس الوقت. توفر عملية أسرع (10-15 دقيقة)، نزيف أقل، ونتيجة تجميلية ممتازة مع خط ندبة أملس ومتساوٍ.\n\n2. **الختان القياسي (التقليدي):** الطريقة الجراحية التقليدية باستخدام الاستئصال اليدوي والغرز القابلة للامتصاص. تسمح هذه التقنية بتخصيص دقيق لإزالة القلفة ومناسبة لجميع الحالات المعقدة.'
+    },
     description: "Circumcision is a common procedure performed for both medical and personal reasons. Understanding the indications and benefits can help you make an informed decision.\n\n**Indications: Why is Circumcision Necessary?**\n\n*   **Phimosis:** Inability to retract the foreskin, causing pain and hygiene issues.\n*   **Paraphimosis:** A urologic emergency where retracted foreskin becomes trapped behind the glans.\n*   **Recurrent Balanitis/Balanoposthitis:** Frequent infection and inflammation of the glans and foreskin.\n*   **Lichen Sclerosus:** A skin condition causing scarring and tightening of the foreskin.\n\n**Medical Benefits of Circumcision:**\n\n*   **Improved Hygiene:** Removes the area where smegma and bacteria accumulate, making cleaning easier.\n*   **Reduced Infection Risk:** Significantly lowers the risk of Urinary Tract Infections (UTIs) and Sexually Transmitted Infections (STIs), including HIV and HPV.\n*   **Cancer Prevention:** Lower risk of penile cancer and reduced cervical cancer risk in female partners.\n*   **Aesthetic Preference:** Many men prefer the cleaner look and feel.",
+    descriptionAR: 'الختان هو إجراء شائع يتم إجراؤه لأسباب طبية وشخصية. فهم الدواعي والفوائد يمكن أن يساعدك في اتخاذ قرار مستنير.\n\n**دواعي الإجراء: لماذا الختان ضروري؟**\n\n* **الشبم (Phimosis):** عدم القدرة على سحب القلفة، مما يسبب ألماً ومشاكل في النظافة.\n* **الداء الدرهمي (Paraphimosis):** حالة طارئة في المسالك البولية حيث تعلق القلفة خلف الحشفة.\n* **التهاب الحشفة المتكرر:** عدوى والتهاب متكرر في الحشفة والقلفة.\n* **الحزاز المتصلب:** حالة جلدية تسبب تندب وشد القلفة.\n\n**الفوائد الطبية للختان:**\n\n* **نظافة أفضل:** يزيل المنطقة التي تتراكم فيها البكتيريا (اللخن)، مما يسهل التنظيف.\n* **تقليل خطر العدوى:** يقلل بشكل كبير من خطر التهابات المسالك البولية والأمراض المنقولة جنسياً.\n* **الوقاية من السرطان:** يقلل من خطر الإصابة بسرطان القضيب وسرطان عنق الرحم للزوجة.\n* **تفضيل جمالي:** يفضل العديد من الرجال المظهر والشعور الأنظف.',
     heroImage: '/assets/image/services section/circumcision/circumcision hero.webp',
     descriptionImage: '/assets/image/services section/circumcision/circumcision clinical mechanism.webp',
     video: null,
@@ -1070,6 +1720,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: "Procedure Time", value: "15 Mins", icon: Timer },
       { label: "Downtime", value: "7-10 Days", icon: Activity },
       { label: "Healing", value: "3-4 Weeks", icon: Calendar }
+    ],
+    statsAR: [
+      { label: 'الرضا' },
+      { label: 'وقت الإجراء' },
+      { label: 'فترة النقاهة' },
+      { label: 'الالتئام' }
     ],
     benefits: [
       { title: 'Fast & Precise', desc: '15-minute procedure with consistent, symmetrical results.', icon: Timer },
@@ -1083,10 +1739,20 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       "Those prioritizing cosmetic appearance and fast recovery.",
       "Patients wanting a modern, low-complication procedure."
     ],
+    candidatesAR: [
+      'الرجال البالغون الذين يفضلون شكلاً أكثر نظافة وراحة لتعزيز النظافة الشخصية.',
+      'الأفراد الذين يعانون من الشبم، حيث تضيق القلفة وتصعب الرؤية أو النظافة.',
+      'المصابون بالتهاب الحشفة أو التهابات القلفة المتكررة.',
+      'الآباء الذين يرغبون في ختان أطفالهم لأسباب صحية أو دينية أو وقائية.'
+    ],
     safety: {
       title: "Safety & Complications",
       content: "Stapler circumcision is very safe. Risks include minor bleeding, infection (<2%), or swelling. Serious complications are rare. Staples dissolve or fall off naturally within 2-3 weeks.",
       icon: ShieldCheck
+    },
+    safetyAR: {
+      title: 'السلامة والاحتياطات',
+      content: 'يعد الختان إجراءً آمناً جداً وعالي الكفاءة، ويزداد أمانه مع استخدام طريقة الدباسة الحديثة التي تقلل النزيف وفرص العدوى. يُجرى تحت التخدير الموضعي، وقد يحدث تورم طفيف كاستجابة طبيعية يزول خلال أيام قليلة.',
     },
     timeline: {
       title: "Recovery Timeline",
@@ -1096,27 +1762,53 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: "Week 4+", title: "Full Recovery", desc: "Sexual activity can resume. Final cosmetic result visible." }
       ]
     },
+    timelineAR: {
+      title: 'مراحل الشفاء المتوقعة',
+      steps: [
+        { time: 'اليوم 1-3', title: 'العناية الأولية', desc: 'راحة تامة مع العناية بالجرح وإبقائه جافاً، قد يتواجد تورم خفيف.' },
+        { time: 'أسبوع 1-2', title: 'تساقط الدبابيس', desc: 'تبدأ الدبابيس أو الخيوط بالتساقط تلقائياً، ويسمح بالاستحمام الطبيعي.' },
+        { time: 'شهر 1', title: 'الشفاء التام', desc: 'التعافي الكامل واستئناف الأنشطة بما فيها النشاط الجنسي بصورتها الطبيعية.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Anesthesia', desc: 'Local anesthesia (ring block). Patient remains awake, area is numb.' },
       { step: '02', title: 'Stapler Application', desc: 'Disposable stapler device cuts and staples foreskin in one motion.' },
       { step: '03', title: 'Hemostasis Check', desc: 'Bleeding controlled immediately via staples. Dressing applied.' },
       { step: '04', title: 'Discharge', desc: 'Patient goes home same day with care instructions.' }
     ],
+    procedureAR: [
+      { step: '01', title: 'التخدير', desc: 'استخدام تخدير موضعي لضمان راحة تامة وعدم الشعور بأي ألم خلال الإجراء.' },
+      { step: '02', title: 'القياس والتجهيز', desc: 'أخذ قياسات دقيقة لضمان تحديد الحجم المناسب للدباسة للحصول على نتيجة مثالية.' },
+      { step: '03', title: 'القطع والتدبيس', desc: 'يتم القطع والتدبيس بضغطة واحدة باستخدام تدبيسات دقيقة تسقط تلقائياً بعد الشفاء.' },
+      { step: '04', title: 'الانتهاء', desc: 'إجراء سريع يستغرق 15 دقيقة. يمكنك العودة إلى المنزل فوراً مع بعض التعليمات البسيطة للعناية.' }
+    ],
     faq: [
       { q: "Is circumcision painful?", a: "Minimal pain during and after. Local anesthesia ensures comfort throughout the procedure. Most men only need over-the-counter pain relievers for a few days afterward." },
       { q: "When can I resume sexual activity after circumcision?", a: "Typically after 4 weeks, once the area is fully healed. Your doctor will confirm during a follow-up visit." },
       { q: "Do the staples need to be removed after stapler circumcision?", a: "No. The titanium staples dissolve or fall off naturally within 2–3 weeks as the wound heals." }
+    ],
+    faqAR: [
+      { q: 'هل يمكنني العودة للعمل فوراً بعد إجراء الختان؟', a: 'ننصح براحة من يوم إلى يومين، لكن بإمكان أغلب المرضى العودة لمهامهم الخفيفة غير المجهدة في اليوم التالي.' },
+      { q: 'ما الفرق بين الختان بالليزر والختان بالدباسة؟', a: 'الليزر يستبدل المشرط بقطع حراري أكثر دقة ويحتاج لخياطة، بينما الدباسة توفر القطع والخياطة في خطوة واحدة لنتائج أسرع وأكثر تناسقاً.' },
+      { q: 'متى يمكنني العودة للنشاط الجنسي الطبيعي أو الرياضة؟', a: 'يُنصح بالانتظار وتجنب الأنشطة المجهدة والنشاط الجنسي حتى يلتئم الجرح تماماً، عادة ما يستغرق 3 إلى 4 أسابيع.' }
     ]
   },
   'Penile Enlargement': {
     title: 'Penile Girth Enhancement',
+    titleAR: 'تجميل القضيب (زيادة السُمك)',
     tagline: 'Non-Surgical Penile Girth Enhancement with HA Filler. Natural Feel, Fully Reversible.',
+    taglineAR: 'زيادة سُمك القضيب بدون جراحة باستخدام الفيلر (HA). ملمس طبيعي، وقابل للعكس تماماً.',
     whatIsIt: {
       title: 'What is Penile Girth Enhancement with Filler?',
       description: "Penile girth enhancement with dermal filler is a non-surgical medical procedure designed to increase the circumference (thickness) of the penis using Hyaluronic Acid (HA) fillers. Performed by a board-certified urologist, this method provides visible results without invasive surgery, general anesthesia, or lengthy recovery. It is a well-established option for men seeking to improve penile girth safely and with minimal downtime.",
       image: '/assets/image/services section/penile enlargement/What is Penile Enlargement with Filler.webp'
     },
+    whatIsItAR: {
+      title: 'ما هي عملية زيادة سُمك القضيب بالفيلر؟',
+      description: 'تجميل وزيادة سُمك القضيب باستخدام الفيلر الجلدي هو إجراء طبي غير جراحي يهدف إلى زيادة محيط (سُمك) القضيب باستخدام حقن حمض الهيالورونيك (HA). يتم تنفيذ هذا الإجراء بواسطة طبيب مسالك بولية معتمد، ويوفر نتائج ملحوظة بدون جراحة، أو تخدير عام، أو فترة تعافي طويلة. وهو خيار معروف للرجال الذين يسعون لتحسين سُمك القضيب بأمان وبأقل فترة نقاهة ممكنة.'
+    },
     description: "Hyaluronic Acid (HA) Filler\n\n1. **Non-Surgical Procedure**\nThe procedure involves injecting Hyaluronic Acid (HA) dermal filler into the subcutaneous layer of the penile shaft without any surgical incision.\n* **Key Advantage:** No incisions are made, so there is no visible scarring.\n* **Technique:** A blunt-tipped micro-cannula is used to distribute filler beneath the skin, which significantly reduces tissue trauma and minimizes the risk of infection.\n\n2. **Minimal Pain and Zero Downtime**\nDesigned for men who want effective results without disrupting their daily routine.\n* **Procedure Time:** The treatment takes approximately 30-45 minutes.\n* **Daily Life:** Patients can return to work and normal daily activities immediately after the procedure.\n* **Precaution:** Sexual activity should be avoided for approximately 4-7 days to allow the filler to settle properly.\n\n3. **Natural Look and Feel**\nHA filler provides a smooth, natural texture that blends seamlessly with existing tissue.\n* **Texture:** The filler material is soft and elastic, closely mimicking the feel of natural penile tissue.\n* **Appearance:** Even distribution ensures there are no hard lumps or unnatural irregularities.\n\n4. **Customizable Results**\nOne of the key advantages of filler-based enhancement is the flexibility to tailor results to individual preferences.\n* **Patient Control:** Patients can choose the volume of filler to achieve their desired level of girth enhancement.\n* **Future Touch-Ups:** Additional filler sessions can be scheduled in the future for those who want further enhancement.\n\n5. **Fully Reversible and Safe**\nHA fillers offer long-term peace of mind with a built-in safety mechanism.\n* **Reversibility:** If the patient is unsatisfied with the result or wishes to make adjustments, the filler can be completely dissolved using an enzyme called Hyaluronidase.\n* **Safety Standard:** The filler leaves no permanent residue or harmful substances in the body.",
+    descriptionAR: 'فيلر حمض الهيالورونيك (HA)\n\n1. **إجراء غير جراحي**\nيتضمن الإجراء حقن فيلر (HA) في الطبقة تحت الجلدية للقضيب دون أي شقوق جراحية.\n* **الميزة الرئيسية:** لا توجد جروح لذلك لا توجد ندبات مرئية.\n* **التقنية:** تُستخدم قنية دقيقة (Cannula) لتوزيع الفيلر تحت الجلد، مما يقلل بشكل كبير من صدمة الأنسجة وخطر العدوى.\n\n2. **ألم ضئيل وبدون فترة انقطاع**\nمصمم للرجال الذين يرغبون في نتائج فعالة دون تعطيل روتينهم اليومي.\n* **وقت الإجراء:** يستغرق العلاج حوالي 30-45 دقيقة.\n* **الحياة اليومية:** يمكن للمرضى العودة للعمل والأنشطة اليومية فوراً بعد الإجراء.\n* **الاحتياطات:** يجب تجنب النشاط الجنسي لمدة 4-7 أيام للسماح للفيلر بالاستقرار.\n\n3. **مظهر وملمس طبيعي**\nيوفر فيلر (HA) ملمساً ناعماً وطبيعياً يندمج بسلاسة مع الأنسجة.\n* **الملمس:** المادة مرنة وناعمة، تحاكي بشكل كبير شعور الأنسجة الطبيعية للقضيب.\n* **المظهر:** التوزيع المتساوي يضمن عدم وجود كتل صلبة أو شكل غير طبيعي.\n\n4. **نتائج قابلة للتخصيص**\nأحد أهم مزايا الفيلر هو المرونة في تخصيص النتائج حسب الرغبة الشخصية.\n* **تحكم المريض:** يمكن للمريض اختيار كمية الفيلر للوصول إلى الحجم المطلوب.\n* **تحسين مستقبلي:** يمكن جدولة جلسات إضافية في المستقبل للراغبين في زيادة إضافية.\n\n5. **آمن وقابل للعكس تماماً**\nحقن (HA) توفر راحة بال على المدى الطويل بفضل آلية أمان مدمجة.\n* **قابلية العكس:** في حال عدم الرضا عن النتيجة، يمكن إذابة الفيلر تماماً باستخدام إنزيم يسمى "هيالورونيداز".\n* **معايير الأمان:** لا يترك الفيلر أي بقايا دائمة أو مواد ضارة في الجسم.',
     heroImage: '/assets/image/services section/penile enlargement/penile enlargement hero.webp',
     descriptionImage: '/assets/image/services section/penile enlargement/penile enlargement clinical mechanism.webp',
     video: null,
@@ -1125,6 +1817,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: "Procedure Time", value: "30-45 Mins", icon: Timer },
       { label: "Downtime", value: "3-5 Days", icon: Activity },
       { label: "Duration", value: "12-24 Mo", icon: Calendar }
+    ],
+    statsAR: [
+      { label: 'زيادة السُمك' },
+      { label: 'وقت الإجراء' },
+      { label: 'فترة النقاهة' },
+      { label: 'المدة' }
     ],
     benefits: [
       { title: 'Immediate Results', desc: 'Visible increase in girth immediately after procedure.', icon: Zap },
@@ -1140,16 +1838,34 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: "Month 1+", title: "Final Result", desc: "Full girth enhancement visible. Natural feel and look achieved." }
       ]
     },
+    timelineAR: {
+      title: 'مراحل التكبير',
+      steps: [
+        { time: 'اليوم 1-3', title: 'الاستقرار', desc: 'قد يحدث تورم خفيف. يبدأ الفيلر في الاندماج مع الأنسجة.' },
+        { time: 'الأسبوع 2', title: 'استئناف النشاط', desc: 'يمكن عادةً العودة للنشاط الجنسي. يبدأ الشكل النهائي في الاستقرار.' },
+        { time: 'الشهر 1+', title: 'النتيجة النهائية', desc: 'اكتمال الزيادة بوضوح. مظهر وملمس طبيعي تماماً.' }
+      ]
+    },
     candidates: [
       "Men seeking enhanced girth for aesthetic or confidence reasons.",
       "Those with realistic expectations and good overall health.",
       "Patients wanting a non-surgical, reversible option (HA fillers).",
       "Individuals desiring more confidence in intimate situations."
     ],
+    candidatesAR: [
+      'الرجال الذين يسعون لزيادة السُمك لأسباب تجميلية أو لزيادة الثقة.',
+      'من لديهم توقعات واقعية وصحة عامة جيدة.',
+      'المرضى الراغبون في خيار غير جراحي وقابل للعكس (فيلر HA).',
+      'الأفراد التواقون لمزيد من الثقة في المواقف الحميمية.'
+    ],
     safety: {
       title: "Safety & Risks",
       content: "When performed by experienced specialists using medical-grade products, girth enhancement is safe. Risks include temporary swelling, bruising, asymmetry (rare), or nodules (very rare). HA fillers can be dissolved with Hyaluronidase if any issues arise.",
       icon: ShieldCheck
+    },
+    safetyAR: {
+      title: 'السلامة والمخاطر',
+      content: 'عند إجرائه بواسطة متخصصين ذوي خبرة باستخدام منتجات طبية معتمدة، يُعد العلاج آمناً جداً. المخاطر تشمل تورم مؤقت، كدمات، عدم تناسق (نادر)، أو عقيدات (نادر جداً). يمكن تذويب الفيلر إنزيمياً إذا لزم الأمر.',
     },
     procedure: [
       { step: '01', title: 'Consultation', desc: 'Discuss goals, examine anatomy, and select the appropriate filler.' },
@@ -1157,21 +1873,39 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '03', title: 'Injection', desc: 'Filler injected evenly along penile shaft using blunt micro-cannulas.' },
       { step: '04', title: 'Shaping', desc: 'Final contouring for smooth, even results. Post-care instructions provided.' }
     ],
+    procedureAR: [
+      { step: '01', title: 'الاستشارة', desc: 'مناقشة الأهداف المطلوبة، الفحص، واختيار نوع الفيلر المناسب.' },
+      { step: '02', title: 'التخدير', desc: 'استخدام كريم مخدر موضعي وتخدير العصب لضمان راحة تامة.' },
+      { step: '03', title: 'الحقن', desc: 'حقن الفيلر بالتساوي على طول القضيب باستخدام قنية دقيقة ومرنة.' },
+      { step: '04', title: 'التشكيل', desc: 'توزيع وتشكيل الفيلر للحصول على نتيجة ناعمة ومتناسقة. ثم تقديم إرشادات ما بعد الإجراء.' }
+    ],
     faq: [
       { q: "How long does penile filler last?", a: "HA fillers typically last 12-24 months depending on the product used and individual factors. The filler gradually dissolves naturally through the body's own metabolic processes, and the tissue returns to its pre-treatment state safely with no lasting residue." },
       { q: "Can I resume sexual activity after the procedure?", a: "Light, gentle activity may be possible after approximately 4-7 days. However, sexual intercourse and strenuous activities should be avoided for approximately 2-4 weeks to allow the filler to fully settle and the tissue to heal completely." },
       { q: "Will it look natural? Can others tell?", a: "When performed with proper technique by a qualified urologist, the results feel very close to natural tissue. There are no visible scars or obvious signs of the procedure." }
+    ],
+    faqAR: [
+      { q: 'كم يدوم الفيلر؟', a: 'يدوم فيلر (HA) عادة من 12 إلى 24 شهراً اعتماداً على نوع المنتج وعوامل فسيولوجية فردية. يذوب الفيلر تدريجياً بشكل طبيعي، وتعود الأنسجة لحالتها السابقة بأمان.' },
+      { q: 'متى يمكنني العودة للنشاط الجنسي؟', a: 'يمكن القيام بنشاط خفيف بعد 4-7 أيام. ومع ذلك، يُنصح بتجنب الجماع والأنشطة الشاقة لمدة 2-4 أسابيع للسماح للفيلر بالاستقرار التام والشفاء الكامل للأنسجة.' },
+      { q: 'هل سيبدو طبيعياً؟ هل يمكن للآخرين ملاحظة ذلك؟', a: 'عندما يُجرى بتقنية صحيحة، تكون النتائج قريبة جداً من الأنسجة الطبيعية. لا توجد ندبات ظاهرة أو علامات واضحة على الإجراء.' }
     ]
   },
   'Penile Lengthening': {
     title: 'Penile Lengthening Surgery',
+    titleAR: 'جراحة إطالة القضيب',
     tagline: 'Permanent Penile Lengthening via Suspensory Ligament Release Performed by Board-Certified Urologists. Proven Technique with Lasting Results.',
+    taglineAR: 'إطالة دائمة للقضيب عبر تحرير الرباط المعلق. إجراء موثوق من أطباء مسالك بولية معتمدين بنقاهة مستدامة.',
     whatIsIt: {
       title: 'What is Penile Lengthening Surgery?',
       description: "Penile lengthening surgery is a urological procedure designed to increase the visible length of the penis, primarily in its flaccid state. The most well-established technique involves releasing the suspensory ligament, which anchors the penis to the pubic bone. By releasing this ligament, the internal portion of the penile shaft is allowed to advance forward, resulting in a measurable and permanent increase in visible length. This procedure is performed by board-certified urologists and is suitable for men seeking a structural, long-term solution.",
       image: '/assets/image/services section/penile lengthenning/what is penile lengthening surgery.webp'
     },
+    whatIsItAR: {
+      title: 'ما هي جراحة إطالة القضيب؟',
+      description: 'جراحة إطالة القضيب هي إجراء في المسالك البولية يهدف إلى زيادة الطول المرئي للقضيب، وبشكل أساسي في حالة الارتخاء. تعتمد التقنية الأكثر رسوخاً على تحرير الرباط المعلق الذي يربط القضيب بعظم العانة. يتيح تحرير هذا الرباط تقدم الجزء الداخلي من القضيب للأمام، مما يؤدي إلى زيادة قابلة للقياس ودائمة في الطول المرئي. يُجرى هذا الإجراء بواسطة أطباء مسالك بولية معتمدين وهو مناسب للرجال الذين يسعون لحل هيكلي دائم.'
+    },
     description: "Suspensory ligament release is the most clinically established surgical method for achieving permanent penile lengthening. By addressing the anatomical attachment that keeps a portion of the penile shaft hidden internally, the surgeon can safely reveal length that is naturally present but concealed.\n\n**The Clinical Mechanism (Suspensory Ligament Release):**\n\n1. **Anatomical Basis:** Approximately 30–50% of the penile shaft is located internally, anchored to the pubic bone by the **suspensory ligament**. This ligament supports the upward angle during erection but also prevents the full length of the shaft from being visible externally.\n\n2. **Ligamentolysis (The Procedure):** Through a small, discreet incision in the pubic area, the surgeon carefully releases the suspensory ligament. This allows the internal shaft to extend forward, increasing the externally visible length of the penis.\n\n3. **Expected Results:** This technique typically yields a **2–4 cm gain** in flaccid length. The erection angle may shift slightly downward, but erectile function and penile sensation remain fully intact.\n\n4. **Post-Operative Care:** Regular massage and stretching are required for 3–6 months to prevent the ligament from reattaching or retracting to its original position, ensuring the full length gained from surgery is maintained.",
+    descriptionAR: 'يعتبر تحرير الرباط المعلق الطريقة الجراحية الأكثر رسوخاً سريرياً لتحقيق إطالة دائمة للقضيب. من خلال معالجة الارتباط التشريحي الذي يبقي جزءاً من القضيب مخفياً داخلياً، يمكن للجراح بأمان الكشف عن الطول الموجود طبيعياً ولكنه مخفي.\n\n**الآلية السريرية (تحرير الرباط المعلق):**\n\n1. **الأساس التشريحي:** يوجد حوالي 30-50% من القضيب داخلياً، متصلاً بعظم العانة بواسطة **الرباط المعلق**. يدعم هذا الرباط زاوية الانتصاب المتجهة لأعلى ولكنه في نفس الوقت يمنع ظهور كامل طول القضيب خارجياً.\n\n2. **تحلل الرباط (الإجراء الجراحي):** عبر شق صغير ومخفي في منطقة العانة، يقوم الجراح بتحرير الرباط المعلق بحذر. هذا يسمح للجزء الداخلي من القضيب بالامتداد للأمام، مما يزيد من الطول المرئي الخارجي للقضيب.\n\n3. **النتائج المتوقعة:** توفر هذه التقنية عادةً زيادة تتراوح بين **2-4 سم** في طول القضيب أثناء الارتخاء. قد تتجه زاوية الانتصاب للأسفل قليلاً، لكن وظيفة الانتصاب والإحساس يبقيان سليمين تماماً.\n\n4. **رعاية ما بعد الجراحة:** يتطلب الأمر تدليكاً وتمطيتاً منتظماً لمدة 3-6 أشهر لمنع الرباط من الالتصاق مجدداً، مما يضمن الحفاظ على الطول المكتسب.',
     heroImage: '/assets/image/services section/penile lengthenning/penile lengthenning hero.webp',
     descriptionImage: '/assets/image/services section/penile lengthenning/penile lengthenning clinical mechanism.webp',
     video: null,
@@ -1180,6 +1914,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: "Surgery Time", value: "45-60 Mins", icon: Timer },
       { label: "Recovery", value: "2-4 Weeks", icon: Activity },
       { label: "Full Results", value: "6-12 Mo", icon: Calendar }
+    ],
+    statsAR: [
+      { label: 'زيادة الطول' },
+      { label: 'وقت الجراحة' },
+      { label: 'التعافي' },
+      { label: 'النتائج النهائية' }
     ],
     benefits: [
       { title: 'Clinically Proven', desc: 'Suspensory ligament release is a well-established urological procedure with documented outcomes.', icon: Scissors },
@@ -1193,10 +1933,20 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       "Patients in good general health with no active infections or bleeding disorders.",
       "Individuals who prefer a permanent surgical solution over temporary non-surgical devices."
     ],
+    candidatesAR: [
+      'الرجال ذوي التوقعات الواقعية الذين يبحثون عن زيادة دائمة في الطول المرئي.',
+      'الملتزمون بروتين التدليك والتمطيط بعد الجراحة، وهو أمر بالغ الأهمية.',
+      'المرضى الذين يتمتعون بصحة عامة جيدة ولا يعانون من التهابات أو اضطرابات نزيف.',
+      'الأفراد الذين يفضلون حلاً جراحياً دائماً بدلاً من الأجهزة غير الجراحية المؤقتة.'
+    ],
     safety: {
       title: "Safety & Considerations",
       content: "When performed by an experienced urological surgeon, penile lengthening surgery is considered safe. Potential risks include mild scarring at the incision site, a slightly lower erection angle, temporary numbness, or modest gains that may not meet all expectations. Non-surgical traction therapy carries very low risk but requires discipline and consistent use over several months.",
       icon: ShieldCheck
+    },
+    safetyAR: {
+      title: 'السلامة والمضاعفات',
+      content: 'يعد تحرير الرباط المعلق إجراءً آمناً عند تنفيذه من قبل طبيب مسالك بولية خبير. تظل وظيفة الانتصاب والإحساس طبيعية (حيث لا يتأثر تدفق الدم أو الأعصاب). قد تشمل المضاعفات المحتملة: ألم مؤقت وتورم، احتمال التصاق الرباط إذا لم يتم الالتزام ببرنامج التمطيط، وتغيير طفيف في زاوية الانتصاب (أكثر انخفاضاً).',
     },
     timeline: {
       title: "Post-Op Recovery Timeline",
@@ -1206,27 +1956,53 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: "Month 6-12", title: "Final Results", desc: "The recovery routine is gradually tapered. The final length stabilizes and full cosmetic healing is achieved." }
       ]
     },
+    timelineAR: {
+      title: 'مسار التعافي والرعاية',
+      steps: [
+        { time: 'الأسبوع 1-2', title: 'التعافي الأولي', desc: 'تورم وانزعاج خفيف. التوقف عن العمل اليدوي الشاق والتدريب.' },
+        { time: 'الشهر 1', title: 'بدء التمطيط', desc: 'يتم البدء ببرنامج التمطيط والتدليك لمنع تندب وتقلص الرباط.' },
+        { time: 'الشهر 6', title: 'النتائج المستدامة', desc: 'استقرار الأنسجة بشكل نهائي مع تحقيق الطول المكتسب بالكامل واستئناف كل النشاطات.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Consultation & Planning', desc: 'Discuss your goals, review your anatomy, and determine the most appropriate surgical approach.' },
       { step: '02', title: 'Anesthesia & Incision', desc: 'Local or general anesthesia is administered. A small, discreet incision is made in the pubic area.' },
       { step: '03', title: 'Ligament Release', desc: 'The suspensory ligament is carefully released to allow the internal penile shaft to advance forward.' },
       { step: '04', title: 'Post-Op Care Plan', desc: 'A personalized massage and stretching plan is provided. Consistent daily practice for 3-6 months is critical for maintaining results.' }
     ],
+    procedureAR: [
+      { step: '01', title: 'التخدير', desc: 'يتم الإجراء تحت التخدير العام لضمان عدم الشعور بأي ألم وتسهيل دقة الجراحة.' },
+      { step: '02', title: 'الشق الجراحي', desc: 'إجراء شق مخفي صغير على شكل V أو Y في منطقة العانة مباشرة فوق قاعدة القضيب.' },
+      { step: '03', title: 'تحرير الرباط', desc: 'فصل الرباط المعلق بعناية مع الحفاظ التام على الأعصاب والأوعية الدموية بالأسفل.' },
+      { step: '04', title: 'الإغلاق والخروج', desc: 'إغلاق الشق بتقنية الخياطة التجميلية لمنع الانكماش. يمكن خروج المريض في نفس اليوم.' }
+    ],
     faq: [
       { q: "How much length can I expect to gain?", a: "Most patients achieve a 2-4 cm increase in visible flaccid length. Erect length gains are typically more modest (approximately 0.5-1.5 cm). Individual results depend on anatomy and adherence to the post-operative recovery routine." },
       { q: "Will the surgery affect my erection angle?", a: "The erection angle may shift slightly more forward or downward compared to before surgery. However, erectile function, rigidity, and sensation are not affected by the procedure." },
       { q: "Is post-operative massage and stretching necessary?", a: "Yes, regular massage and stretching are strongly recommended. Without consistent practice during the healing phase, scar tissue contraction may reduce or negate the length gained from surgery." }
+    ],
+    faqAR: [
+      { q: 'هل ستؤثر جراحة إطالة القضيب على الانتصاب أو الإحساس؟', a: 'لا، الإجراء يتضمن فقط تحرير الرباط المعلق. لا يتم المساس بالأعصاب، ولا بالأوعية الدموية، لذلك تبقى وظيفة الانتصاب كالمعتاد.' },
+      { q: 'هل سيزيد الطول أثناء الانتصاب أيضاً؟', a: 'تزيد الجراحة بشكل أساسي من الطول المرئي عندما يكون القضيب في حالة ارتخاء. الزيادة في طول الانتصاب تكون أقل وضوحاً، ولكن زاوية الانتصاب قد تصبح أقل ارتفاعاً.' },
+      { q: 'ما مدى أهمية رعاية ما بعد الجراحة (التمطيط)؟', a: 'حاسمة للغاية. إذا لم يلتزم المريض بنظام التمطيط المنتظم كما يوجه الطبيب، فقد تلتئم الأنسجة متراجعة إلى الخلف، مما يلغي الزيادة المكتسبة.' }
     ]
   },
   'Excision of penile Paraffinoma': {
     title: 'Excision of Penile Paraffinoma (Foreign Body Removal)',
+    titleAR: 'استئصال البارافينوما (إزالة المواد الغريبة المحقونة)',
     tagline: 'Surgical Removal of Injected Foreign Substances and Penile Reconstruction Performed by Experienced Reconstructive Urologists.',
+    taglineAR: 'إزالة جراحية للمواد الغريبة المحقونة وإعادة بناء القضيب، يتم إجراؤها بواسطة جراحي مسالك بولية وترميمية بخبرة عالية.',
     whatIsIt: {
       title: 'What is Penile Paraffinoma?',
       description: "Penile paraffinoma is a serious medical condition caused by the injection of non-medical grade foreign substances such as paraffin, liquid silicone, or olive oil into the penis in an attempt to increase size. The human body cannot absorb or break down these materials, which triggers a chronic foreign body reaction leading to hard lumps (granulomas), tissue deformity, chronic inflammation, and severe damage that requires surgical intervention by an experienced reconstructive urologist.",
       image: '/assets/image/services section/excision of penile paraffinoma menu.webp'
     },
+    whatIsItAR: {
+      title: 'ما هي البارافينوما في القضيب؟',
+      description: 'البارافينوما في القضيب هي حالة طبية خطيرة تنتج عن حقن مواد غريبة غير طبية مثل البارافين، السيليكون السائل، أو زيت الزيتون في القضيب في محاولة لزيادة حجمه. لا يستطيع جسم الإنسان امتصاص هذه المواد أو تكسيرها، مما يؤدي إلى رد فعل مزمن تجاه الجسم الغريب (التهاب متكرر)، وتكون كتل صلبة (أورام حبيبية)، وتشوه الأنسجة، وتلف شديد يتطلب تدخلاً جراحياً من قبل طبيب مسالك بولية وترميم خبير.'
+    },
     description: "### The Severe Dangers of Penile Foreign Body Injections: Symptoms and Risks\nInjecting unapproved foreign substances into the penis such as olive oil, paraffin, or liquid silicone is a critical medical emergency and one of the most common cases seen in reconstructive urology. The human body cannot absorb or break down these materials, which inevitably triggers a severe and destructive foreign body reaction.\n\n#### 1. Symptoms of Penile Paraffinoma (Foreign Body Reaction)\nSymptoms rarely appear immediately after injection. It can take months or even years for the body's immune system to initiate a foreign body reaction. Symptoms progress from early inflammatory signs to severe tissue destruction:\n\n**Early Stage (Onset of Inflammation):**\n\n*   **Penile Deformity:** The penis develops an irregular, asymmetrical, and distorted shape.\n*   **Hard Lumps (Granulomas):** Firm, bumpy nodules form under the skin, feeling highly unnatural to the touch.\n*   **Skin Discoloration:** The skin around the injection site becomes abnormally dark, red, or bruised.\n\n**Severe Stage (Advanced Tissue Destruction):**\n\n*   **Intense Pain and Inflammation:** Severe pain, swelling, redness, and localized heat — especially during erection.\n*   **Skin Rupture and Chronic Ulcers:** The penile skin progressively thins until it tears open, leading to non-healing wounds.\n*   **Infection and Discharge:** Foul-smelling pus or lymphatic fluid continuously oozes from the ruptured skin.\n*   **Substance Migration:** The injected material can migrate into the scrotum or pubic area, causing massive abnormal swelling.\n\n#### 2. Complications of Delayed Treatment\nIf left untreated, the consequences of penile paraffinoma can be catastrophic and may result in the loss of the organ:\n\n*   **Penile Necrosis (Tissue Death):** The foreign substance compresses blood vessels, cutting off blood supply. The tissue turns black and dies, potentially requiring partial or complete penile amputation.\n*   **Sepsis (Bloodstream Infection):** Open ulcers and necrotic tissue serve as a breeding ground for dangerous bacteria. If infection enters the bloodstream, it becomes a life-threatening emergency.\n*   **Permanent Erectile Dysfunction:** Severe inflammation creates dense scar tissue (fibrosis) that constricts the penile shaft and damages nerves, making erections physically impossible or extremely painful.\n*   **Urethral Stricture and Urinary Retention:** If the migrated substance compresses the urethra, it causes difficulty urinating, which can lead to backward pressure that damages the bladder and kidneys.\n*   **Increased Cancer Risk:** Prolonged chronic inflammation over many years significantly increases the risk of cellular mutation, potentially leading to skin cancer in the affected area.",
+    descriptionAR: 'يتطلب استئصال البارافينوما في القضيب تقييمًا دقيقًا وتقنيات ترميمية متقدمة لاستعادة كل من الوظيفة والمظهر. يمكن أن يكون الإجراء معقّدًا بشكل كبير بناءً على كمية المادة المحقونة ومدى تلف الأنسجة.\n\n**النهج الجراحي:**\n\n1. **التقييم والتخطيط:** يُجري الجراح فحصًا دقيقًا، باستخدام الموجات فوق الصوتية غالبًا، لتحديد مدى انتشار المادة الغريبة وتقييم حيوية الأنسجة.\n2. **الاستئصال المتأني:** تحت التخدير العام أو الموضعي (البنج النصفي)، يتم عمل شقوق لإزالة الأنسجة المتضررة وكشط المادة الغريبة بعناية، مع الحفاظ على الهياكل الأساسية السليمة مثل الأعصاب، والأوعية الدموية، وأجزاء القضيب المسؤولة عن الانتصاب.\n3. **إعادة البناء (إن لزم الأمر):** في الحالات الشديدة حيث يجب إزالة مساحات كبيرة من جلد القضيب بسبب النخر أو التندب الشديد، يتم استخدام طعوم جلدية (تُؤخذ غالبًا من الفخذ أو كيس الصفن) أو سدائل موضعية لإعادة بناء عمود القضيب وتغطيته بالجلد وتجميله.',
     heroImage: '/assets/image/services section/excision of penile paraffinoma/excision of penile paraffinoma hero.webp',
     descriptionImage: '/assets/image/services section/excision of penile paraffinoma/excision of penile paraffinoma clinical mechanism.webp',
     video: null,
@@ -1236,12 +2012,26 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: "Surgery Time", value: "2-4 Hrs", icon: Timer },
       { label: "Recovery", value: "6-12 Wks", icon: Calendar }
     ],
+    statsAR: [
+      { label: 'التعقيد' },
+      { label: 'التخصص' },
+      { label: 'وقت الجراحة' },
+      { label: 'التعافي' }
+    ],
     timeline: {
       title: "Reconstruction Recovery Timeline",
       steps: [
         { time: "Week 1-2", title: "Wound Care Phase", desc: "Acute healing period. Swelling is managed with specialized compression dressings. Close monitoring of skin graft viability." },
         { time: "Week 4-6", title: "Tissue Remodeling", desc: "Tissue begins to soften and heal. Light daily activities can be resumed gradually." },
         { time: "Month 3+", title: "Final Stabilization", desc: "Surgical outcome stabilizes. Assessment for staged reconstruction if further correction is needed." }
+      ]
+    },
+    timelineAR: {
+      title: 'مراحل التعافي وإعادة البناء',
+      steps: [
+        { time: 'الأسبوع 1-2', title: 'مرحلة العناية بالجرح', desc: 'فترة الشفاء الأولي. يتم التحكم في التورم بضمادات طبية خاصة ومراقبة حيوية الطعوم الجلدية خطوة بخطوة.' },
+        { time: 'الأسبوع 4-6', title: 'إعادة تشكيل الأنسجة', desc: 'تبدأ الأنسجة في التلين والشفاء. يمكن استئناف الأنشطة اليومية الخفيفة تدريجياً.' },
+        { time: 'الشهر 3+', title: 'الاستقرار النهائي', desc: 'استقرار النتيجة الجراحية. يُجرى تقييم للعملية للتحقق إذا كانت هناك حاجة لأي تعديلات تجميلية إضافية.' }
       ]
     },
     benefits: [
@@ -1256,10 +2046,20 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       "Patients with chronic wounds, infection, inflammation, or discharge at the injection site.",
       "Individuals seeking surgical removal before further complications develop."
     ],
+    candidatesAR: [
+      'الرجال الذين يشتكون من حقن غير طبية سابقة (مثل البارافين أو السيليكون) في القضيب.',
+      'الذين يعانون من تشوهات، كتل صلبة، ألم، أو التهابات متكررة بسبب رفض الجسم للمادة المحقونة.',
+      'مرضى يعانون من تقرحات مزمنة أو إفرازات في موقع الحقن.',
+      'الأفراد الذين يسعون للإزالة الجراحية قبل تطور مضاعفات خطيرة.'
+    ],
     safety: {
       title: "Risks & Realistic Expectations",
       content: "Paraffinoma excision is a complex reconstructive procedure. The outcome depends on the severity of existing tissue damage and the volume of foreign material present. Potential risks include scarring, contour irregularities, changes in sensation, and in severe cases, some degree of compromised erectile function. Multiple staged procedures may be required for optimal reconstruction. Our team uses advanced surgical techniques and specialized equipment to achieve the best possible outcome.",
       icon: ShieldCheck
+    },
+    safetyAR: {
+      title: 'المخاطر والتوقعات الواقعية',
+      content: 'تعتبر إزالة البارافينوما عملية ترميمية معقدة. تعتمد النتيجة على حجم التلف الموجود وكمية المادة المحقونة. المخاطر المحتملة تشمل حدوث ندبات، وتغيرات في الإحساس، وفي الحالات المتقدمة قد يحدث تأثير على وظيفة الانتصاب. قد تستلزم الحالة الشديدة إجراء عمليات على مراحل متعددة للوصول لأفضل نتيجة تجميلية ووظيفية.',
     },
     procedure: [
       { step: '01', title: 'Diagnostic Assessment', desc: 'Thorough physical examination and imaging (MRI or ultrasound) to map the extent of foreign material and tissue damage.' },
@@ -1267,19 +2067,37 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '03', title: 'Reconstruction', desc: 'Skin grafts or tissue flaps are used to reconstruct the penile skin and restore both appearance and function.' },
       { step: '04', title: 'Post-Op Recovery', desc: 'Extended healing period (6-12 weeks). Close follow-up monitoring with potential revision surgery if needed.' }
     ],
+    procedureAR: [
+      { step: '01', title: 'التقييم التشخيصي', desc: 'فحص سريري دقيق وتصوير (مثل الموجات فوق الصوتية أو التصوير بالرنين المغناطيسي) لتحديد مدى انتشار المادة وحجم الضرر.' },
+      { step: '02', title: 'الاستئصال الجراحي', desc: 'تحت التخدير العام، يتم إزالة الورم الحبيبي والمادة الغريبة بدقة شديدة للحفاظ على الأنسجة الحية السليمة.' },
+      { step: '03', title: 'إعادة البناء', desc: 'استخدام طعوم جلدية أو سدائل لترميم جلد وساق القضيب للحصول على مظهر ووظيفة أقرب ما يكون للطبيعي.' },
+      { step: '04', title: 'رعاية ما بعد الإجراء', desc: 'فترة تعافي قد تمتد (6-12 أسبوعاً) مع متابعة مركزة وتقديم إرشادات هامة للعناية بالطعوم.' }
+    ],
     faq: [
       { q: "Can my penis look normal again after surgery?", a: "The outcome depends on the severity of existing damage. Our surgeons aim for maximum restoration of both appearance and function, but in severe cases with extensive tissue destruction, complete normalcy may not be fully achievable. Early treatment generally leads to better results." },
       { q: "Will this affect my erections or sexual function?", a: "Function recovery depends on the extent of nerve and tissue damage caused by the foreign substance. Our surgeons prioritize preserving erectile function during excision, but some degree of impairment may persist in cases with severe pre-existing damage." },
       { q: "Is there a cancer risk if I don't get treatment?", a: "Prolonged chronic inflammation from foreign body reaction can increase the risk of cellular mutation over time. This is one of the reasons why early surgical removal is strongly recommended — to prevent both the progressive tissue destruction and the long-term cancer risk." }
+    ],
+    faqAR: [
+      { q: 'هل يمكن أن يبدو القضيب طبيعياً مرة أخرى بعد الجراحة؟', a: 'تعتمد النتيجة على شدة الضرر المسبق. يهدف جراحونا إلى تحقيق أقصى قدر من استعادة المظهر والوظيفة، لكن في الحالات الشديدة، قد لا يمكن الوصول لحالة طبيعية بنسبة 100%. العلاج المبكر يضمن دائماً نتائج أفضل.' },
+      { q: 'هل ستؤثر الجراحة على الانتصاب أو الوظيفة الجنسية؟', a: 'يعتمد الأداء الوظيفي على مدى تلف الأعصاب والأنسجة بسبب المادة الغريبة. تُعطى الأولوية للحفاظ على وظيفة الانتصاب أثناء الاستئصال، ولكن قد تستمر بعض المشاكل إذا كان الضرر الأساسي عميقاً.' },
+      { q: 'هل هناك خطر الإصابة بالسرطان إذا تجاهلت العلاج؟', a: 'الالتهاب المزمن طويل الأمد قد يزيد خطر حدوث طفرات خلوية وسرطان بمرور الوقت. هذا سبب رئيسي يجعل الإزالة الجراحية المبكرة ضرورة ملحة لمنع تدمير الأنسجة المستمر وخطر السرطان.' }
     ]
   },
   'Vasectomy': {
     title: 'Vasectomy (Permanent Male Contraception)',
+    titleAR: 'استئصال الأسهر (قطع القناة الناقلة للمني لمنع الحمل بشكل دائم)',
     tagline: 'No-Scalpel Vasectomy The Safest and Most Effective Permanent Birth Control for Men. Quick Procedure, No Effect on Sexual Performance.',
+    taglineAR: 'استئصال الأسهر بدون مشرط: الطريقة الأكثر أماناً وفعالية لتحديد النسل للرجال. إجراء سريع، لا يؤثر على الأداء الجنسي.',
     description: "A vasectomy is a minor outpatient procedure that provides permanent contraception by blocking the vas deferens the tubes that carry sperm from the testicles into the semen. It is recognized worldwide as the most effective form of birth control (over 99.9%), requires only local anesthesia, and most importantly, has absolutely no effect on testosterone levels, sexual desire, erections, or ejaculation. The semen volume remains unchanged it simply no longer contains sperm.",
+    descriptionAR: 'استئصال الأسهر هو إجراء بسيط يتم في العيادة، ويوفر وسيلة دائمة لمنع الحمل عن طريق قطع الأنابيب الناقلة للحيوانات المنوية. يعتبر وسيلة تحديد النسل الأكثر فعالية في العالم (أكثر من 99.9%)، ويحتاج تخديراً موضعياً فقط، والأهم أنه لا يؤثر إطلاقاً على مستويات التستوستيرون، أو الرغبة، أو الانتصاب، أو القذف. يبقى حجم السائل المنوي كما هو ولم يعد يحتوي ببساطة على الحيوانات المنوية.',
     whatIsIt: {
       title: 'What is a No-Scalpel Vasectomy?',
       description: "A no-scalpel vasectomy is a modern, minimally invasive technique for permanent male contraception. Instead of a traditional incision, the urologist uses a specialized instrument to make a tiny puncture (3-5mm) in the scrotal skin to access the vas deferens. The tubes are then cut, sealed, or cauterized to permanently prevent sperm from reaching the semen. The procedure takes only 15-20 minutes under local anesthesia, and patients can go home the same day. Sexual function, hormone levels, and ejaculation remain completely unchanged."
+    },
+    whatIsItAR: {
+      title: 'ما هو استئصال الأسهر بدون مشرط؟',
+      description: 'إن تقنية قطع القناة الناقلة للمني بدون مشرط تمثل الحل الأحدث لوسائل منع الحمل الدائمة للرجال. بدلاً من الشق الجراحي التقليدي، يستخدم طبيب المسالك البولية أداة خاصة لعمل ثقب صغير جداً (3-5 مم) في جلد كيس الصفن للوصول إلى الأنبوب. تُقطع الأنابيب وتُغلق لمنع وصول الحيوانات المنوية إلى السائل المنوي نهائياً. يتم الإجراء تحت تأثير التخدير الموضعي في 15-20 دقيقة ويعود المريض للمنزل في نفس اليوم. الدوافع الجنسية والهرمونات تبقى طبيعية تماماً.'
     },
     heroImage: '/assets/image/services section/vasectomy/vasectomy hero.webp',
     descriptionImage: '/assets/image/services section/vasectomy/vasectomy Clinical Mechanism.webp',
@@ -1290,11 +2108,23 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: "Recovery", value: "1-2 Days", icon: Activity },
       { label: "Effect", value: "Permanent", icon: Infinity as any }
     ],
+    statsAR: [
+      { label: 'الفعالية' },
+      { label: 'مدة الإجراء' },
+      { label: 'التعافي' },
+      { label: 'المفعول', value: 'دائم' }
+    ],
     benefits: [
       { title: 'Highest Effectiveness', desc: 'Over 99.9% effective — the most reliable form of contraception available.', icon: Trophy },
       { title: 'No Effect on Sexual Function', desc: 'Erections, ejaculation, sensation, and semen volume remain completely normal.', icon: HeartPulse },
       { title: 'One-Time Permanent Solution', desc: 'A single procedure provides lifelong contraception. No pills, no devices, no repeat visits.', icon: Infinity as any },
       { title: 'Minimal Recovery Time', desc: 'Quick outpatient procedure. Most men return to normal activities within 1-2 days.', icon: Timer }
+    ],
+    benefitsAR: [
+      { title: 'الفعالية القصوى', desc: 'فعالية تزيد عن 99.9 بالمئة، وهي الوسيلة الأكثر موثوقية لمنع الحمل.' },
+      { title: 'لا تأثير على الوظيفة الجنسية', desc: 'الانتصاب، القذف، الإحساس وحجم السائل المنوي كلها تبقى طبيعية تماماً.' },
+      { title: 'حل دائم في زيارة واحدة', desc: 'إجراء لمرة واحدة لمدى الحياة. لا أدوية، لا أجهزة، ولا زيارات متكررة.' },
+      { title: 'وقت تعافي ضئيل', desc: 'إجراء سريع في العيادة الخارجية. يعود معظم الرجال للنشاط المعتاد خلال يومين.' }
     ],
     candidates: [
       "Men who have completed their families and want a permanent, worry-free contraception method.",
@@ -1302,10 +2132,20 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       "Couples seeking the most effective and safest long-term birth control option.",
       "Men who fully understand and accept that vasectomy is intended to be a permanent decision."
     ],
+    candidatesAR: [
+      'الرجال الذين اكتفوا بعائلتهم الحالية ويبحثون عن وسيلة منع حمل دائمة ومريحة.',
+      'الأزواج الذين يفضلون تحمل الزوج لمسؤولية تحديد النسل لتجنب الآثار الجانبية الهرمونية للزوجة.',
+      'الأزواج الباحثون عن الطريقة الأكثر أماناً وفعالية على المدى الطويل.',
+      'الرجال الذين يدركون تماماً أن هذا الإجراء يعتبر قراراً نهائياً ودائماً.'
+    ],
     safety: {
       title: "Safety & Reversibility",
       content: "No-scalpel vasectomy is one of the safest urological procedures. The risk of infection is extremely low (<1%), and serious complications are very rare. Testosterone production, sexual desire, and erectile function are completely unaffected. Vasectomy reversal (vasovasostomy) is technically possible but success rates decrease over time (50-90%), the procedure is expensive, and fertility restoration is not guaranteed. For this reason, vasectomy should be considered a permanent decision.",
       icon: ShieldCheck
+    },
+    safetyAR: {
+      title: 'الأمان وإمكانية الرجوع',
+      content: 'يعتبر الإجراء بدون مشرط من أكثر عمليات المسالك أماناً، حيث يكون خطر العدوى ضئيلاً جداً (أقل من 1%). لا توجد أية تأثيرات سلبية أو طويلة المدى على الهرمونات. في حين أن عملية عكس استئصال الأسهر ممكنة طبياً، إلا أن نسب النجاح تتناقص مع مرور الوقت (50-90%) وتكلفتها عالية وليست مضمونة دائماً. لهذا السبب، يُفترض أن تتخذ قرارك على أنه دائم.',
     },
     timeline: {
       title: "Post-Vasectomy Recovery Timeline",
@@ -1315,27 +2155,53 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: "Month 3+", title: "Sterility Confirmed", desc: "A semen analysis confirms zero sperm. Full contraception is now achieved." }
       ]
     },
+    timelineAR: {
+      title: 'الجدول الزمني للتعافي',
+      steps: [
+        { time: 'يوم 1-3', title: 'التعافي الأولي', desc: 'انزعاج خفيف أو تورم. ينصح بالكمادات الباردة والراحة وتجنب رفع الأثقال.' },
+        { time: 'شهر 1-3', title: 'مرحلة تطهير الحيوانات المنوية', desc: 'قد تبقى بعض الحيوانات المنوية في الأنابيب السفلية؛ استمر في استخدام موانع الحمل البديلة حتى يؤكد تحليل السائل المنوي النتيجة الصفرية.' },
+        { time: 'شهر 3+', title: 'تأكيد العقم', desc: 'تأكيد انعدام الحيوانات المنوية بعد التحليل. أنت الآن تتمتع بمنع حمل دائم ومضمون.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Local Anesthesia', desc: 'Local anesthetic is applied to the scrotal area. The patient remains awake and comfortable throughout.' },
       { step: '02', title: 'No-Scalpel Access', desc: 'A tiny puncture (3-5mm) is made using a specialized instrument to access the vas deferens — no scalpel required.' },
       { step: '03', title: 'Ligation & Sealing', desc: 'The vas deferens is cut, tied, and/or cauterized on both sides to permanently block sperm passage.' },
       { step: '04', title: 'Closure & Discharge', desc: 'The puncture is closed with a small dressing. No stitches needed. Patients go home the same day.' }
     ],
+    procedureAR: [
+      { step: '01', title: 'التخدير الموضعي', desc: 'يتم تخدير منطقة كيس الصفن موضعياً، ويبقى المريض مستيقظاً ومرتاحاً تماماً.' },
+      { step: '02', title: 'الوصول بدون مشرط', desc: 'باستخدام أداة خاصة يتم عمل ثقب مجهري (3-5 مم) للوصول للأسهر دون الحاجة للقطع بالمشرط الجراحي.' },
+      { step: '03', title: 'الربط والقطع', desc: 'يتم قطع القناة وربطها أو كيها من الجانبين لمنع مسار الحيوانات المنوية بصورة تامة.' },
+      { step: '04', title: 'الإنهاء والمغادرة', desc: 'يُغلق الثقب الصغير بضمادة بدون أي غرز خياطة. ويعود المريض للمنزل بعد دقائق معدودة.' }
+    ],
     faq: [
       { q: "Is the vasectomy effective immediately?", a: "No. Residual sperm remain in the downstream portion of the vas deferens for several weeks after the procedure. You must continue using backup contraception until a semen analysis (performed approximately 3 months post-procedure) confirms a zero sperm count." },
       { q: "Will it affect my sex drive, weight, or hormones?", a: "No. The testicles continue to produce testosterone normally. Your sex drive, erections, orgasm intensity, and ejaculation volume are completely unaffected. Vasectomy has no hormonal side effects." },
       { q: "Can a vasectomy be reversed?", a: "Vasectomy reversal (vasovasostomy) is technically possible using microsurgery. However, success rates decrease over time (50-90% depending on years elapsed), the procedure is costly, and fertility restoration is not guaranteed. Vasectomy should be viewed as a permanent decision." }
+    ],
+    faqAR: [
+      { q: 'هل الإجراء فعال فوراً لمنع الحمل؟', a: 'لا، تظل هناك بقايا من الحيوانات المنوية في المجرى بعد الإجراء. يجب الاستمرار باستخدام وسائل وقاية أخرى حتى يثبت تحليل السائل المنوي (بعد قرابة 3 أشهر) نتيجة صفرية.' },
+      { q: 'هل سيؤثر ذلك على الرغبة الجنسية، الوزن، أو الهرمونات؟', a: 'إطلاقاً. تستمر الخصيتان بإنتاج هرمون التستوستيرون بشكل طبيعي بالكامل، ولا يوجد أي ارتباط بالإجراء لزيادة الوزن. كل ما سيتغير في السائل المنوي هو غياب الحيوانات المنوية فقط (أقل من 3% من حجمه الكلي).' },
+      { q: 'هل يمكن التراجع عن العملية (فك الربط)؟', a: 'العملية العكسية (إعادة ربط الأسهر) ممكنة طبياً بجراحة دقيقة معقدة، لكن نسبة نجاحها غير المضمون تنخفض تدريجياً بمرور السنوات منذ إجراء الربط، بالإضافة لتكلفتها الباهظة. يجب التعامل مع هذه العمليات على أنها قرارات نهائية وغير عكسية.' }
     ]
   },
   'Flexible Cystoscopy': {
     title: 'Flexible Cystoscopy (Bladder Examination)',
+    titleAR: 'تنظير المثانة المرن (فحص المثانة المنظاري)',
     tagline: 'High-Definition Bladder and Urethral Examination Quick, Comfortable, and Performed Under Local Anesthesia with No Downtime.',
+    taglineAR: 'فحص دقيق ومريح للمثانة والإحليل، يُجرى تحت التخدير الموضعي (جِل) وبدون فترة انقطاع.',
     heroImage: '/assets/image/services section/flexible cystoscopy menu.webp',
     whatIsIt: {
       title: 'What is Flexible Cystoscopy?',
       description: "Flexible cystoscopy is a minimally invasive diagnostic procedure that allows a urologist to directly examine the lining of the bladder and the urethra using a thin, soft, bendable scope. Unlike older rigid cystoscopes, the flexible design follows the body's natural curves, resulting in significantly less discomfort. The procedure is performed under local anesthesia (topical gel), takes only 5-10 minutes, and patients can return to normal activities immediately afterward."
     },
+    whatIsItAR: {
+      title: 'ما هو تنظير المثانة المرن؟',
+      description: 'تنظير المثانة المرن هو إجراء تشخيصي بأقل تدخل جراحي يسمح لطبيب المسالك البولية بالفحص المباشر لبطانة المثانة والإحليل باستخدام منظار رفيع، ناعم، ومرن. على عكس المناظير الصلبة القديمة، يتكيف التصميم المرن مع الانحناءات الطبيعية للجسم، مما يقلل بشكل كبير من أي ألم أو انزعاج. يُجرى الإجراء في العيادة باستخدام تخدير موضعي (جِل)، ويستغرق 5-10 دقائق، ويمكن بعدها العودة للحياة الطبيعية فوراً.'
+    },
     description: "This advanced diagnostic tool is essential for identifying the root cause of urinary symptoms. By providing a clear, direct view of the urinary tract, it ensures accurate diagnosis and effective treatment planning.\n\n**The Clinical Mechanism & Diagnostic Power:**\n\n1. **High-Definition Visualization:** The flexible cystoscope is equipped with a high-resolution camera and light source. It is gently inserted through the urethra, allowing the doctor to inspect the **entire bladder lining**, **urethra**, and **prostate** (in men) with exceptional clarity.\n\n2. **What We Detect:**\n   *   **Hematuria:** Investigates the source of blood in the urine.\n   *   **Bladder Tumors:** Early detection of bladder cancer or polyps.\n   *   **Stones:** Identifies bladder stones causing pain or blockage.\n   *   **Strictures:** Detects narrowing of the urethra hindering urine flow.\n   *   **BPH:** Assesses the degree of prostate enlargement blocking the urethra.\n\n3. **Why 'Flexible' Matters:** The soft, pliable design causes **minimal friction** and **significantly less discomfort** compared to rigid scopes. Performed under local anesthesia (topical gel), the procedure is quick (5-10 mins) and patients can return to normal activities immediately.",
+    descriptionAR: 'هذه الأداة التشخيصية المتقدمة ضرورية لتحديد السبب الجذري لأعراض المسالك البولية. توفر رؤية واضحة ومباشرة للمسالك البولية مما يضمن التشخيص الدقيق والتخطيط الفعال للعلاج.\n\n**الآلية السريرية والقوة التشخيصية:**\n\n1. **تصوير عالي الدقة:** المنظار مزود بكاميرا عالية الدقة ومصدر إضاءة. يتم إدخاله بلطف عبر الإحليل لفحص **كامل جدار المثانة**، و**الإحليل**، و**البروستاتا** (عند الرجال) بوضوح فائق.\n\n2. **ماذا نكتشف؟**\n   * **البيلة الدموية (الدم):** التقصي عن سبب وجود دم في البول.\n   * **أورام المثانة:** الكشف المبكر عن أي سلائل أو أورام.\n   * **الحصوات:** تحديد حصوات المثانة التي تسبب الألم أو الانسداد.\n   * **التضيقات:** اكتشاف تضيق الإحليل الذي يعيق تدفق البول.\n   * **تضخم البروستاتا:** تقييم درجة تضخم البروستاتا وآثارها.\n\n3. **لماذا يهم أن يكون مرناً؟** التصميم الناعم يسبب **أقل قدر من الاحتكاك** و**راحة أعلى بكثير** مقارنة بالمناظير الصلبة.',
     descriptionImage: '/assets/image/services section/Flexible Cystoscopy/flexible cystoscopy clinical mechanism.webp',
     video: null,
     timeline: {
@@ -1346,11 +2212,25 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: "Follow-up", title: "Results & Treatment Plan", desc: "Doctor discusses findings with you immediately after the procedure, or schedules a follow-up consultation if further tests are needed." }
       ]
     },
+    timelineAR: {
+      title: 'الإجراء والتعافي',
+      steps: [
+        { time: 'اليوم 1', title: 'الفحص التشخيصي', desc: 'يستغرق من 5 لـ 10 دقائق. الإحساس بحرقة خفيفة عند التبول لمرة أو مرتين طبيعي جداً.' },
+        { time: 'اليوم 2', title: 'التعافي التام', desc: 'يختفي أي تهيج طفيف تماماً خلال 24 ساعة. عودة فورية للحياة العادية.' },
+        { time: 'المتابعة', title: 'النتائج والخطة', desc: 'يناقش الطبيب النتائج معك مباشرة، أو يجدول زيارة للمتابعة إذا تطلب الأمر تحاليل إضافية.' }
+      ]
+    },
     stats: [
       { label: "Diagnostic Accuracy", value: "95%+", icon: Trophy },
       { label: "Procedure Time", value: "5-10 Min", icon: Timer },
       { label: "Recovery", value: "None", icon: Activity },
       { label: "Anesthesia", value: "Topical Gel", icon: ShieldCheck }
+    ],
+    statsAR: [
+      { label: 'الدقة التشخيصية' },
+      { label: 'وقت الإجراء' },
+      { label: 'التعافي' },
+      { label: 'التخدير' }
     ],
     benefits: [
       { title: 'Minimal Discomfort', desc: 'Topical anesthetic gel and flexible scope design ensure a comfortable experience with minimal pain.', icon: Smile as any },
@@ -1364,10 +2244,20 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       "Men experiencing lower urinary tract symptoms (LUTS) such as weak stream, frequent urination, or incomplete emptying.",
       "Patients requiring bladder cancer surveillance after previous treatment."
     ],
+    candidatesAR: [
+      'المرضى الذين اكتشفوا دماً في البول (البيلة الدموية) ويجب تقصي مصدره.',
+      'من يعانون من التهابات المسالك البولية (UTIs) المتكررة أو المزمنة.',
+      'الرجال الذين يواجهون ضعفاً في تدفق البول، أو صعوبة في التفريغ الكامل والتكرار.',
+      'المرضى الذين يحتاجون إلى متابعة دورية بعد علاج سابق لأورام المثانة.'
+    ],
     safety: {
       title: "Safety & Comfort",
       content: "Flexible cystoscopy is an extremely safe procedure. The most common after-effect is a mild burning sensation during the first 1-2 urinations, which resolves within 24 hours. Drinking plenty of water after the procedure helps. Serious complications such as infection or significant bleeding are very rare (<1%).",
       icon: ShieldCheck
+    },
+    safetyAR: {
+      title: 'الأمان والراحة',
+      content: 'يعد أحد أكثر الإجراءات أماناً ودقة. العَرَض الأبرز هو شعور مؤقت بالحرقة يزول بشرب الماء خلال 24 ساعة. المضاعفات الخطيرة شبه معدومة.',
     },
     procedure: [
       { step: '01', title: 'Preparation', desc: 'Topical anesthetic gel is applied to the urethra for numbing and lubrication. Patient lies comfortably on the exam table.' },
@@ -1375,20 +2265,38 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '03', title: 'Examination', desc: 'Sterile water gently fills the bladder for optimal visualization. The doctor examines the urethra and entire bladder lining on a monitor.' },
       { step: '04', title: 'Completion', desc: 'Scope is removed. Results are discussed immediately. Patient can get dressed and leave right away.' }
     ],
+    procedureAR: [
+      { step: '01', title: 'التحضير', desc: 'يتم استخدام جِل مخدر موضعي لتخدير وتسهيل الإجراء. يستلقي المريض براحة.' },
+      { step: '02', title: 'إدخال المنظار', desc: 'إدخال المنظار المرن بلطف، ومعظم المرضى لا يشعرون سوى بضغط بسيط.' },
+      { step: '03', title: 'الفحص', desc: 'يتم ملء المثانة بماء معقم لرؤية مثالية ومباشرة لجدار المثانة.' },
+      { step: '04', title: 'الانتهاء', desc: 'سحب المنظار، ومناقشة النتائج فوراً قبل المغادرة.' }
+    ],
     faq: [
       { q: "Is the procedure painful?", a: "Most patients describe it as mild pressure or a brief stinging sensation rather than pain. The flexible scope bends to follow the body's natural curves, and the topical anesthetic gel significantly reduces discomfort." },
       { q: "How should I prepare for the procedure?", a: "No fasting is required. You can eat and drink normally before your appointment. It is recommended to empty your bladder before the procedure begins." },
       { q: "Will I experience discomfort when urinating afterward?", a: "A mild burning sensation during the first 1-2 urinations is normal and temporary. Drinking plenty of water helps flush the urinary tract. Symptoms typically resolve completely within 24 hours." }
+    ],
+    faqAR: [
+      { q: 'هل الإجراء مؤلم؟', a: 'معظم المرضى يصفونه بأنه مجرد شعور بضغط أو لسعة خفيفة. مرونة المنظار، وتخدير الجِل الموضعي يخففان الانزعاج بدرجة كبيرة.' },
+      { q: 'كيف أستعد للمنظار؟', a: 'لا حاجة للصيام. يمكنك الأكل والشرب بشكل طبيعي، وقد يُطلب منك تفريغ المثانة قبل البدء.' },
+      { q: 'هل سأشعر بالحرقة عند التبول لاحقاً؟', a: 'نعم، إحساس بسيط بالحرقة لمرة أو مرتين طبيعي وسيزول سريعاً بشرب كميات وفيرة من المياه لطرد أي تهيج.' }
     ]
   },
   'Ultrasound': {
     title: 'Advanced Urological Ultrasound & Doppler',
+    titleAR: 'تخطيط الصدى للمسالك البولية والدوبلر (Ultrasound)',
     tagline: 'Non-Invasive, Radiation-Free Imaging for Kidney Stones, Prostate Evaluation, ED Diagnosis, and Male Reproductive Health.',
+    taglineAR: 'تصوير دقيق، غير جراحي وبدون إشعاع لتشخيص حصوات الكلى، وتقييم البروستاتا، وضعف الانتصاب، والصحة الإنجابية للرجال.',
     description: "",
+    descriptionAR: "",
     whatIsIt: {
       title: 'What is Urological Ultrasound?',
       description: "Urological ultrasound uses high-frequency sound waves to create real-time images of the kidneys, bladder, prostate, and reproductive organs. It is a non-invasive, radiation-free diagnostic tool that allows urologists to visualize internal structures, detect kidney and bladder stones, measure organ size, and evaluate blood flow using Doppler technology. The procedure is completely painless, requires no anesthesia, and results are available immediately.",
       image: '/assets/image/services section/ultrasound/ultrasound-1.webp'
+    },
+    whatIsItAR: {
+      title: 'ما هو الفحص بالموجات فوق الصوتية (Ultrasound)؟',
+      description: 'الموجات فوق الصوتية للمسالك البولية هي أداة تشخيصية لا تعتمد على الإشعاع، تستخدم موجات صوتية عالية التردد لإنشاء صور حية للكلى والمثانة والبروستاتا والأعضاء التناسلية. تتيح لأطباء المسالك البولية اكتشاف الحصوات، وقياس حجم الأعضاء، وتقييم تدفق الدم باستخدام تقنية הדופלר (Doppler). الفحص غير مؤلم نهائياً، لا يحتاج لأي تخدير، وتظهر نتائجه فوراً.'
     },
     heroImage: '/assets/image/services section/ultrasound menu.webp',
     descriptionImage: '',
@@ -1439,6 +2347,48 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         icon: Layers
       }
     ],
+    testPanelsAR: [
+      {
+        title: 'سونار الكلى والمثانة (KUB)',
+        items: [
+          'الكشف عن حصوات الكلى والمثانة (>2مم)',
+          'تضخم الكلى (استسقاء الكلية)',
+          'أورام وكتل المثانة',
+          'قياس حجم البول المتبقي بعد التبول',
+          'التكيسات والتشوهات الهيكلية'
+        ]
+      },
+      {
+        title: 'سونار القضيب والدوبلر (لتشخيص ضعف الانتصاب)',
+        items: [
+          'المعيار الذهبي لتشخيص ضعف الانتصاب',
+          'قياس التدفق الشرياني (سرعة التدفق الانقباضي)',
+          'الكشف عن التسرب الوريدي (سرعة التدفق الانبساطي)',
+          'تقييم لوحات مرض بيروني',
+          'التقييم الشامل لتليف أنسجة القضيب'
+        ]
+      },
+      {
+        title: 'سونار البروستاتا (عبر المستقيم / TRUS)',
+        items: [
+          'قياس حجم البروستاتا بدقة',
+          'تقييم شدة تضخم البروستاتا الحميد (BPH)',
+          'الكشف عن أورام أو تكلسات البروستاتا',
+          'توجيه الخزعات إذا دعت الحاجة',
+          'تقييم الحويصلات المنوية'
+        ]
+      },
+      {
+        title: 'سونار الخصية وكيس الصفن',
+        items: [
+          'تشخيص دوالي الخصية وتقييم العقم للرجال',
+          'الكشف عن أورام أو كتل الخصية',
+          'تشخيص القيلة المائية (تجمع السوائل)',
+          'التهاب البربخ',
+          'التواء الخصية (تقييم طارئ لتدفق الدم)'
+        ]
+      }
+    ],
     benefits: [
       { title: 'Non-Invasive & Painless', desc: 'No needles, no radiation, no anesthesia. Completely painless and safe for repeated examinations.', icon: ShieldCheck },
       { title: 'Doppler Blood Flow Analysis', desc: 'Advanced Doppler technology visualizes arterial and venous blood flow for accurate ED and varicocele diagnosis.', icon: Activity },
@@ -1452,10 +2402,21 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       "Couples investigating male factor infertility (varicocele screening).",
       "Patients requiring monitoring of cysts, masses, or structural abnormalities."
     ],
+    candidatesAR: [
+      'المرضى الذين يُشتبه في وجود حصوات في الكلى أو المثانة لديهم.',
+      'الرجال الذين يعانون من أعراض تضخم البروستاتا وضعف تدفق البول.',
+      'الذين يبحثون عن الأسباب الوعائية لضعف الانتصاب.',
+      'الأزواج الذين يشتكون من تأخر الإنجاب (فحص دوالي الخصية).',
+      'المرضى الذين يحتاجون لمتابعة دورية لتكيسات أو تضخمات.'
+    ],
     safety: {
       title: "Safety & Information",
       content: "Ultrasound is completely safe, painless, and uses no ionizing radiation. There are no known side effects or risks. The procedure can be repeated as often as medically necessary without any harm to the body.",
       icon: ShieldCheck
+    },
+    safetyAR: {
+      title: 'الأمان والمعلومات',
+      content: 'يعد جهاز الموجات فوق الصوتية آمناً تماماً وبلا إشعاع. الإجراء غير مؤلم بتاتاً ويمكن تكراره متى استدعت الحاجة دون أي أضرار على الجسم.',
     },
     timeline: {
       title: "Imaging Process & Results",
@@ -1465,27 +2426,53 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: "24 Hours", title: "Full Report", desc: "Comprehensive documented report with images provided for your medical records and follow-up consultation." }
       ]
     },
+    timelineAR: {
+      title: 'مسار الفحص والنتائج',
+      steps: [
+        { time: 'الزيارة', title: 'التصوير بالسونار', desc: 'يستغرق الفحص من 15 إلى 30 دقيقة بحسب المنطقة المطلوبة.' },
+        { time: 'نفس اليوم', title: 'المراجعة الأولية', desc: 'يقوم الطبيب بمراجعة ومناقشة النتائج معك فوراً.' },
+        { time: '24 ساعة', title: 'التقرير النهائي', desc: 'اصدار تقرير شامل موثق بالصور لملفك الطبي.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Preparation', desc: 'For bladder scan, drink 500ml of water 1 hour prior. No fasting is needed for other scans.' },
       { step: '02', title: 'Gel Application', desc: 'Warm ultrasound gel is applied to the skin to improve sound wave transmission and image quality.' },
       { step: '03', title: 'Scanning', desc: 'The specialist gently moves the ultrasound probe over the area. Real-time images appear on the monitor.' },
       { step: '04', title: 'Results', desc: 'The doctor discusses preliminary findings immediately. A detailed report with images is provided within 24 hours.' }
     ],
+    procedureAR: [
+      { step: '01', title: 'التحضير', desc: 'لفحص المثانة، يُطلب شرب 500 مل من الماء قبل التصوير بساعة. باقي الفحوصات لا تحتاج لصيام.' },
+      { step: '02', title: 'تطبيق الجل', desc: 'الجل يُسهل انتقال الموجات الصوتية والحصول على صورة دقيقة.' },
+      { step: '03', title: 'الفحص', desc: 'يُمرر الطبيب الجهاز الخارجي بلطف على المنطقة وتظهر الصور مباشرة على الشاشة.' },
+      { step: '04', title: 'النتائج', desc: 'مناقشة سريعة وأولية مع المريض لتوضيح ماهية الفحوصات.' }
+    ],
     faq: [
       { q: "Is Penile Doppler ultrasound painful?", a: "The ultrasound itself is painless. A small injection of medication may be administered to induce an erection for accurate blood flow measurement. Most patients describe only mild discomfort from the injection." },
       { q: "How should I prepare for a KUB ultrasound?", a: "A full bladder helps visualize the bladder walls clearly. We recommend drinking 500ml of water approximately 1 hour before your appointment. No fasting is required." },
       { q: "Can ultrasound detect cancer?", a: "Ultrasound can detect suspicious masses, tumors, or structural abnormalities. If a suspicious finding is identified, further testing such as MRI or biopsy may be recommended for definitive diagnosis." }
+    ],
+    faqAR: [
+      { q: 'هل الدوبلر لضعف الانتصاب مؤلم؟', a: 'الفحص نفسه غير مؤلم. قد يُعطى حقنة بسيطة لتحفيز الانتصاب لقياس تدفق الدم، ومعظم المرضى يصفونها بأنها وخزة محتملة جداً.' },
+      { q: 'كيف أستعد لفحص الكلى والمثانة بالسونار؟', a: 'المثانة الممتلئة تساعد الشاشة على الرؤية الفائقة. نوصي بشرب نصف لتر من الماء قبل الموعد. لا يشترط الصيام.' },
+      { q: 'هل يمكن للسونار كشف السرطان؟', a: 'نعم، في حالات الأورام أو الكتل المشبوهة، ويمكنه توجيه مسار الاستقصاء عبر الرنين المغناطيسي أو أخذ الخزعة.' }
     ]
   },
   'Lab Testing': {
     title: 'Comprehensive Men\'s Health Lab Testing',
+    titleAR: 'التحاليل المخبرية الشاملة لصحة الرجل',
     tagline: 'Precision Blood Tests, Hormone Panels, STD Screening, and Fertility Analysis Confidential Results in 24-48 Hours.',
+    taglineAR: 'تحاليل دم دقيقة، فحص هرمونات، وأمراض منقولة جنسياً، وتحليل سائل منوي. نتائج أصلية وسريعة في خصوصية تامة.',
     description: "Our laboratory offers specialized panels designed specifically for men's health. From detecting early signs of erectile dysfunction and hormonal imbalances to comprehensive STD screening and fertility analysis, we provide fast, accurate, and confidential results to guide your treatment plan.",
+    descriptionAR: 'يوفر مختبرنا لوحات متخصصة مصممة خصيصاً لصحة الرجل. من اكتشاف العلامات المبكرة لضعف الانتصاب والخلل الهرموني إلى الفحص الشامل للأمراض المنقولة جنسياً وتحليل الخصوبة، نقدم نتائج سريعة ودقيقة وموثوقة لتوجيه خطة علاجك.',
     heroImage: '/assets/image/services section/lab testing menu.webp',
     whatIsIt: {
       title: 'What is Comprehensive Lab Testing?',
       description: "Our comprehensive lab testing services provide a thorough analysis of your biological health. We use state-of-the-art diagnostic technology to analyze hormone levels, screen for sexually transmitted infections, evaluate fertility, and monitor metabolic function. This data-driven approach allows our specialist urologists to create highly personalized treatment plans tailored to your specific needs.",
       image: '/assets/image/services section/lab testing menu.webp'
+    },
+    whatIsItAR: {
+      title: 'ما هي التحاليل المخبرية الشاملة؟',
+      description: 'توفر خدماتنا المخبرية الشاملة تحليلاً دقيقاً لحالتك الصحية والبيولوجية. نعتمد على أحدث التقنيات التشخيصية لتحليل مستويات الهرمونات، والفحص عن الأمراض المنقولة جنسياً، وتقييم الخصوبة، ومراقبة وظائف الحيوية. هذا النهج المبني على البيانات يُمكّن أطباء المسالك البولية من تصميم خطط علاجية دقيقة ومناسبة لكل مريض على حدة.'
     },
     video: null,
     stats: [
@@ -1493,6 +2480,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: "Accuracy", value: "99.9%", icon: Target },
       { label: "Confidentiality", value: "100%", icon: ShieldCheck },
       { label: "Specialist Review", value: "Included", icon: User }
+    ],
+    statsAR: [
+      { label: 'وقت الاستجابة' },
+      { label: 'الدقة' },
+      { label: 'السرية' },
+      { label: 'مراجعة طبية' }
     ],
     testPanels: [
       {
@@ -1560,6 +2553,67 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         icon: Droplets
       }
     ],
+    testPanelsAR: [
+      {
+        title: 'صحة الهرمونات والحيوية',
+        items: [
+          'التستوستيرون الكلي (Total Testosterone)',
+          'التستوستيرون الحر (Free Testosterone)',
+          'الجلوبيولين المرتبط بالهرمونات الجنسية (SHBG)',
+          'الإستروجين (Estradiol - E2)',
+          'هرمون الحليب (Prolactin)',
+          'هرمونات الغدة النخامية (LH & FSH)',
+          'هرمون الإجهاد (Cortisol)',
+          'وظائف الغدة الدرقية (TSH, fT3, fT4)'
+        ]
+      },
+      {
+        title: 'الصحة الجنسية والعدوى (STDs)',
+        items: [
+          'فحص فيروس نقص المناعة (HIV - 4th Gen)',
+          'الزهري (VDRL & TPHA)',
+          'التهاب الكبد الوبائي (B & C)',
+          'الكلاميديا، السيلان (DNA PCR)',
+          'فيروس الهربس البسيط (HSV 1&2)',
+          'الميكوبلازما واليوريابلازما',
+          'التنميط الجيني لفيروس الورم الحليمي البشري (HPV)',
+          'المشعرات المهبلية (Trichomonas)'
+        ]
+      },
+      {
+        title: 'وظائف الأعضاء والأيض',
+        items: [
+          'فحص الدهون (الكوليسترول، الدهون الثلاثية)',
+          'سكر الدم الصائم والتراكمي (HbA1c)',
+          'وظائف الكبد (AST, ALT, ALP, Bilirubin)',
+          'وظائف الكلى (BUN, Creatinine, eGFR)',
+          'صورة الدم الكاملة (CBC)',
+          'حمض اليوريك (خطر النقرس)'
+        ]
+      },
+      {
+        title: 'الخصوبة وتحليل السائل المنوي',
+        items: [
+          'الحجم وحموضة السائل المنوي (pH)',
+          'تركيز الحيوانات المنوية (العدد)',
+          'إجمالي الحركة والحركة التقدمية',
+          'شكل الحيوانات المنوية (Morphology)',
+          'خلايا الدم البيضاء (مؤشر التهاب)',
+          'حيوية الحيوانات المنوية (النسبة الحية)'
+        ]
+      },
+      {
+        title: 'الجهاز البولي ودلالات الأورام',
+        items: [
+          'تحليل البول (فحص مجهري)',
+          'مزرعة البول لفحص البكتيريا',
+          'فحص البروستاتا الكلي (PSA - Total)',
+          'فحص البروستاتا الحر (PSA - Free)',
+          'دلالات أورام الخصية (AFP & HCG)',
+          'دلالات أورام عامة (CEA)'
+        ]
+      }
+    ],
     benefits: [
       { title: 'Specialized Men\'s Health Panels', desc: 'Full range of tests specifically designed for men\'s sexual health, hormones, fertility, and cancer screening.', icon: Microscope },
       { title: 'Fast & Confidential', desc: 'Most results available within 24-48 hours. All information is handled with strict patient confidentiality.', icon: Timer },
@@ -1573,6 +2627,13 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       "Individuals seeking peace of mind regarding STDs/STIs.",
       "Men monitoring testosterone therapy levels."
     ],
+    candidatesAR: [
+      'الرجال فوق سن الأربعين الذين يحتاجون إلى فحص سنوي للبروستاتا والصحة العامة.',
+      'مرضى يعانون من انخفاض الرغبة الجنسية، أو الإرهاق المستمر، أو ضعف الانتصاب.',
+      'الأزواج الذين يخططون للحمل أو يواجهون تأخراً في الإنجاب (تقييم الخصوبة).',
+      'أي شخص يسعى للاطمئنان على نفسه وخلوه من الأمراض المنقولة جنسياً.',
+      'الرجال الذين يتابعون العلاج بهرمون التستوستيرون (TRT).'
+    ],
     timeline: {
       title: "Testing Process & Results",
       steps: [
@@ -1581,16 +2642,35 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: "Review", title: "Expert Consultation", desc: "Meet with a specialist urologist to review your results and discuss treatment options." }
       ]
     },
+    timelineAR: {
+      title: 'آلية الفحص والنتائج',
+      steps: [
+        { time: 'الساعة 1', title: 'أخذ العينات', desc: 'سحب الدم أو جمع العينة في غرفة خاصة ومريحة.' },
+        { time: '24-48 ساعة', title: 'ظهور النتائج', desc: 'معظم النتائج تظهر خلال 24 ساعة. قد تستغرق المزارع الخاصة وقتاً أطول.' },
+        { time: 'المراجعة', title: 'الاستشارة الطبية', desc: 'لقاء مع طبيب المسالك لمناقشة النتائج واختيار العلاج المناسب.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Consultation', desc: 'Doctor recommends specific test panels based on your medical history, symptoms, and health goals.' },
       { step: '02', title: 'Sample Collection', desc: 'Blood draw, urine sample, or semen collection performed in a private room with full confidentiality.' },
       { step: '03', title: 'Laboratory Analysis', desc: 'Samples are processed using certified, high-accuracy diagnostic equipment meeting international standards.' },
       { step: '04', title: 'Results Review', desc: 'Doctor personally explains your results in detail and discusses appropriate treatment options if needed.' }
     ],
+    procedureAR: [
+      { step: '01', title: 'الاستشارة', desc: 'الجلوس مع الطبيب لاختيار الفحوصات الضرورية لتشخيص الحالة بناء على الأعراض.' },
+      { step: '02', title: 'جمع العينة', desc: 'يتم سحب الدم أو أخذ عينة البول أو السائل المنوي في غرف خاصة تحفظ الخصوصية التامة.' },
+      { step: '03', title: 'التحليل المخبري', desc: 'معالجة العينات بمعدات تشخيصية حديثة وعالية الدقة مطابقة للمعايير الدولية.' },
+      { step: '04', title: 'النتيجة والمراجعة', desc: 'استلام التقرير ومناقشته تفصيلياً مع الطبيب والمباشرة في الخطة العلاجية.' }
+    ],
     faq: [
       { q: "Do I need to fast before testing?", a: "For hormonal panels (Testosterone) and metabolic panels (Blood Sugar, Lipid Profile), fasting for 8-12 hours is recommended. Drinking plain water is allowed." },
       { q: "How long does it take to get results?", a: "Most blood and urine test results are available within 24 hours. Specialized cultures or PCR tests may take 48-72 hours." },
       { q: "Is the testing process private and confidential?", a: "Yes. We provide a private, comfortable room for all sample collection. All patient data and results are handled with the highest level of confidentiality." }
+    ],
+    faqAR: [
+      { q: 'هل أحتاج للصيام قبل التحليل؟', a: 'لتحاليل الهرمونات أو السكر والدهون، يُنصح بالصيام من 8-12 ساعة. يُسمح دائماً بشرب الماء.' },
+      { q: 'متى أحصل على النتائج؟', a: 'معظم الفحوصات تظهر خلال 24 ساعة. لكن اختبارات الأمراض المنقولة عبر تحليل الحمض النووي (PCR) والمزارع البكتيرية قد تتطلب من 48 إلى 72 ساعة.' },
+      { q: 'هل نتائج فحوصاتي سرية؟', a: 'نعم بكل تأكيد. نلتزم بأعلى درجات الخصوصية لتأمين بياناتك، ونوفر غرفاً خاصة لجمع العينات بعيداً عن أي إحراج.' }
     ]
   }
 };
@@ -1657,44 +2737,54 @@ export const DOCTORS: DoctorData[] = [
     id: 1,
     slug: 'dr.niti',
     name: 'Dr. Niti Navanimitkul, M.D.',
+    nameAR: 'الدكتور نيثي نافانيتكول، طبيب',
     role: 'Urologist & Men\'s Health Specialist',
     roleTH: 'ศัลยแพทย์ระบบทางเดินปัสสาวะและผู้เชี่ยวชาญสุขภาพชาย',
+    roleAR: 'دكتور مسالك بولية وأخصائي صحة الرجل',
     image: '/assets/image/urologist section/dr.niti.webp',
     expert: 'Penile Prosthesis | UroLift | Rezūm Specialist',
+    expertAR: 'أخصائي دعامة العضو الذكري | UroLift | Rezūm',
     hospital: 'Bangkok Hospital Pattaya',
     email: 'niti.menshealth@gmail.com',
     website: 'https://www.mtrusturology.com',
     tagline: 'A Journey of Dedication, Expertise, and Compassion in Men\'s Health',
     taglineTH: 'เส้นทางแห่งความมุ่งมั่น ความเชี่ยวชาญ และความเอาใจใส่ในสุขภาพชาย',
+    taglineAR: 'رحلة من التفاني، الخبرة، والرعاية الطبية الفائقة في صحة الرجل',
     bio: "Dr. Niti Navanimitkul is one of Thailand’s premier experts in urology and men’s health. He combines profound medical expertise with a patient-first, holistic approach.",
     bioTH: 'นพ. นิธิ นาวานิมิตกุล เป็นหนึ่งในผู้เชี่ยวชาญชั้นนำของไทยด้านระบบทางเดินปัสสาวะและสุขภาพชาย ผสานความเชี่ยวชาญทางการแพทย์เข้ากับแนวทางการดูแลแบบองค์รวมที่ยึดผู้ป่วยเป็นศูนย์กลาง',
+    bioAR: 'يُعد الدكتور نيثي نافانيتكول واحداً من أبرز خبراء جراحة المسالك البولية وصحة الرجل في تايلاند. يجمع بين الخبرة الطبية العميقة والنهج الشامل في رعاية المرضى.',
     bioContent: [
       {
         type: 'header',
         content: "Elevating Men’s Health Care in Thailand: Dr. Niti Navanimitkul",
-        contentTH: 'ยกระดับการดูแลสุขภาพชายในประเทศไทย: นพ. นิธิ นาวานิมิตกุล'
-      },
+        contentTH: 'ยกระดับการดูแลสุขภาพชายในประเทศไทย: นพ. นิธิ นาวานิมิตกุล',
+          contentAR: "الارتقاء بالرعاية الصحية للرجل في تايلاند: د. نيثي نافانيتكول"
+    },
       {
         type: 'paragraph',
         content: "Dr. Niti Navanimitkul is one of Thailand’s premier experts in urology and men’s health. He combines profound medical expertise with a patient-first, holistic approach. Driven by a passion for continuous learning and innovation, Dr. Niti is dedicated to empowering men to take control of his physical, emotional, and psychological well-being.",
-        contentTH: 'นพ. นิธิ นาวานิมิตกุล มุ่งมั่นในการรักษาและเรียนรู้นวัตกรรมอย่างต่อเนื่องเพื่อนำมาพัฒนาวิธีการรักษาให้ได้ผลลัพธ์ที่ดียิ่งขึ้น นพ. นิธิ อุทิศตนเพื่อช่วยให้ผู้ป่วยสามารถดูแลสุขภาพกาย อารมณ์ และจิตใจ ให้กลับมามีความมั่นใจ กลับมาใช้ชีวิตได้อย่างเป็นปกติอีกครั้ง'
-      },
+        contentTH: 'นพ. นิธิ นาวานิมิตกุล มุ่งมั่นในการรักษาและเรียนรู้นวัตกรรมอย่างต่อเนื่องเพื่อนำมาพัฒนาวิธีการรักษาให้ได้ผลลัพธ์ที่ดียิ่งขึ้น นพ. นิธิ อุทิศตนเพื่อช่วยให้ผู้ป่วยสามารถดูแลสุขภาพกาย อารมณ์ และจิตใจ ให้กลับมามีความมั่นใจ กลับมาใช้ชีวิตได้อย่างเป็นปกติอีกครั้ง',
+          contentAR: "د. نيثي نافانيتكول هو أحد أبرز الخبراء في تايلاند في جراحة المسالك البولية وصحة الرجل. يجمع بين الخبرة الطبية العميقة والنهج الشامل ومبدأ المريض أولاً. بفضل شغفه بالتعلم المستمر والابتكار، يكرس د. نيثي نفسه لتمكين الرجال من استعادة رفاهيتهم الجسدية والعاطفية."
+    },
       {
         type: 'image',
         image: "/assets/image/urologist section/biography/Professional Profile-1.webp",
         caption: "Dr. Niti Navanimitkul: Thailand's leading men's health specialist.",
-        captionTH: 'นพ. นิธิ นาวานิมิตกุล: ผู้เชี่ยวชาญด้านสุขภาพชายชั้นนำของประเทศไทย'
-      },
+        captionTH: 'นพ. นิธิ นาวานิมิตกุล: ผู้เชี่ยวชาญด้านสุขภาพชายชั้นนำของประเทศไทย',
+          captionAR: "د. نيثي نافانيتكول: المتخصص الرائد في صحة الرجل في تايلاند."
+    },
       {
         type: 'header',
         content: "World-Class Urology Expertise & High Success Rates",
-        contentTH: 'ความเชี่ยวชาญด้านระบบทางเดินปัสสาวะระดับโลก และอัตราความสำเร็จสูง'
-      },
+        contentTH: 'ความเชี่ยวชาญด้านระบบทางเดินปัสสาวะระดับโลก และอัตราความสำเร็จสูง',
+          contentAR: "خبرة عالمية في المسالك البولية ونسب نجاح عالية"
+    },
       {
         type: 'paragraph',
         content: "Dr. Niti specializes in cutting-edge, minimally invasive procedures designed to restore function and improve the quality of life for his patients. He is at the forefront of treating complex urological conditions, offering highly effective solutions:",
-        contentTH: 'นพ. นิธิ เชี่ยวชาญในการทำหัตถการที่ล้ำสมัยและส่งผลกระทบน้อย เพื่อฟื้นฟูการทำงานและยกระดับคุณภาพชีวิตผู้ป่วย อีกทั้งยังเป็นแพทย์แถวหน้า ในการรักษาโรคระบบทางเดินปัสสาวะที่มีความซับซ้อนสูง ด้วยวิธีที่มีประสิทธิภาพสูง'
-      },
+        contentTH: 'นพ. นิธิ เชี่ยวชาญในการทำหัตถการที่ล้ำสมัยและส่งผลกระทบน้อย เพื่อฟื้นฟูการทำงานและยกระดับคุณภาพชีวิตผู้ป่วย อีกทั้งยังเป็นแพทย์แถวหน้า ในการรักษาโรคระบบทางเดินปัสสาวะที่มีความซับซ้อนสูง ด้วยวิธีที่มีประสิทธิภาพสูง',
+          contentAR: "يتخصص د. نيثي في الإجراءات الحديثة طفيفة التوغل المصممة لاستعادة الوظائف وتحسين جودة حياة مرضاه. وهو في طليعة علاج حالات المسالك البولية المعقدة، مقدماً حلولاً عالية الفعالية:"
+    },
       {
         type: 'list',
         items: [
@@ -1710,45 +2800,53 @@ export const DOCTORS: DoctorData[] = [
           'การรักษาภาวะหย่อนสมรรถภาพขั้นสูง: ดูแลครบวงจรด้วยนวัตกรรมทางการแพทย์ล่าสุด ทั้งการฉีดเซลล์ต้นกำเนิด, การรักษาด้วยคลื่นเสียง (Li-ESWT) และแผนยาเฉพาะราย',
           'การรักษาภาวะมีบุตรยากในชาย: การตรวจวินิจฉัยขั้นสูงและหัตถการเฉพาะราย เพื่อเพิ่มความสามารถในการมีบุตร',
           'สุขภาพต่อมลูกหมากครบวงจร: การดูแลเชิงป้องกัน การคัดกรองมะเร็งต่อมลูกหมาก และการจัดการ BPH โดยผู้เชี่ยวชาญ'
-        ]
-      },
+        ],
+          itemsAR: ["جراحة زراعة دعامة العضو الذكري (Penile Prosthesis): خبرة متقدمة في زرع الأجهزة القابلة للنفخ لنتائج طبيعية.","أنظمة UroLift و Rezūm: علاجات متطورة غير جراحية لتضخم البروستاتا الحميد (BPH).","العلاج بالموجات الصدمية المركزة (Li-ESWT): علاج تجديدي لضعف الانتصاب.","تقنيات الاستئصال بالليزر (HoLEP): جراحة ليزر دقيقة للبروستاتا لنتائج مثالية وتعافٍ سريع."]
+    },
       {
         type: 'image',
         image: "/assets/image/urologist section/biography/Professional Profile-2.webp",
         caption: "Highly certified in urology, Dr. Niti provides the most advanced men's healthcare.",
-        captionTH: 'นพ. นิธิ ผู้ได้รับการรับรองสูงสุดด้านระบบทางเดินปัสสาวะ มอบการดูแลสุขภาพชายที่ล้ำสมัยที่สุด'
+        captionTH: 'นพ. นิธิ ผู้ได้รับการรับรองสูงสุดด้านระบบทางเดินปัสสาวะ มอบการดูแลสุขภาพชายที่ล้ำสมัยที่สุด',
+        captionAR: 'حاصل على أعلى الشهادات في جراحة المسالك البولية، ويقدم الدكتور نيثي الرعاية الصحية الأكثر تقدماً للرجال.'
       },
       {
         type: 'header',
         content: "Extensive Training & Board Certifications",
-        contentTH: 'การฝึกอบรมเข้มข้นและใบรับรองความเชี่ยวชาญ'
+        contentTH: 'การฝึกอบรมเข้มข้นและใบรับรองความเชี่ยวชาญ',
+        contentAR: 'التدريب المكثف والشهادات المعتمدة'
       },
       {
         type: 'paragraph',
         content: "A graduate of one of Thailand's most prestigious medical schools, Dr. Niti discovered his passion for men's health early in his career. He has since honed his skills through specialized fellowships and training at leading medical institutions.\n\nAs a lifelong learner, he holds numerous certifications in urology and consistently participates in international medical conferences. This dedication ensures his patients always have access to the most advanced, evidence-based treatments available globally.",
-        contentTH: 'นพ. นิธิ สำเร็จการศึกษาจากคณะแพทยศาสตร์ชั้นนำที่มีชื่อเสียงที่สุดแห่งหนึ่งของประเทศไทย และได้ค้นพบความมุ่งมั่นทุ่มเทในการดูแลสุขภาพบุรุษมาตั้งแต่ช่วงเริ่มแรกของเส้นทางวิชาชีพ ท่านได้สั่งสมประสบการณ์และทักษะความเชี่ยวชาญผ่านการฝึกอบรมเฉพาะทางจากสถาบันการแพทย์ระดับแนวหน้า\n\nในฐานะผู้ที่ใฝ่เรียนรู้อยู่เสมอ นพ. นิธิ ได้รับวุฒิบัตรรับรองในสาขาศัลยศาสตร์ยูโรวิทยา (ระบบทางเดินปัสสาวะ) มากมาย และเข้าร่วมการประชุมวิชาการทางการแพทย์ระดับนานาชาติอย่างสม่ำเสมอ ความมุ่งมั่นนี้เองที่ทำให้คนไข้ของท่านมั่นใจได้ว่าจะสามารถเข้าถึงการรักษาที่ทันสมัยที่สุดและอ้างอิงตามหลักฐานทางวิชาการล่าสุดที่เป็นมาตรฐานสากลจากทั่วโลก'
+        contentTH: 'นพ. นิธิ สำเร็จการศึกษาจากคณะแพทยศาสตร์ชั้นนำที่มีชื่อเสียงที่สุดแห่งหนึ่งของประเทศไทย และได้ค้นพบความมุ่งมั่นทุ่มเทในการดูแลสุขภาพบุรุษมาตั้งแต่ช่วงเริ่มแรกของเส้นทางวิชาชีพ ท่านได้สั่งสมประสบการณ์และทักษะความเชี่ยวชาญผ่านการฝึกอบรมเฉพาะทางจากสถาบันการแพทย์ระดับแนวหน้า\n\nในฐานะผู้ที่ใฝ่เรียนรู้อยู่เสมอ นพ. นิธิ ได้รับวุฒิบัตรรับรองในสาขาศัลยศาสตร์ยูโรวิทยา (ระบบทางเดินปัสสาวะ) มากมาย และเข้าร่วมการประชุมวิชาการทางการแพทย์ระดับนานาชาติอย่างสม่ำเสมอ ความมุ่งมั่นนี้เองที่ทำให้คนไข้ของท่านมั่นใจได้ว่าจะสามารถเข้าถึงการรักษาที่ทันสมัยที่สุดและอ้างอิงตามหลักฐานทางวิชาการล่าสุดที่เป็นมาตรฐานสากลจากทั่วโลก',
+        contentAR: 'تخرج د. نيثي من إحدى أعرق كليات الطب في تايلاند، واكتشف شغفه بصحة الرجل في وقت مبكر من مسيرته المهنية. ومنذ ذلك الحين صقل مهاراته من خلال زمالات متخصصة وتدريبات في مؤسسات طبية رائدة.\n\nبصفته باحثاً متعلماً مدى الحياة، يحمل العديد من الشهادات المعتمدة في جراحة المسالك البولية ويشارك باستمرار في المؤتمرات الطبية الدولية. ويضمن هذا التفاني لمرضاه الوصول دائماً إلى العلاجات الأكثر تقدماً والمبنية على أسس علمية والمتاحة على مستوى العالم.'
       },
       {
         type: 'image',
         image: "/assets/image/urologist section/biography/Professional Profile-3.webp",
         caption: "World-class trained urologist mastering advanced clinical techniques.",
-        captionTH: 'ศัลยแพทย์ระบบทางเดินปัสสาวะผู้ผ่านการฝึกอบรมระดับโลก เชี่ยวชาญเทคนิคคลินิกขั้นสูง'
+        captionTH: 'ศัลยแพทย์ระบบทางเดินปัสสาวะผู้ผ่านการฝึกอบรมระดับโลก เชี่ยวชาญเทคนิคคลินิกขั้นสูง',
+        captionAR: 'طبيب مسالك بولية مدرب عالمياً ويتقن التقنيات السريرية المتقدمة.'
       },
       {
         type: 'header',
         content: "A Holistic, Patient-Centric Philosophy",
-        contentTH: 'ปรัชญาการดูแลแบบองค์รวม ยึดผู้ป่วยเป็นศูนย์กลาง'
+        contentTH: 'ปรัชญาการดูแลแบบองค์รวม ยึดผู้ป่วยเป็นศูนย์กลาง',
+        contentAR: 'فلسفة شاملة تركز على المريض'
       },
       {
         type: 'paragraph',
         content: "What truly sets Dr. Niti apart is his compassionate, holistic approach. He understands that urological conditions impact not just the physical body, but also emotional well-being. By taking the time to listen and understand each patient's unique concerns, he crafts tailored, comprehensive treatment plans. His dedication to excellence in patient care, diagnosis, and education has earned him numerous accolades and the deep trust of both colleagues and patients.",
-        contentTH: 'สิ่งที่ทำให้ นพ. นิธิ โดดเด่นอย่างแท้จริงคือแนวทางการรักษาด้วยความใส่ใจและมองอย่างรอบด้าน (Holistic Approach) ท่านตระหนักดีว่าอาการเจ็บป่วยทางระบบทางเดินปัสสาวะไม่ได้ส่งผลกระทบเพียงแค่ร่างกายเท่านั้น แต่ยังส่งผลต่อสภาวะจิตใจและความเป็นอยู่ที่ดีอีกด้วย\n\nด้วยการให้ความสำคัญกับการรับฟังและทำความเข้าใจความกังวลเฉพาะตัวของผู้ป่วยแต่ละราย นพ. นิธิ จึงสามารถออกแบบแผนการรักษาที่เหมาะสมและครอบคลุมความต้องการของคนไข้ได้อย่างตรงจุด ความทุ่มเทเพื่อความเป็นเลิศทั้งในด้านการดูแลผู้ป่วย การวินิจฉัย และการให้ความรู้ทางการแพทย์ ส่งผลให้ท่านได้รับรางวัลเชิดชูเกียรติมากมาย ตลอดจนได้รับความไว้วางใจอย่างลึกซึ้งจากทั้งเพื่อนร่วมวิชาชีพและผู้รับบริการเสมอมา'
+        contentTH: 'สิ่งที่ทำให้ นพ. นิธิ โดดเด่นอย่างแท้จริงคือแนวทางการรักษาด้วยความใส่ใจและมองอย่างรอบด้าน (Holistic Approach) ท่านตระหนักดีว่าอาการเจ็บป่วยทางระบบทางเดินปัสสาวะไม่ได้ส่งผลกระทบเพียงแค่ร่างกายเท่านั้น แต่ยังส่งผลต่อสภาวะจิตใจและความเป็นอยู่ที่ดีอีกด้วย\n\nด้วยการให้ความสำคัญกับการรับฟังและทำความเข้าใจความกังวลเฉพาะตัวของผู้ป่วยแต่ละราย นพ. นิธิ จึงสามารถออกแบบแผนการรักษาที่เหมาะสมและครอบคลุมความต้องการของคนไข้ได้อย่างตรงจุด ความทุ่มเทเพื่อความเป็นเลิศทั้งในด้านการดูแลผู้ป่วย การวินิจฉัย และการให้ความรู้ทางการแพทย์ ส่งผลให้ท่านได้รับรางวัลเชิดชูเกียรติมากมาย ตลอดจนได้รับความไว้วางใจอย่างลึกซึ้งจากทั้งเพื่อนร่วมวิชาชีพและผู้รับบริการเสมอมา',
+        contentAR: 'ما يميز د. نيثي حقاً هو نهجه الشامل الحافل بالرعاية. فهو يدرك أن حالات المسالك البولية لا تؤثر فقط على الجسد، بل تنعكس أيضاً على الحالة النفسية. من خلال استقطاع الوقت للاستماع وفهم المخاوف الفريدة لكل مريض، يقوم بصياغة خطط علاج شاملة ومخصصة. إن تفانيه في التميز في رعاية المرضى، والتشخيص السليم، وتثقيفهم أكسبه العديد من الأوسمة والثقة العميقة من زملائه ومرضاه على حد سواء.'
       },
       {
         type: 'image',
         image: "/assets/image/urologist section/biography/Professional Profile-4.webp",
         caption: "Patient-Centric Care Environment",
-        captionTH: 'สภาพแวดล้อมการดูแลที่ยึดผู้ป่วยเป็นศูนย์กลาง'
+        captionTH: 'สภาพแวดล้อมการดูแลที่ยึดผู้ป่วยเป็นศูนย์กลาง',
+        captionAR: 'بيئة رعاية ترتكز على راحة المريض'
       }
     ],
     specialties: [
@@ -1767,27 +2865,35 @@ export const DOCTORS: DoctorData[] = [
       'Male Infertility Diagnosis & Treatment',
       'Prostate Health & Cancer Screening'
     ],
+    specialtiesAR: [
+      'جراحة زراعة دعامة العضو الذكري (أكثر من 150 حالة ومعدل نجاح 99.99%)',
+      'علاج يوروليفت لتضخم البروستاتا (أكثر من 100 حالة ومعدل نجاح 99.99%)',
+      'تكنولوجيا التبخير المائي للبروستاتا (ريزوم) - مركز التميز',
+      'علاجات ضعف الانتصاب (الخلايا الجذعية، الموجات الصدمية)',
+      'تشخيص وعلاج العقم الذكوري',
+      'فحوصات صحة البروستاتا والكشف المبكر عن السرطان'
+    ],
     qualifications: [
-      { year: "2018", title: "Intensive Penile Prosthesis Workshop", place: "Ramathibodi Hospital, Bangkok" },
-      { year: "2017", title: "Training in Endourology", place: "Strasbourg, France" },
-      { year: "2017", title: "Advance in Upper Urinary Tract Laparoscopic Urology", place: "Rajavithi Hospital" },
-      { year: "2017", title: "Advanced Course in Laparoscopic Urological Surgery", place: "Asia IRCAD-TAIWAN, Lugang, Taiwan" },
-      { year: "2014", title: "Visiting Clinical Fellow in Urology and Andrology", place: "MD Anderson Cancer Center, The University of Texas, USA" },
-      { year: "2010", title: "Diplomate Thai Board of Urology", place: "Chiang Mai University, Thailand" },
-      { year: "2003", title: "Doctor of Medicine", place: "Faculty of Medicine, Chiang Mai University, Thailand" }
+      { year: "2018", title: "Intensive Penile Prosthesis Workshop", titleAR: "ورشة عمل مكثفة لجراحة زراعة الدعامة الذكرية", place: "Ramathibodi Hospital, Bangkok", placeAR: "مستشفى راماثيبودي، بانكوك" },
+      { year: "2017", title: "Training in Endourology", titleAR: "تدريب في جراحة المسالك البولية بالمنظار", place: "Strasbourg, France", placeAR: "ستراسبورج، فرنسا" },
+      { year: "2017", title: "Advance in Upper Urinary Tract Laparoscopic Urology", titleAR: "تدريب متقدم في جراحة المنظار للجهاز البولي العلوي", place: "Rajavithi Hospital", placeAR: "مستشفى راجافيثي" },
+      { year: "2017", title: "Advanced Course in Laparoscopic Urological Surgery", titleAR: "دورة متقدمة في جراحة المسالك البولية بالمنظار", place: "Asia IRCAD-TAIWAN, Lugang, Taiwan", placeAR: "آسيا إيركاد-تايوان، تايوان" },
+      { year: "2014", title: "Visiting Clinical Fellow in Urology and Andrology", titleAR: "زميل سريري زائر في طب المسالك البولية والذكورة", place: "MD Anderson Cancer Center, The University of Texas, USA", placeAR: "مركز إم دي أندرسون للسرطان، جامعة تكساس، الولايات المتحدة" },
+      { year: "2010", title: "Diplomate Thai Board of Urology", titleAR: "دبلوم البورد التايلاندي في جراحة المسالك البولية", place: "Chiang Mai University, Thailand", placeAR: "جامعة شيانغ ماي، تايلاند" },
+      { year: "2003", title: "Doctor of Medicine", titleAR: "دكتوراه في الطب", place: "Faculty of Medicine, Chiang Mai University, Thailand", placeAR: "كلية الطب، جامعة شيانغ ماي، تايلاند" }
     ],
     awards: [
-      { year: "2025", title: "First ASEAN Proctor for UroLift", issuer: "Appointed April 30, 2025" },
-      { year: "2025", title: "The First Certified UroLift Success Story (50 Cases)", issuer: "Teleflex™ Academy" },
-      { year: "2025", title: "Panelist: 'Beyond the Manual' Urology Summit", issuer: "National Urology Summit 2025" },
-      { year: "2024", title: "Thailand's First Urologist Certified in UroLift", issuer: "Teleflex™ Interventional Urology" },
-      { year: "2024", title: "Certificate: UROLIFT™ SYSTEM PROFICIENCY PATHWAY", issuer: "Teleflex™ Interventional Urology, USA" },
-      { year: "2024", title: "Chairperson: 2024 ED&BPH Masterclass", issuer: "ZP Therapeutics, Thailand" },
-      { year: "2023", title: "Center of Excellence: Rezūm™ Water Vapor Therapy", issuer: "Boston Scientific" },
-      { year: "2023", title: "Achievement: Successful completion of >80 Rezūm™ procedures", issuer: "Boston Scientific, USA" },
-      { year: "2023", title: "Certificate: Coloplast IPP & Testicular Implants", issuer: "Chulalongkorn University & Sewum Prosthetic Urology Center, Korea" },
-      { year: "2022", title: "Awards of Rezūm™ Center of Excellence", issuer: "Boston Scientific" },
-      { year: "2022", title: "Proctor of Rezūm Therapy in ASEAN", issuer: "Boston Scientific" }
+      { year: "2025", title: "First ASEAN Proctor for UroLift", titleAR: "أول مشرف تدريب معتمد لليوروليفت في رابطة دول جنوب شرق آسيا", issuer: "Appointed April 30, 2025", issuerAR: "معين في 30 أبريل 2025" },
+      { year: "2025", title: "The First Certified UroLift Success Story (50 Cases)", titleAR: "أول قصة نجاح معتمدة لعلاج اليوروليفت (50 حالة)", issuer: "Teleflex™ Academy", issuerAR: "أكاديمية تيليفليكس™" },
+      { year: "2025", title: "Panelist: 'Beyond the Manual' Urology Summit", titleAR: "عضو لجنة نقاش قمة المسالك البولية الوطنية 2025", issuer: "National Urology Summit 2025", issuerAR: "القمة الوطنية للمسالك البولية 2025" },
+      { year: "2024", title: "Thailand's First Urologist Certified in UroLift", titleAR: "أول طبيب مسالك بولية تايلاندي معتمد في اليوروليفت", issuer: "Teleflex™ Interventional Urology", issuerAR: "تيليفليكس™" },
+      { year: "2024", title: "Certificate: UROLIFT™ SYSTEM PROFICIENCY PATHWAY", titleAR: "شهادة الاستخدام الاحترافي لنظام يوروليفت", issuer: "Teleflex™ Interventional Urology, USA", issuerAR: "تيليفليكس™ الأمريكية" },
+      { year: "2024", title: "Chairperson: 2024 ED&BPH Masterclass", titleAR: "رئيس جلسة نقاشية: الدورة المتقدمة لضعف الانتصاب وتضخم البروستاتا 2024", issuer: "ZP Therapeutics, Thailand", issuerAR: "زي بي ثيرابيوتيكس، تايلاند" },
+      { year: "2023", title: "Center of Excellence: Rezūm™ Water Vapor Therapy", titleAR: "مركز التميز لعلاج ريزوم بالتبخير المائي", issuer: "Boston Scientific", issuerAR: "بوسطن ساينتيفيك" },
+      { year: "2023", title: "Achievement: Successful completion of >80 Rezūm™ procedures", titleAR: "إنجاز: استكمال أكثر من 80 إجراء ناجح لعلاج ريزوم", issuer: "Boston Scientific, USA", issuerAR: "بوسطن ساينتيفيك، الولايات المتحدة" },
+      { year: "2023", title: "Certificate: Coloplast IPP & Testicular Implants", titleAR: "شهادة دعامات وزراعة الخصية من Coloplast IPP", issuer: "Chulalongkorn University & Sewum Prosthetic Urology Center, Korea", issuerAR: "جامعة شولالونغكورن ومركز سيوم التعويضي، كوريا" },
+      { year: "2022", title: "Awards of Rezūm™ Center of Excellence", titleAR: "جوائز التميز كمركز معتمد لتقنية ريزوم", issuer: "Boston Scientific", issuerAR: "بوسطن ساينتيفيك" },
+      { year: "2022", title: "Proctor of Rezūm Therapy in ASEAN", titleAR: "مشرف تدريب معتمد لتقنية ريزوم في رابطة آسيان", issuer: "Boston Scientific", issuerAR: "بوسطن ساينتيفيك" }
     ],
     videos: [
       { id: "v1", title: "UroLift Patient Success Story - Minimal Invasive", url: "https://www.youtube.com/embed/JmU9Wz5UARA", thumbnail: "https://img.youtube.com/vi/JmU9Wz5UARA/maxresdefault.jpg" },
@@ -1863,43 +2969,52 @@ export const DOCTORS: DoctorData[] = [
         rating: 5
       }
     ]
-  },
+},
   {
     id: 2,
     slug: 'dr.phanpon',
     name: 'Dr.Phanpon Leelahawong',
+    nameAR: 'د. بانبون ليلاهاوونج',
     role: 'Consultant Urologist',
+    roleAR: 'استشاري جراحة المسالك البولية',
     image: '/assets/image/urologist section/dr.phanpon.webp',
     expert: 'Minimal Invasive & Innovation',
     expertTH: 'Minimal Invasive & Innovation',
+    expertAR: 'الإجراءات طفيفة التوغل والابتكار',
     hospital: 'Bangkok Hospital Pattaya',
     email: '',
     website: '',
     tagline: 'Expert in Minimal Invasive & Innovation Treatment',
     taglineTH: 'ผู้เชี่ยวชาญการรักษาแบบรุกรานน้อยและนวัตกรรม',
+    taglineAR: 'خبير في الإجراءات طفيفة التوغل والعلاجات المبتكرة',
     bio: "Dr. Phanpon Leelahawong is a board-certified urologist with extensive experience in high-volume endoscopic surgery for benign prostatic enlargement and complex urinary stone disease. His clinical focus centers on advanced transurethral and enucleation-based techniques, offering definitive surgical solutions for patients with moderate to large prostate glands.",
     bioTH: 'นพ. ภาณพ ลีลาวงศ์ เป็นแพทย์ศัลยกรรมระบบทางเดินปัสสาวะที่ได้รับการรับรองจากคณะกรรมการแพทย์ มีประสบการณ์กว้างขวางด้านการผ่าตัดส่องกล้องปริมาณสูงสำหรับต่อมลูกหมากโตชนิดไม่ร้ายแรงและนิ่วในทางเดินปัสสาวะที่ซับซ้อน ความเชี่ยวชาญทางคลินิกของเขาครอบคลุมเทคนิคผ่านทางท่อปัสสาวะและการตัดต่อมขั้นสูง เพื่อมอบแนวทางการผ่าตัดที่เด็ดขาดสำหรับผู้ป่วยที่มีต่อมลูกหมากขนาดกลางถึงขนาดใหญ่',
+    bioAR: 'الدكتور بانبون ليلاهاوونج هو جراح مسالك بولية معتمد يتمتع بخبرة واسعة في جراحات المناظير لعلاج تضخم البروستاتا الحميد وأمراض حصوات المسالك البولية المعقدة. يركز في ممارسته السريرية على تقنيات استئصال البروستاتا المتقدمة عبر الإحليل، حيث يقدم حلولًا جراحية نهائية للمرضى الذين يعانون من تضخم غدة البروستاتا.',
     bioContent: [
       {
         type: 'header',
         content: "Expertise in Advanced Enucleation & Endourology",
-        contentTH: 'ความเชี่ยวชาญด้านการตัดต่อมขั้นสูงและการส่องกล้องระบบทางเดินปัสสาวะ'
+        contentTH: 'ความเชี่ยวชาญด้านการตัดต่อมขั้นสูงและการส่องกล้องระบบทางเดินปัสสาวะ',
+        contentAR: 'خبرة متقدمة في استئصال أنسجة البروستاتا وجراحة المسالك البولية بالمنظار'
       },
       {
         type: 'paragraph',
         content: "Dr. Phanpon has substantial experience in transurethral resection (TURP), bipolar enucleation (TUERP/BipoLEP), and modern laser-based enucleation techniques (HoLEP). His practice emphasizes complete adenoma removal using anatomical enucleation principles for durable long-term outcomes.",
-        contentTH: 'นพ. ภาณพ มีประสบการณ์มากด้านการตัดชิ้นเนื้อผ่านท่อปัสสาวะ (TURP) การตัดต่อมแบบไบโพลาร์ (TUERP/BipoLEP) และเทคนิคการตัดต่อมด้วยเลเซอร์สมัยใหม่ (HoLEP) โดยเน้นการนำต่อมออกอย่างสมบูรณ์ตามหลักกายวิภาคศาสตร์ เพื่อผลลัพธ์ระยะยาวที่ยั่งยืน'
+        contentTH: 'นพ. ภาณพ มีประสบการณ์มากด้านการตัดชิ้นเนื้อผ่านท่อปัสสาวะ (TURP) การตัดต่อมแบบไบโพลาร์ (TUERP/BipoLEP) และเทคนิคการตัดต่อมด้วยเลเซอร์สมัยใหม่ (HoLEP) โดยเน้นการนำต่อมออกอย่างสมบูรณ์ตามหลักกายวิภาคศาสตร์ เพื่อผลลัพธ์ระยะยาวที่ยั่งยืน',
+        contentAR: 'يتمتع د. بانبون بخبرة كبيرة في عمليات استئصال البروستاتا عبر الإحليل (TURP)، واستئصال البروستاتا ثنائي القطب (TUERP/BipoLEP)، وتقنيات الاستئصال بالليزر الحديثة (HoLEP). يركز في ممارسته على الإزالة الكاملة للورم الغدي باستخدام أسس الاستئصال التشريحي لتحقيق نتائج مستدامة وطويلة الأمد.'
       },
       {
         type: 'image',
         image: "/assets/image/urologist section/dr.phanpon-biography/Professional Profile-1.webp",
         caption: "Dr. Phanpon performing advanced laser enucleation for large prostate cases.",
-        captionTH: 'นพ. ภาณพ กำลังทำการตัดต่อมด้วยเลเซอร์ขั้นสูงสำหรับผู้ป่วยต่อมลูกหมากขนาดใหญ่'
+        captionTH: 'นพ. ภาณพ กำลังทำการตัดต่อมด้วยเลเซอร์ขั้นสูงสำหรับผู้ป่วยต่อมลูกหมากขนาดใหญ่',
+        captionAR: 'د. بانبون أثناء إجراء عملية استئصال متقدمة بالليزر لحالات تضخم البروستاتا الكبيرة.'
       },
       {
         type: 'header',
         content: "Surgical Volume & Clinical Experience",
-        contentTH: 'ปริมาณการผ่าตัดและประสบการณ์ทางคลินิก'
+        contentTH: 'ปริมาณการผ่าตัดและประสบการณ์ทางคลินิก',
+        contentAR: 'الخبرة السريرية وحجم العمليات الجراحية'
       },
       {
         type: 'list',
@@ -1912,23 +3027,31 @@ export const DOCTORS: DoctorData[] = [
           'ผ่าตัดระบบทางเดินปัสสาวะมากกว่า 900 ครั้ง',
           'ผ่าตัดนิ่วด้วยการส่องกล้องมากกว่า 500 ครั้ง',
           'ผ่าตัดต่อมลูกหมากด้วยการส่องกล้องมากกว่า 400 ครั้ง'
+        ],
+        itemsAR: [
+          'إجراء أكثر من 900 عملية مسالك بولية',
+          'إجراء أكثر من 500 عملية تثقيب وتفتيت لحصوات المسالك البولية بالمنظار',
+          'إجراء أكثر من 400 جراحة منظار للبروستاتا'
         ]
       },
       {
         type: 'image',
         image: "/assets/image/urologist section/dr.phanpon-biography/Professional Profile-2.webp",
         caption: "Extensive surgical experience with over 900 urological procedures.",
-        captionTH: 'ประสบการณ์ผ่าตัดกว้างขวาง ด้วยหัตถการระบบทางเดินปัสสาวะมากกว่า 900 ครั้ง'
+        captionTH: 'ประสบการณ์ผ่าตัดกว้างขวาง ด้วยหัตถการระบบทางเดินปัสสาวะมากกว่า 900 ครั้ง',
+        captionAR: 'خبرة جراحية واسعة مع أكثر من 900 إجراء في المسالك البولية.'
       },
       {
         type: 'header',
         content: "Prostate & Endourology Center",
-        contentTH: 'ศูนย์ต่อมลูกหมากและการส่องกล้องระบบทางเดินปัสสาวะ'
+        contentTH: 'ศูนย์ต่อมลูกหมากและการส่องกล้องระบบทางเดินปัสสาวะ',
+        contentAR: 'مركز البروستاتا وجراحة المسالك البولية بالمنظار'
       },
       {
         type: 'paragraph',
         content: "The Prostate & Endourology Center provides comprehensive evaluation and management of benign prostatic enlargement (BPH), large prostate glands requiring enucleation surgery, and complex renal/ureteric stones. Each patient undergoes structured assessment including symptom evaluation, imaging, and individualized treatment planning.",
-        contentTH: 'ศูนย์ต่อมลูกหมากและการส่องกล้องฯ ให้บริการประเมินและดูแลต่อมลูกหมากโตชนิดไม่ร้ายแรง (BPH) ต่อมขนาดใหญ่ที่ต้องผ่าตัดตัดออก รวมถึงนิ่วในไตและท่อไตที่ซับซ้อน ผู้ป่วยทุกรายได้รับการประเมินอย่างเป็นระบบ ครอบคลุมการประเมินอาการ การถ่ายภาพ และการวางแผนรักษาเฉพาะบุคคล'
+        contentTH: 'ศูนย์ต่อมลูกหมากและการส่องกล้องฯ ให้บริการประเมินและดูแลต่อมลูกหมากโตชนิดไม่ร้ายแรง (BPH) ต่อมขนาดใหญ่ที่ต้องผ่าตัดตัดออก รวมถึงนิ่วในไตและท่อไตที่ซับซ้อน ผู้ป่วยทุกรายได้รับการประเมินอย่างเป็นระบบ ครอบคลุมการประเมินอาการ การถ่ายภาพ และการวางแผนรักษาเฉพาะบุคคล',
+        contentAR: 'يوفر المركز تقييماً وعلاجاً شاملاً لتضخم البروستاتا غدة (BPH)، وعمليات استئصال البروستاتا الكبيرة المتضخمة، وعلاج حصوات الكلى والحالب المعقدة. يخضع كل مريض لتقييم منهجي يشمل تقييم الأعراض والتصوير وتخطيط العلاج المناسب بشكل فردي.'
       },
       {
         type: 'list',
@@ -1943,18 +3066,26 @@ export const DOCTORS: DoctorData[] = [
           'การผ่าตัดส่องกล้องที่มีความแม่นยำสูงด้วยอุปกรณ์ทันสมัย',
           'คำแนะนำการผ่าตัดเฉพาะราย ตามขนาดต่อมและความคาดหวังของผู้ป่วย',
           'การดูแลรอบการผ่าตัดที่เป็นมาตรฐาน เพื่อการฟื้นฟูที่ดีที่สุด'
+        ],
+        itemsAR: [
+          'إجراءات طفيفة التوغل للجهاز البولي العلوي',
+          'جراحة مناظير دقيقة تعتمد على أحدث المعدات',
+          'توصيات جراحية مخصصة بناءً على حجم البروستاتا وتوقعات المريض',
+          'رعاية قياسية محيطة بالجراحة لضمان التعافي الأمثل'
         ]
       },
       {
         type: 'image',
         image: "/assets/image/urologist section/dr.phanpon-biography/Professional Profile-3.webp",
         caption: "A leading center for prostate enucleation and complex stone disease.",
-        captionTH: 'ศูนย์ชั้นนำด้านการตัดต่อมลูกหมากและโรคนิ่วที่ซับซ้อน'
+        captionTH: 'ศูนย์ชั้นนำด้านการตัดต่อมลูกหมากและโรคนิ่วที่ซับซ้อน',
+        captionAR: 'مركز رائد في عمليات استئصال البروستاتا وعلاج أمراض الحصوات المعقدة.'
       },
       {
         type: 'header',
         content: "Clinical Philosophy",
-        contentTH: 'ปรัชญาทางคลินิก'
+        contentTH: 'ปรัชญาทางคลินิก',
+        contentAR: 'الفلسفة السريرية'
       },
       {
         type: 'list',
@@ -1969,18 +3100,26 @@ export const DOCTORS: DoctorData[] = [
           'การตัดสินใจบนหลักฐานเชิงประจักษ์',
           'การดูแลรอบการผ่าตัดอย่างเป็นระบบ',
           'การฟื้นฟูการทำงานและความทนทานระยะยาว'
+        ],
+        itemsAR: [
+          'تقنيات الاستئصال التشريحي للإزالة الكاملة للأنسجة',
+          'صنع القرار القائم على الأدلة العلمية',
+          'رعاية منهجية في فترة محيطة بالجراحة',
+          'التعافي الوظيفي والنتائج المستدامة على المدى الطويل'
         ]
       },
       {
         type: 'image',
         image: "/assets/image/urologist section/dr.phanpon-biography/Professional Profile-4.webp",
         caption: "Committed to evidence-based care and anatomical precision.",
-        captionTH: 'มุ่งมั่นต่อการดูแลบนหลักฐานเชิงประจักษ์และความแม่นยำทางกายวิภาค'
+        captionTH: 'มุ่งมั่นต่อการดูแลบนหลักฐานเชิงประจักษ์และความแม่นยำทางกายวิภาค',
+        captionAR: 'الالتزام بالرعاية القائمة على الأدلة والدقة التشريحية.'
       },
       {
         type: 'header',
         content: "Professional Experience",
-        contentTH: 'ประสบการณ์วิชาชีพ'
+        contentTH: 'ประสบการณ์วิชาชีพ',
+        contentAR: 'الخبرة المهنية'
       },
       {
         type: 'list',
@@ -1995,33 +3134,43 @@ export const DOCTORS: DoctorData[] = [
           '2562 - ปัจจุบัน: แพทย์ประจำโรงพยาบาลระยอง จ.ระยอง',
           '2560 - 2562: แพทย์ประจำโรงพยาบาลเจ้าพระยาอภัยภูเบศร',
           'แพทย์ที่ปรึกษา: Dr. Phanpon Urology Clinic ระยอง, Eternity Clinic, ศรีระยองโรงพยาบาล, กรุงเทพระยองโรงพยาบาล'
+        ],
+        itemsAR: [
+          '2019 - حتى الآن: طبيب استشاري في المسالك البولية في M-Trust Urology Clinic',
+          '2019 - حتى الآن: طبيب مسالك بولية بدوام كامل، مستشفى رايونغ',
+          '2017 - 2019: طبيب مسالك بولية بدوام كامل، مستشفى مركز تشاو فرايا أبهيبهوبهيجر',
+          'استشاري مسالك بولية: عيادة دكتور بانبون رايونغ، عيادة الأبدية، مستشفى سري رايونغ، مستشفى رايونغ بانكوك'
         ]
       },
       {
         type: 'image',
         image: "/assets/image/urologist section/dr.phanpon-biography/Professional Profile-5.webp",
         caption: "Providing comprehensive urological consulting and specialized surgical services.",
-        captionTH: 'ให้บริการปรึกษาระบบทางเดินปัสสาวะครบวงจรและบริการผ่าตัดเฉพาะทาง'
+        captionTH: 'ให้บริการปรึกษาระบบทางเดินปัสสาวะครบวงจรและบริการผ่าตัดเฉพาะทาง',
+        captionAR: 'تقديم استشارات متكاملة وخدمات جراحية متخصصة في المسالك البولية.'
       }
     ],
     specialties: ["Andrology & Sexual Dysfunction", "Prostate Disease", "Urinary Tract Stones", "Dorsal Neurectomy", "Penile Enhancement", "Minimal Invasive & Innovation Treatment"],
     specialtiesTH: ['Andrology & Sexual Dysfunction', 'Prostate Disease', 'Urinary Tract Stones', 'Dorsal Neurectomy', 'Penile Enhancement', 'Minimal Invasive & Innovation Treatment'],
+    specialtiesAR: ["أمراض الذكورة والضعف الجنسي", "أمراض البروستاتا", "حصوات المسالك البولية", "استئصال العصب الظهري", "تجميل القضيب", "الإجراءات طفيفة التوغل والعلاجات المبتكرة"],
     qualifications: [
-      { year: "2025", title: "Certificate of Attendance, Master the Transurethral Anatomical Enucleation of Prostate (TUAEP)", place: "TUAEP Masterclass" },
-      { year: "2025", title: "Certificate of Completion, UROLIFT™ SYSTEM PROFICIENCY PATHWAY MODULE", place: "Teleflex Interventional Urology" },
-      { year: "2022", title: "Certificate of Recognition, Rezūm Procedure Training Program", place: "Boston Scientific" },
-      { year: "2020", title: "Certificate of Attendance, Endoscopic Stone Treatment Step 2", place: "SET - UP Programme, EAU" },
-      { year: "2018", title: "Certificate of Attendance, Endoscopic Stone Treatment Step 1", place: "SET - UP Programme, EAU" },
-      { year: "2017", title: "Diplomate Thai Board of Urology", place: "Siriraj Hospital, Mahidol University" },
-      { year: "2012", title: "Doctor of Medicine", place: "Faculty of Medicine, Prince of Songkla University" }
+      { year: "2025", title: "Certificate of Attendance, Master the Transurethral Anatomical Enucleation of Prostate (TUAEP)", titleAR: "شهادة حضور، إتقان الاستئصال التشريحي للبروستاتا عبر الإحليل (TUAEP)", place: "TUAEP Masterclass", placeAR: "دورة TUAEP المتقدمة" },
+      { year: "2025", title: "Certificate of Completion, UROLIFT™ SYSTEM PROFICIENCY PATHWAY MODULE", titleAR: "شهادة إتمام، وحدة مسار الكفاءة لنظام UROLIFT™", place: "Teleflex Interventional Urology", placeAR: "Teleflex لجراحة المسالك البولية التداخلية" },
+      { year: "2022", title: "Certificate of Recognition, Rezūm Procedure Training Program", titleAR: "شهادة تقدير، برنامج التدريب على إجراء Rezūm", place: "Boston Scientific", placeAR: "Boston Scientific" },
+      { year: "2020", title: "Certificate of Attendance, Endoscopic Stone Treatment Step 2", titleAR: "شهادة حضور، علاج الحصوات بالمنظار المرحلة 2", place: "SET - UP Programme, EAU", placeAR: "برنامج SET-UP، الجمعية الأوروبية لجراحة المسالك البولية (EAU)" },
+      { year: "2018", title: "Certificate of Attendance, Endoscopic Stone Treatment Step 1", titleAR: "شهادة حضور، علاج الحصوات بالمنظار المرحلة 1", place: "SET - UP Programme, EAU", placeAR: "برنامج SET-UP، الجمعية الأوروبية لجراحة المسالك البولية (EAU)" },
+      { year: "2017", title: "Diplomate Thai Board of Urology", titleAR: "دبلوم البورد التايلاندي في جراحة المسالك البولية", place: "Siriraj Hospital, Mahidol University", placeAR: "مستشفى سيريراج، جامعة ماهيدول" },
+      { year: "2012", title: "Doctor of Medicine", titleAR: "دكتور في الطب", place: "Faculty of Medicine, Prince of Songkla University", placeAR: "كلية الطب، جامعة الأمير سونغكلا" }
     ],
     awards: [
-      { year: "2025", title: "TUAEP Masterclass", issuer: "Certificate of Attendance" },
-      { year: "2025", title: "UROLIFT™ SYSTEM Proficiency", issuer: "Certificate of Completion" },
-      { year: "2022", title: "Rezūm Procedure Training", issuer: "Certificate of Recognition" }
+      { year: "2025", title: "TUAEP Masterclass", titleAR: "دورة TUAEP المتقدمة", issuer: "Certificate of Attendance", issuerAR: "شهادة حضور" },
+      { year: "2025", title: "UROLIFT™ SYSTEM Proficiency", titleAR: "كفاءة نظام UROLIFT™", issuer: "Certificate of Completion", issuerAR: "شهادة إتمام" },
+      { year: "2022", title: "Rezūm Procedure Training", titleAR: "التدريب على إجراء Rezūm", issuer: "Certificate of Recognition", issuerAR: "شهادة تقدير" }
     ],
     specializedFocus: "Minimally invasive BPH treatments using Rezūm (Water Vapor Therapy) and UroLift implants, alongside Dorsal Neurectomy and Penile Enhancement procedures.",
+    specializedFocusAR: "علاجات تضخم البروستاتا الحميد طفيفة التوغل باستخدام Rezūm (العلاج ببخار الماء) وزرعات UroLift، إلى جانب إجراءات استئصال العصب الظهري وتجميل القضيب.",
     surgicalExcellence: "Certified in advanced endoscopic stone treatment (EAU SET-UP), Rezūm, and UroLift, delivering high-quality urological care with a focus on patient safety and outcomes.",
+    surgicalExcellenceAR: "معتمد في العلاج المتقدم للحصوات بالمنظار (EAU SET-UP)، و Rezūm، و UroLift، لتقديم رعاية مسالك بولية عالية الجودة مع التركيز على سلامة المرضى والنتائج الطبية.",
     videoUrl: "",
     activities: [],
     certificates: [
@@ -2031,7 +3180,7 @@ export const DOCTORS: DoctorData[] = [
       "/assets/image/urologist section/dr.phanpon-certificate/certificate-04.webp"
     ],
     hideTestimonials: true
-  },
+},
   {
     id: 3,
     slug: 'dr.none',
@@ -2047,8 +3196,13 @@ export const DOCTORS: DoctorData[] = [
     awards: [],
     videoUrl: "",
     activities: [],
-    certificates: []
-  },
+    certificates: [],
+      nameAR: "د. طبيب غير معروف",
+      roleAR: "اختصاصي مجهول",
+      expertAR: "عام",
+      taglineAR: "طبيب عام",
+      bioAR: "لا يوجد."
+},
 ];
 
 export const ABOUT_SPECIALTIES = [
@@ -2126,8 +3280,62 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Long-lasting results (up to 2 years)</li>
         </ul>
       </div>
-    `
-  },
+    `,
+      titleAR: "ما هو العلاج بالموجات الصدمية (Li-ESWT)؟",
+      excerptAR: "اكتشف كيف تحفز هذه التقنية تدفق الدم لعلاج ضعف الانتصاب بشكل دائم.",
+      contentAR: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        يؤثر ضعف الانتصاب (ED) على ملايين الرجال حول العالم، وغالباً ما يكون سببه ضعف تدفق الدم. العلاجات التقليدية مثل الحبوب (PDE5i) توفر حلاً مؤقتاً لكنها لا تعالج السبب الجذري. باختلاف تام، يعتبر <strong>العلاج بالموجات الصدمية المركزة الخطي (Li-ESWT)</strong> نقلة نوعية كعلاج تجديدي غير جراحي يهدف إلى استعادة الوظيفة الطبيعية.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">كيف يعمل؟</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            يستخدم Li-ESWT موجات صوتية عالية التردد ومنخفضة الشدة لاستهداف الأنسجة داخل العضو الذكري. هذه الموجات تخلق صدمة مجهرية محسّنة، مما يؤدي إلى استجابة بيولوجية تُعرف باسم <strong>تولد الأوعية الدموية (Angiogenesis)</strong> — أي تكوين أوعية دموية جديدة.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>يكسر الترسبات الدقيقة</strong> في الأوعية الدموية الموجودة.</li>
+            <li><strong>يحفز عوامل النمو</strong> (مثل VEGF) لإصلاح الأنسجة.</li>
+            <li><strong>يجدد النسيج العصبي</strong>، مما يحسن من الحساسية.</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img 
+            src="/assets/image/blog section/Can it really cure ED 2.webp" 
+            alt="Shockwave Therapy Mechanism" 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">آلية Li-ESWT: الموجات الصوتية تحفز تكوين الأوعية الدموية الجديدة</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">هل يمكن أن "يعالج" ضعف الانتصاب نهائياً؟</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        في حين أن كلمة "علاج نهائي" قوية، إلا أن Li-ESWT هو الوسيلة الوحيدة حالياً التي <strong>تعيد تأهيل</strong> آلية الانتصاب بدلاً من مجرد حجب الأعراض. تُظهر الدراسات السريرية معدلات نجاح كبيرة:
+      </p>
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "أبلغ أكثر من 75٪ من المرضى عن تحسن في وظيفة الانتصاب وتمكنوا من تحقيق انتصاب تلقائي دون استخدام الأدوية بعد إكمال دورة العلاج الكاملة."
+      </blockquote>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">بروتوكول العلاج</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        تتضمن الدورة القياسية 6-12 جلسة، تستغرق كل منها حوالي 15 دقيقة. إنه إجراء غير مؤلم، ولا يتطلب تخديراً، ولا يحتاج إلى فترة نقاهة.
+      </p>
+      
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">أهم الفوائد:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> 100% غير جراحي وبدون ألم</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> لا توجد آثار جانبية مرتبطة عادة بالحبوب</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> نتائج طويلة الأمد (تصل إلى سنتين)</li>
+        </ul>
+      </div>
+      `
+},
   {
     id: 2,
     title: 'Treating BPH Without Surgery: ReZum & UroLift',
@@ -2184,8 +3392,60 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Both avoid major surgery</li>
         </ul>
       </div>
-    `
-  },
+    `,
+      titleAR: "علاج تضخم البروستاتا بدون جراحة: ReZUM و UroLift",
+      excerptAR: "بدائل جديدة لتضخم البروستاتا الحميد تحافظ على الوظيفة الجنسية وتوفر تعافياً سريعاً.",
+      contentAR: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        يؤثر تضخم البروستاتا الحميد (BPH) على أكثر من 50% من الرجال فوق سن الخمسين، مما يسبب أعراضاً بولية تؤثر بشكل كبير على جودة الحياة. الجراحة التقليدية (TURP) فعالة ولكنها تحمل مخاطر تشمل الخلل الوظيفي الجنسي وطول فترة التعافي. يمثل <strong>علاج ReZUM ببخار الماء</strong> و <strong>نظام UroLift</strong> بدائل ثورية غير جراحية.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">ما هو ReZUM؟</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            يستخدم ReZUM بخار الماء المعقم لكي وإزالة أنسجة البروستاتا الزائدة بلطف ودقة. يستغرق الإجراء <strong>15 دقيقة</strong> فقط تحت التخدير الموضعي.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>طفيف التوغل</strong> - لا يتطلب أي شقوق</li>
+            <li><strong>يحافظ على الوظيفة الجنسية</strong> - لا يوجد خطر القذف المرتجع</li>
+            <li><strong>تعافي سريع</strong> - العودة إلى الوضع الطبيعي خلال 3-7 أيام</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img 
+            src="/assets/image/blog section/Treating BPH Without Surgery 2.webp" 
+            alt="ReZUM Procedure" 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">ReZUM: العلاج ببخار الماء لتضخم البروستاتا</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">ما هو UroLift؟</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        يستخدم UroLift غرسات صغيرة لـ "رفع" وتثبيت أنسجة البروستاتا المتضخمة بعيدًا عن مجرى البول، مما يخلق قناة مفتوحة لتدفق البول. لا تتم إزالة أي أنسجة.
+      </p>
+      <blockquote class="border-r-4 border-amber-500 pr-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "تُظهر الدراسات أن مرضى UroLift يشعرون براحة فورية من الأعراض مع عدم وجود أي خطر للإصابة بضعف الانتصاب أو القذف — وهو تغيير جذري للرجال الأصغر سناً والنشطين جنسياً."
+      </blockquote>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">ReZUM مقابل UroLift: أيهما الأنسب لك؟</h3>
+      
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">ملخص المقارنة:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>ReZUM:</strong> الأفضل للبروستاتا المتوسطة إلى الكبيرة (30-80 مل)</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>UroLift:</strong> مثالي للبروستاتا الصغيرة إلى المتوسطة (أقل من 80 مل)</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> كلاهما يحافظ على الوظيفة الجنسية بنسبة 100٪</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> كلاهما يتجنب الجراحة الكبرى</li>
+        </ul>
+      </div>
+      `
+},
   {
     id: 3,
     title: 'Stapler Circumcision vs Traditional: Which is Better?',
@@ -2242,8 +3502,60 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Faster healing (7-10 days)</li>
         </ul>
       </div>
-    `
-  },
+    `,
+      titleAR: "الختان بالدباسة مقابل التقليدي: أيهما أفضل؟",
+      excerptAR: "مقارنة شاملة بين طرق الختان لمساعدتك في اتخاذ القرار.",
+      contentAR: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        يعد الختان أحد أكثر العمليات الجراحية شيوعاً في جميع أنحاء العالم. في حين تم استخدام الطرق التقليدية لقرون، تقدم <strong>تقنية الختان بالدباسة (Stapler Circumcision)</strong> الحديثة ثورة في الراحة، والنتائج التجميلية، ووقت التعافي - حيث تكتمل في 15 دقيقة فقط مع الحد الأدنى من النزيف.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">كيف تعمل تقنية الختان بالدباسة؟</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            باستخدام جهاز متخصص يستخدم لمرة واحدة، تقوم طريقة الدباسة بقطع القلفة وختمها في وقت واحد باستخدام دبابيس طبية. النتيجة هي قطع محيطي نظيف ومتساوٍ.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>إجراء يستغرق 15 دقيقة</strong> - أسرع بكثير من الطريقة التقليدية</li>
+            <li><strong>الحد الأدنى من النزيف</strong> - توقف فوري للنزيف</li>
+            <li><strong>جماليات فائقة</strong> - نتائج متسقة وأنيقة</li>
+            <li><strong>ألم أقل</strong> - تقليل صدمة الأنسجة</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img 
+            src="/assets/image/blog section/Stapler Circumcision vs Traditional 2.webp" 
+            alt="Stapler Circumcision" 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">تقنية الدباسة الحديثة لنتائج دقيقة</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">الطريقة التقليدية مقابل الدباسة</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        يستخدم الختان التقليدي مشرطاً ويتطلب خياطة يدوية، مما قد يستغرق 30-45 دقيقة. تقلل طريقة الدباسة من وقت الإجراء بنسبة 70٪ وتقدم نتائج تجميلية أكثر اتساقاً.
+      </p>
+      
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "تتجاوز معدلات رضا المرضى عن الختان بالدباسة 95٪، حيث يبلغ معظم الرجال عن الحد الأدنى من الانزعاج ونتائج تجميلية ممتازة. وقت التعافي هو عادة 7-10 أيام."
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">الفوائد الرئيسية:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> إجراء سريع في العيادة لمدة 15 دقيقة</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> الحد الأدنى من ألم ما بعد الجراحة</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> مظهر تجميلي فائق</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> شفاء أسرع (7-10 أيام)</li>
+        </ul>
+      </div>
+      `
+},
   {
     id: 4,
     title: 'Prostate Cancer Warning Signs: Why PSA Matters',
@@ -2299,8 +3611,59 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Results ready in 24-48 hours</li>
         </ul>
       </div>
-    `
-  },
+    `,
+      titleAR: "علامات تحذيرية لسرطان البروستاتا: أهمية فحص PSA",
+      excerptAR: "لماذا يعتبر الكشف المبكر المنقذ الأهم للرجال.",
+      contentAR: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        يعد سرطان البروستاتا ثاني أكثر أنواع السرطان شيوعاً بين الرجال في جميع أنحاء العالم، ومع ذلك فإن المرض في مراحله المبكرة غالباً ما يكون <strong>بلا أعراض</strong>. هذه الطبيعة الصامتة تجعل <strong>اختبار الدم PSA (مستضد البروستاتا النوعي)</strong> المنتظم أمراً بالغ الأهمية للكشف المبكر والعلاج الناجح.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">ما هو اختبار PSA؟</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            PSA هو بروتين تنتجه غدة البروستاتا. يمكن أن تشير المستويات المرتفعة إلى سرطان البروستاتا، تضخم البروستاتا الحميد (BPH)، أو التهاب البروستاتا. يمكن لفحص دم بسيط اكتشاف التشوهات <strong>قبل سنوات من ظهور الأعراض</strong>.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>معدل PSA الطبيعي:</strong> &#60;4.0 نانوغرام/مل (يختلف حسب العمر)</li>
+            <li><strong>المنطقة الرمادية:</strong> 4.0-10.0 نانوغرام/مل (يتطلب مزيداً من الفحص)</li>
+            <li><strong>مخاطر عالية:</strong> &#62;10.0 نانوغرام/مل (يتطلب فحصاً طبياً فورياً)</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img 
+            src="/assets/image/blog section/Prostate Cancer Warning Signs 2.webp" 
+            alt="PSA Blood Test" 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">الكشف المبكر ينقذ الأرواح: فحص PSA</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">العلامات التحذيرية (المرض المتقدم)</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        بينما يكون سرطان البروستاتا المبكر بدون أعراض، فإن المرض المتقدم قد يسبب مشاكل بولية، دماً في البول، آلاماً في العظام، أو ضعفاً في الانتصاب. لا تنتظر ظهور الأعراض - اخضع للفحص.
+      </p>
+      
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "يجب على الرجال فوق سن الخمسين (أو فوق الأربعين إذا كان لديهم تاريخ عائلي) إجراء فحص PSA سنوياً. الكشف المبكر يزيد من معدلات البقاء على قيد الحياة لمدة 5 سنوات إلى ما يقرب من 100٪."
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">توصيات الفحص:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> العمر 50+: فحص PSA سنوي</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> العمر 40+ مع تاريخ عائلي: البدء في الفحص مبكراً</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> دمج فحص PSA مع فحص المستقيم الرقمي (DRE)</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> نتائج الفحص جاهزة خلال 24-48 ساعة</li>
+        </ul>
+      </div>
+      `
+},
   {
     id: 5,
     title: 'Low Testosterone (Low T): Symptoms & TRT Solutions',
@@ -2357,8 +3720,60 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Better energy and reduced fatigue</li>
         </ul>
       </div>
-    `
-  },
+    `,
+      titleAR: "نقص هرمون التستوستيرون (Low T): الأعراض والحلول",
+      excerptAR: "كيف تستعيد نشاطك وحيويتك بالعلاج الهرموني.",
+      contentAR: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        تنخفض مستويات هرمون التستوستيرون بشكل طبيعي مع تقدم العمر، ولكن النقص الحاد يمكن أن يسبب أعراضاً منهكة. يؤثر <strong>نقص هرمون التستوستيرون (Low T)</strong> على الطاقة والمزاج وكتلة العضلات والوظيفة الجنسية. يمكن لـ <strong>العلاج التعويضي بالتستوستيرون (TRT)</strong> استعادة الحيوية ونوعية الحياة عند إدارته بشكل صحيح.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">التعرف على أعراض نقص هرمون التستوستيرون</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            يظهر انخفاض هرمون التستوستيرون في أنظمة الجسم المتعددة. يعاني العديد من الرجال في صمت، ويعزون الأعراض إلى "الشيخوخة" دون إدراك أن العلاج متاح.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>جنسياً:</strong> انخفاض الرغبة الجنسية، وضعف الانتصاب</li>
+            <li><strong>جسدياً:</strong> التعب، فقدان العضلات، زيادة الوزن</li>
+            <li><strong>عقلياً:</strong> الاكتئاب، ضبابية الدماغ، التهيج</li>
+            <li><strong>التمثيل الغذائي:</strong> زيادة دهون الجسم، انخفاض كثافة العظام</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img 
+            src="/assets/image/blog section/Low Testosterone 2.webp" 
+            alt="Testosterone Therapy" 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">استعد حيويتك مع علاج TRT الطبي</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">خيارات علاج TRT</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        يأتي العلاج التعويضي الحديث (TRT) في أشكال متعددة: حقن (أسبوعية/نصف شهرية)، مواد هلامية (تطبيق يومي)، أو حبيبات (كل 3-6 أشهر). سيقوم طبيبك بتخصيص النهج بناءً على أسلوب حياتك وتفضيلاتك.
+      </p>
+      
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "يُبلغ معظم الرجال الذين يتلقون علاج TRT المدار بشكل صحيح عن تحسن كبير في الطاقة والمزاج والوظيفة الجنسية في غضون 4-6 أسابيع. إنه تغيير جذري في الحياة."
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">فوائد علاج TRT:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> استعادة الرغبة الجنسية والأداء الجنسي</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> زيادة كتلة العضلات وقوتها</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> تحسن المزاج والصفاء الذهني</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> طاقة أفضل وتقليل التعب</li>
+        </ul>
+      </div>
+      `
+},
   {
     id: 6,
     title: 'Safe Penile Enlargement: Medical Fillers vs. Fat Transfer',
@@ -2485,8 +3900,132 @@ export const BLOG_POSTS: BlogPost[] = [
       <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
         <strong>NEVER</strong> inject liquid silicone, paraffin, or oils. These unauthorized substances cause severe granulomas, infection, and permanent deformity requiring complex reconstructive surgery to fix. Always choose FDA/Thai FDA approved medical methods performed by a specialist urologist.
       </p>
-    `
-  },
+    `,
+      titleAR: "تكبير العضو الذكري بأمان: الفيلر مقابل حقن الدهون",
+      excerptAR: "كل ما تحتاج معرفته عن خيارات تكبير محيط العضو.",
+      contentAR: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        شهد طب المسالك البولية التجميلي تقدماً ملحوظاً، مما جعل تكبير محيط العضو الذكري إجراءً آمناً ومطلوباً بشدة. هناك طريقتان أساسيتان تهيمنان على هذا المجال: <strong>حقن الفيلر الطبي (HA Fillers)</strong> و <strong>نقل وحقن الدهون الذاتية</strong>. دعنا نقارن بينهما لمساعدتك في اتخاذ خيار مستنير.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">1. حقن الفيلر الجلدي الطبي (HA)</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            توفر حقن حمض الهيالورونيك (HA) حلاً غير جراحي وبأقل قدر من التدخل. حمض الهيالورونيك هو مادة طبيعية موجودة في جسم الإنسان، مما يضمن توافقاً حيوياً عالياً.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>الإجراء:</strong> يتم في العيادة، ويستغرق 30-45 دقيقة.</li>
+            <li><strong>التخدير:</strong> كريم مخدر موضعي وتخدير موضعي.</li>
+            <li><strong>النتائج:</strong> زيادة فورية في المحيط (عادة 20-30٪)، وملمس متساوٍ تماماً.</li>
+            <li><strong>قابلية الانعكاس:</strong> قابل للذوبان والإزالة بنسبة 100٪ باستخدام إنزيم (هيالورونيداز).</li>
+            <li><strong>الأفضل لـ:</strong> المرات الأولى للذين يسعون للتجربة أو لتحسين دقيق.</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img 
+            src="/assets/image/blog section/Safe Penile Enlargement 2.webp" 
+            alt="Medical HA Fillers" 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">دقيق وقابل للانعكاس: فيلر الجلد HA</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">2. نقل وحقن الدهون الذاتية</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        يتضمن هذا الإجراء استخراج الدهون من جسمك (البطن أو الفخذين)، وتنقيتها، ثم حقنها في جسم القضيب. نظراً لأنه يستخدم أنسجتك الخاصة، فإن النتائج تبدو طبيعية بشكل لا يصدق.
+      </p>
+      
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "يوفر نقل الدهون فائدة 'اثنين في واحد': شفط الدهون لنحت مناطق معينة في الجسم، وتعزيز طبيعي لمحيط القضيب يمكن أن يستمر لسنوات."
+      </blockquote>
+
+      <div class="bg-red-50 dark:bg-red-900/10 p-6 rounded-2xl border border-red-100 dark:border-red-900/20 my-8">
+        <h4 class="font-bold text-red-600 dark:text-red-500 mb-2">عيوب نقل الدهون الذاتية:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span> <strong>امتصاص الدهون غير المتوقع:</strong> قد يعيد الجسم امتصاص 30-50٪ من الدهون المنقولة، مما يسبب نتائج غير متساوية أو غير متماثلة بمرور الوقت.</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span> <strong>خطر حدوث كتل وعقد:</strong> يمكن أن تتكتل الدهون أو تشكل عقداً ليفية، مما يخلق ملمساً غير منتظم قد يتطلب إجراءات تصحيحية.</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span> <strong>يتطلب جراحة:</strong> خطوة حصاد الدهون (شفط الدهون) تتطلب التخدير والشقوق الجراحية، وتتطلب فترة نقاهة أطول (2-4 أسابيع).</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span> <strong>غير قابل للانعكاس:</strong> على عكس الفيلر HA، لا يمكن تذويب الدهون باستخدام إنزيم في حالة حدوث مضاعفات.</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span> <strong>مضاعفات محتملة في موقع المنح (الشفط):</strong> كدمات، تورم، أو عدم انتظام في الشكل في موقع شفط الدهون.</li>
+        </ul>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">مقارنة: حقن الفيلر مقابل نقل الدهون</h3>
+      <div class="overflow-x-auto my-8">
+        <table class="w-full text-sm border-collapse rounded-2xl overflow-hidden shadow-lg">
+          <thead>
+            <tr class="bg-slate-800 dark:bg-slate-700 text-white">
+              <th class="px-4 py-3 text-left font-bold">الخاصية</th>
+              <th class="px-4 py-3 text-center font-bold">فيلر HA</th>
+              <th class="px-4 py-3 text-center font-bold">نقل الدهون</th>
+            </tr>
+          </thead>
+          <tbody class="text-slate-700 dark:text-slate-300">
+            <tr class="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">نوع الإجراء</td>
+              <td class="px-4 py-3 text-center">غير جراحي (حقن)</td>
+              <td class="px-4 py-3 text-center">جراحة صغرى (شفط دهون + حقن)</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">وقت الإجراء</td>
+              <td class="px-4 py-3 text-center">30-45 دقيقة</td>
+              <td class="px-4 py-3 text-center">1-2 ساعة</td>
+            </tr>
+            <tr class="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">التخدير</td>
+              <td class="px-4 py-3 text-center">تخدير موضعي (كريم وحقن)</td>
+              <td class="px-4 py-3 text-center">تخدير موضعي أو عام</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">مدة النتائج</td>
+              <td class="px-4 py-3 text-center">12-18 شهراً</td>
+              <td class="px-4 py-3 text-center">طويلة الأمد (تختلف حسب معدل الامتصاص)</td>
+            </tr>
+            <tr class="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">فترة النقاهة</td>
+              <td class="px-4 py-3 text-center">لا يوجد - استئناف الأنشطة اليومية فوراً</td>
+              <td class="px-4 py-3 text-center">2-4 أسابيع للتعافي</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">توقع النتائج</td>
+              <td class="px-4 py-3 text-center">عالية - تحكم دقيق في الحجم</td>
+              <td class="px-4 py-3 text-center">متوسطة - قد يتم إعادة امتصاص 30-50٪ من الدهون</td>
+            </tr>
+            <tr class="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">التماثل</td>
+              <td class="px-4 py-3 text-center">ممتاز - توزيع متساوٍ</td>
+              <td class="px-4 py-3 text-center">خطر حدوث كتل/عدم تماثل</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">قابلية الانعكاس</td>
+              <td class="px-4 py-3 text-center">نعم - قابلة للذوبان بالهيالورونيداز</td>
+              <td class="px-4 py-3 text-center">لا - تتطلب تدخلاً جراحياً تصحيحياً</td>
+            </tr>
+            <tr class="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">الملمس الطبيعي</td>
+              <td class="px-4 py-3 text-center">جيد - أكثر صلابة قليلاً</td>
+              <td class="px-4 py-3 text-center">ممتاز - ناعم جداً وطبيعي</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-800/50">
+              <td class="px-4 py-3 font-semibold">الأفضل لـ</td>
+              <td class="px-4 py-3 text-center">المرات الأولى، تحسين دقيق، مخاطر منخفضة</td>
+              <td class="px-4 py-3 text-center">المرضى الذين يبحثون عن نتائج طويلة الأمد مع نحت الجسم</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">تحذير أمني: تجنب البارافين والسيليكون</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        <strong>يمنع منعاً باتاً</strong> حقن السيليكون السائل أو البارافين أو الزيوت. تسبب هذه المواد غير المصرح بها أوراماً حبيبية شديدة وعدوى وتشوهاً دائماً يتطلب جراحة ترميمية معقدة لإصلاحه. اختر دائماً الطرق الطبية المعتمدة من إدارة الغذاء والدواء (FDA/Thai FDA) والتي يقوم بها أخصائي جراحة المسالك البولية.
+      </p>
+      `
+},
   {
     id: 7,
     title: 'Semen Analysis: The Key to Male Infertility',
@@ -2543,8 +4082,60 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> History of testicular issues</li>
         </ul>
       </div>
-    `
-  },
+    `,
+      titleAR: "تحليل السائل المنوي: المفتاح لعقم الرجال",
+      excerptAR: "أهمية جودة الحيوانات المنوية في الإنجاب.",
+      contentAR: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        يساهم عامل العقم عند الذكور في حوالي 50٪ من صعوبة الإنجاب لدى الأزواج. يعد <strong>تحليل السائل المنوي</strong> الشامل الخطوة الأولى والأكثر أهمية في تشخيص مشاكل الإنجاب وتوجيه قرارات العلاج.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">ما الذي يقيسه تحليل السائل المنوي؟</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            يقيم الاختبار عدد الحيوانات المنوية، حركتها، شكلها (المورفولوجيا)، وحجم السائل المنوي. تحدد معايير منظمة الصحة العالمية (WHO) النطاقات الطبيعية لكل مقياس.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>عدد الحيوانات المنوية:</strong> &#62;15 مليون/مل</li>
+            <li><strong>الحركة:</strong> &#62;40% حيوانات منوية متحركة</li>
+            <li><strong>الشكل (المورفولوجيا):</strong> &#62;4% شكل طبيعي</li>
+            <li><strong>الحجم:</strong> &#62;1.5 مل لكل قذف</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img 
+            src="/assets/image/blog section/Semen Analysis 2.webp" 
+            alt="Semen Analysis Lab" 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">اختبارات وتحليل الخصوبة المتقدمة</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">تحسين جودة الحيوانات المنوية</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        يمكن لتعديلات نمط الحياة أن تحسن بشكل كبير مقاييس الحيوانات المنوية في غضون 2-3 أشهر: الحفاظ على وزن صحي، تجنب التدخين/الكحول، إدارة التوتر، والتفكير في المكملات مثل الزنك، وفيتامين سي، والإنزيم المساعد Q10.
+      </p>
+      
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "تُظهر الدراسات أن التغييرات المستهدفة في نمط الحياة والتدخلات الطبية يمكن أن تحسن عدد الحيوانات المنوية وحركتها بنسبة 30-50٪ في 3 أشهر فقط."
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">متى يجب إجراء الفحص:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> محاولة الإنجاب لمدة 12+ شهراً</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> التخطيط للأبوة في المستقبل</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> بعد عملية عكس قطع القناة الدافقة (Vasectomy Reversal)</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> وجود تاريخ من مشاكل الخصيتين</li>
+        </ul>
+      </div>
+      `
+},
   {
     id: 8,
     title: 'Overcoming Premature Ejaculation: Medical Solutions',
@@ -2600,8 +4191,59 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Surgical option: Permanent solution for severe cases</li>
         </ul>
       </div>
-    `
-  },
+    `,
+      titleAR: "التغلب على سرعة القذف: الحلول الطبية",
+      excerptAR: "علاجات حديثة لمشكلة سرعة القذف.",
+      contentAR: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        تؤثر سرعة القذف (PE) على 20-30٪ من الرجال، مما يسبب ضائقة كبيرة ومشاكل في العلاقات. يقدم الطب الحديث <strong>العلاجات السلوكية</strong> و <strong>التدخلات الطبية</strong> — بما في ذلك الخيارات الجراحية المبتكرة — لتوفير حلول دائمة.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">فهم سرعة القذف</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            تُعرَّف سرعة القذف بأنها القذف الذي يحدث في غضون 1-2 دقيقة من الإيلاج (أو أقل)، مصحوباً بعدم القدرة على التحكم في التوقيت والضيق الشخصي.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>سرعة القذف الأولية:</strong> حالة تدوم مدى الحياة</li>
+            <li><strong>سرعة القذف الثانوية:</strong> تُكتسب في وقت لاحق من الحياة</li>
+            <li><strong>الأسباب:</strong> فرط الحساسية، القلق، والاختلالات الكيميائية العصبية</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img 
+            src="/assets/image/blog section/Overcoming Premature Ejaculation 2.webp" 
+            alt="Medical Treatment" 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">حلول طبية لأداء يدوم</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">خيارات العلاج</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        <strong>الأدوية:</strong> مثبطات استرداد السيروتونين (SSRIs) مثل دابوكستين تؤخر القذف بمقدار 3-4 أضعاف. <strong>المخدرات الموضعية:</strong> بخاخات ليدوكائين تقلل الحساسية. <strong>الخيار الجراحي:</strong> استئصال العصب الظهري الانتقائي يقلل فرط الحساسية بشكل دائم.
+      </p>
+      
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "الجمع بين الأدوية والتقنيات السلوكية يحقق أفضل النتائج. أكثر من 70٪ من الرجال يحققون تحكماً مرضياً في غضون 3 أشهر من بدء العلاج."
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">معدلات نجاح العلاج:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> أدوية SSRI: نجاح بنسبة 70-80٪</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> العلاج السلوكي: تحسن بنسبة 50-60٪</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> النهج المشترك: رضا بنسبة 80-90٪</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> الخيار الجراحي: حل دائم للحالات الشديدة</li>
+        </ul>
+      </div>
+      `
+},
   {
     id: 9,
     title: 'Circumcision Near Me: How to Choose the Best Clinic?',
@@ -2649,6 +4291,51 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Hospital-grade sterilization standards</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Private, discreet environment</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Post-operative care and follow-up included</li>
+        </ul>
+      </div>
+    `
+    ,titleAR: 'الختان بالدباسة أم التقليدي: كيف تختار أفضل عيادة؟'
+    ,excerptAR: 'دليلك الشامل لاختيار عيادة الختان المثالية مع أحدث تقنيات الدباسة.'
+    ,contentAR: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        يعد اختيار العيادة المناسبة لإجراء الختان من أهم القرارات التي ستتخذها بشأن هذا الإجراء. سواء كان ذلك لأسباب طبية أو صحية أو تجميلية، فإن <strong>من يقوم بالعملية وكيفية إجرائها</strong> يحدد مستوى راحتك وسرعة تعافيك والنتيجة التجميلية النهائية.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">الختان بالدباسة مقابل الختان التقليدي</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            يستخدم الختان التقليدي المشرط والخياطة اليدوية، ويستغرق 30-45 دقيقة. بينما يكمل <strong>الختان الحديث بالدباسة (ZSR)</strong> نفس الإجراء في 15 دقيقة فقط بنتائج متفوقة.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>إجراء يستغرق 15 دقيقة</strong> — أسرع بكثير من الطريقة التقليدية</li>
+            <li><strong>نزيف بالحد الأدنى</strong> — إرقاء (وقف نزيف) فوري بفضل التدبيس</li>
+            <li><strong>نتائج تجميلية متفوقة</strong> — قطع دائري نظيف ومتساوٍ</li>
+            <li><strong>ألم أقل</strong> — صدمة أقل للأنسجة وبدون خياطة يدوية</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Circumcision Near Me 2.webp" alt="Circumcision clinic" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">عيادة ختان حديثة ومتطورة في إم-تراست (M-Trust)</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">ما الذي يجب أن تبحث عنه في عيادة الختان</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        ليست كل العيادات تقدم نفس المستوى من الرعاية. يجب أن يقوم بالإجراء <strong>أخصائي جراحة مسالك بولية</strong> معتمد (وليس طبيباً عاماً) باستخدام معدات معقمة على مستوى المستشفيات. يجب أن توفر العيادة خصوصية تامة ومتابعة بعد العملية.
+      </p>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">قائمة التحقق لاختيار العيادة:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> إجراء يتم بواسطة طبيب مسالك بولية متخصص</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> توفر أحدث تقنيات ZSR/الدباسة</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> معايير تعقيم بمستوى المستشفيات</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> بيئة خاصة وسرية تامة</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> رعاية ومتابعة ما بعد العملية مشمولة</li>
         </ul>
       </div>
     `
@@ -2705,6 +4392,53 @@ export const BLOG_POSTS: BlogPost[] = [
         </ul>
       </div>
     `
+    ,titleAR: 'ضعف الانتصاب: ماذا تفعل حين يرفض الانتصاب؟'
+    ,excerptAR: 'تشخيص أسباب ضعف الانتصاب وحلول طبية مدروسة لاستعادة ثقتك.'
+    ,contentAR: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        يعد ضعف الانتصاب (ED) أكثر شيوعاً مما يجرؤ معظم الرجال على الاعتراف به — فهو يؤثر على <strong>رجل واحد من كل 3 رجال فوق سن الأربعين</strong>. الخبر السار: يمتلك طب المسالك البولية الحديث علاجات متقدمة تتجاوز بكثير "الحبة الزرقاء"، حيث تستهدف السبب الجذري للتعافي الدائم.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">لماذا يحدث ضعف الانتصاب؟</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            غالباً ما يكون ضعف الانتصاب وعائي المنشأ — مما يعني أن الأوعية الدموية التي تغذي القضيب تالفة أو مقيدة. تشمل الأسباب الأخرى تلف الأعصاب، الخلل الهرموني (انخفاض التستوستيرون)، والعوامل النفسية.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li>ضعف الدورة الدموية في الحوض (الأكثر شيوعاً)</li>
+            <li>السكري أو ارتفاع ضغط الدم الذي يضر بجدران الأوعية الدموية</li>
+            <li>انخفاض مستويات التستوستيرون</li>
+            <li>التوتر والقلق ومشاكل العلاقات</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Erectile Dysfunction 2.webp" alt="ED Solutions" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">حلول حديثة لضعف الانتصاب</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">سلم العلاج: من البسيط إلى المتقدم</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        يبدأ العلاج بتغييرات في نمط الحياة (التمارين، النظام الغذائي، الإقلاع عن التدخين) والأدوية الفموية (مثبطات PDE5 مثل السيلدينافيل). عندما تفشل هذه الطرق، يقوم <strong>العلاج بالموجات الصدمية (Li-ESWT)</strong> بتجديد الأوعية الدموية بشكل طبيعي. في الحالات الشديدة، تقدم دعامات العضو الذكري حلاً دائماً.
+      </p>
+
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "الخطوة الأهم هي كسر حاجز الصمت. ضعف الانتصاب هو حالة طبية — وليس عيباً شخصياً — وهو من أكثر الحالات القابلة للعلاج في صحة الرجال."
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">خيارات العلاج حسب الشدة:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>خفيف:</strong> تغييرات نمط الحياة + مثبطات PDE5</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>متوسط:</strong> العلاج بالموجات الصدمية Li-ESWT (تجديدي)</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>شديد:</strong> أجهزة الشفط، الحقن، أو دعامة العضو الذكري</li>
+        </ul>
+      </div>
+    `
   },
   {
     id: 11,
@@ -2754,6 +4488,52 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Blood in urine combined with difficulty urinating</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Painful urination with fever (possible infection)</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Symptoms worsening over weeks</li>
+        </ul>
+      </div>
+    `
+    ,titleAR: 'صعوبة التبول: أسباب انسداد مجرى البول وعلاجاته'
+    ,excerptAR: 'ما الذي يجعلك تكافح عند التبول؟ تعرف على بدائل ReZum و UroLift غير الجراحية.'
+    ,contentAR: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        صعوبة التبول، ضعف تدفق البول، أو الشعور بعدم إفراغ المثانة بالكامل — هذه كلها علامات تحذيرية كلاسيكية لـ <strong>انسداد مجرى البول</strong>. عند الرجال فوق سن الخمسين، السبب الأكثر شيوعاً هو تضخم البروستاتا (BPH)، لكن هناك عدة حالات أخرى يمكن أن تسبب هذا الانسداد.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">الأسباب الشائعة لانسداد مجرى البول</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>تضخم البروستاتا الحميد (BPH)</strong> — الأكثر شيوعاً عند الرجال فوق 50 عاماً</li>
+            <li><strong>ضيق الإحليل</strong> — ندبات تضيق مجرى البول</li>
+            <li><strong>حصوات المثانة</strong> — تسد مخرج المثانة</li>
+            <li><strong>سرطان البروستاتا</strong> — في مراحله المتقدمة</li>
+            <li><strong>المثانة العصبية</strong> — خلل وظيفي عصبي يؤثر على التحكم في المثانة</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Straining to Urinate 2.webp" alt="Urinary Issues" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">علاج حديث غير جراحي لمشاكل المسالك البولية</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">حلول غير جراحية لتضخم البروستاتا (BPH)</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        بالنسبة للانسداد المرتبط بتضخم البروستاتا، ظهرت عمليتان طفيفتي التوغل أحدثتا ثورة في الرعاية: <strong>العلاج ببخار الماء ReZUM</strong> و <strong>UroLift</strong>. يمكن إجراء كليهما تحت التخدير الموضعي، مع الحفاظ على الوظيفة الجنسية، والسماح للمرضى بالعودة إلى المنزل في نفس اليوم.
+      </p>
+
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "لا تنتظر حتى تصبح غير قادر على التبول على الإطلاق. العلاج المبكر لانسداد مجرى البول يمنع تلف المثانة الدائم ومضاعفات الكلى."
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">متى يجب مراجعة طبيب المسالك البولية فوراً:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> عدم القدرة الكاملة على التبول (احتباس البول)</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> وجود دم في البول مصحوباً بصعوبة التبول</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> تبول مؤلم مصحوب بحمى (احتمالية وجود عدوى)</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> تفاقم الأعراض على مدار أسابيع</li>
         </ul>
       </div>
     `
@@ -2807,6 +4587,50 @@ export const BLOG_POSTS: BlogPost[] = [
         </ul>
       </div>
     `
+    ,titleAR: 'فحص الأمراض الجنسية: لماذا يهم الكشف السري؟'
+    ,excerptAR: 'فحص دقيق وديسكريت للأمراض المنقولة جنسياً بتقنية DNA PCR.'
+    ,contentAR: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        تعتبر الأمراض المنقولة جنسياً (STIs) أكثر انتشاراً من أي وقت مضى، ومع ذلك يمنع الخوف من الإحراج ووصمة العار الكثيرين من إجراء الفحوصات. يقدم <strong>فحص الحمض النووي (DNA PCR)</strong> الحديث في العيادات الخاصة المخصصة دقة مطلقة وسرية تامة — وغالباً ما تظهر النتائج خلال 24-48 ساعة.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">لماذا يعتبر فحص PCR المعيار الذهبي؟</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            تعتمد فحوصات الأمراض المنقولة جنسياً التقليدية على طرق الزراعة التي قد تستغرق أياماً وتغفل العدوى المبكرة. يكتشف فحص PCR (تفاعل البوليميراز المتسلسل) الحمض النووي للممرض بشكل مباشر، مما يوفر حساسية فائقة حتى في المراحل المبكرة جداً.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>دقة تزيد عن 99%+</strong> — يكتشف حتى الكميات الدقيقة من الحمض النووي للممرض</li>
+            <li><strong>يكتشف العدوى المبكرة</strong> — قبل أن تظهر اختبارات الأجسام المضادة نتائج إيجابية</li>
+            <li><strong>مسببات أمراض متعددة</strong> — عينة واحدة تفحص العديد من الأمراض في نفس الوقت</li>
+            <li><strong>نتائج سريعة</strong> — عادة خلال 24-48 ساعة</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/STI Testing Near Me 2.webp" alt="STI Testing" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">فحص سري للأمراض الجنسية بتقنية DNA PCR</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">الأمراض الشائعة التي نفحصها</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        تشمل لوحتنا الشاملة للأمراض المنقولة جنسياً الكلاميديا، السيلان، الزهري، فيروس نقص المناعة البشرية (HIV)، التهاب الكبد B و C، فيروس الورم الحليمي البشري (HPV)، الهربس (HSV-1 و HSV-2)، والميكوبلازما. يتم إجراء جميع الفحوصات بسرية تامة — ولا تتم مشاركة النتائج أبداً دون موافقتك.
+      </p>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">ضمان الخصوصية لدينا:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> غرفة استشارة خاصة ومنفصلة</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> يتم تسليم النتائج بشكل آمن عبر لاين (Line) أو البريد الإلكتروني المشفر</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> لا يتم مشاركة أي معلومات دون موافقتك الخطية</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> فواتير سرية — لا يوجد وصف طبي على الإيصالات</li>
+        </ul>
+      </div>
+    `
   },
   {
     id: 13,
@@ -2852,6 +4676,48 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Post-void residual ultrasound — checks bladder emptying</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> PSA blood test — screens for prostate issues</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Urinalysis — rules out infection or blood</li>
+        </ul>
+      </div>
+    `
+    ,titleAR: 'كثرة التبول والاستيقاظ: كشف الأسباب والحلول'
+    ,excerptAR: 'التبول المتكرر ليلاً ليس طبيعياً.. تعرف على الأسباب وعلاجات تضخم البروستاتا.'
+    ,contentAR: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        الاستيقاظ مرتين أو 3 أو 4 مرات كل ليلة للتبول — وهي حالة تسمى <strong>التبول الليلي (Nocturia)</strong> — ليس جزءاً طبيعياً من الشيخوخة. كما أن الرغبة المستمرة في التبول أثناء النهار، أو الشعور بعدم الإفراغ الكامل، أو الشعور بعدم الراحة في الحوض ليست كذلك. هذه أعراض طبية قابلة للقياس ولها أسباب يمكن علاجها.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">ما الذي يكمن وراء كثرة التبول؟</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">تتداخل هذه الأعراض غالباً ويمكن أن تنبع من أسباب متعددة:</p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>تضخم البروستاتا (BPH)</strong> — يضغط على مجرى البول، مما يضطرك للتبول المتكرر</li>
+            <li><strong>فرط نشاط المثانة (OAB)</strong> — تنقبض عضلة المثانة عندما لا ينبغي لها ذلك</li>
+            <li><strong>التهاب البروستاتا</strong> — يسبب إلحاحاً وعدم راحة</li>
+            <li><strong>التهاب المسالك البولية (UTI)</strong> — حرقة وإلحاح، خاصة مع الحمى</li>
+            <li><strong>السكري</strong> — ارتفاع نسبة السكر في الدم يزيد من كمية البول</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Frequent Urination 2.webp" alt="Frequent Urination" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">تحديد وعلاج السبب الجذري</p>
+          </div>
+        </div>
+      </div>
+
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "اختبار تدفق البول البسيط والموجات فوق الصوتية يمكن أن يحددا السبب في معظم الحالات. لا داعي للمعاناة بصمت — العلاج الفعال متاح."
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">خطوات التشخيص في عيادتنا:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> قياس تدفق البول (Uroflowmetry) — يقيس معدل تدفق البول</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> موجات فوق صوتية لبول ما بعد الإفراغ — للتحقق من إفراغ المثانة</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> فحص دم PSA — فحص لمشاكل البروستاتا</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> تحليل البول — يستبعد العدوى أو الدم</li>
         </ul>
       </div>
     `
@@ -2902,6 +4768,47 @@ export const BLOG_POSTS: BlogPost[] = [
         </ul>
       </div>
     `
+    ,titleAR: 'تقلص حجم القضيب: الأسباب وخيارات العلاج'
+    ,excerptAR: 'لاحظت تراجعاً في الحجم؟ تعرف على الأسباب الفسيولوجية وحلول طبية فعالة.'
+    ,contentAR: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        الانخفاض الملحوظ في حجم العضو الذكري أكثر شيوعاً مما يتم مناقشته. سواء كان ذلك بسبب التقدم في العمر، التغيرات الوعائية، أو التحولات الهرمونية، فإن <strong>تقلص القضيب هو ظاهرة فسيولوجية حقيقية</strong> — وفي كثير من الحالات، يمكن عكسها باستخدام النهج الطبي الصحيح.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">لماذا يحدث ذلك؟</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            يحتوي نسيج القضيب على عضلات ملساء تتطلب أكسجة منتظمة من خلال الانتصاب. عندما ينخفض معدل الانتصاب (بسبب ضعف الانتصاب أو مشاكل هرمونية)، تتليف تلك الأنسجة تدريجياً (تتشكل ندبات)، مما يقلل الحجم.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>انخفاض وتيرة الانتصاب</strong> — يؤدي إلى تليف الأنسجة</li>
+            <li><strong>انخفاض التستوستيرون</strong> — يقلل حجم العضلات الملساء</li>
+            <li><strong>مرض بيروني</strong> — النسيج الندبي يسبب انحناءً وتقصيراً</li>
+            <li><strong>زيادة الوزن بشكل كبير</strong> — الدهون فوق العانة تدفن القاعدة</li>
+            <li><strong>تغيرات ما بعد الجراحة</strong> — جراحة البروستاتا قد تؤثر على الطول</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/My Little Brother 2.webp" alt="Penile Shrinkage" class="w-full h-full object-cover" />
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">خيارات العكس والتعزيز</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        غالبًا ما يستعيد علاج السبب الجذري (TRT لنقص التستوستيرون، الموجات الصدمية لضعف الانتصاب، فقدان الوزن) الحجم جزئياً. للتحسين التجميلي للمحيط، توفر <strong>حقن حمض الهيالورونيك (HA)</strong> أو <strong>نقل الدهون الذاتية</strong> نتائج طبية آمنة وفورية.
+      </p>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">خارطة طريق العلاج:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> علاج ضعف الانتصاب بالموجات الصدمية ← يعيد الانتصاب المنتظم ← يمنع المزيد من الانكماش</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> العلاج بالتستوستيرون (TRT) إذا تأكد انخفاضه ← يعيد بناء كتلة العضلات الملساء</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> حقن الفيلر HA ← زيادة فورية في المحيط (نفس اليوم)</li>
+        </ul>
+      </div>
+    `
   },
   {
     id: 15,
@@ -2945,6 +4852,45 @@ export const BLOG_POSTS: BlogPost[] = [
 
       <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
         "Every month of delay makes the surgery more complex. If you have had foreign substances injected, seek a specialist urologist immediately—do not wait for symptoms to worsen."
+      </blockquote>
+    `
+    ,titleAR: 'إزالة المواد الغريبة المحقونة: مخاطر وعواقب البارافينوما'
+    ,excerptAR: 'لماذا التأخير يجعل العملية أكثر تعقيداً؟ ابحث عن الخيارات الجراحية الترميمية.'
+    ,contentAR: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        حقن مواد غريبة — مثل البارافين، زيت الزيتون، السيليكون، أو الفازلين — في العضو الذكري في محاولة لزيادة حجمه هو ممارسة خطيرة تؤدي إلى <strong>ورم البارافين (Paraffinoma)</strong>: وهو تفاعل التهابي حبيبي شديد ومتفاقم. الإزالة المبكرة ضرورية جداً للحفاظ على الوظيفة.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">ما هو ورم البارافين؟</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            عندما يتم حقن مواد غير طبية تحت جلد القضيب، يهاجمها جهاز المناعة في الجسم باستمرار، مما يخلق تفاعلاً التهابياً مزمناً. بمرور الوقت، يؤدي هذا إلى تكوين نسيج ندبي كثيف وموت الأنسجة.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>تشوه</strong> — كتل صلبة وغير منتظمة تحت الجلد</li>
+            <li><strong>ألم مزمن</strong> — التهاب مستمر وتهيج للأعصاب</li>
+            <li><strong>ضعف الانتصاب</strong> — تلف الأوعية الدموية بسبب الأورام الحبيبية</li>
+            <li><strong>نخر الجلد</strong> — موت الأنسجة وتقرحها في الحالات الشديدة</li>
+            <li><strong>خطر العدوى</strong> — تكون خراجات حول المادة الغريبة</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Why You Must Remove 2.webp" alt="Foreign Body Removal" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">الجراحة الترميمية المتخصصة تعيد الشكل والوظيفة</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">عملية الترميم</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        تتضمن الإزالة الجراحية الاستئصال الكامل للجلد المصاب والمادة الغريبة، تليها عملية ترميم باستخدام ترقيع الجلد (من كيس الصفن، الفخذ، أو البطن). الجراحة المبكرة قبل التندب الواسع تعطي أفضل النتائج الوظيفية والتجميلية.
+      </p>
+
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "كل شهر تأخير يجعل الجراحة أكثر تعقيداً. إذا قمت بحقن مواد غريبة، اطلب استشارة أخصائي جراحة المسالك البولية فوراً — لا تنتظر حتى تتفاقم الأعراض."
       </blockquote>
     `
   },
@@ -2995,6 +4941,48 @@ export const BLOG_POSTS: BlogPost[] = [
         </ul>
       </div>
     `
+    ,titleAR: 'سرعة القذف: حلول حديثة فعالة بالفعل'
+    ,excerptAR: 'اكتشف الفرق بين الأسباب النفسية والجسدية وأحدث الحلول المتاحة.'
+    ,contentAR: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        تعتبر سرعة القذف (PE) الخلل الجنسي الأكثر شيوعاً بين الرجال، ومع ذلك تظل واحدة من أقل المشاكل التي تتم مناقشتها. مع الخيارات الطبية المتقدمة اليوم — من الأدوية الموجهة إلى الجراحة المجهرية — هناك حل لكل نوع ودرجة من سرعة القذف.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">سرعة القذف النفسية مقابل الجسدية</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            تحديد نوع سرعة القذف لديك بشكل صحيح هو أمر ضروري للعلاج الفعال. يعاني معظم الرجال من مزيج من كلا العاملين.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>نفسية:</strong> القلق، ضغط الأداء، ضغوط العلاقة</li>
+            <li><strong>عصبية بيولوجية:</strong> فرط حساسية النهايات العصبية في القضيب</li>
+            <li><strong>هرمونية:</strong> انخفاض السيروتونين أو خلل في الغدة الدرقية</li>
+            <li><strong>مختلطة:</strong> وهو العرض الأكثر شيوعاً</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Struggling with Premature 2.webp" alt="PE Treatment" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">علاج مخصص لتحسين الأداء بشكل دائم</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">العلاجات الحديثة الفعالة</h3>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">خيارات العلاج ومعدلات النجاح:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>دابوكستين (SSRI):</strong> يؤخر القذف بمقدار 3-4 أضعاف — نسبة نجاح 75%</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>المخدرات الموضعية:</strong> بخاخ ليدوكائين — يقلل الحساسية بنسبة 40-60%</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>العلاج السلوكي:</strong> تقنيات التوقف والبدء والضغط</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>استئصال العصب الظهري:</strong> خيار جراحي لفرط الحساسية — حل دائم</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>النهج المشترك:</strong> رضا طويل الأمد بنسبة 85-90%</li>
+        </ul>
+      </div>
+    `
   },
   {
     id: 17,
@@ -3027,18 +5015,56 @@ export const BLOG_POSTS: BlogPost[] = [
           </div>
         </div>
       </div>
-
       <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
         "The quality of your urologist's experience matters more than proximity. A 30-minute drive to an expert is worth far more than walking distance to an inexperienced provider."
       </blockquote>
 
       <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
-        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Questions to Ask Any Clinic:</h4>
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Before You Book:</h4>
         <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Is the procedure performed by the urologist or a technician?</li>
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> How many of these procedures has the doctor performed?</li>
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> What are the complication rates and how are they handled?</li>
-          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Is there a structured follow-up protocol after treatment?</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Check the doctor's specific credentials and specializations</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Verify they use modern, minimally invasive techniques</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Ensure they have an on-site lab for fast, private results</li>
+        </ul>
+      </div>
+    `
+    ,titleAR: 'أفضل عيادة مسالك بولية: كيف تختار؟'
+    ,excerptAR: 'أهم 5 معايير للبحث عن مركز متخصص لصحة الرجال يضمن لك الخصوصية والتكنولوجيا.'
+    ,contentAR: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        يعد اختيار عيادة المسالك البولية المناسبة قراراً يؤثر بشكل مباشر على نتائجك الصحية وراحتك وخصوصيتك. لا تقدم جميع العيادات نفس المستوى من الخبرة، التكنولوجيا، أو السرية. إليك ما يميز المركز الطبي الرائد لصحة الرجال عن العيادات العامة.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">الركائز الخمس لأفضل عيادة مسالك بولية</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <ul class="list-disc pl-6 space-y-3 text-slate-600 dark:text-slate-300">
+            <li><strong>طبيب مسالك بولية معتمد</strong> — ليس طبيباً عاماً أو جراحاً عاماً</li>
+            <li><strong>تكنولوجيا متقدمة</strong> — توفر تقنيات Li-ESWT، UroLift، ReZUM، وليزر HoLEP في العيادة</li>
+            <li><strong>خصوصية تامة</strong> — غرف خاصة، مدخل سري، وسجلات مشفرة</li>
+            <li><strong>خدمات شاملة</strong> — من التشخيص إلى العلاج في مكان واحد</li>
+            <li><strong>متابعة ما بعد العلاج</strong> — مراقبة منظمة للحصول على أفضل النتائج</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Urology Clinic Near Me 2.webp" alt="Urology Clinic" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">رعاية صحية متميزة للرجال في عيادة M-Trust</p>
+          </div>
+        </div>
+      </div>
+
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "جودة خبرة طبيبك أهم بكثير من قربه الجغرافي. القيادة لمدة 30 دقيقة إلى خبير تستحق أكثر بكثير من المشي مسافة قريبة إلى مزود خدمة يفتقر إلى الخبرة."
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">قبل الحجز تأكد من:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> التحقق من أوراق الطبيب وتخصصه الدقيق</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> التأكد من استخدامهم لتقنيات حديثة طفيفة التوغل</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> ضمان وجود مختبر في نفس الموقع لنتائج سريعة وسرية</li>
         </ul>
       </div>
     `
@@ -3093,6 +5119,51 @@ export const BLOG_POSTS: BlogPost[] = [
         </ul>
       </div>
     `
+    ,titleAR: 'فقدان الانتصاب في منتصف الطريق: الأسباب والحلول'
+    ,excerptAR: 'فهم لماذا يختفي الانتصاب فجأة وكيفية علاج تسرب الوريد.'
+    ,contentAR: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        تحقيق الانتصاب هو تحدٍ واحد — الحفاظ عليه طوال فترة الجماع هو تحدٍ آخر. <strong>فقدان الصلابة في منتصف الطريق</strong> هو شكل محدد من ضعف الانتصاب يسمى "اضطراب الحفاظ على الانتصاب" وهو شائع للغاية. السبب عادة هو مزيج من العوامل الوعائية والنفسية.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">لماذا يتلاشى الانتصاب في منتصف الطريق</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            يتطلب الحفاظ على الانتصاب تدفقاً مستمراً للدم بينما يتم ضغط أوردة التدفق الخارج. إذا فشل أي منهما، تُفقد الصلابة:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>تسرب وريدي</strong> — يخرج الدم من القضيب بسرعة كبيرة (السبب الأكثر شيوعاً)</li>
+            <li><strong>قلق الأداء</strong> — الأدرينالين يقيد الأوعية الدموية</li>
+            <li><strong>إثارة غير كافية</strong> — تشتيت الانتباه أو انخفاض التحفيز</li>
+            <li><strong>تلاشي تأثير مثبطات PDE5</strong> — مشكلة في توقيت الدواء</li>
+            <li><strong>انخفاض التستوستيرون</strong> — يقلل الدافع الجنسي في منتصف العملية</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Trouble Maintaining 2.webp" alt="Maintain Erection" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">تقييم وعلاج متقدم للحفاظ على الانتصاب</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">حلول ضعف الانتصاب بسبب التسرب الوريدي</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        يتم تشخيص التسرب الوريدي عبر دوبلر القضيب الديناميكي. العلاج باستخدام <strong>الموجات الصدمية (Li-ESWT)</strong> يقوي التوتر الوعائي ويقلل التسرب الوريدي خلال 6-12 جلسة. توفر حقن القضيب (ألبروستاديل) راحة فورية للحالات الشديدة.
+      </p>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">العلاج حسب السبب:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> تسرب وريدي ← العلاج بالموجات الصدمية + دواء PDE5</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> قلق الأداء ← استشارة + جرعة يومية منخفضة من PDE5i</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> انخفاض T ← العلاج بـ TRT يعيد مستوى الإثارة الأساسي</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> ضعف انتساب وعائي شديد ← زراعة دعامة (حل دائم)</li>
+        </ul>
+      </div>
+    `
   },
   {
     id: 19,
@@ -3143,6 +5214,50 @@ export const BLOG_POSTS: BlogPost[] = [
         </ul>
       </div>
     `
+    ,titleAR: 'أين تجري عملية الفصل: اختيار عيادة الفصل بدون مشرط'
+    ,excerptAR: 'لماذا الفصل بدون مشرط هو المعيار الذهبي؟ وكيف تختار أفضل مركز بولوجي.'
+    ,contentAR: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        استئصال الأسهر (الربط) هو أكثر أشكال منع الحمل الدائم فعالية للرجال — بنسبة نجاح <strong>99.9%</strong>. حول <strong>استئصال الأسهر بدون مشرط (NSV)</strong> الحديث هذا الإجراء: لا غرز، انزعاج ضئيل، ويعود معظم الرجال إلى النشاط الخفيف في غضون 48 ساعة.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">لماذا الإجراء بدون مشرط هو المعيار الذهبي</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            يتطلب استئصال الأسهر التقليدي شقين صغيرين في الجلد، خياطة يدوية، وفترة تعافي أطول. يستخدم NSV مشبكاً حاداً متخصصاً لإحداث ثقب صغير — بدون قطع، بدون غرز، وكدمات أقل بكثير.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>بدون مشرط، بدون غرز</strong> — الثقب الصغير يغلق نفسه</li>
+            <li><strong>إجراء يستغرق 20-30 دقيقة</strong> — يتم تحت التخدير الموضعي</li>
+            <li><strong>العودة للعمل في 1-2 يوم</strong> — نشاط خفيف فقط</li>
+            <li><strong>معدل مضاعفات أقل</strong> — تقليل خطر النزيف والعدوى مقارنة بالطريقة التقليدية</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Where to Get a Vasectomy 2.webp" alt="Vasectomy Clinic" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">استئصال الأسهر بدون مشرط في عيادة M-Trust للذكورة</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">اختيار عيادة الفصل المناسبة</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        تأكد من أن الإجراء يتم بواسطة <strong>طبيب مسالك بولية معتمد</strong> ذو خبرة كبيرة في NSV. يجب أن تقدم العيادة استشارة شاملة قبل الإجراء، تعليمات واضحة لما بعد الجراحة، وتحليل للسائل المنوي في 8-12 أسبوعاً لتأكيد العقم.
+      </p>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">ما تتضمنه عملية الفصل عالية الجودة:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> جلسة استشارة وأسئلة وأجوبة قبل الإجراء</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> تقنية بدون مشرط بواسطة أخصائي مسالك بولية متمرس</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> مجموعة العناية وتعليمات ما بعد الجراحة</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> تحليل السائل المنوي في 8-12 أسبوعاً لتأكيد النجاح</li>
+        </ul>
+      </div>
+    `
   },
   {
     id: 20,
@@ -3150,7 +5265,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt: 'Comparing BPH treatments? Learn why ReZUM Water Vapor Therapy is quickly becoming the preferred alternative to daily medication and invasive surgery.',
     date: 'Dec 07, 2025',
     category: 'Treatment',
-    image: '/assets/image/blog section/Why You Must Remove.webp',
+    image: '/assets/image/blog section/Why Treating Enlarged Prostate.webp',
     content: `
       <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
         For decades, men with Benign Prostatic Hyperplasia (BPH) faced a frustrating choice: take daily medications with side effects, or undergo major surgery (TURP) with risks of incontinence and sexual dysfunction. <strong>ReZUM Water Vapor Therapy</strong> changes everything.
@@ -3171,7 +5286,7 @@ export const BLOG_POSTS: BlogPost[] = [
           </ul>
         </div>
         <div class="relative rounded-2xl overflow-hidden shadow-xl">
-          <img src="/assets/image/blog section/Why You Must Remove 2.webp" alt="ReZUM BPH Treatment" class="w-full h-full object-cover" />
+          <img src="/assets/image/blog section/Why Treating Enlarged Prostate 2.webp" alt="ReZUM BPH Treatment" class="w-full h-full object-cover" />
           <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
             <p class="text-white text-xs font-bold">ReZUM: Water vapor therapy for prostate relief</p>
           </div>
@@ -3217,12 +5332,81 @@ export const BLOG_POSTS: BlogPost[] = [
         "ReZUM is now our first-line recommendation for men who want to stop daily medication without accepting the risks of traditional surgery."
       </blockquote>
     `
+    ,titleAR: 'لماذا ReZum هو الخيار الأمثل لعلاج تضخم البروستاتا؟'
+    ,excerptAR: 'مقارنة شاملة بين علاج بخار الماء ReZum والدواء اليومي والجراحة.'
+    ,contentAR: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        لعقود من الزمن، واجه الرجال المصابون بتضخم البروستاتا الحميد (BPH) خياراً محبطاً: تناول الأدوية اليومية ذات الآثار الجانبية، أو الخضوع لجراحة كبرى (TURP) مع مخاطر سلس البول والضعف الجنسي. <strong>علاج بخار الماء ReZUM</strong> يغير كل شيء.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">كيف يعمل ReZUM</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            يقدم ReZUM بخار ماء (بخار) مستهدف بدقة إلى أنسجة البروستاتا المعيقة. تدمر الطاقة الحرارية المخزنة في البخار الخلايا الزائدة عند التلامس. ثم يمتص الجسم بشكل طبيعي الأنسجة المعالجة خلال 4-6 أسابيع، مما يفتح القناة البولية.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>إجراء يستغرق 10 دقائق</strong> — يتم تحت التخدير الموضعي</li>
+            <li><strong>لا جراحة، لا شقوق</strong> — طفيف التوغل</li>
+            <li><strong>يحافظ على الوظيفة الجنسية</strong> — لا يوجد خطر القذف المرتجع</li>
+            <li><strong>نتائج دائمة</strong> — تحسن مستمر لأكثر من 5 سنوات</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Why Treating Enlarged Prostate 2.webp" alt="ReZUM BPH Treatment" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">ReZUM: علاج ببخار الماء لراحة البروستاتا</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">ReZUM مقابل الدواء مقابل جراحة TURP</h3>
+
+      <div class="overflow-x-auto my-8 rounded-2xl border border-slate-200 dark:border-white/10">
+        <table class="w-full text-left border-collapse text-sm">
+          <thead>
+            <tr class="bg-slate-100 dark:bg-white/5">
+              <th class="p-4 font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-white/10">العامل</th>
+              <th class="p-4 font-bold text-amber-600 border-b border-slate-200 dark:border-white/10">ReZUM</th>
+              <th class="p-4 font-bold text-slate-500 border-b border-slate-200 dark:border-white/10">الدواء اليومي</th>
+              <th class="p-4 font-bold text-slate-500 border-b border-slate-200 dark:border-white/10">جراحة TURP</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 dark:divide-white/5">
+            <tr>
+              <td class="p-4 font-medium text-slate-700 dark:text-slate-300">الوظيفة الجنسية</td>
+              <td class="p-4 text-green-600 dark:text-green-400 font-bold">محفوظة بالكامل</td>
+              <td class="p-4 text-orange-500">الآثار الجانبية شائعة</td>
+              <td class="p-4 text-red-500">خطر كبير للقذف المرتجع</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-medium text-slate-700 dark:text-slate-300">المدة</td>
+              <td class="p-4 text-green-600 dark:text-green-400 font-bold">5+ سنوات</td>
+              <td class="p-4 text-orange-500">فقط أثناء تناوله</td>
+              <td class="p-4 text-green-600 dark:text-green-400">دائم</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-medium text-slate-700 dark:text-slate-300">التعافي</td>
+              <td class="p-4 text-green-600 dark:text-green-400 font-bold">في نفس اليوم</td>
+              <td class="p-4 text-green-600 dark:text-green-400">فوري</td>
+              <td class="p-4 text-red-500">3-5 أيام إقامة في المستشفى</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "يعتبر ReZUM الآن توصيتنا الأولى للرجال الذين يرغبون في التوقف عن تناول الأدوية اليومية دون قبول مخاطر الجراحة التقليدية."
+      </blockquote>
+    `
   },
 ];
 
 export const EVENTS_DATA: EventData[] = [
   {
     id: 1,
+    slug: 'rezum-academic-exchange',
     day: '14',
     month: 'MAR',
     year: '2026',
@@ -3307,9 +5491,52 @@ export const EVENTS_DATA: EventData[] = [
         </p>
       </div>
     `,
-  },
+      titleAR: "التبادل الأكاديمي لعلاج ريزوم (Rezum)",
+      subtitleAR: "تطوير علاج تضخم البروستاتا الحميد (BPH): التبادل الأكاديمي لعلاج ReZum باستخدام بخار الماء في مستشفى سيريراج",
+      locationAR: "مستشفى بانكوك باتايا، غرفة الاجتماعات 1",
+      descriptionAR: "اليوم، تشرفنا بالمشاركة في 'حدث التبادل حول ReZum' المرموق في مستشفى سيريراج. جمع هذا التبادل الأكاديمي رفيع المستوى أطباء مسالك بولية متميزين من سنغافورة وتايلاند...",
+      excerptAR: "حدث التبادل الأكاديمي المرموق لعلاج ReZum في مستشفى سيريراج بمشاركة خبراء من سنغافورة وتايلاند.",
+      contentAR: `
+      <div class="space-y-8">
+        <div class="flex flex-col gap-6 my-8">
+          <div class="rounded-2xl overflow-hidden shadow-2xl border border-white/10 w-full">
+            <img src="/assets/image/expertise/Rezum Academic Exchange.webp" alt="Rezum Academic Exchange" class="w-full h-auto object-cover" />
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-2xl border border-white/10 w-full">
+            <img src="/assets/image/expertise/Rezum Academic Exchange 2.webp" alt="Rezum Academic Exchange 2" class="w-full h-auto object-cover" />
+          </div>
+        </div>
+
+        <p class="text-lg leading-relaxed text-slate-300">
+          اليوم، تشرفنا بالمشاركة في 'حدث التبادل حول ReZum' المرموق في مستشفى سيريراج. جمع هذا التبادل الأكاديمي رفيع المستوى أطباء مسالك بولية متميزين من سنغافورة وتايلاند لمناقشة أحدث التطورات في العلاج ببخار الماء (Rezūm) لعلاج تضخم البروستاتا.
+        </p>
+
+        <p class="text-lg leading-relaxed text-slate-300">
+          لقد حظينا بشرف المشاركة في حوار سريري مثمر للغاية مع سبعة خبراء بارزين، بما في ذلك:
+        </p>
+        
+        <div class="font-bold text-white text-xl space-y-2">
+          <p>Assist. Prof. Varat Woranisarakul</p>
+          <p>Dr. Chua Wei Jin</p>
+        </div>
+
+        <p class="text-lg leading-relaxed text-slate-300">
+          ركزت الجلسة على تعزيز الخبرة الجراحية ومشاركة الأساليب العلاجية المبتكرة طفيفة التوغل لتحسين نتائج المرضى. تعتبر المنتديات التعاونية مثل هذه ضرورية لدفع حدود الرعاية البولية والابتكار الطبي.
+        </p>
+
+        <div class="rounded-3xl overflow-hidden my-10 shadow-2xl border border-white/10">
+          <img src="/assets/image/expertise/Rezum Academic Exchange 3.webp" alt="Rezum Academic Exchange 3" class="w-full h-full object-cover" />
+        </div>
+
+        <p class="text-lg leading-relaxed text-slate-300">
+          خالص تقديرنا لشركة بوسطن ساينتيفيك (Boston Scientific) لمبادرتها الرائعة في تنظيم هذا المنتدى التعليمي القيم وتعزيز التميز الطبي الدولي.
+        </p>
+      </div>
+      `
+},
   {
     id: 2,
+    slug: 'urolift-success-story',
     day: '28',
     month: 'MAR',
     year: '2026',
@@ -3464,17 +5691,93 @@ export const EVENTS_DATA: EventData[] = [
         </ul>
       </div>
     `,
-  },
+      titleAR: "الريادة في التميز: قصة نجاح أول حالة معتمدة لـ UroLift في تايلاند",
+      subtitleAR: "د. نيثي نافانيتكول: أول طبيب مسالك بولية معتمد من تيليفليكس (Teleflex) في تايلاند لـ 50 إجراء UroLift ناجح",
+      locationAR: "القاعة الرئيسية لعيادة إم ترست",
+      descriptionAR: "باتايا، تايلاند - 30 أبريل 2025 - يعلن مستشفى بانكوك باتايا بفخر عن إنجاز كبير في صحة الرجال والتميز في طب المسالك البولية. أصبح الدكتور نيثي نافانيتكول، أخصائي جراحة المسالك البولية المعتمد والخبير الرائد في تضخم البروستاتا الحميد (BPH)، أول طبيب في تايلاند يحصل على الشهادة الرسمية من أكاديمية تيليفليكس.",
+      excerptAR: "د. نيثي نافانيتكول هو أول طبيب مسالك بولية في تايلاند معتمد من Teleflex لـ 50 عملية UroLift ناجحة.",
+      contentAR: `
+      <div class="space-y-6 text-slate-300">
+        <div class="relative w-full rounded-3xl overflow-hidden my-12 border border-white/10 shadow-2xl">
+          <img src="/assets/image/expertise/UroLift Success Stories.webp" alt="UroLift Success Stories" class="w-full h-full object-cover" />
+        </div>
+
+        <p class="text-lg leading-relaxed">
+          <strong>باتايا، تايلاند - 30 أبريل 2025</strong> - يعلن مستشفى بانكوك باتايا بفخر عن إنجاز كبير في صحة الرجال والتميز في طب المسالك البولية. أصبح الدكتور نيثي نافانيتكول، أخصائي جراحة المسالك البولية المعتمد والخبير الرائد في تضخم البروستاتا الحميد (BPH)، أول طبيب في تايلاند يحصل على الشهادة الرسمية من أكاديمية تيليفليكس (The Teleflex Academy).
+        </p>
+        <p class="text-lg leading-relaxed">
+          تم تقديم هذا التقدير المرموق من قبل السيد KuoHau Wei، المدير التجاري الأول (SEA IU • APAC)، تكريماً لإكمال الدكتور نيثي 50 إجراء UroLift ناجحاً (اعتباراً من فبراير 2025). والأهم من ذلك، حقق الدكتور نيثي معدل إعادة تشغيل بنسبة 0٪، مما يدل على خبرة سريرية لا مثيل لها ونتائج فائقة للمرضى في علاج أعراض تضخم البروستاتا.
+        </p>
+
+        <div class="aspect-video w-full rounded-3xl overflow-hidden my-12 border border-white/10 shadow-2xl">
+          <iframe 
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/KoPtIZcZCHY?start=108" 
+            title="UroLift Success Story" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <h3 class="text-xl font-black text-white uppercase mt-12 mb-4">ما هو UroLift؟ العلاج الرائد لتضخم البروستاتا غير الجراحي</h3>
+        <p>UroLift هو إجراء ثوري طفيف التوغل مصمم للرجال الذين يبحثون عن حل سريع الشفاء لتضخم البروستاتا الحميد (BPH). على عكس الجراحة التقليدية، فإن نظام UroLift:</p>
+        <ul class="space-y-3 list-none pl-0">
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+            <span><strong>يحافظ على الوظيفة الجنسية:</strong> لا قطع أو تسخين أو إزالة لأنسجة البروستاتا.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+            <span><strong>راحة سريعة:</strong> يستخدم غرسات صغيرة دائمة لرفع أنسجة البروستاتا والاحتفاظ بها، مما يفتح مجرى البول على الفور.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+            <span><strong>الحد الأدنى من فترة النقاهة:</strong> عادة ما يعود المرضى إلى المنزل في نفس اليوم ويستأنفون الأنشطة العادية في غضون 7 أيام.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+            <span><strong>موافق عليه من إدارة الأغذية والعقاقير:</strong> تمت الموافقة على هذا العلاج الذهبي القياسي من قبل إدارة الأغذية والعقاقير الأمريكية منذ عام 2013 لسلامته وفعاليته على المدى الطويل.</span>
+          </li>
+        </ul>
+
+        <h3 class="text-xl font-black text-white uppercase mt-12 mb-4">الريادة في UroLift في شرق تايلاند</h3>
+        <p>
+          منذ طرحه في تايلاند في مايو 2024، أثبت مستشفى بانكوك باتايا نفسه كمركز للتميز. وهو المستشفى الثاني في تايلاند والأول في المنطقة الشرقية الذي يقدم هذه التكنولوجيا المتقدمة.
+        </p>
+        <p>
+          تحت قيادة الدكتور نيثي نافانيتكول، أصبح المستشفى وجهة رئيسية للمرضى الذين يبحثون عن علاجات تضخم البروستاتا المبتكرة التي تخفف من الأعراض مثل إلحاح البول وضعف التدفق والتبول الليلي المتكرر (التبول الليلي) دون مخاطر الجراحة الكبرى.
+        </p>
+
+        <h3 class="text-xl font-black text-white uppercase mt-12 mb-4">لماذا تختار د. نيثي نافانيتكول ؟</h3>
+        <ul class="space-y-3 list-none pl-0">
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+            <span><strong>نجاح مثبت:</strong> أكثر من 50 إجراء مع عدم الحاجة إلى جراحات متكررة.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+            <span><strong>معايير دولية:</strong> معتمد من أكاديمية تيليفليكس (Teleflex Academy)، مما يضمن الدقة الجراحية على المستوى العالمي.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+            <span><strong>رعاية تركز على المريض:</strong> معدلات رضا عالية تركز على جودة الحياة وصحة المسالك البولية على المدى الطويل.</span>
+          </li>
+        </ul>
+      </div>
+      `
+},
   {
     id: 3,
+    slug: 'advanced-holep-laser-surgery',
     day: '05',
     month: 'APR',
     year: '2026',
     title: "Advanced HoLEP Laser Surgery for BPH",
     titleTH: "การผ่าตัดส่องกล้องเลเซอร์ HoLEP สำหรับต่อมลูกหมากโต",
-    subtitle: "Dr. Niti Navanimitkul introduces Advanced HoLEP laser surgery in PattayaΓÇöthe global gold standard for permanent, minimally invasive enlarged prostate (BPH) relief.",
+    subtitle: "Dr. Niti Navanimitkul offers Advanced HoLEP laser surgery in Pattaya-the modern gold standard for long-term, minimally invasive enlarged prostate (BPH) relief.",
     subtitleTH: "นพ.นิธิ นาวานิมิตกุล นำเสนอนวัตกรรมการผ่าตัดส่องกล้องเลเซอร์ HoLEP ในพัทยา ซึ่งเป็นมาตรฐานระดับโลกสำหรับการรักษาโรคต่อมลูกหมากโต (BPH) แบบถาวรและแผลเล็ก",
-    description: "Dr. Niti Navanimitkul introduces Advanced HoLEP laser surgery in PattayaΓÇöthe global gold standard for permanent, minimally invasive enlarged prostate (BPH) relief.",
+    description: "Dr. Niti Navanimitkul offers Advanced HoLEP laser surgery in Pattaya-the modern gold standard for long-term, minimally invasive enlarged prostate (BPH) relief.",
     descriptionTH: "นพ.นิธิ นาวานิมิตกุล นำเสนอนวัตกรรมการผ่าตัดส่องกล้องเลเซอร์ HoLEP ในพัทยา ซึ่งเป็นมาตรฐานระดับโลกสำหรับการรักษาโรคต่อมลูกหมากโต (BPH) แบบถาวรและแผลเล็ก",
     location: "M-Trust Urology Clinic, Pattaya",
     locationTH: "เอ็มทรัสต์ คลินิก พัทยา",
@@ -3617,9 +5920,96 @@ export const EVENTS_DATA: EventData[] = [
   </div>
 </div>
     `,
-  },
+      titleAR: "جراحة ليزر HoLEP المتقدمة لعلاج تضخم البروستاتا",
+      subtitleAR: "يقدم د. نيثي نافانيتكول جراحة ليزر HoLEP المتقدمة في باتايا - المعيار الذهبي الحديث لعلاج تضخم البروستاتا الحميد (BPH) بشكل دائم وبأقل تدخل جراحي.",
+      locationAR: "عيادة إم ترست للمسالك البولية، باتايا",
+      descriptionAR: "يقدم د. نيثي نافانيتكول جراحة ليزر HoLEP المتقدمة في باتايا - المعيار الذهبي الحديث لعلاج تضخم البروستاتا الحميد (BPH) بشكل دائم وبأقل تدخل جراحي.",
+      excerptAR: "جراحة ليزر HoLEP المتقدمة لعلاج تضخم البروستاتا الحميد (BPH) في باتايا، المعيار الذهبي للراحة الدائمة.",
+      contentAR: `
+<div class="space-y-6 text-slate-300">
+  <p class="text-lg leading-relaxed">
+    إذا كنت رجلاً فوق سن الخمسين وتعاني من ضعف في تدفق البول أو كثرة الذهاب إلى الحمام ليلاً، فمن المحتمل أنك تتعامل مع <strong>تضخم البروستاتا الحميد (BPH)</strong>. على الرغم من شيوع هذه الأعراض، إلا أنها يمكن أن تؤثر بشكل كبير على جودة حياتك. لحسن الحظ، أصبح بإمكان المقيمين والزوار في تشونبوري الآن الوصول إلى <strong>جراحة ليزر HoLEP المتقدمة لعلاج تضخم البروستاتا في باتايا بواسطة د. نيثي نافانيتكول</strong>، والتي تقدم حلاً دائماً وبأقل تدخل جراحي.
+  </p>
+
+  <h3 class="text-2xl font-black text-white uppercase mt-12 mb-4">تعاون الخبراء من أجل صحة أفضل للبروستاتا</h3>
+  <p>
+    تتم استعادة الصحة والثقة من خلال الرعاية الشخصية. تعاون الدكتور تيف أهو، استشاري جراحة المسالك البولية في مستشفيات جامعة كامبريدج ورائد دولي في جراحة HoLEP، بشكل وثيق مع <strong>د. نيثي نافانيتكول</strong>. هذا يضمن حصول المرضى في باتايا على علاج يلبي أعلى المعايير العالمية للدقة والسلامة.
+  </p>
+
+  <div class="relative w-full h-[400px] rounded-3xl overflow-hidden my-12 border border-white/10 shadow-2xl">
+    <img src="/assets/image/expertise/Advanced HoLEP.webp" alt="Advanced HoLEP Surgery Illustration" class="w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-linear-to-t from-slate-900/60 to-transparent"></div>
+    <div class="absolute bottom-6 left-6">
+      <p class="text-white text-sm font-bold uppercase tracking-widest">المعيار الذهبي العالمي: تقنية HoLEP</p>
+    </div>
+  </div>
+
+  <h3 class="text-2xl font-black text-white uppercase mt-12 mb-4">ما هي HoLEP؟ المعيار الذهبي لعلاج تضخم البروستاتا</h3>
+  <p>
+    <strong>HoLEP (استئصال البروستاتا بليزر هولميوم)</strong> هي إجراء حديث يستخدم طاقة الليزر لإزالة الجزء المسد من البروستاتا بدقة. على عكس الطرق التقليدية، تعتبر HoLEP فعالة للبروستاتا من جميع الأحجام وتقدم حلاً دائماً <strong>"لمرة واحدة في العمر"</strong>.
+  </p>
+
+  <h3 class="text-2xl font-black text-white uppercase mt-12 mb-4">لماذا تختار HoLEP بدلاً من الجراحة التقليدية؟</h3>
+  <div class="overflow-x-auto my-8 rounded-2xl border border-white/10">
+    <table class="w-full text-right border-collapse">
+      <thead>
+        <tr class="bg-white/5">
+          <th class="p-4 font-bold text-white border-b border-white/10 text-sm uppercase">الميزة</th>
+          <th class="p-4 font-bold text-cyan-400 border-b border-white/10 text-sm uppercase">جراحة ليزر HoLEP</th>
+          <th class="p-4 font-bold text-slate-400 border-b border-white/10 text-sm uppercase">TURP التقليدي</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-white/5">
+        <tr>
+          <td class="p-4 text-white font-medium text-sm">حجم البروستاتا المستهدف</td>
+          <td class="p-4 text-slate-300 text-sm italic">جميع الأحجام (حتى الكبيرة جداً)</td>
+          <td class="p-4 text-slate-400 text-sm italic">الصغيرة والمتوسطة فقط</td>
+        </tr>
+        <tr>
+          <td class="p-4 text-white font-medium text-sm">فقدان الدم</td>
+          <td class="p-4 text-slate-300 text-sm italic">الحد الأدنى (الليزر يغلق الأوعية)</td>
+          <td class="p-4 text-slate-400 text-sm italic">خطر أكبر للنزيف</td>
+        </tr>
+        <tr>
+          <td class="p-4 text-white font-medium text-sm">الإقامة في المستشفى</td>
+          <td class="p-4 text-slate-300 text-sm italic">قصيرة (عادة ليلة واحدة)</td>
+          <td class="p-4 text-slate-400 text-sm italic">أطول (3-4 أيام)</td>
+        </tr>
+        <tr>
+          <td class="p-4 text-white font-medium text-sm">وقت القسطرة</td>
+          <td class="p-4 text-slate-300 text-sm italic">12-24 ساعة</td>
+          <td class="p-4 text-slate-400 text-sm italic">72+ ساعة</td>
+        </tr>
+        <tr>
+          <td class="p-4 text-white font-medium text-sm">معدل إعادة العلاج</td>
+          <td class="p-4 text-slate-300 text-sm italic">0% تقريباً (دائم)</td>
+          <td class="p-4 text-slate-400 text-sm italic">يصل إلى 15% خلال 10 سنوات</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="text-2xl font-black text-white uppercase mt-12 mb-4">الفوائد السريرية الرئيسية:</h3>
+  <ul class="space-y-3 list-none pl-0">
+    <li class="flex items-start gap-3">
+      <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+      <span><strong>شفاء أسرع:</strong> يعود معظم المرضى إلى الأنشطة العادية في غضون أيام.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+      <span><strong>الحفاظ على الوظيفة الجنسية:</strong> لا يوجد خطر أعلى للضعف الجنسي مقارنة بالطرق الأخرى.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+      <span><strong>تخفيف فوري للأعراض:</strong> تحسن كبير في تدفق البول من اليوم الأول.</span>
+    </li>
+  </ul>
+</div>
+`
+},
   {
     id: 4,
+    slug: 'urology-insights-national-summit',
     day: '20',
     month: 'APR',
     year: '2026',
@@ -3741,7 +6131,64 @@ export const EVENTS_DATA: EventData[] = [
   </p>
 </div>
     `,
-  },
+      titleAR: "مشاركة الرؤى في مؤتمر جراحة المسالك البولية الوطني",
+      subtitleAR: "د. نيثي نافانيتكول يسلط الضوء على نتائج المرضى المبتكرة في القمة الوطنية لطب المسالك البولية",
+      locationAR: "حلبة ومنطقة أنشطة بانجسين",
+      descriptionAR: "د. نيثي نافانيتكول يسلط الضوء على نتائج المرضى المبتكرة في القمة الوطنية لطب المسالك البولية",
+      excerptAR: "د. نيثي يشارك رؤى قيمة في القمة الوطنية لطب المسالك البولية.",
+      contentAR: `
+<div class="space-y-6 text-slate-300">
+  <div class="relative w-full h-[400px] rounded-3xl overflow-hidden my-12 border border-white/10 shadow-2xl">
+    <img src="/assets/image/expertise/Shares Urology Insights.webp" alt="Key Insights" class="w-full h-full object-cover" />
+  </div>
+
+  <p class="text-lg leading-relaxed">
+    في القمة الوطنية الأخيرة لطب المسالك البولية، تصدر الدكتور نيثي نافانيتكول، طبيب المسالك البولية المتميز، مركز الاهتمام خلال حلقة نقاش رفيعة المستوى بعنوان "ما وراء الدليل: الجواهر، المزالق، ونتائج المرضى". كصوت رائد في طب المسالك البولية الحديث، شارك الدكتور نيثي نافانيتكول رؤى نقدية مستمدة من سنوات من التميز السريري، مساهماً في الحوار العالمي حول كيفية تجاوز البروتوكولات القياسية لتحقيق نتائج طبية فائقة.
+  </p>
+
+  <div class="flex justify-center my-12">
+    <div class="relative max-w-xl w-full rounded-4xl overflow-hidden border border-white/10 shadow-2xl">
+      <img src="/assets/image/expertise/Shares Urology Insights 2.webp" alt="Urology Insights" class="w-full h-auto object-contain" />
+    </div>
+  </div>
+
+  <h3 class="text-xl font-black text-white uppercase mt-12 mb-4">الرؤى الرئيسية التي شاركها د. نيثي نافانيتكول</h3>
+  <p>
+    خلال الجلسة، ركزت المناقشة على الفروق الدقيقة في الدقة الجراحية والتعافي على المدى الطويل. أكد الدكتور نيثي نافانيتكول على العديد من ركائز الرعاية الحديثة للمسالك البولية:
+  </p>
+  <ul class="space-y-3 list-none pl-0">
+    <li class="flex items-start gap-3">
+      <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+      <span><strong>تحسين نتائج المرضى:</strong> تجاوز النجاح التقني لضمان التعافي الوظيفي والصحة على المدى الطويل.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+      <span><strong>إدارة ما بعد العلاج:</strong> تنفيذ بروتوكولات التعافي المتقدمة لتقليل المضاعفات وتعزيز جودة الحياة.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+      <span><strong>معالجة المزالق:</strong> تحديد التحديات السريرية الشائعة ومشاركة "جواهر" الحكمة لمساعدة الزملاء على التعامل مع الحالات المعقدة.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+      <span><strong>رضا المرضى:</strong> إعطاء الأولوية للتواصل الواضح وخطط الرعاية الشخصية لتلبية احتياجات المرضى الفردية.</span>
+    </li>
+  </ul>
+
+  <div class="relative w-full h-[400px] rounded-3xl overflow-hidden my-12 border border-white/10 shadow-2xl">
+    <img src="/assets/image/expertise/Shares Urology Insights 3.webp" alt="Commitment to Excellence" class="w-full h-full object-cover" />
+  </div>
+
+  <h3 class="text-xl font-black text-white uppercase mt-12 mb-4">الالتزام بالتميز</h3>
+  <p>
+    إن مشاركة الدكتور نيثي نافانيتكول في مثل هذا المنتدى المرموق تعزز مكانته كقائد فكري في هذا المجال. تستمر خبرته في إدارة ما بعد العلاج وتفانيه في الرعاية التي تركز على المريض في رفع معايير ممارسات المسالك البولية، في جميع أنحاء المجتمع الطبي في تايلاند.
+  </p>
+  <p>
+    من خلال دمج التقنيات المبتكرة مع الفهم العميق لاحتياجات المرضى، يظل الدكتور نيثي نافانيتكول في طليعة النهوض بصحة المسالك البولية وضمان أفضل النتائج الممكنة لكل مريض يعالجه.
+  </p>
+</div>
+`
+},
 ];
 
 

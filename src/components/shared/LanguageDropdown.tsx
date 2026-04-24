@@ -6,8 +6,8 @@ import { ChevronDown } from 'lucide-react';
 import { languages } from '@/data/mockData';
 
 interface LanguageDropdownProps {
-    lang: 'EN' | 'TH';
-    setLang: (lang: 'EN' | 'TH') => void;
+    lang: 'EN' | 'TH' | 'AR';
+    setLang: (lang: 'EN' | 'TH' | 'AR') => void;
 }
 
 const LanguageDropdown = ({ lang, setLang }: LanguageDropdownProps) => {
@@ -49,7 +49,7 @@ const LanguageDropdown = ({ lang, setLang }: LanguageDropdownProps) => {
                         {languages.map((l) => (
                             <button
                                 key={l.code}
-                                onClick={() => { setLang(l.code as 'EN' | 'TH'); setIsOpen(false); }}
+                                onClick={() => { setLang(l.code as 'EN' | 'TH' | 'AR'); setIsOpen(false); }}
                                 className={`w-full flex items-center space-x-3 px-4 py-2.5 text-left hover:bg-white/5 transition-colors ${lang === l.code ? 'bg-amber-900/10' : ''}`}
                             >
                                 <Image

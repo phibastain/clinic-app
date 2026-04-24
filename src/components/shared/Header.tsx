@@ -14,6 +14,7 @@ import { serviceNameToSlug } from '@/utils/serviceUtils';
 import Link from 'next/link';
 import { useTheme } from '@/components/providers/ThemeProvider';
 import { useLanguage } from '@/components/providers/LanguageProvider';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface HeaderProps {
     activeSection?: string;
@@ -26,6 +27,7 @@ const Header = ({ activeSection, scrollToSection, onBackToHome, onServiceClick }
     const router = useRouter();
     const { isDark, toggleTheme } = useTheme();
     const { lang, setLang } = useLanguage();
+    const { t } = useTranslation();
 
     const setIsDark = (val: boolean) => {
         // Support the existing prop-like usage if needed, but primarily use toggleTheme
@@ -154,7 +156,7 @@ const Header = ({ activeSection, scrollToSection, onBackToHome, onServiceClick }
                 ))}
             </div>
             <div className="absolute bottom-0 left-0 w-full p-6 border-t border-slate-100 dark:border-white/10 bg-slate-50/50 dark:bg-white/5">
-                <GradientButton onClick={() => { handleNavClick('contact'); setIsMobileMenuOpen(false); }} className="w-full justify-center" icon={Calendar}>Book Appointment</GradientButton>
+                <GradientButton onClick={() => { handleNavClick('contact'); setIsMobileMenuOpen(false); }} className="w-full justify-center" icon={Calendar}>{t('Book Appointment')}</GradientButton>
             </div>
         </div>
     );
@@ -181,9 +183,8 @@ const Header = ({ activeSection, scrollToSection, onBackToHome, onServiceClick }
                         </div>
                     </div>
 
-                    {/* Center: Center of Excellence */}
                     <div className="flex-1 text-center truncate text-slate-500 px-4">
-                        Center of Excellence in Urology &amp; Men&apos;s Health
+                        {t('Center of Excellence in Urology & Men\'s Health')}
                     </div>
 
                     {/* Right: Controls */}
@@ -226,7 +227,7 @@ const Header = ({ activeSection, scrollToSection, onBackToHome, onServiceClick }
                                         disabled={item.disabled}
                                     >
                                         <IconComp size={16} className={`transition-transform duration-300 ${isActive ? 'scale-110' : 'group-hover/nav:scale-110'}`} />
-                                        <span>{item.title}</span>
+                                        <span>{t(item.title)}</span>
                                         {item.mega && <ChevronDown size={12} className="transition-transform duration-300 group-hover/nav:rotate-180 opacity-70" />}
                                         <span className={`absolute bottom-2 left-1/2 -translate-x-1/2 h-[2px] bg-amber-600 rounded-full transition-all duration-300 ease-out ${isActive ? 'w-[80%] opacity-100 shadow-[0_0_8px_rgba(245,158,11,0.6)]' : 'w-0 opacity-0 group-hover/nav:w-[40%] group-hover/nav:opacity-60'}`} />
                                         <span className={`absolute inset-0 bg-amber-500/5 rounded-lg -z-10 transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-0 group-hover/nav:opacity-50'}`} />
@@ -237,7 +238,7 @@ const Header = ({ activeSection, scrollToSection, onBackToHome, onServiceClick }
                         })}
                     </div>
                     <div className="flex items-center space-x-4">
-                        <GradientButton onClick={() => handleNavClick('contact')} className="hidden sm:flex px-5 py-2 rounded-full text-[9px]" icon={Calendar}>Book Now</GradientButton>
+                        <GradientButton onClick={() => handleNavClick('contact')} className="hidden sm:flex px-5 py-2 rounded-full text-[9px]" icon={Calendar}>{t('Book Now')}</GradientButton>
                         <button className="lg:hidden p-2 text-slate-700 dark:text-white hover:text-amber-600 transition-colors" onClick={() => setIsMobileMenuOpen(true)} aria-label="Open navigation menu">
                             <Menu size={24} />
                         </button>

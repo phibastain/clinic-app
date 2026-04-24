@@ -2,8 +2,17 @@ import { MetadataRoute } from 'next';
 import { SERVICE_SLUGS } from '@/utils/serviceUtils';
 import { BLOG_POSTS, DOCTORS, EVENTS_DATA } from '@/data/mockData';
 import { blogTitleToSlug } from '@/utils/blogUtils';
+import { getEventSlug } from '@/utils/eventUtils';
 
 const BASE_URL = 'https://www.mtrusturology.com';
+
+// Helper to generate alternateRefs for all supported languages
+const langAlternates = (path: string) => [
+    { hreflang: 'en', href: `${BASE_URL}${path}` },
+    { hreflang: 'th', href: `${BASE_URL}${path}?lang=th` },
+    { hreflang: 'ar', href: `${BASE_URL}${path}?lang=ar` },
+    { hreflang: 'x-default', href: `${BASE_URL}${path}` },
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const now = new Date();
@@ -15,6 +24,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: now,
             changeFrequency: 'weekly',
             priority: 1.0,
+            alternates: { languages: { en: BASE_URL, th: `${BASE_URL}?lang=th`, ar: `${BASE_URL}?lang=ar` } },
+        },
+        {
+            url: `${BASE_URL}/vasectomy`,
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+            alternates: { languages: { en: `${BASE_URL}/vasectomy`, th: `${BASE_URL}/vasectomy?lang=th`, ar: `${BASE_URL}/vasectomy?lang=ar` } },
         },
     ];
 
@@ -24,6 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: now,
         changeFrequency: 'monthly' as const,
         priority: 0.9,
+        alternates: { languages: { en: `${BASE_URL}/services/${slug}`, th: `${BASE_URL}/services/${slug}?lang=th`, ar: `${BASE_URL}/services/${slug}?lang=ar` } },
     }));
 
     // Doctor pages
@@ -34,6 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: now,
             changeFrequency: 'monthly' as const,
             priority: 0.8,
+            alternates: { languages: { en: `${BASE_URL}/urologist/${doctor.slug}`, th: `${BASE_URL}/urologist/${doctor.slug}?lang=th`, ar: `${BASE_URL}/urologist/${doctor.slug}?lang=ar` } },
         }));
 
     // Blog pages
@@ -42,14 +61,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: now,
         changeFrequency: 'weekly' as const,
         priority: 0.7,
+        alternates: { languages: { en: `${BASE_URL}/blog/${blogTitleToSlug(post.title)}`, th: `${BASE_URL}/blog/${blogTitleToSlug(post.title)}?lang=th`, ar: `${BASE_URL}/blog/${blogTitleToSlug(post.title)}?lang=ar` } },
     }));
 
     // Event pages
     const eventPages: MetadataRoute.Sitemap = EVENTS_DATA.map((event) => ({
-        url: `${BASE_URL}/events/${event.id}`,
+        url: `${BASE_URL}/events/${getEventSlug(event)}`,
         lastModified: now,
         changeFrequency: 'weekly' as const,
         priority: 0.6,
+        alternates: { languages: { en: `${BASE_URL}/events/${getEventSlug(event)}`, th: `${BASE_URL}/events/${getEventSlug(event)}?lang=th`, ar: `${BASE_URL}/events/${getEventSlug(event)}?lang=ar` } },
     }));
 
     return [

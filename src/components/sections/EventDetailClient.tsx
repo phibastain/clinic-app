@@ -5,10 +5,12 @@ import Link from 'next/link';
 import { Calendar, Facebook, Twitter, MessageCircle, ArrowLeft } from 'lucide-react';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { IEvent } from '@/types';
+import { getEventSlug } from '@/utils/eventUtils';
 import { useTranslation } from '@/hooks/useTranslation';
 import Container from '@/components/ui/Container';
 import GradientButton from '@/components/ui/GradientButton';
 import { sanitizeHtmlContent } from '@/utils/sanitize';
+import { getLocalizedField } from '@/utils/langUtils';
 
 interface EventDetailClientProps {
     event: IEvent;
@@ -59,13 +61,13 @@ export default function EventDetailClient({ event, relatedEvents }: EventDetailC
                                 className="group flex items-center space-x-2 text-white/90 hover:text-white transition-all text-sm font-bold bg-black/30 hover:bg-black/50 px-5 py-2.5 rounded-full backdrop-blur-md border border-white/20 shadow-lg hover:shadow-cyan-500/20 mb-8 w-fit"
                             >
                                 <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
-                                <span>{lang === 'TH' ? 'กลับสู่หน้าหลัก' : 'Back to Home'}</span>
+                                <span>{t('Back to Home')}</span>
                             </Link>
                             <h1 className="text-4xl md:text-5xl font-black text-white mb-4 leading-[1.15] uppercase tracking-tight drop-shadow-lg">
-                                {lang === 'TH' ? (event.titleTH || t(event.title)) : event.title}
+                                {getLocalizedField(event, 'title', lang, t)}
                             </h1>
                             <p className="text-base md:text-lg text-cyan-100/90 font-medium leading-relaxed max-w-2xl drop-shadow-md">
-                                {lang === 'TH' ? (event.subtitleTH || t(event.subtitle || '')) : event.subtitle}
+                                {getLocalizedField(event, 'subtitle', lang, t)}
                             </p>
                         </div>
                     </Container>
@@ -79,14 +81,14 @@ export default function EventDetailClient({ event, relatedEvents }: EventDetailC
                         <div className="lg:col-span-2 space-y-8">
                             <div className="bg-linear-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-2xl">
                                 <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">{t('About This Event')}</h2>
-                                {event.content || (lang === 'TH' && event.contentTH) ? (
+                                {event.content || (lang !== 'EN' && (event.contentTH || event.contentAR)) ? (
                                     <div 
                                         className="prose prose-lg prose-invert max-w-none text-slate-100 font-medium" 
-                                        dangerouslySetInnerHTML={{ __html: sanitizeHtmlContent(lang === 'TH' ? (event.contentTH || t(`BLOG_POST_${event.id}_CONTENT`) || '') : (event.content || event.contentTH || '')) }} 
+                                        dangerouslySetInnerHTML={{ __html: sanitizeHtmlContent(getLocalizedField(event, 'content', lang, t) || '') }} 
                                     />
                                 ) : (
                                     <p className="text-slate-100 leading-relaxed text-lg font-medium whitespace-pre-line">
-                                        {lang === 'TH' ? (event.descriptionTH || t(event.description || '')) : event.description}
+                                        {getLocalizedField(event, 'description', lang, t)}
                                     </p>
                                 )}
                             </div>
@@ -120,7 +122,7 @@ export default function EventDetailClient({ event, relatedEvents }: EventDetailC
                                             {relatedEvents.map((relatedEvent) => (
                                                 <Link
                                                     key={relatedEvent.id}
-                                                    href={`/events/${relatedEvent.id}`}
+                                                    href={`/events/${getEventSlug(relatedEvent)}`}
                                                     className="group w-full text-left block p-3 rounded-xl hover:bg-white/5 transition-all"
                                                 >
                                                     <div className="flex space-x-3">
@@ -132,7 +134,7 @@ export default function EventDetailClient({ event, relatedEvents }: EventDetailC
                                                                 {relatedEvent.category}
                                                             </span>
                                                             <h4 className="text-sm font-bold text-white line-clamp-2 group-hover:text-cyan-400 transition-colors">
-                                                                {lang === 'TH' ? (relatedEvent.titleTH || t(relatedEvent.title)) : relatedEvent.title}
+                                                                {getLocalizedField(relatedEvent, 'title', lang, t)}
                                                             </h4>
                                                             <span className="text-xs text-slate-400 flex items-center mt-1">
                                                                 <Calendar size={10} className="mr-1" />{relatedEvent.day} {relatedEvent.month}

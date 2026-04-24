@@ -66,6 +66,7 @@ export const UI_TRANSLATIONS: Record<string, string> = {
     "Men's Health Blog": 'บล็อกสุขภาพชาย',
     'Read More': 'อ่านเพิ่มเติม',
     'Explore Article': 'อ่านบทความ',
+    'Search articles...': 'ค้นหาบทความ...',
 
     // About Section
     'Excellence in Care': 'ที่สุดแห่งความเชี่ยวชาญ',
@@ -76,11 +77,56 @@ export const UI_TRANSLATIONS: Record<string, string> = {
     "We combine state-of-the-art diagnostic technology with a patient-first philosophy, ensuring that every consultation is conducted with the utmost privacy, professionalism, and understanding of your unique needs.": 'เราผสานเทคโนโลยีการตรวจวินิจฉัยที่ล้ำสมัยเข้ากับปรัชญาการดูแลคนไข้เป็นอันดับหนึ่ง เพื่อให้มั่นใจว่าทุกการปรึกษาจะเป็นความลับสูงสุด มีความเป็นมืออาชีพ และเข้าใจในความต้องการที่แตกต่างกันของคุณ',
     'Credential Experts': 'เชี่ยวชาญระดับสากล',
 
-    // Service Category tabs
+    // Service Category tabs (actual SERVICE_CATEGORIES keys)
+    'Erectile Dysfunction': 'ภาวะหย่อนสมรรถภาพ',
+    'Urinary Symptoms': 'อาการทางเดินปัสสาวะ',
+    'Aesthetic & Penile Surgery': 'ศัลยกรรมความงามและอวัยวะเพศ',
+    'Examination & Lab Testing': 'การตรวจและห้องปฏิบัติการ',
+
+    // Service Category tabs (legacy keys for compatibility)
     'Sexual Health': 'สุขภาพทางเพศ',
     'Prostate': 'ต่อมลูกหมาก',
     'Aesthetic': 'ศัลยกรรมความงาม',
     'Diagnostic': 'การตรวจวินิจฉัย',
+
+    // Service names
+    'Focus Shockwave': 'โฟกัส ช็อควเวฟ',
+    'PRP for ED': 'PRP สำหรับภาวะหย่อนสมรรถภาพ',
+    'Stem Cell for ED': 'เซลล์ต้นกำเนิดสำหรับภาวะหย่อนสมรรถภาพ',
+    'Penile Implant': 'อุปกรณ์ช่วยแข็งตัว',
+    'Dorsal Neurectomy': 'ดอร์ซัล นิวเรคโตมี',
+    'Testosterone Replacement Therapy': 'การรักษาด้วยฮอร์โมนเทสโทสเตอโรน',
+    'ReZum': 'รีซูม',
+    'UroLift': 'ยูโรลิฟต์',
+    'Sexually Transmitted Infection': 'โรคติดต่อทางเพศสัมพันธ์',
+    'Stone Disease': 'นิ่วในระบบทางเดินปัสสาวะ',
+    'Penile Enlargement': 'เสริมขนาดอวัยวะเพศ',
+    'Penile Lengthening': 'เสริมความยาวอวัยวะเพศ',
+    'Excision of penile Paraffinoma': 'ผ่าตัดนำสารแปลกปลอมออก',
+    'Flexible Cystoscopy': 'ส่องกล้องกระเพาะปัสสาวะแบบยืดหยุ่น',
+    'Ultrasound': 'อัลตราซาวด์',
+    'Lab Testing': 'ตรวจเลือดและห้องปฏิบัติการ',
+
+    // Service descriptions
+    'Non-invasive sound wave therapy stimulating blood flow to treat the root cause of ED.': 'การรักษาด้วยคลื่นเสียงแบบไม่ผ่าตัด กระตุ้นการไหลเวียนโลหิตเพื่อรักษาสาเหตุหลักของภาวะหย่อนสมรรถภาพ',
+    "Platelet-Rich Plasma therapy utilizes your body's growth factors to rejuvenate tissue.": 'การรักษาด้วยพลาสมาเกล็ดเลือดเข้มข้น ใช้ปัจจัยการเจริญเติบโตในร่างกายเพื่อฟื้นฟูเนื้อเยื่อ',
+    'Advanced regenerative medicine repairing damaged vessels and nerves.': 'ยาฟื้นฟูขั้นสูงที่ซ่อมแซมหลอดเลือดและเส้นประสาทที่เสียหาย',
+    'Surgical solution for severe ED using inflatable or malleable prostheses.': 'วิธีการผ่าตัดสำหรับภาวะหย่อนสมรรถภาพขั้นรุนแรงด้วยอุปกรณ์แบบพองลมหรือแบบดัดได้',
+    'Surgical procedure to reduce penile sensitivity and treat premature ejaculation.': 'หัตถการผ่าตัดเพื่อลดความไวของอวัยวะเพศและรักษาภาวะหลั่งเร็ว',
+    'Hormonal therapy to restore energy, libido, and muscle mass in men with low T.': 'การรักษาด้วยฮอร์โมนเพื่อฟื้นฟูพลังงาน ความต้องการทางเพศ และมวลกล้ามเนื้อในชายที่มีฮอร์โมนต่ำ',
+    'Minimally invasive water vapor therapy for BPH ensuring rapid recovery.': 'การรักษาด้วยไอน้ำแบบรุกรานน้อยสำหรับต่อมลูกหมากโต รับประกันการฟื้นฟูที่รวดเร็ว',
+    'A revolutionary implant procedure that lifts enlarged prostate tissue.': 'หัตถการปฏิวัติที่ยกเนื้อเยื่อต่อมลูกหมากที่โต เปิดทางเดินปัสสาวะ',
+    'Confidential screening and modern treatment for all sexually transmitted infections.': 'การตรวจคัดกรองและรักษาโรคติดต่อทางเพศสัมพันธ์ทุกชนิดอย่างเป็นความลับ',
+    'Advanced laser lithotripsy and management for kidney and bladder stones.': 'การสลายนิ่วด้วยเลเซอร์ขั้นสูงและการจัดการนิ่วในไตและกระเพาะปัสสาวะ',
+    'Comprehensive diagnosis for frequent urination, incontinence, and pain.': 'การวินิจฉัยครบวงจรสำหรับปัสสาวะบ่อย กลั้นปัสสาวะไม่อยู่ และความเจ็บปวด',
+    'Modern stapler circumcision ensures precise incisions and faster healing.': 'การขลิบด้วยเครื่องเย็บสมัยใหม่ รับประกันรอยตัดที่แม่นยำและหายเร็วขึ้น',
+    'Safe penile augmentation using premium medical fillers and short downtime.': 'การเสริมขนาดอวัยวะเพศที่ปลอดภัยด้วยฟิลเลอร์ทางการแพทย์คุณภาพสูง พักฟื้นน้อย',
+    'Surgical procedures to permanently enhance length and aesthetic appearance.': 'หัตถการผ่าตัดเพื่อเพิ่มความยาวและรูปลักษณ์อย่างถาวร',
+    'Removal of foreign substances and reconstructive surgery by specialists.': 'การนำสารแปลกปลอมออกและผ่าตัดฟื้นฟูโดยผู้เชี่ยวชาญ',
+    'Permanent male contraception via a quick, minimally invasive procedure.': 'การคุมกำเนิดถาวรในชายผ่านหัตถการที่รวดเร็วและรุกรานน้อย',
+    'High-resolution bladder examination using a soft, flexible scope.': 'การตรวจกระเพาะปัสสาวะความละเอียดสูงด้วยกล้องที่นุ่มและยืดหยุ่น',
+    'High-precision imaging for detailed assessment of kidneys and prostate.': 'การถ่ายภาพความแม่นยำสูงสำหรับการประเมินไตและต่อมลูกหมากอย่างละเอียด',
+    'Comprehensive blood work including PSA screening and hormonal profiles.': 'การตรวจเลือดครบชุด รวมถึงการคัดกรอง PSA และโปรไฟล์ฮอร์โมน',
 
     // Footer Section
     "M-Trust Urology Clinic delivers specialized care focusing on men's health and precision surgery.": 'เอ็มทรัสต์ คลินิก ให้บริการเฉพาะทางด้านสุขภาพชายและศัลยกรรมที่มีความแม่นยำสูง',

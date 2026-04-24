@@ -9,6 +9,7 @@ import { BLOG_POSTS } from '@/data/mockData';
 import { blogTitleToSlug } from '@/utils/blogUtils';
 import Container from '@/components/ui/Container';
 import SectionTitle from '@/components/ui/SectionTitle';
+import { getLocalizedField } from '@/utils/langUtils';
 
 const POSTS_PER_PAGE = 6;
 
@@ -22,9 +23,11 @@ const BlogSection = () => {
         id: String(p.id),
         title: p.title,
         titleTH: '',
+        titleAR: p.titleAR || '',
         slug: blogTitleToSlug(p.title),
         excerpt: p.excerpt,
         excerptTH: '',
+        excerptAR: p.excerptAR || '',
         category: p.category,
         image: p.image,
         date: p.date,
@@ -62,7 +65,7 @@ const BlogSection = () => {
                                     ? 'bg-slate-900 text-white border-slate-900 dark:bg-amber-600 dark:border-amber-600 shadow-lg'
                                     : 'bg-white/50 text-slate-500 border-slate-200 hover:border-amber-600 hover:text-amber-600 dark:bg-white/5 dark:text-slate-300 dark:border-white/10 dark:hover:border-amber-500'}`}
                             >
-                                {cat === 'All' ? t('All') : cat}
+                                {cat === 'All' ? t('All') : t(cat)}
                             </button>
                         ))}
                     </div>
@@ -79,16 +82,16 @@ const BlogSection = () => {
                             <a href={`/blog/${post.slug}`} key={post.id} className="group flex flex-col sm:flex-row gap-6 items-center bg-linear-to-br from-white/80 via-white/50 to-indigo-50/20 dark:bg-none dark:bg-slate-900 p-4 rounded-4xl border border-slate-200/50 dark:border-white/10 transition-all duration-300 text-left cursor-pointer hover:border-amber-500/40 hover:shadow-lg">
                                 <div className="w-full sm:w-44 lg:w-48 aspect-square overflow-hidden rounded-3xl shadow-md relative shrink-0">
                                     <Image src={post.image || ''} alt={post.title || 'Blog Art'} fill className="object-cover transition-transform duration-1000 group-hover:scale-110" sizes="(max-width: 640px) 100vw, 192px" />
-                                    <div className="absolute top-3 left-3 bg-amber-600 text-white px-2 py-1 rounded-md text-[8px] font-black uppercase shadow-lg">{post.category}</div>
+                                    <div className="absolute top-3 left-3 bg-amber-600 text-white px-2 py-1 rounded-md text-[8px] font-black uppercase shadow-lg">{t(post.category)}</div>
                                 </div>
                                 <div className="flex-1 flex flex-col justify-between py-1 text-left">
                                     <div>
                                         <div className="flex items-center text-[9px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2"><Clock size={12} className="mr-1" /> {post.date}</div>
                                         <h3 className="text-xs md:text-sm font-black text-slate-900 dark:text-white uppercase leading-tight group-hover:text-amber-600 transition-colors mb-2 line-clamp-3">
-                                            {lang === 'TH' ? (post.titleTH || t(post.title || '')) : post.title}
+                                            {getLocalizedField(post, 'title', lang, t)}
                                         </h3>
                                         <p className="text-slate-500 dark:text-slate-400 text-xs md:text-sm leading-relaxed line-clamp-2 mb-3 font-medium">
-                                            {lang === 'TH' ? (post.excerptTH || t(post.excerpt || '')) : post.excerpt}
+                                            {getLocalizedField(post, 'excerpt', lang, t)}
                                         </p>
                                     </div>
                                     <div className="flex items-center space-x-1 text-xs font-black uppercase text-amber-600 group/btn">

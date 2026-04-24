@@ -123,8 +123,10 @@ export function proxy(request: NextRequest) {
     const langParam = request.nextUrl.searchParams.get('lang');
     if (langParam === 'th') {
         response.cookies.set('lang', 'th', { path: '/', sameSite: 'lax' });
+    } else if (langParam === 'ar') {
+        response.cookies.set('lang', 'ar', { path: '/', sameSite: 'lax' });
     } else if (langParam !== null) {
-        // Explicit non-th lang param — set to 'en'
+        // Explicit non-th/ar lang param — set to 'en'
         response.cookies.set('lang', 'en', { path: '/', sameSite: 'lax' });
     }
 

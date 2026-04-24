@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Noto_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -10,6 +10,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const notoArabic = Noto_Sans_Arabic({
+  variable: "--font-noto-arabic",
+  subsets: ["arabic"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -24,14 +30,16 @@ export const metadata: Metadata = {
     'Erectile Dysfunction Treatment', 'Penile Prosthesis Surgery', 'Dr. Niti Navanimitkul',
     'UroLift Thailand', 'Rezum Treatment', 'BPH Treatment', 'Prostate Specialist',
     'Sexual Dysfunction Specialist', 'Best Urologist Chon Buri', 'M-Trust Clinic',
-    'Men\'s Health Clinic Bangkok'
+    'Men\'s Health Clinic Bangkok',
+    'طبيب مسالك بولية تايلاند', 'صحة الرجل باتايا', 'علاج ضعف الانتصاب',
+    'زراعة دعامة القضيب', 'عيادة إم ترست', 'طبيب مسالك بولية باتايا'
   ],
   authors: [{ name: 'Dr. Niti Navanimitkul' }],
   creator: 'M-Trust Urology Clinic',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    alternateLocale: ['th_TH'],
+    alternateLocale: ['th_TH', 'ar_SA'],
     url: 'https://www.mtrusturology.com',
     siteName: 'M-Trust Urology Clinic',
     title: 'M-Trust Urology Clinic | Urologist & Men\'s Health Specialist, Pattaya',
@@ -96,11 +104,12 @@ export default async function RootLayout({
 }>) {
   const cookieStore = await cookies();
   const langCookie = cookieStore.get('lang')?.value;
-  const htmlLang = langCookie === 'th' ? 'th' : 'en';
+  const htmlLang = langCookie === 'th' ? 'th' : langCookie === 'ar' ? 'ar' : 'en';
+  const htmlDir = langCookie === 'ar' ? 'rtl' : 'ltr';
 
   return (
     /* suppressHydrationWarning ช่วยแก้ปัญหาแจ้งเตือนตอนสลับ Theme เพราะเราจัดการ class ที่ html เอง */
-    <html lang={htmlLang} suppressHydrationWarning>
+    <html lang={htmlLang} dir={htmlDir} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -120,15 +129,15 @@ export default async function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} ${notoArabic.variable} antialiased min-h-screen`}
       >
         <ThemeProvider>
           <LanguageProvider>
             <div className="selection:bg-amber-500 selection:text-white">
-              <div className="min-h-screen transition-colors duration-1000 font-sans relative overflow-x-hidden text-left text-slate-900 dark:text-slate-100">
+              <div className="min-h-screen transition-colors duration-1000 font-sans relative overflow-x-hidden text-start text-slate-900 dark:text-slate-100">
                 <ModernBackground />
                 <Header />
-                <main className="relative z-10 pt-[100px] text-left">
+                <main className="relative z-10 pt-[100px] text-start">
                   {children}
                 </main>
                 <Footer />

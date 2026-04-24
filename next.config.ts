@@ -80,3 +80,5 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+// Force Next.js server restart to clear mockData.ts cache (Update 2)

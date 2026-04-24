@@ -2,7 +2,9 @@
 
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { TH_TRANSLATIONS } from '@/data/translations';
+import { AR_TRANSLATIONS } from '@/data/arTranslations';
 import { UI_TRANSLATIONS } from '@/data/uiTranslations';
+import { AR_UI_TRANSLATIONS } from '@/data/arUiTranslations';
 
 export const useTranslation = () => {
     const { lang } = useLanguage();
@@ -13,6 +15,13 @@ export const useTranslation = () => {
             if (UI_TRANSLATIONS[key]) return UI_TRANSLATIONS[key];
             // Then check main TH_TRANSLATIONS
             const entry = TH_TRANSLATIONS[key];
+            if (entry) return entry.title || entry;
+        }
+        if (lang === 'AR') {
+            // Check AR UI translations first
+            if (AR_UI_TRANSLATIONS[key]) return AR_UI_TRANSLATIONS[key];
+            // Then check main AR_TRANSLATIONS
+            const entry = AR_TRANSLATIONS[key];
             if (entry) return entry.title || entry;
         }
         return key;

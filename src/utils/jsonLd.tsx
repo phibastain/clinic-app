@@ -1,21 +1,29 @@
 import { FAQ_DATA } from '@/data/mockData';
+import { AR_TRANSLATIONS } from '@/data/arTranslations';
 import { blogTitleToSlug } from '@/utils/blogUtils';
+import { eventTitleToSlug } from '@/utils/eventUtils';
 
 // ==============================
 // Homepage JSON-LD
 // ==============================
 
-export function getHomepageJsonLd(baseUrl: string) {
+export function getHomepageJsonLd(baseUrl: string, lang: string = 'en') {
+    const isAr = lang === 'ar';
+
+    const orgDescription = isAr
+        ? 'مركز التميز في جراحة المسالك البولية وصحة الرجل. عيادة متخصصة تقدم خدمات شاملة لصحة الرجل بالابتكار الحديث والرعاية الشخصية وفقاً للمعايير الدولية.'
+        : 'Center of Excellence in Urology & Men\'s Health. Specialized clinic providing comprehensive men\'s health services with modern innovation and personalized care under international standards.';
+
     const organization = {
         '@context': 'https://schema.org',
         '@type': 'MedicalClinic',
         '@id': `${baseUrl}/#organization`,
-        name: 'M-Trust Urology Clinic',
+        name: isAr ? 'عيادة إم-ترست لجراحة المسالك البولية' : 'M-Trust Urology Clinic',
         alternateName: 'M-Trust Clinic',
         url: baseUrl,
         logo: `${baseUrl}/assets/image/header/M-Trust Urology Clinic.png`,
-        description: 'Center of Excellence in Urology & Men\'s Health. Specialized clinic providing comprehensive men\'s health services with modern innovation and personalized care under international standards.',
-        medicalSpecialty: ['Urology', 'Men\'s Health'],
+        description: orgDescription,
+        medicalSpecialty: isAr ? ['جراحة المسالك البولية', 'صحة الرجل'] : ['Urology', 'Men\'s Health'],
         address: {
             '@type': 'PostalAddress',
             streetAddress: '392/65 moo.9 Sukhumvit Rd, Pattaya City, Amphoe Bang Lamung',
@@ -46,33 +54,38 @@ export function getHomepageJsonLd(baseUrl: string) {
         hasMap: 'https://maps.google.com/?cid=15983019159424688366',
         priceRange: '$$',
         availableService: [
-            { '@type': 'MedicalProcedure', name: 'Focused Shockwave Therapy (ED)' },
-            { '@type': 'MedicalProcedure', name: 'Penile Implant Surgery' },
-            { '@type': 'MedicalProcedure', name: 'Circumcision' },
-            { '@type': 'MedicalProcedure', name: 'Vasectomy' },
-            { '@type': 'MedicalProcedure', name: 'Prostate Screening' },
-            { '@type': 'MedicalProcedure', name: 'Flexible Cystoscopy' },
+            { '@type': 'MedicalProcedure', name: isAr ? 'العلاج بالموجات الصدمية المركزة' : 'Focused Shockwave Therapy (ED)' },
+            { '@type': 'MedicalProcedure', name: isAr ? 'جراحة زراعة دعامة القضيب' : 'Penile Implant Surgery' },
+            { '@type': 'MedicalProcedure', name: isAr ? 'الختان' : 'Circumcision' },
+            { '@type': 'MedicalProcedure', name: isAr ? 'قطع القناة الدافقة' : 'Vasectomy' },
+            { '@type': 'MedicalProcedure', name: isAr ? 'فحص البروستاتا' : 'Prostate Screening' },
+            { '@type': 'MedicalProcedure', name: isAr ? 'تنظير المثانة المرن' : 'Flexible Cystoscopy' },
         ],
     };
 
     const website = {
         '@context': 'https://schema.org',
         '@type': 'WebSite',
-        name: 'M-Trust Urology Clinic',
+        name: isAr ? 'عيادة إم-ترست لجراحة المسالك البولية' : 'M-Trust Urology Clinic',
         url: baseUrl,
     };
 
     const faqPage = {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
-        mainEntity: FAQ_DATA.map(faq => ({
-            '@type': 'Question',
-            name: faq.question,
-            acceptedAnswer: {
-                '@type': 'Answer',
-                text: faq.answer,
-            },
-        })),
+        mainEntity: FAQ_DATA.map(faq => {
+            const qStr = faq.question || '';
+            const aStr = faq.answer || '';
+            const arEntry = isAr ? (AR_TRANSLATIONS[qStr] as any) : null;
+            return {
+                '@type': 'Question',
+                name: arEntry?.title || qStr,
+                acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: arEntry?.answer || aStr,
+                },
+            };
+        }),
     };
 
     return [organization, website, faqPage];
@@ -212,7 +225,9 @@ export function getEventJsonLd(baseUrl: string, event: {
     day: string;
     month: string;
     time: string;
+    slug?: string;
 }) {
+    const eventSlug = event.slug || eventTitleToSlug(event.title);
     const eventSchema = {
         '@context': 'https://schema.org',
         '@type': 'Event',
@@ -234,7 +249,7 @@ export function getEventJsonLd(baseUrl: string, event: {
             name: 'M-Trust Urology Clinic',
             url: baseUrl,
         },
-        url: `${baseUrl}/events/${event.id}`,
+        url: `${baseUrl}/events/${eventSlug}`,
         eventStatus: 'https://schema.org/EventScheduled',
         eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
     };
@@ -245,7 +260,7 @@ export function getEventJsonLd(baseUrl: string, event: {
         itemListElement: [
             { '@type': 'ListItem', position: 1, name: 'Home', item: baseUrl },
             { '@type': 'ListItem', position: 2, name: 'Events', item: `${baseUrl}/events` },
-            { '@type': 'ListItem', position: 3, name: event.title, item: `${baseUrl}/events/${event.id}` },
+            { '@type': 'ListItem', position: 3, name: event.title, item: `${baseUrl}/events/${eventSlug}` },
         ],
     };
 

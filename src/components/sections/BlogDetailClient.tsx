@@ -11,6 +11,7 @@ import { useLanguage } from '@/components/providers/LanguageProvider';
 import { useTranslation } from '@/hooks/useTranslation';
 import Container from '@/components/ui/Container';
 import GradientButton from '@/components/ui/GradientButton';
+import { getLocalizedField } from '@/utils/langUtils';
 
 interface BlogDetailClientProps {
     post: IPost;
@@ -41,10 +42,10 @@ export default function BlogDetailClient({ post, relatedPosts }: BlogDetailClien
                                 </span>
                             </div>
                             <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 leading-tight">
-                                {lang === 'TH' ? (post.titleTH || t(post.title)) : post.title}
+                                {getLocalizedField(post, 'title', lang, t)}
                             </h1>
                             <p className="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-                                {lang === 'TH' ? (post.excerptTH || t(post.excerpt)) : post.excerpt}
+                                {getLocalizedField(post, 'excerpt', lang, t)}
                             </p>
                         </div>
 
@@ -57,11 +58,15 @@ export default function BlogDetailClient({ post, relatedPosts }: BlogDetailClien
                                  <div className="article-content leading-relaxed" 
                                      dangerouslySetInnerHTML={{ 
                                          __html: sanitizeHtmlContent(
-                                             lang === 'TH' 
-                                                 ? (post.contentTH || 
+                                             lang === 'AR'
+                                                 ? (post.contentAR || 
                                                     (getBlogTHContentKey(post.title) ? t(getBlogTHContentKey(post.title)!) : '') || 
-                                                    '') 
-                                                 : (post.content || '')
+                                                    post.content || '')
+                                                 : lang === 'TH' 
+                                                    ? (post.contentTH || 
+                                                       (getBlogTHContentKey(post.title) ? t(getBlogTHContentKey(post.title)!) : '') || 
+                                                       '') 
+                                                    : (post.content || '')
                                          ) 
                                      }} 
                                 />
@@ -90,7 +95,7 @@ export default function BlogDetailClient({ post, relatedPosts }: BlogDetailClien
                                                 <div className="flex-1 min-w-0">
                                                     <span className="text-xs text-amber-600 dark:text-amber-500 font-bold uppercase tracking-wider mb-1 block">{relatedPost.category}</span>
                                                     <h4 className="text-sm font-bold text-slate-900 dark:text-white line-clamp-2 mb-2 group-hover:text-amber-600 transition-colors">
-                                                        {lang === 'TH' ? (relatedPost.titleTH || t(relatedPost.title)) : relatedPost.title}
+                                                        {getLocalizedField(relatedPost, 'title', lang, t)}
                                                     </h4>
                                                     <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center">
                                                         <Calendar size={12} className="mr-1" />{relatedPost.date}

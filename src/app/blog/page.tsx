@@ -8,13 +8,16 @@ import { BLOG_POSTS } from '@/data/mockData';
 import { blogTitleToSlug } from '@/utils/blogUtils';
 import Container from '@/components/ui/Container';
 import SectionTitle from '@/components/ui/SectionTitle';
+import { getLocalizedField } from '@/utils/langUtils';
 
 interface BlogPostItem {
     id: string;
     title: string;
     titleTH?: string;
+    titleAR?: string;
     excerpt: string;
     excerptTH?: string;
+    excerptAR?: string;
     date: string;
     category: string;
     image: string;
@@ -30,9 +33,11 @@ export default function BlogPage() {
         id: String(p.id),
         title: p.title,
         titleTH: '',
+        titleAR: p.titleAR || '',
         slug: blogTitleToSlug(p.title),
         excerpt: p.excerpt,
         excerptTH: '',
+        excerptAR: p.excerptAR || '',
         category: p.category,
         image: p.image,
         date: p.date,
@@ -49,8 +54,8 @@ export default function BlogPage() {
     const categories = ['All', ...Array.from(new Set(posts.map(p => p.category).filter(Boolean)))];
 
     const filtered = posts.filter(p => {
-        const titleContent = lang === 'TH' ? (p.titleTH || t(p.title)) : p.title;
-        const excerptContent = lang === 'TH' ? (p.excerptTH || t(p.excerpt)) : p.excerpt;
+        const titleContent = getLocalizedField(p, 'title', lang, t);
+        const excerptContent = getLocalizedField(p, 'excerpt', lang, t);
         const matchCat = activeCategory === 'All' || p.category === activeCategory;
         const matchSearch = !search || titleContent.toLowerCase().includes(search.toLowerCase()) || excerptContent?.toLowerCase().includes(search.toLowerCase());
         return matchCat && matchSearch;
@@ -63,12 +68,12 @@ export default function BlogPage() {
         <section className="pt-8 pb-20 min-h-screen text-left">
             <Container>
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-                    <SectionTitle tag="Articles & Knowledge" title="Men's Health Blog" className="mb-0" />
+                    <SectionTitle tag={t("Articles & Knowledge")} title={t("Men's Health Blog")} className="mb-0" />
                     <div className="relative">
                         <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
                         <input
                             type="text"
-                            placeholder="Search articles..."
+                            placeholder={t("Search articles...")}
                             value={search}
                             onChange={e => setSearch(e.target.value)}
                             className="pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 text-sm focus:outline-none focus:border-amber-500 w-full md:w-64"
@@ -86,14 +91,14 @@ export default function BlogPage() {
                                 ? 'bg-slate-900 text-white border-slate-900 dark:bg-amber-600 dark:border-amber-600'
                                 : 'bg-white/50 text-slate-500 border-slate-200 hover:border-amber-600 dark:bg-white/5 dark:text-slate-300 dark:border-white/10'}`}
                         >
-                            {cat}
+                            {cat === 'All' ? t('All') : t(cat)}
                         </button>
                     ))}
                 </div>
 
                 {filtered.length === 0 ? (
                     <div className="text-center py-20 text-slate-400">
-                        <p className="text-lg font-medium">No articles found.</p>
+                        <p className="text-lg font-medium">{t('No articles found.')}</p>
                     </div>
                 ) : (
                     <>
@@ -106,7 +111,7 @@ export default function BlogPage() {
                                 >
                                     <div className="w-full sm:w-44 lg:w-48 aspect-square overflow-hidden rounded-3xl shadow-md relative shrink-0">
                                         <img src={post.image} alt={post.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                                        <div className="absolute top-3 left-3 bg-amber-600 text-white px-2 py-1 rounded-md text-[8px] font-black uppercase shadow-lg">{post.category}</div>
+                                    <div className="absolute top-3 left-3 bg-amber-600 text-white px-2 py-1 rounded-md text-[8px] font-black uppercase shadow-lg">{t(post.category)}</div>
                                     </div>
                                     <div className="flex-1 flex flex-col justify-between py-1">
                                         <div>
@@ -114,14 +119,14 @@ export default function BlogPage() {
                                                 <Clock size={12} className="mr-1" /> {post.date}
                                             </div>
                                             <h2 className="text-xs md:text-sm font-black text-slate-900 dark:text-white uppercase leading-tight group-hover:text-amber-600 transition-colors mb-2 line-clamp-3">
-                                                {lang === 'TH' ? (post.titleTH || t(post.title)) : post.title}
+                                                {getLocalizedField(post, 'title', lang, t)}
                                             </h2>
                                             <p className="text-slate-500 dark:text-slate-400 text-xs leading-relaxed line-clamp-2 mb-3 font-medium">
-                                                {lang === 'TH' ? (post.excerptTH || t(post.excerpt)) : post.excerpt}
+                                                {getLocalizedField(post, 'excerpt', lang, t)}
                                             </p>
                                         </div>
                                         <div className="flex items-center space-x-1 text-xs font-black uppercase text-amber-600">
-                                            <span>Explore Article</span>
+                                            <span>{t('Explore Article')}</span>
                                             <ChevronRight size={12} className="transition-transform group-hover:translate-x-1" />
                                         </div>
                                     </div>
@@ -163,7 +168,7 @@ export default function BlogPage() {
                         )}
 
                         <p className="text-center text-slate-400 text-xs mt-4">
-                            Page {currentPage} of {totalPages} &nbsp;·&nbsp; {filtered.length} articles total
+                            {t('Page')} {currentPage} / {totalPages} &nbsp;·&nbsp; {filtered.length} {t('articles')}
                         </p>
                     </>
                 )}
