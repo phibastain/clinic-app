@@ -3,15 +3,18 @@ export interface IPost {
   title: string;
   titleTH?: string;
   titleAR?: string;
+  titleRU?: string;
   excerpt: string;
   excerptTH?: string;
   excerptAR?: string;
+  excerptRU?: string;
   date: string;
   category: string;
   image: string;
   content: string;
   contentTH?: string;
   contentAR?: string;
+  contentRU?: string;
 }
 
 export interface IEvent {

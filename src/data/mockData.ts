@@ -290,13 +290,16 @@ export interface BlogPost {
   id: number;
   title: string;
   titleAR?: string;
+  titleRU?: string;
   excerpt: string;
   excerptAR?: string;
+  excerptRU?: string;
   date: string;
   category: string;
   image: string;
   content?: string; // HTML string for rich content
   contentAR?: string;
+  contentRU?: string;
 }
 
 export interface EventData {
@@ -4534,7 +4537,9 @@ export const BLOG_POSTS: BlogPost[] = [
       </div>
     `,
       titleAR: "ما هو العلاج بالموجات الصدمية (Li-ESWT)؟",
+      titleRU: "Что такое ударно-волновая терапия (Li-ESWT)? Может ли она действительно вылечить ЭД?",
       excerptAR: "اكتشف كيف تحفز هذه التقنية تدفق الدم لعلاج ضعف الانتصاب بشكل دائم.",
+      excerptRU: "Узнайте, как высокочастотные звуковые волны стимулируют образование новых кровеносных сосудов для лечения первопричины ЭД без лекарств.",
       contentAR: `
       <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
         يؤثر ضعف الانتصاب (ED) على ملايين الرجال حول العالم، وغالباً ما يكون سببه ضعف تدفق الدم. العلاجات التقليدية مثل الحبوب (PDE5i) توفر حلاً مؤقتاً لكنها لا تعالج السبب الجذري. باختلاف تام، يعتبر <strong>العلاج بالموجات الصدمية المركزة الخطي (Li-ESWT)</strong> نقلة نوعية كعلاج تجديدي غير جراحي يهدف إلى استعادة الوظيفة الطبيعية.
@@ -4584,6 +4589,58 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> 100% غير جراحي وبدون ألم</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> لا توجد آثار جانبية مرتبطة عادة بالحبوب</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> نتائج طويلة الأمد (تصل إلى سنتين)</li>
+        </ul>
+      </div>
+      `,
+      contentRU: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Эректильная дисфункция (ЭД) поражает миллионы мужчин во всем мире и обычно вызывается плохим кровотоком. Традиционные методы лечения, такие как таблетки (ФДЭ-5), предлагают временное решение, но не устраняют первопричину. <strong>Линейная фокусная ударно-волновая терапия (Li-ESWT)</strong> представляет собой смену парадигмы — неинвазивное регенеративное лечение, направленное на восстановление естественной функции.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Как это работает?</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            Li-ESWT использует высокочастотные низкоинтенсивные акустические волны для воздействия на ткани внутри полового члена. Эти волны создают улучшенную микротравму, запуская биологическую реакцию, известную как <strong>ангиогенез</strong> — образование новых кровеносных сосудов.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Разрушает микро-бляшки</strong> в существующих кровеносных сосудах.</li>
+            <li><strong>Стимулирует факторы роста</strong> (например, VEGF) для восстановления тканей.</li>
+            <li><strong>Омолаживает нервную ткань</strong>, улучшая чувствительность.</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img 
+            src="/assets/image/blog section/Can it really cure ED 2.webp" 
+            alt="Механизм ударно-волновой терапии" 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Механизм Li-ESWT: акустические волны стимулируют образование новых кровеносных сосудов</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Может ли это "вылечить" ЭД?</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        Хотя слово «вылечить» звучит сильно, Li-ESWT в настоящее время является единственным методом, который <strong>восстанавливает</strong> механизм эрекции, а не просто маскирует симптомы. Клинические исследования показывают значительные показатели успеха:
+      </p>
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        «Более 75% пациентов сообщили об улучшении эректильной функции и смогли достичь спонтанной эрекции без лекарств после прохождения полного курса лечения».
+      </blockquote>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Протокол лечения</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        Стандартный курс включает 6-12 сеансов, каждый из которых длится около 15 минут. Это безболезненно, не требует анестезии и не имеет периода восстановления.
+      </p>
+      
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Основные преимущества:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> 100% неинвазивно и безболезненно</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Отсутствие побочных эффектов, обычно связанных с таблетками</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Долговременные результаты (до 2 лет)</li>
         </ul>
       </div>
       `
