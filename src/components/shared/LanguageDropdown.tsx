@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { ChevronDown } from 'lucide-react';
 import { languages } from '@/data/mockData';
 
@@ -13,6 +15,21 @@ interface LanguageDropdownProps {
 const LanguageDropdown = ({ lang, setLang }: LanguageDropdownProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
+
+    const getLangUrl = (code: string) => {
+        // Prevent hydration errors or missing hooks on edge cases
+        if (!pathname) return '/';
+        const params = new URLSearchParams(searchParams?.toString() || '');
+        if (code === 'EN') {
+            params.delete('lang');
+        } else {
+            params.set('lang', code.toLowerCase());
+        }
+        const queryStr = params.toString();
+        return `${pathname}${queryStr ? `?${queryStr}` : ''}`;
+    };
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -47,8 +64,9 @@ const LanguageDropdown = ({ lang, setLang }: LanguageDropdownProps) => {
                 <div className="absolute top-full right-0 mt-2 w-40 bg-[#1a1a2e]/95 backdrop-blur-xl rounded-xl shadow-xl border border-white/10 overflow-hidden z-[200] animate-in fade-in zoom-in-95 duration-200 origin-top-right">
                     <div className="py-1">
                         {languages.map((l) => (
-                            <button
+                            <Link
                                 key={l.code}
+                                href={getLangUrl(l.code)}
                                 onClick={() => { setLang(l.code as 'EN' | 'TH' | 'AR'); setIsOpen(false); }}
                                 className={`w-full flex items-center space-x-3 px-4 py-2.5 text-left hover:bg-white/5 transition-colors ${lang === l.code ? 'bg-amber-900/10' : ''}`}
                             >
@@ -63,7 +81,7 @@ const LanguageDropdown = ({ lang, setLang }: LanguageDropdownProps) => {
                                     {l.label}
                                 </span>
                                 {lang === l.code && <div className="ml-auto w-1.5 h-1.5 rounded-full bg-amber-500"></div>}
-                            </button>
+                            </Link>
                         ))}
                     </div>
                 </div>
