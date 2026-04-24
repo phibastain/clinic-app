@@ -1188,8 +1188,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
   'Testosterone Replacement Therapy': {
     title: 'Testosterone Replacement Therapy (TRT)',
     titleAR: 'العلاج ببدائل التستوستيرون (TRT)',
+    titleRU: 'Заместительная гормональная терапия тестостероном (ЗГТ)',
     tagline: 'Restore Your Energy, Libido, and Confidence — Medically Supervised Testosterone Optimization for Men.',
     taglineAR: 'استعد طاقتك ورغبتك الجنسية وثقتك بنفسك — تحسين هرمون التستوستيرون للرجال تحت إشراف طبي.',
+    taglineRU: 'Восстановите свою энергию, либидо и уверенность в себе — медицинская оптимизация уровня тестостерона для мужчин.',
     whatIsIt: {
       title: 'What is Testosterone Replacement Therapy (TRT)?',
       description: "Testosterone Replacement Therapy (TRT) is a medically supervised treatment designed to restore testosterone levels in men with hypogonadism (clinically low testosterone). By bringing this essential hormone back to healthy physiological levels, TRT helps reverse symptoms like chronic fatigue, low libido, muscle loss, and mood changes — helping men regain their energy, mental clarity, and overall quality of life.",
@@ -1199,8 +1201,13 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       title: 'ما هو العلاج ببدائل التستوستيرون (TRT)؟',
       description: 'العلاج ببدائل التستوستيرون (TRT) هو علاج طبي مصمم لاستعادة مستويات التستوستيرون لدى الرجال الذين يعانون من قصور الغدد التناسلية (انخفاض التستوستيرون سريرياً). عبر إعادة هذا الهرمون الأساسي إلى المستويات الفسيولوجية الصحية، يساعد TRT في عكس أعراض مثل التعب المزمن، وانخفاض الرغبة الجنسية، وفقدان العضلات، وتقلبات المزاج — مما يساعد الرجال على استعادة طاقتهم ووضوحهم الذهني وجودة حياتهم بشكل عام.',
     },
+    whatIsItRU: {
+      title: 'Что такое заместительная терапия тестостероном (ЗГТ)?',
+      description: 'Заместительная терапия тестостероном (ЗГТ) — это медицинское лечение, направленное на восстановление уровня тестостерона у мужчин с гипогонадизмом (клинически низким тестостероном). Возвращая этот важный гормон к здоровому физиологическому уровню, ЗГТ помогает обратить вспять такие симптомы, как хроническая усталость, низкое либидо, потеря мышечной массы и перепады настроения, помогая мужчинам восстановить энергию, ясность ума и общее качество жизни.',
+    },
     description: "TRT works by introducing bioidentical testosterone into the body to bypass the body's failing production mechanisms. The most common and effective method is via intramuscular injection.\n\n**The Clinical Mechanism of Action:**\n\n1. **Depot Formulation & Sustained Release:** Testosterone is typically administered as an esterified compound (e.g., Testosterone Cypionate or Enanthate) injected into the muscle. This creates a 'depot' or reservoir in the muscle tissue, from which testosterone is slowly hydrolyzed and released into the bloodstream over several days, ensuring stable hormone levels.\n\n2. **Receptor Binding & Activation:** Once in the bloodstream, free testosterone binds to Androgen Receptors (AR) located in various tissues throughout the body, including muscle cells, bone marrow, and the brain.\n\n3. **Genomic Action (Protein Synthesis):** The testosterone-receptor complex moves into the cell nucleus and binds to specific DNA sequences. This triggers the transcription of genes responsible for anabolic processes—stimulating protein synthesis for muscle growth, increasing red blood cell production (erythropoiesis) for better oxygenation, and enhancing neurotransmitter activity for improved mood and libido.\n\n4. **Systemic Optimization:** This cascade of biological events leads to increased lean muscle mass, reduced adipose tissue (fat), improved bone density, and a profound restoration of sexual function and energy.",
-    descriptionAR: 'يعمل TRT عن طريق إدخال تستوستيرون مطابق حيوياً إلى الجسم لتجاوز آليات الإنتاج المتراجعة. الطريقة الأكثر شيوعاً وفعالية هي الحقن العضلي.\n\n**الآلية السريرية للعمل:**\n\n1. **تحضير المستودع والإصدار المستدام:** يُعطى التستوستيرون عادة كمركب مؤستر (أسترة) يُحقن في العضلة. يخلق هذا "مستودعاً" في النسيج العضلي، حيث يُحلل ويُطلق ببطء في مجرى الدم على مدى عدة أيام، مما يضمن مستويات هرمونية مستقرة.\n\n2. **الارتباط بالمستقبلات وتنشيطها:** بمجرد وصوله إلى مجرى الدم، يرتبط التستوستيرون الحر بمستقبلات الأندروجين (AR) الموجودة في أنسجة مختلفة، بما في ذلك خلايا العضلات ونخاع العظام والدماغ.\n\n3. **العمل الجيني (تخليق البروتين):** ينتقل مركب التستوستيرون والمستقبلات إلى نواة الخلية ويرتبط بتسلسلات محددة من الحمض النووي (DNA). يُحفز هذا العمليات الابتنائية — ويشجع تخليق البروتين لنمو العضلات، ويزيد من إنتاج خلايا الدم الحمراء لتحسين توصيل الأكسجين، ويعزز نشاط الناقلات العصبية لتحسين المزاج والرغبة.\n\n4. **التحسين الشامل للجسم:** تؤدي هذه السلسلة من الأحداث البيولوجية إلى زيادة كتلة العضلات، وانخفاض الأنسجة الدهنية (الدهون)، وتحسين كثافة العظام، واستعادة عميقة للوظيفة الجنسية والطاقة.',
+    descriptionAR: 'يعمل TRT عن طريق إدخال تستوستيرون مطابق حيوياً إلى الجسم لتجاوز آليات الإنتاج المتراجعة. الطريقة الأكثر شيوعاً وفعالية هي الحقن العضلي.\n\n**الآلية السريرية للعمل:**\n\n1. **تحضير المستودع والإصدار المستدام:** يُعطى التستوستيرون عادة كمركب مؤستر (أسترة) يُحقن في العضلة. يخلق هذا "مستودعاً" في النسيج العضلي، حيث يُحلل ويُطلق ببطء في مجرى الدم على مدى عدة أيام، مما يضمن مستويات هرمونية مستقرة.\n\n2. **الارتباط بالمستقبلات وتنشيطها:** بمجرد وصوله إلى مجرى الدم، يرتبط التستوستيرون الحر بمستقبلات الأندروجين (AR) الموجودة في أنسجة مختلفة، بما في ذلك خلايا العضلات ونخاع العظام والدماغ.\n\n3. **العمل الجيني (تخليق البروتين):** ينتقل مركب التستوستيرون والمستقبلات إلى نواة الخلية ويرتبط بتسلسلات محددة من الحمض النووي (DNA). يُحفز هذا العمليات الابتنائية — ويشجع تخليق البروتين لنمو العضلات، ويزيد من إنتاج خلايا الدم الحمراء لتحسين توصيل الأكسجين، ويعزز نشاط الناقلات العصبية لتحسين المزاج والرغبة.\n\n4. **الالتحسين الشامل للجسم:** تؤدي هذه السلسلة من الأحداث البيولوجية إلى زيادة كتلة العضلات، وانخفاض الأنسجة الدهنية (الدهون)، وتحسين كثافة العظام، واستعادة عميقة للوظيفة الجنسية والطاقة.',
+    descriptionRU: 'ЗГТ работает путем введения биоидентичного тестостерона в организм, чтобы компенсировать его недостаточную выработку. Самым распространенным и эффективным методом является внутримышечная инъекция.\n\n**Клинический механизм действия:**\n\n1. **Форма депо и длительное высвобождение:** Тестостерон обычно вводится в виде этерифицированного соединения (например, тестостерона ципионат или энантат), которое вводится в мышцу. Это создает «депо» или резервуар в мышечной ткани, из которого тестостерон медленно гидролизуется и высвобождается в кровоток в течение нескольких дней, обеспечивая стабильный уровень гормонов.\n\n2. **Связывание с рецепторами и активация:** Попадая в кровоток, свободный тестостерон связывается с андрогенными рецепторами (АР), расположенными в различных тканях по всему телу, включая мышечные клетки, костный мозг и мозг.\n\n3. **Геномное действие (синтез белка):** Комплекс тестостерон-рецептор перемещается в ядро клетки и связывается со специфическими последовательностями ДНК. Это запускает транскрипцию генов, ответственных за анаболические процессы — стимулируя синтез белка для роста мышц, увеличивая выработку эритроцитов (эритропоэз) для лучшего насыщения кислородом и повышая активность нейротрансмиттеров для улучшения настроения и либидо.\n\n4. **Системная оптимизация:** Этот каскад биологических событий приводит к увеличению сухой мышечной массы, уменьшению жировой ткани (жира), улучшению плотности костей и глубокому восстановлению сексуальной функции и энергии.',
     heroImage: '/assets/image/services section/trt/trt hero.webp',
     descriptionImage: '/assets/image/services section/trt/trt clinical mechanism.webp',
     video: null,
@@ -1216,11 +1223,23 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: 'مدة العلاج' },
       { label: 'المتابعة الطبية' }
     ],
+    statsRU: [
+      { label: 'Облегчение симптомов' },
+      { label: 'Время до эффекта' },
+      { label: 'Продолжительность' },
+      { label: 'Мониторинг' }
+    ],
     benefits: [
       { title: 'Restored Libido', desc: 'Significant improvement in sexual desire and performance.', icon: HeartPulse },
       { title: 'Energy Boost', desc: 'Enhanced vitality, reduced fatigue, improved mental clarity.', icon: Zap },
       { title: 'Muscle & Bone', desc: 'Increased muscle mass and bone density with exercise.', icon: Activity },
       { title: 'Mood Improvement', desc: 'Better mood, reduced depression and irritability.', icon: Smile as any }
+    ],
+    benefitsRU: [
+      { title: 'Восстановление либидо', desc: 'Значительное улучшение сексуального влечения и активности.' },
+      { title: 'Прилив энергии', desc: 'Повышение жизненного тонуса, снижение утомляемости, улучшение ясности ума.' },
+      { title: 'Мышцы и кости', desc: 'Увеличение мышечной массы и плотности костей при физических нагрузках.' },
+      { title: 'Улучшение настроения', desc: 'Улучшение настроения, уменьшение депрессии и раздражительности.' }
     ],
     candidates: [
       "Men with lab-confirmed low testosterone (total T <300 ng/dL).",
@@ -1234,6 +1253,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       'العمر 30+ مع تراجع غير مبرر في الحيوية والنشاط.',
       'الذين يبحثون عن تحسين مستويات الهرمونات تحت إشراف طبي مدقق.'
     ],
+    candidatesRU: [
+      'Мужчины с лабораторно подтвержденным низким тестостероном (общий Т <300 нг/дл).',
+      'Симптомы: низкое либидо, усталость, потеря мышечной массы, депрессия, затуманенность сознания.',
+      'Возраст 30+ с необъяснимым снижением жизненных сил.',
+      'Те, кто ищет медицинскую оптимизацию гормонального фона.'
+    ],
     safety: {
       title: "Safety & Monitoring",
       content: "TRT is safe when properly supervised by a specialist. Regular blood tests monitor testosterone, estradiol, hematocrit, and PSA levels. Possible side effects include polycythemia (elevated red blood cell count), acne, and potential cardiovascular considerations — all of which are manageable with proper medical oversight and dosage adjustment.",
@@ -1242,6 +1267,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     safetyAR: {
       title: 'السلامة والمتابعة الطبية',
       content: 'العلاج TRT آمن عندما يتم تحت إشراف طبيب متخصص. تراقب اختبارات الدم الدورية مستويات التستوستيرون، والاستراديول، والهيماتوكريت، و PSA. قد تشمل الآثار الجانبية زيادة إنتاج خلايا الدم الحمراء، وحب الشباب — وكلها يمكن التحكم فيها من خلال الإشراف الطبي المناسب وتعديل الجرعات.',
+    },
+    safetyRU: {
+      title: 'Безопасность и мониторинг',
+      content: 'ЗГТ безопасна при надлежащем наблюдении специалиста. Регулярные анализы крови контролируют уровень тестостерона, эстрадиола, гематокрита и ПСА. Возможные побочные эффекты включают полицитемию (повышенное количество эритроцитов), прыщи — все это поддается контролю при надлежащем медицинском наблюдении и корректировке дозировки.'
     },
     timeline: {
       title: "TRT Response Timeline",
@@ -1259,6 +1288,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: 'الشهر 3+', title: 'الفوائد المستدامة', desc: 'تحسين هرموني كامل. تحسن ملحوظ في جودة الحياة بشكل عام.' }
       ]
     },
+    timelineRU: {
+      title: 'График реакции на ЗГТ',
+      steps: [
+        { time: 'Неделя 2-4', title: 'Начальные изменения', desc: 'Улучшение энергии и настроения. Половое влечение начинает возвращаться.' },
+        { time: 'Неделя 6-12', title: 'Физические изменения', desc: 'Мышечная масса увеличивается, жировые отложения уменьшаются. Либидо достигает пика.' },
+        { time: 'Месяц 3+', title: 'Устойчивые результаты', desc: 'Полная гормональная оптимизация. Качество жизни значительно улучшилось.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Blood Testing', desc: 'Comprehensive panel: testosterone, LH, FSH, estradiol, PSA, CBC.' },
       { step: '02', title: 'Diagnosis', desc: 'Review results, symptoms, and medical history with specialist.' },
@@ -1271,6 +1308,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '03', title: 'بدء العلاج', desc: 'اختيار طريقة توصيل الدواء (الحقن أو الجل أو الكبسولات) والبدء في بروتوكول العلاج.' },
       { step: '04', title: 'المتابعة', desc: 'متابعة دورية كل 3-6 أشهر لضبط الجرعات المثالية وضمان السلامة.' }
     ],
+    procedureRU: [
+      { step: '01', title: 'Анализ крови', desc: 'Комплексная панель: тестостерон, ЛГ, ФСГ, эстрадиол, ПСА, общий анализ крови.' },
+      { step: '02', title: 'Диагноз', desc: 'Обсуждение результатов, симптомов и истории болезни со специалистом.' },
+      { step: '03', title: 'Начало лечения', desc: 'Выбор метода введения (инъекции или гели). Начало протокола.' },
+      { step: '04', title: 'Мониторинг', desc: 'Регулярные осмотры каждые 3-6 месяцев для оптимизации дозировки и контроля безопасности.' }
+    ],
     faq: [
       { q: "Is TRT a lifelong treatment?", a: "For most men, TRT is an ongoing therapy. Stopping treatment typically causes testosterone levels to return to baseline. However, some patients may use it cyclically under careful medical supervision." },
       { q: "Does TRT increase the risk of prostate cancer?", a: "Current medical evidence does not show that TRT causes prostate cancer. However, PSA levels are regularly monitored as a standard safety precaution." },
@@ -1280,6 +1323,11 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { q: 'هل TRT علاجي مدى الحياة؟', a: 'للعديد من الرجال، يُعد TRT علاجاً مستمراً. التوقف عن العلاج يؤدي عادة إلى عودة مستويات التستوستيرون إلى خط الأساس. ومع ذلك، قد يستخدم بعض المرضى دورات علاجية تحت إشراف طبي دقيق.' },
       { q: 'هل يزيد TRT من خطر الإصابة بسرطان البروستاتا؟', a: 'لا يظهر الدليل الطبي الحالي أن TRT يسبب سرطان البروستاتا. ومع ذلك، تتم مراقبة مستويات PSA بانتظام كإجراء احترازي قياسي لضمان السلامة.' },
       { q: 'ما هي أفضل طريقة لأخذ التستوستيرون؟', a: 'تعتبر الحقن (أسبوعياً أو كل أسبوعين) هي الخيار الأكثر موثوقية وفعالية من حيث التكلفة. توفر الجل الموضعية امتصاصاً يومياً ثابتاً ولكن بتكلفة أعلى.' }
+    ],
+    faqRU: [
+      { q: 'Является ли ЗГТ пожизненным лечением?', a: 'Для большинства мужчин ЗГТ — это постоянная терапия. Прекращение лечения обычно приводит к возвращению уровня тестостерона к исходному. Однако некоторые пациенты могут использовать его циклически под тщательным медицинским наблюдением.' },
+      { q: 'Увеличивает ли ЗГТ риск рака простаты?', a: 'Современные медицинские данные не показывают, что ЗГТ вызывает рак простаты. Однако уровень ПСА регулярно контролируется в качестве стандартной меры предосторожности.' },
+      { q: 'Какой способ приема тестостерона лучше?', a: 'Инъекции (еженедельно или раз в две недели) являются наиболее надежным и экономичным вариантом. Гели местного применения обеспечивают постоянное ежедневное всасывание, но стоят дороже.' }
     ]
   },
   'ReZum': {
