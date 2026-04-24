@@ -1478,8 +1478,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
   'UroLift': {
     title: 'UroLift® System for BPH',
     titleAR: 'نظام UroLift® لتضخم البروستاتا',
+    titleRU: 'Система UroLift® при ДГПЖ',
     tagline: 'Treat Enlarged Prostate Without Cutting or Heating Immediate Relief with Zero Sexual Side Effects.',
     taglineAR: 'عالج تضخم البروستاتا بدون جراحة أو حرارة: راحة فورية بلا آثار جانبية جنسية.',
+    taglineRU: 'Лечите увеличенную простату без разрезов и нагревания. Немедленное облегчение без побочных эффектов для сексуальной функции.',
     whatIsIt: {
       title: 'What is UroLift®?',
       description: "The UroLift® System is a minimally invasive treatment for Benign Prostatic Hyperplasia (BPH) that offers rapid symptom relief without cutting, heating, or removing prostate tissue. It uses tiny, permanent implants to lift and hold the enlarged prostate tissue so it no longer blocks the urethra, effectively 'opening the curtains' to restore normal urine flow.",
@@ -1489,8 +1491,13 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       title: 'ما هو نظام UroLift®؟',
       description: 'نظام UroLift® هو علاج طفيف التوغل لتضخم البروستاتا (BPH) يوفر راحة سريعة من الأعراض دون قطع أو تسخين أو إزالة أنسجة البروستاتا. يستخدم غرسات صغيرة دائمة لرفع وشد أنسجة البروستاتا المتضخمة حتى لا تسد مجرى البول، كأنه "يفتح الستائر" لاستعادة التدفق الطبيعي للبول.',
     },
+    whatIsItRU: {
+      title: 'Что такое UroLift®?',
+      description: 'Система UroLift® — это минимально инвазивное средство для лечения доброкачественной гиперплазии предстательной железы (ДГПЖ), которое обеспечивает быстрое облегчение симптомов без разрезания, нагревания или удаления ткани предстательной железы. В ней используются крошечные постоянные имплантаты, которые приподнимают и удерживают увеличенную ткань предстательной железы, чтобы она больше не блокировала уретру, эффективно «раздвигая шторы» для восстановления нормального оттока мочи.',
+    },
     description: "UroLift is unique because it is the only BPH treatment that directly opens the urethra without ablating tissue. This mechanical approach ensures immediate results and zero risk to sexual function.\n\n**The Clinical Mechanism of Action:**\n\n1. **Transurethral Access:** The UroLift delivery device is inserted through the obstructed urethra to reach the enlarged prostate lobes. No incisions are made.\n\n2. **Mechanical Compression (Lifting):** The device compresses the lateral lobe of the prostate, pushing it away from the urethral channel. This creates an immediate opening.\n\n3. **Permanent Implantation:** A small, permanent UroLift implant is deployed. This implant acts like a suture or a 'curtain tie-back,' holding the prostate tissue in its compressed position.\n\n4. **Unobstructed Flow:** This process is repeated on each side (typically 4-6 implants total). The result is a visibly open continuous channel from the bladder neck to the verumontanum, allowing urine to flow freely again immediately after the procedure.",
     descriptionAR: 'يُعد UroLift فريداً من نوعه لأنه العلاج الوحيد لـ BPH الذي يفتح مجرى البول مباشرة دون إتلاف الأنسجة. تضمن هذه الطريقة الميكانيكية نتائج فورية وبدون أي خطر على الوظيفة الجنسية.\n\n**الآلية السريرية للعمل:**\n\n1. **الوصول عبر الإحليل:** يتم إدخال أداة التوصيل عبر الإحليل المسدود للوصول إلى فصوص البروستاتا المتضخمة. بدون إجراء أي شقوق جراحية.\n\n2. **الضغط الميكانيكي (الرفع):** تضغط الأداة على الفص الجانبي للبروستاتا، وتدفعه بعيداً عن قناة مجرى البول. مما يخلق فتحة فورية.\n\n3. **الزرع الدائم:** يتم وضع غرسة UroLift صغيرة ودائمة. تعمل هذه الغرسة كـ "مشبك" أو "مثبت ستارة"، لتثبيت أنسجة البروستاتا في وضعها المضغوط بعيداً عن المجرى.\n\n4. **تدفق حر للبول:** تتكرر هذه العملية على كل جانب (عادةً 4-6 غرسات إجمالاً). النتيجة هي قناة مفتوحة بشكل مستمر وملحوظ، مما يسمح بتدفق البول بحرية مرة أخرى فوراً بعد الإجراء.',
+    descriptionRU: 'UroLift уникален тем, что это единственный метод лечения ДГПЖ, который напрямую открывает уретру без абляции тканей. Этот механический подход обеспечивает немедленные результаты и отсутствие риска для сексуальной функции.\n\n**Клинический механизм действия:**\n\n1. **Трансуретральный доступ:** Устройство доставки UroLift вводится через заблокированную уретру, чтобы достичь увеличенных долей простаты. Никаких разрезов не делается.\n\n2. **Механическое сжатие (подъем):** Устройство сжимает боковую долю простаты, отодвигая ее от мочеиспускательного канала. Это создает немедленное открытие.\n\n3. **Постоянная имплантация:** Устанавливается небольшой постоянный имплантат UroLift. Этот имплантат действует как шов или «завязка для штор», удерживая ткань предстательной железы в сжатом положении.\n\n4. **Беспрепятственный отток:** Этот процесс повторяется с каждой стороны (обычно всего 4-6 имплантатов). В результате образуется заметно открытый непрерывный канал от шейки мочевого пузыря до семенного бугорка, что позволяет моче снова свободно течь сразу после процедуры.',
     heroImage: '/assets/image/services section/urolift/urolift hero.webp',
     descriptionImage: '/assets/image/services section/urolift/urolift Clinical Mechanism.webp',
     video: { id: 'L-DXkEQaV1M', title: 'UroLift Procedure Animation' },
@@ -1506,11 +1513,23 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: 'التعافي' },
       { label: 'الوظيفة الجنسية' }
     ],
+    statsRU: [
+      { label: 'Облегчение симптомов' },
+      { label: 'Время процедуры' },
+      { label: 'Восстановление' },
+      { label: 'Сексуальная функция' }
+    ],
     benefits: [
       { title: 'No Cutting/Heating', desc: 'Tissue is mechanically lifted, not destroyed. Minimally invasive.', icon: CheckCircle2 },
       { title: 'Immediate Relief', desc: 'Symptom improvement within days, not weeks.', icon: Timer },
       { title: 'Zero Sexual Side Effects', desc: 'Clinical trials show no impact on erectile or ejaculatory function.', icon: HeartPulse },
       { title: 'Reversible', desc: 'Implants can be removed or adjusted if needed.', icon: Loop as any }
+    ],
+    benefitsRU: [
+      { title: 'Без разрезов/нагрева', desc: 'Ткань приподнимается механически, а не разрушается. Минимально инвазивно.' },
+      { title: 'Немедленное облегчение', desc: 'Улучшение симптомов в течение нескольких дней, а не недель.' },
+      { title: 'Отсутствие сексуальных побочных эффектов', desc: 'Клинические испытания не показывают влияния на эректильную или эякуляторную функцию.' },
+      { title: 'Обратимость', desc: 'Имплантаты можно удалить или отрегулировать при необходимости.' }
     ],
     comparison: {
       title: "UroLift vs. TURP (Traditional Surgery)",
@@ -1534,6 +1553,17 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { feature: 'التخدير', focus: 'تخدير عام', radial: 'تخدير عام / نصفي' }
       ]
     },
+    comparisonRU: {
+      title: 'UroLift против ТУРП (Традиционная хирургия)',
+      subtitle: 'Минимально инвазивное против Открытой резекции',
+      headers: ['UroLift', 'ТУРП'],
+      items: [
+        { feature: 'Удаление тканей', focus: 'Нет (ткань только приподнимается)', radial: 'Ткань разрезается и удаляется' },
+        { feature: 'Риск для сексуальной функции', focus: '0% (полностью сохраняется)', radial: '30-65% ретроградная эякуляция' },
+        { feature: 'Восстановление', focus: '2-4 дня', radial: '2-6 недель' },
+        { feature: 'Анестезия', focus: 'Общая анестезия', radial: 'Общая / Спинальная' }
+      ]
+    },
     candidates: [
       "Men with moderate BPH symptoms and prostate <80cc.",
       "Sexually active men prioritizing preservation of ejaculatory function.",
@@ -1546,6 +1576,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       'الذين يسعون لتعافي سريع والعودة للنشاط بسرعة.',
       'المرضى الذين يريدون خياراً يمكن التراجع عنه ولا يتلف الأنسجة.'
     ],
+    candidatesRU: [
+      'Мужчины с умеренными симптомами ДГПЖ и простатой <80 куб. см.',
+      'Сексуально активные мужчины, отдающие приоритет сохранению эякуляторной функции.',
+      'Те, кто ищет быстрое восстановление и возвращение к активности.',
+      'Пациенты, желающие получить обратимый, неразрушающий вариант лечения.'
+    ],
     safety: {
       title: "Safety Profile",
       content: "UroLift has an excellent safety profile. Mild, temporary side effects may include urgency, minor discomfort during urination, or traces of blood in the urine for a few days. In clinical trials, no cases of new-onset permanent erectile dysfunction or ejaculatory dysfunction were reported.",
@@ -1554,6 +1590,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     safetyAR: {
       title: 'مستوى السلامة',
       content: 'يتمتع UroLift بسجل أمان ممتاز. قد تشمل الآثار الجانبية الخفيفة والمؤقتة الإلحاح، انزعاجاً بسيطاً أثناء التبول، أو آثار دم في البول لبضعة أيام. في التجارب السريرية، لم يُسجل أي حالات جديدة للإصابة بضعف الانتصاب الدائم أو خلل في القذف.',
+    },
+    safetyRU: {
+      title: 'Профиль безопасности',
+      content: 'UroLift имеет отличный профиль безопасности. Легкие, временные побочные эффекты могут включать позывы к мочеиспусканию, незначительный дискомфорт при мочеиспускании или следы крови в моче в течение нескольких дней. В клинических испытаниях не сообщалось ни о каких случаях впервые возникшей постоянной эректильной или эякуляторной дисфункции.'
     },
     timeline: {
       title: "UroLift Recovery Timeline",
@@ -1571,6 +1611,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: 'الشهر 1+', title: 'الراحة الكاملة', desc: 'تخفيف الأعراض لأقصى حد. العودة لجميع الأنشطة بما فيها الوظيفة الجنسية.' }
       ]
     },
+    timelineRU: {
+      title: 'График восстановления UroLift',
+      steps: [
+        { time: 'День 1', title: 'Процедура', desc: '15-минутная процедура. В большинстве случаев выписка домой в тот же день без катетера.' },
+        { time: 'День 3-7', title: 'Быстрое улучшение', desc: 'Симптомы мочеиспускания начинают быстро улучшаться по мере заживления канала.' },
+        { time: 'Месяц 1+', title: 'Полное облегчение', desc: 'Достигнуто максимальное облегчение симптомов. Возвращение ко всем видам активности, включая сексуальную функцию.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Cystoscopy', desc: 'Thin scope inserted through urethra under general anesthesia.' },
       { step: '02', title: 'Implant Placement', desc: 'Small UroLift implants placed to lift and compress obstructive tissue.' },
@@ -1583,6 +1631,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '03', title: 'فتح القناة', desc: 'يتسع مجرى البول على الفور. ويتحسن التدفق.' },
       { step: '04', title: 'الخروج', desc: 'ينتهي الإجراء في غضون 10-15 دقيقة. العودة للمنزل في نفس اليوم.' }
     ],
+    procedureRU: [
+      { step: '01', title: 'Цистоскопия', desc: 'Тонкий эндоскоп вводится через уретру под общим наркозом.' },
+      { step: '02', title: 'Установка имплантата', desc: 'Небольшие имплантаты UroLift устанавливаются для поднятия и сжатия обструктивной ткани.' },
+      { step: '03', title: 'Открытие канала', desc: 'Мочеиспускательный канал немедленно расширяется. Отток улучшается.' },
+      { step: '04', title: 'Выписка', desc: 'Процедура завершается за 10-15 минут. Выписка домой в тот же день.' }
+    ],
     faq: [
       { q: "How many UroLift implants are needed?", a: "Typically 4-6 implants, depending on the size and anatomy of the prostate. Your urologist will determine the optimal number during assessment." },
       { q: "Can UroLift implants be felt inside the body?", a: "No. The implants are very small and remain permanently embedded within the prostate tissue. Patients cannot feel them at all." },
@@ -1592,6 +1646,11 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { q: 'كم عدد غرسات UroLift المطلوبة؟', a: 'عادة من 4-6 غرسات، اعتماداً على حجم وتشريح البروستاتا. سيحدد طبيب المسالك البولية العدد الأمثل أثناء التقييم.' },
       { q: 'هل يمكن الشعور بغرسات UroLift داخل الجسم؟', a: 'لا، الغرسات صغيرة جداً وتبقى مزروعة بشكل دائم داخل أنسجة البروستاتا. لا يمكن للمرضى الشعور بها على الإطلاق.' },
       { q: 'ماذا لو زاد حجم البروستاتا في المستقبل؟', a: 'يمكن وضع غرسات UroLift إضافية، أو دمج الإجراء مع علاجات BPH الأخرى. نظراً لأن UroLift لا يتلف الأنسجة، تظل جميع خيارات العلاج المستقبلية متاحة.' }
+    ],
+    faqRU: [
+      { q: 'Сколько имплантатов UroLift необходимо?', a: 'Обычно 4-6 имплантатов, в зависимости от размера и анатомии простаты. Ваш уролог определит оптимальное количество во время обследования.' },
+      { q: 'Ощущаются ли имплантаты UroLift внутри тела?', a: 'Нет. Имплантаты очень маленькие и остаются навсегда внедренными в ткань предстательной железы. Пациенты их совершенно не чувствуют.' },
+      { q: 'Что делать, если моя простата увеличится в будущем?', a: 'Можно установить дополнительные имплантаты UroLift или совместить процедуру с другими методами лечения ДГПЖ. Поскольку UroLift не разрушает ткани, все будущие варианты лечения остаются доступными.' }
     ]
   },
   'Sexually Transmitted Infection': {
