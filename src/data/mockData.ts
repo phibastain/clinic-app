@@ -4178,46 +4178,55 @@ export const DOCTORS: DoctorData[] = [
     slug: 'dr.phanpon',
     name: 'Dr.Phanpon Leelahawong',
     nameAR: 'د. بانبون ليلاهاوونج',
+    nameRU: 'Доктор Панпон Лилахавонг',
     role: 'Consultant Urologist',
     roleAR: 'استشاري جراحة المسالك البولية',
+    roleRU: 'Уролог-консультант',
     image: '/assets/image/urologist section/dr.phanpon.webp',
     expert: 'Minimal Invasive & Innovation',
     expertTH: 'Minimal Invasive & Innovation',
     expertAR: 'الإجراءات طفيفة التوغل والابتكار',
+    expertRU: 'Минимально инвазивная хирургия и инновации',
     hospital: 'Bangkok Hospital Pattaya',
     email: '',
     website: '',
     tagline: 'Expert in Minimal Invasive & Innovation Treatment',
     taglineTH: 'ผู้เชี่ยวชาญการรักษาแบบรุกรานน้อยและนวัตกรรม',
     taglineAR: 'خبير في الإجراءات طفيفة التوغل والعلاجات المبتكرة',
+    taglineRU: 'Эксперт в области минимально инвазивных и инновационных методов лечения',
     bio: "Dr. Phanpon Leelahawong is a board-certified urologist with extensive experience in high-volume endoscopic surgery for benign prostatic enlargement and complex urinary stone disease. His clinical focus centers on advanced transurethral and enucleation-based techniques, offering definitive surgical solutions for patients with moderate to large prostate glands.",
     bioTH: 'นพ. ภาณพ ลีลาวงศ์ เป็นแพทย์ศัลยกรรมระบบทางเดินปัสสาวะที่ได้รับการรับรองจากคณะกรรมการแพทย์ มีประสบการณ์กว้างขวางด้านการผ่าตัดส่องกล้องปริมาณสูงสำหรับต่อมลูกหมากโตชนิดไม่ร้ายแรงและนิ่วในทางเดินปัสสาวะที่ซับซ้อน ความเชี่ยวชาญทางคลินิกของเขาครอบคลุมเทคนิคผ่านทางท่อปัสสาวะและการตัดต่อมขั้นสูง เพื่อมอบแนวทางการผ่าตัดที่เด็ดขาดสำหรับผู้ป่วยที่มีต่อมลูกหมากขนาดกลางถึงขนาดใหญ่',
     bioAR: 'الدكتور بانبون ليلاهاوونج هو جراح مسالك بولية معتمد يتمتع بخبرة واسعة في جراحات المناظير لعلاج تضخم البروستاتا الحميد وأمراض حصوات المسالك البولية المعقدة. يركز في ممارسته السريرية على تقنيات استئصال البروستاتا المتقدمة عبر الإحليل، حيث يقدم حلولًا جراحية نهائية للمرضى الذين يعانون من تضخم غدة البروستاتا.',
+    bioRU: 'Доктор Панпон Лилахавонг — сертифицированный уролог с большим опытом работы в эндоскопической хирургии больших объемов при доброкачественной гиперплазии предстательной железы и сложных мочекаменных заболеваниях. Его клиническая практика сосредоточена на передовых трансуретральных методах и методах энуклеации, предлагая окончательные хирургические решения для пациентов с предстательной железой среднего и большого размера.',
     bioContent: [
       {
         type: 'header',
         content: "Expertise in Advanced Enucleation & Endourology",
         contentTH: 'ความเชี่ยวชาญด้านการตัดต่อมขั้นสูงและการส่องกล้องระบบทางเดินปัสสาวะ',
-        contentAR: 'خبرة متقدمة في استئصال أنسجة البروستاتا وجراحة المسالك البولية بالمنظار'
+        contentAR: 'خبرة متقدمة في استئصال أنسجة البروستاتا وجراحة المسالك البولية بالمنظار',
+        contentRU: 'Экспертиза в передовой энуклеации и эндоурологии'
       },
       {
         type: 'paragraph',
         content: "Dr. Phanpon has substantial experience in transurethral resection (TURP), bipolar enucleation (TUERP/BipoLEP), and modern laser-based enucleation techniques (HoLEP). His practice emphasizes complete adenoma removal using anatomical enucleation principles for durable long-term outcomes.",
         contentTH: 'นพ. ภาณพ มีประสบการณ์มากด้านการตัดชิ้นเนื้อผ่านท่อปัสสาวะ (TURP) การตัดต่อมแบบไบโพลาร์ (TUERP/BipoLEP) และเทคนิคการตัดต่อมด้วยเลเซอร์สมัยใหม่ (HoLEP) โดยเน้นการนำต่อมออกอย่างสมบูรณ์ตามหลักกายวิภาคศาสตร์ เพื่อผลลัพธ์ระยะยาวที่ยั่งยืน',
-        contentAR: 'يتمتع د. بانبون بخبرة كبيرة في عمليات استئصال البروستاتا عبر الإحليل (TURP)، واستئصال البروستاتا ثنائي القطب (TUERP/BipoLEP)، وتقنيات الاستئصال بالليزر الحديثة (HoLEP). يركز في ممارسته على الإزالة الكاملة للورم الغدي باستخدام أسس الاستئصال التشريحي لتحقيق نتائج مستدامة وطويلة الأمد.'
+        contentAR: 'يتمتع د. بانبون بخبرة كبيرة في عمليات استئصال البروستاتا عبر الإحليل (TURP)، واستئصال البروستاتا ثنائي القطب (TUERP/BipoLEP)، وتقنيات الاستئصال بالليزر الحديثة (HoLEP). يركز في ممارسته على الإزالة الكاملة للورم الغدي باستخدام أسس الاستئصال التشريحي لتحقيق نتائج مستدامة وطويلة الأمد.',
+        contentRU: 'Доктор Панпон имеет значительный опыт в трансуретральной резекции (ТУРП), биполярной энуклеации (TUERP/BipoLEP) и современных методах лазерной энуклеации (HoLEP). В своей практике он уделяет особое внимание полному удалению аденомы с использованием принципов анатомической энуклеации для достижения надежных долгосрочных результатов.'
       },
       {
         type: 'image',
         image: "/assets/image/urologist section/dr.phanpon-biography/Professional Profile-1.webp",
         caption: "Dr. Phanpon performing advanced laser enucleation for large prostate cases.",
         captionTH: 'นพ. ภาณพ กำลังทำการตัดต่อมด้วยเลเซอร์ขั้นสูงสำหรับผู้ป่วยต่อมลูกหมากขนาดใหญ่',
-        captionAR: 'د. بانبون أثناء إجراء عملية استئصال متقدمة بالليزر لحالات تضخم البروستاتا الكبيرة.'
+        captionAR: 'د. بانبون أثناء إجراء عملية استئصال متقدمة بالليزر لحالات تضخم البروستاتا الكبيرة.',
+        captionRU: 'Доктор Панпон проводит передовую лазерную энуклеацию для случаев увеличения предстательной железы.'
       },
       {
         type: 'header',
         content: "Surgical Volume & Clinical Experience",
         contentTH: 'ปริมาณการผ่าตัดและประสบการณ์ทางคลินิก',
-        contentAR: 'الخبرة السريرية وحجم العمليات الجراحية'
+        contentAR: 'الخبرة السريرية وحجم العمليات الجراحية',
+        contentRU: 'Хирургический объем и клинический опыт'
       },
       {
         type: 'list',
@@ -4235,6 +4244,11 @@ export const DOCTORS: DoctorData[] = [
           'إجراء أكثر من 900 عملية مسالك بولية',
           'إجراء أكثر من 500 عملية تثقيب وتفتيت لحصوات المسالك البولية بالمنظار',
           'إجراء أكثر من 400 جراحة منظار للبروستاتا'
+        ],
+        itemsRU: [
+          'Проведено более 900 урологических операций',
+          'Более 500 эндоскопических операций по удалению камней',
+          'Более 400 эндоскопических операций на предстательной железе'
         ]
       },
       {
@@ -4242,19 +4256,22 @@ export const DOCTORS: DoctorData[] = [
         image: "/assets/image/urologist section/dr.phanpon-biography/Professional Profile-2.webp",
         caption: "Extensive surgical experience with over 900 urological procedures.",
         captionTH: 'ประสบการณ์ผ่าตัดกว้างขวาง ด้วยหัตถการระบบทางเดินปัสสาวะมากกว่า 900 ครั้ง',
-        captionAR: 'خبرة جراحية واسعة مع أكثر من 900 إجراء في المسالك البولية.'
+        captionAR: 'خبرة جراحية واسعة مع أكثر من 900 إجراء في المسالك البولية.',
+        captionRU: 'Обширный хирургический опыт, включающий более 900 урологических процедур.'
       },
       {
         type: 'header',
         content: "Prostate & Endourology Center",
         contentTH: 'ศูนย์ต่อมลูกหมากและการส่องกล้องระบบทางเดินปัสสาวะ',
-        contentAR: 'مركز البروستاتا وجراحة المسالك البولية بالمنظار'
+        contentAR: 'مركز البروستاتا وجراحة المسالك البولية بالمنظار',
+        contentRU: 'Центр предстательной железы и эндоурологии'
       },
       {
         type: 'paragraph',
         content: "The Prostate & Endourology Center provides comprehensive evaluation and management of benign prostatic enlargement (BPH), large prostate glands requiring enucleation surgery, and complex renal/ureteric stones. Each patient undergoes structured assessment including symptom evaluation, imaging, and individualized treatment planning.",
         contentTH: 'ศูนย์ต่อมลูกหมากและการส่องกล้องฯ ให้บริการประเมินและดูแลต่อมลูกหมากโตชนิดไม่ร้ายแรง (BPH) ต่อมขนาดใหญ่ที่ต้องผ่าตัดตัดออก รวมถึงนิ่วในไตและท่อไตที่ซับซ้อน ผู้ป่วยทุกรายได้รับการประเมินอย่างเป็นระบบ ครอบคลุมการประเมินอาการ การถ่ายภาพ และการวางแผนรักษาเฉพาะบุคคล',
-        contentAR: 'يوفر المركز تقييماً وعلاجاً شاملاً لتضخم البروستاتا غدة (BPH)، وعمليات استئصال البروستاتا الكبيرة المتضخمة، وعلاج حصوات الكلى والحالب المعقدة. يخضع كل مريض لتقييم منهجي يشمل تقييم الأعراض والتصوير وتخطيط العلاج المناسب بشكل فردي.'
+        contentAR: 'يوفر المركز تقييماً وعلاجاً شاملاً لتضخم البروستاتا غدة (BPH)، وعمليات استئصال البروستاتا الكبيرة المتضخمة، وعلاج حصوات الكلى والحالب المعقدة. يخضع كل مريض لتقييم منهجي يشمل تقييم الأعراض والتصوير وتخطيط العلاج المناسب بشكل فردي.',
+        contentRU: 'Центр предстательной железы и эндоурологии предоставляет комплексную оценку и лечение доброкачественной гиперплазии предстательной железы (ДГПЖ), крупных предстательных желез, требующих хирургического вмешательства, и сложных почечных/мочеточниковых камней. Каждый пациент проходит структурированную оценку, включая оценку симптомов, визуализацию и индивидуальное планирование лечения.'
       },
       {
         type: 'list',
@@ -4275,6 +4292,12 @@ export const DOCTORS: DoctorData[] = [
           'جراحة مناظير دقيقة تعتمد على أحدث المعدات',
           'توصيات جراحية مخصصة بناءً على حجم البروستاتا وتوقعات المريض',
           'رعاية قياسية محيطة بالجراحة لضمان التعافي الأمثل'
+        ],
+        itemsRU: [
+          'Минимально инвазивные процедуры на верхних мочевых путях',
+          'Точная эндоскопическая хирургия с использованием современного оборудования',
+          'Индивидуальные хирургические рекомендации в зависимости от размера предстательной железы и ожиданий пациента',
+          'Стандартизированный периоперационный уход для оптимального восстановления'
         ]
       },
       {
@@ -4282,13 +4305,15 @@ export const DOCTORS: DoctorData[] = [
         image: "/assets/image/urologist section/dr.phanpon-biography/Professional Profile-3.webp",
         caption: "A leading center for prostate enucleation and complex stone disease.",
         captionTH: 'ศูนย์ชั้นนำด้านการตัดต่อมลูกหมากและโรคนิ่วที่ซับซ้อน',
-        captionAR: 'مركز رائد في عمليات استئصال البروستاتا وعلاج أمراض الحصوات المعقدة.'
+        captionAR: 'مركز رائد في عمليات استئصال البروستاتا وعلاج أمراض الحصوات المعقدة.',
+        captionRU: 'Ведущий центр по энуклеации предстательной железы и сложным заболеваниям камней.'
       },
       {
         type: 'header',
         content: "Clinical Philosophy",
         contentTH: 'ปรัชญาทางคลินิก',
-        contentAR: 'الفلسفة السريرية'
+        contentAR: 'الفلسفة السريرية',
+        contentRU: 'Клиническая философия'
       },
       {
         type: 'list',
@@ -4309,6 +4334,12 @@ export const DOCTORS: DoctorData[] = [
           'صنع القرار القائم على الأدلة العلمية',
           'رعاية منهجية في فترة محيطة بالجراحة',
           'التعافي الوظيفي والنتائج المستدامة على المدى الطويل'
+        ],
+        itemsRU: [
+          'Анатомические методы энуклеации для полного удаления тканей',
+          'Принятие решений на основе фактических данных',
+          'Структурированный периоперационный уход',
+          'Функциональное восстановление и долгосрочная надежность'
         ]
       },
       {
@@ -4316,13 +4347,15 @@ export const DOCTORS: DoctorData[] = [
         image: "/assets/image/urologist section/dr.phanpon-biography/Professional Profile-4.webp",
         caption: "Committed to evidence-based care and anatomical precision.",
         captionTH: 'มุ่งมั่นต่อการดูแลบนหลักฐานเชิงประจักษ์และความแม่นยำทางกายวิภาค',
-        captionAR: 'الالتزام بالرعاية القائمة على الأدلة والدقة التشريحية.'
+        captionAR: 'الالتزام بالرعاية القائمة على الأدلة والدقة التشريحية.',
+        captionRU: 'Приверженность научно обоснованному уходу и анатомической точности.'
       },
       {
         type: 'header',
         content: "Professional Experience",
         contentTH: 'ประสบการณ์วิชาชีพ',
-        contentAR: 'الخبرة المهنية'
+        contentAR: 'الخبرة المهنية',
+        contentRU: 'Профессиональный опыт'
       },
       {
         type: 'list',
@@ -4343,6 +4376,12 @@ export const DOCTORS: DoctorData[] = [
           '2019 - حتى الآن: طبيب مسالك بولية بدوام كامل، مستشفى رايونغ',
           '2017 - 2019: طبيب مسالك بولية بدوام كامل، مستشفى مركز تشاو فرايا أبهيبهوبهيجر',
           'استشاري مسالك بولية: عيادة دكتور بانبون رايونغ، عيادة الأبدية، مستشفى سري رايونغ، مستشفى رايونغ بانكوك'
+        ],
+        itemsRU: [
+          '2019 - настоящее время: Уролог-консультант в клинике M-Trust Urology Clinic',
+          '2019 - настоящее время: Уролог на полную ставку, Больница Районг',
+          '2017 - 2019: Уролог на полную ставку, больница Chao Phraya Abhaibhubejhr Center Hospital',
+          'Уролог-консультант: урологическая клиника доктора Панпона в Районге, Eternity Clinic, больница Sri Rayong, больница Bangkok Rayong'
         ]
       },
       {
@@ -4350,30 +4389,34 @@ export const DOCTORS: DoctorData[] = [
         image: "/assets/image/urologist section/dr.phanpon-biography/Professional Profile-5.webp",
         caption: "Providing comprehensive urological consulting and specialized surgical services.",
         captionTH: 'ให้บริการปรึกษาระบบทางเดินปัสสาวะครบวงจรและบริการผ่าตัดเฉพาะทาง',
-        captionAR: 'تقديم استشارات متكاملة وخدمات جراحية متخصصة في المسالك البولية.'
+        captionAR: 'تقديم استشارات متكاملة وخدمات جراحية متخصصة في المسالك البولية.',
+        captionRU: 'Предоставление комплексных урологических консультаций и специализированных хирургических услуг.'
       }
     ],
     specialties: ["Andrology & Sexual Dysfunction", "Prostate Disease", "Urinary Tract Stones", "Dorsal Neurectomy", "Penile Enhancement", "Minimal Invasive & Innovation Treatment"],
     specialtiesTH: ['Andrology & Sexual Dysfunction', 'Prostate Disease', 'Urinary Tract Stones', 'Dorsal Neurectomy', 'Penile Enhancement', 'Minimal Invasive & Innovation Treatment'],
     specialtiesAR: ["أمراض الذكورة والضعف الجنسي", "أمراض البروستاتا", "حصوات المسالك البولية", "استئصال العصب الظهري", "تجميل القضيب", "الإجراءات طفيفة التوغل والعلاجات المبتكرة"],
+    specialtiesRU: ["Андрология и сексуальные дисфункции", "Заболевания предстательной железы", "Камни в мочевыводящих путях", "Дорсальная нейрэктомия", "Увеличение полового члена", "Минимально инвазивные и инновационные методы лечения"],
     qualifications: [
-      { year: "2025", title: "Certificate of Attendance, Master the Transurethral Anatomical Enucleation of Prostate (TUAEP)", titleAR: "شهادة حضور، إتقان الاستئصال التشريحي للبروستاتا عبر الإحليل (TUAEP)", place: "TUAEP Masterclass", placeAR: "دورة TUAEP المتقدمة" },
-      { year: "2025", title: "Certificate of Completion, UROLIFT™ SYSTEM PROFICIENCY PATHWAY MODULE", titleAR: "شهادة إتمام، وحدة مسار الكفاءة لنظام UROLIFT™", place: "Teleflex Interventional Urology", placeAR: "Teleflex لجراحة المسالك البولية التداخلية" },
-      { year: "2022", title: "Certificate of Recognition, Rezūm Procedure Training Program", titleAR: "شهادة تقدير، برنامج التدريب على إجراء Rezūm", place: "Boston Scientific", placeAR: "Boston Scientific" },
-      { year: "2020", title: "Certificate of Attendance, Endoscopic Stone Treatment Step 2", titleAR: "شهادة حضور، علاج الحصوات بالمنظار المرحلة 2", place: "SET - UP Programme, EAU", placeAR: "برنامج SET-UP، الجمعية الأوروبية لجراحة المسالك البولية (EAU)" },
-      { year: "2018", title: "Certificate of Attendance, Endoscopic Stone Treatment Step 1", titleAR: "شهادة حضور، علاج الحصوات بالمنظار المرحلة 1", place: "SET - UP Programme, EAU", placeAR: "برنامج SET-UP، الجمعية الأوروبية لجراحة المسالك البولية (EAU)" },
-      { year: "2017", title: "Diplomate Thai Board of Urology", titleAR: "دبلوم البورد التايلاندي في جراحة المسالك البولية", place: "Siriraj Hospital, Mahidol University", placeAR: "مستشفى سيريراج، جامعة ماهيدول" },
-      { year: "2012", title: "Doctor of Medicine", titleAR: "دكتور في الطب", place: "Faculty of Medicine, Prince of Songkla University", placeAR: "كلية الطب، جامعة الأمير سونغكلا" }
+      { year: "2025", title: "Certificate of Attendance, Master the Transurethral Anatomical Enucleation of Prostate (TUAEP)", titleAR: "شهادة حضور، إتقان الاستئصال التشريحي للبروستاتا عبر الإحليل (TUAEP)", titleRU: "Сертификат об участии, Мастер-класс по трансуретральной анатомической энуклеации предстательной железы (TUAEP)", place: "TUAEP Masterclass", placeAR: "دورة TUAEP المتقدمة", placeRU: "Мастер-класс TUAEP" },
+      { year: "2025", title: "Certificate of Completion, UROLIFT™ SYSTEM PROFICIENCY PATHWAY MODULE", titleAR: "شهادة إتمام، وحدة مسار الكفاءة لنظام UROLIFT™", titleRU: "Сертификат об окончании, Модуль повышения квалификации системы UROLIFT™", place: "Teleflex Interventional Urology", placeAR: "Teleflex لجراحة المسالك البولية التداخلية", placeRU: "Интервенционная урология Teleflex" },
+      { year: "2022", title: "Certificate of Recognition, Rezūm Procedure Training Program", titleAR: "شهادة تقدير، برنامج التدريب على إجراء Rezūm", titleRU: "Сертификат признания, Программа обучения процедуре Rezūm", place: "Boston Scientific", placeAR: "Boston Scientific", placeRU: "Boston Scientific" },
+      { year: "2020", title: "Certificate of Attendance, Endoscopic Stone Treatment Step 2", titleAR: "شهادة حضور، علاج الحصوات بالمنظار المرحلة 2", titleRU: "Сертификат об участии, Эндоскопическое лечение камней, шаг 2", place: "SET - UP Programme, EAU", placeAR: "برنامج SET-UP، الجمعية الأوروبية لجراحة المسالك البولية (EAU)", placeRU: "Программа SET-UP, Европейская ассоциация урологов (EAU)" },
+      { year: "2018", title: "Certificate of Attendance, Endoscopic Stone Treatment Step 1", titleAR: "شهادة حضور، علاج الحصوات بالمنظار المرحلة 1", titleRU: "Сертификат об участии, Эндоскопическое лечение камней, шаг 1", place: "SET - UP Programme, EAU", placeAR: "برنامج SET-UP، الجمعية الأوروبية لجراحة المسالك البولية (EAU)", placeRU: "Программа SET-UP, Европейская ассоциация урологов (EAU)" },
+      { year: "2017", title: "Diplomate Thai Board of Urology", titleAR: "دبلوم البورد التايلاندي في جراحة المسالك البولية", titleRU: "Дипломант Тайского совета по урологии", place: "Siriraj Hospital, Mahidol University", placeAR: "مستشفى سيريراج، جامعة ماهيدول", placeRU: "Больница Сирирадж, Университет Махидол" },
+      { year: "2012", title: "Doctor of Medicine", titleAR: "دكتور في الطب", titleRU: "Доктор медицины", place: "Faculty of Medicine, Prince of Songkla University", placeAR: "كلية الطب، جامعة الأمير سونغكلا", placeRU: "Медицинский факультет, Университет принца Сонгкла" }
     ],
     awards: [
-      { year: "2025", title: "TUAEP Masterclass", titleAR: "دورة TUAEP المتقدمة", issuer: "Certificate of Attendance", issuerAR: "شهادة حضور" },
-      { year: "2025", title: "UROLIFT™ SYSTEM Proficiency", titleAR: "كفاءة نظام UROLIFT™", issuer: "Certificate of Completion", issuerAR: "شهادة إتمام" },
-      { year: "2022", title: "Rezūm Procedure Training", titleAR: "التدريب على إجراء Rezūm", issuer: "Certificate of Recognition", issuerAR: "شهادة تقدير" }
+      { year: "2025", title: "TUAEP Masterclass", titleAR: "دورة TUAEP المتقدمة", titleRU: "Мастер-класс TUAEP", issuer: "Certificate of Attendance", issuerAR: "شهادة حضور", issuerRU: "Сертификат об участии" },
+      { year: "2025", title: "UROLIFT™ SYSTEM Proficiency", titleAR: "كفاءة نظام UROLIFT™", titleRU: "Квалификация системы UROLIFT™", issuer: "Certificate of Completion", issuerAR: "شهادة إتمام", issuerRU: "Сертификат об окончании" },
+      { year: "2022", title: "Rezūm Procedure Training", titleAR: "التدريب على إجراء Rezūm", titleRU: "Обучение процедуре Rezūm", issuer: "Certificate of Recognition", issuerAR: "شهادة تقدير", issuerRU: "Сертификат признания" }
     ],
     specializedFocus: "Minimally invasive BPH treatments using Rezūm (Water Vapor Therapy) and UroLift implants, alongside Dorsal Neurectomy and Penile Enhancement procedures.",
     specializedFocusAR: "علاجات تضخم البروستاتا الحميد طفيفة التوغل باستخدام Rezūm (العلاج ببخار الماء) وزرعات UroLift، إلى جانب إجراءات استئصال العصب الظهري وتجميل القضيب.",
+    specializedFocusRU: "Минимально инвазивные методы лечения ДГПЖ с использованием имплантатов Rezūm (водно-паровая терапия) и UroLift, наряду с дорсальной нейрэктомией и процедурами увеличения полового члена.",
     surgicalExcellence: "Certified in advanced endoscopic stone treatment (EAU SET-UP), Rezūm, and UroLift, delivering high-quality urological care with a focus on patient safety and outcomes.",
     surgicalExcellenceAR: "معتمد في العلاج المتقدم للحصوات بالمنظار (EAU SET-UP)، و Rezūm، و UroLift، لتقديم رعاية مسالك بولية عالية الجودة مع التركيز على سلامة المرضى والنتائج الطبية.",
+    surgicalExcellenceRU: "Сертифицирован в области передового эндоскопического лечения камней (EAU SET-UP), Rezūm и UroLift, предоставляя высококачественную урологическую помощь с упором на безопасность пациентов и результаты.",
     videoUrl: "",
     activities: [],
     certificates: [
