@@ -718,8 +718,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
   'Stem Cell for ED': {
     title: 'Stem Cell Therapy for Erectile Dysfunction',
     titleAR: 'العلاج بالخلايا الجذعية لضعف الانتصاب',
+    titleRU: 'Терапия стволовыми клетками при эректильной дисфункции',
     tagline: 'Advanced Regenerative Medicine: Restore Function at the Cellular Level.',
     taglineAR: 'الطب التجديدي المتقدم: استعادة الوظيفة على المستوى الخلوي.',
+    taglineRU: 'Передовая регенеративная медицина: Восстановление функции на клеточном уровне.',
     whatIsIt: {
       title: 'What is Stem Cell Therapy for ED?',
       description: "Stem Cell Therapy for Erectile Dysfunction is the pinnacle of regenerative medicine. It utilizes Mesenchymal Stem Cells (MSCs)—potent biological shapeshifters—obtained from your own body (autologous) or ethically sourced umbilical cord tissue. These cells have the unique ability to differentiate into various cell types, directly repairing damaged tissues, blood vessels, and nerves to reverse the root causes of ED.",
@@ -729,9 +731,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       title: 'ما هو العلاج بالخلايا الجذعية لضعف الانتصاب؟',
       description: 'العلاج بالخلايا الجذعية لضعف الانتصاب يعتبر قمة الطب التجديدي. يستخدم الخلايا الجذعية الوسيطة (MSCs) — وهي خلايا بيولوجية قوية قادرة على التكيف — يتم الحصول عليها من جسمك (ذاتي) أو من أنسجة الحبل السري المستخرجة أخلاقياً. تتمتع هذه الخلايا بقدرة فريدة على التمايز إلى أنواع مختلفة من الخلايا، مما يؤدي إلى إصلاح مباشر للأنسجة التالفة والأوعية الدموية والأعصاب لعكس الأسباب الجذرية لضعف الانتصاب.',
     },
+    whatIsItRU: {
+      title: 'Что такое терапия стволовыми клетками при ЭД?',
+      description: 'Терапия стволовыми клетками при эректильной дисфункции — это вершина регенеративной медицины. В ней используются мезенхимальные стволовые клетки (МСК) — мощные биологические "трансформеры", получаемые из вашего собственного организма (аутологичные) или из этично полученной ткани пуповины. Эти клетки обладают уникальной способностью дифференцироваться в различные типы клеток, непосредственно восстанавливая поврежденные ткани, кровеносные сосуды и нервы, устраняя первопричины ЭД.',
+    },
     mechanismImageAspectRatio: 'aspect-[9/16]',
     description: "Stem Cell Therapy goes beyond symptom management to structurally repair the penile tissue. The regenerative process involves sophisticated biological mechanisms:\n\n**The Clinical Mechanism of Action:**\n\n1. **Differentiation & Tissue Replacement:** Mesenchymal Stem Cells (MSCs) are multipotent, meaning they can transform into specific cell types needed for repair. In the penis, they differentiate into endothelial cells (lining blood vessels), smooth muscle cells, and cavernous tissue cells, physically replacing damaged structures.\n\n2. **Potent Paracrine Signaling:** The injected stem cells release a powerful cocktail of trophic factors and cytokines. This 'paracrine effect' signals the body's own dormant repair cells to wake up and start healing the surrounding tissue.\n\n3. **Angiogenesis (New Vessel Formation):** Stem cells secrete high levels of VEGF (Vascular Endothelial Growth Factor), driving the creation of extensive new capillary networks. This restores healthy blood flow, which is critical for achieving and maintaining rigid erections.\n\n4. **Neuroregeneration (Nerve Repair):** Unlike other treatments, stem cells have neurotrophic properties that can regenerate damaged nerves (e.g., from prostate surgery or diabetes), restoring penile sensitivity and the neural pathways required for erection.",
     descriptionAR: 'يتجاوز العلاج بالخلايا الجذعية إدارة الأعراض ليقوم بإصلاح أنسجة القضيب هيكلياً. تتضمن العملية التجديدية آليات بيولوجية دقيقة:\n\n**آلية العمل السريرية:**\n\n1. **التمايز واستبدال الأنسجة:** الخلايا الجذعية الوسيطة (MSCs) متعددة القدرات، مما يعني قدرتها على التحول إلى أنواع محددة من الخلايا اللازمة للإصلاح. في القضيب، تتمايز إلى خلايا بطانية (مبطنة للأوعية الدموية)، وخلايا عضلية ملساء، وخلايا أنسجة كهفية، مما يستبدل الهياكل التالفة فعلياً.\n\n2. **تأثير الإشارات نظير الصماوي (Paracrine):** تفرز الخلايا الجذعية المحقونة مزيجاً قوياً من عوامل النمو والسيتوكينات. يرسل "التأثير نظير الصماوي" إشارات لخلايا الإصلاح الكامنة في الجسم للاستيقاظ وبدء شفاء الأنسجة المحيطة.\n\n3. **تكوين الأوعية الدموية (Angiogenesis):** تفرز الخلايا الجذعية مستويات عالية من عامل نمو بطانة الأوعية الدموية (VEGF)، مما يدفع نحو تكوين شبكات واسعة من الشعيرات الدموية الجديدة. ويستعيد هذا التدفق الدموي الصحي، وهو أمر بالغ الأهمية لتحقيق والحفاظ على انتصاب قوي.\n\n4. **تجديد الأعصاب (Neuroregeneration):** على عكس العلاجات الأخرى، تمتلك الخلايا الجذعية خصائص عصبية يمكنها تجديد الأعصاب التالفة (على سبيل المثال، من جراحة البروستاتا أو مرض السكري)، واستعادة حساسية القضيب والمسارات العصبية اللازمة للانتصاب.',
+    descriptionRU: 'Терапия стволовыми клетками выходит за рамки устранения симптомов и направлена на структурное восстановление ткани полового члена. Регенеративный процесс включает сложные биологические механизмы:\n\n**Клинический механизм действия:**\n\n1. **Дифференциация и замена тканей:** Мезенхимальные стволовые клетки (МСК) мультипотентны, то есть могут трансформироваться в специфические типы клеток, необходимые для восстановления. В половом члене они дифференцируются в эндотелиальные клетки (выстилающие кровеносные сосуды), гладкомышечные клетки и клетки пещеристой ткани, физически заменяя поврежденные структуры.\n\n2. **Мощная паракринная сигнализация:** Введенные стволовые клетки высвобождают мощный коктейль из трофических факторов и цитокинов. Этот «паракринный эффект» дает сигнал собственным спящим восстановительным клеткам организма проснуться и начать лечение окружающих тканей.\n\n3. **Ангиогенез (образование новых сосудов):** Стволовые клетки выделяют высокие уровни VEGF (сосудистый эндотелиальный фактор роста), стимулируя создание обширных новых капиллярных сетей. Это восстанавливает здоровый кровоток, критически важный для достижения и поддержания стойкой эрекции.\n\n4. **Нейрорегенерация (восстановление нервов):** В отличие от других методов лечения, стволовые клетки обладают нейротрофическими свойствами и могут восстанавливать поврежденные нервы (например, после операции на простате или при диабете), возвращая чувствительность полового члена и нервные пути, необходимые для эрекции.',
     heroImage: '/assets/image/services section/stem cell for ed/stem cell hero.webp',
     descriptionImage: '/assets/image/services section/stem cell for ed/stem cell clinical mechanism.webp',
     video: null,
@@ -747,11 +754,23 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: 'فترة التعافي' },
       { label: 'مدة التأثير' }
     ],
+    statsRU: [
+      { label: 'Эффективность' },
+      { label: 'Время процедуры' },
+      { label: 'Период восстановления' },
+      { label: 'Длительность эффекта' }
+    ],
     benefits: [
       { title: 'Neuroregeneration', desc: 'Repairs nerve damage often underlying severe ED.', icon: Zap },
       { title: 'Vascular Repair', desc: 'Creates new blood vessels to improve blood flow permanently.', icon: HeartPulse },
       { title: 'Severe ED Solution', desc: 'Effective even when pills and other treatments fail.', icon: Trophy },
       { title: 'Long-Lasting', desc: 'Results can persist for 18-24 months or longer.', icon: Infinity as any }
+    ],
+    benefitsRU: [
+      { title: 'Нейрорегенерация', desc: 'Восстанавливает повреждения нервов, часто лежащие в основе тяжелой ЭД.' },
+      { title: 'Восстановление сосудов', desc: 'Создает новые кровеносные сосуды для постоянного улучшения кровотока.' },
+      { title: 'Решение для тяжелой ЭД', desc: 'Эффективно даже тогда, когда таблетки и другие методы лечения не помогают.' },
+      { title: 'Долговечность', desc: 'Результаты могут сохраняться 18-24 месяца и дольше.' }
     ],
     candidates: [
       "Men with moderate to severe ED who don't respond to conventional therapy.",
@@ -765,6 +784,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       'مرضى السكري الذين يعانون من ضعف في الأوعية الدموية والأعصاب.',
       'أولئك الذين يبحثون عن أحدث خيار تجديدي متاح.'
     ],
+    candidatesRU: [
+      'Мужчины с ЭД от умеренной до тяжелой степени, не реагирующие на традиционную терапию.',
+      'Пациенты после простатэктомии с повреждением нервов.',
+      'Пациенты с диабетом с поражением сосудов и нервов.',
+      'Те, кто ищет самый передовой доступный вариант регенерации.'
+    ],
     safety: {
       title: "Safety & Side Effects",
       content: "Stem cell therapy using autologous (your own) or ethically sourced mesenchymal stem cells is very safe. Minimal risk of immune reaction. Minor swelling or soreness may occur but resolves quickly.",
@@ -773,6 +798,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     safetyAR: {
       title: 'السلامة والآثار الجانبية',
       content: 'يعتبر العلاج بالخلايا الجذعية باستخدام الخلايا الجذعية الوسيطة الذاتية (من جسمك) أو المستخرجة من مصادر أخلاقية آمناً للغاية. يوجد خطر ضئيل لرد فعل مناعي. قد يحدث تورم خفيف أو ألم بسيط ولكنه يزول بسرعة.',
+    },
+    safetyRU: {
+      title: 'Безопасность и побочные эффекты',
+      content: 'Терапия стволовыми клетками с использованием аутологичных (собственных) или этично полученных мезенхимальных стволовых клеток очень безопасна. Минимальный риск иммунной реакции. Возможен небольшой отек или болезненность, которые быстро проходят.'
     },
     timeline: {
       title: "Treatment Timeline",
@@ -790,6 +819,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: 'الشهر 4+', title: 'أفضل النتائج', desc: 'تحقيق أقصى فائدة. استعادة وظيفة الانتصاب بشكل ملحوظ.' }
       ]
     },
+    timelineRU: {
+      title: 'График лечения',
+      steps: [
+        { time: 'Неделя 1-4', title: 'Интеграция клеток', desc: 'Стволовые клетки начинают интегрироваться в ткань и выделять факторы роста.' },
+        { time: 'Месяц 2-3', title: 'Ремоделирование ткани', desc: 'Формируются новые кровеносные сосуды и нервы. Постепенное улучшение функции.' },
+        { time: 'Месяц 4+', title: 'Максимальные результаты', desc: 'Достигается максимальная польза. Эректильная функция значительно восстанавливается.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Procurement & Quality Control', desc: 'Certified Mesenchymal Stem Cells (MSCs) are sourced from leading biotech labs to ensure the highest potency, sterility, and therapeutic grade.' },
       { step: '02', title: 'Safety & Sensitivity Testing', desc: 'Prior to the main procedure, we perform a mandatory allergy/sensitivity test to ensure zero adverse reactions and complete patient safety.' },
@@ -802,6 +839,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '03', title: 'حقن القضيب بدقة', desc: 'تحت تأثير مخدر موضعي، يتم حقن الخلايا الجذعية النشطة بدقة في أنسجة القضيب لتحفيز تجديد الأوعية الدموية والأعصاب.' },
       { step: '04', title: 'التعافي السريع', desc: 'تتبع ذلك مرحلة تعافي سريعة (24-48 ساعة)، مع استمرار عملية الإصلاح البيولوجي في تعزيز الوظيفة خلال 3-6 أشهر.' }
     ],
+    procedureRU: [
+      { step: '01', title: 'Закупка и контроль качества', desc: 'Сертифицированные мезенхимальные стволовые клетки (МСК) поставляются из ведущих биотехнологических лабораторий, что гарантирует высочайшую эффективность, стерильность и терапевтический класс.' },
+      { step: '02', title: 'Тестирование безопасности и чувствительности', desc: 'Перед основной процедурой проводится обязательный тест на аллергию/чувствительность для обеспечения отсутствия побочных реакций и полной безопасности пациента.' },
+      { step: '03', title: 'Точная инъекция в половой член', desc: 'Под местной анестезией активированные стволовые клетки точно вводятся в ткань полового члена для запуска регенерации сосудов и нервов.' },
+      { step: '04', title: 'Быстрое восстановление', desc: 'Следует короткая фаза восстановления (24-48 часов), а процесс биологического восстановления продолжает улучшать функцию в течение 3-6 месяцев.' }
+    ],
     faq: [
       { q: "How is this different from PRP?", a: "Stem cells can differentiate into multiple cell types (nerves, blood vessels, muscle), while PRP primarily provides growth factors. Stem cell therapy is more comprehensive for severe ED." },
       { q: "Is it FDA-approved?", a: "Autologous stem cell therapies (using your own cells) are legal and widely practiced. Efficacy continues to be studied in clinical trials." },
@@ -811,6 +854,11 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { q: 'كيف يختلف هذا عن علاج PRP؟', a: 'يمكن للخلايا الجذعية التمايز إلى أنواع متعددة من الخلايا (أعصاب، أوعية دموية، عضلات)، بينما يوفر PRP بشكل أساسي عوامل النمو. العلاج بالخلايا الجذعية أكثر شمولية لضعف الانتصاب الشديد.' },
       { q: 'هل هو معتمد من إدارة الغذاء والدواء (FDA)؟', a: 'العلاجات باستخدام الخلايا الجذعية الذاتية (من خلاياك الخاصة) قانونية وتمارس على نطاق واسع. ولا تزال الفعالية قيد الدراسة في التجارب السريرية.' },
       { q: 'كم من الوقت حتى تظهر النتائج؟', a: 'قد تظهر التحسينات الأولية في الفترة من 4-8 أسابيع، مع وصول الفوائد إلى ذروتها في 3-6 أشهر.' }
+    ],
+    faqRU: [
+      { q: 'Чем это отличается от PRP?', a: 'Стволовые клетки могут дифференцироваться в различные типы клеток (нервы, кровеносные сосуды, мышцы), в то время как PRP в основном обеспечивает факторы роста. Терапия стволовыми клетками является более комплексной для тяжелой ЭД.' },
+      { q: 'Одобрено ли это FDA?', a: 'Терапия аутологичными стволовыми клетками (с использованием собственных клеток) легальна и широко практикуется. Эффективность продолжает изучаться в клинических испытаниях.' },
+      { q: 'Когда я увижу результаты?', a: 'Первоначальные улучшения могут появиться на 4-8 неделе, с максимальным эффектом на 3-6 месяце.' }
     ]
   },
   'Penile Implant': {
