@@ -2521,8 +2521,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
   'Penile Enlargement': {
     title: 'Penile Girth Enhancement',
     titleAR: 'تجميل القضيب (زيادة السُمك)',
+    titleRU: 'Утолщение полового члена',
     tagline: 'Non-Surgical Penile Girth Enhancement with HA Filler. Natural Feel, Fully Reversible.',
     taglineAR: 'زيادة سُمك القضيب بدون جراحة باستخدام الفيلر (HA). ملمس طبيعي، وقابل للعكس تماماً.',
+    taglineRU: 'Безоперационное утолщение полового члена с помощью филлеров ГК. Естественные ощущения, полностью обратимо.',
     whatIsIt: {
       title: 'What is Penile Girth Enhancement with Filler?',
       description: "Penile girth enhancement with dermal filler is a non-surgical medical procedure designed to increase the circumference (thickness) of the penis using Hyaluronic Acid (HA) fillers. Performed by a board-certified urologist, this method provides visible results without invasive surgery, general anesthesia, or lengthy recovery. It is a well-established option for men seeking to improve penile girth safely and with minimal downtime.",
@@ -2532,8 +2534,13 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       title: 'ما هي عملية زيادة سُمك القضيب بالفيلر؟',
       description: 'تجميل وزيادة سُمك القضيب باستخدام الفيلر الجلدي هو إجراء طبي غير جراحي يهدف إلى زيادة محيط (سُمك) القضيب باستخدام حقن حمض الهيالورونيك (HA). يتم تنفيذ هذا الإجراء بواسطة طبيب مسالك بولية معتمد، ويوفر نتائج ملحوظة بدون جراحة، أو تخدير عام، أو فترة تعافي طويلة. وهو خيار معروف للرجال الذين يسعون لتحسين سُمك القضيب بأمان وبأقل فترة نقاهة ممكنة.'
     },
+    whatIsItRU: {
+      title: 'Что такое утолщение полового члена филлерами?',
+      description: 'Утолщение полового члена дермальным филлером — это безоперационная медицинская процедура, предназначенная для увеличения окружности (толщины) полового члена с использованием филлеров на основе гиалуроновой кислоты (ГК). Выполняемый сертифицированным урологом, этот метод обеспечивает видимые результаты без инвазивной хирургии, общей анестезии или длительного восстановления. Это хорошо зарекомендовавший себя вариант для мужчин, стремящихся безопасно и с минимальным временем простоя улучшить толщину полового члена.'
+    },
     description: "Hyaluronic Acid (HA) Filler\n\n1. **Non-Surgical Procedure**\nThe procedure involves injecting Hyaluronic Acid (HA) dermal filler into the subcutaneous layer of the penile shaft without any surgical incision.\n* **Key Advantage:** No incisions are made, so there is no visible scarring.\n* **Technique:** A blunt-tipped micro-cannula is used to distribute filler beneath the skin, which significantly reduces tissue trauma and minimizes the risk of infection.\n\n2. **Minimal Pain and Zero Downtime**\nDesigned for men who want effective results without disrupting their daily routine.\n* **Procedure Time:** The treatment takes approximately 30-45 minutes.\n* **Daily Life:** Patients can return to work and normal daily activities immediately after the procedure.\n* **Precaution:** Sexual activity should be avoided for approximately 4-7 days to allow the filler to settle properly.\n\n3. **Natural Look and Feel**\nHA filler provides a smooth, natural texture that blends seamlessly with existing tissue.\n* **Texture:** The filler material is soft and elastic, closely mimicking the feel of natural penile tissue.\n* **Appearance:** Even distribution ensures there are no hard lumps or unnatural irregularities.\n\n4. **Customizable Results**\nOne of the key advantages of filler-based enhancement is the flexibility to tailor results to individual preferences.\n* **Patient Control:** Patients can choose the volume of filler to achieve their desired level of girth enhancement.\n* **Future Touch-Ups:** Additional filler sessions can be scheduled in the future for those who want further enhancement.\n\n5. **Fully Reversible and Safe**\nHA fillers offer long-term peace of mind with a built-in safety mechanism.\n* **Reversibility:** If the patient is unsatisfied with the result or wishes to make adjustments, the filler can be completely dissolved using an enzyme called Hyaluronidase.\n* **Safety Standard:** The filler leaves no permanent residue or harmful substances in the body.",
     descriptionAR: 'فيلر حمض الهيالورونيك (HA)\n\n1. **إجراء غير جراحي**\nيتضمن الإجراء حقن فيلر (HA) في الطبقة تحت الجلدية للقضيب دون أي شقوق جراحية.\n* **الميزة الرئيسية:** لا توجد جروح لذلك لا توجد ندبات مرئية.\n* **التقنية:** تُستخدم قنية دقيقة (Cannula) لتوزيع الفيلر تحت الجلد، مما يقلل بشكل كبير من صدمة الأنسجة وخطر العدوى.\n\n2. **ألم ضئيل وبدون فترة انقطاع**\nمصمم للرجال الذين يرغبون في نتائج فعالة دون تعطيل روتينهم اليومي.\n* **وقت الإجراء:** يستغرق العلاج حوالي 30-45 دقيقة.\n* **الحياة اليومية:** يمكن للمرضى العودة للعمل والأنشطة اليومية فوراً بعد الإجراء.\n* **الاحتياطات:** يجب تجنب النشاط الجنسي لمدة 4-7 أيام للسماح للفيلر بالاستقرار.\n\n3. **مظهر وملمس طبيعي**\nيوفر فيلر (HA) ملمساً ناعماً وطبيعياً يندمج بسلاسة مع الأنسجة.\n* **الملمس:** المادة مرنة وناعمة، تحاكي بشكل كبير شعور الأنسجة الطبيعية للقضيب.\n* **المظهر:** التوزيع المتساوي يضمن عدم وجود كتل صلبة أو شكل غير طبيعي.\n\n4. **نتائج قابلة للتخصيص**\nأحد أهم مزايا الفيلر هو المرونة في تخصيص النتائج حسب الرغبة الشخصية.\n* **تحكم المريض:** يمكن للمريض اختيار كمية الفيلر للوصول إلى الحجم المطلوب.\n* **تحسين مستقبلي:** يمكن جدولة جلسات إضافية في المستقبل للراغبين في زيادة إضافية.\n\n5. **آمن وقابل للعكس تماماً**\nحقن (HA) توفر راحة بال على المدى الطويل بفضل آلية أمان مدمجة.\n* **قابلية العكس:** في حال عدم الرضا عن النتيجة، يمكن إذابة الفيلر تماماً باستخدام إنزيم يسمى "هيالورونيداز".\n* **معايير الأمان:** لا يترك الفيلر أي بقايا دائمة أو مواد ضارة في الجسم.',
+    descriptionRU: 'Филлер на основе гиалуроновой кислоты (ГК)\n\n1. **Безоперационная процедура**\nПроцедура включает инъекцию дермального филлера на основе гиалуроновой кислоты (ГК) в подкожный слой ствола полового члена без какого-либо хирургического разреза.\n* **Ключевое преимущество:** Разрезы не делаются, поэтому нет видимых рубцов.\n* **Методика:** Для распределения филлера под кожей используется тупоконечная микроканюля, что значительно снижает травматизацию тканей и сводит к минимуму риск инфицирования.\n\n2. **Минимальная боль и нулевое время простоя**\nРазработано для мужчин, которые хотят получить эффективные результаты, не нарушая свой повседневный распорядок.\n* **Время процедуры:** Лечение занимает примерно 30-45 минут.\n* **Повседневная жизнь:** Пациенты могут вернуться к работе и обычным повседневным делам сразу после процедуры.\n* **Меры предосторожности:** Следует избегать сексуальной активности примерно 4-7 дней, чтобы филлер правильно распределился.\n\n3. **Естественный вид и ощущения**\nФиллер ГК обеспечивает гладкую, естественную текстуру, которая плавно сливается с существующими тканями.\n* **Текстура:** Материал филлера мягкий и эластичный, очень напоминающий на ощупь естественные ткани полового члена.\n* **Внешний вид:** Равномерное распределение гарантирует отсутствие твердых комков или неестественных неровностей.\n\n4. **Настраиваемые результаты**\nОдним из ключевых преимуществ увеличения с помощью филлеров является гибкость в адаптации результатов к индивидуальным предпочтениям.\n* **Контроль пациента:** Пациенты могут выбрать объем филлера для достижения желаемого уровня утолщения.\n* **Будущие корректировки:** Дополнительные сеансы введения филлера могут быть запланированы в будущем для тех, кто хочет дальнейшего увеличения.\n\n5. **Полностью обратимо и безопасно**\nФиллеры ГК обеспечивают долгосрочное спокойствие благодаря встроенному механизму безопасности.\n* **Обратимость:** Если пациент недоволен результатом или желает внести коррективы, филлер может быть полностью растворен с помощью фермента, называемого гиалуронидазой.\n* **Стандарт безопасности:** Филлер не оставляет постоянных следов или вредных веществ в организме.',
     heroImage: '/assets/image/services section/penile enlargement/penile enlargement hero.webp',
     descriptionImage: '/assets/image/services section/penile enlargement/penile enlargement clinical mechanism.webp',
     video: null,
@@ -2549,11 +2556,23 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: 'فترة النقاهة' },
       { label: 'المدة' }
     ],
+    statsRU: [
+      { label: 'Увеличение толщины' },
+      { label: 'Время процедуры' },
+      { label: 'Время простоя' },
+      { label: 'Продолжительность' }
+    ],
     benefits: [
       { title: 'Immediate Results', desc: 'Visible increase in girth immediately after procedure.', icon: Zap },
       { title: 'Natural Feel', desc: 'Premium HA fillers feel soft and natural to the touch.', icon: CheckCircle2 },
       { title: 'Minimally Invasive', desc: 'Quick injections with local anesthesia. No surgery required.', icon: ShieldCheck },
       { title: 'Reversible (HA)', desc: 'Hyaluronic acid fillers can be dissolved if needed.', icon: Loop as any }
+    ],
+    benefitsRU: [
+      { title: 'Мгновенные результаты', desc: 'Видимое увеличение толщины сразу после процедуры.' },
+      { title: 'Естественные ощущения', desc: 'Филлеры ГК премиум-класса мягкие и естественные на ощупь.' },
+      { title: 'Минимально инвазивно', desc: 'Быстрые инъекции под местной анестезией. Хирургическое вмешательство не требуется.' },
+      { title: 'Обратимо (ГК)', desc: 'Филлеры на основе гиалуроновой кислоты могут быть растворены при необходимости.' }
     ],
     timeline: {
       title: "Augmentation Journey",
@@ -2571,6 +2590,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: 'الشهر 1+', title: 'النتيجة النهائية', desc: 'اكتمال الزيادة بوضوح. مظهر وملمس طبيعي تماماً.' }
       ]
     },
+    timelineRU: {
+      title: 'Путь к увеличению',
+      steps: [
+        { time: 'День 1-3', title: 'Усадка', desc: 'Может возникнуть небольшой отек. Филлер начинает интегрироваться с тканью.' },
+        { time: 'Неделя 2', title: 'Возобновление', desc: 'Обычно можно возобновить сексуальную активность. Окончательная форма начинает стабилизироваться.' },
+        { time: 'Месяц 1+', title: 'Окончательный результат', desc: 'Видно полное утолщение. Достигнут естественный вид и ощущения.' }
+      ]
+    },
     candidates: [
       "Men seeking enhanced girth for aesthetic or confidence reasons.",
       "Those with realistic expectations and good overall health.",
@@ -2583,6 +2610,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       'المرضى الراغبون في خيار غير جراحي وقابل للعكس (فيلر HA).',
       'الأفراد التواقون لمزيد من الثقة في المواقف الحميمية.'
     ],
+    candidatesRU: [
+      'Мужчины, желающие увеличить толщину по эстетическим причинам или для уверенности в себе.',
+      'Лица с реалистичными ожиданиями и хорошим общим состоянием здоровья.',
+      'Пациенты, которым нужен нехирургический, обратимый вариант (филлеры ГК).',
+      'Лица, желающие больше уверенности в интимных ситуациях.'
+    ],
     safety: {
       title: "Safety & Risks",
       content: "When performed by experienced specialists using medical-grade products, girth enhancement is safe. Risks include temporary swelling, bruising, asymmetry (rare), or nodules (very rare). HA fillers can be dissolved with Hyaluronidase if any issues arise.",
@@ -2591,6 +2624,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     safetyAR: {
       title: 'السلامة والمخاطر',
       content: 'عند إجرائه بواسطة متخصصين ذوي خبرة باستخدام منتجات طبية معتمدة، يُعد العلاج آمناً جداً. المخاطر تشمل تورم مؤقت، كدمات، عدم تناسق (نادر)، أو عقيدات (نادر جداً). يمكن تذويب الفيلر إنزيمياً إذا لزم الأمر.',
+    },
+    safetyRU: {
+      title: 'Безопасность и риски',
+      content: 'При выполнении опытными специалистами с использованием медицинских препаратов процедура утолщения безопасна. Риски включают временный отек, синяки, асимметрию (редко) или узелки (очень редко). Филлеры ГК можно растворить гиалуронидазой при возникновении каких-либо проблем.'
     },
     procedure: [
       { step: '01', title: 'Consultation', desc: 'Discuss goals, examine anatomy, and select the appropriate filler.' },
@@ -2604,6 +2641,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '03', title: 'الحقن', desc: 'حقن الفيلر بالتساوي على طول القضيب باستخدام قنية دقيقة ومرنة.' },
       { step: '04', title: 'التشكيل', desc: 'توزيع وتشكيل الفيلر للحصول على نتيجة ناعمة ومتناسقة. ثم تقديم إرشادات ما بعد الإجراء.' }
     ],
+    procedureRU: [
+      { step: '01', title: 'Консультация', desc: 'Обсуждение целей, осмотр анатомии и выбор подходящего филлера.' },
+      { step: '02', title: 'Анестезия', desc: 'Применение крема с местным анестетиком и блокады нервов для комфорта.' },
+      { step: '03', title: 'Инъекция', desc: 'Филлер вводится равномерно вдоль ствола полового члена с использованием тупых микроканюль.' },
+      { step: '04', title: 'Формирование', desc: 'Окончательное контурирование для получения гладкого и ровного результата. Предоставление инструкций по уходу после процедуры.' }
+    ],
     faq: [
       { q: "How long does penile filler last?", a: "HA fillers typically last 12-24 months depending on the product used and individual factors. The filler gradually dissolves naturally through the body's own metabolic processes, and the tissue returns to its pre-treatment state safely with no lasting residue." },
       { q: "Can I resume sexual activity after the procedure?", a: "Light, gentle activity may be possible after approximately 4-7 days. However, sexual intercourse and strenuous activities should be avoided for approximately 2-4 weeks to allow the filler to fully settle and the tissue to heal completely." },
@@ -2613,6 +2656,11 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { q: 'كم يدوم الفيلر؟', a: 'يدوم فيلر (HA) عادة من 12 إلى 24 شهراً اعتماداً على نوع المنتج وعوامل فسيولوجية فردية. يذوب الفيلر تدريجياً بشكل طبيعي، وتعود الأنسجة لحالتها السابقة بأمان.' },
       { q: 'متى يمكنني العودة للنشاط الجنسي؟', a: 'يمكن القيام بنشاط خفيف بعد 4-7 أيام. ومع ذلك، يُنصح بتجنب الجماع والأنشطة الشاقة لمدة 2-4 أسابيع للسماح للفيلر بالاستقرار التام والشفاء الكامل للأنسجة.' },
       { q: 'هل سيبدو طبيعياً؟ هل يمكن للآخرين ملاحظة ذلك؟', a: 'عندما يُجرى بتقنية صحيحة، تكون النتائج قريبة جداً من الأنسجة الطبيعية. لا توجد ندبات ظاهرة أو علامات واضحة على الإجراء.' }
+    ],
+    faqRU: [
+      { q: 'Как долго держится филлер для полового члена?', a: 'Филлеры ГК обычно держатся 12-24 месяца в зависимости от используемого препарата и индивидуальных факторов. Филлер постепенно растворяется естественным путем благодаря собственным метаболическим процессам организма, и ткань безопасно возвращается в исходное состояние без остатка.' },
+      { q: 'Смогу ли я возобновить сексуальную активность после процедуры?', a: 'Легкая, осторожная активность может быть возможна примерно через 4-7 дней. Тем не менее, следует избегать половых актов и напряженной деятельности примерно 2-4 недели, чтобы филлер полностью уселся, а ткань полностью зажила.' },
+      { q: 'Будет ли это выглядеть естественно? Смогут ли другие заметить?', a: 'При правильном выполнении квалифицированным урологом результаты очень близки к естественным тканям. Нет никаких видимых шрамов или явных признаков процедуры.' }
     ]
   },
   'Penile Lengthening': {
