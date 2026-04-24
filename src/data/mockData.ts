@@ -1042,8 +1042,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
   'Dorsal Neurectomy': {
     title: 'Dorsal Neurectomy for Premature Ejaculation',
     titleAR: 'استئصال العصب الظهري لسرعة القذف',
+    titleRU: 'Дорсальная нейрэктомия при преждевременной эякуляции',
     tagline: 'A Permanent Surgical Solution for Premature Ejaculation Regain Control and Extend Intimacy Naturally.',
     taglineAR: 'حل جراحي دائم لسرعة القذف: استعد السيطرة وأطل فترة العلاقة الحميمية بشكل طبيعي.',
+    taglineRU: 'Постоянное хирургическое решение проблемы преждевременной эякуляции. Верните контроль и продлите близость естественным путем.',
     whatIsIt: {
       title: 'What is Dorsal Neurectomy?',
       description: "Dorsal Neurectomy (DN) is a specialized surgical procedure recognized as one of the most effective permanent treatments for Primary Premature Ejaculation (PPE). It works by addressing the root cause of PE  penile hypersensitivity  through selective recalibration of the sensory nerves. This allows men to significantly extend their intravaginal ejaculatory latency time (IELT) and regain natural control during sexual activity.",
@@ -1053,9 +1055,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       title: 'ما هو استئصال العصب الظهري؟',
       description: 'استئصال العصب الظهري (DN) هو إجراء جراحي متخصص يُعد من أكثر العلاجات الدائمة فعالية لسرعة القذف الأولية (PPE). يعمل على معالجة السبب الجذري — فرط حساسية القضيب — من خلال إعادة معايرة انتقائية للأعصاب الحسية. يتيح ذلك للرجال زيادة وقت القذف المهبلي الكامن (IELT) بشكل كبير واستعادة السيطرة الطبيعية أثناء النشاط الجنسي.',
     },
+    whatIsItRU: {
+      title: 'Что такое дорсальная нейрэктомия?',
+      description: 'Дорсальная нейрэктомия (ДН) — это специализированная хирургическая процедура, признанная одним из самых эффективных постоянных методов лечения первичной преждевременной эякуляции. Она устраняет первопричину ПЭ — гиперчувствительность полового члена — за счет селективной перекалибровки сенсорных нервов. Это позволяет мужчинам значительно увеличить интравагинальное латентное время эякуляции (IELT) и восстановить естественный контроль во время сексуальной активности.',
+    },
     // mechanismImageAspectRatio: 'aspect-[9/16]',
     description: "This procedure works at a neurological level to modulate the ejaculatory reflex. The goal is not to reduce pleasure, but to regulate the intensity of sensation so that ejaculation can be better controlled.\n\n**The Clinical Mechanism of Action:**\n\n1. **Targeted Nerve Identification and Selective Desensitization**: The surgeon carefully isolates the dorsal nerve bundle to identify the specific branches responsible for hypersensitivity. Using precision microsurgical instruments, a calculated portion of these peripheral nerve fibers is selectively divided. This reduces the excessive sensory input that triggers the rapid ejaculatory reflex.\n\n2. **Reflex Threshold Elevation:** By moderating the sensory signals, the biological 'trigger point' for ejaculation is raised. This means more stimulation and time are needed to reach the point of no return — giving you greater control.\n\n3. **Preservation of Function:** Importantly, the main nerve trunks remain intact. This ensures that normal tactile sensation, erection quality, and the ability to experience pleasure and orgasm are fully preserved. Only the *excess sensitivity* is addressed.",
     descriptionAR: 'يعمل هذا الإجراء على المستوى العصبي لتعديل منعكس القذف. الهدف ليس تقليل المتعة، بل تنظيم شدة الإحساس بحيث يمكن التحكم في القذف بشكل أفضل.\n\n**الآلية السريرية:**\n\n1. **تحديد العصب المستهدف وتقليل الحساسية الانتقائي:** يعزل الجراح حزمة العصب الظهري بعناية لتحديد الفروع المحددة المسؤولة عن فرط الحساسية. باستخدام أدوات جراحية دقيقة، يتم قطع جزء محسوب من هذه الألياف العصبية المحيطية بشكل انتقائي. يقلل هذا من المدخلات الحسية المفرطة التي تحفز منعكس القذف السريع.\n\n2. **رفع عتبة المنعكس:** من خلال تعديل الإشارات الحسية، يتم رفع "نقطة التحفيز" البيولوجية للقذف. هذا يعني الحاجة إلى مزيد من التحفيز والوقت للوصول إلى نقطة اللاعودة — مما يمنحك سيطرة أكبر.\n\n3. **الحفاظ على الوظيفة:** الأهم من ذلك، تظل الجذوع العصبية الرئيسية سليمة. وهذا يضمن الحفاظ بالكامل على الإحساس اللمسي الطبيعي، وجودة الانتصاب، والقدرة على تجربة المتعة والنشوة. تتم معالجة *الحساسية الزائدة* فقط.',
+    descriptionRU: 'Эта процедура работает на неврологическом уровне, модулируя эякуляторный рефлекс. Цель состоит не в том, чтобы уменьшить удовольствие, а в том, чтобы регулировать интенсивность ощущений, чтобы можно было лучше контролировать эякуляцию.\n\n**Клинический механизм действия:**\n\n1. **Идентификация целевого нерва и селективная десенсибилизация**: Хирург тщательно изолирует дорсальный нервный пучок, чтобы идентифицировать определенные ветви, ответственные за гиперчувствительность. Используя точные микрохирургические инструменты, рассчитанная часть этих периферических нервных волокон избирательно рассекается. Это уменьшает чрезмерный сенсорный вход, который запускает быстрый эякуляторный рефлекс.\n\n2. **Повышение порога рефлекса:** За счет замедления сенсорных сигналов биологическая «триггерная точка» эякуляции повышается. Это означает, что требуется больше стимуляции и времени для достижения точки невозврата, что дает вам больший контроль.\n\n3. **Сохранение функции:** Важно отметить, что основные нервные стволы остаются нетронутыми. Это гарантирует полное сохранение нормальной тактильной чувствительности, качества эрекции и способности испытывать удовольствие и оргазм. Устраняется только *избыточная чувствительность*.',
     heroImage: '/assets/image/services section/dorsal neurectomy/dorsal neurectomy hero.webp',
     descriptionImage: '/assets/image/services section/dorsal neurectomy/dosal neurectomy clinical mechanism.webp',
     video: null,
@@ -1071,11 +1078,23 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: 'فترة التعافي' },
       { label: 'التأثير' }
     ],
+    statsRU: [
+      { label: 'Процент успеха' },
+      { label: 'Время операции' },
+      { label: 'Период восстановления' },
+      { label: 'Эффект' }
+    ],
     benefits: [
       { title: 'Permanent Fix', desc: 'A single procedure — no need for lifelong medication or numbing sprays.', icon: Infinity as any },
       { title: 'Improves IELT', desc: 'Intravaginal Ejaculatory Latency Time typically increases 3-5x.', icon: Timer },
       { title: 'Preserves Sensation', desc: 'Only excess sensitivity is reduced — pleasurable sensation remains.', icon: HeartPulse },
       { title: 'High Satisfaction', desc: 'Over 80% of patients report significant improvement in control.', icon: Trophy }
+    ],
+    benefitsRU: [
+      { title: 'Постоянное решение', desc: 'Единоразовая процедура — нет необходимости в пожизненном приеме лекарств или обезболивающих спреях.' },
+      { title: 'Улучшает IELT', desc: 'Интравагинальное время задержки эякуляции обычно увеличивается в 3-5 раз.' },
+      { title: 'Сохраняет чувствительность', desc: 'Снижается только избыточная чувствительность — приятные ощущения остаются.' },
+      { title: 'Высокая удовлетворенность', desc: 'Более 80% пациентов отмечают значительное улучшение контроля.' }
     ],
     candidates: [
       "Men with lifelong (primary) premature ejaculation that has not responded to behavioral or medication therapy.",
@@ -1089,6 +1108,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       'من يبحث عن حل جراحي دائم بدون أدوية مستمرة.',
       'المرضى الذين يكون وقت القذف لديهم (IELT) باستمرار أقل من دقيقة واحدة.'
     ],
+    candidatesRU: [
+      'Мужчины с пожизненной (первичной) преждевременной эякуляцией, не реагирующей на поведенческую или медикаментозную терапию.',
+      'Пациенты, испытывающие гиперчувствительность полового члена, которая вызывает потерю контроля над эякуляцией.',
+      'Мужчины, ищущие постоянное хирургическое решение без постоянного приема лекарств.',
+      'Пациенты с IELT (интравагинальным латентным временем эякуляции) стабильно менее 1 минуты.'
+    ],
     safety: {
       title: "Safety & Side Effects",
       content: "When performed by an experienced urological surgeon, complications are uncommon. Potential risks include temporary numbness at the glans (which typically resolves within weeks), infection (less than 2%), and in rare cases, mild changes in erectile sensation. The vast majority of patients retain normal sensation and full erectile function.",
@@ -1097,6 +1122,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     safetyAR: {
       title: 'السلامة والآثار الجانبية',
       content: 'عندما يُجريها جراح مسالك بولية خبير، تكون المضاعفات غير شائعة. تشمل المخاطر المحتملة خدراً مؤقتاً في الحشفة (والذي يزول عادة في غضون أسابيع)، والعدوى (أقل من 2%)، وفي حالات نادرة، تغيرات خفيفة في الإحساس بالانتصاب. تحتفظ الغالبية العظمى من المرضى بإحساس طبيعي ووظيفة انتصاب كاملة.',
+    },
+    safetyRU: {
+      title: 'Безопасность и побочные эффекты',
+      content: 'При выполнении опытным хирургом-урологом осложнения возникают редко. Потенциальные риски включают временное онемение головки (которое обычно проходит в течение нескольких недель), инфекцию (менее 2%) и, в редких случаях, легкие изменения эректильной чувствительности. Подавляющее большинство пациентов сохраняют нормальную чувствительность и полную эректильную функцию.'
     },
     timeline: {
       title: "Recovery & Results",
@@ -1114,6 +1143,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: 'الشهر 2-3', title: 'التأثير الكامل', desc: 'تحقيق أقصى النتائج. يزيد وقت القذف (IELT) بمقدار 3-5 أضعاف خط الأساس.' }
       ]
     },
+    timelineRU: {
+      title: 'Восстановление и результаты',
+      steps: [
+        { time: 'Неделя 1-2', title: 'Начальное заживление', desc: 'Отек спадает. Сексуальная активность ограничена во время заживления.' },
+        { time: 'Неделя 3-4', title: 'Постепенное возобновление', desc: 'Половую жизнь можно возобновить. Чувствительность заметно снижена.' },
+        { time: 'Месяц 2-3', title: 'Полный эффект', desc: 'Достигаются пиковые результаты. IELT увеличивается в 3-5 раз по сравнению с исходным.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Anesthesia & Incision', desc: 'Local anesthesia is administered. A small surgical incision is made at the base of the penis near the pubic area.' },
       { step: '02', title: 'Nerve Identification', desc: 'The surgeon identifies and selectively cuts specific dorsal nerve branches to recalibrate sensitivity.' },
@@ -1126,6 +1163,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '03', title: 'الإغلاق', desc: 'يُغلق الشق بخيوط قابلة للذوبان. تُوضع ضمادة.' },
       { step: '04', title: 'المتابعة', desc: 'تتم متابعة الشفاء. يُستأنف النشاط الجنسي بعد 3-4 أسابيع.' }
     ],
+    procedureRU: [
+      { step: '01', title: 'Анестезия и разрез', desc: 'Вводится местная анестезия. Делается небольшой хирургический разрез у основания полового члена в области лобка.' },
+      { step: '02', title: 'Идентификация нерва', desc: 'Хирург идентифицирует и избирательно перерезает определенные ветви дорсального нерва для перекалибровки чувствительности.' },
+      { step: '03', title: 'Закрытие', desc: 'Разрез закрывается рассасывающимися швами. Накладывается повязка.' },
+      { step: '04', title: 'Наблюдение', desc: 'Контроль заживления. Половая жизнь возобновляется через 3-4 недели.' }
+    ],
     faq: [
       { q: "Will I lose sensation completely?", a: "No. The procedure selectively targets only the specific nerve branches causing hypersensitivity. Enough sensation is preserved for full sexual pleasure — only the excess is reduced." },
       { q: "Is the result really permanent?", a: "Yes. Once the selected nerve fibers are divided, they do not regenerate in the same pattern. The results are long-lasting and do not require ongoing treatment." },
@@ -1135,6 +1178,11 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { q: 'هل سأفقد الإحساس تماماً؟', a: 'لا. يستهدف الإجراء بشكل انتقائي فروع العصب المحددة المسببة لفرط الحساسية. يُحفظ قدر كافٍ من الإحساس للمتعة الجنسية الكاملة — يتم التخلص فقط من الحساسية الزائدة.' },
       { q: 'هل النتيجة دائمة حقاً؟', a: 'نعم. بمجرد قطع الألياف العصبية المحددة، فإنها لا تتجدد بنفس النمط. النتائج طويلة الأمد ولا تتطلب علاجاً مستمراً.' },
       { q: 'هل يمكن أن يؤثر استئصال العصب الظهري على الانتصاب؟', a: 'هذا نادر جداً. الأعصاب الحسية الظهرية تتحكم بالأساس في الإحساس، وليس الانتصاب. يضمن الجراح الخبير الحفاظ الكامل على المسارات العصبية المسؤولة عن الانتصاب.' }
+    ],
+    faqRU: [
+      { q: 'Потеряю ли я чувствительность полностью?', a: 'Нет. Процедура выборочно воздействует только на определенные ветви нервов, вызывающие гиперчувствительность. Сохраняется достаточно чувствительности для полноценного сексуального удовольствия — уменьшается только избыточная.' },
+      { q: 'Действительно ли результат постоянный?', a: 'Да. После рассечения выбранных нервных волокон они не регенерируют по той же схеме. Результаты сохраняются надолго и не требуют постоянного лечения.' },
+      { q: 'Может ли дорсальная нейрэктомия повлиять на мою эрекцию?', a: 'Это бывает очень редко. Дорсальные сенсорные нервы в первую очередь контролируют чувствительность, а не эрекцию. Опытный хирург гарантирует, что двигательные и эректильные нервные пути полностью сохраняются.' }
     ]
   },
   'Testosterone Replacement Therapy': {
