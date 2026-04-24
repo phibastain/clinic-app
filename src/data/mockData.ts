@@ -7469,12 +7469,20 @@ export const EVENTS_DATA: EventData[] = [
     year: '2026',
     title: "Shares Urology Insights at National Summit",
     titleTH: "สุดยอดการประชุมระดับชาติเพื่อแบ่งปันข้อมูลเชิงลึกด้านระบบทางเดินปัสสาวะ",
+    titleAR: "مشاركة الرؤى في مؤتمر جراحة المسالك البولية الوطني",
+    titleRU: "Делится опытом в области урологии на Национальном саммите",
     subtitle: "Dr. Niti Navanimitkul Highlights Innovative Patient Outcomes at National Urology Summit",
     subtitleTH: "นพ.นิธิ นาวานิมิตกุล ชูแนวคิดยกระดับผลลัพธ์การรักษาผู้ป่วย ในงานประชุมศัลยแพทย์ทางเดินปัสสาวะระดับชาติ",
+    subtitleAR: "د. نيثي نافانيتكول يسلط الضوء على نتائج المرضى المبتكرة في القمة الوطنية لطب المسالك البولية",
+    subtitleRU: "Доктор Нити Наванимиткул освещает инновационные результаты лечения пациентов на Национальном саммите по урологии",
     description: "Dr. Niti Navanimitkul Highlights Innovative Patient Outcomes at National Urology Summit",
     descriptionTH: "นพ.นิธิ นาวานิมิตกุล ชูแนวคิดยกระดับผลลัพธ์การรักษาผู้ป่วย ในงานประชุมศัลยแพทย์ทางเดินปัสสาวะระดับชาติ",
+    descriptionAR: "د. نيثي نافانيتكول يسلط الضوء على نتائج المرضى المبتكرة في القمة الوطنية لطب المسالك البولية",
+    descriptionRU: "Доктор Нити Наванимиткул освещает инновационные результаты лечения пациентов на Национальном саммите по урологии",
     location: "Bangsaen Circuit & Activity Area",
     locationTH: "บางแสน เซอร์กิต และพื้นที่กิจกรรม",
+    locationAR: "حلبة ومنطقة أنشطة بانجسين",
+    locationRU: "Трасса и зона активности Бангсаен",
     time: "08:00 - 15:00",
     image: "/assets/image/expertise/Shares Urology Insights.webp",
     category: "ACTIVITY",
@@ -7585,11 +7593,8 @@ export const EVENTS_DATA: EventData[] = [
   </p>
 </div>
     `,
-      titleAR: "مشاركة الرؤى في مؤتمر جراحة المسالك البولية الوطني",
-      subtitleAR: "د. نيثي نافانيتكول يسلط الضوء على نتائج المرضى المبتكرة في القمة الوطنية لطب المسالك البولية",
-      locationAR: "حلبة ومنطقة أنشطة بانجسين",
-      descriptionAR: "د. نيثي نافانيتكول يسلط الضوء على نتائج المرضى المبتكرة في القمة الوطنية لطب المسالك البولية",
       excerptAR: "د. نيثي يشارك رؤى قيمة في القمة الوطنية لطب المسالك البولية.",
+      excerptRU: "Доктор Нити делится ценным опытом на Национальном саммите по урологии.",
       contentAR: `
 <div class="space-y-6 text-slate-300">
   <div class="relative w-full h-[400px] rounded-3xl overflow-hidden my-12 border border-white/10 shadow-2xl">
@@ -7639,6 +7644,58 @@ export const EVENTS_DATA: EventData[] = [
   </p>
   <p>
     من خلال دمج التقنيات المبتكرة مع الفهم العميق لاحتياجات المرضى، يظل الدكتور نيثي نافانيتكول في طليعة النهوض بصحة المسالك البولية وضمان أفضل النتائج الممكنة لكل مريض يعالجه.
+  </p>
+</div>
+`,
+      contentRU: `
+<div class="space-y-6 text-slate-300">
+  <div class="relative w-full h-[400px] rounded-3xl overflow-hidden my-12 border border-white/10 shadow-2xl">
+    <img src="/assets/image/expertise/Shares Urology Insights.webp" alt="Ключевые идеи" class="w-full h-full object-cover" />
+  </div>
+
+  <p class="text-lg leading-relaxed">
+    На недавнем национальном саммите по урологии доктор Нити Наванимиткул, выдающийся уролог, оказался в центре внимания во время громкой панельной дискуссии под названием «За рамками руководства: жемчужины, подводные камни и результаты лечения пациентов». Являясь ведущим голосом в современной урологии, доктор Нити Наванимиткул поделился важнейшими идеями, полученными за годы клинического опыта, внося свой вклад в глобальный диалог о том, как выйти за рамки стандартных протоколов для достижения превосходных медицинских результатов.
+  </p>
+
+  <div class="flex justify-center my-12">
+    <div class="relative max-w-xl w-full rounded-4xl overflow-hidden border border-white/10 shadow-2xl">
+      <img src="/assets/image/expertise/Shares Urology Insights 2.webp" alt="Идеи в области урологии" class="w-full h-auto object-contain" />
+    </div>
+  </div>
+
+  <h3 class="text-xl font-black text-white uppercase mt-12 mb-4">Ключевые идеи, которыми поделился доктор Нити Наванимиткул</h3>
+  <p>
+    В ходе сессии обсуждение было сосредоточено на нюансах хирургической точности и долгосрочного восстановления. Доктор Нити Наванимиткул выделил несколько столпов современного урологического ухода:
+  </p>
+  <ul class="space-y-3 list-none pl-0">
+    <li class="flex items-start gap-3">
+      <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+      <span><strong>Оптимизация результатов лечения пациентов:</strong> Выход за рамки технического успеха для обеспечения функционального восстановления и долгосрочного здоровья.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+      <span><strong>Управление после лечения:</strong> Внедрение передовых протоколов восстановления для минимизации осложнений и повышения качества жизни.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+      <span><strong>Устранение подводных камней:</strong> Выявление общих клинических проблем и обмен «жемчужинами» мудрости, чтобы помочь коллегам справляться со сложными случаями.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+      <span><strong>Удовлетворенность пациентов:</strong> Приоритет четкого общения и индивидуальных планов ухода для удовлетворения индивидуальных потребностей пациентов.</span>
+    </li>
+  </ul>
+
+  <div class="relative w-full h-[400px] rounded-3xl overflow-hidden my-12 border border-white/10 shadow-2xl">
+    <img src="/assets/image/expertise/Shares Urology Insights 3.webp" alt="Стремление к совершенству" class="w-full h-full object-cover" />
+  </div>
+
+  <h3 class="text-xl font-black text-white uppercase mt-12 mb-4">Стремление к совершенству</h3>
+  <p>
+    Участие доктора Нити Наванимиткул в таком престижном форуме укрепляет его позицию идейного лидера в этой области. Его опыт в области лечения после выписки и приверженность ориентированному на пациента уходу продолжают повышать стандарты урологической практики во всем медицинском сообществе Таиланда.
+  </p>
+  <p>
+    Интегрируя инновационные методы с глубоким пониманием потребностей пациентов, доктор Нити Наванимиткул остается в авангарде развития урологического здоровья и обеспечения наилучших возможных результатов для каждого пациента, которого он лечит.
   </p>
 </div>
 `
