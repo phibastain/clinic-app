@@ -1333,8 +1333,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
   'ReZum': {
     title: 'ReZŪM Water Vapor Therapy for BPH',
     titleAR: 'علاج تضخم البروستاتا بتقنية بخار الماء (ReZŪM)',
+    titleRU: 'Водно-паровая терапия ReZŪM при ДГПЖ',
     tagline: 'Minimally Invasive BPH Treatment Relieve Enlarged Prostate Symptoms Without Surgery Using Steam Therapy.',
     taglineAR: 'علاج طفيف التوغل لتضخم البروستاتا: تخفيف الأعراض دون جراحة باستخدام العلاج بالبخار.',
+    taglineRU: 'Минимально инвазивное лечение ДГПЖ. Облегчите симптомы увеличенной простаты без операции с помощью терапии паром.',
     whatIsIt: {
       title: 'What is ReZŪM Water Vapor Therapy?',
       description: "ReZŪM Water Vapor Therapy is a minimally invasive, FDA-cleared procedure that uses the natural thermal energy of sterile water vapor (steam) to treat Benign Prostatic Hyperplasia (BPH). By targeting and shrinking the obstructive prostate tissue that causes urinary symptoms, ReZŪM provides lasting relief without the risks and long recovery associated with traditional prostate surgery.",
@@ -1344,8 +1346,13 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       title: 'ما هو العلاج بتقنية بخار الماء ReZŪM؟',
       description: 'علاج ReZŪM هو إجراء طفيف التوغل معتمد من إدارة الغذاء والدواء الأمريكية (FDA)، يستخدم الطاقة الحرارية الطبيعية لبخار الماء المعقم لعلاج تضخم البروستاتا الحميد (BPH). من خلال استهداف وتقليص أنسجة البروستاتا المسدودة التي تسبب أعراضاً بولية، يوفر ReZŪM راحة دائمة دون المخاطر وفترة التعافي الطويلة المرتبطة بجراحة البروستاتا التقليدية.',
     },
+    whatIsItRU: {
+      title: 'Что такое водно-паровая терапия ReZŪM?',
+      description: 'Водно-паровая терапия ReZŪM — это минимально инвазивная, одобренная FDA процедура, в которой используется естественная тепловая энергия стерильного водяного пара для лечения доброкачественной гиперплазии предстательной железы (ДГПЖ). Воздействуя на ткань предстательной железы, вызывающую обструкцию мочевыводящих путей, и уменьшая ее, ReZŪM обеспечивает длительное облегчение без рисков и длительного восстановления, связанных с традиционной хирургией предстательной железы.',
+    },
     description: "ReZŪM treats the enlarged prostate tissue using a precise delivery of thermal energy. The process is quick, effective, and preserves surrounding healthy tissue.\n\n**The Clinical Mechanism of Action:**\n\n1. **Quick Steam Delivery:** Sterile water vapor is injected directly into the prostate for just 9 seconds per treatment.\n\n2. **Targeted Tissue Removal:** The steam releases heat that instantly destroys the excess prostate tissue blocking the urethra, while safely preserving sexual function.\n\n3. **Natural Healing:** Over the next few weeks, your body naturally absorbs and clears away the treated tissue.\n\n4. **Fast BPH Relief:** As the prostate shrinks, the urethra opens up, significantly improving urinary flow and relieving bothersome urinary symptoms.",
     descriptionAR: 'يعالج ReZŪM أنسجة البروستاتا المتضخمة باستخدام توصيل دقيق للطاقة الحرارية. العملية سريعة وفعالة وتحافظ على الأنسجة السليمة المحيطة.\n\n**الآلية السريرية للعمل:**\n\n1. **توصيل البخار السريع:** يُحقن بخار الماء المعقم مباشرة في البروستاتا لمدة 9 ثوانٍ فقط لكل جرعة.\n\n2. **إزالة الأنسجة المستهدفة:** يُطلق البخار حرارة تقضي فوراً على أنسجة البروستاتا الزائدة التي تسد مجرى البول، مع الحفاظ الآمن على الوظيفة الجنسية.\n\n3. **الشفاء الطبيعي:** على مدى الأسابيع القليلة التالية، يمتص جسمك ويتخلص من الأنسجة الميتة بشكل طبيعي.\n\n4. **تخفيف سريع للأعراض:** مع تقلص حجم البروستاتا، ينفتح مجرى البول، مما يحسن تدفق البول بشكل كبير ويخفف الأعراض البولية المزعجة.',
+    descriptionRU: 'ReZŪM лечит увеличенную ткань простаты с помощью точной подачи тепловой энергии. Процесс быстрый, эффективный и сохраняет окружающие здоровые ткани.\n\n**Клинический механизм действия:**\n\n1. **Быстрая подача пара:** Стерильный водяной пар вводится непосредственно в простату всего на 9 секунд за одну процедуру.\n\n2. **Целенаправленное удаление тканей:** Пар выделяет тепло, которое мгновенно разрушает лишнюю ткань предстательной железы, блокирующую уретру, при этом безопасно сохраняя сексуальную функцию.\n\n3. **Естественное заживление:** В течение следующих нескольких недель ваше тело естественным образом поглощает и очищает обработанную ткань.\n\n4. **Быстрое облегчение ДГПЖ:** По мере того как простата сокращается, уретра открывается, что значительно улучшает отток мочи и облегчает неприятные симптомы со стороны мочевыводящих путей.',
     heroImage: '/assets/image/services section/rezum/rezum hero.webp',
     descriptionImage: '/assets/image/services section/rezum/rezum clinical mechanism.webp',
     video: { id: 'w3lctJx4D2w', title: 'ReZŪM Water Vapor Therapy Explained' },
@@ -1361,11 +1368,23 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: 'التعافي' },
       { label: 'مدة النتائج' }
     ],
+    statsRU: [
+      { label: 'Процент успеха' },
+      { label: 'Время процедуры' },
+      { label: 'Восстановление' },
+      { label: 'Длительность эффекта' }
+    ],
     benefits: [
       { title: 'Preserves Function', desc: 'No risk of erectile dysfunction or retrograde ejaculation.', icon: HeartPulse },
       { title: 'Rapid Relief', desc: 'Symptom improvement within 2 weeks, peak benefits at 3 months.', icon: Timer },
       { title: 'Maximum Comfort', desc: 'Performed under general anesthesia or deep sedation. Patients experience zero discomfort.', icon: ShieldCheck },
       { title: 'Durable Results', desc: 'Clinical data shows sustained results for 5+ years.', icon: Calendar }
+    ],
+    benefitsRU: [
+      { title: 'Сохраняет функцию', desc: 'Отсутствие риска эректильной дисфункции или ретроградной эякуляции.' },
+      { title: 'Быстрое облегчение', desc: 'Улучшение симптомов в течение 2 недель, максимальный эффект через 3 месяца.' },
+      { title: 'Максимальный комфорт', desc: 'Проводится под общим наркозом или глубокой седацией. Пациенты не испытывают никакого дискомфорта.' },
+      { title: 'Долговечные результаты', desc: 'Клинические данные показывают устойчивые результаты более 5 лет.' }
     ],
     candidates: [
       "Men with moderate to severe BPH symptoms (frequent urination, weak stream).",
@@ -1379,6 +1398,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       'المرضى الذين لا يرغبون في تناول أدوية البروستاتا اليومية.',
       'الرجال الذين يضعون الحفاظ على الوظيفة الجنسية كأولوية.'
     ],
+    candidatesRU: [
+      'Мужчины с умеренными и тяжелыми симптомами ДГПЖ (частое мочеиспускание, слабая струя).',
+      'Объем простаты 30-80 куб. см.',
+      'Пациенты, не желающие ежедневно принимать лекарства от ДГПЖ.',
+      'Мужчины, отдающие приоритет сохранению сексуальной функции.'
+    ],
     safety: {
       title: "Safety & Side Effects",
       content: "ReZŪM has an excellent safety profile and is FDA-cleared. Temporary side effects may include dysuria (discomfort during urination), traces of blood in the urine, or increased urgency for 1–2 weeks after the procedure. These typically resolve on their own. Importantly, ReZŪM preserves both erectile and ejaculatory function in the vast majority of patients.",
@@ -1387,6 +1412,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     safetyAR: {
       title: 'السلامة والآثار الجانبية',
       content: 'يتمتع علاج ReZŪM بسجل أمان ممتاز ومصرح به من قبل الـ FDA. قد تشمل الآثار الجانبية المؤقتة عسر التبول (انزعاج أثناء التبول)، آثار دم في البول، أو زيادة الإلحاح لمدة 1-2 أسبوع بعد الإجراء. وتختفي هذه الأعراض عادةً من تلقاء نفسها. والأهم من ذلك، يحافظ ReZŪM على وظيفة الانتصاب والقذف في الغالبية العظمى من المرضى.',
+    },
+    safetyRU: {
+      title: 'Безопасность и побочные эффекты',
+      content: 'ReZŪM имеет отличный профиль безопасности и одобрен FDA. Временные побочные эффекты могут включать дизурию (дискомфорт при мочеиспускании), следы крови в моче или учащенные позывы в течение 1–2 недель после процедуры. Обычно они проходят самостоятельно. Важно отметить, что ReZŪM сохраняет как эректильную, так и эякуляторную функцию у подавляющего большинства пациентов.'
     },
     timeline: {
       title: "Recovery Timeline",
@@ -1404,6 +1433,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: 'الشهر 3+', title: 'أفضل النتائج', desc: 'يتم الوصول إلى أقصى فائدة. راحة مستمرة تدوم لسنوات.' }
       ]
     },
+    timelineRU: {
+      title: 'График восстановления',
+      steps: [
+        { time: 'День 1-14', title: 'Реабсорбция тканей', desc: 'Мертвые ткани рассасываются. Могут возникнуть временные симптомы мочеиспускания.' },
+        { time: 'Неделя 2-4', title: 'Улучшение симптомов', desc: 'Отток мочи начинает улучшаться. Частота снижается.' },
+        { time: 'Месяц 3+', title: 'Пиковые результаты', desc: 'Достигнут максимальный эффект. Устойчивое облегчение на долгие годы.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Anesthesia', desc: 'General anesthesia or deep sedation is administered to ensure complete patient comfort. The patient remains asleep throughout the procedure.' },
       { step: '02', title: 'Vapor Delivery', desc: 'Thin device inserted through urethra. Sterile steam injected into prostate.' },
@@ -1416,6 +1453,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '03', title: 'إتلاف الخلايا', desc: 'تعمل طاقة البخار على تفكيك الخلايا التي يمتصها الجسم بشكل طبيعي.' },
       { step: '04', title: 'الخروج', desc: 'انتهاء الإجراء. قد يُركب قسطرة مؤقتة ويمكن العودة للمنزل في نفس اليوم.' }
     ],
+    procedureRU: [
+      { step: '01', title: 'Анестезия', desc: 'Применяется общая анестезия или глубокая седация, чтобы обеспечить полный комфорт пациента. Во время процедуры пациент спит.' },
+      { step: '02', title: 'Подача пара', desc: 'Через уретру вводится тонкое устройство. Стерильный пар подается в простату.' },
+      { step: '03', title: 'Разрушение клеток', desc: 'Энергия пара разрушает клетки, которые со временем естественным образом рассасываются.' },
+      { step: '04', title: 'Выписка', desc: 'Окончание процедуры. Может быть временно установлен катетер. Выписка домой в тот же день.' }
+    ],
     faq: [
       { q: "Is the ReZŪM procedure painful?", a: "No. The procedure is performed under general anesthesia or deep sedation, so you will be asleep throughout and feel no discomfort at all." },
       { q: "Will ReZŪM affect my sexual function?", a: "ReZŪM preserves both erectile function and normal ejaculation in the vast majority of patients — a key advantage over traditional prostate surgery (TURP)." },
@@ -1425,6 +1468,11 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { q: 'هل إجراء ReZŪM مؤلم؟', a: 'لا. يتم الإجراء تحت التخدير العام أو التسكين العميق، لذلك ستكون نائماً طوال الوقت ولن تشعر بأي ألم.' },
       { q: 'هل سيؤثر ReZŪM على وظيفتي الجنسية؟', a: 'يحافظ ReZŪM على وظيفة الانتصاب والقذف الطبيعي لدى الغالبية العظمى من المرضى — وهي ميزة رئيسية مقارنة بجراحات البروستاتا التقليدية.' },
       { q: 'كم تدوم نتائج إجراء ReZŪM؟', a: 'تُظهر الدراسات السريرية تحسناً مستمراً في الأعراض لمدة تصل إلى 5 سنوات على الأقل، ويشعر العديد من المرضى بالتحسن الجيد لفترة أطول.' }
+    ],
+    faqRU: [
+      { q: 'Процедура ReZŪM болезненна?', a: 'Нет. Процедура проводится под общим наркозом или глубокой седацией, поэтому вы будете спать на протяжении всего процесса и не почувствуете никакого дискомфорта.' },
+      { q: 'Повлияет ли ReZŪM на мою сексуальную функцию?', a: 'ReZŪM сохраняет как эректильную функцию, так и нормальную эякуляцию у подавляющего большинства пациентов — это ключевое преимущество перед традиционной операцией на предстательной железе (ТУРП).' },
+      { q: 'Как долго длятся результаты ReZŪM?', a: 'Клинические исследования демонстрируют устойчивое облегчение симптомов в течение как минимум 5 лет, причем многие пациенты испытывают преимущества далеко за пределами этого срока.' }
     ]
   },
   'UroLift': {
