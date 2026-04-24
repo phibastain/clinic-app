@@ -81,7 +81,7 @@ export default function EventDetailClient({ event, relatedEvents }: EventDetailC
                         <div className="lg:col-span-2 space-y-8">
                             <div className="bg-linear-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-2xl">
                                 <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">{t('About This Event')}</h2>
-                                {event.content || (lang !== 'EN' && (event.contentTH || event.contentAR)) ? (
+                                {event.content || (lang !== 'EN' && (event.contentTH || event.contentAR || event.contentRU)) ? (
                                     <div 
                                         className="prose prose-lg prose-invert max-w-none text-slate-100 font-medium" 
                                         dangerouslySetInnerHTML={{ __html: sanitizeHtmlContent(getLocalizedField(event, 'content', lang, t) || '') }} 

@@ -24,11 +24,12 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
     const awaitedParams = await searchParams;
     const isThai = awaitedParams?.lang === 'th';
     const isAr = awaitedParams?.lang === 'ar';
+    const isRu = awaitedParams?.lang === 'ru';
     const basePath = `/events/${slug}`;
-    const url = isAr ? `${basePath}?lang=ar` : isThai ? `${basePath}?lang=th` : basePath;
+    const url = isRu ? `${basePath}?lang=ru` : isAr ? `${basePath}?lang=ar` : isThai ? `${basePath}?lang=th` : basePath;
 
-    const title = isAr && event.titleAR ? event.titleAR : event.title;
-    const description = isAr && event.descriptionAR ? event.descriptionAR : event.description;
+    const title = isRu && event.titleRU ? event.titleRU : isAr && event.titleAR ? event.titleAR : event.title;
+    const description = isRu && event.descriptionRU ? event.descriptionRU : isAr && event.descriptionAR ? event.descriptionAR : event.description;
 
     return {
         title: `${title} | M-Trust Urology Clinic`,
@@ -37,7 +38,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
             title,
             description,
             images: [{ url: event.image }],
-            locale: isAr ? 'ar_SA' : isThai ? 'th_TH' : 'en_US',
+            locale: isRu ? 'ru_RU' : isAr ? 'ar_SA' : isThai ? 'th_TH' : 'en_US',
         },
         twitter: {
             card: 'summary_large_image',
@@ -51,6 +52,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
                 'en': basePath,
                 'th': `${basePath}?lang=th`,
                 'ar': `${basePath}?lang=ar`,
+                'ru': `${basePath}?lang=ru`,
             },
         },
     };
@@ -64,9 +66,10 @@ export default async function EventDetailPage({ params, searchParams }: Props) {
 
     const awaitedParams = await searchParams;
     const isAr = awaitedParams?.lang === 'ar';
+    const isRu = awaitedParams?.lang === 'ru';
 
-    const jsonLdTitle = isAr && event.titleAR ? event.titleAR : event.title;
-    const jsonLdDesc = isAr && event.descriptionAR ? event.descriptionAR : event.description;
+    const jsonLdTitle = isRu && event.titleRU ? event.titleRU : isAr && event.titleAR ? event.titleAR : event.title;
+    const jsonLdDesc = isRu && event.descriptionRU ? event.descriptionRU : isAr && event.descriptionAR ? event.descriptionAR : event.description;
 
     return (
         <>

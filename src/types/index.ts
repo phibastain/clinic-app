@@ -20,13 +20,16 @@ export interface IEvent {
   title: string;
   titleTH?: string;
   titleAR?: string;
+  titleRU?: string;
   subtitle?: string;
   subtitleTH?: string;
   subtitleAR?: string;
+  subtitleRU?: string;
   excerpt?: string;
   description?: string;
   descriptionTH?: string;
   descriptionAR?: string;
+  descriptionRU?: string;
   date?: string;
   time?: string;
   day?: string;
@@ -36,6 +39,7 @@ export interface IEvent {
   content?: string;
   contentTH?: string;
   contentAR?: string;
+  contentRU?: string;
 }
 
 export interface IService {

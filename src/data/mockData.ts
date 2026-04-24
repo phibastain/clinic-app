@@ -307,21 +307,27 @@ export interface EventData {
   title: string;
   titleTH?: string;
   titleAR?: string;
+  titleRU?: string;
   subtitle: string;
   subtitleTH?: string;
   subtitleAR?: string;
+  subtitleRU?: string;
   location: string;
   locationTH?: string;
   locationAR?: string;
+  locationRU?: string;
   time: string;
   description: string;
   descriptionTH?: string;
   descriptionAR?: string;
+  descriptionRU?: string;
   content?: string;
   contentTH?: string;
   contentAR?: string;
+  contentRU?: string;
   excerpt?: string;
   excerptAR?: string;
+  excerptRU?: string;
   image: string;
   category: string;
   slug?: string;
@@ -6658,12 +6664,20 @@ export const EVENTS_DATA: EventData[] = [
     year: '2026',
     title: "Rezum Academic Exchange",
     titleTH: "การแลกเปลี่ยนวิชาการ Rezum",
+    titleAR: "التبادل الأكاديمي لعلاج ريزوم (Rezum)",
+    titleRU: "Академический обмен по Rezum",
     subtitle: "Advancing BPH Treatment: ReZum Water Vapor Therapy Academic Exchange at Siriraj Hospital",
     subtitleTH: "ก้าวหน้าในการรักษา BPH: การแลกเปลี่ยนวิชาการ ReZum Water Vapor Therapy ณ โรงพยาบาลศิริราช",
+    subtitleAR: "تطوير علاج تضخم البروستاتا الحميد (BPH): التبادل الأكاديمي لعلاج ReZum باستخدام بخار الماء في مستشفى سيريراج",
+    subtitleRU: "Развитие лечения ДГПЖ: Академический обмен по водно-паровой терапии ReZum в больнице Сирирадж",
     description: "Today, we were honored to participate in the prestigious ‘ReZum Exchange Event’ at Siriraj Hospital. This high-level academic exchange brought together distinguished urologists from Singapore and Thailand...",
     descriptionTH: "วันนี้ พวกเราได้รับเกียรติเข้าร่วมงาน ‘ReZum Exchange Event’ ณ โรงพยาบาลศิริราช เพื่อร่วมแลกเปลี่ยนความรู้ทางวิชาการและประสบการณ์ทางคลินิกกับทีม ศัลยแพทย์ทางเดินปัสสาวะ (Urologists) ชั้นนำจากประเทศสิงคโปร์ทั้ง 7 ท่าน นำโดย:\n\nAssist. Prof. Varat Woranisarakul\nDr. Chua Wei Jin\n\nการประชุมในครั้งนี้มุ่งเน้นไปที่การพัฒนาทักษะและความเชี่ยวชาญด้านการศัลยกรรมด้วยเทคโนโลยี Water Vapor Therapy (Rezūm) หรือ การรักษาโรคต่อมลูกหมากโตด้วยไอน้ำ ซึ่งเป็นนวัตกรรมการรักษาแบบ Minimally Invasive (แผลเล็ก/ไม่ต้องผ่าตัดใหญ่) เพื่อผลลัพธ์การรักษาที่มีประสิทธิภาพและปลอดภัยยิ่งขึ้นสำหรับคนไข้\n\nนอกจากนี้ เราขอขอบพระคุณ Boston Scientific เป็นอย่างสูงที่เป็นหัวเรี่ยวหัวแรงสำคัญในการจัดฟอรัมการศึกษาที่มีคุณค่าในครั้งนี้ เพื่อผลักดันนวัตกรรมการแพทย์และการดูแลรักษาผู้ป่วยในระดับสากล",
+    descriptionAR: "اليوم، تشرفنا بالمشاركة في 'حدث التبادل حول ReZum' المرموق في مستشفى سيريراج. جمع هذا التبادل الأكاديمي رفيع المستوى أطباء مسالك بولية متميزين من سنغافورة وتايلاند...",
+    descriptionRU: "Сегодня мы имели честь участвовать в престижном «Мероприятии по обмену опытом ReZum» в больнице Сирирадж. Этот академический обмен высокого уровня собрал выдающихся урологов из Сингапура и Таиланда...",
     location: "Bangkok Hospital Pattaya, Meeting Room 1",
     locationTH: "โรงพยาบาลกรุงเทพพัทยา ห้องประชุม 1",
+    locationAR: "مستشفى بانكوك باتايا، غرفة الاجتماعات 1",
+    locationRU: "Больница Бангкок Паттайя, конференц-зал 1",
     time: "13:00 - 16:30",
     image: "/assets/image/expertise/Rezum Academic Exchange.webp",
     category: "SEMINAR",
@@ -6737,11 +6751,9 @@ export const EVENTS_DATA: EventData[] = [
         </p>
       </div>
     `,
-      titleAR: "التبادل الأكاديمي لعلاج ريزوم (Rezum)",
-      subtitleAR: "تطوير علاج تضخم البروستاتا الحميد (BPH): التبادل الأكاديمي لعلاج ReZum باستخدام بخار الماء في مستشفى سيريراج",
-      locationAR: "مستشفى بانكوك باتايا، غرفة الاجتماعات 1",
-      descriptionAR: "اليوم، تشرفنا بالمشاركة في 'حدث التبادل حول ReZum' المرموق في مستشفى سيريراج. جمع هذا التبادل الأكاديمي رفيع المستوى أطباء مسالك بولية متميزين من سنغافورة وتايلاند...",
+
       excerptAR: "حدث التبادل الأكاديمي المرموق لعلاج ReZum في مستشفى سيريراج بمشاركة خبراء من سنغافورة وتايلاند.",
+      excerptRU: "Престижное мероприятие по академическому обмену по ReZum в больнице Сирирадж с участием экспертов из Сингапура и Таиланда.",
       contentAR: `
       <div class="space-y-8">
         <div class="flex flex-col gap-6 my-8">
@@ -6776,6 +6788,43 @@ export const EVENTS_DATA: EventData[] = [
 
         <p class="text-lg leading-relaxed text-slate-300">
           خالص تقديرنا لشركة بوسطن ساينتيفيك (Boston Scientific) لمبادرتها الرائعة في تنظيم هذا المنتدى التعليمي القيم وتعزيز التميز الطبي الدولي.
+        </p>
+      </div>
+      `,
+      contentRU: `
+      <div class="space-y-8">
+        <div class="flex flex-col gap-6 my-8">
+          <div class="rounded-2xl overflow-hidden shadow-2xl border border-white/10 w-full">
+            <img src="/assets/image/expertise/Rezum Academic Exchange.webp" alt="Rezum Academic Exchange" class="w-full h-auto object-cover" />
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-2xl border border-white/10 w-full">
+            <img src="/assets/image/expertise/Rezum Academic Exchange 2.webp" alt="Rezum Academic Exchange 2" class="w-full h-auto object-cover" />
+          </div>
+        </div>
+
+        <p class="text-lg leading-relaxed text-slate-300">
+          Сегодня мы имели честь участвовать в престижном «Мероприятии по обмену опытом ReZum» в больнице Сирирадж. Этот академический обмен высокого уровня собрал выдающихся урологов из Сингапура и Таиланда для обсуждения последних достижений в области водно-паровой терапии (Rezūm) для лечения увеличения предстательной железы.
+        </p>
+
+        <p class="text-lg leading-relaxed text-slate-300">
+          Для нас было честью участвовать в весьма продуктивном клиническом диалоге с семью ведущими экспертами, среди которых:
+        </p>
+        
+        <div class="font-bold text-white text-xl space-y-2">
+          <p>Доцент Варат Воранисаракул (Assist. Prof. Varat Woranisarakul)</p>
+          <p>Доктор Чуа Вэй Цзинь (Dr. Chua Wei Jin)</p>
+        </div>
+
+        <p class="text-lg leading-relaxed text-slate-300">
+          Заседание было посвящено повышению хирургического мастерства и обмену инновационными подходами к минимально инвазивному лечению для улучшения результатов пациентов. Подобные совместные форумы необходимы для расширения границ урологической помощи и медицинских инноваций.
+        </p>
+
+        <div class="rounded-3xl overflow-hidden my-10 shadow-2xl border border-white/10">
+          <img src="/assets/image/expertise/Rezum Academic Exchange 3.webp" alt="Rezum Academic Exchange 3" class="w-full h-full object-cover" />
+        </div>
+
+        <p class="text-lg leading-relaxed text-slate-300">
+          Мы выражаем глубочайшую признательность компании Boston Scientific за ее выдающуюся инициативу в организации этого ценного образовательного форума и содействии международному медицинскому совершенству.
         </p>
       </div>
       `
