@@ -62,6 +62,8 @@ export default function BlogDetailClient({ post, relatedPosts }: BlogDetailClien
                                                  ? (post.contentAR || 
                                                     (getBlogTHContentKey(post.title) ? t(getBlogTHContentKey(post.title)!) : '') || 
                                                     post.content || '')
+                                                 : lang === 'RU'
+                                                    ? (post.contentRU || post.content || '')
                                                  : lang === 'TH' 
                                                     ? (post.contentTH || 
                                                        (getBlogTHContentKey(post.title) ? t(getBlogTHContentKey(post.title)!) : '') || 
