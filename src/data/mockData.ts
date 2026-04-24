@@ -1942,10 +1942,13 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
   'Stone Disease': {
     title: 'Kidney & Bladder Stone Treatment (Laser Lithotripsy)',
     titleAR: 'علاج حصوات الكلى والمثانة (تفتيت الحصى بالليزر)',
+    titleRU: 'Лечение камней в почках и мочевом пузыре (лазерная литотрипсия)',
     tagline: 'Advanced Holmium Laser Lithotripsy Minimally Invasive Kidney and Bladder Stone Removal Without Open Surgery.',
     taglineAR: 'تفتيت حصى الكلى والمثانة بالليزر هولميوم المتقدم والتدخل الجراحي الطفيف بدون جراحة مفتوحة.',
+    taglineRU: 'Усовершенствованная гольмиевая лазерная литотрипсия Минимально инвазивное удаление камней из почек и мочевого пузыря без открытой хирургии.',
     description: "Modern laser lithotripsy uses advanced Holmium lasers to fragment kidney and bladder stones into fine dust, which is then extracted or passed naturally. This minimally invasive approach eliminates the need for open surgery, offering rapid recovery and excellent success rates.",
     descriptionAR: 'يستخدم تفتيت الحصى بالليزر الحديث أشعة ليزر هولميوم المتقدمة لتفتيت حصوات الكلى والمثانة إلى غبار ناعم، يتم استخراجه أو خروجه بشكل طبيعي. تقضي هذه الطريقة طفيفة التوغل على الحاجة إلى الجراحة المفتوحة، مما يوفر تعافياً سريعاً ومعدلات نجاح ممتازة.',
+    descriptionRU: 'Современная лазерная литотрипсия использует передовые гольмиевые лазеры для дробления камней в почках и мочевом пузыре в мелкую пыль, которая затем извлекается или выходит естественным путем. Этот минимально инвазивный подход устраняет необходимость в открытой операции, обеспечивая быстрое восстановление и отличные показатели успеха.',
     heroImage: '/assets/image/services section/stone disease menu.webp',
     whatIsIt: {
       title: 'What is Laser Lithotripsy for Stone Disease?',
@@ -1955,6 +1958,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     whatIsItAR: {
       title: 'ما هو تفتيت الحصى بالليزر؟',
       description: 'تفتيت الحصى بالليزر هو إجراء جراحي طفيف التوغل يستخدم لعلاج حصوات الكلى أو الحالب أو المثانة. باستخدام منظار رفيع ومرن (منظار الحالب) يتم إمراره عبر الفتحات الطبيعية للجسم، يستخدم طبيب المسالك البولية ليزر هولميوم لتكسير الحصوات إلى شظايا صغيرة أو غبار ناعم، كل ذلك دون إجراء شق واحد.'
+    },
+    whatIsItRU: {
+      title: 'Что такое лазерная литотрипсия при мочекаменной болезни?',
+      description: 'Лазерная литотрипсия — это минимально инвазивная хирургическая процедура, используемая для лечения камней в почках, мочеточнике или мочевом пузыре. Используя тонкий гибкий эндоскоп (уретероскоп), вводимый через естественные отверстия тела, уролог использует гольмиевый лазер, чтобы разбить камни на мельчайшие фрагменты или мелкую пыль, не делая ни одного разреза.'
     },
     video: null,
     stats: [
@@ -1969,11 +1976,23 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: 'البقاء في المستشفى' },
       { label: 'التعافي' }
     ],
+    statsRU: [
+      { label: 'Успешность' },
+      { label: 'Время операции' },
+      { label: 'Пребывание в больнице' },
+      { label: 'Восстановление' }
+    ],
     benefits: [
       { title: 'Minimally Invasive', desc: 'No incisions. Performed through natural urinary passages.', icon: Target },
       { title: 'High Success', desc: '95%+ stone-free rate for stones up to 2cm.', icon: Trophy },
       { title: 'Same-Day Discharge', desc: 'Most patients go home within hours of procedure.', icon: Timer },
       { title: 'Precise Fragmentation', desc: 'Laser pulverizes stones into powder for easy elimination.', icon: Zap }
+    ],
+    benefitsRU: [
+      { title: 'Минимально инвазивно', desc: 'Никаких разрезов. Выполняется через естественные мочевыводящие пути.' },
+      { title: 'Высокая успешность', desc: 'Уровень избавления от камней 95%+ для камней до 2 см.' },
+      { title: 'Выписка в тот же день', desc: 'Большинство пациентов отправляются домой через несколько часов после процедуры.' },
+      { title: 'Точное дробление', desc: 'Лазер превращает камни в порошок для легкого выведения.' }
     ],
     candidates: [
       "Patients with kidney or ureteral stones >5mm.",
@@ -1987,6 +2006,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       'الأفراد المصابون بحصوات لا تنزل بشكل طبيعي.',
       'المرضى الذين يفضلون العلاج طفيف التوغل بدلاً من الجراحة المفتوحة.'
     ],
+    candidatesRU: [
+      'Пациенты с камнями в почках или мочеточниках >5 мм.',
+      'Лица, испытывающие сильную боль, инфекцию или обструкцию.',
+      'Люди с камнями, которые не выходят естественным путем.',
+      'Пациенты, предпочитающие минимально инвазивное лечение открытой операции.'
+    ],
     safety: {
       title: "Safety & Complications",
       content: "Laser lithotripsy has an excellent safety profile when performed by an experienced urologist. Minor risks include temporary hematuria (blood in urine), urinary urgency, or mild flank discomfort for a few days. Serious complications such as perforation or stricture are rare, occurring in fewer than 2% of cases.",
@@ -1995,6 +2020,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     safetyAR: {
       title: 'السلامة والمضاعفات المحتملة',
       content: 'يتمتع تفتيت الحصى بالليزر بسجل أمان ممتاز عند إجرائه بواسطة طبيب مسالك بولية متمرس. قد تشمل المخاطر البسيطة بول دموي مؤقت (دم في البول)، إلحاح بولي، أو انزعاج خفيف في الجانب لبضعة أيام. المضاعفات الخطيرة مثل الثقب أو التضيق نادرة جداً.',
+    },
+    safetyRU: {
+      title: 'Безопасность и возможные осложнения',
+      content: 'Лазерная литотрипсия имеет отличный профиль безопасности, когда выполняется опытным урологом. Незначительные риски включают временную гематурию (кровь в моче), позывы к мочеиспусканию или легкий дискомфорт в боку в течение нескольких дней. Серьезные осложнения, такие как перфорация или стриктура, редки и возникают менее чем в 2% случаев.'
     },
     procedure: [
       { step: '01', title: 'Anesthesia', desc: 'General or spinal anesthesia. Patient asleep or numb from waist down.' },
@@ -2007,6 +2036,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '02', title: 'تنظير الحالب', desc: 'إدخال منظار مرن عبر مجرى البول والمثانة وصولاً إلى مكان الحصوة.' },
       { step: '03', title: 'تفتيت الحصى', desc: 'يقوم ليزر هولميوم بتكسير الحصوة إلى فتات ناعم يتم استخراجه أو يُترك لينزل مع البول.' },
       { step: '04', title: 'تركيب الدعامة', desc: 'قد يتم وضع دعامة حالبية مؤقتة للمساعدة في الشفاء، وتُزال خلال أسبوع إلى أسبوعين.' }
+    ],
+    procedureRU: [
+      { step: '01', title: 'Анестезия', desc: 'Общая или спинальная анестезия. Пациент спит или не чувствует ничего ниже пояса.' },
+      { step: '02', title: 'Уретероскопия', desc: 'Гибкий эндоскоп вводится через уретру, мочевой пузырь и вверх по мочеточнику к камню.' },
+      { step: '03', title: 'Лазерное дробление', desc: 'Гольмиевый лазер разбивает камень на мелкие фрагменты. Кусочки извлекаются или оставляются для самостоятельного выхода.' },
+      { step: '04', title: 'Установка стента', desc: 'Для помощи в заживлении может быть установлен временный мочеточниковый стент. Удаляется через 1-2 недели.' }
     ],
     timeline: {
       title: "Recovery & Follow-up",
@@ -2024,6 +2059,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: 'الشهر 1', title: 'تأكيد النظافة', desc: 'تصوير للمتابعة لتأكيد خلو المسالك من الحصوات تماماً.' }
       ]
     },
+    timelineRU: {
+      title: 'Восстановление и наблюдение',
+      steps: [
+        { time: 'Неделя 1', title: 'Выход пыли', desc: 'Начальное восстановление. Мелкая каменная пыль может выходить с мочой. Легкий дискомфорт.' },
+        { time: 'Неделя 2', title: 'Удаление стента', desc: 'Временный стент удаляется во время визита в клинику. Немедленное облегчение.' },
+        { time: 'Месяц 1', title: 'Подтверждение очищения', desc: 'Контрольное сканирование для подтверждения отсутствия камней и обеспечения полного очищения.' }
+      ]
+    },
     faq: [
       { q: "Does laser lithotripsy require any incisions?", a: "No. The entire procedure is performed through the urethra using a thin scope. There are no external cuts or incisions." },
       { q: "Will I need a ureteral stent after the procedure?", a: "In many cases, yes. A temporary stent helps drainage and prevents swelling. It is removed during a brief office visit after 1–2 weeks." },
@@ -2033,6 +2076,11 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { q: 'هل يتطلب إجراء تفتيت الحصى بالليزر أي شقوق؟', a: 'لا، الإجراء يتم بالكامل عبر مجرى البول باستخدام منظار رفيع، ولا توجد أي شقوق أو جروح خارجية.' },
       { q: 'هل سأحتاج إلى دعامة حالبية بعد العملية؟', a: 'في كثير من الحالات، نعم. تساعد الدعامة المؤقتة في التصريف وتمنع التورم. وتتم إزالتها في زيارة سريعة للعيادة بعد 1-2 أسبوع.' },
       { q: 'هل يمكن علاج جميع حصوات الكلى بالليزر؟', a: 'يمكن علاج معظم حصوات الكلى والحالب بفعالية بالليزر. الحصوات الكبيرة جداً (أكثر من 3 سم) قد تتطلب نهجاً مختلفاً.' }
+    ],
+    faqRU: [
+      { q: 'Требует ли лазерная литотрипсия каких-либо разрезов?', a: 'Нет. Вся процедура выполняется через уретру с помощью тонкого эндоскопа. Никаких внешних разрезов или надрезов нет.' },
+      { q: 'Понадобится ли мне мочеточниковый стент после процедуры?', a: 'Во многих случаях да. Временный стент помогает оттоку и предотвращает отек. Его удаляют во время короткого визита в клинику через 1–2 недели.' },
+      { q: 'Все ли камни в почках можно лечить с помощью лазерной литотрипсии?', a: 'Большинство камней в почках и мочеточниках можно эффективно лечить лазером. Очень большие камни (более 3 см) могут потребовать другого подхода, такого как ЧНЛ (чрескожная нефролитотомия).' }
     ]
   },
   'Urinary Symptoms': {
