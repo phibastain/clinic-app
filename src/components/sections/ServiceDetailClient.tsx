@@ -51,42 +51,47 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
     if (!service) return null;
 
     const isAR = lang === 'AR';
+    const isRU = lang === 'RU';
 
-    // Helper: pick AR field if available, else fall back to EN
-    const ar = <T,>(en: T, arField: T | undefined): T =>
-        (isAR && arField !== undefined && arField !== null) ? arField : en;
+    // Helper: pick AR or RU field if available, else fall back to EN
+    const localized = <T,>(en: T, arField: T | undefined, ruField: T | undefined): T =>
+        (isAR && arField !== undefined && arField !== null) ? arField :
+        (isRU && ruField !== undefined && ruField !== null) ? ruField : en;
 
     // Core display fields
-    const sTitle       = ar(service.title,      service.titleAR);
-    const sTagline     = ar(service.tagline,     service.taglineAR);
-    const sDescription = ar(service.description, service.descriptionAR);
-    const sWhatIsItTitle = ar(service.whatIsIt?.title,       service.whatIsItAR?.title);
-    const sWhatIsItDesc  = ar(service.whatIsIt?.description, service.whatIsItAR?.description);
+    const sTitle       = localized(service.title,      service.titleAR,       service.titleRU);
+    const sTagline     = localized(service.tagline,     service.taglineAR,     service.taglineRU);
+    const sDescription = localized(service.description, service.descriptionAR, service.descriptionRU);
+    const sWhatIsItTitle = localized(service.whatIsIt?.title,       service.whatIsItAR?.title,       service.whatIsItRU?.title);
+    const sWhatIsItDesc  = localized(service.whatIsIt?.description, service.whatIsItAR?.description, service.whatIsItRU?.description);
 
     // Array fields
-    const sProcedure   = ar(service.procedure,  service.procedureAR)  ?? [];
-    const sFaq         = ar(service.faq,         service.faqAR)        ?? [];
-    const sCandidates  = ar(service.candidates,  service.candidatesAR) ?? [];
+    const sProcedure   = localized(service.procedure,  service.procedureAR,  service.procedureRU)  ?? [];
+    const sFaq         = localized(service.faq,         service.faqAR,         service.faqRU)        ?? [];
+    const sCandidates  = localized(service.candidates,  service.candidatesAR,  service.candidatesRU) ?? [];
 
     // Safety
-    const sSafetyTitle   = ar(service.safety?.title,   service.safetyAR?.title);
-    const sSafetyContent = ar(service.safety?.content, service.safetyAR?.content);
+    const sSafetyTitle   = localized(service.safety?.title,   service.safetyAR?.title,   service.safetyRU?.title);
+    const sSafetyContent = localized(service.safety?.content, service.safetyAR?.content, service.safetyRU?.content);
 
     // Stats: values stay as numbers; only labels translate
-    const getStatLabel = (idx: number) =>
-        (isAR && service.statsAR?.[idx]?.label) ? service.statsAR[idx].label : (service.stats?.[idx]?.label ?? '');
+    const getStatLabel = (idx: number) => {
+        if (isAR && service.statsAR?.[idx]?.label) return service.statsAR[idx].label;
+        if (isRU && service.statsRU?.[idx]?.label) return service.statsRU[idx].label;
+        return service.stats?.[idx]?.label ?? '';
+    };
 
     // Comparison
-    const comp    = (isAR && service.comparisonAR) ? service.comparisonAR : service.comparison;
+    const comp    = (isAR && service.comparisonAR) ? service.comparisonAR : (isRU && service.comparisonRU) ? service.comparisonRU : service.comparison;
     const compHeader0 = comp?.headers?.[0] ?? '';
     const compHeader1 = comp?.headers?.[1] ?? '';
 
     // Timeline
-    const tl = (isAR && service.timelineAR) ? service.timelineAR : service.timeline;
+    const tl = (isAR && service.timelineAR) ? service.timelineAR : (isRU && service.timelineRU) ? service.timelineRU : service.timeline;
 
     // STD / Lab Testing
-    const sTestPanels = ar(service.testPanels, service.testPanelsAR);
-    const sDiseaseTable = ar(service.diseaseTable, service.diseaseTableAR);
+    const sTestPanels = localized(service.testPanels, service.testPanelsAR, service.testPanelsRU);
+    const sDiseaseTable = localized(service.diseaseTable, service.diseaseTableAR, service.diseaseTableRU);
 
     return (
         <>

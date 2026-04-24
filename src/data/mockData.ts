@@ -73,20 +73,26 @@ export interface FaqItem {
 export interface ServiceDetailData {
   title: string;
   titleAR?: string;
+  titleRU?: string;
   tagline: string;
   taglineAR?: string;
+  taglineRU?: string;
   description: string;
   descriptionAR?: string;
+  descriptionRU?: string;
   heroImage: string;
   whatIsIt?: { title: string; description: string; image?: string };
   whatIsItAR?: { title: string; description: string };
+  whatIsItRU?: { title: string; description: string };
   mechanismImageAspectRatio?: string;
   descriptionImage?: string;
   video?: { id: string; title: string } | null;
   stats?: ServiceStat[];
   statsAR?: { label: string; value?: string }[];
+  statsRU?: { label: string; value?: string }[];
   benefits: ServiceBenefit[];
   benefitsAR?: { title: string; desc: string }[];
+  benefitsRU?: { title: string; desc: string }[];
   comparison?: ComparisonData;
   comparisonAR?: {
     title: string;
@@ -94,14 +100,24 @@ export interface ServiceDetailData {
     headers: [string, string];
     items: { feature: string; focus: string; radial: string }[];
   };
+  comparisonRU?: {
+    title: string;
+    subtitle: string;
+    headers: [string, string];
+    items: { feature: string; focus: string; radial: string }[];
+  };
   candidates?: string[];
   candidatesAR?: string[];
+  candidatesRU?: string[];
   safety?: { title: string; content: string; icon: LucideIcon };
   safetyAR?: { title: string; content: string };
+  safetyRU?: { title: string; content: string };
   timeline?: TimelineData;
   timelineAR?: { title: string; steps: { time: string; title: string; desc: string }[] };
+  timelineRU?: { title: string; steps: { time: string; title: string; desc: string }[] };
   testPanels?: { title: string; items: string[]; icon: LucideIcon }[];
   testPanelsAR?: { title: string; items: string[] }[];
+  testPanelsRU?: { title: string; items: string[] }[];
   diseaseTable?: {
     title: string;
     subtitle: string;
@@ -127,10 +143,23 @@ export interface ServiceDetailData {
       }[];
     }[];
   };
+  diseaseTableRU?: {
+    title: string;
+    subtitle: string;
+    categories: {
+      category: string;
+      diseases: {
+        name: string;
+        symptoms: string;
+      }[];
+    }[];
+  };
   procedure: ProcedureStep[];
   procedureAR?: { step: string; title: string; desc: string }[];
+  procedureRU?: { step: string; title: string; desc: string }[];
   faq: FaqItem[];
   faqAR?: { q: string; a: string }[];
+  faqRU?: { q: string; a: string }[];
   hidePricing?: boolean;
 }
 
@@ -343,8 +372,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
   'Focus Shockwave': {
     title: 'Focus Shockwave\n(Li-ESWT)',
     titleAR: 'موجات الصدمة المركزة\n(Li-ESWT)',
+    titleRU: 'Фокусированная ударно-волновая терапия\n(Li-ESWT)',
     tagline: 'The Future of ED Treatment: Regenerate, Restore, Perform.',
     taglineAR: 'مستقبل علاج ضعف الانتصاب: تجديد، استعادة، أداء.',
+    taglineRU: 'Будущее лечения ЭД: Регенерация, Восстановление, Уверенность.',
     whatIsIt: {
       title: 'What is Focus Shockwave (Li-ESWT)?',
       description: "Linear Focus Shockwave Therapy (Li-ESWT) is a revolutionary, non-invasive treatment for Erectile Dysfunction (ED). Unlike radial shockwaves that only reach the surface, **Linear Focus Shockwave** delivers high-frequency low-intensity acoustic waves deep into the penile tissue. This precise energy triggers a biological healing response, stimulating the growth of new blood vessels and rejuvenating existing ones without needles, surgery, or medication.",
@@ -354,8 +385,13 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       title: 'ما هي موجات الصدمة المركزة (Li-ESWT)؟',
       description: 'العلاج بالموجات الصوتية المركزة الخطية (Li-ESWT) هو علاج ثوري غير جراحي لضعف الانتصاب. خلافاً للموجات الشعاعية التي تصل فقط إلى السطح، تخترق موجات الصدمة المركزة الخطية الأنسجة العميقة للقضيب بموجات صوتية منخفضة الشدة وعالية التركيز. تُحفّز هذه الطاقة الدقيقة استجابةً شفائية بيولوجية تُحفّز نمو أوعية دموية جديدة وتجدد القائم منها، دون إبر أو جراحة أو دواء.',
     },
+    whatIsItRU: {
+      title: 'Что такое фокусированная ударно-волновая терапия (Li-ESWT)?',
+      description: 'Линейная фокусированная ударно-волновая терапия (Li-ESWT) — это революционный неинвазивный метод лечения эректильной дисфункции (ЭД). В отличие от радиальных ударных волн, которые достигают только поверхности, **линейная фокусированная ударно-волновая терапия** доставляет высокочастотные низкоинтенсивные акустические волны глубоко в ткани полового члена. Эта точная энергия запускает биологическую реакцию заживления, стимулируя рост новых кровеносных сосудов и омолаживая существующие без игл, хирургического вмешательства или медикаментов.',
+    },
     description: "Our FDA-cleared technology utilizes **Low-Intensity Extracorporeal Shockwave Therapy (Li-ESWT)** to target the root cause of ED: poor blood flow. \n\n**The Clinical Mechanism of Action:**\n\n1. **Angiogenesis (New Vessel Formation):** The acoustic waves create micro-trauma at the cellular level, stimulating the release of angiogenic growth factors (e.g., VEGF, eNOS, PCNA). This process leads to the formation of new, healthy blood vessels, significantly increasing blood supply to the erectile tissue.\n\n2. **Breakdown of Micro-Plaque:** The focused energy helps dissolve micro-calcifications in existing blood vessels, clearing blockages that restrict blood flow.\n\n3. **Tissue Regeneration:** Li-ESWT promotes the recruitment of endogenous stem cells and rejuvenates nerve tissue, enhancing penile sensitivity and overall function.\n\nThe result is a long-term restoration of natural erectile function, allowing for spontaneous erections and improved sexual performance.",
     descriptionAR: 'تستخدم تقنيتنا المعتمدة من FDA **العلاج بالموجات الصدمية خارج الجسم منخفضة الشدة (Li-ESWT)** لمعالجة السبب الجذري لضعف الانتصاب: ضعف تدفق الدم.\n\n**آلية العمل السريرية:**\n\n1. **تكوين أوعية دموية جديدة (Angiogenesis):** تُنشئ الموجات الصوتية صدمات دقيقة على المستوى الخلوي تُحفّز إفراز عوامل النمو الوعائية (VEGF، eNOS، PCNA). تُفضي هذه العملية إلى تكوين أوعية دموية جديدة وصحية، مما يزيد إمداد الدم للأنسجة الانتصابية بشكل ملحوظ.\n\n2. **تفتيت الرواسب الدقيقة:** تُساعد الطاقة المركزة في إذابة التكلسات الدقيقة داخل الأوعية الدموية، مما يزيل الانسدادات التي تُعيق تدفق الدم.\n\n3. **تجديد الأنسجة:** يُعزز Li-ESWT استقطاب الخلايا الجذعية الطبيعية ويجدد الأنسجة العصبية، مما يُحسّن حساسية القضيب والوظيفة الجنسية.\n\nالنتيجة: استعادة طويلة الأمد للوظيفة الانتصابية الطبيعية مع انتصابات تلقائية وأداء جنسي أفضل.',
+    descriptionRU: 'Наша технология, одобренная FDA, использует **низкоинтенсивную экстракорпоральную ударно-волновую терапию (Li-ESWT)** для устранения основной причины ЭД: плохого кровотока.\n\n**Клинический механизм действия:**\n\n1. **Ангиогенез (образование новых сосудов):** Акустические волны вызывают микротравмы на клеточном уровне, стимулируя высвобождение ангиогенных факторов роста (например, VEGF, eNOS, PCNA). Этот процесс приводит к образованию новых здоровых кровеносных сосудов, что значительно увеличивает кровоснабжение эректильной ткани.\n\n2. **Разрушение микро-бляшек:** Сфокусированная энергия помогает растворить микрокальцификаты в существующих кровеносных сосудах, устраняя закупорки, ограничивающие кровоток.\n\n3. **Регенерация тканей:** Li-ESWT способствует привлечению эндогенных стволовых клеток и омолаживает нервную ткань, повышая чувствительность полового члена и общую функцию.\n\nРезультатом является долгосрочное восстановление естественной эректильной функции, что обеспечивает спонтанную эрекцию и улучшение сексуальной активности.',
     heroImage: '/assets/image/services section/focus shockwave-p1/focus shockwave hero.webp',
     descriptionImage: '/assets/image/services section/focus shockwave-p1/focus shockwave clinical mechanism.webp',
     video: { id: 'JmU9Wz5UARA', title: 'Mechanism of Action: Li-ESWT' },
@@ -371,11 +407,23 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: 'فترة التعافي' },
       { label: 'مدة النتائج' },
     ],
+    statsRU: [
+      { label: 'Клинический успех' },
+      { label: 'Время сеанса' },
+      { label: 'Период восстановления' },
+      { label: 'Срок действия результата' },
+    ],
     benefits: [
       { title: 'Curative Approach', desc: 'Treats the root cause (blood flow), not just symptoms.', icon: Activity },
       { title: '100% Non-Invasive', desc: 'No needles, no surgery, no medication required.', icon: ShieldCheck },
       { title: 'Painless', desc: 'Pain-free treatment with no downtime. Lunch-break procedure.', icon: SmileIcon as any },
       { title: 'Long-Term Results', desc: 'Effects can last 2+ years with maintenance.', icon: InfinityIcon as any }
+    ],
+    benefitsRU: [
+      { title: 'Лечебный подход', desc: 'Лечит первопричину (кровоток), а не только симптомы.' },
+      { title: '100% Неинвазивно', desc: 'Никаких игл, операций или медикаментов.' },
+      { title: 'Безболезненно', desc: 'Процедура без боли и периода восстановления. Можно сделать в обеденный перерыв.' },
+      { title: 'Долгосрочные результаты', desc: 'Эффект может длиться более 2 лет при поддерживающей терапии.' }
     ],
     comparison: {
       title: "Why Focus Shockwave is Superior",
@@ -399,6 +447,17 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { feature: 'الفعالية لضعف الانتصاب', focus: 'المعيار الذهبي (علاجي)', radial: 'محدود / داعم فقط' },
       ],
     },
+    comparisonRU: {
+      title: 'Почему фокусированная ударно-волновая терапия лучше',
+      subtitle: 'Линейный фокус против традиционных радиальных волн',
+      headers: ['Li-ESWT (Фокус)', 'Радиальная волна'],
+      items: [
+        { feature: 'Распространение волны', focus: 'Направленное, глубокое проникновение', radial: 'Поверхностное, рассеивающееся' },
+        { feature: 'Плотность энергии', focus: 'Высокая и постоянная в цели', radial: 'Быстро рассеивается' },
+        { feature: 'Терапевтическая цель', focus: 'Ангиогенез (новые сосуды)', radial: 'Расслабление мышц / Боль' },
+        { feature: 'Эффективность при ЭД', focus: 'Золотой стандарт (лечебный)', radial: 'Ограниченная / только поддерживающая' },
+      ],
+    },
     candidates: [
       "Men with mild to severe vasculogenic Erectile Dysfunction.",
       "Patients who do not respond well to oral medications (PDE5i).",
@@ -411,6 +470,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       'الرجال الراغبون في حل خالٍ من الأدوية والجراحة.',
       'المرضى الذين يعانون من مرض بيروني (انحناء القضيب) أو آلام الحوض المزمنة.',
     ],
+    candidatesRU: [
+      "Мужчины с сосудистой эректильной дисфункцией от легкой до тяжелой степени.",
+      "Пациенты, которые плохо реагируют на пероральные препараты (ФДЭ-5).",
+      "Мужчины, ищущие решение без лекарств и хирургического вмешательства.",
+      "Пациенты с болезнью Пейрони (искривление) или синдромом хронической тазовой боли."
+    ],
     safety: {
       title: "Safety & Side Effects",
       content: "Li-ESWT is FDA-cleared and one of the safest procedures in urology. There are virtually no significant side effects. Some patients may experience mild, temporary redness or tingling at the treatment site, which resolves within minutes.",
@@ -419,6 +484,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     safetyAR: {
       title: 'السلامة والآثار الجانبية',
       content: 'العلاج بالموجات الصدمية المركزة (Li-ESWT) معتمد من FDA وهو من أكثر إجراءات المسالك البولية أماناً. الآثار الجانبية تكاد تكون معدومة. قد يلاحظ بعض المرضى احمراراً خفيفاً أو وخزاً في منطقة العلاج لدقائق قبل أن تختفي تلقائياً.',
+    },
+    safetyRU: {
+      title: "Безопасность и побочные эффекты",
+      content: "Li-ESWT одобрена FDA и является одной из самых безопасных процедур в урологии. Серьезных побочных эффектов практически нет. Некоторые пациенты могут испытывать легкое временное покраснение или покалывание в месте лечения, которое проходит в течение нескольких минут."
     },
     timeline: {
       title: "Treatment Protocol & Results",
@@ -436,6 +505,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: 'الشهر 3+', title: 'الاستعادة', desc: 'أفضل نتيجة سريرية. عودة الانتصاب التلقائي. تستمر التأثيرات 1-2 سنة.' },
       ],
     },
+    timelineRU: {
+      title: "Протокол лечения и результаты",
+      steps: [
+        { time: "Неделя 1-3", title: "Стимуляция", desc: "Начальная клеточная стимуляция. Пробуждаются спящие сосуды." },
+        { time: "Неделя 4-6", title: "Регенерация", desc: "Пик ангиогенеза. Образуются новые кровеносные сосуды. Кровоток улучшается." },
+        { time: "Месяц 3+", title: "Восстановление", desc: "Максимальные клинические результаты. Возвращается спонтанная эрекция. Эффект сохраняется 1-2 года." }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Mapping', desc: 'Doctor identifies target areas along the penile shaft and crura.' },
       { step: '02', title: 'Application', desc: 'Gel is applied. The focus head delivers 10,000 shocks precisely.' },
@@ -448,6 +525,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '03', title: 'اكتمال الجلسة', desc: 'تنتهي الجلسة في 30-40 دقيقة. يمكن استئناف الأنشطة العادية فوراً.' },
       { step: '04', title: 'الجلسات المتكررة', desc: 'البروتوكول المعياري: 3-6 جلسات (مرة واحدة أسبوعياً).' },
     ],
+    procedureRU: [
+      { step: '01', title: 'Картирование', desc: 'Врач определяет целевые области вдоль ствола полового члена и ножек.' },
+      { step: '02', title: 'Применение', desc: 'Наносится гель. Фокусная головка точно доставляет 10 000 импульсов.' },
+      { step: '03', title: 'Завершение', desc: 'Сеанс заканчивается через 30-40 минут. Немедленное возвращение к обычной активности.' },
+      { step: '04', title: 'Повторение', desc: 'Стандартный протокол: 3-6 сеансов (1 раз в неделю).' }
+    ],
     faq: [
       { q: "How is Focus Shockwave better than Radial?", a: "Focus waves travel deeper and deliver energy exactly to the cavernous tissue to grow blood vessels. Radial waves only hit the skin surface and are meant for muscle pain, not ED cure." },
       { q: "When will I see results?", a: "Most patients begin to feel improvement starting from the very first session, with progressive results as they continue the treatment." },
@@ -457,6 +540,11 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { q: 'كيف تتفوق موجات الصدمة المركزة على الموجات الشعاعية؟', a: 'تخترق الموجات المركزة بعمق أكبر وتوصّل الطاقة مباشرةً إلى الأنسجة الكهفية لتنمية أوعية دموية جديدة. أما الموجات الشعاعية فتصل فقط إلى السطح وهي مخصصة لآلام العضلات، وليست علاجاً حقيقياً لضعف الانتصاب.' },
       { q: 'متى سأشعر بالنتائج؟', a: 'يبدأ معظم المرضى بملاحظة تحسن منذ الجلسة الأولى، مع تقدم تدريجي في النتائج مع استمرار العلاج.' },
       { q: 'هل العلاج مؤلم؟', a: 'لا إطلاقاً. يشعر المريض فقط بنقر خفيف أو اهتزاز دون الحاجة إلى أي تخدير.' },
+    ],
+    faqRU: [
+      { q: "Чем фокусированная ударно-волновая терапия лучше радиальной?", a: "Фокусные волны проникают глубже и доставляют энергию точно в пещеристую ткань для роста кровеносных сосудов. Радиальные волны поражают только поверхность кожи и предназначены для снятия мышечной боли, а не для лечения ЭД." },
+      { q: "Когда я увижу результаты?", a: "Большинство пациентов начинают чувствовать улучшение уже с первого сеанса, с постепенным улучшением результатов по мере продолжения лечения." },
+      { q: "Это больно?", a: "Совсем нет. Ощущается как легкое постукивание или вибрация. Анестезия не требуется." }
     ],
     hidePricing: true
   },
