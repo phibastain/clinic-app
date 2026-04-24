@@ -4,7 +4,7 @@
  * that have per-language fields (titleTH, titleAR, etc.)
  */
 
-type Language = 'EN' | 'TH' | 'AR';
+type Language = 'EN' | 'TH' | 'AR' | 'RU';
 
 /**
  * Get the localized value from a data object based on current language.
@@ -34,6 +34,14 @@ export function getLocalizedField(
     if (lang === 'TH') {
         const thField = `${field}TH`;
         if (obj[thField]) return obj[thField];
+        // Fallback to translation function
+        if (t && enValue) return t(enValue);
+        return enValue;
+    }
+
+    if (lang === 'RU') {
+        const ruField = `${field}RU`;
+        if (obj[ruField]) return obj[ruField];
         // Fallback to translation function
         if (t && enValue) return t(enValue);
         return enValue;

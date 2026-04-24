@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-type Language = 'EN' | 'TH' | 'AR';
+type Language = 'EN' | 'TH' | 'AR' | 'RU';
 
 interface LanguageContextType {
     lang: Language;
@@ -25,9 +25,12 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         } else if (urlLang === 'ar') {
             setLangState('AR');
             localStorage.setItem('language', 'AR');
+        } else if (urlLang === 'ru') {
+            setLangState('RU');
+            localStorage.setItem('language', 'RU');
         } else {
             const savedLang = localStorage.getItem('language') as Language;
-            if (savedLang && (savedLang === 'EN' || savedLang === 'TH' || savedLang === 'AR')) {
+            if (savedLang && (savedLang === 'EN' || savedLang === 'TH' || savedLang === 'AR' || savedLang === 'RU')) {
                 setLangState(savedLang);
             }
         }
@@ -35,7 +38,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
     // Sync <html lang="..."> and dir attribute whenever language changes
     useEffect(() => {
-        const langMap: Record<Language, string> = { EN: 'en', TH: 'th', AR: 'ar' };
+        const langMap: Record<Language, string> = { EN: 'en', TH: 'th', AR: 'ar', RU: 'ru' };
         document.documentElement.lang = langMap[lang];
         document.documentElement.dir = lang === 'AR' ? 'rtl' : 'ltr';
     }, [lang]);

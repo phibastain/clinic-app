@@ -5,6 +5,7 @@ import { TH_TRANSLATIONS } from '@/data/translations';
 import { AR_TRANSLATIONS } from '@/data/arTranslations';
 import { UI_TRANSLATIONS } from '@/data/uiTranslations';
 import { AR_UI_TRANSLATIONS } from '@/data/arUiTranslations';
+import { RU_UI_TRANSLATIONS } from '@/data/ruUiTranslations';
 
 export const useTranslation = () => {
     const { lang } = useLanguage();
@@ -23,6 +24,10 @@ export const useTranslation = () => {
             // Then check main AR_TRANSLATIONS
             const entry = AR_TRANSLATIONS[key];
             if (entry) return entry.title || entry;
+        }
+        if (lang === 'RU') {
+            // Check RU UI translations first
+            if (RU_UI_TRANSLATIONS[key]) return RU_UI_TRANSLATIONS[key];
         }
         return key;
     };

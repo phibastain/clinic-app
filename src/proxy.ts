@@ -125,8 +125,10 @@ export function proxy(request: NextRequest) {
         response.cookies.set('lang', 'th', { path: '/', sameSite: 'lax' });
     } else if (langParam === 'ar') {
         response.cookies.set('lang', 'ar', { path: '/', sameSite: 'lax' });
+    } else if (langParam === 'ru') {
+        response.cookies.set('lang', 'ru', { path: '/', sameSite: 'lax' });
     } else if (langParam !== null) {
-        // Explicit non-th/ar lang param — set to 'en'
+        // Explicit non-th/ar/ru lang param — set to 'en'
         response.cookies.set('lang', 'en', { path: '/', sameSite: 'lax' });
     }
 

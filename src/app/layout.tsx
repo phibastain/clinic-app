@@ -32,14 +32,16 @@ export const metadata: Metadata = {
     'Sexual Dysfunction Specialist', 'Best Urologist Chon Buri', 'M-Trust Clinic',
     'Men\'s Health Clinic Bangkok',
     'طبيب مسالك بولية تايلاند', 'صحة الرجل باتايا', 'علاج ضعف الانتصاب',
-    'زراعة دعامة القضيب', 'عيادة إم ترست', 'طبيب مسالك بولية باتايا'
+    'زراعة دعامة القضيب', 'عيادة إم ترست', 'طبيب مسالك بولية باتايا',
+    'уролог Таиланд', 'мужское здоровье Паттайя', 'лечение эректильной дисфункции',
+    'имплант полового члена', 'клиника M-Trust', 'уролог Паттайя'
   ],
   authors: [{ name: 'Dr. Niti Navanimitkul' }],
   creator: 'M-Trust Urology Clinic',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    alternateLocale: ['th_TH', 'ar_SA'],
+    alternateLocale: ['th_TH', 'ar_SA', 'ru_RU'],
     url: 'https://www.mtrusturology.com',
     siteName: 'M-Trust Urology Clinic',
     title: 'M-Trust Urology Clinic | Urologist & Men\'s Health Specialist, Pattaya',
