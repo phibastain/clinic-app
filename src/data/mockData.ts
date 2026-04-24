@@ -184,9 +184,11 @@ export interface Qualification {
   title: string;
   titleTH?: string;
   titleAR?: string;
+  titleRU?: string;
   place: string;
   placeTH?: string;
   placeAR?: string;
+  placeRU?: string;
 }
 
 export interface AwardData {
@@ -194,9 +196,11 @@ export interface AwardData {
   title: string;
   titleTH?: string;
   titleAR?: string;
+  titleRU?: string;
   issuer: string;
   issuerTH?: string;
   issuerAR?: string;
+  issuerRU?: string;
 }
 
 export interface DoctorVideo {
@@ -221,25 +225,31 @@ export interface DoctorData {
   name: string;
   nameTH?: string;
   nameAR?: string;
+  nameRU?: string;
   role: string;
   roleTH?: string;
   roleAR?: string;
+  roleRU?: string;
   image: string;
   expert: string;
   expertTH?: string;
   expertAR?: string;
+  expertRU?: string;
   hospital?: string;
   email?: string;
   website?: string;
   tagline?: string;
   taglineTH?: string;
   taglineAR?: string;
+  taglineRU?: string;
   bio: string;
   bioTH?: string;
   bioAR?: string;
+  bioRU?: string;
   specialties: string[];
   specialtiesTH?: string[];
   specialtiesAR?: string[];
+  specialtiesRU?: string[];
   qualifications: Qualification[];
   awards: AwardData[];
   videos?: DoctorVideo[];
@@ -252,21 +262,26 @@ export interface DoctorData {
     content?: string;
     contentTH?: string;
     contentAR?: string;
+    contentRU?: string;
     items?: string[];
     itemsTH?: string[];
     itemsAR?: string[];
+    itemsRU?: string[];
     image?: string;
     images?: string[];
     caption?: string;
     captionTH?: string;
     captionAR?: string;
+    captionRU?: string;
   }[];
   specializedFocus?: string;
   specializedFocusTH?: string;
   specializedFocusAR?: string;
+  specializedFocusRU?: string;
   surgicalExcellence?: string;
   surgicalExcellenceTH?: string;
   surgicalExcellenceAR?: string;
+  surgicalExcellenceRU?: string;
   hideTestimonials?: boolean;
   slug?: string;
 }
@@ -3894,53 +3909,63 @@ export const DOCTORS: DoctorData[] = [
     slug: 'dr.niti',
     name: 'Dr. Niti Navanimitkul, M.D.',
     nameAR: 'الدكتور نيثي نافانيتكول، طبيب',
+    nameRU: 'Доктор Нити Наванимиткул, доктор медицины',
     role: 'Urologist & Men\'s Health Specialist',
     roleTH: 'ศัลยแพทย์ระบบทางเดินปัสสาวะและผู้เชี่ยวชาญสุขภาพชาย',
     roleAR: 'دكتور مسالك بولية وأخصائي صحة الرجل',
+    roleRU: 'Уролог и специалист по мужскому здоровью',
     image: '/assets/image/urologist section/dr.niti.webp',
     expert: 'Penile Prosthesis | UroLift | Rezūm Specialist',
     expertAR: 'أخصائي دعامة العضو الذكري | UroLift | Rezūm',
+    expertRU: 'Специалист по фаллопротезированию | UroLift | Rezūm',
     hospital: 'Bangkok Hospital Pattaya',
     email: 'niti.menshealth@gmail.com',
     website: 'https://www.mtrusturology.com',
     tagline: 'A Journey of Dedication, Expertise, and Compassion in Men\'s Health',
     taglineTH: 'เส้นทางแห่งความมุ่งมั่น ความเชี่ยวชาญ และความเอาใจใส่ในสุขภาพชาย',
     taglineAR: 'رحلة من التفاني، الخبرة، والرعاية الطبية الفائقة في صحة الرجل',
+    taglineRU: 'Путь преданности, опыта и сострадания в мужском здоровье',
     bio: "Dr. Niti Navanimitkul is one of Thailand’s premier experts in urology and men’s health. He combines profound medical expertise with a patient-first, holistic approach.",
     bioTH: 'นพ. นิธิ นาวานิมิตกุล เป็นหนึ่งในผู้เชี่ยวชาญชั้นนำของไทยด้านระบบทางเดินปัสสาวะและสุขภาพชาย ผสานความเชี่ยวชาญทางการแพทย์เข้ากับแนวทางการดูแลแบบองค์รวมที่ยึดผู้ป่วยเป็นศูนย์กลาง',
     bioAR: 'يُعد الدكتور نيثي نافانيتكول واحداً من أبرز خبراء جراحة المسالك البولية وصحة الرجل في تايلاند. يجمع بين الخبرة الطبية العميقة والنهج الشامل في رعاية المرضى.',
+    bioRU: 'Доктор Нити Наванимиткул — один из ведущих специалистов Таиланда в области урологии и мужского здоровья. Он сочетает глубокие медицинские знания с целостным подходом, ориентированным на пациента.',
     bioContent: [
       {
         type: 'header',
         content: "Elevating Men’s Health Care in Thailand: Dr. Niti Navanimitkul",
         contentTH: 'ยกระดับการดูแลสุขภาพชายในประเทศไทย: นพ. นิธิ นาวานิมิตกุล',
-          contentAR: "الارتقاء بالرعاية الصحية للرجل في تايلاند: د. نيثي نافانيتكول"
-    },
+        contentAR: "الارتقاء بالرعاية الصحية للرجل في تايلاند: د. نيثي نافانيتكول",
+        contentRU: 'Повышение уровня здравоохранения для мужчин в Таиланде: Доктор Нити Наванимиткул'
+      },
       {
         type: 'paragraph',
         content: "Dr. Niti Navanimitkul is one of Thailand’s premier experts in urology and men’s health. He combines profound medical expertise with a patient-first, holistic approach. Driven by a passion for continuous learning and innovation, Dr. Niti is dedicated to empowering men to take control of his physical, emotional, and psychological well-being.",
         contentTH: 'นพ. นิธิ นาวานิมิตกุล มุ่งมั่นในการรักษาและเรียนรู้นวัตกรรมอย่างต่อเนื่องเพื่อนำมาพัฒนาวิธีการรักษาให้ได้ผลลัพธ์ที่ดียิ่งขึ้น นพ. นิธิ อุทิศตนเพื่อช่วยให้ผู้ป่วยสามารถดูแลสุขภาพกาย อารมณ์ และจิตใจ ให้กลับมามีความมั่นใจ กลับมาใช้ชีวิตได้อย่างเป็นปกติอีกครั้ง',
-          contentAR: "د. نيثي نافانيتكول هو أحد أبرز الخبراء في تايلاند في جراحة المسالك البولية وصحة الرجل. يجمع بين الخبرة الطبية العميقة والنهج الشامل ومبدأ المريض أولاً. بفضل شغفه بالتعلم المستمر والابتكار، يكرس د. نيثي نفسه لتمكين الرجال من استعادة رفاهيتهم الجسدية والعاطفية."
-    },
+        contentAR: "د. نيثي نافانيتكول هو أحد أبرز الخبراء في تايلاند في جراحة المسالك البولية وصحة الرجل. يجمع بين الخبرة الطبية العميقة والنهج الشامل ومبدأ المريض أولاً. بفضل شغفه بالتعلم المستمر والابتكار، يكرس د. نيثي نفسه لتمكين الرجال من استعادة رفاهيتهم الجسدية والعاطفية.",
+        contentRU: 'Доктор Нити Наванимиткул — один из ведущих специалистов Таиланда в области урологии и мужского здоровья. Он сочетает глубокие медицинские знания с целостным подходом, ориентированным на пациента. Движимый страстью к постоянному обучению и инновациям, доктор Нити посвящает себя тому, чтобы помочь мужчинам взять под контроль свое физическое, эмоциональное и психологическое благополучие.'
+      },
       {
         type: 'image',
         image: "/assets/image/urologist section/biography/Professional Profile-1.webp",
         caption: "Dr. Niti Navanimitkul: Thailand's leading men's health specialist.",
         captionTH: 'นพ. นิธิ นาวานิมิตกุล: ผู้เชี่ยวชาญด้านสุขภาพชายชั้นนำของประเทศไทย',
-          captionAR: "د. نيثي نافانيتكول: المتخصص الرائد في صحة الرجل في تايلاند."
-    },
+        captionAR: "د. نيثي نافانيتكول: المتخصص الرائد في صحة الرجل في تايلاند.",
+        captionRU: 'Доктор Нити Наванимиткул: ведущий специалист по мужскому здоровью в Таиланде.'
+      },
       {
         type: 'header',
         content: "World-Class Urology Expertise & High Success Rates",
         contentTH: 'ความเชี่ยวชาญด้านระบบทางเดินปัสสาวะระดับโลก และอัตราความสำเร็จสูง',
-          contentAR: "خبرة عالمية في المسالك البولية ونسب نجاح عالية"
-    },
+        contentAR: "خبرة عالمية في المسالك البولية ونسب نجاح عالية",
+        contentRU: 'Мировой опыт в урологии и высокие показатели успеха'
+      },
       {
         type: 'paragraph',
         content: "Dr. Niti specializes in cutting-edge, minimally invasive procedures designed to restore function and improve the quality of life for his patients. He is at the forefront of treating complex urological conditions, offering highly effective solutions:",
         contentTH: 'นพ. นิธิ เชี่ยวชาญในการทำหัตถการที่ล้ำสมัยและส่งผลกระทบน้อย เพื่อฟื้นฟูการทำงานและยกระดับคุณภาพชีวิตผู้ป่วย อีกทั้งยังเป็นแพทย์แถวหน้า ในการรักษาโรคระบบทางเดินปัสสาวะที่มีความซับซ้อนสูง ด้วยวิธีที่มีประสิทธิภาพสูง',
-          contentAR: "يتخصص د. نيثي في الإجراءات الحديثة طفيفة التوغل المصممة لاستعادة الوظائف وتحسين جودة حياة مرضاه. وهو في طليعة علاج حالات المسالك البولية المعقدة، مقدماً حلولاً عالية الفعالية:"
-    },
+        contentAR: "يتخصص د. نيثي في الإجراءات الحديثة طفيفة التوغل المصممة لاستعادة الوظائف وتحسين جودة حياة مرضاه. وهو في طليعة علاج حالات المسالك البولية المعقدة، مقدماً حلولاً عالية الفعالية:",
+        contentRU: 'Доктор Нити специализируется на передовых малоинвазивных процедурах, предназначенных для восстановления функций и улучшения качества жизни его пациентов. Он находится на переднем крае лечения сложных урологических заболеваний, предлагая высокоэффективные решения:'
+      },
       {
         type: 'list',
         items: [
@@ -3957,52 +3982,66 @@ export const DOCTORS: DoctorData[] = [
           'การรักษาภาวะมีบุตรยากในชาย: การตรวจวินิจฉัยขั้นสูงและหัตถการเฉพาะราย เพื่อเพิ่มความสามารถในการมีบุตร',
           'สุขภาพต่อมลูกหมากครบวงจร: การดูแลเชิงป้องกัน การคัดกรองมะเร็งต่อมลูกหมาก และการจัดการ BPH โดยผู้เชี่ยวชาญ'
         ],
-          itemsAR: ["جراحة زراعة دعامة العضو الذكري (Penile Prosthesis): خبرة متقدمة في زرع الأجهزة القابلة للنفخ لنتائج طبيعية.","أنظمة UroLift و Rezūm: علاجات متطورة غير جراحية لتضخم البروستاتا الحميد (BPH).","العلاج بالموجات الصدمية المركزة (Li-ESWT): علاج تجديدي لضعف الانتصاب.","تقنيات الاستئصال بالليزر (HoLEP): جراحة ليزر دقيقة للبروستاتا لنتائج مثالية وتعافٍ سريع."]
-    },
+        itemsAR: ["جراحة زراعة دعامة العضو الذكري (Penile Prosthesis): خبرة متقدمة في زرع الأجهزة القابلة للنفخ لنتائج طبيعية.","أنظمة UroLift و Rezūm: علاجات متطورة غير جراحية لتضخم البروستاتا الحميد (BPH).","العلاج بالموجات الصدمية المركزة (Li-ESWT): علاج تجديدي لضعف الانتصاب.","تقنيات الاستئصال بالليزر (HoLEP): جراحة ليزر دقيقة للبروستاتا لنتائج مثالية وتعافٍ سريع."],
+        itemsRU: [
+          'Операция по фаллопротезированию (лечение ЭД): Предлагает постоянное решение проблемы эректильной дисфункции для восстановления сексуальной функции. Доктор Нити провел более 150 успешных случаев с показателем успеха 99,99%.',
+          'Лечение UroLift® при ДГПЖ: Передовая малоинвазивная процедура для облегчения мочевых симптомов, вызванных увеличенной простатой, обеспечивающая более быстрое выздоровление. Только в период с августа 2024 года по апрель 2025 года он провел более 100 операций с показателем успеха 99,99%.',
+          'Передовые решения для эректильной дисфункции: Комплексный уход с использованием новейших медицинских достижений, включая инъекции стволовых клеток, ударно-волновую терапию (Li-ESWT) и индивидуальные планы медикаментозного лечения.',
+          'Лечение мужского бесплодия: Передовое диагностическое тестирование и индивидуальные процедуры, направленные на повышение мужской фертильности.',
+          'Комплексное здоровье простаты: Проактивная профилактическая помощь, скрининг на рак простаты и экспертное лечение ДГПЖ.'
+        ]
+      },
       {
         type: 'image',
         image: "/assets/image/urologist section/biography/Professional Profile-2.webp",
         caption: "Highly certified in urology, Dr. Niti provides the most advanced men's healthcare.",
         captionTH: 'นพ. นิธิ ผู้ได้รับการรับรองสูงสุดด้านระบบทางเดินปัสสาวะ มอบการดูแลสุขภาพชายที่ล้ำสมัยที่สุด',
-        captionAR: 'حاصل على أعلى الشهادات في جراحة المسالك البولية، ويقدم الدكتور نيثي الرعاية الصحية الأكثر تقدماً للرجال.'
+        captionAR: 'حاصل على أعلى الشهادات في جراحة المسالك البولية، ويقدم الدكتور نيثي الرعاية الصحية الأكثر تقدماً للرجال.',
+        captionRU: 'Доктор Нити, имеющий высшую квалификацию в области урологии, предоставляет самое передовое медицинское обслуживание для мужчин.'
       },
       {
         type: 'header',
         content: "Extensive Training & Board Certifications",
         contentTH: 'การฝึกอบรมเข้มข้นและใบรับรองความเชี่ยวชาญ',
-        contentAR: 'التدريب المكثف والشهادات المعتمدة'
+        contentAR: 'التدريب المكثف والشهادات المعتمدة',
+        contentRU: 'Обширная подготовка и сертификация советов'
       },
       {
         type: 'paragraph',
         content: "A graduate of one of Thailand's most prestigious medical schools, Dr. Niti discovered his passion for men's health early in his career. He has since honed his skills through specialized fellowships and training at leading medical institutions.\n\nAs a lifelong learner, he holds numerous certifications in urology and consistently participates in international medical conferences. This dedication ensures his patients always have access to the most advanced, evidence-based treatments available globally.",
         contentTH: 'นพ. นิธิ สำเร็จการศึกษาจากคณะแพทยศาสตร์ชั้นนำที่มีชื่อเสียงที่สุดแห่งหนึ่งของประเทศไทย และได้ค้นพบความมุ่งมั่นทุ่มเทในการดูแลสุขภาพบุรุษมาตั้งแต่ช่วงเริ่มแรกของเส้นทางวิชาชีพ ท่านได้สั่งสมประสบการณ์และทักษะความเชี่ยวชาญผ่านการฝึกอบรมเฉพาะทางจากสถาบันการแพทย์ระดับแนวหน้า\n\nในฐานะผู้ที่ใฝ่เรียนรู้อยู่เสมอ นพ. นิธิ ได้รับวุฒิบัตรรับรองในสาขาศัลยศาสตร์ยูโรวิทยา (ระบบทางเดินปัสสาวะ) มากมาย และเข้าร่วมการประชุมวิชาการทางการแพทย์ระดับนานาชาติอย่างสม่ำเสมอ ความมุ่งมั่นนี้เองที่ทำให้คนไข้ของท่านมั่นใจได้ว่าจะสามารถเข้าถึงการรักษาที่ทันสมัยที่สุดและอ้างอิงตามหลักฐานทางวิชาการล่าสุดที่เป็นมาตรฐานสากลจากทั่วโลก',
-        contentAR: 'تخرج د. نيثي من إحدى أعرق كليات الطب في تايلاند، واكتشف شغفه بصحة الرجل في وقت مبكر من مسيرته المهنية. ومنذ ذلك الحين صقل مهاراته من خلال زمالات متخصصة وتدريبات في مؤسسات طبية رائدة.\n\nبصفته باحثاً متعلماً مدى الحياة، يحمل العديد من الشهادات المعتمدة في جراحة المسالك البولية ويشارك باستمرار في المؤتمرات الطبية الدولية. ويضمن هذا التفاني لمرضاه الوصول دائماً إلى العلاجات الأكثر تقدماً والمبنية على أسس علمية والمتاحة على مستوى العالم.'
+        contentAR: 'تخرج د. نيثي من إحدى أعرق كليات الطب في تايلاند، واكتشف شغفه بصحة الرجل في وقت مبكر من مسيرته المهنية. ومنذ ذلك الحين صقل مهاراته من خلال زمالات متخصصة وتدريبات في مؤسسات طبية رائدة.\n\nبصفته باحثاً متعلماً مدى الحياة، يحمل العديد من الشهادات المعتمدة في جراحة المسالك البولية ويشارك باستمرار في المؤتمرات الطبية الدولية. ويضمن هذا التفاني لمرضاه الوصول دائماً إلى العلاجات الأكثر تقدماً والمبنية على أسس علمية والمتاحة على مستوى العالم.',
+        contentRU: 'Выпускник одной из самых престижных медицинских школ Таиланда, доктор Нити рано обнаружил свою страсть к мужскому здоровью. С тех пор он оттачивал свои навыки, проходя специализированные стажировки и обучение в ведущих медицинских учреждениях.\n\nБудучи сторонником непрерывного обучения, он имеет множество сертификатов в области урологии и постоянно участвует в международных медицинских конференциях. Эта преданность делу гарантирует, что его пациенты всегда имеют доступ к самым передовым научно обоснованным методам лечения, доступным в мире.'
       },
       {
         type: 'image',
         image: "/assets/image/urologist section/biography/Professional Profile-3.webp",
         caption: "World-class trained urologist mastering advanced clinical techniques.",
         captionTH: 'ศัลยแพทย์ระบบทางเดินปัสสาวะผู้ผ่านการฝึกอบรมระดับโลก เชี่ยวชาญเทคนิคคลินิกขั้นสูง',
-        captionAR: 'طبيب مسالك بولية مدرب عالمياً ويتقن التقنيات السريرية المتقدمة.'
+        captionAR: 'طبيب مسالك بولية مدرب عالمياً ويتقن التقنيات السريرية المتقدمة.',
+        captionRU: 'Уролог мирового класса, владеющий передовыми клиническими методами.'
       },
       {
         type: 'header',
         content: "A Holistic, Patient-Centric Philosophy",
         contentTH: 'ปรัชญาการดูแลแบบองค์รวม ยึดผู้ป่วยเป็นศูนย์กลาง',
-        contentAR: 'فلسفة شاملة تركز على المريض'
+        contentAR: 'فلسفة شاملة تركز على المريض',
+        contentRU: 'Целостная философия, ориентированная на пациента'
       },
       {
         type: 'paragraph',
         content: "What truly sets Dr. Niti apart is his compassionate, holistic approach. He understands that urological conditions impact not just the physical body, but also emotional well-being. By taking the time to listen and understand each patient's unique concerns, he crafts tailored, comprehensive treatment plans. His dedication to excellence in patient care, diagnosis, and education has earned him numerous accolades and the deep trust of both colleagues and patients.",
         contentTH: 'สิ่งที่ทำให้ นพ. นิธิ โดดเด่นอย่างแท้จริงคือแนวทางการรักษาด้วยความใส่ใจและมองอย่างรอบด้าน (Holistic Approach) ท่านตระหนักดีว่าอาการเจ็บป่วยทางระบบทางเดินปัสสาวะไม่ได้ส่งผลกระทบเพียงแค่ร่างกายเท่านั้น แต่ยังส่งผลต่อสภาวะจิตใจและความเป็นอยู่ที่ดีอีกด้วย\n\nด้วยการให้ความสำคัญกับการรับฟังและทำความเข้าใจความกังวลเฉพาะตัวของผู้ป่วยแต่ละราย นพ. นิธิ จึงสามารถออกแบบแผนการรักษาที่เหมาะสมและครอบคลุมความต้องการของคนไข้ได้อย่างตรงจุด ความทุ่มเทเพื่อความเป็นเลิศทั้งในด้านการดูแลผู้ป่วย การวินิจฉัย และการให้ความรู้ทางการแพทย์ ส่งผลให้ท่านได้รับรางวัลเชิดชูเกียรติมากมาย ตลอดจนได้รับความไว้วางใจอย่างลึกซึ้งจากทั้งเพื่อนร่วมวิชาชีพและผู้รับบริการเสมอมา',
-        contentAR: 'ما يميز د. نيثي حقاً هو نهجه الشامل الحافل بالرعاية. فهو يدرك أن حالات المسالك البولية لا تؤثر فقط على الجسد، بل تنعكس أيضاً على الحالة النفسية. من خلال استقطاع الوقت للاستماع وفهم المخاوف الفريدة لكل مريض، يقوم بصياغة خطط علاج شاملة ومخصصة. إن تفانيه في التميز في رعاية المرضى، والتشخيص السليم، وتثقيفهم أكسبه العديد من الأوسمة والثقة العميقة من زملائه ومرضاه على حد سواء.'
+        contentAR: 'ما يميز د. نيثي حقاً هو نهجه الشامل الحافل بالرعاية. فهو يدرك أن حالات المسالك البولية لا تؤثر فقط على الجسد، بل تنعكس أيضاً على الحالة النفسية. من خلال استقطاع الوقت للاستماع وفهم المخاوف الفريدة لكل مريض، يقوم بصياغة خطط علاج شاملة ومخصصة. إن تفانيه في التميز في رعاية المرضى، والتشخيص السليم، وتثقيفهم أكسبه العديد من الأوسمة والثقة العميقة من زملائه ومرضاه على حد سواء.',
+        contentRU: 'Что действительно отличает доктора Нити, так это его сострадательный, целостный подход. Он понимает, что урологические заболевания влияют не только на физическое тело, но и на эмоциональное благополучие. Уделяя время тому, чтобы выслушать и понять уникальные проблемы каждого пациента, он разрабатывает индивидуальные комплексные планы лечения. Его преданность совершенству в уходе за пациентами, диагностике и образовании принесла ему множество наград и глубокое доверие как коллег, так и пациентов.'
       },
       {
         type: 'image',
         image: "/assets/image/urologist section/biography/Professional Profile-4.webp",
         caption: "Patient-Centric Care Environment",
         captionTH: 'สภาพแวดล้อมการดูแลที่ยึดผู้ป่วยเป็นศูนย์กลาง',
-        captionAR: 'بيئة رعاية ترتكز على راحة المريض'
+        captionAR: 'بيئة رعاية ترتكز على راحة المريض',
+        captionRU: 'Среда медицинского обслуживания, ориентированная на пациента'
       }
     ],
     specialties: [
@@ -4029,27 +4068,35 @@ export const DOCTORS: DoctorData[] = [
       'تشخيص وعلاج العقم الذكوري',
       'فحوصات صحة البروستاتا والكشف المبكر عن السرطان'
     ],
+    specialtiesRU: [
+      'Операция по фаллопротезированию (более 150 случаев, показатель успеха 99,99%)',
+      'Лечение UroLift при ДГПЖ (более 100 случаев, показатель успеха 99,99%)',
+      'Лечение водяным паром (Rezūm) - Центр передового опыта',
+      'Лечение эректильной дисфункции (стволовые клетки, ударно-волновая терапия)',
+      'Диагностика и лечение мужского бесплодия',
+      'Здоровье простаты и скрининг на рак'
+    ],
     qualifications: [
-      { year: "2018", title: "Intensive Penile Prosthesis Workshop", titleAR: "ورشة عمل مكثفة لجراحة زراعة الدعامة الذكرية", place: "Ramathibodi Hospital, Bangkok", placeAR: "مستشفى راماثيبودي، بانكوك" },
-      { year: "2017", title: "Training in Endourology", titleAR: "تدريب في جراحة المسالك البولية بالمنظار", place: "Strasbourg, France", placeAR: "ستراسبورج، فرنسا" },
-      { year: "2017", title: "Advance in Upper Urinary Tract Laparoscopic Urology", titleAR: "تدريب متقدم في جراحة المنظار للجهاز البولي العلوي", place: "Rajavithi Hospital", placeAR: "مستشفى راجافيثي" },
-      { year: "2017", title: "Advanced Course in Laparoscopic Urological Surgery", titleAR: "دورة متقدمة في جراحة المسالك البولية بالمنظار", place: "Asia IRCAD-TAIWAN, Lugang, Taiwan", placeAR: "آسيا إيركاد-تايوان، تايوان" },
-      { year: "2014", title: "Visiting Clinical Fellow in Urology and Andrology", titleAR: "زميل سريري زائر في طب المسالك البولية والذكورة", place: "MD Anderson Cancer Center, The University of Texas, USA", placeAR: "مركز إم دي أندرسون للسرطان، جامعة تكساس، الولايات المتحدة" },
-      { year: "2010", title: "Diplomate Thai Board of Urology", titleAR: "دبلوم البورد التايلاندي في جراحة المسالك البولية", place: "Chiang Mai University, Thailand", placeAR: "جامعة شيانغ ماي، تايلاند" },
-      { year: "2003", title: "Doctor of Medicine", titleAR: "دكتوراه في الطب", place: "Faculty of Medicine, Chiang Mai University, Thailand", placeAR: "كلية الطب، جامعة شيانغ ماي، تايلاند" }
+      { year: "2018", title: "Intensive Penile Prosthesis Workshop", titleAR: "ورشة عمل مكثفة لجراحة زراعة الدعامة الذكرية", titleRU: "Интенсивный семинар по фаллопротезированию", place: "Ramathibodi Hospital, Bangkok", placeAR: "مستشفى راماثيبودي، بانكوك", placeRU: "Больница Раматибоди, Бангкок" },
+      { year: "2017", title: "Training in Endourology", titleAR: "تدريب في جراحة المسالك البولية بالمنظار", titleRU: "Обучение в области эндоурологии", place: "Strasbourg, France", placeAR: "ستراسبورج، فرنسا", placeRU: "Страсбург, Франция" },
+      { year: "2017", title: "Advance in Upper Urinary Tract Laparoscopic Urology", titleAR: "تدريب متقدم في جراحة المنظار للجهاز البولي العلوي", titleRU: "Передовые достижения в лапароскопической урологии верхних мочевыводящих путей", place: "Rajavithi Hospital", placeAR: "مستشفى راجافيثي", placeRU: "Больница Раджавити" },
+      { year: "2017", title: "Advanced Course in Laparoscopic Urological Surgery", titleAR: "دورة متقدمة في جراحة المسالك البولية بالمنظار", titleRU: "Продвинутый курс лапароскопической урологической хирургии", place: "Asia IRCAD-TAIWAN, Lugang, Taiwan", placeAR: "آسيا إيركاد-تايوان، تايوان", placeRU: "Asia IRCAD-TAIWAN, Луган, Тайвань" },
+      { year: "2014", title: "Visiting Clinical Fellow in Urology and Andrology", titleAR: "زميل سريري زائر في طب المسالك البولية والذكورة", titleRU: "Приглашенный клинический научный сотрудник в области урологии и андрологии", place: "MD Anderson Cancer Center, The University of Texas, USA", placeAR: "مركز إم دي أندرسون للسرطان، جامعة تكساس، الولايات المتحدة", placeRU: "Онкологический центр доктора медицины Андерсона, Техасский университет, США" },
+      { year: "2010", title: "Diplomate Thai Board of Urology", titleAR: "دبلوم البورد التايلاندي في جراحة المسالك البولية", titleRU: "Дипломант Тайского совета по урологии", place: "Chiang Mai University, Thailand", placeAR: "جامعة شيانغ ماي، تايلاند", placeRU: "Чиангмайский университет, Таиланд" },
+      { year: "2003", title: "Doctor of Medicine", titleAR: "دكتوراه في الطب", titleRU: "Доктор медицины", place: "Faculty of Medicine, Chiang Mai University, Thailand", placeAR: "كلية الطب، جامعة شيانغ ماي، تايلاند", placeRU: "Медицинский факультет Чиангмайского университета, Таиланд" }
     ],
     awards: [
-      { year: "2025", title: "First ASEAN Proctor for UroLift", titleAR: "أول مشرف تدريب معتمد لليوروليفت في رابطة دول جنوب شرق آسيا", issuer: "Appointed April 30, 2025", issuerAR: "معين في 30 أبريل 2025" },
-      { year: "2025", title: "The First Certified UroLift Success Story (50 Cases)", titleAR: "أول قصة نجاح معتمدة لعلاج اليوروليفت (50 حالة)", issuer: "Teleflex™ Academy", issuerAR: "أكاديمية تيليفليكس™" },
-      { year: "2025", title: "Panelist: 'Beyond the Manual' Urology Summit", titleAR: "عضو لجنة نقاش قمة المسالك البولية الوطنية 2025", issuer: "National Urology Summit 2025", issuerAR: "القمة الوطنية للمسالك البولية 2025" },
-      { year: "2024", title: "Thailand's First Urologist Certified in UroLift", titleAR: "أول طبيب مسالك بولية تايلاندي معتمد في اليوروليفت", issuer: "Teleflex™ Interventional Urology", issuerAR: "تيليفليكس™" },
-      { year: "2024", title: "Certificate: UROLIFT™ SYSTEM PROFICIENCY PATHWAY", titleAR: "شهادة الاستخدام الاحترافي لنظام يوروليفت", issuer: "Teleflex™ Interventional Urology, USA", issuerAR: "تيليفليكس™ الأمريكية" },
-      { year: "2024", title: "Chairperson: 2024 ED&BPH Masterclass", titleAR: "رئيس جلسة نقاشية: الدورة المتقدمة لضعف الانتصاب وتضخم البروستاتا 2024", issuer: "ZP Therapeutics, Thailand", issuerAR: "زي بي ثيرابيوتيكس، تايلاند" },
-      { year: "2023", title: "Center of Excellence: Rezūm™ Water Vapor Therapy", titleAR: "مركز التميز لعلاج ريزوم بالتبخير المائي", issuer: "Boston Scientific", issuerAR: "بوسطن ساينتيفيك" },
-      { year: "2023", title: "Achievement: Successful completion of >80 Rezūm™ procedures", titleAR: "إنجاز: استكمال أكثر من 80 إجراء ناجح لعلاج ريزوم", issuer: "Boston Scientific, USA", issuerAR: "بوسطن ساينتيفيك، الولايات المتحدة" },
-      { year: "2023", title: "Certificate: Coloplast IPP & Testicular Implants", titleAR: "شهادة دعامات وزراعة الخصية من Coloplast IPP", issuer: "Chulalongkorn University & Sewum Prosthetic Urology Center, Korea", issuerAR: "جامعة شولالونغكورن ومركز سيوم التعويضي، كوريا" },
-      { year: "2022", title: "Awards of Rezūm™ Center of Excellence", titleAR: "جوائز التميز كمركز معتمد لتقنية ريزوم", issuer: "Boston Scientific", issuerAR: "بوسطن ساينتيفيك" },
-      { year: "2022", title: "Proctor of Rezūm Therapy in ASEAN", titleAR: "مشرف تدريب معتمد لتقنية ريزوم في رابطة آسيان", issuer: "Boston Scientific", issuerAR: "بوسطن ساينتيفيك" }
+      { year: "2025", title: "First ASEAN Proctor for UroLift", titleAR: "أول مشرف تدريب معتمد لليوروليفت في رابطة دول جنوب شرق آسيا", titleRU: "Первый инструктор АСЕАН по UroLift", issuer: "Appointed April 30, 2025", issuerAR: "معين في 30 أبريل 2025", issuerRU: "Назначен 30 апреля 2025 г." },
+      { year: "2025", title: "The First Certified UroLift Success Story (50 Cases)", titleAR: "أول قصة نجاح معتمدة لعلاج اليوروليفت (50 حالة)", titleRU: "Первая сертифицированная история успеха UroLift (50 случаев)", issuer: "Teleflex™ Academy", issuerAR: "أكاديمية تيليفليكس™", issuerRU: "Академия Teleflex™" },
+      { year: "2025", title: "Panelist: 'Beyond the Manual' Urology Summit", titleAR: "عضو لجنة نقاش قمة المسالك البولية الوطنية 2025", titleRU: "Член дискуссионной группы: Урологический саммит «Beyond the Manual»", issuer: "National Urology Summit 2025", issuerAR: "القمة الوطنية للمسالك البولية 2025", issuerRU: "Национальный урологический саммит 2025" },
+      { year: "2024", title: "Thailand's First Urologist Certified in UroLift", titleAR: "أول طبيب مسالك بولية تايلاندي معتمد في اليوروليفت", titleRU: "Первый в Таиланде уролог, сертифицированный по UroLift", issuer: "Teleflex™ Interventional Urology", issuerAR: "تيليفليكس™", issuerRU: "Teleflex™ Interventional Urology" },
+      { year: "2024", title: "Certificate: UROLIFT™ SYSTEM PROFICIENCY PATHWAY", titleAR: "شهادة الاستخدام الاحترافي لنظام يوروليفت", titleRU: "Сертификат: ПУТЬ ПОВЫШЕНИЯ КВАЛИФИКАЦИИ В СИСТЕМЕ UROLIFT™", issuer: "Teleflex™ Interventional Urology, USA", issuerAR: "تيليفليكس™ الأمريكية", issuerRU: "Teleflex™ Interventional Urology, США" },
+      { year: "2024", title: "Chairperson: 2024 ED&BPH Masterclass", titleAR: "رئيس جلسة نقاشية: الدورة المتقدمة لضعف الانتصاب وتضخم البروستاتا 2024", titleRU: "Председатель: Мастер-класс по ЭД и ДГПЖ 2024 года", issuer: "ZP Therapeutics, Thailand", issuerAR: "زي بي ثيرابيوتيكس، تايلاند", issuerRU: "ZP Therapeutics, Таиланд" },
+      { year: "2023", title: "Center of Excellence: Rezūm™ Water Vapor Therapy", titleAR: "مركز التميز لعلاج ريزوم بالتبخير المائي", titleRU: "Центр передового опыта: Терапия водяным паром Rezūm™", issuer: "Boston Scientific", issuerAR: "بوسطن ساينتيفيك", issuerRU: "Boston Scientific" },
+      { year: "2023", title: "Achievement: Successful completion of >80 Rezūm™ procedures", titleAR: "إنجاز: استكمال أكثر من 80 إجراء ناجح لعلاج ريزوم", titleRU: "Достижение: Успешное выполнение >80 процедур Rezūm™", issuer: "Boston Scientific, USA", issuerAR: "بوسطن ساينتيفيك، الولايات المتحدة", issuerRU: "Boston Scientific, США" },
+      { year: "2023", title: "Certificate: Coloplast IPP & Testicular Implants", titleAR: "شهادة دعامات وزراعة الخصية من Coloplast IPP", titleRU: "Сертификат: Имплантаты яичек и IPP Coloplast", issuer: "Chulalongkorn University & Sewum Prosthetic Urology Center, Korea", issuerAR: "جامعة شولالونغكورن ومركز سيوم التعويضي، كوريا", issuerRU: "Университет Чулалонгкорн и Центр протезирования Sewum, Корея" },
+      { year: "2022", title: "Awards of Rezūm™ Center of Excellence", titleAR: "جوائز التميز كمركز معتمد لتقنية ريزوم", titleRU: "Награды Центра передового опыта Rezūm™", issuer: "Boston Scientific", issuerAR: "بوسطن ساينتيفيك", issuerRU: "Boston Scientific" },
+      { year: "2022", title: "Proctor of Rezūm Therapy in ASEAN", titleAR: "مشرف تدريب معتمد لتقنية ريزوم في رابطة آسيان", titleRU: "Инструктор по терапии Rezūm в АСЕАН", issuer: "Boston Scientific", issuerAR: "بوسطن ساينتيفيك", issuerRU: "Boston Scientific" }
     ],
     videos: [
       { id: "v1", title: "UroLift Patient Success Story - Minimal Invasive", url: "https://www.youtube.com/embed/JmU9Wz5UARA", thumbnail: "https://img.youtube.com/vi/JmU9Wz5UARA/maxresdefault.jpg" },
