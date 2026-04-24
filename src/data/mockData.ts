@@ -864,8 +864,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
   'Penile Implant': {
     title: 'Penile Prosthesis (Implant) Surgery',
     titleAR: 'جراحة زراعة دعامة القضيب',
+    titleRU: 'Операция по имплантации (протезированию) полового члена',
     tagline: 'The Definitive Surgical Solution for Severe Erectile Dysfunction Reliable, On-Demand Erections.',
     taglineAR: 'الحل الجراحي النهائي لضعف الانتصاب الشديد: انتصاب موثوق عند الطلب.',
+    taglineRU: 'Окончательное хирургическое решение тяжелой эректильной дисфункции. Надежная эрекция по требованию.',
     whatIsIt: {
       title: 'What is a Penile Implant?',
       description: "A Penile Implant (or Penile Prosthesis) is a medical device surgically placed inside the penis to help men with severe Erectile Dysfunction (ED) achieve a firm erection for sexual intercourse. Widely regarded as the gold standard treatment when oral medications, injections, or other therapies are no longer effective, a penile implant offers a permanent and dependable solution that restores both spontaneity and sexual confidence.",
@@ -875,8 +877,13 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       title: 'ما هي دعامة القضيب؟',
       description: 'دعامة القضيب هي جهاز طبي يُزرع جراحياً داخل القضيب لمساعدة الرجال الذين يعانون من ضعف انتصاب شديد على تحقيق انتصاب صلب للاستمتاع بحياة جنسية طبيعية. تُعتبر المعيار الذهبي عندما تفشل الأدوية أو الحقن، حيث توفر حلاً دائماً وموثوقاً يعيد الثقة والعفوية.',
     },
+    whatIsItRU: {
+      title: 'Что такое имплантат полового члена?',
+      description: 'Имплантат полового члена (или протез) — это медицинское устройство, хирургическим путем помещаемое внутрь полового члена, чтобы помочь мужчинам с тяжелой эректильной дисфункцией (ЭД) достичь твердой эрекции для полового акта. Считаясь золотым стандартом лечения, когда пероральные препараты, инъекции или другие методы больше не эффективны, имплантат предлагает постоянное и надежное решение, восстанавливающее как спонтанность, так и сексуальную уверенность.',
+    },
     description: "A penile implant works by replacing damaged erectile tissue with medical-grade cylinders that replicate the natural erection process. There are two main types, each designed for different patient needs:\n\n**The Clinical Mechanism of Action:**\n\n1. **Inflatable Penile Implant (3-Piece):** This is the most popular option and closely mimics a natural erection. It consists of fluid-filled cylinders in the penis, a small pump in the scrotum, and a reservoir in the lower abdomen. Squeezing the pump transfers saline into the cylinders, producing a firm erection. A release valve allows the fluid to drain back, returning the penis to a soft, natural state.\n\n2. **Malleable (Semi-Rigid) Implant:** This device uses two flexible rods placed inside the penile shaft. The penis stays in a semi-rigid state and can be manually positioned — angled downward for daily comfort or upward for sexual activity. It's simpler and involves fewer mechanical components.\n\n**Why It Works:** Unlike medications that depend on blood flow, penile implants provide **mechanical support**, enabling a reliable erection virtually every time — regardless of underlying vascular or nerve conditions.",
     descriptionAR: 'تعمل الدعامة عن طريق استبدال الأنسجة التالفة بأسطوانات طبية تحاكي عملية الانتصاب الطبيعية. هناك نوعان رئيسيان، مصممان لتلبية احتياجات المرضى المختلفة:\n\n**الآلية السريرية:**\n\n1. **الدعامة القابلة للنفخ (3 قطع):** الخيار الأكثر شيوعاً ويحاكي الانتصاب الطبيعي بشكل وثيق. تتكون من أسطوانات مليئة بالسائل في القضيب، ومضخة صغيرة في كيس الصفن، وخزان في أسفل البطن. يتيح الضغط على المضخة نقل السائل لإنتاج انتصاب صلب. ويسمح صمام التحرير بعودة القضيب لحالته الرخوة الطبيعية.\n\n2. **الدعامة المرنة (شبه الصلبة):** تستخدم قضيبين مرنين داخل القضيب. يبقى القضيب في حالة شبه صلبة ويمكن توجيهه يدوياً لأسفل للراحة أو لأعلى للنشاط الجنسي. مكوناتها أبسط ميكانيكياً.\n\n**لماذا تنجح:** على عكس الأدوية التي تعتمد على تدفق الدم، توفر الدعامات **دعماً ميكانيكياً** يُمكنك من الانتصاب الموثوق في كل مرة — بغض النظر عن الحالات الوعائية أو العصبية الكامنة.',
+    descriptionRU: 'Имплантат работает путем замены поврежденной эректильной ткани медицинскими цилиндрами, которые имитируют естественный процесс эрекции. Существуют два основных типа:\n\n**Клинический механизм действия:**\n\n1. **Надувной имплантат (3-компонентный):** Это самый популярный вариант, который максимально точно имитирует естественную эрекцию. Он состоит из цилиндров, наполняемых жидкостью, небольшой помпы в мошонке и резервуара в нижней части живота. Сжатие помпы перекачивает физиологический раствор в цилиндры, создавая твердую эрекцию. Клапан сброса позволяет жидкости стекать обратно, возвращая половой член в мягкое состояние.\n\n2. **Пластичный (полужесткий) имплантат:** В этом устройстве используются два гибких стержня, помещенных внутрь полового члена. Половой член остается в полужестком состоянии, и его положение можно менять вручную — наклонять вниз для комфорта или вверх для сексуальной активности.\n\n**Почему это работает:** В отличие от лекарств, зависящих от кровотока, имплантаты обеспечивают **механическую поддержку**, гарантируя надежную эрекцию каждый раз, независимо от сосудистых или нервных заболеваний.',
     heroImage: '/assets/image/services section/penile implant menu.webp',
     descriptionImage: '/assets/image/services section/penile implant/penile implant Clinical Mechanism.webp',
     video: { id: 'hfEGF_yT5sM', title: 'Penile Implant: How It Works' },
@@ -892,11 +899,23 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: 'الإقامة بالمستشفى' },
       { label: 'العمر الافتراضي' }
     ],
+    statsRU: [
+      { label: 'Удовлетворенность' },
+      { label: 'Время операции' },
+      { label: 'Пребывание в стационаре' },
+      { label: 'Срок службы' }
+    ],
     benefits: [
       { title: 'Permanent Solution', desc: 'A single procedure that provides a lasting solution to erectile dysfunction.', icon: Infinity as any },
       { title: 'Natural Feel', desc: 'Modern 3-piece implants closely replicate natural firmness and appearance.', icon: CheckCircle2 },
       { title: 'On-Demand', desc: 'Discreet pump activation allows erections whenever you need them.', icon: Zap },
       { title: 'High Satisfaction', desc: 'Over 95% patient and partner satisfaction in clinical studies.', icon: Trophy }
+    ],
+    benefitsRU: [
+      { title: 'Постоянное решение', desc: 'Единоразовая процедура, обеспечивающая длительное решение проблемы эректильной дисфункции.' },
+      { title: 'Естественное ощущение', desc: 'Современные 3-компонентные имплантаты точно повторяют естественную твердость и внешний вид.' },
+      { title: 'По требованию', desc: 'Незаметная активация помпы позволяет достичь эрекции тогда, когда вам это нужно.' },
+      { title: 'Высокая удовлетворенность', desc: 'Более 95% удовлетворенности пациентов и их партнеров по данным клинических исследований.' }
     ],
     comparison: {
       title: "Types of Penile Implants",
@@ -920,6 +939,17 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { feature: 'التعقيد', focus: 'مكونات أكثر (مضخة، خزان)', radial: 'أبسط (قضيبين فقط)' }
       ]
     },
+    comparisonRU: {
+      title: 'Типы имплантатов полового члена',
+      subtitle: 'Надувные и полужесткие протезы',
+      headers: ['Надувной (3-компонентный)', 'Полужесткий (пластичный)'],
+      items: [
+        { feature: 'Естественный вид', focus: 'Полностью расслаблен в сдутом состоянии', radial: 'Всегда полужесткий' },
+        { feature: 'Контроль жесткости', focus: 'Надувается/сдувается помпой', radial: 'Сгибается вверх/вниз вручную' },
+        { feature: 'Удовлетворенность партнера', focus: 'Самая высокая', radial: 'Хорошая' },
+        { feature: 'Сложность', focus: 'Больше компонентов', radial: 'Простая система' }
+      ]
+    },
     candidates: [
       "Men with severe ED who have not responded to medications, injections, or shockwave therapy.",
       "Patients with nerve damage after prostate surgery or other pelvic procedures.",
@@ -932,6 +962,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       'من يرغب في حل موثوق عند الطلب بدون أدوية يومية.',
       'الرجال الباحثون عن حل جراحي دائم لمرة واحدة لضعف الانتصاب.'
     ],
+    candidatesRU: [
+      'Мужчины с тяжелой ЭД, не реагирующие на медикаменты, инъекции или ударно-волновую терапию.',
+      'Пациенты с повреждением нервов после операции на простате или других процедур в области таза.',
+      'Те, кто хочет получить надежное решение "по требованию" без ежедневного приема лекарств.',
+      'Мужчины, ищущие долгосрочное, одноразовое хирургическое решение проблемы эректильной дисфункции.'
+    ],
     safety: {
       title: "Safety & Complications",
       content: "Modern penile implants have complication rates below 5%. Potential risks include infection (1-3%), mechanical issues (uncommon with current-generation devices), and erosion (very rare). Choosing an experienced urological surgeon with a high case volume significantly improves outcomes and reduces risk.",
@@ -940,6 +976,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     safetyAR: {
       title: 'السلامة والمضاعفات',
       content: 'معدلات المضاعفات للدعامات الحديثة أقل من 5%. تشمل المخاطر المحتملة العدوى (1-3%)، والمشكلات الميكانيكية (نادرة في الأجهزة الحالية). يقلل اختيار جراح مسالك بولية خبير ذي كفاءة عالية بشكل كبير من المخاطر ويحسن النتائج.',
+    },
+    safetyRU: {
+      title: 'Безопасность и осложнения',
+      content: 'Уровень осложнений у современных имплантатов составляет менее 5%. Потенциальные риски включают инфекцию (1-3%), механические проблемы и эрозию. Выбор опытного хирурга-уролога с большим объемом операций значительно улучшает результаты и снижает риск.'
     },
     timeline: {
       title: "Recovery & Activation",
@@ -957,6 +997,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: 'الشهر 3+', title: 'الثقة الكاملة', desc: 'راحة تامة في استخدام الجهاز واستعادة العفوية.' }
       ]
     },
+    timelineRU: {
+      title: 'Восстановление и активация',
+      steps: [
+        { time: 'Неделя 1-2', title: 'Заживление', desc: 'Первоначальное заживление разрезов. Контролируемый дискомфорт с помощью лекарств.' },
+        { time: 'Неделя 4-6', title: 'Активация', desc: 'Первый сеанс обучения в клинике для ознакомления с работой устройства.' },
+        { time: 'Месяц 3+', title: 'Полная уверенность', desc: 'Полный комфорт при использовании устройства. Возвращение спонтанности.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Anesthesia', desc: 'General or spinal anesthesia. Small incision made (scrotal or infrapubic).' },
       { step: '02', title: 'Implantation', desc: 'Cylinders placed in penile shaft, pump in scrotum, reservoir in abdomen.' },
@@ -969,6 +1017,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '03', title: 'الاختبار', desc: 'يتم اختبار الجهاز أثناء العملية لضمان عمله بشكل سليم.' },
       { step: '04', title: 'التعافي', desc: 'إقامة ليلة واحدة. تفعيل الجهاز بعد 4-6 أسابيع من الشفاء.' }
     ],
+    procedureRU: [
+      { step: '01', title: 'Анестезия', desc: 'Общая или спинальная анестезия. Делается небольшой разрез (в мошонке или подлобковой области).' },
+      { step: '02', title: 'Имплантация', desc: 'Цилиндры помещаются в половой член, помпа в мошонку, резервуар в брюшную полость.' },
+      { step: '03', title: 'Тестирование', desc: 'Устройство тестируется во время операции для обеспечения правильной работы.' },
+      { step: '04', title: 'Восстановление', desc: 'Пребывание в клинике на одну ночь. Активация устройства через 4-6 недель после заживления.' }
+    ],
     faq: [
       { q: "Will it look and feel natural?", a: "Yes. When deflated, a 3-piece inflatable implant is virtually undetectable — most partners cannot tell the difference from a natural erection." },
       { q: "Will I still be able to orgasm and ejaculate normally?", a: "Yes. The implant only restores firmness. Sensation, orgasm, and ejaculation remain completely unaffected." },
@@ -978,6 +1032,11 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { q: 'هل سيبدو مظهرها وملمسها طبيعياً؟', a: 'نعم. عند تفريغ الدعامة القابلة للنفخ، تكون غير قابلة للاكتشاف تقريباً — ولا تلاحظ معظم الشريكات فرقاً عن الانتصاب الطبيعي.' },
       { q: 'هل سأظل قادراً على بلوغ النشوة والقذف بشكل طبيعي؟', a: 'نعم. الدعامة تستعيد الصلابة فقط. الإحساس، والنشوة، والقذف تظل طبيعية تماماً ودون تأثر.' },
       { q: 'كم تدوم الدعامة؟', a: 'أجهزة الجيل الحالي مصممة لتستمر من 15 إلى 20 عاماً. وإذا لزم الأمر، يمكن استبدالها بجراحة بسيطة.' }
+    ],
+    faqRU: [
+      { q: 'Будет ли это выглядеть и ощущаться естественно?', a: 'Да. В сдутом состоянии 3-компонентный имплантат практически незаметен — большинство партнеров не могут отличить его от естественной эрекции.' },
+      { q: 'Смогу ли я по-прежнему испытывать оргазм и нормально эякулировать?', a: 'Да. Имплантат восстанавливает только твердость. Чувствительность, оргазм и эякуляция остаются совершенно нетронутыми.' },
+      { q: 'Как долго служит имплантат?', a: 'Имплантаты нынешнего поколения рассчитаны на 15–20 лет службы. При необходимости устройство можно заменить.' }
     ]
   },
   'Dorsal Neurectomy': {
