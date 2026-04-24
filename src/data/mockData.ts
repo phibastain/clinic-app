@@ -2376,8 +2376,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
   'Circumcision': {
     title: 'Child & Adult Circumcision',
     titleAR: 'ختان الأطفال والبالغين',
+    titleRU: 'Обрезание у детей и взрослых',
     tagline: 'Stapler and Standard Circumcision for Adults and Children Minimal Bleeding, Fast Recovery, and Clean Cosmetic Results.',
     taglineAR: 'الختان بالدباسة (Stapler) والختان بالليزر للبالغين والأطفال مع نزيف أقل، تعافي سريع، ونتائج تجميلية نظيفة.',
+    taglineRU: 'Обрезание степлером и стандартное обрезание для взрослых и детей Минимальное кровотечение, быстрое восстановление и аккуратный косметический результат.',
     whatIsIt: {
       title: 'Types of Medical Circumcision: Stapler vs. Standard',
       description: "We offer two primary methods for circumcision, tailored to patient needs and age:\n\n1. **Stapler Circumcision (ZSR):** A modern, innovative technique using a disposable device that cuts and staples simultaneously. It offers a faster procedure (10-15 mins), minimal bleeding, and a superior cosmetic result with a smooth, even scar line.\n\n2. **Standard Circumcision (Conventional):** The traditional surgical method using manual excision and absorbable sutures. This technique allows for precise customization of foreskin removal and is suitable for all complex cases.",
@@ -2387,8 +2389,13 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       title: 'أنواع الختان الطبي: الدباسة مقابل الطريقة القياسية',
       description: 'نقدم طريقتين أساسيتين للختان، مصممة خصيصاً لاحتياجات المريض وعمره:\n\n1. **الختان بالدباسة (ZSR):** تقنية حديثة ومبتكرة تستخدم جهازاً يقطع ويدبس في نفس الوقت. توفر عملية أسرع (10-15 دقيقة)، نزيف أقل، ونتيجة تجميلية ممتازة مع خط ندبة أملس ومتساوٍ.\n\n2. **الختان القياسي (التقليدي):** الطريقة الجراحية التقليدية باستخدام الاستئصال اليدوي والغرز القابلة للامتصاص. تسمح هذه التقنية بتخصيص دقيق لإزالة القلفة ومناسبة لجميع الحالات المعقدة.'
     },
+    whatIsItRU: {
+      title: 'Виды медицинского обрезания: Степлер против Стандарта',
+      description: 'Мы предлагаем два основных метода обрезания, адаптированных к потребностям и возрасту пациента:\n\n1. **Обрезание степлером (ZSR):** Современная инновационная методика с использованием одноразового устройства, которое одновременно разрезает и сшивает. Она обеспечивает более быструю процедуру (10-15 минут), минимальное кровотечение и превосходный косметический результат с гладкой, ровной линией рубца.\n\n2. **Стандартное обрезание (традиционное):** Традиционный хирургический метод с использованием ручного иссечения и рассасывающихся швов. Этот метод позволяет точно настроить объем удаляемой крайней плоти и подходит для всех сложных случаев.'
+    },
     description: "Circumcision is a common procedure performed for both medical and personal reasons. Understanding the indications and benefits can help you make an informed decision.\n\n**Indications: Why is Circumcision Necessary?**\n\n*   **Phimosis:** Inability to retract the foreskin, causing pain and hygiene issues.\n*   **Paraphimosis:** A urologic emergency where retracted foreskin becomes trapped behind the glans.\n*   **Recurrent Balanitis/Balanoposthitis:** Frequent infection and inflammation of the glans and foreskin.\n*   **Lichen Sclerosus:** A skin condition causing scarring and tightening of the foreskin.\n\n**Medical Benefits of Circumcision:**\n\n*   **Improved Hygiene:** Removes the area where smegma and bacteria accumulate, making cleaning easier.\n*   **Reduced Infection Risk:** Significantly lowers the risk of Urinary Tract Infections (UTIs) and Sexually Transmitted Infections (STIs), including HIV and HPV.\n*   **Cancer Prevention:** Lower risk of penile cancer and reduced cervical cancer risk in female partners.\n*   **Aesthetic Preference:** Many men prefer the cleaner look and feel.",
     descriptionAR: 'الختان هو إجراء شائع يتم إجراؤه لأسباب طبية وشخصية. فهم الدواعي والفوائد يمكن أن يساعدك في اتخاذ قرار مستنير.\n\n**دواعي الإجراء: لماذا الختان ضروري؟**\n\n* **الشبم (Phimosis):** عدم القدرة على سحب القلفة، مما يسبب ألماً ومشاكل في النظافة.\n* **الداء الدرهمي (Paraphimosis):** حالة طارئة في المسالك البولية حيث تعلق القلفة خلف الحشفة.\n* **التهاب الحشفة المتكرر:** عدوى والتهاب متكرر في الحشفة والقلفة.\n* **الحزاز المتصلب:** حالة جلدية تسبب تندب وشد القلفة.\n\n**الفوائد الطبية للختان:**\n\n* **نظافة أفضل:** يزيل المنطقة التي تتراكم فيها البكتيريا (اللخن)، مما يسهل التنظيف.\n* **تقليل خطر العدوى:** يقلل بشكل كبير من خطر التهابات المسالك البولية والأمراض المنقولة جنسياً.\n* **الوقاية من السرطان:** يقلل من خطر الإصابة بسرطان القضيب وسرطان عنق الرحم للزوجة.\n* **تفضيل جمالي:** يفضل العديد من الرجال المظهر والشعور الأنظف.',
+    descriptionRU: 'Обрезание — это распространенная процедура, выполняемая как по медицинским, так и по личным причинам. Понимание показаний и преимуществ может помочь вам принять обоснованное решение.\n\n**Показания: Почему обрезание необходимо?**\n\n* **Фимоз:** Невозможность оттянуть крайнюю плоть, что вызывает боль и проблемы с гигиеной.\n* **Парафимоз:** Урологическая неотложная ситуация, когда оттянутая крайняя плоть защемляется за головкой полового члена.\n* **Рецидивирующий баланит/баланопостит:** Частое инфицирование и воспаление головки и крайней плоти.\n* **Склероатрофический лихен:** Кожное заболевание, вызывающее рубцевание и стягивание крайней плоти.\n\n**Медицинские преимущества обрезания:**\n\n* **Улучшение гигиены:** Устраняет область, где скапливается смегма и бактерии, облегчая очистку.\n* **Снижение риска инфекций:** Значительно снижает риск инфекций мочевыводящих путей (ИМП) и инфекций, передающихся половым путем (ИППП), включая ВИЧ и ВПЧ.\n* **Профилактика рака:** Снижение риска рака полового члена и снижение риска рака шейки матки у партнерш.\n* **Эстетические предпочтения:** Многие мужчины предпочитают более чистый внешний вид и ощущения.',
     heroImage: '/assets/image/services section/circumcision/circumcision hero.webp',
     descriptionImage: '/assets/image/services section/circumcision/circumcision clinical mechanism.webp',
     video: null,
@@ -2404,11 +2411,23 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: 'فترة النقاهة' },
       { label: 'الالتئام' }
     ],
+    statsRU: [
+      { label: 'Удовлетворенность' },
+      { label: 'Время процедуры' },
+      { label: 'Время простоя' },
+      { label: 'Заживление' }
+    ],
     benefits: [
       { title: 'Fast & Precise', desc: '15-minute procedure with consistent, symmetrical results.', icon: Timer },
       { title: 'Minimal Bleeding', desc: 'Instant staple-based hemostasis reduces blood loss.', icon: ShieldCheck },
       { title: 'Superior Aesthetics', desc: 'Clean, even scar line with excellent cosmetic outcome.', icon: CheckCircle2 },
       { title: 'Reduced Pain', desc: 'Less tissue trauma compared to traditional methods.', icon: Smile as any }
+    ],
+    benefitsRU: [
+      { title: 'Быстро и точно', desc: '15-минутная процедура с последовательными, симметричными результатами.' },
+      { title: 'Минимальное кровотечение', desc: 'Мгновенный гемостаз на основе скоб снижает кровопотерю.' },
+      { title: 'Превосходная эстетика', desc: 'Чистая, ровная линия рубца с отличным косметическим результатом.' },
+      { title: 'Снижение боли', desc: 'Меньшая травматизация тканей по сравнению с традиционными методами.' }
     ],
     candidates: [
       "Adults seeking circumcision for religious, cultural, or medical reasons.",
@@ -2422,6 +2441,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       'المصابون بالتهاب الحشفة أو التهابات القلفة المتكررة.',
       'الآباء الذين يرغبون في ختان أطفالهم لأسباب صحية أو دينية أو وقائية.'
     ],
+    candidatesRU: [
+      'Взрослые, желающие сделать обрезание по религиозным, культурным или медицинским причинам.',
+      'Мужчины с фимозом (узкой крайней плотью) или рецидивирующим баланитом.',
+      'Те, для кого важен косметический вид и быстрое восстановление.',
+      'Пациенты, желающие современную процедуру с низким риском осложнений.'
+    ],
     safety: {
       title: "Safety & Complications",
       content: "Stapler circumcision is very safe. Risks include minor bleeding, infection (<2%), or swelling. Serious complications are rare. Staples dissolve or fall off naturally within 2-3 weeks.",
@@ -2430,6 +2455,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     safetyAR: {
       title: 'السلامة والاحتياطات',
       content: 'يعد الختان إجراءً آمناً جداً وعالي الكفاءة، ويزداد أمانه مع استخدام طريقة الدباسة الحديثة التي تقلل النزيف وفرص العدوى. يُجرى تحت التخدير الموضعي، وقد يحدث تورم طفيف كاستجابة طبيعية يزول خلال أيام قليلة.',
+    },
+    safetyRU: {
+      title: 'Безопасность и осложнения',
+      content: 'Обрезание степлером очень безопасно. Риски включают незначительное кровотечение, инфекцию (<2%) или отек. Серьезные осложнения редки. Скобы растворяются или отпадают естественным образом в течение 2-3 недель.'
     },
     timeline: {
       title: "Recovery Timeline",
@@ -2447,6 +2476,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: 'شهر 1', title: 'الشفاء التام', desc: 'التعافي الكامل واستئناف الأنشطة بما فيها النشاط الجنسي بصورتها الطبيعية.' }
       ]
     },
+    timelineRU: {
+      title: 'Сроки восстановления',
+      steps: [
+        { time: 'День 1-7', title: 'Начальное заживление', desc: 'Отек и легкий дискомфорт. Держите область чистой и сухой.' },
+        { time: 'Неделя 2-3', title: 'Формирование рубца', desc: 'Скобы растворяются. Формируется линия рубца. Отек спадает.' },
+        { time: 'Неделя 4+', title: 'Полное восстановление', desc: 'Можно возобновить сексуальную активность. Виден окончательный косметический результат.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Anesthesia', desc: 'Local anesthesia (ring block). Patient remains awake, area is numb.' },
       { step: '02', title: 'Stapler Application', desc: 'Disposable stapler device cuts and staples foreskin in one motion.' },
@@ -2459,6 +2496,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '03', title: 'القطع والتدبيس', desc: 'يتم القطع والتدبيس بضغطة واحدة باستخدام تدبيسات دقيقة تسقط تلقائياً بعد الشفاء.' },
       { step: '04', title: 'الانتهاء', desc: 'إجراء سريع يستغرق 15 دقيقة. يمكنك العودة إلى المنزل فوراً مع بعض التعليمات البسيطة للعناية.' }
     ],
+    procedureRU: [
+      { step: '01', title: 'Анестезия', desc: 'Местная анестезия (кольцевая блокада). Пациент остается в сознании, область онемела.' },
+      { step: '02', title: 'Применение степлера', desc: 'Одноразовое степлерное устройство разрезает и сшивает крайнюю плоть одним движением.' },
+      { step: '03', title: 'Проверка гемостаза', desc: 'Кровотечение немедленно контролируется скобами. Накладывается повязка.' },
+      { step: '04', title: 'Выписка', desc: 'Пациент отправляется домой в тот же день с инструкциями по уходу.' }
+    ],
     faq: [
       { q: "Is circumcision painful?", a: "Minimal pain during and after. Local anesthesia ensures comfort throughout the procedure. Most men only need over-the-counter pain relievers for a few days afterward." },
       { q: "When can I resume sexual activity after circumcision?", a: "Typically after 4 weeks, once the area is fully healed. Your doctor will confirm during a follow-up visit." },
@@ -2468,6 +2511,11 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { q: 'هل يمكنني العودة للعمل فوراً بعد إجراء الختان؟', a: 'ننصح براحة من يوم إلى يومين، لكن بإمكان أغلب المرضى العودة لمهامهم الخفيفة غير المجهدة في اليوم التالي.' },
       { q: 'ما الفرق بين الختان بالليزر والختان بالدباسة؟', a: 'الليزر يستبدل المشرط بقطع حراري أكثر دقة ويحتاج لخياطة، بينما الدباسة توفر القطع والخياطة في خطوة واحدة لنتائج أسرع وأكثر تناسقاً.' },
       { q: 'متى يمكنني العودة للنشاط الجنسي الطبيعي أو الرياضة؟', a: 'يُنصح بالانتظار وتجنب الأنشطة المجهدة والنشاط الجنسي حتى يلتئم الجرح تماماً، عادة ما يستغرق 3 إلى 4 أسابيع.' }
+    ],
+    faqRU: [
+      { q: 'Обрезание — это больно?', a: 'Минимальная боль во время и после процедуры. Местная анестезия обеспечивает комфорт на протяжении всей процедуры. Большинству мужчин в течение нескольких дней после этого требуются только безрецептурные обезболивающие.' },
+      { q: 'Когда я смогу возобновить сексуальную активность после обрезания?', a: 'Обычно через 4 недели, когда область полностью заживет. Ваш врач подтвердит это во время контрольного визита.' },
+      { q: 'Нужно ли снимать скобы после обрезания степлером?', a: 'Нет. Титановые скобы растворяются или отпадают естественным образом в течение 2–3 недель по мере заживления раны.' }
     ]
   },
   'Penile Enlargement': {
