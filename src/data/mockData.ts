@@ -2956,10 +2956,13 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
   'Vasectomy': {
     title: 'Vasectomy (Permanent Male Contraception)',
     titleAR: 'استئصال الأسهر (قطع القناة الناقلة للمني لمنع الحمل بشكل دائم)',
+    titleRU: 'Вазэктомия (Постоянная мужская контрацепция)',
     tagline: 'No-Scalpel Vasectomy The Safest and Most Effective Permanent Birth Control for Men. Quick Procedure, No Effect on Sexual Performance.',
     taglineAR: 'استئصال الأسهر بدون مشرط: الطريقة الأكثر أماناً وفعالية لتحديد النسل للرجال. إجراء سريع، لا يؤثر على الأداء الجنسي.',
+    taglineRU: 'Вазэктомия без скальпеля — самый безопасный и эффективный метод постоянной контрацепции для мужчин. Быстрая процедура, не влияет на сексуальную функцию.',
     description: "A vasectomy is a minor outpatient procedure that provides permanent contraception by blocking the vas deferens the tubes that carry sperm from the testicles into the semen. It is recognized worldwide as the most effective form of birth control (over 99.9%), requires only local anesthesia, and most importantly, has absolutely no effect on testosterone levels, sexual desire, erections, or ejaculation. The semen volume remains unchanged it simply no longer contains sperm.",
     descriptionAR: 'استئصال الأسهر هو إجراء بسيط يتم في العيادة، ويوفر وسيلة دائمة لمنع الحمل عن طريق قطع الأنابيب الناقلة للحيوانات المنوية. يعتبر وسيلة تحديد النسل الأكثر فعالية في العالم (أكثر من 99.9%)، ويحتاج تخديراً موضعياً فقط، والأهم أنه لا يؤثر إطلاقاً على مستويات التستوستيرون، أو الرغبة، أو الانتصاب، أو القذف. يبقى حجم السائل المنوي كما هو ولم يعد يحتوي ببساطة على الحيوانات المنوية.',
+    descriptionRU: 'Вазэктомия — это небольшая амбулаторная процедура, которая обеспечивает постоянную контрацепцию путем блокирования семявыносящих протоков — трубок, переносящих сперматозоиды из яичек в семенную жидкость. Она признана во всем мире как самая эффективная форма контроля рождаемости (более 99,9%), требует только местной анестезии и, самое главное, совершенно не влияет на уровень тестостерона, сексуальное желание, эрекцию или эякуляцию. Объем семенной жидкости остается неизменным — в ней просто больше не содержится сперматозоидов.',
     whatIsIt: {
       title: 'What is a No-Scalpel Vasectomy?',
       description: "A no-scalpel vasectomy is a modern, minimally invasive technique for permanent male contraception. Instead of a traditional incision, the urologist uses a specialized instrument to make a tiny puncture (3-5mm) in the scrotal skin to access the vas deferens. The tubes are then cut, sealed, or cauterized to permanently prevent sperm from reaching the semen. The procedure takes only 15-20 minutes under local anesthesia, and patients can go home the same day. Sexual function, hormone levels, and ejaculation remain completely unchanged."
@@ -2967,6 +2970,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     whatIsItAR: {
       title: 'ما هو استئصال الأسهر بدون مشرط؟',
       description: 'إن تقنية قطع القناة الناقلة للمني بدون مشرط تمثل الحل الأحدث لوسائل منع الحمل الدائمة للرجال. بدلاً من الشق الجراحي التقليدي، يستخدم طبيب المسالك البولية أداة خاصة لعمل ثقب صغير جداً (3-5 مم) في جلد كيس الصفن للوصول إلى الأنبوب. تُقطع الأنابيب وتُغلق لمنع وصول الحيوانات المنوية إلى السائل المنوي نهائياً. يتم الإجراء تحت تأثير التخدير الموضعي في 15-20 دقيقة ويعود المريض للمنزل في نفس اليوم. الدوافع الجنسية والهرمونات تبقى طبيعية تماماً.'
+    },
+    whatIsItRU: {
+      title: 'Что такое вазэктомия без скальпеля?',
+      description: 'Вазэктомия без скальпеля — это современный малоинвазивный метод постоянной мужской контрацепции. Вместо традиционного разреза уролог использует специальный инструмент, чтобы сделать крошечный прокол (3-5 мм) в коже мошонки для доступа к семявыносящему протоку. Затем протоки перерезаются, перевязываются или прижигаются, чтобы навсегда предотвратить попадание сперматозоидов в семенную жидкость. Процедура занимает всего 15-20 минут под местной анестезией, и пациенты могут отправиться домой в тот же день. Сексуальная функция, уровень гормонов и эякуляция остаются совершенно неизменными.'
     },
     heroImage: '/assets/image/services section/vasectomy/vasectomy hero.webp',
     descriptionImage: '/assets/image/services section/vasectomy/vasectomy Clinical Mechanism.webp',
@@ -2983,6 +2990,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { label: 'التعافي' },
       { label: 'المفعول', value: 'دائم' }
     ],
+    statsRU: [
+      { label: 'Эффективность' },
+      { label: 'Время процедуры' },
+      { label: 'Восстановление' },
+      { label: 'Эффект', value: 'Постоянный' }
+    ],
     benefits: [
       { title: 'Highest Effectiveness', desc: 'Over 99.9% effective — the most reliable form of contraception available.', icon: Trophy },
       { title: 'No Effect on Sexual Function', desc: 'Erections, ejaculation, sensation, and semen volume remain completely normal.', icon: HeartPulse },
@@ -2994,6 +3007,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { title: 'لا تأثير على الوظيفة الجنسية', desc: 'الانتصاب، القذف، الإحساس وحجم السائل المنوي كلها تبقى طبيعية تماماً.' },
       { title: 'حل دائم في زيارة واحدة', desc: 'إجراء لمرة واحدة لمدى الحياة. لا أدوية، لا أجهزة، ولا زيارات متكررة.' },
       { title: 'وقت تعافي ضئيل', desc: 'إجراء سريع في العيادة الخارجية. يعود معظم الرجال للنشاط المعتاد خلال يومين.' }
+    ],
+    benefitsRU: [
+      { title: 'Высочайшая эффективность', desc: 'Эффективность более 99,9% — самый надежный из доступных методов контрацепции.' },
+      { title: 'Нет влияния на сексуальную функцию', desc: 'Эрекция, эякуляция, чувствительность и объем семенной жидкости остаются совершенно нормальными.' },
+      { title: 'Единоразовое постоянное решение', desc: 'Одна процедура обеспечивает контрацепцию на всю жизнь. Никаких таблеток, устройств или повторных визитов.' },
+      { title: 'Минимальное время восстановления', desc: 'Быстрая амбулаторная процедура. Большинство мужчин возвращаются к нормальной активности в течение 1-2 дней.' }
     ],
     candidates: [
       "Men who have completed their families and want a permanent, worry-free contraception method.",
@@ -3007,6 +3026,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       'الأزواج الباحثون عن الطريقة الأكثر أماناً وفعالية على المدى الطويل.',
       'الرجال الذين يدركون تماماً أن هذا الإجراء يعتبر قراراً نهائياً ودائماً.'
     ],
+    candidatesRU: [
+      'Мужчины, которые уже создали семью и хотят получить постоянный, надежный метод контрацепции.',
+      'Мужья, которые хотят взять на себя ответственность за контроль над рождаемостью, чтобы избавить свою партнершу от гормональных побочных эффектов.',
+      'Пары, ищущие наиболее эффективный и безопасный вариант долгосрочного контроля рождаемости.',
+      'Мужчины, которые полностью понимают и принимают, что вазэктомия предназначена быть окончательным решением.'
+    ],
     safety: {
       title: "Safety & Reversibility",
       content: "No-scalpel vasectomy is one of the safest urological procedures. The risk of infection is extremely low (<1%), and serious complications are very rare. Testosterone production, sexual desire, and erectile function are completely unaffected. Vasectomy reversal (vasovasostomy) is technically possible but success rates decrease over time (50-90%), the procedure is expensive, and fertility restoration is not guaranteed. For this reason, vasectomy should be considered a permanent decision.",
@@ -3015,6 +3040,10 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
     safetyAR: {
       title: 'الأمان وإمكانية الرجوع',
       content: 'يعتبر الإجراء بدون مشرط من أكثر عمليات المسالك أماناً، حيث يكون خطر العدوى ضئيلاً جداً (أقل من 1%). لا توجد أية تأثيرات سلبية أو طويلة المدى على الهرمونات. في حين أن عملية عكس استئصال الأسهر ممكنة طبياً، إلا أن نسب النجاح تتناقص مع مرور الوقت (50-90%) وتكلفتها عالية وليست مضمونة دائماً. لهذا السبب، يُفترض أن تتخذ قرارك على أنه دائم.',
+    },
+    safetyRU: {
+      title: 'Безопасность и обратимость',
+      content: 'Вазэктомия без скальпеля — одна из самых безопасных урологических процедур. Риск инфекции крайне низок (<1%), а серьезные осложнения очень редки. Выработка тестостерона, сексуальное желание и эректильная функция совершенно не страдают. Обратная вазэктомия (вазовазостомия) технически возможна, но показатели успеха со временем снижаются (50-90%), процедура дорогая, а восстановление фертильности не гарантировано. По этой причине вазэктомию следует рассматривать как постоянное решение.'
     },
     timeline: {
       title: "Post-Vasectomy Recovery Timeline",
@@ -3032,6 +3061,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
         { time: 'شهر 3+', title: 'تأكيد العقم', desc: 'تأكيد انعدام الحيوانات المنوية بعد التحليل. أنت الآن تتمتع بمنع حمل دائم ومضمون.' }
       ]
     },
+    timelineRU: {
+      title: 'Сроки восстановления после вазэктомии',
+      steps: [
+        { time: 'День 1-3', title: 'Начальное восстановление', desc: 'Легкий дискомфорт и отек. Рекомендуются пакеты со льдом и покой. Избегайте поднятия тяжестей.' },
+        { time: 'Месяц 1-3', title: 'Фаза очищения от сперматозоидов', desc: 'Остаточные сперматозоиды все еще могут присутствовать в протоках ниже по течению. Продолжайте использовать резервные методы контрацепции, пока анализ спермы не подтвердит нулевое количество сперматозоидов.' },
+        { time: 'Месяц 3+', title: 'Подтверждение стерильности', desc: 'Анализ спермы подтверждает отсутствие сперматозоидов. Теперь достигнута полная контрацепция.' }
+      ]
+    },
     procedure: [
       { step: '01', title: 'Local Anesthesia', desc: 'Local anesthetic is applied to the scrotal area. The patient remains awake and comfortable throughout.' },
       { step: '02', title: 'No-Scalpel Access', desc: 'A tiny puncture (3-5mm) is made using a specialized instrument to access the vas deferens — no scalpel required.' },
@@ -3044,6 +3081,12 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { step: '03', title: 'الربط والقطع', desc: 'يتم قطع القناة وربطها أو كيها من الجانبين لمنع مسار الحيوانات المنوية بصورة تامة.' },
       { step: '04', title: 'الإنهاء والمغادرة', desc: 'يُغلق الثقب الصغير بضمادة بدون أي غرز خياطة. ويعود المريض للمنزل بعد دقائق معدودة.' }
     ],
+    procedureRU: [
+      { step: '01', title: 'Местная анестезия', desc: 'На область мошонки наносится местный анестетик. Пациент остается в сознании и чувствует себя комфортно на протяжении всей процедуры.' },
+      { step: '02', title: 'Доступ без скальпеля', desc: 'Специальным инструментом делается крошечный прокол (3-5 мм) для доступа к семявыносящему протоку — скальпель не требуется.' },
+      { step: '03', title: 'Перевязка и герметизация', desc: 'Семявыносящий проток перерезается, перевязывается и/или прижигается с обеих сторон, чтобы навсегда заблокировать прохождение сперматозоидов.' },
+      { step: '04', title: 'Закрытие и выписка', desc: 'Прокол закрывается небольшой повязкой. Наложение швов не требуется. Пациенты отправляются домой в тот же день.' }
+    ],
     faq: [
       { q: "Is the vasectomy effective immediately?", a: "No. Residual sperm remain in the downstream portion of the vas deferens for several weeks after the procedure. You must continue using backup contraception until a semen analysis (performed approximately 3 months post-procedure) confirms a zero sperm count." },
       { q: "Will it affect my sex drive, weight, or hormones?", a: "No. The testicles continue to produce testosterone normally. Your sex drive, erections, orgasm intensity, and ejaculation volume are completely unaffected. Vasectomy has no hormonal side effects." },
@@ -3053,6 +3096,11 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
       { q: 'هل الإجراء فعال فوراً لمنع الحمل؟', a: 'لا، تظل هناك بقايا من الحيوانات المنوية في المجرى بعد الإجراء. يجب الاستمرار باستخدام وسائل وقاية أخرى حتى يثبت تحليل السائل المنوي (بعد قرابة 3 أشهر) نتيجة صفرية.' },
       { q: 'هل سيؤثر ذلك على الرغبة الجنسية، الوزن، أو الهرمونات؟', a: 'إطلاقاً. تستمر الخصيتان بإنتاج هرمون التستوستيرون بشكل طبيعي بالكامل، ولا يوجد أي ارتباط بالإجراء لزيادة الوزن. كل ما سيتغير في السائل المنوي هو غياب الحيوانات المنوية فقط (أقل من 3% من حجمه الكلي).' },
       { q: 'هل يمكن التراجع عن العملية (فك الربط)؟', a: 'العملية العكسية (إعادة ربط الأسهر) ممكنة طبياً بجراحة دقيقة معقدة، لكن نسبة نجاحها غير المضمون تنخفض تدريجياً بمرور السنوات منذ إجراء الربط، بالإضافة لتكلفتها الباهظة. يجب التعامل مع هذه العمليات على أنها قرارات نهائية وغير عكسية.' }
+    ],
+    faqRU: [
+      { q: 'Эффективна ли вазэктомия сразу?', a: 'Нет. Остаточные сперматозоиды остаются в нижней части семявыносящего протока в течение нескольких недель после процедуры. Вы должны продолжать использовать резервные методы контрацепции, пока анализ спермы (проводимый примерно через 3 месяца после процедуры) не подтвердит нулевое количество сперматозоидов.' },
+      { q: 'Повлияет ли это на мое половое влечение, вес или гормоны?', a: 'Нет. Яички продолжают нормально вырабатывать тестостерон. Ваше половое влечение, эрекция, интенсивность оргазма и объем эякулята совершенно не меняются. Вазэктомия не имеет гормональных побочных эффектов.' },
+      { q: 'Можно ли сделать вазэктомию обратимой?', a: 'Обратная вазэктомия (вазовазостомия) технически возможна с использованием микрохирургии. Однако показатели успеха со временем снижаются (50-90% в зависимости от прошедших лет), процедура является дорогостоящей, и восстановление фертильности не гарантировано. Вазэктомию следует рассматривать как окончательное решение.' }
     ]
   },
   'Flexible Cystoscopy': {
