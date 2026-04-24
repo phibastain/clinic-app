@@ -7070,10 +7070,16 @@ export const EVENTS_DATA: EventData[] = [
     year: '2026',
     title: "Advanced HoLEP Laser Surgery for BPH",
     titleTH: "การผ่าตัดส่องกล้องเลเซอร์ HoLEP สำหรับต่อมลูกหมากโต",
+    titleAR: "جراحة ليزر HoLEP المتقدمة لعلاج تضخم البروستاتا",
+    titleRU: "Передовая лазерная хирургия HoLEP при ДГПЖ",
     subtitle: "Dr. Niti Navanimitkul offers Advanced HoLEP laser surgery in Pattaya-the modern gold standard for long-term, minimally invasive enlarged prostate (BPH) relief.",
     subtitleTH: "นพ.นิธิ นาวานิมิตกุล นำเสนอนวัตกรรมการผ่าตัดส่องกล้องเลเซอร์ HoLEP ในพัทยา ซึ่งเป็นมาตรฐานระดับโลกสำหรับการรักษาโรคต่อมลูกหมากโต (BPH) แบบถาวรและแผลเล็ก",
+    subtitleAR: "يقدم د. نيثي نافانيتكول جراحة ليزر HoLEP المتقدمة في باتايا - المعيار الذهبي الحديث لعلاج تضخم البروستاتا الحميد (BPH) بشكل دائم وبأقل تدخل جراحي.",
+    subtitleRU: "Доктор Нити Наванимиткул предлагает передовую лазерную хирургию HoLEP в Паттайе — современный золотой стандарт для долгосрочного, минимально инвазивного лечения увеличения предстательной железы (ДГПЖ).",
     description: "Dr. Niti Navanimitkul offers Advanced HoLEP laser surgery in Pattaya-the modern gold standard for long-term, minimally invasive enlarged prostate (BPH) relief.",
     descriptionTH: "นพ.นิธิ นาวานิมิตกุล นำเสนอนวัตกรรมการผ่าตัดส่องกล้องเลเซอร์ HoLEP ในพัทยา ซึ่งเป็นมาตรฐานระดับโลกสำหรับการรักษาโรคต่อมลูกหมากโต (BPH) แบบถาวรและแผลเล็ก",
+    descriptionAR: "يقدم د. نيثي نافانيتكول جراحة ليزر HoLEP المتقدمة في باتايا - المعيار الذهبي الحديث لعلاج تضخم البروستاتا الحميد (BPH) بشكل دائم وبأقل تدخل جراحي.",
+    descriptionRU: "Доктор Нити Наванимиткул предлагает передовую лазерную хирургию HoLEP в Паттайе — современный золотой стандарт для долгосрочного, минимально инвазивного лечения увеличения предстательной железы (ДГПЖ).",
     location: "M-Trust Urology Clinic, Pattaya",
     locationTH: "เอ็มทรัสต์ คลินิก พัทยา",
     time: "09:00 - 17:00",
@@ -7215,11 +7221,9 @@ export const EVENTS_DATA: EventData[] = [
   </div>
 </div>
     `,
-      titleAR: "جراحة ليزر HoLEP المتقدمة لعلاج تضخم البروستاتا",
-      subtitleAR: "يقدم د. نيثي نافانيتكول جراحة ليزر HoLEP المتقدمة في باتايا - المعيار الذهبي الحديث لعلاج تضخم البروستاتا الحميد (BPH) بشكل دائم وبأقل تدخل جراحي.",
-      locationAR: "عيادة إم ترست للمسالك البولية، باتايا",
-      descriptionAR: "يقدم د. نيثي نافانيتكول جراحة ليزر HoLEP المتقدمة في باتايا - المعيار الذهبي الحديث لعلاج تضخم البروستاتا الحميد (BPH) بشكل دائم وبأقل تدخل جراحي.",
+      locationRU: "Урологическая клиника M-Trust, Паттайя",
       excerptAR: "جراحة ليزر HoLEP المتقدمة لعلاج تضخم البروستاتا الحميد (BPH) في باتايا، المعيار الذهبي للراحة الدائمة.",
+      excerptRU: "Передовая лазерная хирургия HoLEP для лечения доброкачественной гиперплазии предстательной железы (ДГПЖ) в Паттайе, золотой стандарт долгосрочного облегчения.",
       contentAR: `
 <div class="space-y-6 text-slate-300">
   <p class="text-lg leading-relaxed">
@@ -7297,6 +7301,87 @@ export const EVENTS_DATA: EventData[] = [
     <li class="flex items-start gap-3">
       <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
       <span><strong>تخفيف فوري للأعراض:</strong> تحسن كبير في تدفق البول من اليوم الأول.</span>
+    </li>
+  </ul>
+</div>
+`,
+      contentRU: `
+<div class="space-y-6 text-slate-300">
+  <p class="text-lg leading-relaxed">
+    Если вы мужчина старше 50 лет и испытываете слабый поток мочи или частые ночные походы в туалет, скорее всего, вы столкнулись с <strong>доброкачественной гиперплазией предстательной железы (ДГПЖ)</strong>. Хотя эти симптомы встречаются часто, они могут значительно ухудшить качество вашей жизни. К счастью, жителям и гостям Чонбури теперь доступна <strong>передовая лазерная хирургия HoLEP при увеличении предстательной железы (ДГПЖ) в Паттайе, которую проводит доктор Нити Наванимиткул</strong>. Это предлагает постоянное и минимально инвазивное решение.
+  </p>
+
+  <h3 class="text-2xl font-black text-white uppercase mt-12 mb-4">Сотрудничество экспертов для лучшего здоровья простаты</h3>
+  <p>
+    Здоровье и уверенность возвращаются благодаря индивидуальному уходу. Доктор Тев Ахо (Dr. Tev Aho), доктор медицинских наук, хирург-уролог-консультант больницы Кембриджского университета и международный пионер в области хирургии HoLEP, тесно сотрудничает с <strong>доктором Нити Наванимиткул</strong>. Это гарантирует, что пациенты в Паттайе получают лечение, соответствующее самым высоким мировым стандартам точности и безопасности.
+  </p>
+
+  <div class="relative w-full h-[400px] rounded-3xl overflow-hidden my-12 border border-white/10 shadow-2xl">
+    <img src="/assets/image/expertise/Advanced HoLEP.webp" alt="Иллюстрация передовой хирургии HoLEP" class="w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-linear-to-t from-slate-900/60 to-transparent"></div>
+    <div class="absolute bottom-6 left-6">
+      <p class="text-white text-sm font-bold uppercase tracking-widest">Мировой золотой стандарт: технология HoLEP</p>
+    </div>
+  </div>
+
+  <h3 class="text-2xl font-black text-white uppercase mt-12 mb-4">Что такое HoLEP? Золотой стандарт лечения ДГПЖ</h3>
+  <p>
+    <strong>HoLEP (гольмиевая лазерная энуклеация предстательной железы)</strong> — это передовая процедура, в которой используется энергия лазера для точного удаления всей обструктивной части простаты. В отличие от традиционных методов, HoLEP эффективен для предстательной железы любого размера и предлагает постоянное решение <strong>«раз и навсегда»</strong>.
+  </p>
+
+  <h3 class="text-2xl font-black text-white uppercase mt-12 mb-4">Почему стоит выбрать HoLEP вместо традиционной хирургии?</h3>
+  <div class="overflow-x-auto my-8 rounded-2xl border border-white/10">
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="bg-white/5">
+          <th class="p-4 font-bold text-white border-b border-white/10 text-sm uppercase">Характеристика</th>
+          <th class="p-4 font-bold text-cyan-400 border-b border-white/10 text-sm uppercase">Лазерная хирургия HoLEP</th>
+          <th class="p-4 font-bold text-slate-400 border-b border-white/10 text-sm uppercase">Традиционная ТУРП</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-white/5">
+        <tr>
+          <td class="p-4 text-white font-medium text-sm">Целевой размер простаты</td>
+          <td class="p-4 text-slate-300 text-sm italic">Любые размеры (даже очень большие)</td>
+          <td class="p-4 text-slate-400 text-sm italic">Только маленькие и средние</td>
+        </tr>
+        <tr>
+          <td class="p-4 text-white font-medium text-sm">Кровопотеря</td>
+          <td class="p-4 text-slate-300 text-sm italic">Минимальная (лазер герметизирует сосуды)</td>
+          <td class="p-4 text-slate-400 text-sm italic">Более высокий риск кровотечения</td>
+        </tr>
+        <tr>
+          <td class="p-4 text-white font-medium text-sm">Пребывание в больнице</td>
+          <td class="p-4 text-slate-300 text-sm italic">Короткое (обычно 1 ночь)</td>
+          <td class="p-4 text-slate-400 text-sm italic">Более длительное (3-4 дня)</td>
+        </tr>
+        <tr>
+          <td class="p-4 text-white font-medium text-sm">Время катетеризации</td>
+          <td class="p-4 text-slate-300 text-sm italic">12-24 часа</td>
+          <td class="p-4 text-slate-400 text-sm italic">72+ часа</td>
+        </tr>
+        <tr>
+          <td class="p-4 text-white font-medium text-sm">Частота повторного лечения</td>
+          <td class="p-4 text-slate-300 text-sm italic">Почти 0% (навсегда)</td>
+          <td class="p-4 text-slate-400 text-sm italic">До 15% в течение 10 лет</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="text-2xl font-black text-white uppercase mt-12 mb-4">Основные клинические преимущества:</h3>
+  <ul class="space-y-3 list-none pl-0">
+    <li class="flex items-start gap-3">
+      <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+      <span><strong>Более быстрое восстановление:</strong> Большинство пациентов возвращаются к нормальной активности в течение нескольких дней.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+      <span><strong>Сохранение половой функции:</strong> Нет повышенного риска ЭД по сравнению с другими методами.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] shrink-0"></span>
+      <span><strong>Немедленное облегчение симптомов:</strong> Значительное улучшение потока мочи с первого дня.</span>
     </li>
   </ul>
 </div>
