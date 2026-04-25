@@ -11,8 +11,8 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-    const [lang, setLangState] = useState<Language>('EN');
+export function LanguageProvider({ children, initialLang = 'EN' }: { children: React.ReactNode, initialLang?: Language }) {
+    const [lang, setLangState] = useState<Language>(initialLang);
 
     useEffect(() => {
         // Priority: URL param > localStorage

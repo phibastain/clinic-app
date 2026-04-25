@@ -14,14 +14,19 @@ export async function generateMetadata({ searchParams }: VasectomyProps): Promis
   const awaitedParams = await searchParams;
   const isThai = awaitedParams?.lang === 'th';
   const isAr = awaitedParams?.lang === 'ar';
-  const url = isAr ? '/vasectomy?lang=ar' : isThai ? '/vasectomy?lang=th' : '/vasectomy';
+  const isRu = awaitedParams?.lang === 'ru';
+  const url = isRu ? '/vasectomy?lang=ru' : isAr ? '/vasectomy?lang=ar' : isThai ? '/vasectomy?lang=th' : '/vasectomy';
 
-  const title = isAr
+  const title = isRu
+    ? 'Вазэктомия без скальпеля | Клиника M-Trust'
+    : isAr
     ? 'قطع القناة الدافقة بدون مشرط | عيادة إم-ترست'
     : isThai
     ? 'ทำหมันชายไร้มีด | M-Trust Clinic'
     : 'No-Scalpel Vasectomy Bangkok | M-Trust Clinic';
-  const description = isAr
+  const description = isRu
+    ? 'Самый безопасный и эффективный метод постоянной контрацепции для мужчин. Быстрая процедура без скальпеля, выполняемая лучшими урологами. Без влияния на сексуальную функцию.'
+    : isAr
     ? 'أكثر وسائل منع الحمل أماناً وفعالية للرجال. إجراء سريع بدون مشرط بواسطة أفضل أطباء المسالك البولية. لا تأثير على الأداء الجنسي.'
     : isThai
     ? 'ทำหมันชายไร้มีดผ่าตัด ปลอดภัยที่สุด ไม่กระทบสมรรถภาพทางเพศ โดยแพทย์ผู้เชี่ยวชาญ'
@@ -33,7 +38,7 @@ export async function generateMetadata({ searchParams }: VasectomyProps): Promis
     openGraph: {
       title,
       description,
-      locale: isAr ? 'ar_SA' : isThai ? 'th_TH' : 'en_US',
+      locale: isRu ? 'ru_RU' : isAr ? 'ar_SA' : isThai ? 'th_TH' : 'en_US',
     },
     alternates: {
       canonical: `https://www.mtrusturology.com${url}`,
@@ -41,6 +46,7 @@ export async function generateMetadata({ searchParams }: VasectomyProps): Promis
         'en': '/vasectomy',
         'th': '/vasectomy?lang=th',
         'ar': '/vasectomy?lang=ar',
+        'ru': '/vasectomy?lang=ru',
       },
     },
   };

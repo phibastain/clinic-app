@@ -5,13 +5,13 @@ import { getHomepageJsonLd, JsonLdScript } from '@/utils/jsonLd';
 // UI Components (above-the-fold, load eagerly)
 import HeroSection from '@/components/ui/HeroSection';
 
-// Above-fold section components (load eagerly)
+// Above-fold section component (load eagerly)
 import AboutSection from '@/components/sections/AboutSection';
-import ServicesSection from '@/components/sections/ServicesSection';
-import DoctorsList from '@/components/sections/DoctorsList';
 
-// Below-fold & conditional components (lazy-loaded to reduce TBT)
+// Below-fold section components (lazy-loaded to reduce TBT)
 import dynamic from 'next/dynamic';
+const ServicesSection = dynamic(() => import('@/components/sections/ServicesSection'));
+const DoctorsList = dynamic(() => import('@/components/sections/DoctorsList'));
 const BlogSection = dynamic(() => import('@/components/sections/BlogSection'));
 const ExpertiseSection = dynamic(() => import('@/components/sections/EventsSection'));
 const FaqSection = dynamic(() => import('@/components/sections/FaqSection'));
@@ -62,6 +62,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
         'th': '/?lang=th',
         'ar': '/?lang=ar',
         'ru': '/?lang=ru',
+        'x-default': '/',
       },
     },
   };

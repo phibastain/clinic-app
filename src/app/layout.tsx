@@ -97,7 +97,7 @@ import Footer from "@/components/shared/Footer";
 import TawkToWidget from "@/components/shared/TawkToWidget";
 import ModernBackground from "@/components/ui/ModernBackground";
 
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 
 export default async function RootLayout({
   children,
@@ -106,8 +106,18 @@ export default async function RootLayout({
 }>) {
   const cookieStore = await cookies();
   const langCookie = cookieStore.get('lang')?.value;
-  const htmlLang = langCookie === 'th' ? 'th' : langCookie === 'ar' ? 'ar' : 'en';
-  const htmlDir = langCookie === 'ar' ? 'rtl' : 'ltr';
+
+  // Also detect language from URL query param for Googlebot (which doesn't send cookies)
+  const headersList = await headers();
+  const url = headersList.get('x-url') || headersList.get('referer') || '';
+  const urlLangMatch = url.match(/[?&]lang=(th|ar|ru)\b/);
+  const urlLang = urlLangMatch?.[1] || null;
+
+  // Priority: cookie → URL query param → default 'en'
+  const detectedLang = langCookie || urlLang || 'en';
+  const htmlLang = detectedLang === 'th' ? 'th' : detectedLang === 'ar' ? 'ar' : detectedLang === 'ru' ? 'ru' : 'en';
+  const htmlDir = detectedLang === 'ar' ? 'rtl' : 'ltr';
+  const providerLang = detectedLang === 'th' ? 'TH' : detectedLang === 'ar' ? 'AR' : detectedLang === 'ru' ? 'RU' : 'EN';
 
   return (
     /* suppressHydrationWarning ช่วยแก้ปัญหาแจ้งเตือนตอนสลับ Theme เพราะเราจัดการ class ที่ html เอง */
@@ -134,7 +144,7 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${notoArabic.variable} antialiased min-h-screen`}
       >
         <ThemeProvider>
-          <LanguageProvider>
+          <LanguageProvider initialLang={providerLang}>
             <div className="selection:bg-amber-500 selection:text-white">
               <div className="min-h-screen transition-colors duration-1000 font-sans relative overflow-x-hidden text-start text-slate-900 dark:text-slate-100">
                 <ModernBackground />

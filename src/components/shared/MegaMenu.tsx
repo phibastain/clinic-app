@@ -7,6 +7,7 @@ import { SERVICE_CATEGORIES } from '@/data/mockData';
 import { serviceNameToSlug } from '@/utils/serviceUtils';
 import GradientButton from '@/components/ui/GradientButton';
 import { useLanguage } from '@/components/providers/LanguageProvider';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface MegaMenuProps {
     submenu: Record<string, any[]> | undefined;
@@ -15,6 +16,8 @@ interface MegaMenuProps {
 
 const MegaMenu = ({ submenu, onServiceClick }: MegaMenuProps) => {
     const { lang } = useLanguage();
+    const { t } = useTranslation();
+    const navT = (key: string): string => lang === 'AR' ? t(key) : key;
     const getFirstImage = () => {
         if (!submenu) return null;
         const firstKey = Object.keys(submenu)[0];
@@ -56,7 +59,7 @@ const MegaMenu = ({ submenu, onServiceClick }: MegaMenuProps) => {
                         {Object.entries(submenu).map(([title], i) => (
                             <div key={i} className="text-left flex flex-col">
                                 <h4 className="font-black text-slate-900 dark:text-white text-[12px] uppercase tracking-tight leading-[1.3] min-h-[42px] flex items-end pr-4">
-                                    <span className="max-w-[110px] block">{title}</span>
+                                    <span className="max-w-[110px] block">{navT(title)}</span>
                                 </h4>
                             </div>
                         ))}
@@ -77,7 +80,7 @@ const MegaMenu = ({ submenu, onServiceClick }: MegaMenuProps) => {
                                         }}
                                             className="text-[11px] text-slate-500 dark:text-slate-400 hover:text-amber-600 font-bold transition-all flex items-start group/link uppercase tracking-wider text-left relative">
                                             <span className="absolute left-0 top-[0.55rem] w-3 h-0.5 bg-amber-600 opacity-0 -translate-x-2 group-hover/link:translate-x-0 group-hover/link:opacity-100 transition-all duration-300" />
-                                            <span className="leading-snug transition-transform duration-300 group-hover/link:translate-x-5 block">{link.name || link}</span>
+                                            <span className="leading-snug transition-transform duration-300 group-hover/link:translate-x-5 block">{navT(link.name || link)}</span>
                                         </Link>
                                     </li>
                                 )})}
@@ -101,14 +104,14 @@ const MegaMenu = ({ submenu, onServiceClick }: MegaMenuProps) => {
                         )}
                     </div>
                     <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-6 text-left">
-                        <p className="text-amber-500 text-[8px] font-black uppercase tracking-[0.3em] mb-2">Featured Service</p>
+                        <p className="text-amber-500 text-[8px] font-black uppercase tracking-[0.3em] mb-2">{navT('Featured Service')}</p>
                         <div className="min-h-[54px] flex flex-col justify-end mb-4">
                             <h5 className="text-white font-black text-lg uppercase tracking-tighter leading-tight">
-                                {activeName}
+                                {activeName ? navT(activeName) : ''}
                             </h5>
                         </div>
                         <Link href={activeName ? (lang === 'EN' ? `/services/${serviceNameToSlug(activeName)}` : `/services/${serviceNameToSlug(activeName)}?lang=${lang.toLowerCase()}`) : '#'} className="w-full">
-                            <GradientButton variant="primary" className="px-5 py-2.5 text-[8px] w-full">View Details</GradientButton>
+                            <GradientButton variant="primary" className="px-5 py-2.5 text-[8px] w-full">{navT('View Details')}</GradientButton>
                         </Link>
                     </div>
                 </div>

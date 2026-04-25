@@ -1,7 +1,9 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, Suspense } from 'react';
+import Link from 'next/link';
 import { Clock, ChevronRight, Search, ChevronLeft } from 'lucide-react';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { useTranslation } from '@/hooks/useTranslation';
 import { BLOG_POSTS } from '@/data/mockData';
@@ -26,7 +28,7 @@ interface BlogPostItem {
 
 const POSTS_PER_PAGE = 6;
 
-export default function BlogPage() {
+function BlogContent() {
     const { lang } = useLanguage();
     const { t } = useTranslation();
     const posts: BlogPostItem[] = useMemo(() => BLOG_POSTS.map(p => ({
@@ -42,13 +44,26 @@ export default function BlogPage() {
         image: p.image,
         date: p.date,
     })), []);
+    const searchParams = useSearchParams();
+    const router = useRouter();
     const [search, setSearch] = useState('');
     const [activeCategory, setActiveCategory] = useState('All');
-    const [currentPage, setCurrentPage] = useState(1);
+    const initialPage = Number(searchParams.get('page')) || 1;
+    const [currentPage, setCurrentPage] = useState(initialPage);
 
-    // Reset to page 1 when filter/search changes
+    // Update URL when page changes
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page);
+        const params = new URLSearchParams(searchParams.toString());
+        params.set('page', page.toString());
+        router.push(`?${params.toString()}`, { scroll: true });
+    };
+
+    // Reset to page 1 when filter/search changes (only if it wasn't a direct URL load for a specific page)
     useEffect(() => {
-        setCurrentPage(1);
+        if (search || activeCategory !== 'All') {
+            setCurrentPage(1);
+        }
     }, [search, activeCategory]);
 
     const categories = ['All', ...Array.from(new Set(posts.map(p => p.category).filter(Boolean)))];
@@ -137,33 +152,33 @@ export default function BlogPage() {
                         {/* Pagination */}
                         {totalPages > 1 && (
                             <div className="flex items-center justify-center gap-2 mt-12">
-                                <button
-                                    onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
-                                    disabled={currentPage === 1}
-                                    className="w-10 h-10 rounded-xl flex items-center justify-center border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-500 hover:border-amber-500 hover:text-amber-600 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+                                <Link
+                                    href={`?page=${Math.max(1, currentPage - 1)}`}
+                                    aria-disabled={currentPage === 1}
+                                    className={`w-10 h-10 rounded-xl flex items-center justify-center border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-500 hover:border-amber-500 hover:text-amber-600 transition-all ${currentPage === 1 ? 'opacity-40 cursor-not-allowed pointer-events-none' : ''}`}
                                 >
                                     <ChevronLeft size={16} />
-                                </button>
+                                </Link>
 
                                 {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                                    <button
+                                    <Link
                                         key={page}
-                                        onClick={() => setCurrentPage(page)}
+                                        href={`?page=${page}`}
                                         className={`w-10 h-10 rounded-xl flex items-center justify-center text-sm font-black border transition-all ${currentPage === page
                                             ? 'bg-amber-600 text-white border-amber-600 shadow-lg shadow-amber-500/20'
                                             : 'bg-white dark:bg-slate-900 text-slate-500 border-slate-200 dark:border-slate-700 hover:border-amber-500 hover:text-amber-600'}`}
                                     >
                                         {page}
-                                    </button>
+                                    </Link>
                                 ))}
 
-                                <button
-                                    onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
-                                    disabled={currentPage === totalPages}
-                                    className="w-10 h-10 rounded-xl flex items-center justify-center border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-500 hover:border-amber-500 hover:text-amber-600 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+                                <Link
+                                    href={`?page=${Math.min(totalPages, currentPage + 1)}`}
+                                    aria-disabled={currentPage === totalPages}
+                                    className={`w-10 h-10 rounded-xl flex items-center justify-center border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-500 hover:border-amber-500 hover:text-amber-600 transition-all ${currentPage === totalPages ? 'opacity-40 cursor-not-allowed pointer-events-none' : ''}`}
                                 >
                                     <ChevronRight size={16} />
-                                </button>
+                                </Link>
                             </div>
                         )}
 
@@ -174,5 +189,13 @@ export default function BlogPage() {
                 )}
             </Container>
         </section>
+    );
+}
+
+export default function BlogPage() {
+    return (
+        <Suspense fallback={<div className="min-h-screen"></div>}>
+            <BlogContent />
+        </Suspense>
     );
 }

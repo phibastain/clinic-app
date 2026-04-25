@@ -52,42 +52,129 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
 
     const isAR = lang === 'AR';
     const isRU = lang === 'RU';
+    const isTH = lang === 'TH';
 
-    // Helper: pick AR or RU field if available, else fall back to EN
-    const localized = <T,>(en: T, arField: T | undefined, ruField: T | undefined): T =>
-        (isAR && arField !== undefined && arField !== null) ? arField :
-        (isRU && ruField !== undefined && ruField !== null) ? ruField : en;
+    // Thai helper: look up dot-notation key from translations (e.g. "Focus Shockwave.title")
+    const th = (key: string): string | undefined => {
+        if (!isTH) return undefined;
+        const result = t(key);
+        return result !== key ? result : undefined; // t() returns key unchanged if no translation
+    };
+
+    // Helper: pick TH (via t() lookup), AR, or RU field if available, else fall back to EN
+    const localized = <T,>(en: T, arField: T | undefined, ruField: T | undefined, thKey?: string): T => {
+        if (isTH && thKey) {
+            const thVal = th(thKey);
+            if (thVal) return thVal as unknown as T;
+        }
+        if (isAR && arField !== undefined && arField !== null) return arField;
+        if (isRU && ruField !== undefined && ruField !== null) return ruField;
+        return en;
+    };
 
     // Core display fields
-    const sTitle       = localized(service.title,      service.titleAR,       service.titleRU);
-    const sTagline     = localized(service.tagline,     service.taglineAR,     service.taglineRU);
-    const sDescription = localized(service.description, service.descriptionAR, service.descriptionRU);
-    const sWhatIsItTitle = localized(service.whatIsIt?.title,       service.whatIsItAR?.title,       service.whatIsItRU?.title);
-    const sWhatIsItDesc  = localized(service.whatIsIt?.description, service.whatIsItAR?.description, service.whatIsItRU?.description);
+    const sTitle       = localized(service.title,      service.titleAR,       service.titleRU,      `${serviceName}.title`);
+    const sTagline     = localized(service.tagline,     service.taglineAR,     service.taglineRU,    `${serviceName}.tagline`);
+    const sDescription = localized(service.description, service.descriptionAR, service.descriptionRU, `${serviceName}.description`);
+    const sWhatIsItTitle = localized(service.whatIsIt?.title,       service.whatIsItAR?.title,       service.whatIsItRU?.title,       `${serviceName}.whatIsIt.title`);
+    const sWhatIsItDesc  = localized(service.whatIsIt?.description, service.whatIsItAR?.description, service.whatIsItRU?.description, `${serviceName}.whatIsIt.description`);
 
-    // Array fields
-    const sProcedure   = localized(service.procedure,  service.procedureAR,  service.procedureRU)  ?? [];
-    const sFaq         = localized(service.faq,         service.faqAR,         service.faqRU)        ?? [];
-    const sCandidates  = localized(service.candidates,  service.candidatesAR,  service.candidatesRU) ?? [];
+    // Array fields — for TH, build translated arrays from dot-notation keys
+    const buildThArray = (enArr: any[] | undefined, prefix: string, fields: string[]): any[] | undefined => {
+        if (!isTH || !enArr) return undefined;
+        const result = enArr.map((item: any, idx: number) => {
+            const translated: any = { ...item };
+            for (const field of fields) {
+                const thVal = th(`${serviceName}.${prefix}.${idx}.${field}`);
+                if (thVal) translated[field] = thVal;
+            }
+            return translated;
+        });
+        // Only return if at least one field was translated
+        return result.some((item: any, idx: number) =>
+            fields.some(f => item[f] !== enArr[idx]?.[f])
+        ) ? result : undefined;
+    };
+
+    const thProcedure  = buildThArray(service.procedure,  'procedure',  ['title', 'desc']);
+    const thFaq        = buildThArray(service.faq,         'faq',        ['q', 'a', 'question', 'answer']);
+    const thCandidates = isTH && service.candidates ? (() => {
+        const candidates = service.candidates!;
+        const result = candidates.map((c: string, idx: number) => {
+            const thVal = th(`${serviceName}.candidates.${idx}`);
+            return thVal ?? c;
+        });
+        return result.some((v: string, i: number) => v !== candidates[i]) ? result : undefined;
+    })() : undefined;
+
+    const sProcedure   = thProcedure ?? localized(service.procedure,  service.procedureAR,  service.procedureRU)  ?? [];
+    const sFaq         = thFaq ?? localized(service.faq,         service.faqAR,         service.faqRU)        ?? [];
+    const sCandidates  = thCandidates ?? localized(service.candidates,  service.candidatesAR,  service.candidatesRU) ?? [];
 
     // Safety
-    const sSafetyTitle   = localized(service.safety?.title,   service.safetyAR?.title,   service.safetyRU?.title);
-    const sSafetyContent = localized(service.safety?.content, service.safetyAR?.content, service.safetyRU?.content);
+    const sSafetyTitle   = localized(service.safety?.title,   service.safetyAR?.title,   service.safetyRU?.title,   `${serviceName}.safety.title`);
+    const sSafetyContent = localized(service.safety?.content, service.safetyAR?.content, service.safetyRU?.content, `${serviceName}.safety.content`);
 
     // Stats: values stay as numbers; only labels translate
     const getStatLabel = (idx: number) => {
+        if (isTH) {
+            const thLabel = th(`${serviceName}.stats.${idx}.label`);
+            if (thLabel) return thLabel;
+        }
         if (isAR && service.statsAR?.[idx]?.label) return service.statsAR[idx].label;
         if (isRU && service.statsRU?.[idx]?.label) return service.statsRU[idx].label;
         return service.stats?.[idx]?.label ?? '';
     };
 
+    const getStatValue = (idx: number) => {
+        if (isTH) {
+            const thValue = th(`${serviceName}.stats.${idx}.value`);
+            if (thValue) return thValue;
+        }
+        return service.stats?.[idx]?.value ?? '';
+    };
+
     // Comparison
-    const comp    = (isAR && service.comparisonAR) ? service.comparisonAR : (isRU && service.comparisonRU) ? service.comparisonRU : service.comparison;
+    const thComparison = isTH && service.comparison ? (() => {
+        const titleTH = th(`${serviceName}.comparison.title`);
+        if (!titleTH) return undefined;
+        return {
+            ...service.comparison,
+            title: titleTH,
+            subtitle: th(`${serviceName}.comparison.subtitle`) ?? service.comparison.subtitle,
+            headers: service.comparison.headers?.map((h: string, i: number) =>
+                th(`${serviceName}.comparison.headers.${i}`) ?? h
+            ),
+            items: service.comparison.items?.map((item: any, i: number) => ({
+                ...item,
+                feature: th(`${serviceName}.comparison.items.${i}.feature`) ?? item.feature,
+                focus: th(`${serviceName}.comparison.items.${i}.focus`) ?? item.focus,
+                radial: th(`${serviceName}.comparison.items.${i}.radial`) ?? item.radial,
+            })),
+        };
+    })() : undefined;
+
+    const comp = thComparison ?? ((isAR && service.comparisonAR) ? service.comparisonAR : (isRU && service.comparisonRU) ? service.comparisonRU : service.comparison);
     const compHeader0 = comp?.headers?.[0] ?? '';
     const compHeader1 = comp?.headers?.[1] ?? '';
 
     // Timeline
-    const tl = (isAR && service.timelineAR) ? service.timelineAR : (isRU && service.timelineRU) ? service.timelineRU : service.timeline;
+    const thTimeline = isTH && service.timeline ? (() => {
+        const titleTH = th(`${serviceName}.timeline.title`);
+        if (!titleTH) return undefined;
+        return {
+            ...service.timeline,
+            title: titleTH,
+            steps: service.timeline.steps?.map((step: any, i: number) => ({
+                ...step,
+                time: th(`${serviceName}.timeline.steps.${i}.time`) ?? t(step.time) ?? step.time,
+                title: th(`${serviceName}.timeline.steps.${i}.title`) ?? t(step.title) ?? step.title,
+                desc: th(`${serviceName}.timeline.steps.${i}.desc`) ?? t(step.desc) ?? step.desc,
+            })),
+        };
+    })() : undefined;
+
+    const tl = thTimeline ?? ((isAR && service.timelineAR) ? service.timelineAR : (isRU && service.timelineRU) ? service.timelineRU : service.timeline);
 
     // STD / Lab Testing
     const sTestPanels = localized(service.testPanels, service.testPanelsAR, service.testPanelsRU);
@@ -130,7 +217,7 @@ export default function ServiceDetailClient({ serviceName, slug }: ServiceDetail
                                         {service.stats.map((stat: any, idx: number) => (
                                             <div key={idx} className="bg-black/30 backdrop-blur-md border border-white/10 p-4 rounded-xl text-left">
                                                 <stat.icon className="text-amber-500 mb-2" size={20} />
-                                                <div className="text-2xl font-black text-white leading-none mb-1">{stat.value}</div>
+                                                <div className="text-2xl font-black text-white leading-none mb-1">{getStatValue(idx)}</div>
                                                 <div className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">{getStatLabel(idx)}</div>
                                             </div>
                                         ))}

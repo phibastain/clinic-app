@@ -29,11 +29,14 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
     const awaitedParams = await searchParams;
     const isThai = awaitedParams?.lang === 'th';
     const isAr = awaitedParams?.lang === 'ar';
+    const isRu = awaitedParams?.lang === 'ru';
     const basePath = `/services/${slug}`;
-    const url = isAr ? `${basePath}?lang=ar` : isThai ? `${basePath}?lang=th` : basePath;
+    const url = isRu ? `${basePath}?lang=ru` : isAr ? `${basePath}?lang=ar` : isThai ? `${basePath}?lang=th` : basePath;
 
-    const title = isAr && service.titleAR ? service.titleAR : service.title;
-    const description = isAr && service.taglineAR
+    const title = isRu && service.titleRU ? service.titleRU : isAr && service.titleAR ? service.titleAR : service.title;
+    const description = isRu && service.taglineRU
+        ? service.taglineRU
+        : isAr && service.taglineAR
         ? service.taglineAR
         : (service.tagline || service.description?.substring(0, 160) || '');
 
@@ -44,7 +47,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
             title,
             description,
             images: service.heroImage ? [{ url: service.heroImage }] : [],
-            locale: isAr ? 'ar_SA' : isThai ? 'th_TH' : 'en_US',
+            locale: isRu ? 'ru_RU' : isAr ? 'ar_SA' : isThai ? 'th_TH' : 'en_US',
         },
         twitter: {
             card: 'summary_large_image',
@@ -58,6 +61,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
                 'en': basePath,
                 'th': `${basePath}?lang=th`,
                 'ar': `${basePath}?lang=ar`,
+                'ru': `${basePath}?lang=ru`,
             },
         },
     };

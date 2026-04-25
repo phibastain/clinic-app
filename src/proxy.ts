@@ -119,7 +119,14 @@ export function proxy(request: NextRequest) {
     }
 
     // 4. Detect language from URL param and set cookie for SSR html lang
-    const response = NextResponse.next();
+    const response = NextResponse.next({
+        request: {
+            headers: new Headers([
+                ...Array.from(request.headers.entries()),
+                ['x-url', request.url],
+            ]),
+        },
+    });
     const langParam = request.nextUrl.searchParams.get('lang');
     if (langParam === 'th') {
         response.cookies.set('lang', 'th', { path: '/', sameSite: 'lax' });

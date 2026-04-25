@@ -28,6 +28,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
             alternates: { languages: { en: BASE_URL, th: `${BASE_URL}?lang=th`, ar: `${BASE_URL}?lang=ar`, ru: `${BASE_URL}?lang=ru` } },
         },
         {
+            url: `${BASE_URL}/blog`,
+            lastModified: now,
+            changeFrequency: 'weekly',
+            priority: 0.9,
+            alternates: { languages: { en: `${BASE_URL}/blog`, th: `${BASE_URL}/blog?lang=th`, ar: `${BASE_URL}/blog?lang=ar`, ru: `${BASE_URL}/blog?lang=ru` } },
+        },
+        {
             url: `${BASE_URL}/vasectomy`,
             lastModified: now,
             changeFrequency: 'monthly',

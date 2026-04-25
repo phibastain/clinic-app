@@ -8,7 +8,10 @@ import GradientButton from '@/components/ui/GradientButton';
 import { ABOUT_SPECIALTIES } from '@/data/mockData';
 import { useTranslation } from '@/hooks/useTranslation';
 
+import { useLanguage } from '@/components/providers/LanguageProvider';
+
 const AboutSection = () => {
+    const { lang } = useLanguage();
     const { t } = useTranslation();
 
     return (
@@ -24,7 +27,7 @@ const AboutSection = () => {
                             <p>{t("M-Trust Urology Clinic is a leading specialized clinic providing a full spectrum of urology and men's health services. We focus on diagnosing and treating urological diseases and restoring sexual performance through innovative medical solutions. Our clinic is powered by a team of expert urologists from top-tier medical institutions, ensuring every procedure meets international healthcare standards.")}</p>
                             <p>{t("We prioritize the utmost patient privacy and a confidential environment for all our clients. We combine clinical expertise with advanced technology to offer effective medical and surgical solutions. Whether it's diagnosis or complex surgery, our goal is to help you return to your daily life with total confidence.")}</p>
                         </div>
-                        <Link href="/urologist/dr.niti">
+                        <Link href={lang === 'EN' ? '/urologist/dr.niti' : `/urologist/dr.niti?lang=${lang.toLowerCase()}`}>
                             <GradientButton
                                 variant="outline"
                                 className="px-8 py-3.5 rounded-xl text-[10px] text-left"

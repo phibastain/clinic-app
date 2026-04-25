@@ -4703,7 +4703,9 @@ export const BLOG_POSTS: BlogPost[] = [
       </div>
     `,
       titleAR: "علاج تضخم البروستاتا بدون جراحة: ReZUM و UroLift",
+      titleRU: "Лечение ДГПЖ без операции: ReZum и UroLift",
       excerptAR: "بدائل جديدة لتضخم البروستاتا الحميد تحافظ على الوظيفة الجنسية وتوفر تعافياً سريعاً.",
+      excerptRU: "Новые альтернативы для лечения доброкачественной гиперплазии предстательной железы, которые сохраняют половую функцию и обеспечивают быстрое восстановление.",
       contentAR: `
       <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
         يؤثر تضخم البروستاتا الحميد (BPH) على أكثر من 50% من الرجال فوق سن الخمسين، مما يسبب أعراضاً بولية تؤثر بشكل كبير على جودة الحياة. الجراحة التقليدية (TURP) فعالة ولكنها تحمل مخاطر تشمل الخلل الوظيفي الجنسي وطول فترة التعافي. يمثل <strong>علاج ReZUM ببخار الماء</strong> و <strong>نظام UroLift</strong> بدائل ثورية غير جراحية.
@@ -4751,6 +4753,56 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>UroLift:</strong> مثالي للبروستاتا الصغيرة إلى المتوسطة (أقل من 80 مل)</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> كلاهما يحافظ على الوظيفة الجنسية بنسبة 100٪</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> كلاهما يتجنب الجراحة الكبرى</li>
+        </ul>
+      </div>
+      `,
+      contentRU: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Доброкачественная гиперплазия предстательной железы (ДГПЖ) поражает более 50% мужчин старше 50 лет, вызывая симптомы мочеиспускания, которые значительно снижают качество жизни. Традиционная хирургия (ТУРП) эффективна, но несет в себе риски, включая сексуальную дисфункцию и длительное восстановление. <strong>Терапия водяным паром ReZUM</strong> и <strong>система UroLift</strong> представляют собой революционные нехирургические альтернативы.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Что такое ReZUM?</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            ReZUM использует стерильный водяной пар для бережного и точного удаления избыточной ткани простаты. Процедура занимает всего <strong>15 минут</strong> под местной анестезией.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Минимально инвазивно</strong> — не требуется разрезов</li>
+            <li><strong>Сохраняет половую функцию</strong> — нет риска ретроградной эякуляции</li>
+            <li><strong>Быстрое восстановление</strong> — возвращение к нормальной жизни через 3-7 дней</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img 
+            src="/assets/image/blog section/Treating BPH Without Surgery 2.webp" 
+            alt="Процедура ReZUM" 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">ReZUM: терапия водяным паром при ДГПЖ</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Что такое UroLift?</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        UroLift использует крошечные имплантаты, чтобы «приподнять» и удержать увеличенную ткань простаты вдали от уретры, создавая открытый канал для оттока мочи. Ткани не удаляются.
+      </p>
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        «Исследования показывают, что пациенты с UroLift испытывают немедленное облегчение симптомов с нулевым риском эректильной или эякуляторной дисфункции — это меняет правила игры для более молодых, сексуально активных мужчин».
+      </blockquote>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">ReZUM или UroLift: что подходит именно вам?</h3>
+      
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Краткое сравнение:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>ReZUM:</strong> лучше всего подходит для простаты среднего и большого размера (30-80 куб. см)</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>UroLift:</strong> идеально подходит для простаты малого и среднего размера (менее 80 куб. см)</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Оба метода на 100% сохраняют половую функцию</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Оба метода позволяют избежать серьезного хирургического вмешательства</li>
         </ul>
       </div>
       `
@@ -5021,6 +5073,57 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> العمر 40+ مع تاريخ عائلي: البدء في الفحص مبكراً</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> دمج فحص PSA مع فحص المستقيم الرقمي (DRE)</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> نتائج الفحص جاهزة خلال 24-48 ساعة</li>
+        </ul>
+      </div>
+      `,
+      titleRU: "Предупреждающие признаки рака простаты: почему важен ПСА",
+      excerptRU: "Рак простаты на ранних стадиях часто протекает бессимптомно. Узнайте, почему ежегодный анализ крови на ПСА имеет решающее значение для мужчин.",
+      contentRU: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Рак предстательной железы является вторым по распространенности видом рака у мужчин во всем мире, однако на ранних стадиях заболевание часто протекает <strong>без симптомов</strong>. Из-за этого скрытого характера регулярное <strong>исследование крови на ПСА (простат-специфический антиген)</strong> имеет критическое значение для раннего выявления и успешного лечения.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Что такое анализ на ПСА?</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            ПСА — это белок, вырабатываемый предстательной железой. Повышенный уровень может указывать на рак простаты, ДГПЖ (аденому) или простатит. Простой анализ крови может обнаружить отклонения <strong>за годы до появления симптомов</strong>.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Норма ПСА:</strong> &#60;4.0 нг/мл (зависит от возраста)</li>
+            <li><strong>Серая зона:</strong> 4.0-10.0 нг/мл (требует дополнительного обследования)</li>
+            <li><strong>Высокий риск:</strong> &#62;10.0 нг/мл (необходимо немедленное обследование)</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img 
+            src="/assets/image/blog section/Prostate Cancer Warning Signs 2.webp" 
+            alt="Анализ крови на ПСА" 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Раннее обнаружение спасает жизни: скрининг ПСА</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Предупреждающие признаки (Поздние стадии)</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        В то время как ранний рак простаты протекает бессимптомно, запущенное заболевание может вызывать проблемы с мочеиспусканием, кровь в моче, боль в костях или эректильную дисфункцию. Не ждите появления симптомов — пройдите обследование.
+      </p>
+      
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "Мужчинам старше 50 лет (или старше 40 лет при наличии семейного анамнеза) следует ежегодно сдавать анализ на ПСА. Раннее выявление повышает 5-летнюю выживаемость почти до 100%."
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Рекомендации по скринингу:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Возраст 50+: Ежегодный анализ на ПСА</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Возраст 40+ с семейным анамнезом: Начинайте раньше</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Сочетайте анализ на ПСА с пальцевым ректальным исследованием (ПРИ)</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Результаты готовы через 24-48 часов</li>
         </ul>
       </div>
       `
@@ -5437,6 +5540,128 @@ export const BLOG_POSTS: BlogPost[] = [
       <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
         <strong>يمنع منعاً باتاً</strong> حقن السيليكون السائل أو البارافين أو الزيوت. تسبب هذه المواد غير المصرح بها أوراماً حبيبية شديدة وعدوى وتشوهاً دائماً يتطلب جراحة ترميمية معقدة لإصلاحه. اختر دائماً الطرق الطبية المعتمدة من إدارة الغذاء والدواء (FDA/Thai FDA) والتي يقوم بها أخصائي جراحة المسالك البولية.
       </p>
+      `,
+      titleRU: "Безопасное увеличение полового члена: медицинские филлеры против пересадки жира",
+      excerptRU: "Хотите безопасно увеличить окружность? Сравните два самых эффективных медицинских метода: филлеры на основе гиалуроновой кислоты (ГК) и пересадку собственного жира.",
+      contentRU: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Эстетическое мужское совершенствование больше не является табуированной темой. Современная медицина предлагает безопасные, эффективные и нехирургические варианты увеличения окружности полового члена. Двумя золотыми стандартами являются <strong>филлеры на основе гиалуроновой кислоты (ГК)</strong> и <strong>пересадка собственного жира</strong>. Понимание различий является ключом к выбору правильного пути для вашей уверенности.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">1. Филлеры на основе гиалуроновой кислоты (ГК)</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            Подобно филлерам для лица, медицинские филлеры с ГК вводятся под кожу полового члена для увеличения его окружности. Этот метод популярен благодаря своей <strong>точности</strong> и <strong>обратимости</strong>.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Плюсы:</strong> Нет периода восстановления, немедленный результат, симметричный итог.</li>
+            <li><strong>Минусы:</strong> Временный эффект (длится 12-18 месяцев), требует поддерживающих процедур.</li>
+            <li><strong>Лучше всего подходит для:</strong> Тех, кто делает процедуру впервые, или для легкого улучшения.</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img 
+            src="/assets/image/blog section/Safe Penile Enlargement 2.webp" 
+            alt="Medical HA Fillers" 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Точные и обратимые: кожные филлеры с ГК</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">2. Пересадка собственного жира (Липофилинг)</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        Эта процедура включает забор жира из вашего собственного тела (живота или бедер), его очистку и введение в ствол полового члена. Поскольку используются ваши собственные ткани, результаты выглядят невероятно естественно.
+      </p>
+      
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "Пересадка жира предлагает преимущество 'два в одном': липосакцию для контурирования определенных участков тела и естественное увеличение окружности полового члена, которое может длиться годами."
+      </blockquote>
+
+      <div class="bg-red-50 dark:bg-red-900/10 p-6 rounded-2xl border border-red-100 dark:border-red-900/20 my-8">
+        <h4 class="font-bold text-red-600 dark:text-red-500 mb-2">Недостатки пересадки собственного жира:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span> <strong>Непредсказуемое рассасывание жира:</strong> 30-50% пересаженного жира может рассосаться организмом, что со временем приведет к неровным или асимметричным результатам.</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span> <strong>Риск образования комков и узелков:</strong> Жир может образовывать комки или фиброзные узелки, создавая неровную текстуру, что может потребовать корректирующих процедур.</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span> <strong>Требуется операция:</strong> Этап забора жира (липосакция) требует анестезии, разрезов и более длительного периода восстановления (2-4 недели).</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span> <strong>Необратимость:</strong> В отличие от филлеров с ГК, жир нельзя растворить ферментом в случае возникновения осложнений.</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span> <strong>Возможные осложнения в донорской зоне:</strong> Синяки, отеки или неровности контура в месте липосакции.</li>
+        </ul>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Сравнение: филлеры с ГК против пересадки жира</h3>
+      <div class="overflow-x-auto my-8">
+        <table class="w-full text-sm border-collapse rounded-2xl overflow-hidden shadow-lg">
+          <thead>
+            <tr class="bg-slate-800 dark:bg-slate-700 text-white">
+              <th class="px-4 py-3 text-left font-bold">Характеристика</th>
+              <th class="px-4 py-3 text-center font-bold">Филлеры с ГК</th>
+              <th class="px-4 py-3 text-center font-bold">Пересадка жира</th>
+            </tr>
+          </thead>
+          <tbody class="text-slate-700 dark:text-slate-300">
+            <tr class="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">Тип процедуры</td>
+              <td class="px-4 py-3 text-center">Нехирургическая (инъекции)</td>
+              <td class="px-4 py-3 text-center">Малая хирургия (липосакция + инъекция)</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">Время процедуры</td>
+              <td class="px-4 py-3 text-center">30-45 минут</td>
+              <td class="px-4 py-3 text-center">1-2 часа</td>
+            </tr>
+            <tr class="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">Анестезия</td>
+              <td class="px-4 py-3 text-center">Местная анестезия</td>
+              <td class="px-4 py-3 text-center">Местная или общая анестезия</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">Длительность результатов</td>
+              <td class="px-4 py-3 text-center">12-18 месяцев</td>
+              <td class="px-4 py-3 text-center">Более длительная (зависит от степени рассасывания)</td>
+            </tr>
+            <tr class="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">Период восстановления</td>
+              <td class="px-4 py-3 text-center">Нет - сразу к повседневной деятельности</td>
+              <td class="px-4 py-3 text-center">2-4 недели на восстановление</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">Предсказуемость результата</td>
+              <td class="px-4 py-3 text-center">Высокая - точный контроль объема</td>
+              <td class="px-4 py-3 text-center">Умеренная - 30-50% жира может рассосаться</td>
+            </tr>
+            <tr class="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">Симметрия</td>
+              <td class="px-4 py-3 text-center">Отличная - равномерное распределение</td>
+              <td class="px-4 py-3 text-center">Риск образования комков/асимметрии</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">Обратимость</td>
+              <td class="px-4 py-3 text-center">Да - растворяется гиалуронидазой</td>
+              <td class="px-4 py-3 text-center">Нет - требует хирургической коррекции</td>
+            </tr>
+            <tr class="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700">
+              <td class="px-4 py-3 font-semibold">Естественная текстура</td>
+              <td class="px-4 py-3 text-center">Хорошая - немного плотнее</td>
+              <td class="px-4 py-3 text-center">Отличная - очень мягкая и естественная</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-800/50">
+              <td class="px-4 py-3 font-semibold">Лучше всего для</td>
+              <td class="px-4 py-3 text-center">Новичков, легкого улучшения, низкий риск</td>
+              <td class="px-4 py-3 text-center">Пациентов, ищущих длительные результаты с контурированием тела</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Предупреждение о безопасности: избегайте парафина и силикона</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        <strong>НИКОГДА</strong> не вводите жидкий силикон, парафин или масла. Эти неразрешенные вещества вызывают тяжелые гранулемы, инфекции и необратимые деформации, требующие сложной реконструктивной хирургии для исправления. Всегда выбирайте медицинские методы, одобренные FDA/Thai FDA и выполняемые специалистом-урологом.
+      </p>
       `
 },
   {
@@ -5545,6 +5770,58 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> التخطيط للأبوة في المستقبل</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> بعد عملية عكس قطع القناة الدافقة (Vasectomy Reversal)</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> وجود تاريخ من مشاكل الخصيتين</li>
+        </ul>
+      </div>
+      `,
+      titleRU: "Спермограмма: ключ к лечению мужского бесплодия",
+      excerptRU: "Подготовка к отцовству: что качество вашей спермы и результаты анализов могут рассказать о вашем здоровье.",
+      contentRU: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Мужской фактор бесплодия является причиной трудностей с зачатием почти у 50% пар. Комплексная <strong>спермограмма</strong> — это первый и самый важный шаг в диагностике репродуктивных проблем и выборе правильного лечения.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Что оценивает спермограмма?</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            Тест оценивает количество сперматозоидов, их подвижность, морфологию (форму) и объем семенной жидкости. Стандарты ВОЗ определяют нормальные значения для каждого параметра.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Количество:</strong> &#62;15 млн/мл</li>
+            <li><strong>Подвижность:</strong> &#62;40% подвижных сперматозоидов</li>
+            <li><strong>Морфология:</strong> &#62;4% нормальной формы</li>
+            <li><strong>Объем:</strong> &#62;1.5 мл за одну эякуляцию</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img 
+            src="/assets/image/blog section/Semen Analysis 2.webp" 
+            alt="Semen Analysis Lab" 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Передовое тестирование и анализ фертильности</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Улучшение качества спермы</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        Изменение образа жизни может значительно улучшить показатели спермы в течение 2-3 месяцев: поддержание здорового веса, отказ от курения/алкоголя, управление стрессом и прием добавок, таких как цинк, витамин С и коэнзим Q10.
+      </p>
+      
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "Исследования показывают, что целенаправленные изменения образа жизни и медицинские вмешательства могут увеличить количество и подвижность сперматозоидов на 30-50% всего за 3 месяца."
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Когда следует пройти тестирование:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Попытки зачатия более 12 месяцев</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Планирование будущего отцовства</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> После операции по восстановлению семявыносящих протоков (вазэктомии)</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> История заболеваний яичек</li>
         </ul>
       </div>
       `
@@ -5656,6 +5933,57 @@ export const BLOG_POSTS: BlogPost[] = [
         </ul>
       </div>
       `
+    ,titleRU: 'Преодоление преждевременной эякуляции: медицинские решения'
+    ,excerptRU: 'Изучите медицинские методы лечения и микрохирургические методы, позволяющие навсегда решить проблему преждевременной эякуляции.'
+    ,contentRU: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Преждевременная эякуляция (ПЭ) затрагивает 20-30% мужчин, вызывая значительный стресс и проблемы в отношениях. Современная медицина предлагает как <strong>поведенческую терапию</strong>, так и <strong>медицинские вмешательства</strong> — включая инновационные хирургические варианты — для обеспечения долгосрочных решений.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Понимание преждевременной эякуляции</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            ПЭ определяется как эякуляция, происходящая в течение 1-2 минут после проникновения (или меньше), сопровождающаяся неспособностью контролировать время и личным стрессом.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Первичная ПЭ:</strong> Пожизненное состояние</li>
+            <li><strong>Вторичная ПЭ:</strong> Приобретенная в более позднем возрасте</li>
+            <li><strong>Причины:</strong> Гиперчувствительность, тревога, нейрохимический дисбаланс</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img 
+            src="/assets/image/blog section/Overcoming Premature Ejaculation 2.webp" 
+            alt="Medical Treatment" 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Медицинские решения для длительного результата</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Варианты лечения</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        <strong>Лекарственные препараты:</strong> СИОЗС (Дапоксетин) задерживают эякуляцию в 3-4 раза. <strong>Местные анестетики:</strong> Спреи с лидокаином снижают чувствительность. <strong>Хирургический вариант:</strong> Селективная дорсальная нейрэктомия навсегда снижает гиперчувствительность.
+      </p>
+      
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "Сочетание медикаментозного лечения с поведенческими методами дает наилучшие результаты. Более 70% мужчин достигают удовлетворительного контроля в течение 3 месяцев после начала лечения."
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Показатели успешности лечения:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Препараты СИОЗС: успех 70-80%</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Поведенческая терапия: улучшение 50-60%</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Комбинированный подход: удовлетворенность 80-90%</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Хирургический вариант: постоянное решение для тяжелых случаев</li>
+        </ul>
+      </div>
+      `
 },
   {
     id: 9,
@@ -5749,6 +6077,51 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> معايير تعقيم بمستوى المستشفيات</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> بيئة خاصة وسرية تامة</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> رعاية ومتابعة ما بعد العملية مشمولة</li>
+        </ul>
+      </div>
+    `,
+    titleRU: 'Обрезание поблизости: как выбрать лучшую клинику?',
+    excerptRU: 'Поиск надежной клиники для обрезания имеет решающее значение. Сравните новейшую технологию степлера с традиционными методами и узнайте, на что обратить внимание в профессиональной урологической клинике.',
+    contentRU: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Выбор правильной клиники для обрезания — одно из самых важных решений, которое вы примете для этой процедуры. Независимо от того, делается ли это по медицинским, гигиеническим или эстетическим причинам, <strong>кто ее выполняет и как</strong>, определяет ваш уровень комфорта, скорость выздоровления и конечный эстетический результат.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Обрезание степлером против традиционного обрезания</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            При традиционном обрезании используется скальпель и наложение швов вручную, что занимает 30-45 минут. Современное <strong>обрезание степлером (ZSR)</strong> завершает ту же процедуру всего за 15 минут с превосходными результатами.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>15-минутная процедура</strong> — значительно быстрее, чем традиционная</li>
+            <li><strong>Минимальное кровотечение</strong> — мгновенный гемостаз за счет сшивания скобами</li>
+            <li><strong>Превосходная эстетика</strong> — чистый, ровный круговой результат</li>
+            <li><strong>Меньше боли</strong> — снижение травматизации тканей и отсутствие ручного наложения швов</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Circumcision Near Me 2.webp" alt="Circumcision clinic" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Современное обрезание в урологической клинике M-Trust</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">На что обратить внимание в клинике по обрезанию</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        Не все клиники предлагают одинаковый уровень обслуживания. Сертифицированный <strong>уролог</strong> (а не врач общей практики) должен проводить процедуру с использованием стерильного оборудования больничного класса. Клиника должна предлагать абсолютную конфиденциальность и послеоперационное наблюдение.
+      </p>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Контрольный список клиники:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Процедура выполняется специалистом-урологом</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Доступна новейшая технология ZSR/степлера</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Стандарты стерилизации больничного класса</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Частная, конфиденциальная обстановка</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Послеоперационный уход и наблюдение включены</li>
         </ul>
       </div>
     `
@@ -5851,6 +6224,53 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>شديد:</strong> أجهزة الشفط، الحقن، أو دعامة العضو الذكري</li>
         </ul>
       </div>
+    `,
+    titleRU: 'Эректильная дисфункция: что делать, когда ваш «младший брат» не хочет просыпаться?',
+    excerptRU: 'Пытаетесь устранить эректильную дисфункцию? От изменения образа жизни до передовой ударно-волновой терапии — откройте для себя медицинские решения для возвращения уверенности.',
+    contentRU: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Эректильная дисфункция (ЭД) встречается гораздо чаще, чем большинство мужчин осмеливаются признать — от нее страдает <strong>1 из 3 мужчин старше 40 лет</strong>. Хорошая новость: в современной урологии есть передовые методы лечения, которые выходят далеко за рамки синей таблетки, устраняя первопричину для длительного восстановления.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Почему возникает ЭД?</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            ЭД чаще всего имеет сосудистое происхождение — это означает, что кровеносные сосуды, снабжающие половой член, повреждены или сужены. К другим причинам относятся повреждение нервов, гормональный дисбаланс (низкий уровень тестостерона) и психологические факторы.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li>Плохое кровообращение в области таза (наиболее часто)</li>
+            <li>Диабет или гипертония, повреждающие стенки сосудов</li>
+            <li>Низкий уровень тестостерона</li>
+            <li>Стресс, тревога и проблемы в отношениях</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Erectile Dysfunction 2.webp" alt="ED Solutions" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Современные решения проблемы эректильной дисфункции</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Лестница лечения: от простого к сложному</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        Лечение начинается с изменения образа жизни (физические упражнения, диета, отказ от курения) и пероральных препаратов (ингибиторы ФДЭ-5, такие как силденафил). Когда это не помогает, <strong>ударно-волновая терапия Li-ESWT</strong> естественным образом регенерирует кровеносные сосуды. В тяжелых случаях постоянным решением являются имплантаты полового члена.
+      </p>
+
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "Самый важный шаг — нарушить молчание. ЭД — это заболевание, а не недостаток характера, и одно из самых легко поддающихся лечению в мужском здоровье."
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Варианты лечения по степени тяжести:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>Легкая степень:</strong> Изменение образа жизни + ингибиторы ФДЭ-5</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>Средняя степень:</strong> Ударно-волновая терапия Li-ESWT (регенеративная)</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>Тяжелая степень:</strong> Вакуумные устройства, инъекции или имплантат полового члена</li>
+        </ul>
+      </div>
     `
   },
   {
@@ -5949,6 +6369,52 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> تفاقم الأعراض على مدار أسابيع</li>
         </ul>
       </div>
+    `,
+    titleRU: 'Затрудненное мочеиспускание? Причины и методы лечения обструкции мочевыводящих путей.',
+    excerptRU: 'Если вам приходится напрягаться при мочеиспускании, это может быть признаком ДГПЖ или других заболеваний мочевыводящих путей. Узнайте о доступных современных нехирургических методах лечения.',
+    contentRU: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Затрудненное мочеиспускание, слабая струя или ощущение, что вы никогда не можете полностью опорожнить мочевой пузырь — это классические предупреждающие признаки <strong>обструкции мочевыводящих путей</strong>. У мужчин старше 50 лет наиболее частой причиной является увеличение простаты (ДГПЖ), но ряд других состояний также может вызвать закупорку.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Общие причины обструкции мочевыводящих путей</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Доброкачественная гиперплазия предстательной железы (ДГПЖ)</strong> — наиболее часто встречается у мужчин старше 50 лет</li>
+            <li><strong>Стриктура уретры</strong> — рубцевание, сужающее уретру</li>
+            <li><strong>Камни в мочевом пузыре</strong> — блокирующие выход из мочевого пузыря</li>
+            <li><strong>Рак простаты</strong> — поражение на поздней стадии</li>
+            <li><strong>Нейрогенный мочевой пузырь</strong> — дисфункция нервов, влияющая на контроль мочевого пузыря</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Straining to Urinate 2.webp" alt="Urinary Issues" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Современное нехирургическое лечение проблем с мочеиспусканием</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Нехирургические решения для ДГПЖ</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        Для обструкции, связанной с ДГПЖ, две минимально инвазивные терапии изменили подход к лечению: <strong>терапия водяным паром ReZUM</strong> и <strong>UroLift</strong>. Обе процедуры можно проводить под местной анестезией, они сохраняют половую функцию и позволяют пациентам вернуться домой в тот же день.
+      </p>
+
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "Не ждите, пока вы вообще не сможете мочиться. Раннее лечение обструкции мочевыводящих путей предотвращает необратимое повреждение мочевого пузыря и осложнения на почки."
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Когда немедленно обращаться к урологу:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Полная неспособность к мочеиспусканию (задержка мочи)</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Кровь в моче в сочетании с затрудненным мочеиспусканием</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Болезненное мочеиспускание с лихорадкой (возможна инфекция)</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Симптомы ухудшаются в течение нескольких недель</li>
+        </ul>
+      </div>
     `
   },
   {
@@ -6043,6 +6509,50 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> فواتير سرية — لا يوجد وصف طبي على الإيصالات</li>
         </ul>
       </div>
+    `,
+    titleRU: 'Тестирование на ИППП поблизости: почему конфиденциальность и технологии имеют значение.',
+    excerptRU: 'Обеспокоены ИППП? Узнайте, почему конфиденциальное ПЦР-тестирование ДНК является золотым стандартом точности и как найти частную клинику рядом с вами.',
+    contentRU: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Инфекции, передающиеся половым путем (ИППП), распространены как никогда, однако стигма и страх смущения мешают многим пройти тестирование. Современное <strong>ПЦР-тестирование ДНК</strong> в специализированных частных клиниках обеспечивает абсолютную точность и полную конфиденциальность — зачастую с результатами через 24-48 часов.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Почему ПЦР-тестирование является золотым стандартом</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            Традиционное тестирование на ИППП основано на методах культивирования, которые могут занимать дни и пропускать ранние инфекции. ПЦР (полимеразная цепная реакция) напрямую обнаруживает ДНК возбудителя, обеспечивая превосходную чувствительность даже на самых ранних стадиях.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Точность 99%+</strong> — обнаруживает даже мельчайшие количества ДНК патогена</li>
+            <li><strong>Обнаруживает раннюю инфекцию</strong> — до того, как тесты на антитела покажут положительный результат</li>
+            <li><strong>Несколько патогенов</strong> — один образец тестирует на множество ИППП одновременно</li>
+            <li><strong>Быстрые результаты</strong> — обычно 24-48 часов</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/STI Testing Near Me 2.webp" alt="STI Testing" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Конфиденциальное ПЦР-тестирование ДНК на ИППП</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Общие ИППП, на которые мы тестируем</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        Наша комплексная панель ИППП охватывает хламидиоз, гонорею, сифилис, ВИЧ, гепатит В и С, ВПЧ, герпес (ВПГ-1 и ВПГ-2) и микоплазму. Все анализы проводятся конфиденциально — результаты никогда не передаются без вашего согласия.
+      </p>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Наша гарантия конфиденциальности:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Отдельная частная консультационная комната</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Результаты доставляются безопасно через Line или зашифрованную электронную почту</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Никакая информация не передается без вашего письменного согласия</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Конфиденциальное выставление счетов — никаких медицинских описаний в квитанциях</li>
+        </ul>
+      </div>
     `
   },
   {
@@ -6133,6 +6643,48 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> تحليل البول — يستبعد العدوى أو الدم</li>
         </ul>
       </div>
+    `,
+    titleRU: 'Частое мочеиспускание, дискомфорт или пробуждение по ночам? Раскрываем причины.',
+    excerptRU: 'Испытываете неполное опорожнение или частые ночные походы в туалет? Узнайте об основных причинах, таких как увеличение простаты (ДГПЖ), и о том, как могут помочь современные методы лечения.',
+    contentRU: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Пробуждение 2, 3 или 4 раза за ночь для мочеиспускания — состояние, называемое <strong>никтурией</strong>, — не является нормальной частью старения. Как и постоянные позывы в течение дня, ощущение неполного опорожнения или дискомфорт в области таза. Это измеримые медицинские симптомы, причины которых поддаются лечению.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Что стоит за частым мочеиспусканием?</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">Эти симптомы часто перекрываются и могут быть вызваны множеством причин:</p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Увеличение простаты (ДГПЖ)</strong> — сдавливает уретру, вызывая частые позывы</li>
+            <li><strong>Гиперактивный мочевой пузырь (ГАМП)</strong> — мышца мочевого пузыря сокращается тогда, когда не должна</li>
+            <li><strong>Простатит</strong> — воспаление предстательной железы, вызывающее позывы и дискомфорт</li>
+            <li><strong>ИМП (Инфекция мочевыводящих путей)</strong> — жжение и позывы, особенно с температурой</li>
+            <li><strong>Диабет</strong> — высокий уровень сахара в крови увеличивает диурез</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Frequent Urination 2.webp" alt="Frequent Urination" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Определите и лечите первопричину</p>
+          </div>
+        </div>
+      </div>
+
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "Один простой тест на урофлоуметрию и УЗИ могут точно определить причину в большинстве случаев. Нет необходимости страдать молча — доступно эффективное лечение."
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Этапы диагностики в нашей клинике:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Урофлоуметрия — измеряет скорость потока мочи</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> УЗИ остаточной мочи после мочеиспускания — проверяет опорожнение мочевого пузыря</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Анализ крови на ПСА — скрининг на проблемы с простатой</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Общий анализ мочи — исключает инфекцию или кровь</li>
+        </ul>
+      </div>
     `
   },
   {
@@ -6221,6 +6773,47 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> حقن الفيلر HA ← زيادة فورية في المحيط (نفس اليوم)</li>
         </ul>
       </div>
+    `,
+    titleRU: '«Мой младший брат раньше был больше». Понимание уменьшения полового члена.',
+    excerptRU: 'Вы заметили уменьшение длины или обхвата? Узнайте о реальных медицинских причинах потери размера полового члена — от старения до простатэктомии — и о том, как обратить это вспять.',
+    contentRU: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Заметить уменьшение размера полового члена может быть неприятно, но это на удивление распространенная медицинская жалоба. Потеря 1-2 сантиметров в длину или обхвате с годами часто является результатом конкретных физиологических изменений, многие из которых поддаются лечению.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Почему происходит уменьшение</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            Размер полового члена зависит от эластичной ткани и кровотока. Когда эти системы нарушаются, происходит фактическая или воспринимаемая потеря размера:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Снижение частоты эрекций</strong> — приводит к фиброзу тканей</li>
+            <li><strong>Низкий уровень тестостерона</strong> — уменьшает объем гладких мышц</li>
+            <li><strong>Болезнь Пейрони</strong> — рубцовая ткань вызывает искривление и укорочение</li>
+            <li><strong>Значительное увеличение веса</strong> — надлобковый жир скрывает основание</li>
+            <li><strong>Послеоперационные изменения</strong> — хирургия простаты может повлиять на длину</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/My Little Brother 2.webp" alt="Penile Shrinkage" class="w-full h-full object-cover" />
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Варианты восстановления и увеличения</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        Лечение первопричины (ЗГТ при низком уровне тестостерона, ударно-волновая терапия при ЭД, снижение веса) часто частично восстанавливает размер. Для косметического увеличения обхвата <strong>инъекции гиалуроновой кислоты (ГК)</strong> или <strong>пересадка собственного жира</strong> предлагают безопасные медицинские немедленные результаты.
+      </p>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">План лечения:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Ударно-волновая терапия при ЭД → восстанавливает регулярные эрекции → предотвращает дальнейшее уменьшение</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Заместительная гормональная терапия (ЗГТ), если подтвержден низкий уровень тестостерона → восстанавливает массу гладких мышц</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Инъекции филлеров ГК → немедленное увеличение обхвата (в тот же день)</li>
+        </ul>
+      </div>
     `
   },
   {
@@ -6304,6 +6897,45 @@ export const BLOG_POSTS: BlogPost[] = [
 
       <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
         "كل شهر تأخير يجعل الجراحة أكثر تعقيداً. إذا قمت بحقن مواد غريبة، اطلب استشارة أخصائي جراحة المسالك البولية فوراً — لا تنتظر حتى تتفاقم الأعراض."
+      </blockquote>
+    `
+    ,titleRU: 'Почему необходимо удалять введенные инородные вещества: скрытые опасности парафиномы.'
+    ,excerptRU: 'Вводили оливковое масло, парафин или силикон в половой член? Поймите, почему отсрочка удаления может привести к тяжелым осложнениям и как реконструктивная хирургия сохраняет функциональность.'
+    ,contentRU: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Введение инородных веществ — парафина, оливкового масла, силикона или вазелина — в половой член в попытке увеличить его размер является опасной практикой, которая приводит к <strong>парафиноме</strong>: тяжелой, прогрессирующей гранулематозной реакции. Раннее удаление имеет решающее значение для сохранения функции.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Что такое парафинома?</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            Когда под кожу полового члена вводятся немедицинские вещества, иммунная система организма постоянно атакует их, создавая хроническую воспалительную реакцию. Со временем это приводит к образованию плотной рубцовой ткани и отмиранию тканей.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Уродство</strong> — затвердевшие, неровные бугорки под кожей</li>
+            <li><strong>Хроническая боль</strong> — постоянное воспаление и раздражение нервов</li>
+            <li><strong>Эректильная дисфункция</strong> — повреждение сосудов гранулемами</li>
+            <li><strong>Некроз кожи</strong> — отмирание тканей и изъязвление в тяжелых случаях</li>
+            <li><strong>Риск инфекции</strong> — образование абсцессов вокруг инородного материала</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Why You Must Remove 2.webp" alt="Foreign Body Removal" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Опытная реконструктивная хирургия восстанавливает форму и функцию</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Процесс реконструкции</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        Хирургическое удаление включает полное иссечение пораженной кожи и инородного материала с последующей реконструкцией с использованием кожных трансплантатов (с мошонки, бедра или живота). Раннее хирургическое вмешательство до образования обширных рубцов дает наилучшие функциональные и косметические результаты.
+      </p>
+
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "Каждый месяц задержки усложняет операцию. Если вам вводили инородные вещества, немедленно обратитесь к специалисту-урологу — не ждите ухудшения симптомов."
       </blockquote>
     `
   },
@@ -6395,6 +7027,48 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>النهج المشترك:</strong> رضا طويل الأمد بنسبة 85-90%</li>
         </ul>
       </div>
+    `,
+    titleRU: 'Страдаете от преждевременной эякуляции? Современные решения, которые действительно работают.',
+    excerptRU: 'Преждевременная эякуляция влияет на ваши отношения? Узнайте разницу между психологическими и физиологическими причинами и изучите доступные передовые методы лечения.',
+    contentRU: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Преждевременная эякуляция (ПЭ) является наиболее распространенной мужской сексуальной дисфункцией, однако она остается одной из наименее обсуждаемых. Благодаря современным передовым медицинским возможностям — от таргетных препаратов до микрохирургии — существует решение для каждого типа и степени тяжести ПЭ.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Психологическая или физиологическая ПЭ</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            Правильное определение вашего типа ПЭ необходимо для эффективного лечения. У большинства мужчин сочетаются оба фактора.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Психологическая:</strong> Тревога, страх неудачи, стресс в отношениях</li>
+            <li><strong>Нейробиологическая:</strong> Гиперчувствительность нервных окончаний полового члена</li>
+            <li><strong>Гормональная:</strong> Низкий уровень серотонина или дисфункция щитовидной железы</li>
+            <li><strong>Смешанная:</strong> Наиболее распространенная картина</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Struggling with Premature 2.webp" alt="PE Treatment" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Индивидуальное лечение для длительного улучшения показателей</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Современные методы лечения, которые работают</h3>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Варианты лечения и показатели успеха:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>Дапоксетин (СИОЗС):</strong> Задерживает эякуляцию в 3-4 раза — успех 75%</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>Местные анестетики:</strong> Спрей с лидокаином — снижает чувствительность на 40-60%</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>Поведенческая терапия:</strong> Техники "стоп-старт" и сжатия</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>Дорсальная нейрэктомия:</strong> Хирургический вариант при гиперчувствительности — постоянное решение</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> <strong>Комплексный подход:</strong> 85-90% долгосрочная удовлетворенность</li>
+        </ul>
+      </div>
     `
   },
   {
@@ -6478,6 +7152,45 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> التحقق من أوراق الطبيب وتخصصه الدقيق</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> التأكد من استخدامهم لتقنيات حديثة طفيفة التوغل</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> ضمان وجود مختبر في نفس الموقع لنتائج سريعة وسرية</li>
+        </ul>
+      </div>
+    `
+    ,titleRU: 'Урологическая клиника поблизости: на что обратить внимание в специализированной клинике высшего уровня.'
+    ,excerptRU: 'Ищете урологическую клинику? Узнайте о ключевых факторах, отличающих первоклассный центр мужского здоровья, — от передовых технологий до абсолютной конфиденциальности и профессионального ухода.'
+    ,contentRU: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Выбор правильной урологической клиники — это решение, которое напрямую влияет на результаты вашего лечения, комфорт и конфиденциальность. Не все клиники предлагают одинаковый уровень знаний, технологий или конфиденциальности. Вот что отличает первоклассный центр мужского здоровья от обычной клиники.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">5 столпов лучшей урологической клиники</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <ul class="list-disc pl-6 space-y-3 text-slate-600 dark:text-slate-300">
+            <li><strong>Сертифицированный уролог</strong> — не терапевт или хирург общей практики</li>
+            <li><strong>Передовые технологии</strong> — Li-ESWT, UroLift, ReZUM, лазер HoLEP на месте</li>
+            <li><strong>Полная конфиденциальность</strong> — отдельные кабинеты, неприметный вход, зашифрованные записи</li>
+            <li><strong>Комплексные услуги</strong> — от диагностики до лечения в одном месте</li>
+            <li><strong>Последующее наблюдение</strong> — структурированный мониторинг для достижения наилучших результатов</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Urology Clinic Near Me 2.webp" alt="Urology Clinic" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Премиальное медицинское обслуживание мужчин в урологической клинике M-Trust</p>
+          </div>
+        </div>
+      </div>
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "Качество опыта вашего уролога имеет большее значение, чем близость клиники. 30-минутная поездка к эксперту стоит гораздо больше, чем пешая доступность к неопытному врачу."
+      </blockquote>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Перед записью на прием:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Проверьте конкретные учетные данные и специализацию врача</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Убедитесь, что они используют современные минимально инвазивные методы</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Убедитесь, что у них есть собственная лаборатория для быстрых и конфиденциальных результатов</li>
         </ul>
       </div>
     `
@@ -6576,6 +7289,51 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> ضعف انتساب وعائي شديد ← زراعة دعامة (حل دائم)</li>
         </ul>
       </div>
+    `,
+    titleRU: 'Проблемы с поддержанием эрекции? Объяснение потери твердости на полпути.',
+    excerptRU: 'Испытываете потерю эрекции во время интимной близости? Узнайте о физиологических и психологических факторах, которые заставляют вас терять твердость на полпути, и о том, как это исправить.',
+    contentRU: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Достижение эрекции — это одна проблема, а поддержание ее на протяжении всего полового акта — другая. <strong>Потеря твердости на полпути</strong> является специфической формой ЭД, называемой «нарушением поддержания эрекции», и встречается чрезвычайно часто. Причиной обычно является сочетание сосудистых и психологических факторов.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Почему эрекция ослабевает на полпути</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            Поддержание эрекции требует непрерывного притока крови при сжатии отводящих вен. Если что-то из этого не работает, твердость теряется:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Венозная утечка</strong> — кровь слишком быстро покидает половой член (наиболее частая причина)</li>
+            <li><strong>Тревога ожидания неудачи</strong> — адреналин сужает кровеносные сосуды</li>
+            <li><strong>Недостаточное возбуждение</strong> — отвлечение или снижение стимуляции</li>
+            <li><strong>Окончание действия ингибитора ФДЭ-5</strong> — проблема со временем приема лекарства</li>
+            <li><strong>Низкий уровень тестостерона</strong> — снижает сексуальное влечение в процессе акта</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Trouble Maintaining 2.webp" alt="Maintain Erection" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Расширенная оценка и лечение для поддержания эрекции</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Решения при ЭД из-за венозного сброса</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        Венозный сброс диагностируется с помощью динамического допплеровского УЗИ полового члена. Лечение с помощью <strong>ударно-волновой терапии Li-ESWT</strong> укрепляет сосудистый тонус и уменьшает венозный сброс за курс из 6-12 сеансов. Инъекции в половой член (алпростадил) обеспечивают немедленное облегчение в тяжелых случаях.
+      </p>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Лечение в зависимости от причины:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Венозная утечка → Ударно-волновая терапия + препараты ФДЭ-5</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Тревога ожидания неудачи → Консультации + ежедневная низкая доза ингибиторов ФДЭ-5</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Низкий тестостерон → ЗГТ восстанавливает базовое возбуждение</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Тяжелая сосудистая ЭД → Имплантат полового члена (постоянное решение)</li>
+        </ul>
+      </div>
     `
   },
   {
@@ -6668,6 +7426,50 @@ export const BLOG_POSTS: BlogPost[] = [
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> تقنية بدون مشرط بواسطة أخصائي مسالك بولية متمرس</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> مجموعة العناية وتعليمات ما بعد الجراحة</li>
           <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> تحليل السائل المنوي في 8-12 أسبوعاً لتأكيد النجاح</li>
+        </ul>
+      </div>
+    `,
+    titleRU: 'Где сделать вазэктомию: выбор правильной клиники для процедуры без скальпеля.',
+    excerptRU: 'Решились на постоянный метод контрацепции? Узнайте, почему вазэктомия без скальпеля является золотым стандартом и как выбрать лучший урологический центр для безболезненного проведения процедуры.',
+    contentRU: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        Вазэктомия — самая эффективная форма постоянной контрацепции для мужчин с <strong>показателем успеха 99,9%</strong>. Современная <strong>вазэктомия без скальпеля (ВБС)</strong> изменила эту процедуру: никаких швов, минимальный дискомфорт, и большинство мужчин возвращаются к легкой активности в течение 48 часов.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Почему метод без скальпеля — это золотой стандарт</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            Традиционная вазэктомия требует двух небольших разрезов кожи, ручного наложения швов и более длительного восстановления. ВБС использует специальный острый зажим для создания крошечного прокола — никаких разрезов, никаких швов, значительно меньше синяков.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Без скальпеля, без швов</strong> — крошечный прокол заживает сам по себе</li>
+            <li><strong>Процедура 20-30 минут</strong> — выполняется под местной анестезией</li>
+            <li><strong>Возвращение на работу через 1-2 дня</strong> — только легкая активность</li>
+            <li><strong>Низкий уровень осложнений</strong> — снижен риск кровотечения и инфекции по сравнению с традиционным методом</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Where to Get a Vasectomy 2.webp" alt="Vasectomy Clinic" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">Вазэктомия без скальпеля в урологической клинике M-Trust</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Выбор правильной клиники для вазэктомии</h3>
+      <p class="mb-6 leading-relaxed text-slate-600 dark:text-slate-300">
+        Убедитесь, что процедуру выполняет <strong>сертифицированный уролог</strong> со значительным опытом ВБС. Клиника должна предлагать всестороннюю консультацию перед процедурой, четкие инструкции после операции и анализ спермы через 8-12 недель для подтверждения стерильности.
+      </p>
+
+      <div class="bg-amber-50 dark:bg-amber-900/10 p-6 rounded-2xl border border-amber-100 dark:border-amber-900/20 my-8">
+        <h4 class="font-bold text-amber-600 dark:text-amber-500 mb-2">Что включает в себя качественная вазэктомия:</h4>
+        <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Консультация и сессия вопросов и ответов перед процедурой</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Техника без скальпеля опытным урологом</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Набор для послеоперационного ухода и инструкции</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Анализ спермы через 8-12 недель для подтверждения успеха</li>
         </ul>
       </div>
     `
@@ -6811,6 +7613,74 @@ export const BLOG_POSTS: BlogPost[] = [
 
       <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
         "يعتبر ReZUM الآن توصيتنا الأولى للرجال الذين يرغبون في التوقف عن تناول الأدوية اليومية دون قبول مخاطر الجراحة التقليدية."
+      </blockquote>
+    `,
+    titleRU: 'Почему лечение увеличения простаты (ДГПЖ) с помощью ReZUM — лучший выбор.',
+    excerptRU: 'Сравниваете методы лечения ДГПЖ? Узнайте, почему терапия водяным паром ReZUM быстро становится предпочтительной альтернативой ежедневному приему лекарств и инвазивной хирургии.',
+    contentRU: `
+      <p class="mb-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        На протяжении десятилетий мужчины с доброкачественной гиперплазией предстательной железы (ДГПЖ) стояли перед неприятным выбором: ежедневно принимать лекарства с побочными эффектами или подвергаться серьезной хирургической операции (ТУРП) с риском недержания мочи и сексуальной дисфункции. <strong>Терапия водяным паром ReZUM</strong> все меняет.
+      </p>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">Как работает ReZUM</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6 items-start">
+        <div>
+          <p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            ReZUM подает точно направленный водяной пар в обтурирующую ткань простаты. Тепловая энергия, хранящаяся в паре, разрушает лишние клетки при контакте. Затем организм естественным образом рассасывает обработанную ткань в течение 4-6 недель, освобождая мочевой канал.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Процедура длится 10 минут</strong> — выполняется под местной анестезией</li>
+            <li><strong>Без хирургического вмешательства, без разрезов</strong> — минимально инвазивная</li>
+            <li><strong>Сохраняет сексуальную функцию</strong> — нет риска ретроградной эякуляции</li>
+            <li><strong>Долговременные результаты</strong> — стойкое улучшение на протяжении 5+ лет</li>
+          </ul>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/image/blog section/Why Treating Enlarged Prostate 2.webp" alt="ReZUM BPH Treatment" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-slate-900/80 to-transparent p-4">
+            <p class="text-white text-xs font-bold">ReZUM: Терапия водяным паром для облегчения симптомов простаты</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white uppercase mt-8 mb-4">ReZUM в сравнении с лекарствами и хирургией ТУРП</h3>
+
+      <div class="overflow-x-auto my-8 rounded-2xl border border-slate-200 dark:border-white/10">
+        <table class="w-full text-left border-collapse text-sm">
+          <thead>
+            <tr class="bg-slate-100 dark:bg-white/5">
+              <th class="p-4 font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-white/10">Фактор</th>
+              <th class="p-4 font-bold text-amber-600 border-b border-slate-200 dark:border-white/10">ReZUM</th>
+              <th class="p-4 font-bold text-slate-500 border-b border-slate-200 dark:border-white/10">Ежедневные лекарства</th>
+              <th class="p-4 font-bold text-slate-500 border-b border-slate-200 dark:border-white/10">Хирургия ТУРП</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 dark:divide-white/5">
+            <tr>
+              <td class="p-4 font-medium text-slate-700 dark:text-slate-300">Сексуальная функция</td>
+              <td class="p-4 text-green-600 dark:text-green-400 font-bold">Полностью сохранена</td>
+              <td class="p-4 text-orange-500">Частые побочные эффекты</td>
+              <td class="p-4 text-red-500">Высокий риск ретроградной эякуляции</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-medium text-slate-700 dark:text-slate-300">Продолжительность</td>
+              <td class="p-4 text-green-600 dark:text-green-400 font-bold">5+ лет</td>
+              <td class="p-4 text-orange-500">Только во время приема</td>
+              <td class="p-4 text-green-600 dark:text-green-400">Постоянно</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-medium text-slate-700 dark:text-slate-300">Восстановление</td>
+              <td class="p-4 text-green-600 dark:text-green-400 font-bold">В тот же день</td>
+              <td class="p-4 text-green-600 dark:text-green-400">Немедленно</td>
+              <td class="p-4 text-red-500">3-5 дней в больнице</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <blockquote class="border-l-4 border-amber-500 pl-4 italic text-slate-700 dark:text-slate-300 my-6">
+        "ReZUM в настоящее время является нашей первоочередной рекомендацией для мужчин, которые хотят отказаться от ежедневного приема лекарств, не подвергаясь рискам традиционной хирургии."
       </blockquote>
     `
   },

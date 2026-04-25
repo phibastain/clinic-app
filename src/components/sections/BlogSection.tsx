@@ -53,8 +53,17 @@ const BlogSection = () => {
     return (
         <section id="blog" className="pt-8 pb-16 border-b border-slate-200/50 dark:border-white/5 scroll-mt-24 text-left">
             <Container>
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
+                    <SectionTitle tag={t("Articles & Knowledge")} title={t("Men's Health Blog")} className="mb-0" />
+                    <Link
+                        href={lang === 'EN' ? '/blog' : `/blog?lang=${lang.toLowerCase()}`}
+                        className="hidden md:inline-flex items-center justify-center px-6 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-amber-500 hover:text-amber-600 transition-all cursor-pointer bg-white dark:bg-slate-900 shadow-sm hover:shadow-md"
+                    >
+                        {t('View All Articles') || t('Read More')}
+                    </Link>
+                </div>
+
                 <div className="mb-8 text-left">
-                    <SectionTitle tag={t("Articles & Knowledge")} title={t("Men's Health Blog")} className="mb-6" />
 
                     {/* Category Tabs */}
                     <div className="flex flex-wrap gap-2">
