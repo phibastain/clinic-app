@@ -72,6 +72,7 @@ export const RU_UI_TRANSLATIONS: Record<string, string> = {
     'No articles found.': 'Статьи не найдены.',
     'Page': 'Страница',
     'articles': 'статей',
+    'View All Articles': 'Все статьи',
 
     // About Section
     'Excellence in Care': 'Превосходство в лечении',
