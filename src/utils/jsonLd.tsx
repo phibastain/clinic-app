@@ -228,13 +228,22 @@ export function getEventJsonLd(baseUrl: string, event: {
     slug?: string;
 }) {
     const eventSlug = event.slug || eventTitleToSlug(event.title);
+    
+    const monthMap: Record<string, string> = {
+        'JAN': '01', 'FEB': '02', 'MAR': '03', 'APR': '04', 'MAY': '05', 'JUN': '06',
+        'JUL': '07', 'AUG': '08', 'SEP': '09', 'OCT': '10', 'NOV': '11', 'DEC': '12'
+    };
+    const monthNum = monthMap[event.month?.toUpperCase()] || '01';
+    const dayNum = event.day.toString().padStart(2, '0');
+    const startTime = (event.time || '09:00').split('-')[0].trim();
+
     const eventSchema = {
         '@context': 'https://schema.org',
         '@type': 'Event',
         name: event.title,
         description: event.description,
         image: event.image.startsWith('/') ? `${baseUrl}${event.image}` : event.image,
-        startDate: `2026-${event.month}-${event.day}`,
+        startDate: `2026-${monthNum}-${dayNum}T${startTime}:00+07:00`,
         location: {
             '@type': 'Place',
             name: event.location,
