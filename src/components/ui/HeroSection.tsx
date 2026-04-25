@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { HERO_SLIDES } from '@/data/mockData';
 import { TH_TRANSLATIONS } from '@/data/translations';
 import { AR_TRANSLATIONS } from '@/data/arTranslations';
+import { RU_HERO_TRANSLATIONS } from '@/data/ruUiTranslations';
 import GradientButton from '@/components/ui/GradientButton';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 
@@ -97,7 +98,8 @@ const HeroSection = () => {
                         // Get translation based on language
                         const thData = lang === 'TH' ? (TH_TRANSLATIONS[slide.title] as any) : null;
                         const arData = lang === 'AR' ? (AR_TRANSLATIONS[slide.title] as any) : null;
-                        const langData = arData || thData;
+                        const ruData = lang === 'RU' ? (RU_HERO_TRANSLATIONS[slide.title] as any) : null;
+                        const langData = ruData || arData || thData;
                         const displayTitle = langData?.title || slide.title;
                         const displayDesc = langData?.desc || slide.desc;
                         const displayBtn = langData?.btn || slide.btnText;
