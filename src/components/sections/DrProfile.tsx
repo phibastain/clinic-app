@@ -455,6 +455,10 @@ const DrProfile = ({ doctor, onBack }: DrProfileProps) => {
                                             itemScope
                                             itemType="https://schema.org/Review"
                                         >
+                                            <div itemProp="itemReviewed" itemScope itemType="https://schema.org/Physician" className="hidden">
+                                                <meta itemProp="name" content={doctor.name} />
+                                                <meta itemProp="image" content={doctor.image} />
+                                            </div>
                                             <div itemProp="reviewRating" itemScope itemType="https://schema.org/Rating" className="hidden">
                                                 <meta itemProp="ratingValue" content={(testimonial.rating || 5).toString()} />
                                                 <meta itemProp="bestRating" content="5" />
