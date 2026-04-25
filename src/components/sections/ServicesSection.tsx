@@ -29,7 +29,7 @@ const ServicesSection = () => {
                     <div className="flex flex-wrap md:flex-nowrap md:overflow-x-auto gap-1.5 md:gap-2 text-left no-scrollbar w-full">
                         {tabs.map((tab) => (
                             <button key={tab} onClick={() => setActiveTab(tab)}
-                                className={`px-2.5 md:px-4 py-1 md:py-2 rounded-xl text-[9px] md:text-[11px] whitespace-nowrap font-black uppercase tracking-widest transition-all border shrink-0 cursor-pointer ${activeTab === tab ? 'bg-slate-900 text-white border-slate-900 dark:bg-amber-600 dark:border-amber-600 shadow-md' : 'bg-white/50 backdrop-blur-sm text-slate-500 border-slate-200 hover:border-amber-600 dark:bg-white/5 dark:text-slate-300 dark:border-white/10 dark:hover:border-amber-500'}`}>
+                                className={`px-2 md:px-4 py-0.5 md:py-2 rounded-xl text-[7px] md:text-[11px] whitespace-nowrap font-black uppercase tracking-widest transition-all border shrink-0 cursor-pointer ${activeTab === tab ? 'bg-slate-900 text-white border-slate-900 dark:bg-amber-600 dark:border-amber-600 shadow-md' : 'bg-white/50 backdrop-blur-sm text-slate-500 border-slate-200 hover:border-amber-600 dark:bg-white/5 dark:text-slate-300 dark:border-white/10 dark:hover:border-amber-500'}`}>
                                 {t(tab)}
                             </button>
                         ))}
@@ -45,11 +45,11 @@ const ServicesSection = () => {
                                 href={url}
                                 className="group flex bg-linear-to-br from-white/80 via-white/50 to-indigo-50/20 dark:bg-none dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200/50 dark:border-white/10 transition-all duration-300 hover:border-amber-600/30 dark:hover:border-amber-500/40 text-left cursor-pointer"
                             >
-                            <div className="relative w-32 sm:w-40 shrink-0 overflow-hidden text-left"><Image src={service.image} alt={service.name} fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="(max-width: 640px) 128px, 160px" /></div>
-                            <div className="p-6 flex flex-col justify-center text-left">
-                                <div className="flex items-center space-x-2 mb-2 text-left"><service.Icon size={14} className="text-amber-600 md:w-4 md:h-4" /><h3 className="text-xs md:text-sm font-black text-slate-900 dark:text-white uppercase text-left">{t(service.name)}</h3></div>
-                                <p className="text-slate-500 dark:text-slate-400 text-xs md:text-[15px] leading-relaxed font-medium text-left">{t(service.desc)}</p>
-                                <span className="flex items-center space-x-1 text-[10px] md:text-xs font-black uppercase text-amber-600 group/btn mt-3 text-left"><span>{t("Learn More")}</span><ChevronRight size={12} className="transition-transform group-hover/btn:translate-x-1 text-left md:w-[14px] md:h-[14px]" /></span>
+                            <div className="relative w-[102px] sm:w-40 shrink-0 overflow-hidden text-left"><Image src={service.image} alt={service.name} fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="(max-width: 640px) 102px, 160px" /></div>
+                            <div className="p-4 md:p-6 flex flex-col justify-center text-left">
+                                <div className="flex items-center space-x-2 mb-2 text-left"><service.Icon size={14} className="text-amber-600 md:w-4 md:h-4" /><h3 className="text-[10px] md:text-sm font-black text-slate-900 dark:text-white uppercase text-left">{t(service.name)}</h3></div>
+                                <p className="text-slate-500 dark:text-slate-400 text-[10px] md:text-[15px] leading-relaxed font-medium text-left">{t(service.desc)}</p>
+                                <span className="flex items-center space-x-1 text-[8px] md:text-xs font-black uppercase text-amber-600 group/btn mt-3 text-left"><span>{t("Learn More")}</span><ChevronRight size={12} className="transition-transform group-hover/btn:translate-x-1 text-left md:w-[14px] md:h-[14px]" /></span>
                             </div>
                         </Link>
                     )})}

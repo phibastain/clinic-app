@@ -71,7 +71,7 @@ const BlogSection = () => {
                             <button
                                 key={cat}
                                 onClick={() => setActiveCategory(cat)}
-                                className={`px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all border cursor-pointer ${activeCategory === cat
+                                className={`px-3 md:px-4 py-1.5 md:py-2 rounded-full text-[8px] md:text-[10px] font-black uppercase tracking-widest transition-all border cursor-pointer ${activeCategory === cat
                                     ? 'bg-slate-900 text-white border-slate-900 dark:bg-amber-600 dark:border-amber-600 shadow-lg'
                                     : 'bg-white/50 text-slate-500 border-slate-200 hover:border-amber-600 hover:text-amber-600 dark:bg-white/5 dark:text-slate-300 dark:border-white/10 dark:hover:border-amber-500'}`}
                             >
@@ -92,23 +92,23 @@ const BlogSection = () => {
                             const baseUrl = `/blog/${post.slug}`;
                             const url = lang === 'EN' ? baseUrl : `${baseUrl}?lang=${lang.toLowerCase()}`;
                             return (
-                            <Link href={url} key={post.id} className="group flex flex-col sm:flex-row gap-6 items-center bg-linear-to-br from-white/80 via-white/50 to-indigo-50/20 dark:bg-none dark:bg-slate-900 p-4 rounded-4xl border border-slate-200/50 dark:border-white/10 transition-all duration-300 text-left cursor-pointer hover:border-amber-500/40 hover:shadow-lg">
-                                <div className="w-full sm:w-44 lg:w-48 aspect-square overflow-hidden rounded-3xl shadow-md relative shrink-0">
+                            <Link href={url} key={post.id} className="group flex flex-col sm:flex-row gap-4 sm:gap-6 items-center bg-linear-to-br from-white/80 via-white/50 to-indigo-50/20 dark:bg-none dark:bg-slate-900 p-3 md:p-4 rounded-4xl border border-slate-200/50 dark:border-white/10 transition-all duration-300 text-left cursor-pointer hover:border-amber-500/40 hover:shadow-lg">
+                                <div className="w-full sm:w-36 lg:w-48 aspect-square overflow-hidden rounded-3xl shadow-md relative shrink-0">
                                     <Image src={post.image || ''} alt={post.title || 'Blog Art'} fill className="object-cover transition-transform duration-1000 group-hover:scale-110" sizes="(max-width: 640px) 100vw, 192px" />
-                                    <div className="absolute top-3 left-3 bg-amber-600 text-white px-2 py-1 rounded-md text-[8px] font-black uppercase shadow-lg">{t(post.category)}</div>
+                                    <div className="absolute top-3 left-3 bg-amber-600 text-white px-2 py-1 rounded-md text-[6px] md:text-[8px] font-black uppercase shadow-lg">{t(post.category)}</div>
                                 </div>
                                 <div className="flex-1 flex flex-col justify-between py-1 text-left">
                                     <div>
-                                        <div className="flex items-center text-[9px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2"><Clock size={12} className="mr-1" /> {post.date}</div>
-                                        <h3 className="text-xs md:text-sm font-black text-slate-900 dark:text-white uppercase leading-tight group-hover:text-amber-600 transition-colors mb-2 line-clamp-3">
+                                        <div className="flex items-center text-[7px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2"><Clock size={10} className="mr-1 md:w-3 md:h-3" /> {post.date}</div>
+                                        <h3 className="text-[10px] md:text-sm font-black text-slate-900 dark:text-white uppercase leading-tight group-hover:text-amber-600 transition-colors mb-2 line-clamp-3">
                                             {getLocalizedField(post, 'title', lang, t)}
                                         </h3>
-                                        <p className="text-slate-500 dark:text-slate-400 text-xs md:text-sm leading-relaxed line-clamp-2 mb-3 font-medium">
+                                        <p className="text-slate-500 dark:text-slate-400 text-[10px] md:text-sm leading-relaxed line-clamp-2 mb-3 font-medium">
                                             {getLocalizedField(post, 'excerpt', lang, t)}
                                         </p>
                                     </div>
-                                    <div className="flex items-center space-x-1 text-xs font-black uppercase text-amber-600 group/btn">
-                                        <span>{t("Explore Article")}</span><ChevronRight size={12} className="transition-transform group-hover/btn:translate-x-1 md:w-[14px] md:h-[14px]" />
+                                    <div className="flex items-center space-x-1 text-[10px] md:text-xs font-black uppercase text-amber-600 group/btn">
+                                        <span>{t("Explore Article")}</span><ChevronRight size={10} className="transition-transform group-hover/btn:translate-x-1 md:w-[14px] md:h-[14px]" />
                                     </div>
                                 </div>
                             </Link>
