@@ -249,6 +249,11 @@ export const RU_UI_TRANSLATIONS: Record<string, string> = {
 };
 
 export const RU_HERO_TRANSLATIONS: Record<string, { title: string, desc: string, btn: string }> = {
+    "REZŪM™\nTHERAPY": {
+        title: "ТЕРАПИЯ\nReZūm™",
+        desc: "Революционное лечение увеличения простаты (ДГПЖ) водяным паром. Быстро, без операции и с сохранением половой функции.",
+        btn: "Бесплатная консультация"
+    },
     "PENILE\nIMPLANT": {
         title: "ФАЛЛО-\nПРОТЕЗИРОВАНИЕ",
         desc: "Окончательное решение проблемы эректильной дисфункции. Верните спонтанную близость с помощью самых современных мировых технологий протезирования.",

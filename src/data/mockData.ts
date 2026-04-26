@@ -3858,6 +3858,14 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = {
 export const HERO_SLIDES: HeroSlideData[] = [
   {
     id: 1,
+    title: 'REZŪM™\nTHERAPY',
+    desc: 'The revolutionary water vapor treatment for enlarged prostate (BPH). Quick, non-surgical, and preserves sexual function with rapid recovery.',
+    doctorImage: '/assets/image/hero section/M-Trust Urology Clinic background 2.webp',
+    slideImage: '/assets/image/hero section/Rezum hero.webp',
+    btnText: 'Free Consultation'
+  },
+  {
+    id: 2,
     title: 'PENILE\nIMPLANT',
     desc: 'The ultimate permanent solution for erectile dysfunction. Regain spontaneous intimacy with the world\'s most advanced penile prosthesis technology.',
     doctorImage: '/assets/image/hero section/M-Trust Urology Clinic background 2.webp',
@@ -3865,7 +3873,7 @@ export const HERO_SLIDES: HeroSlideData[] = [
     btnText: 'Consult Specialist'
   },
   {
-    id: 2,
+    id: 3,
     title: 'PROSTATE\nSCREENING',
     desc: 'Comprehensive prostate screening package including PSA test and specialist consultation.',
     doctorImage: '/assets/image/hero section/M-Trust Urology Clinic background 2.webp',
@@ -3873,7 +3881,7 @@ export const HERO_SLIDES: HeroSlideData[] = [
     btnText: 'Claim Offer'
   },
   {
-    id: 3,
+    id: 4,
     title: 'REGAIN\nCONFIDENCE',
     desc: 'Restore your confidence with personalized ED treatment plans and hormone therapy.',
     doctorImage: '/assets/image/hero section/M-Trust Urology Clinic background 2.webp',
@@ -3881,7 +3889,7 @@ export const HERO_SLIDES: HeroSlideData[] = [
     btnText: 'Book Consultation'
   },
   {
-    id: 4,
+    id: 5,
     title: 'PENILE\nENLARGEMENT',
     desc: 'Elevate your confidence with Thailand\'s leading experts in penile enlargement. Safe, permanent, and natural-looking results using advanced surgical techniques and premium fillers.',
     doctorImage: '/assets/image/hero section/M-Trust Urology Clinic background 2.webp',
