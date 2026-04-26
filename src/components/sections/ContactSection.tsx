@@ -178,8 +178,18 @@ const ContactSection = () => {
                                             <select id="booking-service" name="Service" className="w-full bg-slate-50/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm appearance-none focus:outline-none focus:border-amber-500 text-slate-600 dark:text-slate-300">
                                                 <option>{t("Prostate Screening")}</option>
                                                 <option>{t("ED Treatment (Shockwave)")}</option>
+                                                <option>{t("ReZūm™ Therapy")}</option>
+                                                <option>{t("Penile Implant")}</option>
                                                 <option>{t("Vasectomy")}</option>
                                                 <option>{t("Circumcision")}</option>
+                                                <option>{t("Penile Enlargement")}</option>
+                                                <option>{t("Penile Lengthening")}</option>
+                                                <option>{t("Paraffinoma Removal")}</option>
+                                                <option>{t("Premature Ejaculation")}</option>
+                                                <option>{t("Hormone Therapy (TRT)")}</option>
+                                                <option>{t("Kidney & Bladder Stones")}</option>
+                                                <option>{t("STI / STD Screening")}</option>
+                                                <option>{t("Urinary Symptoms")}</option>
                                                 <option>{t("General Consultation")}</option>
                                             </select>
                                             <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" size={14} />

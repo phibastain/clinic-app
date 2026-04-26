@@ -38,8 +38,18 @@ export const UI_TRANSLATIONS: Record<string, string> = {
     'Service of Interest': 'บริการที่สนใจ',
     'Prostate Screening': 'ตรวจคัดกรองมะเร็งต่อมลูกหมาก',
     'ED Treatment (Shockwave)': 'รักษาภาวะหย่อนสมรรถภาพ (Shockwave)',
-    'Vasectomy': 'ทำหมัน',
-    'Circumcision': 'ขลิบหนังหุ้มปลาย',
+    'ReZūm™ Therapy': 'รักษาต่อมลูกหมากโตด้วยไอน้ำ (ReZūm)',
+    'Penile Implant': 'แกนองคชาตเทียม (Penile Implant)',
+    'Vasectomy': 'ทำหมันชาย (No-Scalpel)',
+    'Circumcision': 'ขลิบไร้เลือด (Stapler)',
+    'Penile Enlargement': 'เสริมขนาดองคชาต',
+    'Penile Lengthening': 'ผ่าตัดเพิ่มความยาว',
+    'Paraffinoma Removal': 'ผ่าตัดเลาะสารแปลกปลอม',
+    'Premature Ejaculation': 'รักษาภาวะหลั่งเร็ว',
+    'Hormone Therapy (TRT)': 'บำบัดฮอร์โมนเพศชาย (TRT)',
+    'Kidney & Bladder Stones': 'รักษานิ่วในไตและกระเพาะปัสสาวะ',
+    'STI / STD Screening': 'ตรวจโรคติดต่อทางเพศสัมพันธ์',
+    'Urinary Symptoms': 'รักษาอาการทางเดินปัสสาวะ (ปัสสาวะบ่อย/ขัด)',
     'General Consultation': 'ปรึกษาแพทย์ทั่วไป',
     'Preferred Date': 'วันที่ต้องการ',
     'Preferred Time': 'เวลาที่ต้องการ',
@@ -79,7 +89,7 @@ export const UI_TRANSLATIONS: Record<string, string> = {
 
     // Service Category tabs (actual SERVICE_CATEGORIES keys)
     'Erectile Dysfunction': 'ภาวะหย่อนสมรรถภาพ',
-    'Urinary Symptoms': 'อาการทางเดินปัสสาวะ',
+
     'Aesthetic & Penile Surgery': 'ศัลยกรรมความงามและอวัยวะเพศ',
     'Examination & Lab Testing': 'การตรวจและห้องปฏิบัติการ',
 
@@ -93,17 +103,16 @@ export const UI_TRANSLATIONS: Record<string, string> = {
     'Focus Shockwave': 'โฟกัส ช็อควเวฟ',
     'PRP for ED': 'PRP สำหรับภาวะหย่อนสมรรถภาพ',
     'Stem Cell for ED': 'เซลล์ต้นกำเนิดสำหรับภาวะหย่อนสมรรถภาพ',
-    'Penile Implant': 'อุปกรณ์ช่วยแข็งตัว',
+
     'Dorsal Neurectomy': 'ดอร์ซัล นิวเรคโตมี',
     'Testosterone Replacement Therapy': 'การรักษาด้วยฮอร์โมนเทสโทสเตอโรน',
     'ReZum': 'รีซูม',
     'UroLift': 'ยูโรลิฟต์',
     'Sexually Transmitted Infection': 'โรคติดต่อทางเพศสัมพันธ์',
     'Stone Disease': 'นิ่วในระบบทางเดินปัสสาวะ',
-    'Penile Enlargement': 'เสริมขนาดอวัยวะเพศ',
-    'Penile Lengthening': 'เสริมความยาวอวัยวะเพศ',
+
     'Excision of penile Paraffinoma': 'ผ่าตัดนำสารแปลกปลอมออก',
-    'Flexible Cystoscopy': 'ส่องกล้องกระเพาะปัสสาวะแบบยืดหยุ่น',
+
     'Ultrasound': 'อัลตราซาวด์',
     'Lab Testing': 'ตรวจเลือดและห้องปฏิบัติการ',
 

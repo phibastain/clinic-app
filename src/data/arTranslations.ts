@@ -117,9 +117,7 @@ export const AR_TRANSLATIONS: Record<string, any> = {
   "Your privacy is our highest priority. Everything is 100% confidential.": {
     "title": "خصوصيتك هي أولويتنا القصوى. كل شيء سري 100%."
   },
-  "Urinary Symptoms": {
-    "title": "أعراض المسالك البولية"
-  },
+
   "Aesthetic & Penile Surgery": {
     "title": "جراحة التجميل والذكورة"
   },
@@ -135,12 +133,8 @@ export const AR_TRANSLATIONS: Record<string, any> = {
   "Stem Cell for ED": {
     "title": "الخلايا الجذعية لضعف الانتصاب"
   },
-  "Penile Enlargement": {
-    "title": "تكبير العضو الذكري"
-  },
-  "Penile Lengthening": {
-    "title": "إطالة العضو الذكري"
-  },
+
+
   "Excision of penile Paraffinoma": {
     "title": "استئصال البارافينوما القضيبية"
   },
@@ -1267,6 +1261,21 @@ export const AR_TRANSLATIONS: Record<string, any> = {
   "Passing Dust": {
     "title": "مرور الحطام"
   },
+  "Prostate Screening": { "title": "فحص البروستاتا" },
+  "ED Treatment (Shockwave)": { "title": "علاج ضعف الانتصاب (الموجات الصدمية)" },
+  "ReZūm™ Therapy": { "title": "علاج ريزوم بالبخار (ReZūm)" },
+  "Penile Implant": { "title": "زراعة دعامة العضو الذكري" },
+  "Vasectomy": { "title": "قطع القناة الدافقة (تعقيم الرجل)" },
+  "Circumcision": { "title": "الختان الحديث (بالدباسة)" },
+  "Penile Enlargement": { "title": "تكبير العضو الذكري" },
+  "Penile Lengthening": { "title": "عملية إطالة العضو الذكري" },
+  "Paraffinoma Removal": { "title": "إزالة المواد الغريبة (البارافينوما)" },
+  "Premature Ejaculation": { "title": "علاج سرعة القذف" },
+  "Hormone Therapy (TRT)": { "title": "العلاج بهرمون التستوستيرون (TRT)" },
+  "Kidney & Bladder Stones": { "title": "علاج حصوات الكلى والمثانة" },
+  "STI / STD Screening": { "title": "فحص الأمراض المنقولة جنسياً" },
+  "Urinary Symptoms": { "title": "علاج أعراض المسالك البولية" },
+  "General Consultation": { "title": "استشارة طبية عامة" },
   "Screening & Treatment Process": {
     "title": "عملية الفحص والعلاج"
   },
