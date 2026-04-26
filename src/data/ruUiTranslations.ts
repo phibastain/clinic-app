@@ -249,6 +249,11 @@ export const RU_UI_TRANSLATIONS: Record<string, string> = {
 };
 
 export const RU_HERO_TRANSLATIONS: Record<string, { title: string, desc: string, btn: string }> = {
+    "PENILE\nIMPLANT": {
+        title: "ФАЛЛО-\nПРОТЕЗИРОВАНИЕ",
+        desc: "Окончательное решение проблемы эректильной дисфункции. Верните спонтанную близость с помощью самых современных мировых технологий протезирования.",
+        btn: "Консультация эксперта"
+    },
     "PROSTATE\nSCREENING": {
         title: "СКРИНИНГ\nПРОСТАТЫ",
         desc: "Комплексный пакет обследования простаты, включая анализ на ПСА и консультацию специалиста.",
