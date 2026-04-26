@@ -3861,7 +3861,7 @@ export const HERO_SLIDES: HeroSlideData[] = [
     title: 'REZŪM™\nTHERAPY',
     desc: 'The revolutionary water vapor treatment for enlarged prostate (BPH). Quick, non-surgical, and preserves sexual function with rapid recovery.',
     doctorImage: '/assets/image/hero section/M-Trust Urology Clinic background 2.webp',
-    slideImage: '/assets/image/hero section/Rezum hero.webp',
+    slideImage: '/assets/image/hero section/REZUM hero.webp',
     btnText: 'Free Consultation'
   },
   {
