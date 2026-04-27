@@ -75,10 +75,32 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: '/events/1',
+        destination: '/events/rezum-academic-exchange',
+        permanent: true,
+      },
+      {
+        source: '/events/2',
+        destination: '/events/urolift-success-story',
+        permanent: true,
+      },
+      {
+        source: '/events/3',
+        destination: '/events/advanced-holep-laser-surgery',
+        permanent: true,
+      },
+      {
+        source: '/events/4',
+        destination: '/events/urology-insights-national-summit',
+        permanent: true,
+      },
+    ];
+  },
   // Disable the X-Powered-By header (hides Next.js fingerprint)
   poweredByHeader: false,
 };
 
 export default nextConfig;
-
-// Force Next.js server restart to clear mockData.ts cache (Update 2)

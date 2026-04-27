@@ -257,3 +257,31 @@ html {
 .animate-zoom-in {
   animation: zoomIn 0.3s ease-out forwards;
 }
+
+/* Mobile Font Size Increase (10%) for specific sections */
+@media (max-width: 767px) {
+  :where(#about, #services, #doctors, #expertise, #blog, #contact) {
+    font-size: 110%;
+  }
+  
+  :where(#about, #services, #doctors, #expertise, #blog, #contact) .text-\[4px\] { font-size: 4.4px; }
+  :where(#about, #services, #doctors, #expertise, #blog, #contact) .text-\[6px\] { font-size: 6.6px; }
+  :where(#about, #services, #doctors, #expertise, #blog, #contact) .text-\[7px\] { font-size: 7.7px; }
+  :where(#about, #services, #doctors, #expertise, #blog, #contact) .text-\[8px\] { font-size: 8.8px; }
+  :where(#about, #services, #doctors, #expertise, #blog, #contact) .text-\[9px\] { font-size: 9.9px; }
+  :where(#about, #services, #doctors, #expertise, #blog, #contact) .text-\[10px\] { font-size: 11px; }
+  :where(#about, #services, #doctors, #expertise, #blog, #contact) .text-\[11px\] { font-size: 12.1px; }
+  :where(#about, #services, #doctors, #expertise, #blog, #contact) .text-\[13px\] { font-size: 14.3px; }
+  :where(#about, #services, #doctors, #expertise, #blog, #contact) .text-\[14px\] { font-size: 15.4px; }
+  :where(#about, #services, #doctors, #expertise, #blog, #contact) .text-\[15px\] { font-size: 16.5px; }
+  
+  :where(#about, #services, #doctors, #expertise, #blog, #contact) .text-xs { font-size: 0.825rem; line-height: 1.1rem; }
+  :where(#about, #services, #doctors, #expertise, #blog, #contact) .text-sm { font-size: 0.9625rem; line-height: 1.375rem; }
+  :where(#about, #services, #doctors, #expertise, #blog, #contact) .text-base { font-size: 1.1rem; line-height: 1.65rem; }
+  :where(#about, #services, #doctors, #expertise, #blog, #contact) .text-lg { font-size: 1.2375rem; line-height: 1.925rem; }
+  :where(#about, #services, #doctors, #expertise, #blog, #contact) .text-xl { font-size: 1.375rem; line-height: 1.925rem; }
+  :where(#about, #services, #doctors, #expertise, #blog, #contact) .text-2xl { font-size: 1.65rem; line-height: 2.2rem; }
+  :where(#about, #services, #doctors, #expertise, #blog, #contact) .text-3xl { font-size: 2.0625rem; line-height: 2.475rem; }
+  :where(#about, #services, #doctors, #expertise, #blog, #contact) .text-4xl { font-size: 2.475rem; line-height: 2.75rem; }
+  :where(#about, #services, #doctors, #expertise, #blog, #contact) .text-5xl { font-size: 3.3rem; line-height: 1; }
+}

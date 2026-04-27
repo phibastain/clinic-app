@@ -60,7 +60,7 @@ const Header = ({ activeSection, scrollToSection, onBackToHome, onServiceClick }
         { title: 'About', icon: Info, path: '/#about' },
         { title: 'Services', icon: Stethoscope, mega: true, submenu: SERVICE_CATEGORIES, path: '/#services' },
         { title: 'Doctors', icon: Users, path: '/#doctors' },
-        { title: 'Blog', icon: FileText, path: lang === 'EN' ? '/blog' : `/blog?lang=${lang.toLowerCase()}` },
+        { title: 'Blog', icon: FileText, path: '/#blog' },
         { title: 'Expertise', icon: Award, disabled: false, path: '/#expertise' },
         { title: 'FAQ', icon: HelpCircle, path: '/#faq' },
     ];
