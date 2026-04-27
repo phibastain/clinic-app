@@ -76,7 +76,7 @@ function isBlockedBot(userAgent: string | null): boolean {
     return BLOCKED_BOT_PATTERNS.some(pattern => pattern.test(userAgent));
 }
 
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
     const userAgent = request.headers.get('user-agent');
     const ip = getClientIp(request);
 
