@@ -12,22 +12,24 @@ export function getHomepageJsonLd(baseUrl: string, lang: string = 'en') {
 
     const orgDescription = isAr
         ? 'مركز التميز في جراحة المسالك البولية وصحة الرجل. عيادة متخصصة تقدم خدمات شاملة لصحة الرجل بالابتكار الحديث والرعاية الشخصية وفقاً للمعايير الدولية.'
+        : lang === 'th'
+        ? 'ศูนย์ความเป็นเลิศด้านศัลยกรรมระบบทางเดินปัสสาวะและสุขภาพชาย พัทยา คลินิกเฉพาะทางที่ให้บริการด้านสุขภาพชายอย่างครบวงจรด้วยนวัตกรรมที่ทันสมัยและใส่ใจดูแลแบบเฉพาะบุคคลภายใต้มาตรฐานสากล'
         : 'Center of Excellence in Urology & Men\'s Health. Specialized clinic providing comprehensive men\'s health services with modern innovation and personalized care under international standards.';
 
     const organization = {
         '@context': 'https://schema.org',
         '@type': 'MedicalClinic',
         '@id': `${baseUrl}/#organization`,
-        name: isAr ? 'عيادة إم-ترست لجراحة المسالك البولية' : 'M-Trust Urology Clinic',
-        alternateName: 'M-Trust Clinic',
+        name: isAr ? 'عيادة إم-ترست لجراحة المسالك البولية' : lang === 'th' ? 'M-Trust Urology Clinic คลินิกทางเดินปัสสาวะ พัทยา' : 'M-Trust Urology Clinic',
+        alternateName: lang === 'th' ? 'เอ็มทรัสต์ คลินิก พัทยา' : 'M-Trust Clinic',
         url: baseUrl,
         logo: `${baseUrl}/assets/image/header/M-Trust Urology Clinic.png`,
         description: orgDescription,
-        medicalSpecialty: isAr ? ['جراحة المسالك البولية', 'صحة الرجل'] : ['Urology', 'Men\'s Health'],
+        medicalSpecialty: isAr ? ['جراحة المسالك البولية', 'صحة الرجل'] : lang === 'th' ? ['ศัลยกรรมทางเดินปัสสาวะ', 'สุขภาพเพศชาย'] : ['Urology', 'Men\'s Health'],
         address: {
             '@type': 'PostalAddress',
-            streetAddress: '392/65 moo.9 Sukhumvit Rd, Pattaya City, Amphoe Bang Lamung',
-            addressLocality: 'Chon Buri',
+            streetAddress: lang === 'th' ? '392/65 หมู่ 9 ถนนสุขุมวิท เมืองพัทยา อำเภอบางละมุง' : '392/65 moo.9 Sukhumvit Rd, Pattaya City, Amphoe Bang Lamung',
+            addressLocality: lang === 'th' ? 'ชลบุรี' : 'Chon Buri',
             postalCode: '20150',
             addressCountry: 'TH',
         },

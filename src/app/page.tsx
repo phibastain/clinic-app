@@ -29,19 +29,19 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const url = isRu ? '/?lang=ru' : isAr ? '/?lang=ar' : isThai ? '/?lang=th' : '/';
   
   const pageTitle = isRu
-    ? 'Урологическая клиника M-Trust | Уролог и специалист по мужскому здоровью, Паттайя'
+    ? 'Урологическая клиника M-Trust | Уролог и специалист по мужскому здоровью, Паттайя, Таиланд'
     : isAr
-    ? 'عيادة إم-ترست لجراحة المسالك البولية | أخصائي المسالك البولية وصحة الرجل، باتايا'
+    ? 'عيادة إم-ترست لجراحة المسالك البولية | أخصائي المسالك البولية وصحة الرجل، باتايا، تايلاند'
     : isThai
-    ? 'M-Trust Urology Clinic | คลินิกระบบทางเดินปัสสาวะชั้นนำ | ผู้เชี่ยวชาญสุขภาพเพศชาย'
-    : 'M-Trust Urology Clinic | Urologist & Men\'s Health Specialist, Pattaya';
+    ? 'M-Trust Urology Clinic | คลินิกทางเดินปัสสาวะ พัทยา | ผู้เชี่ยวชาญสุขภาพเพศชาย ประเทศไทย'
+    : 'M-Trust Urology Clinic | Urologist & Men\'s Health Specialist, Pattaya, Thailand';
   const pageDesc = isRu
     ? 'Клиника M-Trust — ведущий центр мужского здоровья в Таиланде. Лечение эректильной дисфункции, заболеваний простаты, имплантация пениса. Доктор Нити Наванимиткул. Запишитесь на консультацию сегодня.'
     : isAr
     ? 'عيادة إم-ترست - المركز الرائد في تايلاند لصحة الرجل. علاج متخصص لضعف الانتصاب وأمراض البروستاتا وزراعة دعامة القضيب بواسطة د. نيثي نافانيميتكول. احجز استشارتك اليوم.'
     : isThai
-    ? 'M-Trust Urology Clinic - ศูนย์ชั้นนำด้านสุขภาพเพศชายของประเทศไทย รักษาโรคหย่อนสมรรถภาพทางเพศ ต่อมลูกหมากโต ผ่าตัดใส่แกนองคชาตเทียม โดย นพ.นิติ นวนิมิตกุล นัดหมายวันนี้'
-    : 'M-Trust Urology Clinic - Thailand\'s leading center for men\'s health. Expert treatment for erectile dysfunction, prostate conditions, penile prosthesis surgery by Dr. Niti Navanimitkul. Book consultation today.';
+    ? 'M-Trust Urology Clinic พัทยา ประเทศไทย - ศูนย์ชั้นนำด้านสุขภาพเพศชายของประเทศไทย รักษาโรคหย่อนสมรรถภาพทางเพศ ต่อมลูกหมากโต ผ่าตัดใส่แกนองคชาตเทียม โดย นพ.นิติ นวนิมิตกุล นัดหมายวันนี้'
+    : 'M-Trust Urology Clinic Pattaya, Thailand - Thailand\'s leading center for men\'s health. Expert treatment for erectile dysfunction, prostate conditions, penile prosthesis surgery by Dr. Niti Navanimitkul. Book consultation today.';
 
   return {
     title: pageTitle,

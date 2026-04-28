@@ -80,9 +80,9 @@ export const UI_TRANSLATIONS: Record<string, string> = {
 
     // About Section
     'Excellence in Care': 'ที่สุดแห่งความเชี่ยวชาญ',
-    'M-Trust Urology Clinic': 'คลินิกทางเดินปัสสาวะเอ็มทรัสต์',
-    "Center of Excellence in Urology & Men's Health": 'ศูนย์ความเป็นเลิศด้านศัลยกรรมระบบทางเดินปัสสาวะและสุขภาพชาย',
-    "M-Trust Urology Clinic is a leading specialized clinic providing comprehensive men's health services. We focus on treating conditions with modern innovation and 100% personalized care under international standards.": 'เอ็มทรัสต์ คลินิก (M-Trust Clinic) คือคลินิกเฉพาะทางชั้นนำที่ให้บริการด้านสุขภาพชายอย่างครบวงจร เราเน้นการรักษาด้วยนวัตกรรมที่ทันสมัยและใส่ใจดูแลแบบเฉพาะบุคคล 100% ภายใต้มาตรฐานทางการแพทย์ระดับสากล',
+    'M-Trust Urology Clinic': 'คลินิกทางเดินปัสสาวะเอ็มทรัสต์ พัทยา',
+    "Center of Excellence in Urology & Men's Health": 'ศูนย์ความเป็นเลิศด้านศัลยกรรมระบบทางเดินปัสสาวะและสุขภาพชาย พัทยา',
+    "M-Trust Urology Clinic is a leading specialized clinic providing comprehensive men's health services. We focus on treating conditions with modern innovation and 100% personalized care under international standards.": 'เอ็มทรัสต์ คลินิก พัทยา (M-Trust Clinic Pattaya) คือคลินิกเฉพาะทางชั้นนำที่ให้บริการด้านสุขภาพชายอย่างครบวงจร เราเน้นการรักษาด้วยนวัตกรรมที่ทันสมัยและใส่ใจดูแลแบบเฉพาะบุคคล 100% ภายใต้มาตรฐานทางการแพทย์ระดับสากล',
     "Our team of expert urologists from leading medical institutions is committed to delivering the best treatment results to help you return to your life with confidence.": 'ทีมแพทย์ผู้เชี่ยวชาญด้านระบบทางเดินปัสสาวะของเราล้วนจบจากสถาบันการแพทย์ชั้นนำ พร้อมมอบผลลัพธ์การรักษาที่ดีที่สุด เพื่อช่วยให้คุณกลับมาใช้ชีวิตได้อย่างมั่นใจอีกครั้ง',
     "We combine state-of-the-art diagnostic technology with a patient-first philosophy, ensuring that every consultation is conducted with the utmost privacy, professionalism, and understanding of your unique needs.": 'เราผสานเทคโนโลยีการตรวจวินิจฉัยที่ล้ำสมัยเข้ากับปรัชญาการดูแลคนไข้เป็นอันดับหนึ่ง เพื่อให้มั่นใจว่าทุกการปรึกษาจะเป็นความลับสูงสุด มีความเป็นมืออาชีพ และเข้าใจในความต้องการที่แตกต่างกันของคุณ',
     'Credential Experts': 'เชี่ยวชาญระดับสากล',
