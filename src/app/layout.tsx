@@ -21,16 +21,23 @@ const notoArabic = Noto_Sans_Arabic({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.mtrusturology.com'),
   title: {
-    default: 'M-Trust Urology Clinic | Urologist & Men\'s Health Specialist, Pattaya',
+    default: 'M-Trust Urology Clinic | Urologist & Men\'s Health Specialist, Pattaya, Chonburi, Rayong',
     template: '%s | M-Trust Urology Clinic'
   },
-  description: 'M-Trust Urology Clinic - Thailand\'s leading center for men\'s health. Expert treatment for erectile dysfunction, prostate conditions, penile prosthesis surgery by Dr. Niti Navanimitkul. Book consultation today.',
+  description: 'M-Trust Urology Clinic - Thailand\'s leading center for men\'s health. Expert treatment for erectile dysfunction, prostate conditions, penile prosthesis surgery in Pattaya, Chonburi, Rayong by Dr. Niti Navanimitkul.',
   keywords: [
     'Urologist Thailand', 'Urologist Pattaya', 'Men\'s Health Clinic Pattaya',
     'Erectile Dysfunction Treatment', 'Penile Prosthesis Surgery', 'Dr. Niti Navanimitkul',
     'UroLift Thailand', 'Rezum Treatment', 'BPH Treatment', 'Prostate Specialist',
     'Sexual Dysfunction Specialist', 'Best Urologist Chon Buri', 'M-Trust Clinic',
     'Men\'s Health Clinic Bangkok',
+    'คลินิกทางเดินปัสสาวะพัทยา', 'หมอทางเดินปัสสาวะพัทยา', 'ศูนย์สุขภาพเพศชายพัทยา',
+    'คลินิกทางเดินปัสสาวะศรีราชา', 'หมอทางเดินปัสสาวะศรีราชา',
+    'คลินิกทางเดินปัสสาวะชลบุรี', 'หมอทางเดินปัสสาวะชลบุรี',
+    'คลินิกทางเดินปัสสาวะระยอง', 'หมอทางเดินปัสสาวะระยอง',
+    'คลินิกทางเดินปัสสาวะไทยแลนด์', 'Urology Clinic Thailand',
+    'รักษาหย่อนสมรรถภาพทางเพศ', 'ผ่าตัดแกนองคชาตเทียม', 'หมอนิติ นวนิมิตกุล',
+    'ต่อมลูกหมากโต พัทยา', 'ขลิบไร้เลือด พัทยา', 'ทำหมันชาย พัทยา',
     'طبيب مسالك بولية تايلاند', 'صحة الرجل باتايا', 'علاج ضعف الانتصاب',
     'زراعة دعامة القضيب', 'عيادة إم ترست', 'طبيب مسالك بولية باتايا',
     'уролог Таиланд', 'мужское здоровье Паттайя', 'лечение эректильной дисфункции',
@@ -44,8 +51,8 @@ export const metadata: Metadata = {
     alternateLocale: ['th_TH', 'ar_SA', 'ru_RU'],
     url: 'https://www.mtrusturology.com',
     siteName: 'M-Trust Urology Clinic',
-    title: 'M-Trust Urology Clinic | Urologist & Men\'s Health Specialist, Pattaya',
-    description: 'Thailand\'s leading center for men\'s health. Expert treatment by Dr. Niti Navanimitkul.',
+    title: 'M-Trust Urology Clinic | Urologist & Men\'s Health Specialist, Pattaya, Chonburi, Rayong',
+    description: 'Thailand\'s leading center for men\'s health in Pattaya, Chonburi, Rayong. Expert treatment by Dr. Niti Navanimitkul.',
     images: [
       {
         url: '/og-image.jpg',
@@ -57,8 +64,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'M-Trust Urology Clinic | Urologist & Men\'s Health Specialist, Pattaya',
-    description: 'Thailand\'s leading center for men\'s health and urology.'
+    title: 'M-Trust Urology Clinic | Urologist & Men\'s Health Specialist, Pattaya, Chonburi, Rayong',
+    description: 'Thailand\'s leading center for men\'s health and urology in Pattaya, Chonburi, Rayong.'
   },
   // Generates alternates dynamically per page
   robots: {
@@ -73,9 +80,9 @@ export const metadata: Metadata = {
     }
   },
   // Google Search Console verification — ใส่ code จริงเมื่อพร้อม
-  // verification: {
-  //   google: 'YOUR_REAL_VERIFICATION_CODE',
-  // }
+  verification: {
+    google: 'ADD_YOUR_GOOGLE_VERIFICATION_CODE_HERE',
+  }
 };
 
 export const viewport: Viewport = {

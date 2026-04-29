@@ -29,19 +29,19 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const url = isRu ? '/?lang=ru' : isAr ? '/?lang=ar' : isThai ? '/?lang=th' : '/';
   
   const pageTitle = isRu
-    ? 'Урологическая клиника M-Trust | Уролог и специалист по мужскому здоровью, Паттайя, Таиланд'
+    ? 'Урологическая клиника M-Trust | Уролог и специалист по мужскому здоровью, Паттайя, Чонбури, Районг, Таиланд'
     : isAr
-    ? 'عيادة إم-ترست لجراحة المسالك البولية | أخصائي المسالك البولية وصحة الرجل، باتايا، تايلاند'
+    ? 'عيادة إم-ترست لجراحة المسالك البولية | أخصائي المسالك البولية وصحة الرجل, باتايا, تشونبوري, رايونغ, تايلاند'
     : isThai
-    ? 'M-Trust Urology Clinic | คลินิกทางเดินปัสสาวะ พัทยา | ผู้เชี่ยวชาญสุขภาพเพศชาย ประเทศไทย'
-    : 'M-Trust Urology Clinic | Urologist & Men\'s Health Specialist, Pattaya, Thailand';
+    ? 'M-Trust Urology Clinic | คลินิกทางเดินปัสสาวะ พัทยา ชลบุรี ระยอง | หมอทางเดินปัสสาวะ ไทยแลนด์'
+    : 'M-Trust Urology Clinic | Urologist & Men\'s Health Specialist, Pattaya, Chonburi, Rayong, Thailand';
   const pageDesc = isRu
-    ? 'Клиника M-Trust — ведущий центр мужского здоровья в Таиланде. Лечение эректильной дисфункции, заболеваний простаты, имплантация пениса. Доктор Нити Наванимиткул. Запишитесь на консультацию сегодня.'
+    ? 'Клиника M-Trust — ведущий центр мужского здоровья в Таиланде (Паттайя, Чонбури, Районг). Лечение эректильной дисфункции, заболеваний простаты, имплантация пениса. Доктор Нити Наванимиткул.'
     : isAr
-    ? 'عيادة إم-ترست - المركز الرائد في تايلاند لصحة الرجل. علاج متخصص لضعف الانتصاب وأمراض البروستاتا وزراعة دعامة القضيب بواسطة د. نيثي نافانيميتكول. احجز استشارتك اليوم.'
+    ? 'عيادة إم-ترست - المركز الرائدใน تايلاند (باتايا، تشونبوري، رايونغ) لصحة الرجل. علاج متخصص لضعف الانتصاب وأمراض البروستاتا وزراعة دعامة القضيب بواسطة د. نيثي نافانيميتكول.'
     : isThai
-    ? 'M-Trust Urology Clinic พัทยา ประเทศไทย - ศูนย์ชั้นนำด้านสุขภาพเพศชายของประเทศไทย รักษาโรคหย่อนสมรรถภาพทางเพศ ต่อมลูกหมากโต ผ่าตัดใส่แกนองคชาตเทียม โดย นพ.นิติ นวนิมิตกุล นัดหมายวันนี้'
-    : 'M-Trust Urology Clinic Pattaya, Thailand - Thailand\'s leading center for men\'s health. Expert treatment for erectile dysfunction, prostate conditions, penile prosthesis surgery by Dr. Niti Navanimitkul. Book consultation today.';
+    ? 'M-Trust Urology Clinic คลินิกทางเดินปัสสาวะ พัทยา ศรีราชา ชลบุรี ระยอง ประเทศไทย - ศูนย์สุขภาพเพศชาย รักษาหย่อนสมรรถภาพทางเพศ ต่อมลูกหมากโต โดย นพ.นิติ นวนิมิตกุล'
+    : 'M-Trust Urology Clinic Pattaya, Chonburi, Rayong, Thailand - Thailand\'s leading center for men\'s health. Expert treatment for erectile dysfunction, prostate conditions, penile prosthesis surgery by Dr. Niti Navanimitkul.';
 
   return {
     title: pageTitle,

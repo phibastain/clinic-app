@@ -11,16 +11,16 @@ export function getHomepageJsonLd(baseUrl: string, lang: string = 'en') {
     const isAr = lang === 'ar';
 
     const orgDescription = isAr
-        ? 'مركز التميز في جراحة المسالك البولية وصحة الرجل. عيادة متخصصة تقدم خدمات شاملة لصحة الرجل بالابتكار الحديث والرعاية الشخصية وفقاً للمعايير الدولية.'
+        ? 'مركز التميز في جراحة المسالك البولية وصحة الرجل في باتايا، تشونبوري، رايونغ. عيادة متخصصة تقدم خدمات شاملة لصحة الرجل بالابتكار الحديث والرعاية الشخصية وفقاً للمعايير الدولية.'
         : lang === 'th'
-        ? 'ศูนย์ความเป็นเลิศด้านศัลยกรรมระบบทางเดินปัสสาวะและสุขภาพชาย พัทยา คลินิกเฉพาะทางที่ให้บริการด้านสุขภาพชายอย่างครบวงจรด้วยนวัตกรรมที่ทันสมัยและใส่ใจดูแลแบบเฉพาะบุคคลภายใต้มาตรฐานสากล'
-        : 'Center of Excellence in Urology & Men\'s Health. Specialized clinic providing comprehensive men\'s health services with modern innovation and personalized care under international standards.';
+        ? 'ศูนย์ความเป็นเลิศด้านศัลยกรรมระบบทางเดินปัสสาวะและสุขภาพชาย พัทยา ศรีราชา ชลบุรี ระยอง คลินิกเฉพาะทางที่ให้บริการด้านสุขภาพชายอย่างครบวงจรด้วยนวัตกรรมที่ทันสมัยและใส่ใจดูแลแบบเฉพาะบุคคลภายใต้มาตรฐานสากล'
+        : 'Center of Excellence in Urology & Men\'s Health in Pattaya, Chonburi, Rayong. Specialized clinic providing comprehensive men\'s health services with modern innovation and personalized care under international standards.';
 
     const organization = {
         '@context': 'https://schema.org',
         '@type': 'MedicalClinic',
         '@id': `${baseUrl}/#organization`,
-        name: isAr ? 'عيادة إم-ترست لجراحة المسالك البولية' : lang === 'th' ? 'M-Trust Urology Clinic คลินิกทางเดินปัสสาวะ พัทยา' : 'M-Trust Urology Clinic',
+        name: isAr ? 'عيادة إم-ترست لجراحة المسالك البولية باتايا، تشونبوري، رايونغ' : lang === 'th' ? 'M-Trust Urology Clinic คลินิกทางเดินปัสสาวะ พัทยา' : 'M-Trust Urology Clinic Pattaya, Chonburi, Rayong',
         alternateName: lang === 'th' ? 'เอ็มทรัสต์ คลินิก พัทยา' : 'M-Trust Clinic',
         url: baseUrl,
         logo: `${baseUrl}/assets/image/header/M-Trust Urology Clinic.png`,

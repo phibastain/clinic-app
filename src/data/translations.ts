@@ -73,7 +73,7 @@ export const TH_TRANSLATIONS: Record<string, any> = {
     "title": "ที่สุดแห่งความเชี่ยวชาญ"
   },
   "M-Trust Urology Clinic": {
-    "title": "คลินิกทางเดินปัสสาวะเอ็มทรัสต์"
+    "title": "M-Trust Urology Clinic คลินิกทางเดินปัสสาวะ พัทยา ชลบุรี ระยอง"
   },
   "Center of Excellence in Urology & Men's Health": {
     "title": "ศูนย์ความเป็นเลิศด้านศัลยกรรมระบบทางเดินปัสสาวะและสุขภาพชาย"
